@@ -1,25 +1,24 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.27)  10 OCT 2011 00:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.28)  11 OCT 2011 23:20
 entering extended mode
  %&-line parsing enabled.
 **cdcf.tex
 (./cdcf.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, french, basque, loaded.
-(/usr/share/texmf-texlive/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+yphenation, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -69,7 +68,7 @@ Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
-\Gread@gobject=\count88
+\Gread@gobject=\count87
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
@@ -313,18 +312,23 @@ Language: frenchb 2009/03/16 v2.3d French support from the babel system
 
 (/usr/share/texmf-texlive/tex/generic/babel/babel.def
 File: babel.def 2008/07/06 v3.8l Babel common definitions
-\babel@savecnt=\count89
+\babel@savecnt=\count88
 \U@D=\dimen103
 )
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `French'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@french = a dialect from \language0
 Package babel Info: Making : an active character on input line 120.
 Package babel Info: Making ; an active character on input line 121.
 Package babel Info: Making ! an active character on input line 122.
 Package babel Info: Making ? an active character on input line 123.
 \FB@Mht=\dimen104
-\std@mcc=\count90
-\dec@mcc=\count91
+\std@mcc=\count89
+\dec@mcc=\count90
 \parindentFFN=\dimen105
-
 *************************************
 * Local config file frenchb.cfg used
 *
@@ -345,9 +349,9 @@ Package ifpdf Info: pdfTeX in pdf mode detected.
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count92
-\Gm@cntv=\count93
-\c@Gm@tempcnt=\count94
+\Gm@cnth=\count91
+\Gm@cntv=\count92
+\c@Gm@tempcnt=\count93
 \Gm@bindingoffset=\dimen106
 \Gm@wd@mp=\dimen107
 \Gm@odd@mp=\dimen108
@@ -400,10 +404,10 @@ Package: pgfsys 2008/02/07 v2.00 (rcs-revision 1.31)
 \pgf@yb=\dimen117
 \pgf@xc=\dimen118
 \pgf@yc=\dimen119
-\c@pgf@counta=\count95
-\c@pgf@countb=\count96
-\c@pgf@countc=\count97
-\c@pgf@countd=\count98
+\c@pgf@counta=\count94
+\c@pgf@countb=\count95
+\c@pgf@countc=\count96
+\c@pgf@countd=\count97
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/01/13  (rcs-revision 1.6)
@@ -418,8 +422,8 @@ File: pgfsys-common-pdf.def 2007/12/17  (rcs-revision 1.8)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/01/23  (rcs-revision 1.6)
-\pgfsyssoftpath@smallbuffer@items=\count99
-\pgfsyssoftpath@bigbuffer@items=\count100
+\pgfsyssoftpath@smallbuffer@items=\count98
+\pgfsyssoftpath@bigbuffer@items=\count99
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -434,9 +438,9 @@ Package: pgfcore 2008/01/15 v2.00 (rcs-revision 1.6)
 )
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@stack=\toks21
-\c@pgfmath@parsecounta=\count101
-\c@pgfmath@parsecountb=\count102
-\c@pgfmath@parsecountc=\count103
+\c@pgfmath@parsecounta=\count100
+\c@pgfmath@parsecountb=\count101
+\c@pgfmath@parsecountc=\count102
 \pgfmath@parsex=\dimen120
 )
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathoperations.code.tex
@@ -475,7 +479,7 @@ File: pgfcorescopes.code.tex 2008/01/15  (rcs-revision 1.26)
 \pgfpic=\box27
 \pgf@hbox=\box28
 \pgf@layerbox@main=\box29
-\pgf@picture@serial@count=\count104
+\pgf@picture@serial@count=\count103
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2007/12/12  (rcs-revision 1.8)
@@ -502,7 +506,7 @@ File: pgfcorearrows.code.tex 2007/06/07  (rcs-revision 1.8)
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2007/12/10  (rcs-revision 1.9)
 \pgf@max=\dimen143
-\pgf@sys@shading@range@num=\count105
+\pgf@sys@shading@range@num=\count104
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2008/01/15  (rcs-revision 1.1)
@@ -545,7 +549,7 @@ Package: tikz 2008/02/13 v2.00 (rcs-revision 1.27)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2007/03/09 v2.00 (rcs-revision 1.9)
-\pgf@plot@mark@count=\count106
+\pgf@plot@mark@count=\count105
 \pgfplotmarksize=\dimen148
 )
 \tikz@lastx=\dimen149
@@ -556,18 +560,18 @@ File: pgflibraryplothandlers.code.tex 2007/03/09 v2.00 (rcs-revision 1.9)
 \tikzsiblingdistance=\dimen154
 \tikz@figbox=\box32
 \tikz@tempbox=\box33
-\tikztreelevel=\count107
-\tikznumberofchildren=\count108
-\tikznumberofcurrentchild=\count109
-\tikz@fig@count=\count110
+\tikztreelevel=\count106
+\tikznumberofchildren=\count107
+\tikznumberofcurrentchild=\count108
+\tikz@fig@count=\count109
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2008/01/15  (rcs-revision 1.1)
-\pgfmatrixcurrentrow=\count111
-\pgfmatrixcurrentcolumn=\count112
-\pgf@matrix@numberofcolumns=\count113
+\pgfmatrixcurrentrow=\count110
+\pgfmatrixcurrentcolumn=\count111
+\pgf@matrix@numberofcolumns=\count112
 )
-\tikz@expandcount=\count114
+\tikz@expandcount=\count113
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
@@ -577,23 +581,23 @@ Package: listingsutf8 2007/11/11 v1.1 Adding support for UTF-8 to listings (HO)
 
 
 (/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count115
+\lst@mode=\count114
 \lst@gtempboxa=\box34
 \lst@token=\toks23
-\lst@length=\count116
+\lst@length=\count115
 \lst@currlwidth=\dimen155
-\lst@column=\count117
-\lst@pos=\count118
+\lst@column=\count116
+\lst@pos=\count117
 \lst@lostspace=\dimen156
 \lst@width=\dimen157
-\lst@newlines=\count119
-\lst@lineno=\count120
+\lst@newlines=\count118
+\lst@lineno=\count119
 \lst@maxwidth=\dimen158
 
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count121
-\lst@skipnumbers=\count122
+\c@lstnumber=\count120
+\lst@skipnumbers=\count121
 \lst@framebox=\box35
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
@@ -644,8 +648,8 @@ Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
 
 (/usr/share/texmf-texlive/tex/generic/multido/multido.tex
  v1.41, 2004/05/18 <tvz>
-\multido@count=\count123
-\multidocount=\count124
+\multido@count=\count122
+\multidocount=\count123
 \multido@stuff=\toks24
 )
 File: multido.tex 2004/05/18 v1.41 `multido' (tvz)
@@ -661,41 +665,45 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-No file cdcf.aux.
+
+LaTeX Warning: Unused global option(s):
+    [openany].
+
+(./cdcf.aux)
 \openout1 = `cdcf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 52.
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 122.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
+\scratchcounter=\count124
 \scratchdimen=\dimen159
 \scratchbox=\box36
-\nofMPsegments=\count126
-\nofMParguments=\count127
+\nofMPsegments=\count125
+\nofMParguments=\count126
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count128
+\MPscratchCnt=\count127
 \MPscratchDim=\dimen160
-\MPnumerator=\count129
+\MPnumerator=\count128
 \everyMPtoPDFconversion=\toks27
 )
-LaTeX Info: Redefining \degres on input line 52.
-LaTeX Info: Redefining \dots on input line 52.
-LaTeX Info: Redefining \up on input line 52.
+LaTeX Info: Redefining \degres on input line 122.
+LaTeX Info: Redefining \dots on input line 122.
+LaTeX Info: Redefining \up on input line 122.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -738,64 +746,49 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-\c@lstlisting=\count130
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 53.
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+\c@lstlisting=\count129
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 123.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 53.
-
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 53.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 123.
 
 
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 53.
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./cdcf.toc)
+\tf@toc=\write4
+\openout4 = `cdcf.toc'.
 
 
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 53.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 53.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 53.
-LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 53.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
+[2
 
-LaTeX Warning: No \author given.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./cdcf.aux) ) 
+] [3] (./cdcf.aux) ) 
 Here is how much of TeX's memory you used:
- 10897 strings out of 495028
- 177152 string characters out of 1181229
- 228390 words of memory out of 3000000
- 13838 multiletter control sequences out of 15000+50000
- 25988 words of font info for 35 fonts, out of 3000000 for 9000
+ 10910 strings out of 495061
+ 176560 string characters out of 1182621
+ 229628 words of memory out of 3000000
+ 13855 multiletter control sequences out of 15000+50000
+ 25432 words of font info for 27 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 47i,6n,49p,338b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/
-texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmr1
-2.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on cdcf.pdf (1 page, 47481 bytes).
+ 47i,11n,49p,338b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/usr
+/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/
+lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-texlive/fonts/type1/urw/h
+elvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb>
+Output written on cdcf.pdf (3 pages, 87149 bytes).
 PDF statistics:
- 18 PDF objects out of 1000 (max. 8388607)
+ 37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

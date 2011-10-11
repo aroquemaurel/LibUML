@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,openany]{report}
+\documentclass[12pt,a4paper,openany]{article}
 
 \usepackage{lmodern}
 \usepackage{xcolor}
@@ -32,24 +32,103 @@
 \usepackage{multido}
 \usepackage{amssymb}
 
-
 %\include{/home/satenske/cours/listing_algo} %prise en charge du langage algo
 
 \title{Cahier des Charges Fonctionnelles}
 \date{\today}
 
-\lhead{Cahier Des Charges Fonctionnelles}
+\lhead{Cahier des Charges Fonctionnelles}
 \chead{}
-\rhead{\thepage}
+\rhead{Bibliothèque d'objets graphiques UML}
 
 \lfoot{Université paul sabatier Toulouse III}
 \cfoot{\thepage}
 \rfoot{Pour M. Millan}
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss
+\clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{}
+\begin{flushleft}
+	\vspace{1cm}
+	Antoine de Roquemaurel\\ 
+	Mathieu Soum\\
+	Geoffroy Subias\\
+	Marie-Ly Tang\\
+	\textit{Groupe B}\\
+\end{flushleft}
+\begin{flushright}
+	\vspace{-3cm}
+	Pour Monsieur Millan
+\end{flushright}
+\vfill
+\vspace{1cm}
+\begin{flushleft}
+\usefont{OT1}{ptm}{m}{n}
+\huge \@title
+\end{flushleft}
+\par
+\hrule height 4pt
+\par
+\begin{flushright}
+\usefont{OT1}{phv}{m}{n}
+\Large \@author
+\par
+\end{flushright}
+\vspace{1cm}
+\vfill
+\vfill
+\bas{}{\@location, le \@date}{}
+}%
+\cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{Amiens}\blurb{}
+\makeatother
+\title{Cahier des Charges Fonctionnelles}
+\author{Bibliothèque d'objets graphique UML}
 
-\def\cleardoublepage{\clearpage}
-\def\clearpage{\hspace{0cm}}
+\location{Toulouse}
+\blurb{%
+Université Paul Sabatier -- Toulouse III\\
+IUT A - Toulouse Rangueil\\
+\textbf{Projet tutoré}\\[1em]
+}%
 \pagestyle{fancy}
 \begin{document}
 	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
+	\section{Contexte}
+	bla bla
+	\section{Description de la demande}
+	bla bla
+	\section{Les contraintes}
+	bla bla
 
 \end{document}
