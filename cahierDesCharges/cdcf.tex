@@ -1,11 +1,12 @@
 \documentclass[12pt,a4paper,openany]{article}
-
+%%%% JNLP 
 \usepackage{lmodern}
 \usepackage{xcolor}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{pdfpages}
 %\usepackage[frenchb]{babel}
 %\usepackage{layout}
 %\usepackage{setspace}
@@ -34,16 +35,15 @@
 
 %\include{/home/satenske/cours/listing_algo} %prise en charge du langage algo
 
-\title{Cahier des Charges Fonctionnelles}
 \date{\today}
 
-\lhead{Cahier des Charges Fonctionnelles}
-\chead{}
-\rhead{Bibliothèque d'objets graphiques UML}
+\chead{Ce document est un outil pédagogique il ne vaut en aucun cas contrat}
+\rhead{}
+\lhead{}
 
-\lfoot{Université paul sabatier Toulouse III}
-\cfoot{\thepage}
-\rfoot{Pour M. Millan}
+\lfoot{Université Paul Sabatier Toulouse III}
+\rfoot{--~\thepage~--}
+\cfoot{}
 \makeatletter
 \def\clap#1{\hbox to 0pt{\hss #1\hss}}%
 \def\ligne#1{%
@@ -59,8 +59,7 @@
 \def\bas#1#2#3{%
 \hbox to \hsize{%
 \rlap{\vbox{\raggedright #1}}%
-\hss
-\clap{\vbox{\centering #2}}%
+\hss \clap{\vbox{\centering #2}}%
 \hss
 \llap{\vbox{\raggedleft #3}}}}%
 \def\maketitle{%
@@ -68,15 +67,18 @@
 \haut{}{\@blurb}{}
 \begin{flushleft}
 	\vspace{1cm}
-	Antoine de Roquemaurel\\ 
-	Mathieu Soum\\
-	Geoffroy Subias\\
-	Marie-Ly Tang\\
+	Antoine de \bsc{Roquemaurel}\\ 
+	Mathieu \bsc{Soum}\\
+	Geoffroy \bsc{Subias}\\
+	Marie-Ly \bsc{Tang}\\
 	\textit{Groupe B}\\
 \end{flushleft}
 \begin{flushright}
 	\vspace{-3cm}
-	Pour Monsieur Millan
+	Pour Monsieur \bsc{Millan} (Client)\\
+	Pour Madame \bsc{Kross} (Tuteure) \\
+	Pour Monsieur \bsc{Marquié} (Correcteur)
+
 \end{flushright}
 \vfill
 \vspace{1cm}
@@ -109,8 +111,8 @@
 \title{}
 \location{Amiens}\blurb{}
 \makeatother
-\title{Cahier des Charges Fonctionnelles}
-\author{Bibliothèque d'objets graphique UML}
+\title{Cahier des Charges Fonctionnel}
+\author{Bibliothèque d'objets graphiques UML}
 
 \location{Toulouse}
 \blurb{%
@@ -125,10 +127,104 @@ IUT A - Toulouse Rangueil\\
 	\tableofcontents
 	\newpage
 	\section{Contexte}
-	bla bla
+	\subsection{Présentation du groupe projet}
+	Notre groupe projet est composé de quatre étudiants de deuxième année de DUT\footnote{Diplôme Université de Technologie} Informatique à l'IUT\footnote{Institut Universitaire de Technologies} A de Toulouse, voici la composition de l'équipe: 
+	\begin{itemize}
+		\item Antoine de \bsc{Roquemaurel} 
+		\item Mathieu \bsc{Soum} 
+		\item Geoffroy \bsc{Subias}
+		\item Marie-Ly \bsc{Tang} 
+	\end{itemize}
+	Nous avons monté ce groupe, car nos compétences sont complémentaires et que nous savons déjà comment chacun travaille. Antoine de \bsc{Roquemaurel} et Mathieu \bsc{Soum} sont spécialisés en programmation par objet, Geoffroy \bsc{Subias} maîtrise la modélisation UML\footnote{Unified Modelling Language} et Marie-Ly \bsc{Tang} 
+	s'occupera principalement de l'organisation et de la gestion de projet.
+		
+	\subsection{Présentation du commanditaire}
+	Monsieur Thierry \bsc{Millan} est un enseignant à l'IUT A Toulouse et chercheur à l'IRIT\footnote{Institut de Recherche Informatique de Toulouse}
+	\subsection{Présentation du projet}
+		L'objectif du projet est de réaliser une bibliothèque d'objets graphiques représentant les 
+		différents éléments de modélisation de la norme UML 2.
+		\subsubsection{Risques}
+		\begin{center}
+		\begin{tabular}{|p{5.5cm}|c|p{6.5cm}|p{2.5cm}|}
+				\hline
+				\textbf{Risques} & \textbf{Pertinence} & \textbf{Solution} & \textbf{Responsable} \\
+				\hline
+				Crash du disque dur contenant le projet & Moyenne & Avoir le projet sur plusieurs périphériques & Mathieu\\
+				\hline
+				Indisponibilité du serveur permettant le travail collaboratif & Haute& Héberger le serveur à domicile pour effectuer une maintenance rapide. 
+				Ajout d'un onduleur & Antoine  \\
+				\hline
+				Ne respecte pas le besoin du client & Moyenne & Voir le client régulierement (environ toutes les deux semaines) & Marie-Ly\\ 
+				\hline
+				Retard du projet & Haute & Respecter scrupuleusement le planning et le Gantt & Geoffroy\\
+				\hline
+				Évolution du besoin du client & Moyenne &  Travailler par incrément, en rencontrant régulièrement le client  nous aurons le temps d'implémenter ses besoins et cela évitera les demandes de dernières minutes. & Marie-Ly \\ 
+				\hline
+			\end{tabular}
+		\end{center}	
 	\section{Description de la demande}
-	bla bla
+	\paragraph{}
+		Le cahier des charges fonctionnel sera évolutif car le projet sera incrémental et chaque incrément devra 
+		être validé par le client. Le cycle de développement sera un cycle à incrément court (Deux à trois semaines).
+	\paragraph{}
+		Le logiciel sera codé en Java et devra être utilisable comme composant par un autre logiciel.\\
+		L'équipe du projet devra 
+	\paragraph{Objectif du client à court terme} Au terme de notre premier incrément, l'objectif sera
+	de pouvoir utiliser des fonctionnalités de base telles que le dessin de diagramme simple, sans aucune
+	contrainte vis-à-vis de la norme UML 2.0.
+	\paragraph{Objectif du client à long terme}
+	Le projet une fois terminé devra permettre à l'utilisateur de dessiner des diagrammes UML que ce soit de séquence ou de classe.\\
+	Selon l'évolution du projet, le client se réserve le droit de modifier ces conditions pour y
+	intégrer des contraintes vis-à-vis de la norme UML 2.0 et de différencier les types de diagramme lors de leur conception. 
+	
+	\subsection{Évaluation des fonctions}
+%	\input{pieuvre.tex}\\ \\
+	\begin{tabular}{|p{2cm}|p{3cm}|p{5cm}|p{3cm}|c|}
+		\hline
+		\textbf{Référence}& \textbf{Fonction} & \textbf{Critères d'appréciations} & \textbf{Niveau} & \textbf{Flexibilité} \\
+		\hline
+			FP1 & Permet de créer un diagramme de classe & La durée pour effectuer un diagramme de classe simple & 10 minutes & $\pm$ 5 minutes\\
+		\hline
+			FP2 & Permet de créer un diagramme de séquence & La durée pour effectuer un diagramme de séquence simple & 10 minutes & $\pm$ 5 minutes\\
+		\hline
+			FC1 & Peu gourmand en mémoire & La mémoire consommée & 10\% d'une RAM\footnote{Random Acces Memory} de 2Go & $\pm$ 3 \%\\
+		\hline
+			FC2 & Portabilité & Utilisable sur différents systèmes exploitation & Fonctionne sur Windows, Mac OS, Linux, *BSD & Aucune \\
+		\hline
+			FC3 & Ergonomie & Nombre de clics pour un élément simple & 5 clics & $\pm$ 2\\
+		\hline
+			FC4 & Documentation & ? & &\\ 
+		\hline
+			FC5 & Propreté du code & PMD faible & ? & ?\\ 
+		\hline
+	\end{tabular}
 	\section{Les contraintes}
-	bla bla
-
+	\subsection{Contraintes de délais}
+	Afin de bien s'organiser, nous avons décidé de choisir des horaires fixes de réunions. L'équipe de projet se réunira tous
+	les jeudis entre 11h et 12h30. Nous rencontrerons le client un lundi sur deux à 17h afin de valider l'incrément et d'évaluer les
+	besoins de l'incrément suivant et enfin nous rencontrerons notre 
+	tuteur le mercredi à 13h.\\
+\includepdf[pagecommand={}, landscape]{projetiut-gantt.pdf}
+	\subsection{Contraintes de ressources humaines}
+	Besoin de valider chaque incréments et de nous donner les directives pour l'incrément suivant afin de pouvoir continuer le projet. \\
+	Nous n'avons pas d'horaire aménagés pour le projet, nous n'habitons pas tous dans la même ville, ce qui peut poser des difficultés pour se voir, cependant
+	nous aurons la possibilité de travailler à distance. 
+	\subsection{Contraintes de ressources matérielles}
+	Le projet devra être programmé en Java et utiliser l'EDI\footnote{Environnement de Développement Intégré} Netbeans. \\
+	Il devra être possible d'intégrer la bibliothèque en tant que composant dans un autre logiciel. \\
+	La documentation relative au projet ne devra pas être éditée sur support papier, nous utiliserons donc javaDoc pour produire une documentation 
+	HTML\footnote{HyperText Markup Language}.  
+	
+% Gantt => une réunion par semaine (projet) 
+% Cahier des charges 
+% Rendu du cahier des charges
+% Réunion avec le client Lundi 17h
+% Réunion avec le tuteur Mercredi 13h
+% Tests d'intégration
+% Rendez vous avec le client pour valider
+% Soutenance + Fin projet 
+% Après chaque incréments tests de non regression 
+% Test avant le developpement
+% Chaque incrément => Analayse
+% incréments = deux semaines
 \end{document}

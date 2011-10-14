@@ -1,4 +1,16 @@
 \select@language {french}
 \contentsline {section}{\numberline {1}Contexte}{3}
+\contentsline {subsection}{\numberline {1.1}Pr\IeC {\'e}sentation du groupe projet}{3}
+\contentsline {subsection}{\numberline {1.2}Pr\IeC {\'e}sentation du commanditaire}{3}
+\contentsline {subsection}{\numberline {1.3}Pr\IeC {\'e}sentation du projet}{3}
+\contentsline {subsubsection}{\numberline {1.3.1}Risques}{3}
 \contentsline {section}{\numberline {2}Description de la demande}{3}
-\contentsline {section}{\numberline {3}Les contraintes}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{Objectif du client \IeC {\`a} court terme}{4}
+\contentsline {paragraph}{Objectif du client \IeC {\`a} long terme}{4}
+\contentsline {subsection}{\numberline {2.1}\IeC {\'E}valuation des fonctions}{4}
+\contentsline {section}{\numberline {3}Les contraintes}{4}
+\contentsline {subsection}{\numberline {3.1}Contraintes de d\IeC {\'e}lais}{4}
+\contentsline {subsection}{\numberline {3.2}Contraintes de ressources humaines}{6}
+\contentsline {subsection}{\numberline {3.3}Contraintes de ressources mat\IeC {\'e}rielles}{6}
