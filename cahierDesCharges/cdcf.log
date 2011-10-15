@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.22)  15 OCT 2011 14:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.22)  15 OCT 2011 14:43
 entering extended mode
  %&-line parsing enabled.
 **cdcf.tex
@@ -844,37 +844,32 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [2
 
 ]
-Overfull \hbox (1.84557pt too wide) in paragraph at lines 150--151
-[]\T1/lmr/bx/n/12 Responsable| 
- []
-
-
 Underfull \hbox (badness 1163) in paragraph at lines 152--152
 []\T1/lmr/m/n/12 Avoir le pro-jet sur plusieurs pé-
  []
 
 
-Underfull \hbox (badness 3179) in paragraph at lines 157--157
+Underfull \hbox (badness 3179) in paragraph at lines 154--154
 []\T1/lmr/m/n/12 Non re-spect du be-soin du
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--163
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
 []\T1/lmr/m/n/12 Mauvaise co-or-di-na-tion en-
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 163--163
+Underfull \hbox (badness 2418) in paragraph at lines 161--161
 \T1/lmr/m/n/12 trainant des di-ver-gences de
  []
 
 
-Underfull \hbox (badness 4660) in paragraph at lines 163--163
+Underfull \hbox (badness 4660) in paragraph at lines 161--162
 []\T1/lmr/m/n/12 Utiliser une plate-forme de tra-
  []
 
 
-Overfull \hbox (22.63718pt too wide) in paragraph at lines 148--166
+Overfull \hbox (24.48274pt too wide) in paragraph at lines 148--168
  [] 
  []
 
@@ -885,13 +880,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Overfull \hbox (0.94345pt too wide) in paragraph at lines 186--186
+Overfull \hbox (0.94345pt too wide) in paragraph at lines 188--188
 []\T1/lmr/bx/n/12 Référence| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--188
-\T1/lmr/m/n/12 un di-a-gramme
  []
 
 
@@ -900,47 +890,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--190
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 190--190
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
+\T1/lmr/m/n/12 un di-a-gramme
+ []
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 192--192
 []\T1/lmr/m/n/12 La durée pour ef-fectuer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
 []\T1/lmr/m/n/12 Peu gour-mand
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
 []\T1/lmr/m/n/12 10% d'une
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--194
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
 []\T1/lmr/m/n/12 Fonctionne sur
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--194
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
 \T1/lmr/m/n/12 Win-dows, Mac
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--194
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
 \T1/lmr/m/n/12 OS, Linux,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 []\T1/lmr/m/n/12 Propreté du
  []
 
 
-Overfull \hbox (9.99504pt too wide) in paragraph at lines 184--203
+Overfull \hbox (9.99504pt too wide) in paragraph at lines 186--205
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--209
+Underfull \hbox (badness 10000) in paragraph at lines 207--211
 
  []
 
@@ -993,7 +988,7 @@ s/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-texlive/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
 s/utmr8a.pfb>
-Output written on cdcf.pdf (6 pages, 188623 bytes).
+Output written on cdcf.pdf (6 pages, 188634 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
