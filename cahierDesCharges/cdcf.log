@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.28)  15 OCT 2011 11:02
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.22)  15 OCT 2011 14:31
 entering extended mode
  %&-line parsing enabled.
 **cdcf.tex
@@ -67,7 +67,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gread@gobject=\count87
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
@@ -854,7 +854,27 @@ Underfull \hbox (badness 1163) in paragraph at lines 152--152
  []
 
 
-Overfull \hbox (22.63718pt too wide) in paragraph at lines 148--164
+Underfull \hbox (badness 3179) in paragraph at lines 157--157
+[]\T1/lmr/m/n/12 Non re-spect du be-soin du
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--163
+[]\T1/lmr/m/n/12 Mauvaise co-or-di-na-tion en-
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 163--163
+\T1/lmr/m/n/12 trainant des di-ver-gences de
+ []
+
+
+Underfull \hbox (badness 4660) in paragraph at lines 163--163
+[]\T1/lmr/m/n/12 Utiliser une plate-forme de tra-
+ []
+
+
+Overfull \hbox (22.63718pt too wide) in paragraph at lines 148--166
  [] 
  []
 
@@ -865,13 +885,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Overfull \hbox (0.94345pt too wide) in paragraph at lines 184--184
+Overfull \hbox (0.94345pt too wide) in paragraph at lines 186--186
 []\T1/lmr/bx/n/12 Référence| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--186
-\T1/lmr/m/n/12 un di-a-gramme
  []
 
 
@@ -880,47 +895,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--188
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 188--188
+Underfull \hbox (badness 10000) in paragraph at lines 190--190
+\T1/lmr/m/n/12 un di-a-gramme
+ []
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 190--190
 []\T1/lmr/m/n/12 La durée pour ef-fectuer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--190
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 []\T1/lmr/m/n/12 Peu gour-mand
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--190
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 []\T1/lmr/m/n/12 10% d'une
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
 []\T1/lmr/m/n/12 Fonctionne sur
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
 \T1/lmr/m/n/12 Win-dows, Mac
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
 \T1/lmr/m/n/12 OS, Linux,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
 []\T1/lmr/m/n/12 Propreté du
  []
 
 
-Overfull \hbox (9.99504pt too wide) in paragraph at lines 182--201
+Overfull \hbox (9.99504pt too wide) in paragraph at lines 184--203
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--207
+Underfull \hbox (badness 10000) in paragraph at lines 205--209
 
  []
 
@@ -957,10 +977,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6] (./cdcf.aux) ) 
 Here is how much of TeX's memory you used:
- 11711 strings out of 495061
- 189571 string characters out of 1182621
- 250294 words of memory out of 3000000
- 14596 multiletter control sequences out of 15000+50000
+ 11714 strings out of 495061
+ 189624 string characters out of 1182621
+ 251563 words of memory out of 3000000
+ 14599 multiletter control sequences out of 15000+50000
  52466 words of font info for 48 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  47i,16n,49p,361b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -973,7 +993,7 @@ s/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-texlive/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
 s/utmr8a.pfb>
-Output written on cdcf.pdf (6 pages, 188411 bytes).
+Output written on cdcf.pdf (6 pages, 188623 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
