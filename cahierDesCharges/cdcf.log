@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.22)  15 OCT 2011 15:08
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.28)  16 OCT 2011 14:29
 entering extended mode
  %&-line parsing enabled.
 **cdcf.tex
@@ -67,7 +67,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
 \Gread@gobject=\count87
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
@@ -930,7 +930,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--202
  []
 
 
-Overfull \hbox (9.99504pt too wide) in paragraph at lines 186--205
+Overfull \hbox (11.6915pt too wide) in paragraph at lines 186--205
 [][] 
  []
 
@@ -976,10 +976,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6] (./cdcf.aux) ) 
 Here is how much of TeX's memory you used:
- 11714 strings out of 495061
- 189624 string characters out of 1182621
- 251563 words of memory out of 3000000
- 14599 multiletter control sequences out of 15000+50000
+ 11709 strings out of 495061
+ 189548 string characters out of 1182621
+ 251294 words of memory out of 3000000
+ 14594 multiletter control sequences out of 15000+50000
  52466 words of font info for 48 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  47i,16n,49p,361b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -992,7 +992,7 @@ s/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-texlive/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
 s/utmr8a.pfb>
-Output written on cdcf.pdf (6 pages, 189080 bytes).
+Output written on cdcf.pdf (6 pages, 189032 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
