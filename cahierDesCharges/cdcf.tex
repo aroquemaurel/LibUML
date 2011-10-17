@@ -134,14 +134,13 @@ IUT A - Toulouse Rangueil\\
 				\hline
 				Retard du projet & Haute & Respecter scrupuleusement le planning et le Gantt & Geoffroy\\
 				\hline
-				Limite des compétences & Faible & Se renseigner en autodidactie (internet)& Geoffroy\\ 
+				Limite des compétences & Haute & Se renseigner en autodidactie (internet)& Geoffroy\\ 
 				\hline
-				Mauvaise coordination entrainant des divergences de développement& Faible & Utiliser une plateforme de travail collaboratif (Redmine) afin que
+				Mauvaise coordination entrainant des divergences de développement& Moyenne & Utiliser une plateforme de travail collaboratif (Redmine) afin que
 				chaque membre soit au courant des évolutions du projet & Antoine \\
 				\hline
-				Crash du disque dur contenant le projet & Moyenne & Avoir le projet sur plusieurs périphériques & Mathieu\\
-				\hline
-				Indisponibilité du serveur permettant le travail collaboratif & Haute& Héberger le serveur à domicile pour effectuer une maintenance rapide.
+				Crash du disque dur contenant le projet & Faible& Avoir le projet sur plusieurs périphériques & Mathieu\\ \hline
+				Indisponibilité du serveur permettant le travail collaboratif & Moyenne & Héberger le serveur à domicile pour effectuer une maintenance rapide.
 				Ajout d'un onduleur & Antoine  \\
 				\hline
 			\end{tabular}
@@ -151,12 +150,12 @@ IUT A - Toulouse Rangueil\\
 		Le cahier des charges fonctionnel sera évolutif car le projet sera incrémental et chaque incrément devra 
 		être validé par le client. Le cycle de développement sera un cycle à incrément court (Deux à trois semaines).
 	\paragraph{}
-		Le logiciel sera codé en Java et devra être utilisable comme composant par un autre logiciel.\\
+		Le logiciel sera codé en Java et devra être utilisable comme composant par d'autres logiciels.\\
 	\paragraph{Objectif du client à court terme} Au terme de notre premier incrément, l'objectif sera
-	de pouvoir utiliser des fonctionnalités de base telles que le dessin de diagramme simple, sans aucune
+	de utiliser des fonctionnalités de base telles que le dessin de diagramme simple, sans aucune
 	contrainte vis-à-vis de la norme UML 2.0.
 	\paragraph{Objectif du client à long terme}
-	Le projet une fois terminé devra permettre à l'utilisateur de dessiner des diagrammes UML de séquence ou de classe.\\
+	Le projet une fois terminé devra permettre à l'utilisateur de dessiner des diagrammes UML de séquence ou de classes.\\
 	Selon l'évolution du projet, le client se réserve le droit de modifier ces conditions pour y
 	intégrer des contraintes vis-à-vis de la norme UML 2.0 et de différencier les types de diagramme lors de leur conception. 
 	
@@ -175,19 +174,19 @@ IUT A - Toulouse Rangueil\\
 	\end{tabular}
 	\subsubsection{Fonctions contraintes}
 	Les fonctions contraintes, sont à mettre en place pour améliorer l'utilisation du logiciel.\\
-	\begin{tabular}{|p{2cm}|p{3cm}|p{5cm}|p{3cm}|c|}
+	\begin{tabular}{|p{2cm}|p{3.5cm}|p{5cm}|p{3cm}|c|}
 		\hline
 		\textbf{Référence}& \textbf{Fonction} & \textbf{Critères d'appréciations} & \textbf{Niveau} & \textbf{Flexibilité} \\
 		\hline
-			FC1 & Rapidité et légèreté & Peu gourmand en mémoire & 10\% d'une RAM\footnotemark de 2Go & $\pm$ 3 \%\\
+			FC1 & Rapidité et légèreté & Peu gourmand en mémoire & 10\% d'une RAM \footnotemark~de 2 Go & $\pm$ 3 \%\\
 		\hline
-			FC2 & Portabilité & Utilisable sur différents systèmes exploitation & Fonctionne sur Windows, Mac OS, Linux, *BSD & Aucune \\
+			FC2 & Portabilité & Utilisable sur différents systèmes d'exploitation & Fonctionne sur Windows, Mac OS, Linux & Aucune \\
 		\hline
 			FC3 & Ergonomie & Nombre de clics pour un élément simple & 5 clics & $\pm$ 2\\
 		\hline
 			FC4 & Documentation & Temps passé pour trouver la documentation se rapportant à une méthode &30 secondes& $\pm$10secondes \\ 
 		\hline
-			FC5 & Propreté du code & Complexité cyclomatique& 25 & +5\\ 
+			FC5 & Propreté du code & Complexité cyclomatique& 15 & +5\\ 
 		\hline
 	\end{tabular}
 	\footnotetext{Random Access Memory}
@@ -195,9 +194,10 @@ IUT A - Toulouse Rangueil\\
 	\section{Les contraintes}
 	\subsection{Contraintes de délais}
 	Afin de bien s'organiser, nous avons décidé de choisir des horaires fixes de réunions. L'équipe de projet se réunira tous
-	les jeudis entre 11h et 12h30. Nous rencontrerons le client un lundi sur deux à 17 heure afin de valider l'incrément et d'évaluer les
-	besoins de l'incrément suivant et enfin nous verrons notre tuteur un mercredi toutes les deux semaines à 13 heure. \\
-\includepdf[pagecommand={}, landscape]{projetiut-gantt.pdf}
+	les jeudis entre 11h et 12h30. Nous rencontrerons le client un lundi sur deux à 17 heures afin de valider l'incrément et d'évaluer les
+	besoins de l'incrément suivant et enfin nous verrons notre tuteur un mercredi toutes les deux semaines à 13 heure. 
+	Pour plus de détails sur la gestion du temps dans le projet, veuillez vous repporter à l'annexe \ref{gantt} page \pageref{gantt}.
+	
 	\subsection{Contraintes de ressources humaines}
 	\begin{itemize}
 		\item Le client doit valider chaque incrément et nous donner les directives pour l'incrément suivant afin de pouvoir continuer le projet. 
@@ -206,9 +206,9 @@ IUT A - Toulouse Rangueil\\
 	\subsection{Contraintes de ressources matérielles}
 	\begin{itemize}
 		\item Le projet devra être programmé en Java et utiliser l'EDI\footnote{Environnement de Développement Intégré} Netbeans. 
-		\item Il devra être possible d'intégrer la bibliothèque en tant que composant dans un autre logiciel. 
-		\item La documentation relative au projet ne devra pas être éditée sur support papier, nous utiliserons donc javaDoc pour produire une documentation 
-	HTML\footnote{HyperText Markup Language}.  
+		\item Il devra être possible d'intégrer la bibliothèque en tant que composant dans d'autres logiciels. 
+		\item La documentation relative au projet ne devra pas être éditée sur support papier, nous utili\-serons donc javadoc pour produire une documentation 
+	au format HTML\footnote{HyperText Markup Language}.  
 	\end{itemize}
 	
 % Gantt => une réunion par semaine (projet) 
@@ -232,4 +232,14 @@ IUT A - Toulouse Rangueil\\
   Le ~..................... & Le ~..................... & Le ~..................... \\
   A ~...................... & A ~...................... & A ~....................... \\
 \end{tabular}
+\newpage
+\appendix
+\section{Gantt}
+\label{gantt}
+\hspace{20px}
+\vspace{-330px}
+\includegraphics[height=430px, angle=-90]{projetiut-gantt.png}
+
+%\includepdf[pagecommand={}, landscape]{projetiut-gantt.pdf}
+%\includepdfmerge{projetiut-gantt.pdf}
 \end{document}
