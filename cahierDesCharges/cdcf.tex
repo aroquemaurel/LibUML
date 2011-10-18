@@ -12,6 +12,7 @@
 \usepackage{multido}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usepackage{makeidx}
 
 \date{\today}
 
@@ -22,6 +23,7 @@
 \lfoot{Université Paul Sabatier Toulouse III}
 \rfoot{--~\thepage~--}
 \cfoot{}
+\makeglossary
 \makeatletter
 \def\clap#1{\hbox to 0pt{\hss #1\hss}}%
 \def\ligne#1{%
@@ -98,6 +100,9 @@ Université Paul Sabatier -- Toulouse III\\
 IUT A - Toulouse Rangueil\\
 \textbf{Projet tutoré}\\[1em]
 }%
+
+
+
 \pagestyle{fancy}
 \begin{document}
 	\maketitle
@@ -229,7 +234,7 @@ IUT A - Toulouse Rangueil\\
 		\item Le projet devra être programmé en Java et utiliser l'EDI\footnote{Environnement de Développement Intégré} Netbeans. 
 		\item Il devra être possible d'intégrer la bibliothèque en tant que composant dans d'autres logiciels. 
 		\item La documentation relative au projet ne devra pas être éditée sur support papier, nous utili\-serons donc javadoc pour produire une documentation 
-	au format HTML\footnote{HyperText Markup Language}.  
+			au format HTML\footnote{HyperText Markup Language}.  
 	\end{itemize}
 	
 % Gantt => une réunion par semaine (projet) 
@@ -261,6 +266,10 @@ IUT A - Toulouse Rangueil\\
 \vspace{-330px}
 \includegraphics[height=430px, angle=-90]{projetiut-gantt.png}
 
+\section{Glossaire}
+	\paragraph{Incrément} bla bla bla
+	\paragraph{UML} bla bla bla 
+	\paragraph{Complexisté cyclomatique} bla bla bla
 %\includepdf[pagecommand={}, landscape]{projetiut-gantt.pdf}
 %\includepdfmerge{projetiut-gantt.pdf}
 \end{document}
