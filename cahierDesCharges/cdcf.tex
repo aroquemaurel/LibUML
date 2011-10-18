@@ -11,10 +11,11 @@
 \usepackage{fancyhdr}
 \usepackage{multido}
 \usepackage{amssymb}
+\usepackage{tikz}
 
 \date{\today}
 
-\chead{Ce document est un outil pédagogiqueeil ne vaut en aucun cas contrat}
+\chead{Ce document est un outil pédagogique, il ne vaut en aucun cas contrat}
 \rhead{}
 \lhead{}
 
@@ -120,7 +121,25 @@ IUT A - Toulouse Rangueil\\
 	\subsection{Présentation du projet}
 		L'objectif du projet est de réaliser une bibliothèque d'objets graphiques représentant les 
 		différents éléments de modélisation de la norme UML 2.
-		\subsubsection*{Risques}
+		\subsubsection{La norme UML} 
+			UML est un langage de modélisation graphique à base de pictogramme.\\
+			Ce langage est utilisée dans le cadre de la conception orientée objet, il est divisée en plusieurs diagrammes, en voici quelques exemple: 
+			\begin{itemize}
+				\item Diagramme de classes
+				\item Diagramme des cas d'utilisation
+				\item Diagramme de séquence
+				\item Diagramme de composants
+				\item Et beaucoup d'autres diagrammes encore! 
+			\end{itemize}
+			Dans le cadre du projet, nous devons créer une bibliothèque graphique permettant de dessiner différents pictogrammes.
+		\subsubsection{Réutilisation de la bibliothèque}
+		La bibliothèque devra pouvoir être réutilisée en tant que composant dans d'autres logiciels,
+		chaque objet graphique de la librairie devra pouvoir être intégrée séparemment dans d'autres logiciels 
+		et ne devra donc pas être liée à d'autres composants.
+		\subsubsection{Propreté du code} Étant donné que la bibliothèque sera intégrée dans d'autres logiciels, le client
+		à besoin d'un code qui soit propre, facile à comprendre. Ainsi, nous devons avoir le moins de ligne de code
+		possible pour le plus de fonctionnalités. Également, la documentation devra être facile à comprendre.
+		\subsubsection{Risques}
 		\begin{center}
 		\begin{tabular}{|p{5.5cm}|c|p{6.5cm}|c|}
 				\hline
@@ -167,9 +186,11 @@ IUT A - Toulouse Rangueil\\
 		\hline
 		\textbf{Référence}& \textbf{Fonction} & \textbf{Critères d'appréciations} & \textbf{Niveau} & \textbf{Flexibilité} \\
 		\hline
-			FP1 & Permet de créer un diagramme de classe & La durée pour effectuer un diagramme de classe simple & 10 minutes & $\pm$ 5 minutes\\
+			FP1 & Permet de dessiner un diagramme de classes & La durée pour effectuer un diagramme de 10 classes & 10 minutes & $\pm$ 5 minutes\\
 		\hline
-			FP2 & Permet de créer un diagramme de séquence & La durée pour effectuer un diagramme de séquence simple & 10 minutes & $\pm$ 5 minutes\\
+			FP2 & Permet de dessiner un diagramme de séquence & La durée pour effectuer un diagramme de 5 objets & 10 minutes & $\pm$ 5 minutes\\
+		\hline
+			FP3 & Avoir un démonstrateur permettant de tester la bibliothèque & ? & ? & ? \\
 		\hline
 	\end{tabular}
 	\subsubsection{Fonctions contraintes}
@@ -178,11 +199,11 @@ IUT A - Toulouse Rangueil\\
 		\hline
 		\textbf{Référence}& \textbf{Fonction} & \textbf{Critères d'appréciations} & \textbf{Niveau} & \textbf{Flexibilité} \\
 		\hline
-			FC1 & Rapidité et légèreté & Peu gourmand en mémoire & 10\% d'une RAM \footnotemark~de 2 Go & $\pm$ 3 \%\\
+		FC1 & Rapidité et légèreté & Peu gourmand en mémoire & 10\% d'une RAM \footnotemark~de 2 Go & $\pm$ 3 \%\\
 		\hline
 			FC2 & Portabilité & Utilisable sur différents systèmes d'exploitation & Fonctionne sur Windows, Mac OS, Linux & Aucune \\
 		\hline
-			FC3 & Ergonomie & Nombre de clics pour un élément simple & 5 clics & $\pm$ 2\\
+		FC3 & Ergonomie & Nombre de clics pour un élément simple: & 5 clics &$\pm$2\\& &\begin{center}\input{diag1.tex}\end{center}&  & \\
 		\hline
 			FC4 & Documentation & Temps passé pour trouver la documentation se rapportant à une méthode &30 secondes& $\pm$10secondes \\ 
 		\hline
@@ -234,7 +255,7 @@ IUT A - Toulouse Rangueil\\
 \end{tabular}
 \newpage
 \appendix
-\section{Gantt}
+\section{Diagramme de Gantt}
 \label{gantt}
 \hspace{20px}
 \vspace{-330px}
