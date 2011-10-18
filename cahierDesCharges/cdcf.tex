@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
-\usepackage[top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage{pdfpages}
 \usepackage{listingsutf8}
 \usepackage{fancyhdr}
@@ -13,13 +13,15 @@
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{makeidx}
+\usepackage[urlbordercolor={1 1 1}]{hyperref}
+
 
 \date{\today}
 
 \chead{Ce document est un outil pédagogique, il ne vaut en aucun cas contrat}
 \rhead{}
 \lhead{}
-
+\makeindex
 \lfoot{Université Paul Sabatier Toulouse III}
 \rfoot{--~\thepage~--}
 \cfoot{}
@@ -128,10 +130,10 @@ IUT A - Toulouse Rangueil\\
 		différents éléments de modélisation de la norme UML 2.
 		\subsubsection{La norme UML} 
 			UML est un langage de modélisation graphique à base de pictogramme.\\
-			Ce langage est utilisée dans le cadre de la conception orientée objet, il est divisée en plusieurs diagrammes, en voici quelques exemple: 
+			Ce langage est utilisée dans le cadre de la conception orientée objet, il est divisé en plusieurs diagrammes, en voici quelques exemple: 
 			\begin{itemize}
 				\item Diagramme de classes
-				\item Diagramme des cas d'utilisation
+				\item Diagramme des cas d'utilisations
 				\item Diagramme de séquence
 				\item Diagramme de composants
 				\item Et beaucoup d'autres diagrammes encore! 
@@ -139,11 +141,11 @@ IUT A - Toulouse Rangueil\\
 			Dans le cadre du projet, nous devons créer une bibliothèque graphique permettant de dessiner différents pictogrammes.
 		\subsubsection{Réutilisation de la bibliothèque}
 		La bibliothèque devra pouvoir être réutilisée en tant que composant dans d'autres logiciels,
-		chaque objet graphique de la librairie devra pouvoir être intégrée séparemment dans d'autres logiciels 
+		chaque objet graphique de la librairie devra pouvoir être intégrée séparément dans d'autres logiciels 
 		et ne devra donc pas être liée à d'autres composants.
 		\subsubsection{Propreté du code} Étant donné que la bibliothèque sera intégrée dans d'autres logiciels, le client
-		à besoin d'un code qui soit propre, facile à comprendre. Ainsi, nous devons avoir le moins de ligne de code
-		possible pour le plus de fonctionnalités. Également, la documentation devra être facile à comprendre.
+		à besoin d'un code qui soit propre et facile à comprendre. Ainsi, nous devons avoir le moins de ligne de code
+		possible pour le plus de fonctionnalités, la documentation de cette librairie devra être elle aussi facile à comprendre.
 		\subsubsection{Risques}
 		\begin{center}
 		\begin{tabular}{|p{5.5cm}|c|p{6.5cm}|c|}
@@ -151,8 +153,8 @@ IUT A - Toulouse Rangueil\\
 				\textbf{Risques} & \textbf{Pertinence} & \textbf{Solution} & \textbf{Responsable} \\
 				\hline
 				Évolution du besoin du client & Moyenne &  Nous travaillerons par incréments, 
-				en rencontrant régulièrement le client  nous aurons le temps d'implémenter ses besoins et 
-				ce qui évitera les demandes de dernières minutes & Marie-Ly \\ 
+				en rencontrant régulièrement le client nous aurons le temps d'implémenter ses besoins et 
+				éviter les demandes de dernières minutes & Marie-Ly \\ 
 				\hline
 				Non respect du besoin du client & Moyenne & Voir le client régulierement (environ toutes les deux semaines) & Marie-Ly\\ 
 				\hline
@@ -182,7 +184,11 @@ IUT A - Toulouse Rangueil\\
 	Le projet une fois terminé devra permettre à l'utilisateur de dessiner des diagrammes UML de séquence ou de classes.\\
 	Selon l'évolution du projet, le client se réserve le droit de modifier ces conditions pour y
 	intégrer des contraintes vis-à-vis de la norme UML 2.0 et de différencier les types de diagramme lors de leur conception. 
-	
+	Chaque diagrammes sera un composant à part et pourra donc être séparé de tout autre objet.
+	\paragraph{} L'équipe de projet à la possibilité de se renseigner sur les autres logiciels effectuant
+	ce projet, et si le logiciel est libre, il peut réutiliser des parties de code. \\
+	Le client propose d'utiliser la librairie java Jgraph permettant de dessiner des graphes, cependant l'équipe peut décider
+	d'utiliser une autre librairie si elle est plus simple ou correspond mieux aux attentes du client.
 	\subsection{Évaluation des fonctions}
 %	\input{pieuvre.tex}\\ \\
 	\subsubsection{Fonctions principales}
@@ -231,7 +237,7 @@ IUT A - Toulouse Rangueil\\
 	\end{itemize}
 	\subsection{Contraintes de ressources matérielles}
 	\begin{itemize}
-		\item Le projet devra être programmé en Java et utiliser l'EDI\footnote{Environnement de Développement Intégré} Netbeans. 
+		\item Le projet devra être programmé en Java et le rendu devra s'effectuer sous l'EDI\footnote{Environnement de Développement Intégré} Netbeans. 
 		\item Il devra être possible d'intégrer la bibliothèque en tant que composant dans d'autres logiciels. 
 		\item La documentation relative au projet ne devra pas être éditée sur support papier, nous utili\-serons donc javadoc pour produire une documentation 
 			au format HTML\footnote{HyperText Markup Language}.  
@@ -267,9 +273,23 @@ IUT A - Toulouse Rangueil\\
 \includegraphics[height=430px, angle=-90]{projetiut-gantt.png}
 
 \section{Glossaire}
-	\paragraph{Incrément} bla bla bla
-	\paragraph{UML} bla bla bla 
-	\paragraph{Complexisté cyclomatique} bla bla bla
-%\includepdf[pagecommand={}, landscape]{projetiut-gantt.pdf}
-%\includepdfmerge{projetiut-gantt.pdf}
+	\paragraph{Complexité cyclomatique} Outil de métrologie logicielle permettant de mesurer la complexité d'un programme. Cette mesure comptabilise le nombre de chemin possible au travers d'un programme représenté sous la forme d'un graphe.
+	\paragraph{Diagramme de classes} Schéma utilisé en génie logiciel pour représenter les classes et les interfaces des systèmes
+	ainsi que les différentes relations entre celle-ci. Ce diagramme fait partie de la partie statique d'UML.
+	\paragraph{Diagramme de séquence} Représentation graphique des interactions entre les acteurs et le système selon un ordre 
+	chronologique. Ce diagramme fait partie de la partie dynamique d'UML.
+	\paragraph{EDI} Environnement de Développement Intégré (ou IDE en Anglais). Programme regroupant un ensemble d'outils pour développement de logiciels, un EDI
+	est prévu pour simplifier la tâche du développeur.
+	\paragraph{Incrément} Fonctionnalités du logiciel, ayant un cycle logiciel lui étant propre (Analyse, Développement, Tests), cette 
+	fonctionnalité doit être opérationnel pour que l'incrément soit terminé.  Il doit améliorer le logiciel par rapport à l'incrément précédent, 
+	et ne doit pas détériorer les fonctionnalités précédentes.
+	\paragraph{Java} Langage de programmation orienté objet moderne, il compile le programme pour ensuite l'exécuter sur une machine Java, ainsi le programme une fois
+	compilé peut être exécuté sur différentes plateforme.
+	\paragraph{UML} (Unified Modeling Language) Langage de modélisation graphique à base de pictogramme. Il est apparu dans un monde du génie logiciel dans le cadre de la conception orientée objet. Ce langage est composés de différents diagrammes, allant du développement à la simple analyse des besoins. 
+\section{Bibliographie}
+\begin{thebibliography}{1}
+	\bibitem{coursUML} Thierry \bsc{Millan} Cours sur la modélisation UML, 2011 
+	\bibitem{coursQualite} Thierry \bsc{Millan} Cours sur la qualitée logicielle, 2011 
+	\bibitem{wikiUML} Article sur UML \url{http://fr.wikipedia.org/wiki/Unified_Modeling_Language}, 2011 
+\end{thebibliography}
 \end{document}
