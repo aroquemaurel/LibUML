@@ -142,7 +142,7 @@ IUT A - Toulouse Rangueil\\
 		chaque objet graphique de la librairie pourra être intégré séparément à d'autres projets, 
 		et ainsi être réutilisée dans d'autres objectifs ou en association avec d'autres composants.
 		\subsubsection{Propreté du code}Le projet ayant dans l'optique une réutilisation du résultat dans d'autres applications,
-		le client souhaite avoir un code propre et optimisé (factorisé) afin qu'il soit le plus rapide et le plus abordable pour
+		le client souhaite avoir un code propre et optimisé (factorisé) afin qu'il soit le plus rapide et le plus abordable possible pour
 		les futurs utilisateurs de notre composant. De plus, une documentation sera générée via l'outil Javadoc et devra être elle aussi
 		complète, détaillée et facile à comprendre.
 		\subsubsection{Risques}
@@ -177,17 +177,17 @@ IUT A - Toulouse Rangueil\\
 	\paragraph{}
 		Le logiciel sera codé en Java et devra être utilisable comme composant par d'autres logiciels.\\
 	\paragraph{Objectif du client à court terme} Au terme de notre premier incrément, l'objectif sera
-	de utiliser des fonctionnalités de base telles que le dessin de diagramme simple, sans aucune
+	de pouvoir dessiner des diagrammes de classes reprenant la plupars des pictogrammes, sans aucune
 	contrainte vis-à-vis de la norme UML 2.0.
 	\paragraph{Objectif du client à long terme}
 	Le projet une fois terminé devra permettre à l'utilisateur de dessiner des diagrammes UML de séquence ou de classes.\\
 	Selon l'évolution du projet, le client se réserve le droit de modifier ces conditions pour y
 	intégrer des contraintes vis-à-vis de la norme UML 2.0 et de différencier les types de diagramme lors de leur conception. 
-	Chaque diagrammes sera un composant à part et pourra donc être séparé de tout autre objet.
-	\paragraph{} L'équipe de projet à la possibilité de se renseigner sur les autres logiciels effectuant
-	ce projet, et si le logiciel est libre, il peut réutiliser des parties de code. \\
-	Le client propose d'utiliser la librairie java Jgraph permettant de dessiner des graphes, cependant l'équipe peut décider
-	d'utiliser une autre librairie si elle est plus simple ou correspond mieux aux attentes du client.
+	Chaque diagrammes sera un composant à part et pourra donc être distingué comme composant indépendant.
+	\paragraph{} L'équipe de projet à la possibilité de se renseigner sur d'éventuels logiciels
+	existant et aillant le même but afin de s'en inspirer ou de récupérer des morceaux de codes pouvant être intégrés au projet, si le logiciel existant distribue son code source librement. \\
+	Le client propose d'utiliser la librairie java JGraph permettant de dessiner des pictogrammes simples, cependant l'équipe peut décider
+	d'utiliser une autre librairie si elle en trouve une plus simple ou qui correspond mieux aux attentes du client.
 	\subsection{Évaluation des fonctions}
 %	\input{pieuvre.tex}\\ \\
 	\subsubsection{Fonctions principales}
@@ -200,7 +200,7 @@ IUT A - Toulouse Rangueil\\
 		\hline
 			FP2 & Permet de dessiner un diagramme de séquence & La durée pour effectuer un diagramme de 5 objets & 10 minutes & $\pm$ 5 minutes\\
 		\hline
-			FP3 & Avoir un démonstrateur permettant de tester la bibliothèque & ? & ? & ? \\
+			FP3 & Avoir un démonstrateur permettant de tester la bibliothèque & Toutes les fonctionnalités disponnibles doivent pouvoir être testés & Toutes les fonctionnalités implémentées au moment du test & Aucune \\
 		\hline
 	\end{tabular}
 	\subsubsection{Fonctions contraintes}
@@ -230,15 +230,16 @@ IUT A - Toulouse Rangueil\\
 	Pour plus de détails sur la gestion du temps dans le projet, veuillez vous repporter à l'annexe \ref{gantt} page \pageref{gantt}.
 	
 	\subsection{Contraintes de ressources humaines}
+	Il ne sera pas tenu rigueur de tout retard pris sur des tâches dépendantes du client.
 	\begin{itemize}
-		\item Le client doit valider chaque incrément et nous donner les directives pour l'incrément suivant afin de pouvoir continuer le projet. 
+		\item Le client doit valider chaque incrément et nous donner les directives pour l'incrément suivant afin de pouvoir continuer le projet. Cette étape sera réalisée lors des réunions citées un paragraphe plus haut.
 		\item Nous n'avons pas d'horaires aménagés pour le projet et nous n'habitons pas tous dans la même ville, ce qui peut poser des difficultés pour se voir, cependant nous aurons la possibilité de travailler à distance et le jeudi midi.
 	\end{itemize}
 	\subsection{Contraintes de ressources matérielles}
 	\begin{itemize}
 		\item Le projet devra être programmé en Java et le rendu devra s'effectuer sous l'EDI\footnote{Environnement de Développement Intégré} Netbeans. 
 		\item Il devra être possible d'intégrer la bibliothèque en tant que composant dans d'autres logiciels. 
-		\item La documentation relative au projet ne devra pas être éditée sur support papier, nous utili\-serons donc javadoc pour produire une documentation 
+		\item La documentation relative au projet ne devra pas être éditée sur support papier, nous utili\-serons donc Javadoc pour produire une documentation 
 			au format HTML\footnote{HyperText Markup Language}.  
 	\end{itemize}
 	
@@ -274,7 +275,7 @@ IUT A - Toulouse Rangueil\\
 \section{Glossaire}
 	\paragraph{Complexité cyclomatique} Outil de métrologie logicielle permettant de mesurer la complexité d'un programme. Cette mesure comptabilise le nombre de chemin possible au travers d'un programme représenté sous la forme d'un graphe.
 	\paragraph{Diagramme de classes} Schéma utilisé en génie logiciel pour représenter les classes et les interfaces des systèmes
-	ainsi que les différentes relations entre celle-ci. Ce diagramme fait partie de la partie statique d'UML.
+	ainsi que les différentes relations entre celles-ci. Ce diagramme est inclus dans la partie statique d'UML.
 	\paragraph{Diagramme de séquence} Représentation graphique des interactions entre les acteurs et le système selon un ordre 
 	chronologique. Ce diagramme fait partie de la partie dynamique d'UML.
 	\paragraph{EDI} Environnement de Développement Intégré (ou IDE en Anglais). Programme regroupant un ensemble d'outils pour développement de logiciels, un EDI
