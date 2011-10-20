@@ -13,7 +13,7 @@
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{makeidx}
-\usepackage[urlbordercolor={1 1 1}]{hyperref}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, urlcolor=blue]{hyperref}
 
 
 \date{\today}
@@ -58,7 +58,7 @@
 \begin{flushright}
 	\vspace{-3cm}
 	Pour Monsieur \bsc{Millan} (Client)\\
-	Pour Madame \bsc{Kross} (Tuteur) \\
+	Pour Madame \bsc{Kross} (Tutrice) \\
 	Pour Monsieur \bsc{Marquié} (Correcteur)
 
 \end{flushright}
@@ -100,7 +100,7 @@
 \blurb{%
 Université Paul Sabatier -- Toulouse III\\
 IUT A - Toulouse Rangueil\\
-\textbf{Projet tutoré}\\[1em]
+\textbf{Projet tuteuré}\\[1em]
 }%
 
 
@@ -128,18 +128,18 @@ IUT A - Toulouse Rangueil\\
 		L'objectif du projet est de réaliser une bibliothèque d'objets graphiques représentant les 
 		différents éléments de modélisation de la norme UML 2.
 		\subsubsection{La norme UML} 
-			UML est un langage de modélisation graphique à base de pictogramme simples, chacun représentant un concept particulier.\\
-			Ce langage est utilisée dans le cadre de la conception orientée objet, il est divisé en plusieurs diagrammes, en voici quelques exemple (la liste n'est pas exhaustive): 
+			UML est un langage de modélisation graphique à base de pictogrammes simples, chacun représentant un concept particulier.\\
+			Ce langage est utilisé dans le cadre de la conception orientée objet, il est divisé en plusieurs diagrammes, en voici quelques exemples (la liste n'est pas exhaustive): 
 			\begin{itemize}
 				\item Diagramme de classes
 				\item Diagramme des cas d'utilisations
 				\item Diagramme de séquence
 				\item Diagramme de composants
 			\end{itemize}
-			Dans le cadre du projet, nous devons créer une bibliothèque graphique permettant de dessiner différents pictogrammes.
+			Dans le cadre du projet, nous devons créer une bibliothèque graphique qui permettra ultérieurement de réaliser des diagrammes.
 		\subsubsection{Réutilisation de la bibliothèque}
-		La bibliothèque devra pouvoir être réutilisée en tant que composant dans d'autres logiciels,
-		chaque objet graphique de la librairie pourra être intégré séparément à d'autres projets, 
+		La bibliothèque devra être utilisée en tant que composant dans d'autres logiciels,
+		chaque objet graphique de la bibliothèque pourra être intégré séparément à d'autres projets, 
 		et ainsi être réutilisée dans d'autres objectifs ou en association avec d'autres composants.
 		\subsubsection{Propreté du code}Le projet ayant dans l'optique une réutilisation du résultat dans d'autres applications,
 		le client souhaite avoir un code propre et optimisé (factorisé) afin qu'il soit le plus rapide et le plus abordable possible pour
@@ -155,11 +155,11 @@ IUT A - Toulouse Rangueil\\
 				en rencontrant régulièrement le client nous aurons le temps d'implémenter ses besoins et 
 				éviter les demandes de dernières minutes & Marie-Ly \\ 
 				\hline
-				Non respect du besoin du client & Moyenne & Voir le client régulierement (environ toutes les deux semaines) & Marie-Ly\\ 
+				Non respect du besoin du client & Moyenne & Voir le client régulièrement (environ toutes les deux semaines) & Marie-Ly\\ 
 				\hline
 				Retard du projet & Haute & Respecter scrupuleusement le planning et le Gantt & Geoffroy\\
 				\hline
-				Limite des compétences & Haute & Se renseigner en autodidactie (internet)& Geoffroy\\ 
+				Limite des compétences & Haute & Se renseigner en autodidactie (Internet)& Geoffroy\\ 
 				\hline
 				Mauvaise coordination entrainant des divergences de développement& Moyenne & Utiliser une plateforme de travail collaboratif (Redmine) afin que
 				chaque membre soit au courant des évolutions du projet & Antoine \\
@@ -173,51 +173,51 @@ IUT A - Toulouse Rangueil\\
 	\section{Description de la demande}
 	\paragraph{}
 		Le cahier des charges fonctionnel sera évolutif car le projet sera incrémental et chaque incrément devra 
-		être validé par le client. Le cycle de développement sera un cycle à incrément court (Deux à trois semaines).
+		être validé par le client. Le cycle de développement sera un cycle à incrément court (deux à trois semaines).
 	\paragraph{}
 		Le logiciel sera codé en Java et devra être utilisable comme composant par d'autres logiciels.\\
 	\paragraph{Objectif du client à court terme} Au terme de notre premier incrément, l'objectif sera
-	de pouvoir dessiner des diagrammes de classes reprenant la plupars des pictogrammes, sans aucune
+	de dessiner des diagrammes de classes reprenant la plupart des pictogrammes, sans aucune
 	contrainte vis-à-vis de la norme UML 2.0.
 	\paragraph{Objectif du client à long terme}
-	Le projet une fois terminé devra permettre à l'utilisateur de dessiner des diagrammes UML de séquence ou de classes.\\
+	Le projet une fois terminé permettra à l'utilisateur de dessiner des diagrammes UML de séquence ou de classes.\\
 	Selon l'évolution du projet, le client se réserve le droit de modifier ces conditions pour y
 	intégrer des contraintes vis-à-vis de la norme UML 2.0 et de différencier les types de diagramme lors de leur conception. 
-	Chaque diagrammes sera un composant à part et pourra donc être distingué comme composant indépendant.
+	Chaque diagramme sera un composant à part et pourra donc être distingué comme composant indépendant.
 	\paragraph{} L'équipe de projet à la possibilité de se renseigner sur d'éventuels logiciels
 	existant et aillant le même but afin de s'en inspirer ou de récupérer des morceaux de codes pouvant être intégrés au projet, si le logiciel existant distribue son code source librement. \\
-	Le client propose d'utiliser la librairie java JGraph permettant de dessiner des pictogrammes simples, cependant l'équipe peut décider
-	d'utiliser une autre librairie si elle en trouve une plus simple ou qui correspond mieux aux attentes du client.
+	Le client propose d'utiliser la bibliothèque java JGraph permettant de dessiner des pictogrammes simples, cependant l'équipe peut décider
+	d'utiliser une autre bibliothèque si elle en trouve une plus simple ou qui correspond mieux aux attentes du client.
 	\subsection{Évaluation des fonctions}
 %	\input{pieuvre.tex}\\ \\
 	\subsubsection{Fonctions principales}
-	Les fonction principales, sont les fonctionnalités attendu lors de l'utilisation du logiciel.\\ 
+	Les fonction principales sont les fonctionnalités attendues lors de l'utilisation du logiciel.\\ 
 	\begin{tabular}{|p{2cm}|p{3cm}|p{5cm}|p{3cm}|c|}
 		\hline
 		\textbf{Référence}& \textbf{Fonction} & \textbf{Critères d'appréciations} & \textbf{Niveau} & \textbf{Flexibilité} \\
 		\hline
-			FP1 & Permet de dessiner un diagramme de classes & La durée pour effectuer un diagramme de 10 classes & 10 minutes & $\pm$ 5 minutes\\
+			FP$_1$ & Permet de dessiner un diagramme de classes & La durée pour effectuer un diagramme de 10 classes & 10 minutes & $\pm$ 5 minutes\\
 		\hline
-			FP2 & Permet de dessiner un diagramme de séquence & La durée pour effectuer un diagramme de 5 objets & 10 minutes & $\pm$ 5 minutes\\
+			FP$_2$ & Permet de dessiner un diagramme de séquence & La durée pour effectuer un diagramme de 5 objets & 10 minutes & $\pm$ 5 minutes\\
 		\hline
-			FP3 & Avoir un démonstrateur permettant de tester la bibliothèque & Toutes les fonctionnalités disponnibles doivent pouvoir être testés & Toutes les fonctionnalités implémentées au moment du test & Aucune \\
+			FP$_3$ & Avoir un démonstrateur permettant de tester la bibliothèque & Toutes les fonctionnalités disponibles doivent être testées & Toutes les fonctionnalités implémentées au moment du test & Aucune \\
 		\hline
 	\end{tabular}
 	\subsubsection{Fonctions contraintes}
-	Les fonctions contraintes, sont à mettre en place pour améliorer l'utilisation du logiciel.\\
+	Les fonctions contraintes sont à mettre en place pour améliorer l'utilisation du logiciel.\\
 	\begin{tabular}{|p{2cm}|p{3.5cm}|p{5cm}|p{3cm}|c|}
 		\hline
 		\textbf{Référence}& \textbf{Fonction} & \textbf{Critères d'appréciations} & \textbf{Niveau} & \textbf{Flexibilité} \\
 		\hline
-		FC1 & Rapidité et légèreté & Peu gourmand en mémoire & 10\% d'une RAM \footnotemark~de 2 Go & $\pm$ 3 \%\\
+		FC$_1$ & Rapidité et légèreté & Peu gourmand en mémoire & 10\% d'une RAM \footnotemark~de 2 Go & $\pm$ 3 \%\\
 		\hline
-			FC2 & Portabilité & Utilisable sur différents systèmes d'exploitation & Fonctionne sur Windows, Mac OS, Linux & Aucune \\
+			FC$_2$ & Portabilité & Utilisable sur différents systèmes d'exploitation & Fonctionne sur Windows, Mac OS, Linux & Aucune \\
 		\hline
-		FC3 & Ergonomie & Nombre de clics pour un élément simple: & 5 clics &$\pm$2\\& &\begin{center}\input{diag1.tex}\end{center}&  & \\
+		FC$_3$ & Ergonomie & Nombre de clics pour un élément simple: & 5 clics &$\pm$2\\& &\begin{center}\input{diag1.tex}\end{center}&  & \\
 		\hline
-			FC4 & Documentation & Temps passé pour trouver la documentation se rapportant à une méthode &30 secondes& $\pm$10secondes \\ 
+			FC$_4$ & Documentation & Temps passé pour trouver la documentation se rapportant à une méthode &30 secondes& $\pm$10secondes \\ 
 		\hline
-			FC5 & Propreté du code & Complexité cyclomatique& 15 & +5\\ 
+			FC$_5$ & Propreté du code & Complexité cyclomatique& 15 & +5\\ 
 		\hline
 	\end{tabular}
 	\footnotetext{Random Access Memory}
@@ -225,19 +225,19 @@ IUT A - Toulouse Rangueil\\
 	\section{Les contraintes}
 	\subsection{Contraintes de délais}
 	Afin de bien s'organiser, nous avons décidé de choisir des horaires fixes de réunions. L'équipe de projet se réunira tous
-	les jeudis entre 11h et 12h30. Nous rencontrerons le client un lundi sur deux à 17 heures afin de valider l'incrément et d'évaluer les
-	besoins de l'incrément suivant et enfin nous verrons notre tuteur un mercredi toutes les deux semaines à 13 heure. 
-	Pour plus de détails sur la gestion du temps dans le projet, veuillez vous repporter à l'annexe \ref{gantt} page \pageref{gantt}.
+	les jeudis entre 11 heure et 12 heure 30. Nous rencontrerons le client un lundi sur deux à 17 heures afin de valider l'incrément et d'évaluer les
+	besoins de l'incrément suivant et enfin nous verrons notre tutrice un mercredi toutes les deux semaines à 13 heure. 
+	Pour plus de détails sur la gestion du temps dans le projet, veuillez vous reporter à l'annexe \ref{gantt} page \pageref{gantt}.
 	
 	\subsection{Contraintes de ressources humaines}
 	Il ne sera pas tenu rigueur de tout retard pris sur des tâches dépendantes du client.
 	\begin{itemize}
-		\item Le client doit valider chaque incrément et nous donner les directives pour l'incrément suivant afin de pouvoir continuer le projet. Cette étape sera réalisée lors des réunions citées un paragraphe plus haut.
+		\item Le client doit valider chaque incrément et nous donner les directives pour l'incrément suivant afin de continuer le projet. Cette étape sera réalisée lors des réunions citées un paragraphe plus haut.
 		\item Nous n'avons pas d'horaires aménagés pour le projet et nous n'habitons pas tous dans la même ville, ce qui peut poser des difficultés pour se voir, cependant nous aurons la possibilité de travailler à distance et le jeudi midi.
 	\end{itemize}
 	\subsection{Contraintes de ressources matérielles}
 	\begin{itemize}
-		\item Le projet devra être programmé en Java et le rendu devra s'effectuer sous l'EDI\footnote{Environnement de Développement Intégré} Netbeans. 
+		\item Selon les exigences du client, le projet devra être programmé en Java et le rendu devra s'effectuer sous l'EDI\footnote{Environnement de Développement Intégré} Netbeans. 
 		\item Il devra être possible d'intégrer la bibliothèque en tant que composant dans d'autres logiciels. 
 		\item La documentation relative au projet ne devra pas être éditée sur support papier, nous utili\-serons donc Javadoc pour produire une documentation 
 			au format HTML\footnote{HyperText Markup Language}.  
@@ -247,7 +247,7 @@ IUT A - Toulouse Rangueil\\
 % Cahier des charges 
 % Rendu du cahier des charges
 % Réunion avec le client Lundi 17h
-% Réunion avec le tuteur Mercredi 13h
+% Réunion avec le tutrice Mercredi 13h
 % Tests d'intégration
 % Rendez vous avec le client pour valider
 % Soutenance + Fin projet 
@@ -259,7 +259,7 @@ IUT A - Toulouse Rangueil\\
 \section*{Signatures}
 \vspace{20px}
 \begin{tabular}[center]{p{175px}p{175px}p{175px}}
-  \textbf{Client :} & \textbf{Groupe :} & \textbf{Tuteur :} \\
+  \textbf{Client :} & \textbf{Groupe :} & \textbf{Tutrice :} \\
   \\
   Le ~..................... & Le ~..................... & Le ~..................... \\
   A ~...................... & A ~...................... & A ~....................... \\
@@ -280,17 +280,21 @@ IUT A - Toulouse Rangueil\\
 	\paragraph{Diagramme de séquence} Représentation graphique des interactions entre les acteurs et le système selon un ordre 
 	chronologique. Ce diagramme est inclus dans la partie dynamique d'UML.
 	\paragraph{EDI} Environnement de Développement Intégré (ou IDE en anglais). Programme regroupant un ensemble d'outils pour développement de logiciels, un EDI
-	est prévu pour simplifier la tâche du développeur et fournir des fonctionnalités supplémentaire vis-à-vis d'un éditeur de texte classique.
+	est prévu pour simplifier la tâche du développeur et fournir des fonctionnalités supplémentaires vis-à-vis d'un éditeur de texte classique.
 	\paragraph{Incrément} Fonctionnalité du logiciel, ayant un cycle logiciel lui étant propre (Analyse, Développement, Tests). Cette 
 	fonctionnalité doit être opérationnelle pour que l'incrément soit terminé. Il doit améliorer le logiciel par rapport à l'incrément précédent, 
 	et ne doit pas altérer les fonctionnalités précédentes.
 	\paragraph{Java} Langage de programmation orienté objet moderne, il compile le programme pour ensuite l'exécuter sur une machine Java, ainsi le programme une fois
-	compilé peut être exécuté sur différentes plateforme (Windows, Linux, Mac OSX, \ldots).
-	\paragraph{UML} (Unified Modeling Language) Langage de modélisation graphique à base de pictogramme. Il est apparu dans un monde du génie logiciel dans le cadre de la conception orientée objet. Ce langage est composés de différents diagrammes, allant du développement à la simple analyse des besoins. 
+	compilé peut être exécuté sur différentes plateforme (Windows, Linux, Mac OS X, \ldots).
+	\paragraph{Onduleur} Dispositif qui, couplé à une batterie, permet de délivrer une tension sinusoïdale qui permet de maintenir un ordinateur sous tension même
+	en cas de coupure de courant.
+	\paragraph{UML} (Unified Modeling Language) Langage de modélisation graphique à base de pictogramme. Il est apparu dans le monde du génie logiciel dans le cadre de la conception orientée objet. Ce langage est composé de différents diagrammes, allant du développement à la simple analyse des besoins. 
 \section{Bibliographie}
 \begin{thebibliography}{1}
 	\bibitem{coursUML} Thierry \bsc{Millan} Cours sur la modélisation UML, 2011 
-	\bibitem{coursQualite} Thierry \bsc{Millan} Cours sur la qualitée logicielle, 2011 
+	\bibitem{coursQualite} Thierry \bsc{Millan} Cours sur la qualité logicielle, 2011 
 	\bibitem{wikiUML} Article sur UML \url{http://fr.wikipedia.org/wiki/Unified_Modeling_Language}, 2011 
+	\bibitem{wikiUML} Article sur la complexité cyclomatique \newline \url{http://fr.wikipedia.org/wiki/Nombre_cyclomatique}, 2011 
+
 \end{thebibliography}
 \end{document}
