@@ -129,7 +129,7 @@ IUT A - Toulouse Rangueil\\
 		différents éléments de modélisation de la norme UML 2.
 		\subsubsection{La norme UML} 
 			UML est un langage de modélisation graphique à base de pictogrammes simples, chacun représentant un concept particulier.\\
-			Ce langage est adaptée pour de la conception orientée objet, il est divisé en plusieurs diagrammes, en voici quelques exemples (la liste n'est pas exhaustive): 
+			Ce langage est adapté pour de la conception orientée objet, il est divisé en plusieurs diagrammes, en voici quelques exemples (la liste n'est pas exhaustive): 
 			\begin{itemize}
 				\item Diagramme de classes
 				\item Diagramme des cas d'utilisations
@@ -139,7 +139,7 @@ IUT A - Toulouse Rangueil\\
 			Dans le cadre du projet, nous devons créer une bibliothèque graphique qui permettra ultérieurement de réaliser des diagrammes.
 		\subsubsection{Réutilisation de la bibliothèque}
 		D'autres logiciels utiliseront la bibliothèque en tant que composant,
-		La bibliothèque graphique permettra à chaque utilisateur d'intégrer séparément chaque objet graphique dans d'autres projets,
+		la bibliothèque graphique permettra à chaque utilisateur d'intégrer séparément chaque objet graphique dans d'autres projets,
 		et ainsi être réutilisée dans d'autres objectifs ou en association avec d'autres composants .
 		\subsubsection{Propreté du code}Le projet ayant dans l'optique une réutilisation du résultat dans d'autres applications,
 		le client souhaite avoir un code propre et optimisé (factorisé) afin qu'il soit le plus rapide et le plus abordable possible pour
@@ -185,14 +185,14 @@ IUT A - Toulouse Rangueil\\
 	intégrer des contraintes vis-à-vis de la norme UML 2.0 et de différencier les types de diagramme lors de leur conception. 
 	Chaque diagramme sera un composant à part et pourra donc être distingué comme composant indépendant.
 	\paragraph{} L'équipe de projet à la possibilité de se renseigner sur d'éventuels logiciels
-	existant et aillant le même but afin de s'en inspirer ou de récupérer des morceaux de codes pouvant être intégrés au projet, si le logiciel existant distribue son code source librement. \\
+	existant et ayant le même but afin de s'en inspirer ou de récupérer des morceaux de codes pouvant être intégrés au projet, si le logiciel existant distribue son code source librement. \\
 	Le client propose d'utiliser la bibliothèque java JGraph permettant de dessiner des pictogrammes simples, cependant l'équipe peut décider
 	d'utiliser une autre bibliothèque si elle en trouve une plus facile d'utilisation ou qui correspond mieux aux attentes du client.
 	\subsection{Évaluation des fonctions}
 %	\input{pieuvre.tex}\\ \\
 	\subsubsection{Fonctions principales}
-	Les fonction principales sont les fonctionnalités attendues lors de l'utilisation du logiciel.\\
-	\begin{tabular}{|p{2cm}|p{3cm}|p{5cm}|p{3cm}|c|}
+	Les fonctions principales sont les fonctionnalités attendues lors de l'utilisation du logiciel.\\
+	\begin{tabular}{|p{2cm}|p{3.4cm}|p{5cm}|p{3.8cm}|c|}
 		\hline
 		\textbf{Référence}& \textbf{Fonction} & \textbf{Critères d'appréciations} & \textbf{Niveau} & \textbf{Flexibilité} \\
 		\hline
@@ -205,7 +205,7 @@ IUT A - Toulouse Rangueil\\
 	\end{tabular}
 	\subsubsection{Fonctions contraintes}
 	Les fonctions contraintes sont à mettre en place pour améliorer l'utilisation du logiciel.\\
-	\begin{tabular}{|p{2cm}|p{3.5cm}|p{5cm}|p{3cm}|c|}
+	\begin{tabular}{|p{2cm}|p{3.4cm}|p{5cm}|p{3.8cm}|c|}
 		\hline
 		\textbf{Référence}& \textbf{Fonction} & \textbf{Critères d'appréciations} & \textbf{Niveau} & \textbf{Flexibilité} \\
 		\hline
@@ -215,9 +215,9 @@ IUT A - Toulouse Rangueil\\
 		\hline
 		FC$_3$ & Ergonomie & Nombre de clics pour un élément simple: & 5 clics &$\pm$2\\& &\begin{center}\input{diag1.tex}\end{center}&  & \\
 		\hline
-			FC$_4$ & Documentation & Temps passé pour trouver la documentation se rapportant à une méthode &30 secondes& $\pm$10secondes \\ 
+			FC$_4$ & Documentation & Temps passé pour trouver la documentation se rapportant à une méthode &30 secondes& $\pm$10 secondes \\ 
 		\hline
-			FC$_5$ & Propreté du code & Complexité cyclomatique& 15 & +5\\ 
+			FC$_5$ & Propreté du code & Complexité cyclomatique& 15 & $\pm5$\\ 
 		\hline
 	\end{tabular}
 	\footnotetext{Random Access Memory}
@@ -271,11 +271,12 @@ IUT A - Toulouse Rangueil\\
 \label{gantt}
 \hspace{20px}
 \vspace{-330px}
-\includegraphics[height=470px, angle=-90]{projetiut-gantt.png}
+\includegraphics[height=450px, angle=-90]{projetiut-gantt.png}
 \newpage
 
 \section{Glossaire}
-	\paragraph{Complexité cyclomatique} Outil de métrologie logicielle permettant de mesurer la complexité d'un programme. Cette mesure comptabilise le nombre de chemin possible au travers d'un programme représenté sous la forme d'un graphe.
+	\paragraph{Compilation} Action de transformer un code source en langage binaire, qui est compréhensible par la machine. 
+	\paragraph{Complexité cyclomatique} Outil de métrologie logicielle permettant de mesurer la complexité d'un programme. Cette mesure comptabilise le nombre de chemins possible au travers d'un programme représenté sous la forme d'un graphe.
 	\paragraph{Diagramme de classes} Schéma utilisé en génie logiciel pour représenter les classes et les interfaces des systèmes
 	ainsi que les différentes relations entre celles-ci. Ce diagramme est inclus dans la partie statique d'UML.
 	\paragraph{Diagramme de séquence} Représentation graphique des interactions entre les acteurs et le système selon un ordre 
@@ -290,7 +291,7 @@ IUT A - Toulouse Rangueil\\
 	fonctionnalité doit être opérationnelle pour que l'incrément soit terminé. Il doit améliorer le logiciel par rapport à l'incrément précédent, 
 	et ne doit pas altérer les fonctionnalités précédentes.
 	\paragraph{Java} Langage de programmation orienté objet moderne, il compile le programme pour ensuite l'exécuter sur une machine Java, ainsi le programme une fois
-	compilé peut être exécuté sur différentes plateforme (Windows, Linux, Mac OS X, \ldots).
+	compilé peut être exécuté sur différentes plateformes (Windows, Linux, Mac OS X, \ldots).
 	\paragraph{Onduleur} Dispositif qui, couplé à une batterie, permet de délivrer une tension sinusoïdale qui permet de maintenir un ordinateur sous tension même
 	en cas de coupure de courant.
 	\paragraph{UML} (Unified Modeling Language) Langage de modélisation graphique à base de pictogramme. Il est apparu dans le monde du génie logiciel dans le cadre de la conception orientée objet. Ce langage est composé de différents diagrammes, allant du développement à la simple analyse des besoins. 
