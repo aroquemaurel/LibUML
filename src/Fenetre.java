@@ -1,3 +1,4 @@
+import java.awt.Cursor;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
@@ -8,6 +9,7 @@ import java.awt.Point;
 import java.awt.PointerInfo;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 
 import org.jgraph.JGraph;
 import org.jgraph.graph.GraphModel;
@@ -16,7 +18,7 @@ import org.jgraph.graph.DefaultGraphModel;
 
 public class Fenetre extends JFrame{
     private JPanel panneauPrincipal = new JPanel();
-    private JButton btnCarre = new JButton("b");
+    private JButton btnCarre = new JButton(new ImageIcon("img/carre.jpg"));
     private GraphModel model = new DefaultGraphModel();
     private JGraph graph = new JGraph(model);
     private JScrollPane PanneauGraph = new JScrollPane(this.graph);
@@ -41,7 +43,6 @@ public class Fenetre extends JFrame{
        this.PanneauGraph.addMouseListener(cListener);
 
        this.setContentPane(this.panneauPrincipal);
-
        
        this.panneauPrincipal.add(this.PanneauGraph);
 
@@ -53,7 +54,9 @@ public class Fenetre extends JFrame{
     
     public static void main(String[] args) {
        Fenetre fenetre = new Fenetre();
+       
        fenetre.afficherFenetre();
+
      }
 
     public class CarreListener extends JButton implements MouseListener{
@@ -70,13 +73,13 @@ public class Fenetre extends JFrame{
             
         }
         public void mouseClicked(MouseEvent event){
-
+            
         }
         public void mouseEntered(MouseEvent event){
 
         }
         public void mousePressed(MouseEvent event){
-
+             this.fenetre.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         }
         public void mouseReleased(MouseEvent event) {
             calculerCoordonneSourisGraph();
@@ -92,6 +95,7 @@ public class Fenetre extends JFrame{
                         this.positionSouris.getX() - this.fenetre.getX() - 90,
                         this.positionSouris.getY() - this.fenetre.getY() - 100
                     );
+             this.fenetre.setCursor(Cursor.getDefaultCursor());
         }
     }
 }
