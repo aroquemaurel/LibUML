@@ -28,7 +28,6 @@ public class Carre implements Figure {
     public void afficher(){
         this.cellule = this.creerCellule("Hello", Color.BLACK);
         this.graph.getGraphLayoutCache().insert(this.cellule);
-        
     }
 
     private DefaultGraphCell creerCellule(String name, Color p_couleurFond) {
