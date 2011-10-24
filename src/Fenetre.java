@@ -1,14 +1,9 @@
-import java.awt.Cursor;
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import java.awt.Dimension;
-import java.awt.MouseInfo;
-import java.awt.Point;
-import java.awt.PointerInfo;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 
 import org.jgraph.JGraph;
@@ -22,8 +17,8 @@ public class Fenetre extends JFrame{
     private GraphModel model = new DefaultGraphModel();
     private JGraph graph = new JGraph(model);
     private JScrollPane PanneauGraph = new JScrollPane(this.graph);
-    private CarreListener cListener = new CarreListener(this.graph, this);
-
+    private evenementSurCarre listenerSurCarre = new evenementSurCarre(this.graph, this);
+  
     public Fenetre(){
        this.setTitle("Démonstrateur de la bibliothèque UML");
        this.setSize(600, 650);
@@ -39,8 +34,8 @@ public class Fenetre extends JFrame{
          * on verra plus tard comment serons les boutons, et ou on les feras.
          */
        this.panneauPrincipal.add(this.btnCarre);
-       this.btnCarre.addMouseListener(cListener);
-       this.PanneauGraph.addMouseListener(cListener);
+       this.btnCarre.addMouseListener(listenerSurCarre);
+       this.PanneauGraph.addMouseListener(listenerSurCarre);
 
        this.setContentPane(this.panneauPrincipal);
        
@@ -59,43 +54,4 @@ public class Fenetre extends JFrame{
 
      }
 
-    public class CarreListener extends JButton implements MouseListener{
-        private JGraph graph;
-        private Point positionSouris;
-        private JFrame fenetre;
-        public CarreListener(JGraph p_graph, JFrame p_fenetre){
-            this.graph = p_graph;
-            this.fenetre = p_fenetre;
-            this.addMouseListener(this);
-        }
-
-        public void mouseExited(MouseEvent event){
-            
-        }
-        public void mouseClicked(MouseEvent event){
-            
-        }
-        public void mouseEntered(MouseEvent event){
-
-        }
-        public void mousePressed(MouseEvent event){
-             this.fenetre.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        }
-        public void mouseReleased(MouseEvent event) {
-            calculerCoordonneSourisGraph();
-           Carre carre1 = new Carre(this.positionSouris,90, 100, this.graph);
-            carre1.afficher();
-        }
-
-        private void calculerCoordonneSourisGraph(){
-            PointerInfo pointer = MouseInfo.getPointerInfo();
-            this.positionSouris = pointer.getLocation();
-
-            this.positionSouris.setLocation(
-                        this.positionSouris.getX() - this.fenetre.getX() - 90,
-                        this.positionSouris.getY() - this.fenetre.getY() - 100
-                    );
-             this.fenetre.setCursor(Cursor.getDefaultCursor());
-        }
-    }
 }
