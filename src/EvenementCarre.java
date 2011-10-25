@@ -17,10 +17,15 @@ public class EvenementCarre implements MouseListener {
     private DefaultGraphCell celluleActuelle;
     private boolean deuxiemeClic = false;
     private JFrame fenetre;
-    
+    private EvenementCarre listenerCarre;
+    private EvenementBtnFleche listenerBtnFleche;
     public EvenementCarre(JGraph p_graph, JFrame p_fenetre) {
         this.graph = p_graph;
         this.fenetre = p_fenetre;
+    }
+
+    public void setListenerCarre(EvenementCarre listenerCarre) {
+        this.listenerCarre = listenerCarre;
     }
 
     public void mouseExited(MouseEvent event){}
@@ -49,6 +54,7 @@ public class EvenementCarre implements MouseListener {
                 Fleche fleche = new Fleche(this.SourceCelluleARelier, this.DestinationCelluleARelier, this.graph);
                 fleche.tracerFleche();
                 this.fenetre.setCursor(Cursor.getDefaultCursor());
+                 this.graph.removeMouseListener(this);
             }
 
             deuxiemeClic = !deuxiemeClic;

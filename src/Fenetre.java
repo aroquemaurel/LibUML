@@ -23,15 +23,15 @@ public class Fenetre extends JFrame{
     private JGraph graph = new JGraph(model);
     private JScrollPane PanneauGraph = new JScrollPane(this.graph);
     private EvenementBtnCarre listenerBtnCarre = new EvenementBtnCarre(this.graph, this);
-    private EvenementBtnFleche listenerBtnFleche = new EvenementBtnFleche(this.graph, this);
     private EvenementCarre listenerCarre =  new EvenementCarre(this.graph, this);
+    private EvenementBtnFleche listenerBtnFleche = new EvenementBtnFleche(this.graph, this, this.listenerCarre);
     public Fenetre(){
-       this.setTitle("Démonstrateur de la bibliothèque UML");
-       this.setSize(600, 650);
-       this.setLocationRelativeTo(null);
-       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       graph.setGridVisible(true);
-       graph.setGridSize(10);
+        this.setTitle("Démonstrateur de la bibliothèque UML");
+        this.setSize(600, 650);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        graph.setGridVisible(true);
+        graph.setGridSize(10);
     }
 
     public void afficherFenetre(){
@@ -43,9 +43,9 @@ public class Fenetre extends JFrame{
          */
        this.panneauPrincipal.add(this.btnCarre);
        this.btnCarre.addMouseListener(listenerBtnCarre);
-       this.PanneauGraph.addMouseListener(listenerBtnCarre);
 
-       this.graph.addMouseListener(listenerCarre);
+       this.panneauPrincipal.add(this.btnFleche);
+       this.btnFleche.addMouseListener(listenerBtnFleche);
        this.setContentPane(this.panneauPrincipal);
        
        this.panneauPrincipal.add(this.PanneauGraph);
