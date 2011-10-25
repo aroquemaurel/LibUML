@@ -1,14 +1,11 @@
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.geom.Rectangle2D;
-import javax.swing.JFrame;
 
 import org.jgraph.graph.DefaultGraphCell;
 import org.jgraph.graph.GraphConstants;
 import org.jgraph.JGraph;
 import org.jgraph.graph.DefaultPort;
-
-
 
 /**
  *
@@ -20,21 +17,17 @@ public class Carre implements Figure {
     private double longueur;
     private JGraph graph;
     private DefaultGraphCell cellule = new DefaultGraphCell();
-    private JFrame fenetre;
     
 
-    public Carre(Point p_position, double p_largeur, double p_longueur, JGraph p_graph, JFrame p_fenetre){
+    public Carre(Point p_position, double p_largeur, double p_longueur, JGraph p_graph){
         this.position = p_position;
         this.largeur = p_largeur;
         this.longueur = p_longueur;
         this.graph = p_graph;
-        this.fenetre = p_fenetre;
-
-
     }
 
     public void afficher(){
-        this.cellule = this.creerCellule("Hello", Color.BLACK);
+        this.cellule = this.creerCellule("", Color.BLACK);
         this.graph.getGraphLayoutCache().insert(this.cellule);
 
     }
@@ -64,10 +57,8 @@ public class Carre implements Figure {
         // met une bordure noir
         GraphConstants.setBorderColor(cellule.getAttributes(), Color.black);
 
-        /* C'était dans le code de base que j'avais, à voire l'utilité:
-         * peut être pour pouvoir fixer des flêches sur les carrés?
-         */
-        // Add a Port
+
+        /* Ajouter un port => n'a rien à faire ici */
         DefaultPort port = new DefaultPort();
 
         cellule.add(port);

@@ -1,5 +1,4 @@
 import java.awt.Dimension;
-import java.awt.Point;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -11,7 +10,11 @@ import org.jgraph.JGraph;
 import org.jgraph.graph.GraphModel;
 import org.jgraph.graph.DefaultGraphModel;
 
-
+/**
+ * 
+ * 
+ * @author satenske
+ */
 public class Fenetre extends JFrame{
     private JPanel panneauPrincipal = new JPanel();
     private JButton btnCarre = new JButton(new ImageIcon("img/carre.jpg"));
