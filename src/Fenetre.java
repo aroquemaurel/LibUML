@@ -18,10 +18,12 @@ import org.jgraph.graph.DefaultGraphModel;
 public class Fenetre extends JFrame{
     private JPanel panneauPrincipal = new JPanel();
     private JButton btnCarre = new JButton(new ImageIcon("img/carre.jpg"));
+    private JButton btnFleche = new JButton("f");
     private GraphModel model = new DefaultGraphModel();
     private JGraph graph = new JGraph(model);
     private JScrollPane PanneauGraph = new JScrollPane(this.graph);
     private EvenementBtnCarre listenerBtnCarre = new EvenementBtnCarre(this.graph, this);
+    private EvenementBtnFleche listenerBtnFleche = new EvenementBtnFleche(this.graph, this);
     private EvenementCarre listenerCarre =  new EvenementCarre(this.graph, this);
     public Fenetre(){
        this.setTitle("Démonstrateur de la bibliothèque UML");
