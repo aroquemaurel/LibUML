@@ -27,7 +27,7 @@ public class Carre implements Figure {
     }
 
     public void afficher(){
-        this.cellule = this.creerCellule("", Color.BLACK);
+        this.creerCellule("", Color.BLACK);
         this.graph.getGraphLayoutCache().insert(this.cellule);
 
     }
@@ -36,12 +36,11 @@ public class Carre implements Figure {
         return (this.cellule);
     }
 
-    private DefaultGraphCell creerCellule(String name, Color p_couleurFond) {
-        DefaultGraphCell cellule = new DefaultGraphCell(name);
-        cellule.getAttributes();
+    private void creerCellule(String name, Color p_couleurFond) {
+    this.cellule.getAttributes();
 
         // dessine le carré
-        GraphConstants.setBounds(cellule.getAttributes(),
+        GraphConstants.setBounds(this.cellule.getAttributes(),
             new Rectangle2D.Double(
                 this.position.getX(),
                 this.position.getY(),
@@ -50,21 +49,19 @@ public class Carre implements Figure {
 
         // couleur de fond
         if (p_couleurFond != null) {
-            GraphConstants.setOpaque(cellule.getAttributes(), true);
-            GraphConstants.setBackground(cellule.getAttributes(), p_couleurFond);
+            GraphConstants.setOpaque(this.cellule.getAttributes(), true);
+            GraphConstants.setBackground(this.cellule.getAttributes(), p_couleurFond);
         }
 
         // met une bordure noir
-        GraphConstants.setBorderColor(cellule.getAttributes(), Color.black);
+        GraphConstants.setBorderColor(this.cellule.getAttributes(), Color.black);
 
 
         /* Ajouter un port => n'a rien à faire ici */
         DefaultPort port = new DefaultPort();
 
-        cellule.add(port);
-       port.setParent(cellule);
+        this.cellule.add(port);
+       port.setParent(this.cellule);
 
-
-        return cellule;
     }
 }
