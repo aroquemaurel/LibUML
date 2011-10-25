@@ -27,7 +27,7 @@ public class Carre implements Figure {
     }
 
     public void afficher(){
-        this.creerCellule("", Color.BLACK);
+        this.creerCellule("Yatta", Color.BLACK);
         this.graph.getGraphLayoutCache().insert(this.cellule);
     }
 
