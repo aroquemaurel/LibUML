@@ -1,4 +1,5 @@
 import java.awt.Dimension;
+import java.awt.Point;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -17,13 +18,15 @@ public class Fenetre extends JFrame{
     private GraphModel model = new DefaultGraphModel();
     private JGraph graph = new JGraph(model);
     private JScrollPane PanneauGraph = new JScrollPane(this.graph);
-    private evenementSurCarre listenerSurCarre = new evenementSurCarre(this.graph, this);
-  
+    private EvenementBtnCarre listenerBtnCarre = new EvenementBtnCarre(this.graph, this);
+    private EvenementCarre listenerCarre =  new EvenementCarre(this.graph, this);
     public Fenetre(){
        this.setTitle("Démonstrateur de la bibliothèque UML");
        this.setSize(600, 650);
        this.setLocationRelativeTo(null);
        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       graph.setGridVisible(true);
+       graph.setGridSize(10);
     }
 
     public void afficherFenetre(){
@@ -34,9 +37,10 @@ public class Fenetre extends JFrame{
          * on verra plus tard comment serons les boutons, et ou on les feras.
          */
        this.panneauPrincipal.add(this.btnCarre);
-       this.btnCarre.addMouseListener(listenerSurCarre);
-       this.PanneauGraph.addMouseListener(listenerSurCarre);
+       this.btnCarre.addMouseListener(listenerBtnCarre);
+       this.PanneauGraph.addMouseListener(listenerBtnCarre);
 
+       this.graph.addMouseListener(listenerCarre);
        this.setContentPane(this.panneauPrincipal);
        
        this.panneauPrincipal.add(this.PanneauGraph);
@@ -48,10 +52,7 @@ public class Fenetre extends JFrame{
     }
     
     public static void main(String[] args) {
-       Fenetre fenetre = new Fenetre();
-       
+       Fenetre fenetre = new Fenetre();   
        fenetre.afficherFenetre();
-
      }
-
 }

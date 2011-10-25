@@ -1,10 +1,12 @@
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.geom.Rectangle2D;
+import javax.swing.JFrame;
 
 import org.jgraph.graph.DefaultGraphCell;
 import org.jgraph.graph.GraphConstants;
 import org.jgraph.JGraph;
+import org.jgraph.graph.DefaultPort;
 
 
 
@@ -18,17 +20,27 @@ public class Carre implements Figure {
     private double longueur;
     private JGraph graph;
     private DefaultGraphCell cellule = new DefaultGraphCell();
+    private JFrame fenetre;
+    
 
-    public Carre(Point p_position, double p_largeur, double p_longueur, JGraph p_graph){
+    public Carre(Point p_position, double p_largeur, double p_longueur, JGraph p_graph, JFrame p_fenetre){
         this.position = p_position;
         this.largeur = p_largeur;
         this.longueur = p_longueur;
         this.graph = p_graph;
+        this.fenetre = p_fenetre;
+
+
     }
 
     public void afficher(){
         this.cellule = this.creerCellule("Hello", Color.BLACK);
         this.graph.getGraphLayoutCache().insert(this.cellule);
+
+    }
+
+    public DefaultGraphCell getCellule(){
+        return (this.cellule);
     }
 
     private DefaultGraphCell creerCellule(String name, Color p_couleurFond) {
@@ -56,9 +68,10 @@ public class Carre implements Figure {
          * peut être pour pouvoir fixer des flêches sur les carrés?
          */
         // Add a Port
-        //DefaultPort port = new DefaultPort();
-        //cellule.add(port);
-       //port.setParent(cellule);
+        DefaultPort port = new DefaultPort();
+
+        cellule.add(port);
+       port.setParent(cellule);
 
 
         return cellule;
