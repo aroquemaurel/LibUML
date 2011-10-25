@@ -1,3 +1,6 @@
+package evenements;
+
+import figures.Fleche;
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.event.MouseEvent;

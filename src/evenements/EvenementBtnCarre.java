@@ -1,4 +1,6 @@
+package evenements;
 
+import figures.Carre;
 import java.awt.Cursor;
 import java.awt.MouseInfo;
 import java.awt.Point;
@@ -12,7 +14,7 @@ import org.jgraph.JGraph;
  * 
  * @author satenske
  */
-class EvenementBtnCarre extends EvenementBtn{
+public class EvenementBtnCarre extends EvenementBtn{
     private Point positionSouris;
     
     public EvenementBtnCarre(JGraph p_graph, JFrame p_fenetre){

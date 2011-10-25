@@ -1,3 +1,6 @@
+import evenements.EvenementCarre;
+import evenements.EvenementBtnFleche;
+import evenements.EvenementBtnCarre;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;

@@ -1,3 +1,5 @@
+package figures;
+
 /* ça me semblait pas mal de faire une interface figure pour povoir
  * ensuite faire des classes, des acteurs, des je-ne-sais-quoi.
  * Donc pour le moment, juste afficher, parce que c'est rudimentaire,
