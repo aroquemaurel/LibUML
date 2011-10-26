@@ -10,7 +10,7 @@ import org.jgraph.JGraph;
 import org.jgraph.graph.DefaultPort;
 
 /**
-*
+* Classe Carre. Permet de déssiner des carrés
 * @author satenske
 */
 public class Carre implements Figure {
@@ -20,23 +20,32 @@ public class Carre implements Figure {
     private JGraph graph;
     private DefaultGraphCell cellule = new DefaultGraphCell();
 
-
+    /**
+     * Constructeur du Carre
+     * @param p_position la position du carré
+     * @param p_largeur la largeur du carré
+     * @param p_longueur la longueur du carré
+     * @param p_graph le graph sur lequel le carré doit être positionner
+     */
     public Carre(Point p_position, double p_largeur, double p_longueur, JGraph p_graph){
         this.position = p_position;
         this.largeur = p_largeur;
         this.longueur = p_longueur;
         this.graph = p_graph;
     }
-
+    /**
+     * Permet d'afficher sur le graph le carré courant
+     */
     public void afficher(){
         this.creerCellule("Yatta", Color.BLACK);
         this.graph.getGraphLayoutCache().insert(this.cellule);
     }
 
-    public DefaultGraphCell getCellule(){
-        return (this.cellule);
-    }
-
+    /**
+     * Créer une cellule à partir de la position et de la taille du carré
+     * @param name chaine de caractère s'affichant dans le carré
+     * @param p_couleurFond Couleur de fond du carré
+     */
     private void creerCellule(String name, Color p_couleurFond) {
         this.cellule.getAttributes();
 

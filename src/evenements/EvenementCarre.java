@@ -10,7 +10,7 @@ import org.jgraph.JGraph;
 import org.jgraph.graph.DefaultGraphCell;
 
 /**
- *
+ * Classe EvenementCarre. Concerne tous les évenements qui se passe sur un carré.
  * @author satenske
  */
 public class EvenementCarre implements MouseListener {
@@ -20,6 +20,11 @@ public class EvenementCarre implements MouseListener {
     private DefaultGraphCell celluleActuelle;
     private boolean deuxiemeClic = false;
     private JFrame fenetre;
+    /**
+     * Constructeur de l'évenement
+     * @param p_graph Graph sur lequel est le carré
+     * @param p_fenetre fenetre dans laquelle est le graph
+     */
     public EvenementCarre(JGraph p_graph, JFrame p_fenetre) {
         this.graph = p_graph;
         this.fenetre = p_fenetre;

@@ -25,7 +25,7 @@ public class Fleche {
         edge.setSource(this.sourceFleche);
         edge.setTarget(this.destinationFleche);
 
-        int arrow = GraphConstants.ARROW_CLASSIC;
+        int arrow = GraphConstants.ARROW_TECHNICAL;
 
         GraphConstants.setLineEnd(edge.getAttributes(), arrow);
         GraphConstants.setEndFill(edge.getAttributes(), true);
