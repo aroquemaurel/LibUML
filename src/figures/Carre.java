@@ -1,3 +1,5 @@
+package figures;
+
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.geom.Rectangle2D;
@@ -19,19 +21,20 @@ public class Carre implements Figure {
     private DefaultGraphCell cellule = new DefaultGraphCell();
 
 
-    public Carre(Point p_position, double p_largeur, double p_longueur, JGraph p_graph){
+    public Carre(Point p_position, double p_largeur,
+				 double p_longueur, JGraph p_graph) {
         this.position = p_position;
         this.largeur = p_largeur;
         this.longueur = p_longueur;
         this.graph = p_graph;
     }
 
-    public void afficher(){
-        this.creerCellule("", Color.BLACK);
+    public void afficher() {
+        this.creerCellule("Yatta", Color.BLACK);
         this.graph.getGraphLayoutCache().insert(this.cellule);
     }
 
-    public DefaultGraphCell getCellule(){
+    public DefaultGraphCell getCellule() {
         return (this.cellule);
     }
 
