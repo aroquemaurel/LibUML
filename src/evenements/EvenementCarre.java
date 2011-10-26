@@ -14,20 +14,20 @@ import org.jgraph.graph.DefaultGraphCell;
  * @author satenske
  */
 public class EvenementCarre implements MouseListener {
-    private JGraph graph;
-    private DefaultGraphCell SourceCelluleARelier;
-    private DefaultGraphCell DestinationCelluleARelier;
-    private DefaultGraphCell celluleActuelle;
-    private boolean deuxiemeClic = false;
-    private JFrame fenetre;
+    private JGraph m_graph;
+    private DefaultGraphCell m_SourceCelluleARelier;
+    private DefaultGraphCell m_DestinationCelluleARelier;
+    private DefaultGraphCell m_celluleActuelle;
+    private boolean m_deuxiemeClic = false;
+    private JFrame m_fenetre;
     /**
      * Constructeur de l'évenement
      * @param p_graph Graph sur lequel est le carré
-     * @param p_fenetre fenetre dans laquelle est le graph
+     * @param p_fenetre m_fenetre dans laquelle est le m_graph
      */
     public EvenementCarre(JGraph p_graph, JFrame p_fenetre) {
-        this.graph = p_graph;
-        this.fenetre = p_fenetre;
+        m_graph = p_graph;
+        m_fenetre = p_fenetre;
     }
 
     public void mouseExited(MouseEvent event){}
@@ -35,31 +35,32 @@ public class EvenementCarre implements MouseListener {
     public void mouseClicked(MouseEvent event){}
 
     public void mouseEntered(MouseEvent event){}
-    
+
     public void mousePressed(MouseEvent event){}
-    
+
     public void mouseReleased(MouseEvent event) {
         /* On récupère l'objet sur lequel on clique */
       Point position = event.getPoint();
-      this.celluleActuelle = (DefaultGraphCell)this.graph.getFirstCellForLocation(position.x, position.y);
+      m_celluleActuelle = (DefaultGraphCell)m_graph.getFirstCellForLocation(position.x, position.y);
 
        /* Actuellement, on peut séléctionner une fleche pour créer une fleche pointant sur une fleche
         * moyen, à voir comment on peut savoir si on est sur une fleche ou sur autre chose
         */
-        if(this.celluleActuelle != null){
-            if(!deuxiemeClic) {
-                this.fenetre.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                this.SourceCelluleARelier = this.celluleActuelle;
+        if(this.m_celluleActuelle != null){
+			/* premier clic, source deuxième clic destination */
+            if(!m_deuxiemeClic) {
+                m_fenetre.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                m_SourceCelluleARelier = m_celluleActuelle;
             } else {
-                this.fenetre.setCursor(Cursor.getDefaultCursor());
-                this.DestinationCelluleARelier = this.celluleActuelle;
-                Fleche fleche = new Fleche(this.SourceCelluleARelier, this.DestinationCelluleARelier, this.graph);
+                m_fenetre.setCursor(Cursor.getDefaultCursor());
+                m_DestinationCelluleARelier = m_celluleActuelle;
+                Fleche fleche = new Fleche(m_SourceCelluleARelier, m_DestinationCelluleARelier, m_graph);
                 fleche.tracerFleche();
-                this.fenetre.setCursor(Cursor.getDefaultCursor());
-                 this.graph.removeMouseListener(this);
+                m_fenetre.setCursor(Cursor.getDefaultCursor());
+                m_graph.removeMouseListener(this);
             }
 
-            deuxiemeClic = !deuxiemeClic;
+            m_deuxiemeClic = !m_deuxiemeClic;
         }
     }
 }

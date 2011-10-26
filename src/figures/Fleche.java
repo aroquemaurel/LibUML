@@ -10,29 +10,30 @@ import org.jgraph.graph.GraphConstants;
  * @author satenske
  */
 public class Fleche {
-    private DefaultGraphCell sourceFleche;
-    private DefaultGraphCell destinationFleche;
-    private JGraph graph;
-    
+    private DefaultGraphCell m_sourceFleche;
+    private DefaultGraphCell m_destinationFleche;
+    private JGraph m_graph;
+
     public Fleche(DefaultGraphCell p_sourceFleche, DefaultGraphCell p_destinationFleche, JGraph p_graph) {
-        this.sourceFleche = p_sourceFleche;
-        this.destinationFleche = p_destinationFleche;
-        this.graph = p_graph;
+        m_sourceFleche = p_sourceFleche;
+        m_destinationFleche = p_destinationFleche;
+        m_graph = p_graph;
     }
 
     public void tracerFleche(){
         DefaultEdge edge = new DefaultEdge();
-        edge.setSource(this.sourceFleche);
-        edge.setTarget(this.destinationFleche);
-
         int arrow = GraphConstants.ARROW_TECHNICAL;
+
+
+        edge.setSource(m_sourceFleche);
+        edge.setTarget(m_destinationFleche);
+
 
         GraphConstants.setLineEnd(edge.getAttributes(), arrow);
         GraphConstants.setEndFill(edge.getAttributes(), true);
 
-        this.graph.getGraphLayoutCache().insert(this.sourceFleche);
-        this.graph.getGraphLayoutCache().insert(this.destinationFleche);
-        this.graph.getGraphLayoutCache().insert(edge);
+        m_graph.getGraphLayoutCache().insert(m_sourceFleche);
+        m_graph.getGraphLayoutCache().insert(m_destinationFleche);
+        m_graph.getGraphLayoutCache().insert(edge);
     }
-
 }

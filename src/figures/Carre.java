@@ -14,63 +14,59 @@ import org.jgraph.graph.DefaultPort;
 * @author satenske
 */
 public class Carre implements Figure {
-    private Point position;
-    private double largeur;
-    private double longueur;
-    private JGraph graph;
-    private DefaultGraphCell cellule = new DefaultGraphCell();
+    private Point m_position;
+    private double m_largeur;
+    private double m_longueur;
+    private JGraph m_graph;
+    private DefaultGraphCell m_cellule = new DefaultGraphCell();
 
     /**
      * Constructeur du Carre
-     * @param p_position la position du carré
-     * @param p_largeur la largeur du carré
-     * @param p_longueur la longueur du carré
-     * @param p_graph le graph sur lequel le carré doit être positionner
+     * @param p_position la m_position du carré
+     * @param p_largeur la m_largeur du carré
+     * @param p_longueur la m_longueur du carré
+     * @param p_graph le m_graph sur lequel le carré doit être positionner
      */
-    public Carre(Point p_position, double p_largeur, double p_longueur, JGraph p_graph){
-        this.position = p_position;
-        this.largeur = p_largeur;
-        this.longueur = p_longueur;
-        this.graph = p_graph;
+    public Carre(Point p_position, double p_largeur, double p_longueur, JGraph p_graph) {
+		m_position = p_position;
+		m_largeur = p_largeur;
+		m_longueur = p_longueur;
+		m_graph = p_graph;
     }
     /**
-     * Permet d'afficher sur le graph le carré courant
+     * Permet d'afficher sur le m_graph le carré courant
      */
     public void afficher(){
         this.creerCellule("Yatta", Color.BLACK);
-        this.graph.getGraphLayoutCache().insert(this.cellule);
+        m_graph.getGraphLayoutCache().insert(m_cellule);
     }
 
     /**
-     * Créer une cellule à partir de la position et de la taille du carré
+     * Créer une m_cellule à partir de la m_position et de la taille du carré
      * @param name chaine de caractère s'affichant dans le carré
      * @param p_couleurFond Couleur de fond du carré
      */
     private void creerCellule(String name, Color p_couleurFond) {
-        this.cellule.getAttributes();
+        m_cellule.getAttributes();
 
         // dessine le carré
-        GraphConstants.setBounds(this.cellule.getAttributes(),
-                    new Rectangle2D.Double(
-                        this.position.getX(),
-                        this.position.getY(),
-                        this.largeur, this.longueur)
-                    );
+        GraphConstants.setBounds(m_cellule.getAttributes(),
+                    new Rectangle2D.Double(m_position.x, m_position.y, m_largeur, m_longueur)
+								);
 
         // couleur de fond
         if (p_couleurFond != null) {
-            GraphConstants.setOpaque(this.cellule.getAttributes(), true);
-            GraphConstants.setBackground(this.cellule.getAttributes(), p_couleurFond);
+            GraphConstants.setOpaque(m_cellule.getAttributes(), true);
+            GraphConstants.setBackground(m_cellule.getAttributes(), p_couleurFond);
         }
 
         // met une bordure noir
-        GraphConstants.setBorderColor(this.cellule.getAttributes(), Color.black);
-
+        GraphConstants.setBorderColor(m_cellule.getAttributes(), Color.black);
 
         /* Ajouter un port => n'a rien à faire ici */
         DefaultPort port = new DefaultPort();
 
-        this.cellule.add(port);
-        port.setParent(this.cellule);
+        m_cellule.add(port);
+        port.setParent(m_cellule);
     }
 }

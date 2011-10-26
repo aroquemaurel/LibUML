@@ -16,28 +16,28 @@ import org.jgraph.graph.GraphModel;
  * @author satenske
  */
 public class Panneau extends JPanel {
-	private GraphModel model = new DefaultGraphModel();
-	private JGraph graph = new JGraph(model);
-	private JScrollPane panneauGraph = new JScrollPane(graph);
+	private GraphModel m_model = new DefaultGraphModel();
+	private JGraph m_graph = new JGraph(m_model);
+	private JScrollPane m_panneauGraph = new JScrollPane(m_graph);
 
 	private void parametrerGraph() {
-		graph.setGridVisible(true);
-		graph.setGridSize(10);
-		graph.setCloneable(true);
-		graph.setInvokesStopCellEditing(true);
-		graph.setJumpToDefaultPort(true);
+		m_graph.setGridVisible(true);
+		m_graph.setGridSize(10);
+		m_graph.setCloneable(true);
+		m_graph.setInvokesStopCellEditing(true);
+		m_graph.setJumpToDefaultPort(true);
 	}
 
 	public Panneau() {
 		parametrerGraph();
-		this.panneauGraph.setPreferredSize(new Dimension(500, 500));
+		m_panneauGraph.setPreferredSize(new Dimension(500, 500));
 	}
 
 	public JScrollPane getPanneauGraph() {
-		return this.panneauGraph;
+		return m_panneauGraph;
 	}
 
 	public JGraph getGraph() {
-		return this.graph;
+		return m_graph;
 	}
 }
