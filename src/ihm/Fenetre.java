@@ -22,7 +22,7 @@ import javax.swing.JToolBar;
  * @author satenske
  */
 public class Fenetre extends JFrame{
-    private PanneauGraph panneauPrincipal = new PanneauGraph();
+    private PanneauGraph m_panneauPrincipal = new PanneauGraph();
 
     private JMenuBar m_menuBar = new JMenuBar();
     private JMenu m_fichier = new JMenu("Fichier");
@@ -33,20 +33,18 @@ public class Fenetre extends JFrame{
     private JMenuItem m_quitter = new JMenuItem("Quitter");
     private JMenuItem m_carre = new JMenuItem("Carré");
 
-	private JToolBar m_toolBar = new JToolBar();
-
 	private JButton m_btnCarre = new JButton(new ImageIcon("img/carre.jpg"));
 	private JButton m_btnFleche = new JButton("f");
 
 	private void ajouterListenerEvenements(){
-		EvenementCarre listenerCarre = new EvenementCarre(panneauPrincipal.getGraph(), this);
-		EvenementBtnCarre listenerBtnCarre = new EvenementBtnCarre(panneauPrincipal.getGraph(), this);
-		EvenementBtnFleche listenerBtnFleche = new EvenementBtnFleche(panneauPrincipal.getGraph(), this, listenerCarre);
-		EvenementMenuEnregistrer listenerMenuEnregistrer = new EvenementMenuEnregistrer(panneauPrincipal.getGraph());
-		EvenementMenuOuvrir listenerMenuOuvrir = new EvenementMenuOuvrir(panneauPrincipal.getGraph());
-		EvenementMenuExporter listenerMenuExporter = new EvenementMenuExporter(panneauPrincipal.getGraph());
-		EvenementMenuQuitter listenerMenuQuitter = new EvenementMenuQuitter(panneauPrincipal.getGraph());
-		EvenementMenuCarre listenerMenuCarre = new EvenementMenuCarre(panneauPrincipal.getGraph());
+		EvenementCarre listenerCarre = new EvenementCarre(m_panneauPrincipal.getGraph(), this);
+		EvenementBtnCarre listenerBtnCarre = new EvenementBtnCarre(m_panneauPrincipal.getGraph(), this);
+		EvenementBtnFleche listenerBtnFleche = new EvenementBtnFleche(m_panneauPrincipal.getGraph(), this, listenerCarre);
+		EvenementMenuEnregistrer listenerMenuEnregistrer = new EvenementMenuEnregistrer(m_panneauPrincipal.getGraph());
+		EvenementMenuOuvrir listenerMenuOuvrir = new EvenementMenuOuvrir(m_panneauPrincipal.getGraph());
+		EvenementMenuExporter listenerMenuExporter = new EvenementMenuExporter(m_panneauPrincipal.getGraph());
+		EvenementMenuQuitter listenerMenuQuitter = new EvenementMenuQuitter(m_panneauPrincipal.getGraph());
+		EvenementMenuCarre listenerMenuCarre = new EvenementMenuCarre(m_panneauPrincipal.getGraph());
 
 		m_btnCarre.addMouseListener(listenerBtnCarre);
 		m_btnFleche.addMouseListener(listenerBtnFleche);
@@ -58,20 +56,21 @@ public class Fenetre extends JFrame{
 	}
 
 	private void ajouterObjetsGraphiques(){
+		JToolBar toolBar = new JToolBar();
 		m_fichier.add(m_enregistrer);
 		m_fichier.add(m_ouvrir);
 		m_fichier.add(m_exporter);
 		m_fichier.add(m_quitter);
 		m_inserer.add(m_carre);
 
-		panneauPrincipal.add(m_menuBar);
-		m_toolBar.add(m_btnCarre);
-		m_toolBar.add(m_btnFleche);
-		m_toolBar.add(new JButton("c"));
-		m_toolBar.setFloatable(false);
-		m_toolBar.setPreferredSize(new Dimension(600, 30));
+		m_panneauPrincipal.add(m_menuBar);
+		toolBar.add(m_btnCarre);
+		toolBar.add(m_btnFleche);
+		toolBar.add(new JButton("c"));
+		toolBar.setFloatable(false);
+		toolBar.setPreferredSize(new Dimension(600, 30));
 
-		panneauPrincipal.add(m_toolBar);
+		m_panneauPrincipal.add(toolBar);
 
 		m_menuBar.add(m_fichier);
 		m_menuBar.add(m_inserer);
@@ -94,9 +93,9 @@ public class Fenetre extends JFrame{
 		this.ajouterObjetsGraphiques();
 		this.ajouterListenerEvenements();
 		this.setResizable(false);
-		panneauPrincipal.add(panneauPrincipal.getPanneauGraph(), BorderLayout.SOUTH);
+		m_panneauPrincipal.add(m_panneauPrincipal.getPanneauGraph(), BorderLayout.SOUTH);
 		this.setJMenuBar(m_menuBar);
-		this.setContentPane(this.panneauPrincipal);
+		this.setContentPane(m_panneauPrincipal);
 		this.setVisible(true);
 
     }

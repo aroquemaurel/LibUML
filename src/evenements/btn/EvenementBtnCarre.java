@@ -33,19 +33,22 @@ public class EvenementBtnCarre extends EvenementBtn{
        Carre carre = new Carre(m_positionSouris, 90, 100, super.getGraph());
         carre.afficher();
     }
-	private double positionRelativeALaFenetre(int p_tailleElement){
-		return (m_positionSouris.x - super.getFenetre().getX() -p_tailleElement);
+	private double positionRelativeALaFenetre(int p_tailleElement, boolean abscisse){
+		if(abscisse)
+			return (m_positionSouris.x - super.getFenetre().getX() - p_tailleElement);
+		else
+			return (m_positionSouris.y - super.getFenetre().getY() - p_tailleElement);
 
 	}
     private void calculerPositionSouris(){
         PointerInfo pointer = MouseInfo.getPointerInfo();
         m_positionSouris = pointer.getLocation();
 
-		if (positionRelativeALaFenetre(90) < 0 || positionRelativeALaFenetre(100) < 0){
+		if (positionRelativeALaFenetre(90, true) < 0 || positionRelativeALaFenetre(100, false) < 0){
 			m_positionSouris.setLocation(100, 100);
 		}
 		else{
-			m_positionSouris.setLocation(positionRelativeALaFenetre(90), positionRelativeALaFenetre(100));
+			m_positionSouris.setLocation(positionRelativeALaFenetre(90, true), positionRelativeALaFenetre(100, false));
 		}
         super.getFenetre().setCursor(Cursor.getDefaultCursor());
     }
