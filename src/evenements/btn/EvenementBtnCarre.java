@@ -15,7 +15,7 @@ import org.jgraph.JGraph;
  * @author satenske
  */
 public class EvenementBtnCarre extends EvenementBtn{
-    private Point positionSouris;
+    private Point m_positionSouris;
 
     public EvenementBtnCarre(JGraph p_graph, JFrame p_fenetre){
         super(p_graph, p_fenetre);
@@ -30,18 +30,23 @@ public class EvenementBtnCarre extends EvenementBtn{
 	@Override
     public void mouseReleased(MouseEvent event) {
         calculerPositionSouris();
-       Carre carre = new Carre(this.positionSouris, 90, 100, super.getGraph());
+       Carre carre = new Carre(m_positionSouris, 90, 100, super.getGraph());
         carre.afficher();
     }
+	private double positionRelativeALaFenetre(int p_tailleElement){
+		return (m_positionSouris.x - super.getFenetre().getX() -p_tailleElement);
 
+	}
     private void calculerPositionSouris(){
         PointerInfo pointer = MouseInfo.getPointerInfo();
-        this.positionSouris = pointer.getLocation();
+        m_positionSouris = pointer.getLocation();
 
-        this.positionSouris.setLocation(
-                    this.positionSouris.getX() - super.getFenetre().getX() - 90,
-                    this.positionSouris.getY() - super.getFenetre().getY() - 100
-                );
+		if (positionRelativeALaFenetre(90) < 0 || positionRelativeALaFenetre(100) < 0){
+			m_positionSouris.setLocation(100, 100);
+		}
+		else{
+			m_positionSouris.setLocation(positionRelativeALaFenetre(90), positionRelativeALaFenetre(100));
+		}
         super.getFenetre().setCursor(Cursor.getDefaultCursor());
     }
 }

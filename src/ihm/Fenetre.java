@@ -1,21 +1,15 @@
 package ihm;
 
 import evenements.EvenementCarre;
-import evenements.btn.EvenementBtnFleche;
-import evenements.btn.EvenementBtnCarre;
-
-import evenements.menu.EvenementMenuCarre;
-import evenements.menu.EvenementMenuEnregistrer;
-import evenements.menu.EvenementMenuExporter;
-import evenements.menu.EvenementMenuOuvrir;
-import evenements.menu.EvenementMenuQuitter;
+import evenements.btn.*;
+import evenements.menu.*;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
-
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -99,6 +93,7 @@ public class Fenetre extends JFrame{
     public void afficherFenetre(){
 		this.ajouterObjetsGraphiques();
 		this.ajouterListenerEvenements();
+		this.setResizable(false);
 		panneauPrincipal.add(panneauPrincipal.getPanneauGraph(), BorderLayout.SOUTH);
 		this.setJMenuBar(m_menuBar);
 		this.setContentPane(this.panneauPrincipal);
