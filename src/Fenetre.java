@@ -1,6 +1,12 @@
 import evenements.EvenementCarre;
-import evenements.EvenementBtnFleche;
-import evenements.EvenementBtnCarre;
+import evenements.btn.EvenementBtnFleche;
+import evenements.btn.EvenementBtnCarre;
+
+import evenements.menu.EvenementMenuCarre;
+import evenements.menu.EvenementMenuEnregistrer;
+import evenements.menu.EvenementMenuExporter;
+import evenements.menu.EvenementMenuOuvrir;
+import evenements.menu.EvenementMenuQuitter;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -39,7 +45,11 @@ public class Fenetre extends JFrame{
 	private EvenementBtnCarre m_listenerBtnCarre = new EvenementBtnCarre(panneauPrincipal.getGraph(), this);
 	private EvenementCarre m_listenerCarre = new EvenementCarre(panneauPrincipal.getGraph(), this);
 	private EvenementBtnFleche m_listenerBtnFleche = new EvenementBtnFleche(panneauPrincipal.getGraph(), this, m_listenerCarre);
- //   private ActionListener listenerQuitter = new ActionListener();
+	private EvenementMenuEnregistrer m_listenerMenuEnregistrer = new EvenementMenuEnregistrer();
+	private EvenementMenuOuvrir m_listenerMenuOuvrir = new EvenementMenuOuvrir();
+	private EvenementMenuExporter m_listenerMenuExporter = new EvenementMenuExporter();
+	private EvenementMenuQuitter m_listenerMenuQuitter = new EvenementMenuQuitter();
+	private EvenementMenuCarre m_listenerMenuCarre = new EvenementMenuCarre();
 
     /**
      * Constructeur de la fenetre.
@@ -80,6 +90,11 @@ public class Fenetre extends JFrame{
 
 		m_btnCarre.addMouseListener(m_listenerBtnCarre);
 		m_btnFleche.addMouseListener(m_listenerBtnFleche);
+		m_quitter.addActionListener(m_listenerMenuQuitter);
+		m_exporter.addActionListener(m_listenerMenuExporter);
+		m_enregistrer.addActionListener(m_listenerMenuEnregistrer);
+		m_carre.addActionListener(m_listenerMenuCarre);
+		m_ouvrir.addActionListener(m_listenerMenuOuvrir);
 
 		panneauPrincipal.add(panneauPrincipal.getPanneauGraph(), BorderLayout.SOUTH);
 		this.setJMenuBar(m_menuBar);
