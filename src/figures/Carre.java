@@ -13,12 +13,12 @@ import org.jgraph.graph.DefaultPort;
 *
 * @author satenske
 */
-public class Carre implements Figure {
+public class Carre extends ElementGraphique implements Figure {
     private Point position;
     private double largeur;
     private double longueur;
     private JGraph graph;
-    private DefaultGraphCell cellule = new DefaultGraphCell();
+    private DefaultGraphCell cellule = new DefaultGraphCell("Je suis un carré");
 
 
     public Carre(Point p_position, double p_largeur,
@@ -30,7 +30,7 @@ public class Carre implements Figure {
     }
 
     public void afficher() {
-        this.creerCellule("Yatta", Color.BLACK);
+        this.creerCellule(Color.white);
         this.graph.getGraphLayoutCache().insert(this.cellule);
     }
 
@@ -38,7 +38,7 @@ public class Carre implements Figure {
         return (this.cellule);
     }
 
-    private void creerCellule(String name, Color p_couleurFond) {
+    private void creerCellule(Color p_couleurFond) {
         this.cellule.getAttributes();
 
         // dessine le carré

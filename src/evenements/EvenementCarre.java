@@ -15,8 +15,8 @@ import org.jgraph.graph.DefaultGraphCell;
  */
 public class EvenementCarre implements MouseListener {
     private JGraph graph;
-    private DefaultGraphCell SourceCelluleARelier;
-    private DefaultGraphCell DestinationCelluleARelier;
+    private DefaultGraphCell sourceCelluleARelier;
+    private DefaultGraphCell destinationCelluleARelier;
     private DefaultGraphCell celluleActuelle;
     private boolean deuxiemeClic = false;
     private JFrame fenetre;
@@ -38,17 +38,21 @@ public class EvenementCarre implements MouseListener {
       Point position = event.getPoint();
       this.celluleActuelle = (DefaultGraphCell)this.graph.getFirstCellForLocation(position.x, position.y);
 
-       /* Actuellement, on peut séléctionner une fleche pour créer une fleche pointant sur une fleche
-        * moyen, à voir comment on peut savoir si on est sur une fleche ou sur autre chose
+       /* Actuellement, on peut séléctionner une fleche pour créer une 
+	    * fleche pointant sur une fleche moyen, à voir comment on peut
+	    * savoir si on est sur une fleche ou sur autre chose
         */
         if(this.celluleActuelle != null){
             if(!deuxiemeClic) {
-                this.fenetre.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                this.SourceCelluleARelier = this.celluleActuelle;
+                this.fenetre.setCursor(
+					Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                this.sourceCelluleARelier = this.celluleActuelle;
             } else {
                 this.fenetre.setCursor(Cursor.getDefaultCursor());
-                this.DestinationCelluleARelier = this.celluleActuelle;
-                Fleche fleche = new Fleche(this.SourceCelluleARelier, this.DestinationCelluleARelier, this.graph);
+                this.destinationCelluleARelier = this.celluleActuelle;
+                Fleche fleche = new Fleche(this.sourceCelluleARelier,
+										   this.destinationCelluleARelier,
+										   this.graph);
                 fleche.tracerFleche();
                 this.fenetre.setCursor(Cursor.getDefaultCursor());
                  this.graph.removeMouseListener(this);

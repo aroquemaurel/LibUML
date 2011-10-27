@@ -2,7 +2,6 @@ package figures;
 
 import org.jgraph.JGraph;
 import org.jgraph.graph.DefaultEdge;
-import org.jgraph.graph.DefaultGraphCell;
 import org.jgraph.graph.GraphConstants;
 
 /**
@@ -10,11 +9,12 @@ import org.jgraph.graph.GraphConstants;
  * @author satenske
  */
 public class Fleche {
-    private DefaultGraphCell sourceFleche;
-    private DefaultGraphCell destinationFleche;
+    private ElementGraphique sourceFleche;
+    private ElementGraphique destinationFleche;
     private JGraph graph;
     
-    public Fleche(DefaultGraphCell p_sourceFleche, DefaultGraphCell p_destinationFleche, JGraph p_graph) {
+    public Fleche(ElementGraphique p_sourceFleche, 
+		  ElementGraphique p_destinationFleche, JGraph p_graph) {
         this.sourceFleche = p_sourceFleche;
         this.destinationFleche = p_destinationFleche;
         this.graph = p_graph;
@@ -28,11 +28,10 @@ public class Fleche {
         int arrow = GraphConstants.ARROW_CLASSIC;
 
         GraphConstants.setLineEnd(edge.getAttributes(), arrow);
-        GraphConstants.setEndFill(edge.getAttributes(), true);
+        GraphConstants.setEndFill(edge.getAttributes(), false);
 
-        this.graph.getGraphLayoutCache().insert(this.sourceFleche);
-        this.graph.getGraphLayoutCache().insert(this.destinationFleche);
-        this.graph.getGraphLayoutCache().insert(edge);
+        this.graph.getGraphLayoutCache()
+			.insertEdge(edge, this.sourceFleche, this.destinationFleche);
     }
 
 }
