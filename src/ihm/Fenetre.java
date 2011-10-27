@@ -1,3 +1,5 @@
+package ihm;
+
 import evenements.EvenementCarre;
 import evenements.btn.EvenementBtnFleche;
 import evenements.btn.EvenementBtnCarre;
@@ -26,7 +28,7 @@ import javax.swing.JToolBar;
  * @author satenske
  */
 public class Fenetre extends JFrame{
-    private Panneau panneauPrincipal = new Panneau();
+    private PanneauGraph panneauPrincipal = new PanneauGraph();
 
     private JMenuBar m_menuBar = new JMenuBar();
     private JMenu m_fichier = new JMenu("Fichier");

@@ -14,5 +14,4 @@ public class EvenementMenuExporter extends EvenementMenu{
 	public EvenementMenuExporter(JGraph p_graph){
 		super(p_graph);
 	}
-
 }

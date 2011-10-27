@@ -22,10 +22,12 @@ public class EvenementBtnCarre extends EvenementBtn{
         this.addMouseListener(this);
     }
 
+	@Override
     public void mousePressed(MouseEvent event){
         super.getFenetre().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
 
+	@Override
     public void mouseReleased(MouseEvent event) {
         calculerPositionSouris();
        Carre carre = new Carre(this.positionSouris, 90, 100, super.getGraph());
