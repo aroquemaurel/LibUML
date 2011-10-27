@@ -20,9 +20,6 @@ public class EvenementMenu implements ActionListener{
 		m_graph = p_graph;
 	}
 	public void actionPerformed(ActionEvent event){
-		JOptionPane boiteNonImplementee;
-
-		boiteNonImplementee= new JOptionPane();
 		JOptionPane.showMessageDialog(null, "Cette fonctionnalité n'est pas implémentée.",
 				"Attention", JOptionPane.WARNING_MESSAGE);
 	}
