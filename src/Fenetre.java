@@ -42,40 +42,31 @@ public class Fenetre extends JFrame{
 	private JButton m_btnCarre = new JButton(new ImageIcon("img/carre.jpg"));
 	private JButton m_btnFleche = new JButton("f");
 
-	private EvenementBtnCarre m_listenerBtnCarre = new EvenementBtnCarre(panneauPrincipal.getGraph(), this);
-	private EvenementCarre m_listenerCarre = new EvenementCarre(panneauPrincipal.getGraph(), this);
-	private EvenementBtnFleche m_listenerBtnFleche = new EvenementBtnFleche(panneauPrincipal.getGraph(), this, m_listenerCarre);
-	private EvenementMenuEnregistrer m_listenerMenuEnregistrer = new EvenementMenuEnregistrer();
-	private EvenementMenuOuvrir m_listenerMenuOuvrir = new EvenementMenuOuvrir();
-	private EvenementMenuExporter m_listenerMenuExporter = new EvenementMenuExporter();
-	private EvenementMenuQuitter m_listenerMenuQuitter = new EvenementMenuQuitter();
-	private EvenementMenuCarre m_listenerMenuCarre = new EvenementMenuCarre();
+	private void ajouterListenerEvenements(){
+		EvenementCarre listenerCarre = new EvenementCarre(panneauPrincipal.getGraph(), this);
+		EvenementBtnCarre listenerBtnCarre = new EvenementBtnCarre(panneauPrincipal.getGraph(), this);
+		EvenementBtnFleche listenerBtnFleche = new EvenementBtnFleche(panneauPrincipal.getGraph(), this, listenerCarre);
+		EvenementMenuEnregistrer listenerMenuEnregistrer = new EvenementMenuEnregistrer();
+		EvenementMenuOuvrir listenerMenuOuvrir = new EvenementMenuOuvrir();
+		EvenementMenuExporter listenerMenuExporter = new EvenementMenuExporter();
+		EvenementMenuQuitter listenerMenuQuitter = new EvenementMenuQuitter();
+		EvenementMenuCarre listenerMenuCarre = new EvenementMenuCarre();
 
-    /**
-     * Constructeur de la fenetre.
-     */
-    public Fenetre(){
-        this.setTitle("Démonstrateur de la bibliothèque UML");
-        this.setSize(600, 650);
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(new BorderLayout());
+		m_btnCarre.addMouseListener(listenerBtnCarre);
+		m_btnFleche.addMouseListener(listenerBtnFleche);
+		m_quitter.addActionListener(listenerMenuQuitter);
+		m_exporter.addActionListener(listenerMenuExporter);
+		m_enregistrer.addActionListener(listenerMenuEnregistrer);
+		m_carre.addActionListener(listenerMenuCarre);
+		m_ouvrir.addActionListener(listenerMenuOuvrir);
+	}
 
-    }
-
-    /**
-     * Permet d'afficher la fenetre, avec tous les boutons et le graph
-     */
-    public void afficherFenetre(){
-         /* on verra plus tard comment serons les boutons, et ou on les feras.
-         */
+	private void ajouterObjetsGraphiques(){
 		m_fichier.add(m_enregistrer);
 		m_fichier.add(m_ouvrir);
 		m_fichier.add(m_exporter);
 		m_fichier.add(m_quitter);
-
 		m_inserer.add(m_carre);
-
 
 		panneauPrincipal.add(m_menuBar);
 		m_toolBar.add(m_btnCarre);
@@ -85,17 +76,27 @@ public class Fenetre extends JFrame{
 		m_toolBar.setPreferredSize(new Dimension(600, 30));
 
 		panneauPrincipal.add(m_toolBar);
+
 		m_menuBar.add(m_fichier);
 		m_menuBar.add(m_inserer);
+	}
+    /**
+     * Constructeur de la fenetre.
+     */
+    public Fenetre(){
+        this.setTitle("Démonstrateur de la bibliothèque UML");
+        this.setSize(600, 650);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(new BorderLayout());
+    }
 
-		m_btnCarre.addMouseListener(m_listenerBtnCarre);
-		m_btnFleche.addMouseListener(m_listenerBtnFleche);
-		m_quitter.addActionListener(m_listenerMenuQuitter);
-		m_exporter.addActionListener(m_listenerMenuExporter);
-		m_enregistrer.addActionListener(m_listenerMenuEnregistrer);
-		m_carre.addActionListener(m_listenerMenuCarre);
-		m_ouvrir.addActionListener(m_listenerMenuOuvrir);
-
+    /**
+     * Permet d'afficher la fenetre, avec tous les boutons et le graph
+     */
+    public void afficherFenetre(){
+		this.ajouterObjetsGraphiques();
+		this.ajouterListenerEvenements();
 		panneauPrincipal.add(panneauPrincipal.getPanneauGraph(), BorderLayout.SOUTH);
 		this.setJMenuBar(m_menuBar);
 		this.setContentPane(this.panneauPrincipal);
