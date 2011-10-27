@@ -4,10 +4,15 @@
  */
 package evenements.menu;
 
+import org.jgraph.JGraph;
+
 /**
  *
  * @author satenske
  */
 public class EvenementMenuExporter extends EvenementMenu{
+	public EvenementMenuExporter(JGraph p_graph){
+		super(p_graph);
+	}
 
 }

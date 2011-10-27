@@ -4,10 +4,15 @@
  */
 package evenements.menu;
 
+import org.jgraph.JGraph;
+
 /**
  *
  * @author satenske
  */
 public class EvenementMenuEnregistrer extends EvenementMenu {
+	public EvenementMenuEnregistrer(JGraph p_graph){
+		super(p_graph);
+	}
 
 }

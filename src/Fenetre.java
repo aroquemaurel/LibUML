@@ -46,11 +46,11 @@ public class Fenetre extends JFrame{
 		EvenementCarre listenerCarre = new EvenementCarre(panneauPrincipal.getGraph(), this);
 		EvenementBtnCarre listenerBtnCarre = new EvenementBtnCarre(panneauPrincipal.getGraph(), this);
 		EvenementBtnFleche listenerBtnFleche = new EvenementBtnFleche(panneauPrincipal.getGraph(), this, listenerCarre);
-		EvenementMenuEnregistrer listenerMenuEnregistrer = new EvenementMenuEnregistrer();
-		EvenementMenuOuvrir listenerMenuOuvrir = new EvenementMenuOuvrir();
-		EvenementMenuExporter listenerMenuExporter = new EvenementMenuExporter();
-		EvenementMenuQuitter listenerMenuQuitter = new EvenementMenuQuitter();
-		EvenementMenuCarre listenerMenuCarre = new EvenementMenuCarre();
+		EvenementMenuEnregistrer listenerMenuEnregistrer = new EvenementMenuEnregistrer(panneauPrincipal.getGraph());
+		EvenementMenuOuvrir listenerMenuOuvrir = new EvenementMenuOuvrir(panneauPrincipal.getGraph());
+		EvenementMenuExporter listenerMenuExporter = new EvenementMenuExporter(panneauPrincipal.getGraph());
+		EvenementMenuQuitter listenerMenuQuitter = new EvenementMenuQuitter(panneauPrincipal.getGraph());
+		EvenementMenuCarre listenerMenuCarre = new EvenementMenuCarre(panneauPrincipal.getGraph());
 
 		m_btnCarre.addMouseListener(listenerBtnCarre);
 		m_btnFleche.addMouseListener(listenerBtnFleche);
