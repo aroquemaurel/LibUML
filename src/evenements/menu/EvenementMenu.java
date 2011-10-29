@@ -20,7 +20,8 @@ public class EvenementMenu implements ActionListener{
 		m_graph = p_graph;
 	}
 	public void actionPerformed(ActionEvent event){
-		JOptionPane.showMessageDialog(null, "Cette fonctionnalité n'est pas implémentée.",
+		JOptionPane.showMessageDialog(null, "Veuillez nous excuser, mais cette fonctionnalité n'est pas implémentée "
+				+ "pour le moment.",
 				"Attention", JOptionPane.WARNING_MESSAGE);
 	}
 	public JGraph getGraph() {

@@ -1,5 +1,5 @@
+package ihm;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -15,7 +15,7 @@ import org.jgraph.graph.GraphModel;
  *
  * @author satenske
  */
-public class Panneau extends JPanel {
+public class PanneauGraph extends JPanel {
 	private GraphModel m_model = new DefaultGraphModel();
 	private JGraph m_graph = new JGraph(m_model);
 	private JScrollPane m_panneauGraph = new JScrollPane(m_graph);
@@ -28,7 +28,7 @@ public class Panneau extends JPanel {
 		m_graph.setJumpToDefaultPort(true);
 	}
 
-	public Panneau() {
+	public PanneauGraph() {
 		parametrerGraph();
 		m_panneauGraph.setPreferredSize(new Dimension(500, 500));
 	}
