@@ -8,6 +8,6 @@ package Lien;
  *
  * @author satenske
  */
-public class ArcCercle extends Lien {
+abstract public class ArcCercle extends Lien {
 
 }

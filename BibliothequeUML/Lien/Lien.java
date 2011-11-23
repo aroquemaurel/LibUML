@@ -8,6 +8,6 @@ package Lien;
  *
  * @author satenske
  */
-public class Lien {
+abstract public class Lien {
 
 }

@@ -8,6 +8,6 @@ package ElementModelisation.Acteur;
  *
  * @author satenske
  */
-public class Acteur extends ElementModelisation.ElementModelisation {
+abstract public class Acteur extends ElementModelisation.ElementModelisation {
 
 }

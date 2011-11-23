@@ -10,6 +10,6 @@ import com.mxgraph.model.mxCell;
  *
  * @author satenske
  */
-public class ElementModelisation extends mxCell {
+abstract public class ElementModelisation extends mxCell {
 
 }
