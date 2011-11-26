@@ -12,10 +12,10 @@ class Attribut extends Variable {
     private Visibilite visibilite;
 
     public Visibilite getVisibilite() {
-        return this.visibilite;
+        return (this.visibilite);
     }
 
-    public void setVisibilite(Visibilite visibilite) {
-        this.visibilite = visibilite;
+    public void setVisibilite(Visibilite p_visibilite) {
+        this.visibilite = p_visibilite;
     }
 }

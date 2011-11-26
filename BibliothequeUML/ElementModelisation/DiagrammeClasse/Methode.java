@@ -17,47 +17,55 @@ class Methode {
     private boolean constant;
     private boolean deClasse;
 
-    public ArrayList<Variable> getParametres() {
-        return this.parametres;
+    public void ajouterParametre(String nom, String type, boolean constant) {
+
     }
 
-    public void setParametres(ArrayList<Variable> parametres) {
-        this.parametres = parametres;
+	/*
+	 * Getters
+	 */
+
+    public boolean estConstant() {
+        return (this.constant);
+    }
+
+    public boolean estDeClasse() {
+        return (this.deClasse);
+    }
+
+    public ArrayList<Variable> getParametres() {
+        return (this.parametres);
     }
 
     public String getTypeRetour() {
-        return this.typeRetour;
-    }
-
-    public void setTypeRetour(String typeRetour) {
-        this.typeRetour = typeRetour;
-    }
-
-    public boolean isConstant() {
-        return constant;
-    }
-
-    public void setConstant(boolean constant) {
-        this.constant = constant;
-    }
-
-    public boolean isDeClasse() {
-        return deClasse;
-    }
-
-    public void setDeClasse(boolean deClasse) {
-        this.deClasse = deClasse;
+        return (this.typeRetour);
     }
 
     public Visibilite getVisibilite() {
-        return visibilite;
+        return (this.visibilite);
     }
 
-    public void setVisibilite(Visibilite visibilite) {
-        this.visibilite = visibilite;
+	/*
+	 * Setters
+	 */
+    public void setParametres(ArrayList<Variable> p_parametres) {
+        this.parametres = p_parametres;
     }
-    
-    public void ajouterParametre(String nom, String type, boolean constant) {
-        
+
+    public void setTypeRetour(String p_typeRetour) {
+        this.typeRetour = p_typeRetour;
     }
+
+    public void setConstant(boolean p_constant) {
+        this.constant = p_constant;
+    }
+
+    public void setDeClasse(boolean p_deClasse) {
+        this.deClasse = p_deClasse;
+    }
+
+    public void setVisibilite(Visibilite p_visibilite) {
+        this.visibilite = p_visibilite;
+    }
+
 }

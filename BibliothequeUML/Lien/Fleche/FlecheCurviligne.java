@@ -4,10 +4,12 @@
  */
 package Lien.Fleche;
 
+import Lien.ArcCercle;
+
 /**
  *
  * @author satenske
  */
-public class FlecheCurviligne extends Lien.ArcCercle {
+public class FlecheCurviligne extends ArcCercle {
 
 }

@@ -1,5 +1,6 @@
 package ihm;
 
+import com.mxgraph.util.mxConstants;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -19,7 +20,7 @@ import javax.swing.JToolBar;
  */
 public class FenetreDemo extends JFrame{
     private PanneauGraph panneauPrincipal = new PanneauGraph();
-
+	private mxConstants test;
 	/* Pour le menu */
     private JMenuBar menuBar = new JMenuBar();
     private JMenu fichier = new JMenu("Fichier");
@@ -52,6 +53,7 @@ public class FenetreDemo extends JFrame{
 	}
 
 	private void ajouterObjetsGraphiques(){
+		System.out.println(test);
 		JToolBar toolBar = new JToolBar();
 		this.fichier.add(this.enregistrer);
 		this.fichier.add(this.ouvrir);

@@ -6,7 +6,6 @@
             <name>BibliothequeUML</name>
             <source-roots>
                 <root id="src.Demonstrateur.dir"/>
-                <root id="src.dir"/>
                 <root id="src.BibliothequeUML.dir"/>
             </source-roots>
             <test-roots>

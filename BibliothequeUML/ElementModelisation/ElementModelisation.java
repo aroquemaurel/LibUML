@@ -17,39 +17,45 @@ abstract public class ElementModelisation extends mxCell {
     private double hauteur;
     private double largeur;
 
-    public double getHauteur() {
-        return hauteur;
-    }
+    public void supprimer() {
 
-    public void setHauteur(double hauteur) {
-        this.hauteur = hauteur;
+    }
+	/*
+	 * getters
+	 */
+    public double getHauteur() {
+        return this.hauteur;
     }
 
     public double getLargeur() {
-        return largeur;
-    }
-
-    public void setLargeur(double largeur) {
-        this.largeur = largeur;
+        return this.largeur;
     }
 
     public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
+        return this.nom;
     }
 
     public Point getPosition() {
-        return position;
+        return this.position;
     }
 
-    public void setPosition(Point position) {
-        this.position = position;
+	/*
+	 * setters
+	 */
+    public void setHauteur(double p_hauteur) {
+        this.hauteur = hauteur;
     }
-    
-    public void supprimer() {
-        
+
+    public void setLargeur(double p_largeur) {
+        this.largeur = p_largeur;
     }
+
+    public void setNom(String p_nom) {
+        this.nom = p_nom;
+    }
+
+    public void setPosition(Point p_position) {
+        this.position = p_position;
+    }
+
 }

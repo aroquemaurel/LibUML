@@ -13,18 +13,18 @@ abstract class Variable {
     private boolean constante;
 
     public boolean isConstante() {
-        return constante;
+        return (this.constante);
     }
 
-    public void setConstante(boolean constante) {
-        this.constante = constante;
+    public void setConstante(boolean p_constante) {
+        this.constante = p_constante;
     }
 
     public String getType() {
-        return this.type;
+        return (this.type);
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(String p_type) {
+        this.type = p_type;
     }
 }

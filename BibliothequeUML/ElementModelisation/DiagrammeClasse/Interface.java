@@ -14,10 +14,10 @@ public class Interface extends ElementModelisation.ElementModelisation {
     private ArrayList<Methode> listeDeMethodes;
 
     public ArrayList<Methode> getListeDeMethodes() {
-        return listeDeMethodes;
+        return (this.listeDeMethodes);
     }
 
-    public void setListeDeMethodes(ArrayList<Methode> listeDeMethodes) {
-        this.listeDeMethodes = listeDeMethodes;
+    public void setListeDeMethodes(ArrayList<Methode> p_listeDeMethodes) {
+        this.listeDeMethodes = p_listeDeMethodes;
     }
 }
