@@ -6,7 +6,7 @@ import ElementModelisation.ElementModelisation;
  *
  * @author satenske
  */
-abstract public class Lien extends mxEdge { /* mxEdge doesn't exists ?! */
+abstract public class Lien {
 	private ElementModelisation origine;
 	private ElementModelisation extremite;
 	private String texteOrigine;
