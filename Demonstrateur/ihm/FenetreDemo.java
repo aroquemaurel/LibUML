@@ -64,7 +64,6 @@ public class FenetreDemo extends JFrame {
 	}
 
 	private void ajouterObjetsGraphiques(){
-		System.out.println(test);
 		JToolBar toolBar = new JToolBar();
 		this.fichier.add(this.enregistrer);
 		this.fichier.add(this.ouvrir);

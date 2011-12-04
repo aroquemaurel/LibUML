@@ -1,0 +1,18 @@
+--- Mode d'emploi du projet JGraphXExamples ---
+
+1. Dans NetBeans, faites ouvrir projet et aller jusqu'à l'emplacement
+du dossier JGraphXExamples
+
+2. Une fois le projet ajouté à NetBeans, vous trouverez dans le package
+com.mxgraph.exmaples.swing
+Dans celui-ci ce trouve plusieurs classes avec un 'main' dedans.
+
+3. Pour executer un main en particulier, c'est simple :
+	- Clic droit sur le projet dans l'arborescence...
+	- ... Properties
+	- Puis dans le panneau à gauche, Run
+	- Puis mettez la classe de votre choix dans le champ Main Class
+
+4. Une fois que vous avez fait joujou avec les example et que vous avez bien
+jouit dessus, vous pouvez commencer à lire le code pour refaire la même
+chose dans notre projet.
