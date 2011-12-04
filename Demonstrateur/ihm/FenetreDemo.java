@@ -1,9 +1,13 @@
 package ihm;
 
+import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
+import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxStylesheet;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
+import java.util.Hashtable;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -18,8 +22,10 @@ import javax.swing.JToolBar;
  *
  * @author satenske
  */
-public class FenetreDemo extends JFrame{
-    private PanneauGraph panneauPrincipal = new PanneauGraph();
+public class FenetreDemo extends JFrame {
+//    private PanneauGraph panneauPrincipal = new PanneauGraph();
+	private mxGraph panneauPrincipal = new mxGraph();
+	private Object parent = this.panneauPrincipal.getDefaultParent();
 	private mxConstants test;
 	/* Pour le menu */
     private JMenuBar menuBar = new JMenuBar();
@@ -42,14 +48,19 @@ public class FenetreDemo extends JFrame{
 	private JButton btnFleche = new JButton("f");
 
 	private void ajouterListenerEvenements(){
-	//	EvenementCarre listenerCarre = new EvenementCarre(this.panneauPrincipal.getGraph(), this);
-		//EvenementBtnCarre listenerBtnCarre = new EvenementBtnCarre(this.panneauPrincipal.getGraph(), this);
-//		EvenementBtnFleche listenerBtnFleche = new EvenementBtnFleche(this.panneauPrincipal.getGraph(),
-//																		this, listenerCarre);
+	/*	EvenementCarre listenerCarre =
+		new EvenementCarre(this.panneauPrincipal.getGraph(), this);
+		EvenementBtnCarre listenerBtnCarre =
+		new EvenementBtnCarre(this.panneauPrincipal.getGraph(),
+				      this);
+		EvenementBtnFleche listenerBtnFleche =
+		new EvenementBtnFleche(this.panneauPrincipal.getGraph(),
+				       this, listenerCarre);
 
-	//	this.btnCarre.addMouseListener(listenerBtnCarre);
-	//	this.btnFleche.addMouseListener(listenerBtnFleche);
-	//	this.panneauPrincipal.getGraph().addMouseListener(listenerMenuCont);
+		this.btnCarre.addMouseListener(listenerBtnCarre);
+		this.btnFleche.addMouseListener(listenerBtnFleche);
+		this.panneauPrincipal.getGraph().
+		    addMouseListener(listenerMenuCont);*/
 	}
 
 	private void ajouterObjetsGraphiques(){
@@ -61,26 +72,66 @@ public class FenetreDemo extends JFrame{
 		this.fichier.add(this.quitter);
 		this.inserer.add(this.carre);
 
-		this.panneauPrincipal.add(this.menuBar);
+//		this.panneauPrincipal.add(this.menuBar);
 		toolBar.add(this.btnCarre);
 		toolBar.add(this.btnFleche);
 		toolBar.setFloatable(false);
 		toolBar.setPreferredSize(new Dimension(600, 30));
 
-		this.panneauPrincipal.add(toolBar);
+//		this.panneauPrincipal.add(toolBar);
 
 		this.menuBar.add(this.fichier);
 		this.menuBar.add(this.inserer);
 	}
+	
+	private void creerLesStyle() {
+		mxStylesheet stylesheet =
+		    this.panneauPrincipal.getStylesheet();
+		Hashtable<String, Object> style =
+		    new Hashtable<String, Object>();
+		/* Ateur */
+		style.put(mxConstants.STYLE_SHAPE,
+			  mxConstants.SHAPE_ACTOR);
+		style.put(mxConstants.STYLE_OPACITY, 50);
+		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("ACTEUR", style);
+		/* UseCase */
+		style = null;
+		style = new Hashtable<String, Object>();
+		style.put(mxConstants.STYLE_SHAPE,
+			  mxConstants.SHAPE_ELLIPSE);
+		style.put(mxConstants.STYLE_OPACITY, 50);
+		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("USECASE", style);
+	}
+	
     /**
      * Constructeur de la fenetre.
      */
     public FenetreDemo(){
-        this.setTitle("Démonstrateur de la bibliothèque UML");
+	super("Démonstrateur de la bibliothèque UML");
+	this.creerLesStyle();
+	
+	/* Création des styles */
+	
         this.setSize(600, 650);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(new BorderLayout());
+	this.setLayout(new BorderLayout());
+		
+	this.panneauPrincipal.getModel().beginUpdate();
+	panneauPrincipal.insertVertex(parent, null,
+					  "Acteur", 20, 20,
+					  75, 150,
+					  "ACTEUR");
+	panneauPrincipal.insertVertex(parent, null,
+					  "UseCase", 240, 150,
+					  150, 75,
+					  "USECASE");
+	panneauPrincipal.insertVertex(parent, null,
+					  "Morceau de classe", 40, 420,
+					  120, 30);
+	this.panneauPrincipal.getModel().endUpdate();
     }
 
 	public void creerMenuContextuel(){
@@ -89,7 +140,7 @@ public class FenetreDemo extends JFrame{
 		this.menuContextuel.add(this.coller);
 		this.menuContextuel.add(this.supprimer);
 	}
-	public PanneauGraph getPanneauPrincipal(){
+	public mxGraph getPanneauPrincipal(){
 		return this.panneauPrincipal;
 	}
 	public JPopupMenu getMenuContextuel(){
@@ -103,9 +154,13 @@ public class FenetreDemo extends JFrame{
 		this.ajouterObjetsGraphiques();
 		this.ajouterListenerEvenements();
 		this.setResizable(false);
-		this.panneauPrincipal.add(this.panneauPrincipal.getPanneauGraph(), BorderLayout.SOUTH);
+/*		this.panneauPrincipal.add(this.panneauPrincipal.
+							getPanneauGraph(),
+					  BorderLayout.SOUTH);*/
 		this.setJMenuBar(this.menuBar);
-		this.setContentPane(this.panneauPrincipal);
+		mxGraphComponent graphComponent =
+		    new mxGraphComponent(this.panneauPrincipal);
+		this.setContentPane(graphComponent);
 		this.setVisible(true);
 
     }
@@ -116,5 +171,5 @@ public class FenetreDemo extends JFrame{
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
        fenetre.afficherFenetre();
-     }
+    }
 }
