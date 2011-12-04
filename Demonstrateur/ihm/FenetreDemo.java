@@ -122,14 +122,12 @@ public class FenetreDemo extends JFrame {
 	this.panneauPrincipal.getModel().beginUpdate();
 	panneauPrincipal.insertVertex(parent, null,
 					  "Acteur", 20, 20,
-					  75, 150,
-					  "ACTEUR");
+					  75, 100, "ACTEUR");
 	panneauPrincipal.insertVertex(parent, null,
-					  "UseCase", 240, 150,
-					  150, 75,
-					  "USECASE");
+					  "UseCase", 30, 30,
+					  150, 75, "USECASE");
 	panneauPrincipal.insertVertex(parent, null,
-					  "Morceau de classe", 40, 420,
+					  "Morceau de classe", 40, 40,
 					  120, 30);
 	this.panneauPrincipal.getModel().endUpdate();
     }
