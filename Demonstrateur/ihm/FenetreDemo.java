@@ -14,14 +14,14 @@ import javax.swing.JPanel;
  * @author satenske
  */
 public class FenetreDemo extends JFrame {
-    private mxGraph graph;
-    private JPanel panneauPrincipal;
-    private Menu menuGauche;
-    private Menu menuDroite;
+    private final mxGraph graph;
+    private final JPanel panneauPrincipal;
+    private final Menu menuGauche;
+    private final Menu menuDroite;
      
-    private PanneauGraph panneauGraph;
+    private final PanneauGraph panneauGraph;
     
-    private MenuHaut menuHaut;
+    private final MenuHaut menuHaut;
     
     public FenetreDemo(){
         this.panneauPrincipal = new JPanel();
