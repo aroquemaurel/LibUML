@@ -30,8 +30,8 @@ public class FenetreDemo extends JFrame {
         this.menuGauche = new MenuGauche(200,600);
         this.menuDroite = new MenuDroite(200,600);      
         this.menuHaut = new MenuHaut(1000,20);    
-        
-         /* un zoli hello wolrd */
+
+        /* un zoli hello wolrd */
          Object parent = graph.getDefaultParent();
         graph.getModel().beginUpdate();
         Object v1 = graph.insertVertex(parent, null, "Hello", 20, 20, 80,
