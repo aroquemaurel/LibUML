@@ -14,6 +14,16 @@ import javax.swing.JPanel;
  * @author satenske
  */
 public class FenetreDemo extends JFrame {
+    private static final int HAUTEUR_FENETRE = 700;
+    private static final int LARGEUR_FENETRE = 1200;
+    private static final int HAUTEUR_MENUBAR = 20;
+    private static final int HAUTEUR_ZONEDETRAVAIL = HAUTEUR_FENETRE - HAUTEUR_MENUBAR - 50;
+    
+    private static final int LARGEUR_MENUGAUCHE = 100;
+    private static final int LARGEUR_TABLEAUDROITE = 500;    
+    private static final int LARGEUR_GRAPH = 
+                        LARGEUR_FENETRE - LARGEUR_MENUGAUCHE - LARGEUR_TABLEAUDROITE - 30;
+    
     private final mxGraph graph;
     private final JPanel panneauPrincipal;
     private final Menu menuGauche;
@@ -26,10 +36,10 @@ public class FenetreDemo extends JFrame {
     public FenetreDemo(){
         this.panneauPrincipal = new JPanel();
         this.graph = new mxGraph();
-        this.panneauGraph = new PanneauGraph(this.graph);
-        this.menuGauche = new MenuGauche(200,600);
-        this.menuDroite = new MenuDroite(200,600);      
-        this.menuHaut = new MenuHaut(1000,20);    
+        this.menuGauche = new MenuGauche(LARGEUR_MENUGAUCHE, HAUTEUR_ZONEDETRAVAIL);
+        this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL, this.graph);
+        this.menuDroite = new MenuDroite(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL);      
+        this.menuHaut = new MenuHaut(LARGEUR_FENETRE, HAUTEUR_MENUBAR);    
 
         /* un zoli hello wolrd */
          Object parent = graph.getDefaultParent();
@@ -44,13 +54,6 @@ public class FenetreDemo extends JFrame {
 
     }
     
-    public void parametrerFenetre(){
-        this.setTitle("Démonstrateur de la bibliothèque");
-        this.setSize(1000, 700);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-    }
     public void afficherFenetre(){
         this.parametrerFenetre();      
         this.ajouterBoutons();
@@ -59,18 +62,28 @@ public class FenetreDemo extends JFrame {
         this.setContentPane(this.panneauPrincipal);      
         this.setVisible(true);
     }
+    
     private void ajouterPanneaux() {
         this.panneauPrincipal.add(this.menuHaut);
         this.panneauPrincipal.add(this.menuGauche.getPanneau());
         this.panneauPrincipal.add(this.panneauGraph);
         this.panneauPrincipal.add(this.menuDroite.getPanneau());
     }
+    
     private void ajouterBoutons(){
         this.menuHaut.ajouterObjetsGraphiques();
         this.menuGauche.ajouterObjetsGraphiques();
         this.menuDroite.ajouterObjetsGraphiques();
     }
     
+    private void parametrerFenetre(){
+        this.setTitle("Démonstrateur de la bibliothèque");
+        this.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+    }
+        
     /**
      * Méthode principale
      * @param args
@@ -80,8 +93,8 @@ public class FenetreDemo extends JFrame {
        fenetre.afficherFenetre();
     }
 
-
 }
+
 
 
 
