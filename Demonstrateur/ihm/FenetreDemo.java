@@ -1,10 +1,13 @@
 package ihm;
 
+import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxStylesheet;
 import ihm.Menu.Menu;
 import ihm.Menu.MenuDroite;
 import ihm.Menu.MenuGauche;
 import ihm.Menu.MenuHaut;
+import java.util.Hashtable;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 /**
@@ -42,7 +45,7 @@ public class FenetreDemo extends JFrame {
         this.menuHaut = new MenuHaut(LARGEUR_FENETRE, HAUTEUR_MENUBAR);    
 
         /* un zoli hello wolrd */
-         Object parent = graph.getDefaultParent();
+       /*  Object parent = graph.getDefaultParent();
         graph.getModel().beginUpdate();
         Object v1 = graph.insertVertex(parent, null, "Hello", 20, 20, 80,
                         30);
@@ -51,6 +54,13 @@ public class FenetreDemo extends JFrame {
         graph.insertEdge(parent, null, "Edge", v1, v2);
         graph.getModel().endUpdate();
         /* Fin du hello world */
+        this.creerLesStyle();
+        Object parent = graph.getDefaultParent();
+        this.graph.getModel().beginUpdate();
+    	this.graph.insertVertex(parent, null, "Acteur", 20, 20, 75, 100, "ACTEUR");
+        this.graph.insertVertex(parent, null, "UseCase", 30, 30,150, 75, "USECASE");
+        this.graph.insertVertex(parent, null, "Morceau de classe", 40, 40, 120, 30);
+        this.graph.getModel().endUpdate();
 
     }
     
@@ -62,6 +72,26 @@ public class FenetreDemo extends JFrame {
         this.setContentPane(this.panneauPrincipal);      
         this.setVisible(true);
     }
+	private void creerLesStyle() {
+		mxStylesheet stylesheet =
+		    this.graph.getStylesheet();
+		Hashtable<String, Object> style =
+		    new Hashtable<String, Object>();
+		/* Ateur */
+		style.put(mxConstants.STYLE_SHAPE,
+			  mxConstants.SHAPE_ACTOR);
+		style.put(mxConstants.STYLE_OPACITY, 50);
+		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("ACTEUR", style);
+		/* UseCase */
+		style = null;
+		style = new Hashtable<String, Object>();
+		style.put(mxConstants.STYLE_SHAPE,
+			  mxConstants.SHAPE_ELLIPSE);
+		style.put(mxConstants.STYLE_OPACITY, 50);
+		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("USECASE", style);
+	}
     
     private void ajouterPanneaux() {
         this.panneauPrincipal.add(this.menuHaut);
