@@ -5,13 +5,10 @@
 
 package evenements;
 
-import com.mxgraph.util.mxConstants;
-import com.mxgraph.view.mxStylesheet;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import java.awt.event.MouseListener;
-import java.util.Hashtable;
 import javax.swing.JOptionPane;
 
 /**

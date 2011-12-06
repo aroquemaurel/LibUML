@@ -12,6 +12,12 @@ public class PanneauGraph extends mxGraphComponent {
     private final int largeurPanneau;
     private final int longueurPanneau;
     
+    private void parametrerPanneau(){
+        this.setGridVisible(true);
+        this.setInvokesStopCellEditing(true);
+        this.setPreferredSize(new Dimension(this.largeurPanneau, this.longueurPanneau));    
+    }
+    
     public PanneauGraph(int p_largeurPanneau, int p_longueurPanneau){
         super(new mxGraph());        
         
@@ -20,10 +26,5 @@ public class PanneauGraph extends mxGraphComponent {
         
         this.parametrerPanneau();
     }
-    
-    private void parametrerPanneau(){
-        this.setGridVisible(true);
-        this.setInvokesStopCellEditing(true);
-        this.setPreferredSize(new Dimension(this.largeurPanneau, this.longueurPanneau));    
-    }
+
 }

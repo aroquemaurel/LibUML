@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package ihm.Menu;
 
 import ihm.FenetreDemo;
@@ -17,7 +12,6 @@ import javax.swing.table.TableColumn;
 public class MenuDroite extends Menu {
     public MenuDroite (int p_largeurPanneau, int p_longueurPanneau, FenetreDemo p_fenetre){
         super(p_largeurPanneau, p_longueurPanneau, p_fenetre);
-     //   parametrerPanneau();
     }
 
     @Override
@@ -39,8 +33,8 @@ public class MenuDroite extends Menu {
         
         tableau.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         TableColumn col = tableau.getColumnModel().getColumn(2);
-    //    col.setPreferredWidth(200);
-	super.add(new JScrollPane(tableau));
+     //    col.setPreferredWidth(200);
+        super.add(new JScrollPane(tableau));
     }
 
 }

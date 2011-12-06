@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package evenements.btn;
 
 import evenements.Btn;
@@ -23,7 +18,8 @@ public class BtnUseCase extends Btn {
 
         Object parent = super.fenetre.getPanneauGraph().getGraph().getDefaultParent();
 
-        super.fenetre.getPanneauGraph().getGraph().insertVertex(parent, null, "UseCase", 30, 30,150, 75, "USECASE");
+        super.fenetre.getPanneauGraph().getGraph().insertVertex(
+            parent, null, "UseCase", 30, 30,150, 75, "USECASE");
 
         super.fenetre.getPanneauGraph().getGraph().getModel().endUpdate();
     }

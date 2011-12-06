@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package ihm.Menu;
 
 import evenements.Btn;
@@ -25,12 +20,10 @@ public class MenuGauche extends Menu {
         Btn useCase = new BtnUseCase("useCase", super.fenetre) ;
         Btn classe = new BtnClasse("Classe", super.fenetre) ;
         Btn acteur = new BtnActeur("Acteur", super.fenetre) ;
-
         
         super.add(useCase);
         super.add(acteur);
         super.add(classe);
-
     }
     
 }

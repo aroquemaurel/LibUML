@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package ihm.Menu;
 
 import ihm.FenetreDemo;
@@ -18,6 +13,10 @@ public abstract class Menu extends JPanel {
     private final int longueurPanneau;
     protected final FenetreDemo fenetre;
     
+    private void parametrerPanneau(){
+        this.setPreferredSize(new Dimension(this.largeurPanneau,this.longueurPanneau));
+    }
+    
     public Menu(int p_largeurPanneau, int p_longueurPanneau, FenetreDemo p_fenetre){
         this.largeurPanneau = p_largeurPanneau;
         this.longueurPanneau = p_longueurPanneau;
@@ -29,9 +28,6 @@ public abstract class Menu extends JPanel {
     public JPanel getPanneau(){
         return (this);
     }
-    
-    private void parametrerPanneau(){
-        this.setPreferredSize(new Dimension(this.largeurPanneau,this.longueurPanneau));
-    }
+
     abstract public void ajouterObjetsGraphiques();
 }

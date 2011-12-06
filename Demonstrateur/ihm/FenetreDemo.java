@@ -9,6 +9,7 @@ import ihm.Menu.MenuHaut;
 import java.util.Hashtable;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 /**
  * Classe concernant tout ce qui est l'affichage de la fenetre
  *
@@ -33,26 +34,7 @@ public class FenetreDemo extends JFrame {
     private final PanneauGraph panneauGraph;
     
     private final MenuHaut menuHaut;
-    public FenetreDemo(){
-        this.panneauPrincipal = new JPanel();
-        this.menuGauche = new MenuGauche(LARGEUR_MENUGAUCHE, HAUTEUR_ZONEDETRAVAIL, this);
-        this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
-        this.menuDroite = new MenuDroite(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL, this);      
-        this.menuHaut = new MenuHaut(LARGEUR_FENETRE, HAUTEUR_MENUBAR, this);         
-    }
-
-    public void afficherFenetre(){
-        this.parametrerFenetre();      
-        this.ajouterBoutons();
-        this.ajouterPanneaux();
-
-        this.setContentPane(this.panneauPrincipal);      
-        this.setVisible(true);
-    }
     
-    public PanneauGraph getPanneauGraph(){
-        return (this.panneauGraph);
-    }
    private void creerLesStyle() {
 		mxStylesheet stylesheet =
 		    this.getPanneauGraph().getGraph().getStylesheet();
@@ -75,6 +57,7 @@ public class FenetreDemo extends JFrame {
 		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		stylesheet.putCellStyle("USECASE", style);
 	}
+   
     private void ajouterPanneaux() {
         this.panneauPrincipal.add(this.menuHaut);
         this.panneauPrincipal.add(this.menuGauche.getPanneau());
@@ -96,7 +79,29 @@ public class FenetreDemo extends JFrame {
         this.setResizable(false);
         this.creerLesStyle();
     }
-        
+            
+    
+    public FenetreDemo(){
+        this.panneauPrincipal = new JPanel();
+        this.menuGauche = new MenuGauche(LARGEUR_MENUGAUCHE, HAUTEUR_ZONEDETRAVAIL, this);
+        this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
+        this.menuDroite = new MenuDroite(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL, this);      
+        this.menuHaut = new MenuHaut(LARGEUR_FENETRE, HAUTEUR_MENUBAR, this);         
+    }
+
+    public void afficherFenetre(){
+        this.parametrerFenetre();      
+        this.ajouterBoutons();
+        this.ajouterPanneaux();
+
+        this.setContentPane(this.panneauPrincipal);      
+        this.setVisible(true);
+    }
+    
+    public PanneauGraph getPanneauGraph(){
+        return (this.panneauGraph);
+    }
+
     /**
      * Méthode principale
      * @param args
