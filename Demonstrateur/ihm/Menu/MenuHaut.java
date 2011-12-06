@@ -11,7 +11,6 @@ import javax.swing.JMenuItem;
  * @author satenske
  */
 public class MenuHaut extends JMenuBar {
-    /* Pour le menu */
     private final JMenu fichier;
     private final JMenu inserer;
     
@@ -45,8 +44,6 @@ public class MenuHaut extends JMenuBar {
         this.inserer.add(this.carre);
         
         this.add(this.fichier);
-        this.add(this.inserer);        
-        
+        this.add(this.inserer);           
     }
-    
 }
