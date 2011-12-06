@@ -17,16 +17,16 @@ import javax.swing.JMenuItem;
  */
 public class MenuHaut extends JMenuBar {
     /* Pour le menu */
-    private JMenu fichier;
-    private JMenu inserer;
+    private final JMenu fichier;
+    private final JMenu inserer;
     
-    private JMenuItem enregistrer;
-    private JMenuItem ouvrir;
-    private JMenuItem exporter;
-    private JMenuItem quitter;
-    private JMenuItem carre;
+    private final JMenuItem enregistrer;
+    private final JMenuItem ouvrir;
+    private final JMenuItem exporter;
+    private final JMenuItem quitter;
+    private final JMenuItem carre;
 
-    private FenetreDemo fenetre;
+    private final FenetreDemo fenetre;
     
     public MenuHaut(int p_largeurPanneau, int p_longueurPanneau, FenetreDemo p_fenetre){
         this.fenetre = p_fenetre;
@@ -51,7 +51,6 @@ public class MenuHaut extends JMenuBar {
         
         this.add(this.fichier);
         this.add(this.inserer);        
-        
         
     }
     

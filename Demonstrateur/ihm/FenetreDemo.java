@@ -1,7 +1,6 @@
 package ihm;
 
 import com.mxgraph.util.mxConstants;
-import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import ihm.Menu.Menu;
 import ihm.Menu.MenuDroite;
@@ -54,7 +53,28 @@ public class FenetreDemo extends JFrame {
     public PanneauGraph getPanneauGraph(){
         return (this.panneauGraph);
     }
-    
+   private void creerLesStyle() {
+		mxStylesheet stylesheet =
+		    this.getPanneauGraph().getGraph().getStylesheet();
+		Hashtable<String, Object> style =
+		    new Hashtable<String, Object>();
+		
+        /* Ateur */
+		style.put(mxConstants.STYLE_SHAPE,
+			  mxConstants.SHAPE_ACTOR);
+		style.put(mxConstants.STYLE_OPACITY, 50);
+		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("ACTEUR", style);
+        
+		/* UseCase */
+		style = null;
+		style = new Hashtable<String, Object>();
+		style.put(mxConstants.STYLE_SHAPE,
+			  mxConstants.SHAPE_ELLIPSE);
+		style.put(mxConstants.STYLE_OPACITY, 50);
+		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("USECASE", style);
+	}
     private void ajouterPanneaux() {
         this.panneauPrincipal.add(this.menuHaut);
         this.panneauPrincipal.add(this.menuGauche.getPanneau());
@@ -74,6 +94,7 @@ public class FenetreDemo extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        this.creerLesStyle();
     }
         
     /**
