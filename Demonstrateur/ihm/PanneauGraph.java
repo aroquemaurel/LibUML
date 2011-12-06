@@ -9,8 +9,8 @@ import java.awt.Dimension;
  * @author satenske
  */
 public class PanneauGraph extends mxGraphComponent {  
-    private int largeurPanneau;
-    private int longueurPanneau;
+    private final int largeurPanneau;
+    private final int longueurPanneau;
     
     public PanneauGraph(int p_largeurPanneau, int p_longueurPanneau){
         super(new mxGraph());        
