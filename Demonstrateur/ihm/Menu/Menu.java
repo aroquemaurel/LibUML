@@ -5,6 +5,7 @@
 
 package ihm.Menu;
 
+import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 
@@ -15,10 +16,12 @@ import javax.swing.JPanel;
 public abstract class Menu extends JPanel {
     private int largeurPanneau;
     private int longueurPanneau;
+    protected FenetreDemo fenetre;
     
-    public Menu(int p_largeurPanneau, int p_longueurPanneau){
+    public Menu(int p_largeurPanneau, int p_longueurPanneau, FenetreDemo p_fenetre){
         this.largeurPanneau = p_largeurPanneau;
         this.longueurPanneau = p_longueurPanneau;
+        this.fenetre = p_fenetre;
         
         parametrerPanneau();
     }

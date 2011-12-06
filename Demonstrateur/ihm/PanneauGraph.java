@@ -12,12 +12,13 @@ public class PanneauGraph extends mxGraphComponent {
     private int largeurPanneau;
     private int longueurPanneau;
     
-    public PanneauGraph(int p_largeurPanneau, int p_longueurPanneau, mxGraph p_graph){
-        super(p_graph);
+    public PanneauGraph(int p_largeurPanneau, int p_longueurPanneau){
+        super(new mxGraph());        
+        
         this.largeurPanneau = p_largeurPanneau;
         this.longueurPanneau = p_longueurPanneau;
+        
         this.parametrerPanneau();
-
     }
     
     private void parametrerPanneau(){

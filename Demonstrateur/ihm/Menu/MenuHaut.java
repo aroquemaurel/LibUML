@@ -5,6 +5,7 @@
 
 package ihm.Menu;
 
+import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -25,7 +26,11 @@ public class MenuHaut extends JMenuBar {
     private JMenuItem quitter;
     private JMenuItem carre;
 
-    public MenuHaut(int p_largeurPanneau, int p_longueurPanneau){
+    private FenetreDemo fenetre;
+    
+    public MenuHaut(int p_largeurPanneau, int p_longueurPanneau, FenetreDemo p_fenetre){
+        this.fenetre = p_fenetre;
+        
         this.setPreferredSize(new Dimension(p_largeurPanneau, p_longueurPanneau));
         this.fichier = new JMenu("Fichier");
         this.inserer = new JMenu("Insérer");

@@ -5,6 +5,7 @@
 
 package ihm.Menu;
 
+import ihm.FenetreDemo;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
@@ -14,8 +15,8 @@ import javax.swing.table.TableColumn;
  * @author satenske
  */
 public class MenuDroite extends Menu {
-    public MenuDroite (int p_largeurPanneau, int p_longueurPanneau){
-        super(p_largeurPanneau, p_longueurPanneau);
+    public MenuDroite (int p_largeurPanneau, int p_longueurPanneau, FenetreDemo p_fenetre){
+        super(p_largeurPanneau, p_longueurPanneau, p_fenetre);
      //   parametrerPanneau();
     }
 
