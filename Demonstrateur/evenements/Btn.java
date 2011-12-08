@@ -6,21 +6,28 @@
 package evenements;
 
 import ihm.FenetreDemo;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author satenske
  */
-public class Btn extends JButton implements MouseListener {  
+public class Btn extends JButton implements MouseListener {
     protected FenetreDemo fenetre;
-    
+
     public Btn(String p_string, FenetreDemo p_fenetre){
-        super(p_string);
+		super(new ImageIcon(p_string));
         this.fenetre = p_fenetre;
+		super.setOpaque(false);
+		super.setBorderPainted(false);
+		super.setPreferredSize(new Dimension(25,25));
+		super.setFocusPainted(false);
         this.addMouseListener(this);
     }
 
@@ -28,7 +35,7 @@ public class Btn extends JButton implements MouseListener {
         JOptionPane.showMessageDialog(null,"Cette fonctionnalité n'est pas implémentée");
     }
 
-    public void mouseEntered(MouseEvent event) { }    
+    public void mouseEntered(MouseEvent event) { }
 
     public void mouseExited(MouseEvent event) { }
 
@@ -38,6 +45,6 @@ public class Btn extends JButton implements MouseListener {
 
     public void mouseReleased(MouseEvent event) {
     }
-    
-  
+
+
 }
