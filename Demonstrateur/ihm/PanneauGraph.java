@@ -2,6 +2,7 @@ package ihm;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
+import java.awt.Color;
 import java.awt.Dimension;
 
 /**
@@ -13,7 +14,8 @@ public class PanneauGraph extends mxGraphComponent {
     private final int longueurPanneau;
 
     private void parametrerPanneau(){
-        this.setGridVisible(true);
+        this.setGridVisible(false);
+        this.setBackground(new Color(255, 255, 255));
         this.setInvokesStopCellEditing(true);
         this.setPreferredSize(new Dimension(this.largeurPanneau, this.longueurPanneau));
     }
