@@ -9,6 +9,17 @@ public class Cardinalite {
 	private String max;
 	private boolean visible = false;
 
+	public Cardinalite(String p_min, String p_max) {
+		this.min = p_min;
+		this.max = p_max;
+	}
+
+	public Cardinalite(String p_min, String p_max, boolean p_visible) {
+		this.min = p_min;
+		this.max = p_max;
+		this.visible = p_visible;
+	}
+
 	public String getMax() {
 		return max;
 	}
