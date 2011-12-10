@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * @author satenske
  */
 public class Classe extends eltGraphique.ElementModelisation {
+    private String typeDeRetour;
     private boolean abstraite;
     private Visibilite visibilite;
     private ArrayList<Methode> methodes;
@@ -53,6 +54,10 @@ public class Classe extends eltGraphique.ElementModelisation {
         return (this.methodes);
     }
 
+    public String getTypeDeRetour() {
+        return (this.typeDeRetour);
+    }
+
     public Visibilite getVisibilite() {
         return (this.visibilite);
     }
@@ -79,4 +84,9 @@ public class Classe extends eltGraphique.ElementModelisation {
     public void setMethodes(ArrayList<Methode> p_methodes) {
         this.methodes = p_methodes;
     }
+
+    public void setTypeDeRetour(String p_typeDeRetour) {
+        this.typeDeRetour = p_typeDeRetour;
+    }
+
 }
