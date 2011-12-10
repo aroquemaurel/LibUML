@@ -14,15 +14,19 @@ public class Classe extends eltGraphique.ElementModelisation {
     private boolean constante;
 
     public void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
-                               Visibilite p_visibilite, boolean p_deClasse,
-                               boolean p_constante) {
-
+											Visibilite p_visibilite, 
+							   ArrayList<Variable> p_parametres,
+							   boolean p_abstraite, boolean p_deClasse,
+											boolean p_constante) {
+	    this.methodes.add(new Methode(p_visibilite, p_typeDeRetour,p_nomMethode,
+									  p_parametres,
+									  p_abstraite, p_deClasse, p_constante));
     }
 
     public void ajouterAttributs(String p_type, String p_nom,
                                  Visibilite p_visibilite, boolean p_constante,
                                  boolean p_deClasse) {
-
+		this.attributs.add(new Attribut());
     }
 
     /*
