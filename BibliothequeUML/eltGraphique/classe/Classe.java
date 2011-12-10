@@ -25,7 +25,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 					p_abstraite, p_deClasse, p_constante));
     }
 
-    public void ajouterAttribut(String p_type, String p_nom,
+    public void ajouterAttributs(String p_type, String p_nom,
                                  Visibilite p_visibilite, boolean p_constante,
                                  boolean p_deClasse) {
 		this.attributs.add(new Attribut(p_visibilite,
