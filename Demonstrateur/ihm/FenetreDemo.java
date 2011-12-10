@@ -7,6 +7,7 @@ import ihm.Menu.Menu;
 import ihm.Menu.MenuDroite;
 import ihm.Menu.MenuHaut;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.Hashtable;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -18,8 +19,10 @@ import javax.swing.JPanel;
  * @author satenske
  */
 public class FenetreDemo extends JFrame {
-    private static final int HAUTEUR_FENETRE = 600;
-    private static final int LARGEUR_FENETRE = 1024;
+    private static final int HAUTEUR_FENETRE = 
+		Toolkit.getDefaultToolkit().getScreenSize().height;
+    private static final int LARGEUR_FENETRE = 
+		Toolkit.getDefaultToolkit().getScreenSize().width;
     private static final int HAUTEUR_MENUBAR = 20;
     private static final int HAUTEUR_ZONEDETRAVAIL = HAUTEUR_FENETRE - HAUTEUR_MENUBAR - 50;
 
