@@ -13,6 +13,7 @@ public class BtnUseCase extends Btn {
         super(p_string, p_fenetre);
     }
 
+	@Override
     public void mouseClicked(MouseEvent event) {
         super.fenetre.getPanneauGraph().getGraph().getModel().beginUpdate();
 
