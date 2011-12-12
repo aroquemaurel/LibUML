@@ -2,10 +2,10 @@ package ihm;
 
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxStylesheet;
-import ihm.Menu.BarreOutilsDessin;
-import ihm.Menu.Menu;
-import ihm.Menu.MenuDroite;
-import ihm.Menu.MenuHaut;
+import ihm.menu.BarreOutilsDessin;
+import ihm.menu.Menu;
+import ihm.menu.MenuDroite;
+import ihm.menu.MenuHaut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.Hashtable;
