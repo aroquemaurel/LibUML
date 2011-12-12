@@ -8,7 +8,7 @@ import ihm.menu.MenuDroite;
 import ihm.menu.MenuHaut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.util.Hashtable;
+import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -42,8 +42,8 @@ public class FenetreDemo extends JFrame {
    private void creerLesStyle() {
 		mxStylesheet stylesheet =
 		    this.getPanneauGraph().getGraph().getStylesheet();
-		Hashtable<String, Object> style =
-		    new Hashtable<String, Object>();
+		HashMap<String, Object> style =
+		    new HashMap<String, Object>();
 
         /* Ateur */
 		style.put(mxConstants.STYLE_SHAPE,
@@ -54,7 +54,7 @@ public class FenetreDemo extends JFrame {
 
 		/* UseCase */
 		style = null;
-		style = new Hashtable<String, Object>();
+		style = new HashMap<String, Object>();
 		style.put(mxConstants.STYLE_SHAPE,
 			  mxConstants.SHAPE_ELLIPSE);
 		style.put(mxConstants.STYLE_OPACITY, 50);
