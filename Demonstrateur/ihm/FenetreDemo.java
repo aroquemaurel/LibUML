@@ -19,12 +19,12 @@ import javax.swing.JPanel;
  * @author satenske
  */
 public class FenetreDemo extends JFrame {
-    private static final int HAUTEUR_FENETRE = 
-		Toolkit.getDefaultToolkit().getScreenSize().height;
-    private static final int LARGEUR_FENETRE = 
+    private static final int HAUTEUR_FENETRE =
+		Toolkit.getDefaultToolkit().getScreenSize().height - 80;
+    private static final int LARGEUR_FENETRE =
 		Toolkit.getDefaultToolkit().getScreenSize().width;
     private static final int HAUTEUR_MENUBAR = 20;
-    private static final int HAUTEUR_ZONEDETRAVAIL = HAUTEUR_FENETRE - HAUTEUR_MENUBAR - 50;
+    private static final int HAUTEUR_ZONEDETRAVAIL = HAUTEUR_FENETRE - HAUTEUR_MENUBAR - 80;
 
     private static final int LARGEUR_MENUGAUCHE = 100;
     private static final int LARGEUR_TABLEAUDROITE = 500;
