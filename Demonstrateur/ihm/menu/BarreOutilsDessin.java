@@ -25,6 +25,7 @@ public class BarreOutilsDessin extends JToolBar {
 		 * , nous ferons passer le lien de l'image
 		 TODO images pour les boutons */
 //        Btn useCase = new BtnUseCase("images/1.jpg", this.fenetre) ;
+
 		Btn useCase = new BtnUseCase("UseCase", this.fenetre);
 		Btn classe = new BtnClasse("Classe", this.fenetre);
 		Btn acteur = new BtnActeur("Acteur", this.fenetre);
