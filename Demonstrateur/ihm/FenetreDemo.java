@@ -52,6 +52,7 @@ public class FenetreDemo extends JFrame {
 		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		stylesheet.putCellStyle("ACTEUR", style);
 
+
 		/* UseCase */
 		style = null;
 		style = new HashMap<String, Object>();
