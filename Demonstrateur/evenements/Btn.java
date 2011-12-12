@@ -20,8 +20,13 @@ import javax.swing.JOptionPane;
 public class Btn extends JButton implements MouseListener {
     protected FenetreDemo fenetre;
 
-    public Btn(String p_string, FenetreDemo p_fenetre){
-		super(new ImageIcon(p_string));
+    public Btn(String p_lienImage, FenetreDemo p_fenetre){
+		/* à utiliser lorsque ce sera le
+		 * lien de l'image qui passera en paramètre
+		 Provisoirement, c'est juste du texte
+		 TODO images pour les boutons */
+	//	super(new ImageIcon(p_lienImage));
+		super(p_lienImage);
         this.fenetre = p_fenetre;
 		super.setOpaque(false);
 		super.setBorderPainted(false);

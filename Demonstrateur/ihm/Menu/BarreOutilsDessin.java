@@ -16,20 +16,24 @@ import javax.swing.JToolBar;
  */
 public class BarreOutilsDessin extends JToolBar {
 	private final FenetreDemo fenetre;
-	
+
 	public BarreOutilsDessin(Dimension p_taille, FenetreDemo p_fenetre) {
 		this.setPreferredSize(p_taille);
 		this.fenetre = p_fenetre;
 	}
 
     public void ajouterObjetsGraphiques() {
-        Btn useCase = new BtnUseCase("images/1.jpg", this.fenetre) ;
-        Btn classe = new BtnClasse("images/1.jpg", this.fenetre) ;
-        Btn acteur = new BtnActeur("images/1.jpg", this.fenetre) ;
-		
-		this.add(new JButton("useCase"));
-		this.add(new JButton("classe"));
-		this.add(new JButton("acteur"));
+		/* Lorsque nous aurons des images pour les boutons
+		 * , nous ferons passer le lien de l'image
+		 TODO images pour les boutons */
+//        Btn useCase = new BtnUseCase("images/1.jpg", this.fenetre) ;
+		Btn useCase = new BtnUseCase("UseCase", this.fenetre);
+		Btn classe = new BtnClasse("Classe", this.fenetre);
+		Btn acteur = new BtnActeur("Acteur", this.fenetre);
+
+		this.add(useCase);
+		this.add(classe);
+		this.add(acteur);
     }
 
 }
