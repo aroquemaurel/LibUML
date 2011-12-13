@@ -20,7 +20,8 @@ import javax.swing.JPanel;
  */
 public class FenetreDemo extends JFrame {
     private static final int HAUTEUR_FENETRE =
-		Toolkit.getDefaultToolkit().getScreenSize().height - 80;
+		(int) (Toolkit.getDefaultToolkit().getScreenSize().height - 
+                       Toolkit.getDefaultToolkit().getScreenSize().height*0.05);
     private static final int LARGEUR_FENETRE =
 		Toolkit.getDefaultToolkit().getScreenSize().width;
     private static final int HAUTEUR_MENUBAR = 20;
