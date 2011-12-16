@@ -1,12 +1,12 @@
 package eltGraphique;
 
-import eltGraphique.ligne.Ligne;
+import eltGraphique.ligne.Lien;
 
 /**
  *
  * @author satenske
  */
 public class Traitement extends eltGraphique.ElementModelisation {
-	private Ligne evenementDeclencheur;
+	private Lien evenementDeclencheur;
 
 }

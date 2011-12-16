@@ -1,7 +1,7 @@
 package eltGraphique.ligne.fleche;
 
 import eltGraphique.ligne.ArcCercle;
-import eltGraphique.ligne.Ligne;
+import eltGraphique.ligne.Lien;
 
 /**
  *

@@ -7,7 +7,7 @@ import java.awt.Point;
  *
  * @author satenske
  */
-abstract public class ElementModelisation extends mxCell {
+abstract public class ElementModelisation extends EltGraphique {
     private String nom;
     private Point position;
     private double hauteur;

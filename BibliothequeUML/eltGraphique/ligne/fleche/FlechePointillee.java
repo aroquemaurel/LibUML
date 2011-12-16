@@ -1,12 +1,12 @@
 package eltGraphique.ligne.fleche;
 
-import eltGraphique.ligne.Ligne;
-import eltGraphique.ligne.LignePointillee;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.LienPointille;
 
 /**
  *
  * @author satenske
  */
-public class FlechePointillee extends LignePointillee {
+public class FlechePointillee extends LienPointille {
 
 }
