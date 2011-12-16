@@ -1,6 +1,5 @@
 package eltGraphique;
 
-import com.mxgraph.model.mxCell;
 import java.awt.Point;
 
 /**
