@@ -25,7 +25,6 @@ public class BtnActeurActif extends Btn {
         Acteur acteur = new ActeurActif(super.fenetre.getPanneauGraph().getGraph(), 
             "Mon acteur Actif");
         super.fenetre.getPanneauGraph().getGraph().getModel().beginUpdate();
-        acteur.creer();
         acteur.afficher();
         super.fenetre.getPanneauGraph().getGraph().getModel().endUpdate();
     }

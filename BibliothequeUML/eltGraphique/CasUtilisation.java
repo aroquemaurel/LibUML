@@ -14,6 +14,7 @@ public class CasUtilisation extends eltGraphique.ElementModelisation {
     public CasUtilisation(mxGraph p_graph, String p_nom){
         this.graph = p_graph;
         super.setNom(p_nom);
+        this.creer();        
     }
     
     public void creer(){

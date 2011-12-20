@@ -19,7 +19,6 @@ public class BtnActeurPassif extends Btn {
         ActeurPassif acteur = new ActeurPassif(super.fenetre.getPanneauGraph().getGraph(), 
             "Mon acteur Passif");
         super.fenetre.getPanneauGraph().getGraph().getModel().beginUpdate();
-        acteur.creer();
         acteur.afficher();
         super.fenetre.getPanneauGraph().getGraph().getModel().endUpdate();
     }

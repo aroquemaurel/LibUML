@@ -10,7 +10,7 @@ import com.mxgraph.view.mxGraph;
 abstract public class Acteur extends eltGraphique.ElementModelisation {
     private mxGraph graph;
     private mxCell cellule;
-    
+
     abstract public void creer();
   
     abstract public void afficher();

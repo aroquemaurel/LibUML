@@ -10,6 +10,7 @@ import com.mxgraph.view.mxGraph;
 public class ActeurPassif extends Acteur {
     public ActeurPassif(mxGraph p_graph, String p_nom){
         super(p_graph, p_nom);
+        this.creer();        
     }
     
     @Override
