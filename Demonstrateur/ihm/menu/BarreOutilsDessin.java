@@ -1,7 +1,8 @@
 package ihm.menu;
 
 import evenements.Btn;
-import evenements.btn.BtnActeur;
+import evenements.btn.BtnActeurActif;
+import evenements.btn.BtnActeurPassif;
 import evenements.btn.BtnClasse;
 import evenements.btn.BtnUseCase;
 import ihm.FenetreDemo;
@@ -28,11 +29,12 @@ public class BarreOutilsDessin extends JToolBar {
 
 		Btn useCase = new BtnUseCase("UseCase", this.fenetre);
 		Btn classe = new BtnClasse("Classe", this.fenetre);
-		Btn acteur = new BtnActeur("Acteur", this.fenetre);
-
+		Btn acteurActif = new BtnActeurActif("Acteur Actif", this.fenetre);
+		Btn acteurPassif = new BtnActeurPassif("Acteur Passif", this.fenetre);
 		this.add(useCase);
 		this.add(classe);
-		this.add(acteur);
+		this.add(acteurActif);
+        this.add(acteurPassif);
     }
 
 }
