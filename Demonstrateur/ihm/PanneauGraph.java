@@ -15,7 +15,6 @@ public class PanneauGraph extends mxGraphComponent {
 
     private void parametrerPanneau(){
         this.setGridVisible(false);
-        this.setBackground(new Color(255, 255, 255));
         this.setInvokesStopCellEditing(true);
         this.setPreferredSize(new Dimension(this.largeurPanneau, this.longueurPanneau));
     }

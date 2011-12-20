@@ -1,12 +1,13 @@
 package eltGraphique.ligne;
 
 import eltGraphique.ElementModelisation;
+import eltGraphique.EltGraphique;
 
 /**
  *
  * @author satenske
  */
-abstract public class Ligne {
+abstract public class Lien extends EltGraphique {
 	private ElementModelisation origine;
 	private ElementModelisation extremite;
 	private String texteOrigine;

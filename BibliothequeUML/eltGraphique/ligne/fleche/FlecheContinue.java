@@ -1,12 +1,12 @@
 package eltGraphique.ligne.fleche;
 
-import eltGraphique.ligne.Ligne;
-import eltGraphique.ligne.LigneContinue;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.LienContinu;
 
 /**
  *
  * @author satenske
  */
-public class FlecheContinue extends LigneContinue {
+public class FlecheContinue extends LienContinu {
 
 }
