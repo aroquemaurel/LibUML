@@ -1,5 +1,6 @@
 package evenements.btn;
 
+import eltGraphique.CasUtilisation;
 import evenements.Btn;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
@@ -15,13 +16,11 @@ public class BtnUseCase extends Btn {
 
 	@Override
     public void mouseClicked(MouseEvent event) {
+        CasUtilisation useCase = new CasUtilisation(super.fenetre.getPanneauGraph().getGraph(), 
+            "monSuperUseCase");
         super.fenetre.getPanneauGraph().getGraph().getModel().beginUpdate();
-
-        Object parent = super.fenetre.getPanneauGraph().getGraph().getDefaultParent();
-
-        super.fenetre.getPanneauGraph().getGraph().insertVertex(
-            parent, null, "UseCase", 30, 30,150, 75, "USECASE");
-
+        useCase.creer();
+        useCase.afficher();
         super.fenetre.getPanneauGraph().getGraph().getModel().endUpdate();
     }
 
