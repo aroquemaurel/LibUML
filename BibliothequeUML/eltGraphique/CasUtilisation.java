@@ -7,7 +7,7 @@ import com.mxgraph.view.mxGraph;
  *
  * @author satenske
  */
-public class CasUtilisation extends eltGraphique.ElementModelisation {
+public class CasUtilisation extends ElementModelisation {
     private mxGraph graph;
     private mxCell cellule;
 

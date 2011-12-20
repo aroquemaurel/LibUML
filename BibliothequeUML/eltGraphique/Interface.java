@@ -6,7 +6,7 @@ import eltGraphique.classe.Methode;
  *
  * @author satenske
  */
-public class Interface extends eltGraphique.ElementModelisation {
+public class Interface extends ElementModelisation {
     private ArrayList<Methode> listeDeMethodes;
 
     public ArrayList<Methode> getListeDeMethodes() {

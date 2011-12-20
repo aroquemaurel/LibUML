@@ -7,7 +7,7 @@ import com.mxgraph.view.mxGraph;
  *
  * @author satenske
  */
-abstract public class Acteur extends eltGraphique.ElementModelisation {
+abstract public class Acteur extends ElementModelisation {
     private mxGraph graph;
     private mxCell cellule;
 
