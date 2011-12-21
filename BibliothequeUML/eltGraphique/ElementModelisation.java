@@ -11,7 +11,7 @@ import java.awt.Point;
  * @author satenske
  */
 abstract public class ElementModelisation extends EltGraphique {
-    private String nom;
+    private String texte;
     private Point position;
     private double hauteur;
     private double largeur;
@@ -32,8 +32,8 @@ abstract public class ElementModelisation extends EltGraphique {
         return this.largeur;
     }
 
-    public String getNom() {
-        return this.nom;
+    public String getTexte() {
+        return this.texte;
     }
 
     public Point getPosition() {
@@ -51,8 +51,8 @@ abstract public class ElementModelisation extends EltGraphique {
         this.largeur = p_largeur;
     }
 
-    public void setNom(String p_nom) {
-        this.nom = p_nom;
+    public void setTexte(String p_nom) {
+        this.texte = p_nom;
     }
 
     public void setPosition(Point p_position) {

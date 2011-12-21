@@ -21,9 +21,9 @@ abstract public class Acteur extends ElementModelisation {
   
     abstract public void afficher();
         
-    public Acteur(mxGraph p_graph, String p_nom){
+    public Acteur(mxGraph p_graph, String p_texte){
         this.graph = p_graph;
-        super.setNom(p_nom);
+        super.setTexte(p_texte);
     }
     public mxCell getCellule(){
         return this.cellule;
@@ -36,9 +36,9 @@ abstract public class Acteur extends ElementModelisation {
     }
 
     @Override
-    public void setNom(String p_nom){
-        super.setNom(p_nom);
-        this.cellule.setValue(p_nom);
+    public void setTexte(String p_texte){
+        super.setTexte(p_texte);
+        this.cellule.setValue(p_texte);
     }
 
 }

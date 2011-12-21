@@ -9,19 +9,21 @@ import com.mxgraph.view.mxGraph;
  * @author satenske
  */
 public class CasUtilisation extends ElementModelisation {
+	private String texte;
     private mxGraph graph;
     private mxCell cellule;
 
-    public CasUtilisation(mxGraph p_graph, String p_texte){
+    public CasUtilisation(mxGraph p_graph, String p_texte) {
+		this.texte = p_texte;
         this.graph = p_graph;
-        super.setNom(p_texte);
+        super.setTexte(p_texte);
         this.creer();        
     }
     
     public final void creer(){
         Object parent = this.graph.getDefaultParent();
         this.cellule = (mxCell) this.graph.insertVertex(
-            parent, null, super.getNom(), 30, 30, 150, 75, "USECASE");
+            parent, null, super.getTexte(), 30, 30, 150, 75, "USECASE");
         this.cellule.setVisible(false);
     }
   
@@ -30,8 +32,8 @@ public class CasUtilisation extends ElementModelisation {
     }
     
     @Override
-    public void setNom(String p_nom){
-        super.setNom(p_nom);
-        this.cellule.setValue(p_nom);
+    public void setTexte(String p_texte){
+        super.setTexte(p_texte);
+        this.cellule.setValue(p_texte);
     }
 }
