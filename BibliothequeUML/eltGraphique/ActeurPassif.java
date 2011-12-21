@@ -15,9 +15,9 @@ public class ActeurPassif extends Acteur {
     
     @Override
     public void creer(){
-        Object parent = super.getGraph().getDefaultParent();
+        Object parent = super.graph.getDefaultParent();
         
-        super.setCellule((mxCell) super.getGraph().insertVertex(
+        super.setCellule((mxCell) super.graph.insertVertex(
             parent, null, super.getNom(), 30, 30, 100, 35));
         super.getCellule().setVisible(false);
     }

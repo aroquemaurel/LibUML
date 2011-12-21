@@ -33,7 +33,7 @@ public class ActeurActifTest {
     @Test
     public void testAfficher() {
         this.monActeur.afficher();
-        assertTrue(this.monActeur.getCellule().isVisible());
+        assertTrue(this.monActeur.cellule.isVisible());
     }
 
 }

@@ -15,16 +15,12 @@ public class ActeurActif extends Acteur {
     
     @Override
     public void creer(){
-        Object parent = super.getGraph().getDefaultParent();
+        Object parent = super.graph.getDefaultParent();
         
-        super.setCellule((mxCell) super.getGraph().insertVertex(
-            parent, null, super.getNom(), 30, 30, 60, 85, "ACTEUR"));
-        super.getCellule().setVisible(false);
+        super.cellule = (mxCell) super.graph.insertVertex(
+            parent, null, super.getNom(), 30, 30, 60, 85, "ACTEUR");
+        super.cellule.setVisible(false);
     }
 
-    @Override
-    public void afficher() {
-        super.getCellule().setVisible(true);
-    }
 }
 
