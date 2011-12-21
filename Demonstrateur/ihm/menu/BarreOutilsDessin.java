@@ -18,6 +18,7 @@ public class BarreOutilsDessin extends JToolBar {
 
 	public BarreOutilsDessin(Dimension p_taille, FenetreDemo p_fenetre) {
 		this.setPreferredSize(p_taille);
+        this.setFloatable(false);
 		this.fenetre = p_fenetre;
 	}
 
