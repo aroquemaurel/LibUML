@@ -4,6 +4,12 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
 
 /**
+ * Classe ancête aux deux types d'acteurs : actifs et passifs.
+ * Ces deux types d'acteurs sont différenciers pour une raison de 
+ * représentation graphique principalement
+ * 
+ * @see ActeurActif
+ * @see ActeurPassif
  *
  * @author satenske
  */

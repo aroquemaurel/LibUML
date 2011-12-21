@@ -3,7 +3,11 @@ package eltGraphique;
 import java.awt.Point;
 
 /**
- *
+ * Classe ancêtre à tout élément de modélisation (classe, cas d'utilisation, 
+ * acteurs, traitements, etc.). Les flèches sont des liens et non des éléments
+ * de modélisation.
+ * 
+ * @see Lien
  * @author satenske
  */
 abstract public class ElementModelisation extends EltGraphique {
@@ -11,6 +15,8 @@ abstract public class ElementModelisation extends EltGraphique {
     private Point position;
     private double hauteur;
     private double largeur;
+	
+//	abstract void setStyle();
 
     public void supprimer() {
 
@@ -38,7 +44,7 @@ abstract public class ElementModelisation extends EltGraphique {
 	 * setters
 	 */
     public void setHauteur(double p_hauteur) {
-        this.hauteur = hauteur;
+        this.hauteur = p_hauteur;
     }
 
     public void setLargeur(double p_largeur) {

@@ -5,6 +5,7 @@
 package eltGraphique;
 
 /**
+ * Classe ancêtre à tout élément graphique
  *
  * @author satenske
  */

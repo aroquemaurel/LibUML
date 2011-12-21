@@ -4,7 +4,11 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
 
 /**
- *
+ * Classe propre aux acteurs passif (représentation graphique)
+ * 
+ * @see Acteur
+ * @see ActeurPassif
+ * 
  * @author satenske
  */
 public class ActeurActif extends Acteur {
@@ -14,7 +18,7 @@ public class ActeurActif extends Acteur {
     }
     
     @Override
-    public void creer(){
+    public final void creer(){
         Object parent = super.getGraph().getDefaultParent();
         
         super.setCellule((mxCell) super.getGraph().insertVertex(

@@ -16,7 +16,7 @@ public class ActeurActifTest {
 
     @Before
     public void setUp() {
-        this.monActeur = new ActeurActif(new mxGraph(), new String("test"));
+        this.monActeur = new ActeurActif(new mxGraph(), "test");
     }
 
     @After
@@ -35,5 +35,4 @@ public class ActeurActifTest {
         this.monActeur.afficher();
         assertTrue(this.monActeur.getCellule().isVisible());
     }
-
 }
