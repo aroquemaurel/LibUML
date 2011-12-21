@@ -1,5 +1,7 @@
 package eltGraphique.ligne;
 
+import com.mxgraph.model.mxCell;
+import com.mxgraph.view.mxGraph;
 import eltGraphique.ElementModelisation;
 import eltGraphique.EltGraphique;
 
@@ -16,10 +18,13 @@ abstract public class Lien extends EltGraphique {
 	private String typeFlecheOrigine;
 	private Cardinalite cardinaliteOrigine;
 	private Cardinalite cardinaliteExtremite;
-
-	public void aficherLigne(){
-	}
-
+    private mxCell lien;    
+    
+    public Lien(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
+        super(p_graph);
+        this.origine = p_origine;
+        this.extremite = p_extremite;
+    }
 	/*
 	 * Getters
 	 */

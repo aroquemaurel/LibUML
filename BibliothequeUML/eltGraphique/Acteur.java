@@ -10,8 +10,7 @@ abstract public class Acteur extends ElementModelisation {
     abstract public void creer();
          
     public Acteur(mxGraph p_graph, String p_nom){
-        super.graph = p_graph;
-        super.setNom(p_nom);
+        super(p_nom, p_graph);
     }
 
     @Override

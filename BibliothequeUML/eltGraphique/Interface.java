@@ -1,5 +1,6 @@
 package eltGraphique;
 
+import com.mxgraph.view.mxGraph;
 import java.util.ArrayList;
 import eltGraphique.classe.Methode;
 /**
@@ -8,7 +9,10 @@ import eltGraphique.classe.Methode;
  */
 public class Interface extends ElementModelisation {
     private ArrayList<Methode> listeDeMethodes;
-
+    
+    public Interface(String p_nom, mxGraph p_graph){
+        super(p_nom, p_graph);
+    }
     public ArrayList<Methode> getListeDeMethodes() {
         return (this.listeDeMethodes);
     }

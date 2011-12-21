@@ -9,8 +9,7 @@ import com.mxgraph.view.mxGraph;
  */
 public class CasUtilisation extends ElementModelisation {
     public CasUtilisation(mxGraph p_graph, String p_nom){
-        super.graph = p_graph;
-        super.setNom(p_nom);
+        super(p_nom, p_graph);
         this.creer();        
     }
     

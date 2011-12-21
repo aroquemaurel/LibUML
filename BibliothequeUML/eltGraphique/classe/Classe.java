@@ -1,5 +1,6 @@
 package eltGraphique.classe;
 
+import com.mxgraph.view.mxGraph;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +14,11 @@ public class Classe extends eltGraphique.ElementModelisation {
     private ArrayList<Methode> methodes;
     private ArrayList<Attribut> attributs;
     private boolean constante;
-
+    
+    public Classe(String p_nom, mxGraph p_graph){
+        super(p_nom, p_graph);
+    }
+    
     public void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
 			       Visibilite p_visibilite, 
 			       ArrayList<Variable> p_parametres,

@@ -1,5 +1,6 @@
 package eltGraphique;
 
+import com.mxgraph.view.mxGraph;
 import java.awt.Point;
 
 /**
@@ -12,6 +13,10 @@ abstract public class ElementModelisation extends EltGraphique {
     private double hauteur;
     private double largeur;
 
+    public ElementModelisation(String p_nom, mxGraph p_graph){
+        super(p_graph);
+        this.nom = p_nom;
+    }
     public void supprimer() {
 
     }

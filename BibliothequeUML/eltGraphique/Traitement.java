@@ -10,8 +10,7 @@ import eltGraphique.ligne.Lien;
 public class Traitement extends ElementModelisation {
 	private Lien evenementDeclencheur;
     
-    public Traitement(mxGraph p_graph, String p_nom){
-        super.graph = p_graph;
-        super.setNom(p_nom);
+    public Traitement(String p_nom, mxGraph p_graph){
+        super(p_nom, p_graph);
     }
 }
