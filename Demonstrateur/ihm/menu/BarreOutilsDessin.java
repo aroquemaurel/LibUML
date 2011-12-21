@@ -3,8 +3,13 @@ package ihm.menu;
 import evenements.Btn;
 import evenements.btn.BtnActeurActif;
 import evenements.btn.BtnActeurPassif;
+import evenements.btn.BtnAgregation;
+import evenements.btn.BtnAssociation;
 import evenements.btn.BtnClasse;
+import evenements.btn.BtnComposition;
+import evenements.btn.BtnGeneralisation;
 import evenements.btn.BtnUseCase;
+import evenements.btn.BtnTraitement;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.JToolBar;
@@ -23,19 +28,24 @@ public class BarreOutilsDessin extends JToolBar {
 	}
 
     public void ajouterObjetsGraphiques() {
-		/* Lorsque nous aurons des images pour les boutons
-		 * , nous ferons passer le lien de l'image
-		 TODO images pour les boutons */
-//        Btn useCase = new BtnUseCase("images/1.jpg", this.fenetre) ;
-
-		Btn useCase = new BtnUseCase("UseCase", this.fenetre);
-		Btn classe = new BtnClasse("Classe", this.fenetre);
-		Btn acteurActif = new BtnActeurActif("Acteur Actif", this.fenetre);
-		Btn acteurPassif = new BtnActeurPassif("Acteur Passif", this.fenetre);
+		Btn useCase = new BtnUseCase("usecase", this.fenetre);
+		Btn classe = new BtnClasse("classe", this.fenetre);
+		Btn acteurActif = new BtnActeurActif("acteurActif", this.fenetre);
+		Btn acteurPassif = new BtnActeurPassif("acteurPassif", this.fenetre);
+        Btn traitement = new BtnTraitement("traitement", this.fenetre);
+        Btn association = new BtnAssociation("association", this.fenetre);
+        Btn generalisation = new BtnGeneralisation("generalisation", this.fenetre);        
+        Btn agregation = new BtnAgregation("agregation", this.fenetre);
+        Btn composition = new BtnComposition("composition", this.fenetre);        
 		this.add(useCase);
 		this.add(classe);
-		this.add(acteurActif);
+		this.add(acteurActif);  
         this.add(acteurPassif);
+        this.add(traitement);
+        this.add(association);
+        this.add(generalisation);
+        this.add(agregation);        
+        this.add(composition);        
     }
 
 }

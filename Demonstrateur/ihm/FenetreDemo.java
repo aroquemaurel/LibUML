@@ -33,7 +33,7 @@ public class FenetreDemo extends JFrame {
                         LARGEUR_FENETRE - LARGEUR_MENUGAUCHE - LARGEUR_TABLEAUDROITE - 30;
 
     private final JPanel panneauPrincipal;
-    private final BarreOutilsDessin menuGauche;
+    private final BarreOutilsDessin toolbar;
     private final Menu menuDroite;
 
     private final PanneauGraph panneauGraph;
@@ -66,14 +66,14 @@ public class FenetreDemo extends JFrame {
 
     private void ajouterPanneaux() {
         this.panneauPrincipal.add(this.menuHaut);
-        this.panneauPrincipal.add(this.menuGauche);
+        this.panneauPrincipal.add(this.toolbar);
         this.panneauPrincipal.add(this.panneauGraph);
         this.panneauPrincipal.add(this.menuDroite.getPanneau());
     }
 
     private void ajouterBoutons(){
         this.menuHaut.ajouterObjetsGraphiques();
-        this.menuGauche.ajouterObjetsGraphiques();
+        this.toolbar.ajouterObjetsGraphiques();
         this.menuDroite.ajouterObjetsGraphiques();
     }
 
@@ -89,7 +89,7 @@ public class FenetreDemo extends JFrame {
 
     public FenetreDemo(){
         this.panneauPrincipal = new JPanel();
-        this.menuGauche = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 25), this);
+        this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
         this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
         this.menuDroite = new MenuDroite(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL, this);
         this.menuHaut = new MenuHaut(LARGEUR_FENETRE, HAUTEUR_MENUBAR, this);

@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,13 +15,12 @@ import javax.swing.JOptionPane;
 public class Btn extends JButton implements MouseListener {
     protected FenetreDemo fenetre;
 
-    public Btn(String p_lienImage, FenetreDemo p_fenetre){
-		/* à utiliser lorsque ce sera le
-		 * lien de l'image qui passera en paramètre
-		 Provisoirement, c'est juste du texte
-		 TODO images pour les boutons */
-	//	super(new ImageIcon(p_lienImage));
-		super(p_lienImage);
+    public Btn(String p_nomImage, FenetreDemo p_fenetre){
+        /* on transforme p_nomImage pour obtenir le lien de l'image en question */
+		super(new ImageIcon(new String("images/btn_").
+            concat(p_nomImage).
+            concat(new String(".jpg"))));
+        
         this.fenetre = p_fenetre;
 		super.setOpaque(false);
 		super.setBorderPainted(false);
@@ -37,12 +37,9 @@ public class Btn extends JButton implements MouseListener {
 
     public void mouseExited(MouseEvent event) { }
 
-    public void mousePressed(MouseEvent event) {
+    public void mousePressed(MouseEvent event) { }
 
-    }
-
-    public void mouseReleased(MouseEvent event) {
-    }
+    public void mouseReleased(MouseEvent event) { }
 
 
 }
