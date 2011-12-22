@@ -17,10 +17,7 @@ abstract public class ElementModelisation extends EltGraphique {
         super(p_graph);
         this.nom = p_nom;
     }
-    
-    public void supprimer() {
 
-    }
 	/*
 	 * getters
 	 */

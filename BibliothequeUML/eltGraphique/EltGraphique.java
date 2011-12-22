@@ -62,7 +62,11 @@ abstract public class EltGraphique {
        this.graph = p_graph;
        this.creerLesStyle();
    }
-       
+    
+    public void supprimer() {
+        this.cellule.removeFromParent();
+    }
+    
     public void setVisible(boolean p_bool){
         this.cellule.setVisible(p_bool);     
     }

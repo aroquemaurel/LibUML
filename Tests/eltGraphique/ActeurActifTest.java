@@ -39,4 +39,9 @@ public class ActeurActifTest {
         this.monActeur.setNom("testouille");
         assertEquals("testouille", this.monActeur.getNom());
     }
+    
+    public void testSupprimer(){
+        this.monActeur.supprimer();
+        assertNull(this.monActeur.getCellule());
+    }
 }

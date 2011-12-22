@@ -105,7 +105,9 @@ public class FenetreDemo extends JFrame {
        useCase2.creer();
        Lien monLien = new FlecheContinue(
            useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
+       useCase1.supprimer();
        monLien.creer();
+       monLien.supprimer();
     }
 
 }
