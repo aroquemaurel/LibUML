@@ -32,8 +32,8 @@ abstract public class Lien extends EltGraphique {
 		return (this.extremite);
 	}
 
-	public String getOrigine() {
-		return (this.texteExtremite);
+	public ElementModelisation getOrigine() {
+		return (this.origine);
 	}
 
 	public String getTexteOrigine() {
@@ -74,4 +74,5 @@ abstract public class Lien extends EltGraphique {
 	public void setTypeFlecheOrigine(String p_typeFlecheOrigine) {
 		this.typeFlecheOrigine = p_typeFlecheOrigine;
 	}
+    abstract public void creer(String p_style);
 }

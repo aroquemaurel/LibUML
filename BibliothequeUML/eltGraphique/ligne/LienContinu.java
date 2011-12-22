@@ -12,11 +12,18 @@ public class LienContinu extends Lien {
     
     public LienContinu(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
         super(p_origine, p_extremite, p_graph);      
-        super.cellule = (mxCell) super.graph.insertEdge(
-            super.graph.getDefaultParent(), null, null,
-            p_origine.getCellule(), p_extremite.getCellule(), 
-            "LIENCONTINU");
-        
-        super.cellule.setVisible(false);
+
+    }
+
+    public void creer(String p_style) {
+        super.cellule = (mxCell) super.getGraph().insertEdge(
+            super.getGraph().getDefaultParent(), null, null,
+            super.getOrigine().getCellule(), super.getExtremite().getCellule(), 
+            p_style);
+    }
+
+    @Override
+    public void creer() {
+        this.creer("LIENCONTINU");
     }
 }

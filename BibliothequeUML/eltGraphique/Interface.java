@@ -20,4 +20,9 @@ public class Interface extends ElementModelisation {
     public void setListeDeMethodes(ArrayList<Methode> p_listeDeMethodes) {
         this.listeDeMethodes = p_listeDeMethodes;
     }
+
+    @Override
+    public void creer() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

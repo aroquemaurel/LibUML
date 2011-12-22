@@ -99,14 +99,13 @@ public class FenetreDemo extends JFrame {
        // TODO bis -- Rédiger les JUnit. 
        // TODO ter -- Créer les différents styles de flêches
        CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 1");
-       CasUtilisation useCase2 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 2");
-     
-       Lien monLien = new FlecheContinue(useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
-       monLien.afficher();
-       fenetre.getPanneauGraph().getGraph().getModel().beginUpdate();
-       useCase1.afficher();
-       useCase2.afficher();
-       fenetre.getPanneauGraph().getGraph().getModel().endUpdate();             
+       CasUtilisation useCase2 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 2");    
+
+       useCase1.creer();
+       useCase2.creer();
+       Lien monLien = new FlecheContinue(
+           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
+       monLien.creer();
     }
 
 }

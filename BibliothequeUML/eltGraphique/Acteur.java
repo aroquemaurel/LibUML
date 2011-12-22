@@ -6,9 +6,7 @@ import com.mxgraph.view.mxGraph;
  *
  * @author satenske
  */
-abstract public class Acteur extends ElementModelisation {
-    abstract public void creer();
-         
+abstract public class Acteur extends ElementModelisation {        
     public Acteur(mxGraph p_graph, String p_nom){
         super(p_nom, p_graph);
     }
@@ -18,5 +16,6 @@ abstract public class Acteur extends ElementModelisation {
         super.setNom(p_nom);
         super.cellule.setValue(p_nom);
     }
+
 
 }

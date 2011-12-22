@@ -94,4 +94,9 @@ public class Classe extends eltGraphique.ElementModelisation {
         this.typeDeRetour = p_typeDeRetour;
     }
 
+    @Override
+    public void creer() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }

@@ -13,4 +13,9 @@ public class Traitement extends ElementModelisation {
     public Traitement(String p_nom, mxGraph p_graph){
         super(p_nom, p_graph);
     }
+
+    @Override
+    public void creer() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

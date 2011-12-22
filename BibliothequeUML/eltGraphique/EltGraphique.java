@@ -62,8 +62,9 @@ abstract public class EltGraphique {
        this.graph = p_graph;
        this.creerLesStyle();
    }
-    public void afficher(){
-        this.cellule.setVisible(true);     
+       
+    public void setVisible(boolean p_bool){
+        this.cellule.setVisible(p_bool);     
     }
     
     public mxCell getCellule(){
@@ -81,4 +82,5 @@ abstract public class EltGraphique {
     public void setGraph(mxGraph p_graph){
         this.graph = p_graph;
     }
+    abstract public void creer();    
 }
