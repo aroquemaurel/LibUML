@@ -25,8 +25,8 @@ public class ActeurActifTest {
     }
     
     @Test
-    public void testSetNom(){
-        this.monActeur.setNom("testouille");
+    public void testSetTexte(){
+        this.monActeur.setTexte("testouille");
         assertEquals("testouille", this.monActeur.getTexte());
     }
     

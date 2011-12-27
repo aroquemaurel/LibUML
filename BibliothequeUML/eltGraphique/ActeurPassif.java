@@ -4,12 +4,12 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
 
 /**
- *
+ * Classe représentant un acteur passif
  * @author satenske
  */
 public class ActeurPassif extends Acteur {
     public ActeurPassif(mxGraph p_graph, String p_nom){
-        super(p_graph, p_nom);
+        super(p_graph, "<<passif>>\n"+p_nom);
         this.creer();        
     }
     
@@ -28,8 +28,8 @@ public class ActeurPassif extends Acteur {
     }
     
     @Override
-    public void setNom(String p_nom){
-        super.setNom(p_nom);
-        super.getCellule().setValue(p_nom);
+    public void setTexte(String p_texte){
+        super.setTexte(p_texte);
+        super.getCellule().setValue(p_texte);
     }
 }
