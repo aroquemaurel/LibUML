@@ -1,40 +1,78 @@
 package eltGraphique.classe;
 
 /**
- *
- * @author spongebob
+ * Représente une variable en général
  */
 abstract class Variable {
+	/**
+	 * Variable constante ?
+	 */
     private boolean constante;
+	/**
+	 * Type de la variable
+	 */
     private String type;
+	/**
+	 * Nom de la variable
+	 */
     private String nom;	
     
+	/**
+	 * Constructeur d'une variable
+	 * @param p_constante Variable constante ?
+	 * @param p_type Type de la variable
+	 * @param p_nom Nom de la variable
+	 */
     public Variable(boolean p_constante, String p_type, String p_nom) {
 	    this.constante = p_constante;
 	    this.type = p_type;
 	    this.nom = p_nom;
     }
 
+	/**
+	 * 
+	 * @return Variable constante ?
+	 */
     public boolean isConstante() {
         return (this.constante);
     }
 
+	/**
+	 * 
+	 * @param p_constante Variable constante ?
+	 */
     public void setConstante(boolean p_constante) {
         this.constante = p_constante;
     }
 
+	/**
+	 * 
+	 * @return Le type de la variable
+	 */
     public String getType() {
         return (this.type);
     }
 
+	/**
+	 * 
+	 * @param p_typeLe nouveau type de la variable
+	 */
     public void setType(String p_type) {
         this.type = p_type;
     }
 
+	/**
+	 * 
+	 * @return Le nom de la variable
+	 */
 	public String getNom() {
 		return nom;
 	}
 
+	/**
+	 * 
+	 * @param nom Le nouveau nom de la variable
+	 */
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
