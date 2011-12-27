@@ -4,18 +4,28 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
+import eltGraphique.classe.Classe;
 import java.util.HashMap;
 
 /**
  * Classe ancêtre à tout élément graphique
  *
  * @author satenske
+ * 
+ * @see Lien
+ * @see ElementModelisation
  */
 abstract public class EltGraphique {
     protected mxCell cellule;
     protected mxGraph graph;    
     
-   private void creerLesStyle() {
+	/**
+	 * Crée tous les styles nécessaires à la représentations des éléments 
+	 * graphiques
+	 * 
+	 * @see eltGraphique
+	 */
+    private void creerLesStyle() {
 		mxStylesheet stylesheet =
 		    this.graph.getStylesheet();
 		HashMap<String, Object> style =
@@ -59,33 +69,72 @@ abstract public class EltGraphique {
 		stylesheet.putCellStyle("LIENCONTINU", style);          
 	}
    
-   public EltGraphique(mxGraph p_graph){
-       this.graph = p_graph;
-       this.creerLesStyle();
-   }
+	/**
+	 * Constructeur générique des éléments graphiques
+	 * 
+	 * @param p_graph Graphe auquel sera ajouté l'élément graphique
+	 */
+    public EltGraphique(mxGraph p_graph){
+        this.graph = p_graph;
+        this.creerLesStyle();
+    }
     
+    /**
+	 * Méthode généique qui supprime l'élément du graphe où il est
+	 */
     public void supprimer() {
         this.cellule.removeFromParent();
     }
     
+	/**
+	 * Rend (in)visible l'élément grahique sur le graphe
+	 * @param p_bool 
+	 */
     public void setVisible(boolean p_bool){
         this.cellule.setVisible(p_bool);     
     }
     
+	/**
+	 * 
+	 * @return La cellule que représente l'élément graphique
+	 */
     public mxCell getCellule(){
         return this.cellule;
     }
-    
+	
+    /**
+	 * 
+	 * @param p_cellule La nouvelle cellule que représente l'élément
+	 */
     public void setCellule(mxCell p_cellule){
         this.cellule = p_cellule;
     }    
     
+	/**
+	 * 
+	 * @return Le graph auquel est associé la cellule
+	 */
     public mxGraph getGraph(){
         return (this.graph);
     }
     
+	/**
+	 * 
+	 * @param p_graph Le nouveau graphe associé à l'élément graphique
+	 */
     public void setGraph(mxGraph p_graph){
         this.graph = p_graph;
     }
+	
+	/**
+	 * Methode abstraite
+	 * 
+	 * @see ActeurActif
+	 * @see ActeurPassif
+	 * @see CasUtilisation
+	 * @see Interface
+	 * @see Traitement
+	 * @see Classe
+	 */
     abstract public void creer();    
 }
