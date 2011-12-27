@@ -18,8 +18,6 @@ public class BtnActeurPassif extends Btn {
     public void mouseClicked(MouseEvent event) {
         ActeurPassif acteur = new ActeurPassif(super.fenetre.getPanneauGraph().getGraph(), 
             "Mon acteur Passif");
-        super.fenetre.getPanneauGraph().getGraph().getModel().beginUpdate();
-        acteur.afficher();
-        super.fenetre.getPanneauGraph().getGraph().getModel().endUpdate();
+        acteur.creer();
     }
 }

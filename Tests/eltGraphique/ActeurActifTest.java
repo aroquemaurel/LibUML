@@ -1,6 +1,7 @@
 package eltGraphique;
 
 
+import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
 import org.junit.After;
 import org.junit.Test;
@@ -17,22 +18,28 @@ public class ActeurActifTest {
     @Before
     public void setUp() {
         this.monActeur = new ActeurActif(new mxGraph(), "test");
+        this.monActeur = new ActeurActif(new mxGraph(), new String("test"));
+        this.monActeur.creer();
     }
 
     @After
     public void tearDown() {
         this.monActeur = null;
     }
-    
+    @Test
+    public void testCreer(){
+        mxCell maCellule = this.monActeur.getCellule();
+        assertEquals(maCellule, this.monActeur.getCellule());
+    }
+	
     @Test
     public void testSetTexte(){
         this.monActeur.setTexte("testouille");
         assertEquals("testouille", this.monActeur.getTexte());
     }
     
-    @Test
-    public void testAfficher() {
-        this.monActeur.afficher();
-        assertTrue(this.monActeur.getCellule().isVisible());
+    public void testSupprimer(){
+        this.monActeur.supprimer();
+        assertNull(this.monActeur.getCellule());
     }
 }

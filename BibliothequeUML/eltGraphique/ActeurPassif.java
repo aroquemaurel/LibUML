@@ -16,9 +16,9 @@ public class ActeurPassif extends Acteur {
 	 * @see Acteur
 	 * @see ElementModelisation
 	 */
-    public ActeurPassif(mxGraph p_graph, String p_nom) {
-        super(p_graph, "<<passif>>\n"+p_nom);
-        this.creer();        
+    public ActeurPassif(mxGraph p_graph, String p_texte) {
+        super(p_graph, "<<passif>>\n"+p_texte);
+        this.creer();     
     }
     
 	/**
@@ -40,6 +40,7 @@ public class ActeurPassif extends Acteur {
     public void afficher(){
         super.getCellule().setVisible(true);     
     }
+
     
 	/**
 	 * CHanger le texte lié à l'acteur passif

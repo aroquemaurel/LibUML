@@ -1,5 +1,8 @@
 package eltGraphique;
 
+import com.mxgraph.view.mxGraph;
+import eltGraphique.classe.Classe;
+import eltGraphique.ligne.Lien;
 import java.awt.Point;
 
 /**
@@ -31,16 +34,30 @@ abstract public class ElementModelisation extends EltGraphique {
 //	abstract void setStyle();
 	
 	/**
+	 * Constructeur générique aux éléments de modélisation
+	 * 
+	 * @see CasUtilisation
+	 * @see Acteur
+	 * @see Classe
+	 * @see Traitement
+	 * @see Interface
+	 */
+	public ElementModelisation(mxGraph p_graph, String p_texte) {
+		super(p_graph);
+		this.setTexte(p_texte);
+	}
+	
+	/**
 	 * Fonction appellée à chaque action 'supprimer' relative à l'élément
 	 */
+	@Override
     public void supprimer() {
 		// TODO Implémenter la suppression et le lien avec les actions des
 		// menus (barre/contextuel) et de la touche suppr
     }
 	
-	/*
-	 * getters
-	 */
+	/* GETTEURS */
+	
 	/**
 	 * 
 	 * @return La taille en hauteur de l'élément

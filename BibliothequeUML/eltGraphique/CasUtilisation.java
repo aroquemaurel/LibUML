@@ -9,14 +9,9 @@ import com.mxgraph.view.mxGraph;
  * @author satenske
  */
 public class CasUtilisation extends ElementModelisation {
-	private String texte;
-    private mxGraph graph;
-    private mxCell cellule;
 
     public CasUtilisation(mxGraph p_graph, String p_texte) {
-		this.texte = p_texte;
-        this.graph = p_graph;
-        super.setTexte(p_texte);
+		super(p_graph, p_texte);
         this.creer();        
     }
     

@@ -2,6 +2,10 @@ package ihm;
 
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxStylesheet;
+import eltGraphique.CasUtilisation;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.LienContinu;
+import eltGraphique.ligne.fleche.FlecheContinue;
 import ihm.menu.BarreOutilsDessin;
 import ihm.menu.Menu;
 import ihm.menu.MenuDroite;
@@ -40,30 +44,6 @@ public class FenetreDemo extends JFrame {
 
     private final MenuHaut menuHaut;
 
-   private void creerLesStyle() {
-		mxStylesheet stylesheet =
-		    this.getPanneauGraph().getGraph().getStylesheet();
-		HashMap<String, Object> style =
-		    new HashMap<String, Object>();
-
-        /* Ateur */
-		style.put(mxConstants.STYLE_SHAPE,
-			  mxConstants.SHAPE_ACTOR);
-		style.put(mxConstants.STYLE_OPACITY, 50);
-		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-		stylesheet.putCellStyle("ACTEUR", style);
-
-
-		/* UseCase */
-		style = null;
-		style = new HashMap<String, Object>();
-		style.put(mxConstants.STYLE_SHAPE,
-			  mxConstants.SHAPE_ELLIPSE);
-		style.put(mxConstants.STYLE_OPACITY, 50);
-		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-		stylesheet.putCellStyle("USECASE", style);
-	}
-
     private void ajouterPanneaux() {
         this.panneauPrincipal.add(this.menuHaut);
         this.panneauPrincipal.add(this.toolbar);
@@ -83,7 +63,6 @@ public class FenetreDemo extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.creerLesStyle();
     }
 
 
@@ -115,6 +94,20 @@ public class FenetreDemo extends JFrame {
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
        fenetre.afficherFenetre();
+       
+       // TODO -- à intégrer dans le démonstrateur. Actuellement juste des tests
+       // TODO bis -- Rédiger les JUnit. 
+       // TODO ter -- Créer les différents styles de flêches
+       CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 1");
+       CasUtilisation useCase2 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 2");    
+
+       useCase1.creer();
+       useCase2.creer();
+       Lien monLien = new FlecheContinue(
+           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
+       useCase1.supprimer();
+       monLien.creer();
+       monLien.supprimer();
     }
 
 }

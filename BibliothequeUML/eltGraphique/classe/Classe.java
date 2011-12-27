@@ -1,5 +1,6 @@
 package eltGraphique.classe;
 
+import com.mxgraph.view.mxGraph;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +14,11 @@ public class Classe extends eltGraphique.ElementModelisation {
     private ArrayList<Methode> methodes;
     private ArrayList<Attribut> attributs;
     private boolean constante;
-
+    
+    public Classe(mxGraph p_graph, String p_nom){
+        super(p_graph, p_nom);
+    }
+    
     public void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
 			       Visibilite p_visibilite, 
 			       ArrayList<Variable> p_parametres,
@@ -87,6 +92,11 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     public void setTypeDeRetour(String p_typeDeRetour) {
         this.typeDeRetour = p_typeDeRetour;
+    }
+
+    @Override
+    public void creer() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }
