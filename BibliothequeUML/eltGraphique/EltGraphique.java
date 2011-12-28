@@ -4,7 +4,6 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
-import eltGraphique.classe.Classe;
 import java.util.HashMap;
 
 /**
@@ -12,7 +11,7 @@ import java.util.HashMap;
  *
  * @author satenske
  * 
- * @see Lien
+ * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
  */
 abstract public class EltGraphique {
@@ -134,7 +133,7 @@ abstract public class EltGraphique {
 	 * @see CasUtilisation
 	 * @see Interface
 	 * @see Traitement
-	 * @see Classe
+	 * @see classe.Classe
 	 */
     abstract public void creer();    
 }

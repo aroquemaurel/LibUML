@@ -94,7 +94,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
 	/**
 	 * Classe abstraite ?
-	 * @return 
+	 * @return si la classe est abstraite ou non.
 	 */
     public boolean estAbstraite() {
         return (this.abstraite);

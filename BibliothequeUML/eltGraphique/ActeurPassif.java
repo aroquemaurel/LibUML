@@ -11,7 +11,7 @@ public class ActeurPassif extends Acteur {
 	/**
 	 * Constructeur de la classe ActeurPassif
 	 * @param p_graph Le graph dans lequel sera l'acteur passif
-	 * @param p_nom Le texte qui sera lié à l'acteur passif
+	 * @param p_texte Le texte qui sera lié à l'acteur passif
 	 * 
 	 * @see Acteur
 	 * @see ElementModelisation
