@@ -44,7 +44,7 @@ abstract public class ElementModelisation extends EltGraphique {
 	 */
 	public ElementModelisation(mxGraph p_graph, String p_texte) {
 		super(p_graph);
-        this.texte = p_texte;
+		this.texte = p_texte;
 	}
 	
 	/**
@@ -52,8 +52,9 @@ abstract public class ElementModelisation extends EltGraphique {
 	 */
 	@Override
     public void supprimer() {
-		// TODO Implémenter la suppression et le lien avec les actions des
-		// menus (barre/contextuel) et de la touche suppr
+        this.cellule.removeFromParent();
+		// TODO le lien avec les actions des menus (barre/contextuel) et de la touche suppr
+        // TODO une redéfinition devra être fait pour Classe qui à plusieurs cellules
     }
 	
 	/* GETTEURS */
