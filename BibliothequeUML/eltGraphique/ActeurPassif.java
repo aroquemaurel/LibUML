@@ -44,7 +44,7 @@ public class ActeurPassif extends Acteur {
     
 	/**
 	 * Changer le texte lié à l'acteur passif
-	 * @param p_texte Le nouveau texte a lier 
+	 * @param p_texte Le nouveau texte à lier 
 	 */
     @Override
     public void setTexte(String p_texte){
