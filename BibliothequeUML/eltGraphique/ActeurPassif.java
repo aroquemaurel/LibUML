@@ -34,7 +34,7 @@ public class ActeurPassif extends Acteur {
     }
     
 	/**
-	 * Rend visible al cellule sur le graphe
+	 * Rend visible la cellule sur le graphe
 	 */
     @Override
     public void afficher(){
@@ -43,8 +43,8 @@ public class ActeurPassif extends Acteur {
 
     
 	/**
-	 * CHanger le texte lié à l'acteur passif
-	 * @param p_texte Le nouveau texte a lié 
+	 * Changer le texte lié à l'acteur passif
+	 * @param p_texte Le nouveau texte a lier 
 	 */
     @Override
     public void setTexte(String p_texte){

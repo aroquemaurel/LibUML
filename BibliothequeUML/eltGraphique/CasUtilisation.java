@@ -27,7 +27,7 @@ public class CasUtilisation extends ElementModelisation {
         Object parent = this.graph.getDefaultParent();
         this.cellule = (mxCell) this.graph.insertVertex(
             parent, null, super.getTexte(), 30, 30, 150, 75, "USECASE");
-        this.cellule.setVisible(false);
+        //this.cellule.setVisible(false);
     }
   
 	/**

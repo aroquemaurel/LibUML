@@ -44,7 +44,7 @@ abstract public class ElementModelisation extends EltGraphique {
 	 */
 	public ElementModelisation(mxGraph p_graph, String p_texte) {
 		super(p_graph);
-		this.setTexte(p_texte);
+        this.texte = p_texte;
 	}
 	
 	/**
