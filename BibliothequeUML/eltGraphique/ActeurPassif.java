@@ -40,7 +40,6 @@ public class ActeurPassif extends Acteur {
     public void afficher(){
         super.getCellule().setVisible(true);     
     }
-
     
 	/**
 	 * Changer le texte lié à l'acteur passif
