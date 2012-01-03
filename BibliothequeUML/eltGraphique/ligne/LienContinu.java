@@ -6,8 +6,7 @@ import eltGraphique.ElementModelisation;
 
 /**
  *
- * @author satenske
- */
+  */
 public class LienContinu extends Lien {
     
     public LienContinu(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){

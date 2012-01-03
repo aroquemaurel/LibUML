@@ -5,7 +5,6 @@ import eltGraphique.ligne.Lien;
 
 /**
  * Modélise un traitement par un rectangle vertical et un élément déclencheur
- * @author satenske
  */
 public class Traitement extends ElementModelisation {
 	/**

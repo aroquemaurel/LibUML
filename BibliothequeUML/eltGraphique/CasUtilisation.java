@@ -6,7 +6,6 @@ import com.mxgraph.view.mxGraph;
 /**
  * Modélise un cas d'utilisation par une ellipse et un texte
  *
- * @author satenske
  */
 public class CasUtilisation extends ElementModelisation {
 

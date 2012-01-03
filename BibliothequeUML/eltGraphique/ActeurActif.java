@@ -9,7 +9,6 @@ import com.mxgraph.view.mxGraph;
  * @see Acteur
  * @see ActeurPassif
  * 
- * @author satenske
  */
 public class ActeurActif extends Acteur {
 	/**

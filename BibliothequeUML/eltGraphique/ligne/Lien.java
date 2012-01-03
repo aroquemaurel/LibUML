@@ -7,7 +7,6 @@ import eltGraphique.EltGraphique;
 
 /**
  *
- * @author satenske
  */
 abstract public class Lien extends EltGraphique {
 	private ElementModelisation origine;

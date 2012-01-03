@@ -5,7 +5,6 @@ import com.mxgraph.view.mxGraph;
 
 /**
  * Classe représentant un acteur passif
- * @author satenske
  */
 public class ActeurPassif extends Acteur {
 	/**

@@ -6,7 +6,6 @@ import eltGraphique.classe.Methode;
 /**
  * Modélise une interface par un petit cercle et un texte
  * 
- * @author satenske
  */
 public class Interface extends ElementModelisation {
 	/**

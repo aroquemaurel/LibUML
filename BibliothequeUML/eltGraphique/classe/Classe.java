@@ -2,11 +2,9 @@ package eltGraphique.classe;
 
 import com.mxgraph.view.mxGraph;
 import java.util.ArrayList;
-import org.w3c.dom.Attr;
 
 /**
  *
- * @author satenske
  */
 public class Classe extends eltGraphique.ElementModelisation {
 	/**

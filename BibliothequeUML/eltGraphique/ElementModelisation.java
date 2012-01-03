@@ -1,8 +1,6 @@
 package eltGraphique;
 
 import com.mxgraph.view.mxGraph;
-import eltGraphique.classe.Classe;
-import eltGraphique.ligne.Lien;
 import java.awt.Point;
 
 /**
@@ -11,7 +9,6 @@ import java.awt.Point;
  * de modélisation.
  * 
  * @see Lien
- * @author satenske
  */
 abstract public class ElementModelisation extends EltGraphique {
 	/**

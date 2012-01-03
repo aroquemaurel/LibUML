@@ -6,7 +6,6 @@ import eltGraphique.ligne.LienContinu;
 
 /**
  *
- * @author satenske
  */
 public class FlecheContinue extends LienContinu {
     private String typeFleche;

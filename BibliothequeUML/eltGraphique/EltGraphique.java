@@ -9,7 +9,6 @@ import java.util.HashMap;
 /**
  * Classe ancêtre à tout élément graphique
  *
- * @author satenske
  * 
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
