@@ -24,17 +24,17 @@ public class CasUtilisation extends ElementModelisation {
 	 * Crée la représentation graphique du cas d'utilisation
 	 */
     public final void creer(){
-        Object parent = this.graph.getDefaultParent();
-        this.cellule = (mxCell) this.graph.insertVertex(
-            parent, null, super.getTexte(), 30, 30, 150, 75, "USECASE");
-        //this.cellule.setVisible(false);
+        super.setParent((mxCell) this.graph.insertVertex(
+            super.getParent(), null, super.getTexte(), 30, 30, 150, 75, "USECASE"));
+        super.setTarget(super.getParent());
+        
     }
   
 	/**
 	 * Affiche le cas d'utilisation sur le graphe
 	 */
     public void afficher(){
-        this.cellule.setVisible(true);     
+        super.setVisible(true);     
     }
     
 	/**
@@ -44,6 +44,6 @@ public class CasUtilisation extends ElementModelisation {
     @Override
     public void setTexte(String p_texte){
         super.setTexte(p_texte);
-        this.cellule.setValue(p_texte);
+        super.setValue(p_texte);
     }
 }

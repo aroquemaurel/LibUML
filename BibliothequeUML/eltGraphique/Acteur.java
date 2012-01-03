@@ -1,6 +1,5 @@
 package eltGraphique;
 
-import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
 
 /**
@@ -43,38 +42,11 @@ abstract public class Acteur extends ElementModelisation {
 	
 	/**
 	 * 
-	 * @return La cellule représentée par l'acteur
-	 */
-	@Override
-    public mxCell getCellule(){
-        return this.cellule;
-    }
-	
-	/**
-	 * 
-	 * @param p_cellule La cellule représentée par l'acteur
-	 */
-	@Override
-    public void setCellule(mxCell p_cellule){
-        this.cellule = p_cellule;
-    }
-	
-	/**
-	 * 
-	 * @return Le graphe dans lequel est l'acteur
-	 */
-	@Override
-    public mxGraph getGraph(){
-        return this.graph;
-	}
-	
-	/**
-	 * 
 	 * @param p_texte Le texte lié à l'acteur
 	 */
     @Override
     public void setTexte(String p_texte){
         super.setTexte(p_texte);
-        this.cellule.setValue(p_texte);
+        super.getTarget().setValue(p_texte);
     }
 }
