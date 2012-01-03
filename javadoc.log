@@ -60,58 +60,58 @@ eltGraphique/ActeurActif.java:7: warning: unmappable character for encoding ASCI
 eltGraphique/ActeurActif.java:7: warning: unmappable character for encoding ASCII
  * Classe propre aux acteurs passif (repr??sentation graphique)
                                           ^
-eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:15: warning: unmappable character for encoding ASCII
 	 * Constructeur de la classe ActeurActif qui cr??er un acteur actif 
 	                                               ^
-eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:15: warning: unmappable character for encoding ASCII
 	 * Constructeur de la classe ActeurActif qui cr??er un acteur actif 
 	                                                ^
-eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
 	 * li?? ?? un graph donn?? avec un texte donn??
 	     ^
-eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
 	 * li?? ?? un graph donn?? avec un texte donn??
 	      ^
-eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
 	 * li?? ?? un graph donn?? avec un texte donn??
 	        ^
-eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
 	 * li?? ?? un graph donn?? avec un texte donn??
 	         ^
-eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
 	 * li?? ?? un graph donn?? avec un texte donn??
 	                        ^
-eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
 	 * li?? ?? un graph donn?? avec un texte donn??
 	                         ^
-eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
 	 * li?? ?? un graph donn?? avec un texte donn??
 	                                             ^
-eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
 	 * li?? ?? un graph donn?? avec un texte donn??
 	                                              ^
-eltGraphique/ActeurActif.java:19: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:18: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte li?? ?? l'acteur actif
 	                             ^
-eltGraphique/ActeurActif.java:19: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:18: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte li?? ?? l'acteur actif
 	                              ^
-eltGraphique/ActeurActif.java:19: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:18: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte li?? ?? l'acteur actif
 	                                ^
-eltGraphique/ActeurActif.java:19: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:18: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte li?? ?? l'acteur actif
 	                                 ^
-eltGraphique/ActeurActif.java:26: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:25: warning: unmappable character for encoding ASCII
 	 * Cr??e la repr??sentation de l'acteur actif
 	     ^
-eltGraphique/ActeurActif.java:26: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:25: warning: unmappable character for encoding ASCII
 	 * Cr??e la repr??sentation de l'acteur actif
 	      ^
-eltGraphique/ActeurActif.java:26: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:25: warning: unmappable character for encoding ASCII
 	 * Cr??e la repr??sentation de l'acteur actif
 	                ^
-eltGraphique/ActeurActif.java:26: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurActif.java:25: warning: unmappable character for encoding ASCII
 	 * Cr??e la repr??sentation de l'acteur actif
 	                 ^
 Loading source file eltGraphique/ActeurPassif.java...
@@ -121,40 +121,40 @@ eltGraphique/ActeurPassif.java:7: warning: unmappable character for encoding ASC
 eltGraphique/ActeurPassif.java:7: warning: unmappable character for encoding ASCII
  * Classe repr??sentant un acteur passif
                ^
-eltGraphique/ActeurPassif.java:14: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:13: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte qui sera li?? ?? l'acteur passif
 	                                      ^
-eltGraphique/ActeurPassif.java:14: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:13: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte qui sera li?? ?? l'acteur passif
 	                                       ^
-eltGraphique/ActeurPassif.java:14: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:13: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte qui sera li?? ?? l'acteur passif
 	                                         ^
-eltGraphique/ActeurPassif.java:14: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:13: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte qui sera li?? ?? l'acteur passif
 	                                          ^
-eltGraphique/ActeurPassif.java:25: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:24: warning: unmappable character for encoding ASCII
 	 * Methode qui permet de cr??er l'apparence graphique de l'acteur passif
 	                           ^
-eltGraphique/ActeurPassif.java:25: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:24: warning: unmappable character for encoding ASCII
 	 * Methode qui permet de cr??er l'apparence graphique de l'acteur passif
 	                            ^
-eltGraphique/ActeurPassif.java:45: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:44: warning: unmappable character for encoding ASCII
 	 * Changer le texte li?? ?? l'acteur passif
 	                      ^
-eltGraphique/ActeurPassif.java:45: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:44: warning: unmappable character for encoding ASCII
 	 * Changer le texte li?? ?? l'acteur passif
 	                       ^
-eltGraphique/ActeurPassif.java:45: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:44: warning: unmappable character for encoding ASCII
 	 * Changer le texte li?? ?? l'acteur passif
 	                         ^
-eltGraphique/ActeurPassif.java:45: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:44: warning: unmappable character for encoding ASCII
 	 * Changer le texte li?? ?? l'acteur passif
 	                          ^
-eltGraphique/ActeurPassif.java:46: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:45: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le nouveau texte ?? lier 
 	                                   ^
-eltGraphique/ActeurPassif.java:46: warning: unmappable character for encoding ASCII
+eltGraphique/ActeurPassif.java:45: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le nouveau texte ?? lier 
 	                                    ^
 Loading source file eltGraphique/CasUtilisation.java...
@@ -164,143 +164,143 @@ eltGraphique/CasUtilisation.java:7: warning: unmappable character for encoding A
 eltGraphique/CasUtilisation.java:7: warning: unmappable character for encoding ASCII
  * Mod??lise un cas d'utilisation par une ellipse et un texte
        ^
-eltGraphique/CasUtilisation.java:16: warning: unmappable character for encoding ASCII
+eltGraphique/CasUtilisation.java:15: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte qui sera associ?? au cas d'utilisation
 	                                          ^
-eltGraphique/CasUtilisation.java:16: warning: unmappable character for encoding ASCII
+eltGraphique/CasUtilisation.java:15: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le texte qui sera associ?? au cas d'utilisation
 	                                           ^
-eltGraphique/CasUtilisation.java:24: warning: unmappable character for encoding ASCII
+eltGraphique/CasUtilisation.java:23: warning: unmappable character for encoding ASCII
 	 * Cr??e la repr??sentation graphique du cas d'utilisation
 	     ^
-eltGraphique/CasUtilisation.java:24: warning: unmappable character for encoding ASCII
+eltGraphique/CasUtilisation.java:23: warning: unmappable character for encoding ASCII
 	 * Cr??e la repr??sentation graphique du cas d'utilisation
 	      ^
-eltGraphique/CasUtilisation.java:24: warning: unmappable character for encoding ASCII
+eltGraphique/CasUtilisation.java:23: warning: unmappable character for encoding ASCII
 	 * Cr??e la repr??sentation graphique du cas d'utilisation
 	                ^
-eltGraphique/CasUtilisation.java:24: warning: unmappable character for encoding ASCII
+eltGraphique/CasUtilisation.java:23: warning: unmappable character for encoding ASCII
 	 * Cr??e la repr??sentation graphique du cas d'utilisation
 	                 ^
-eltGraphique/CasUtilisation.java:42: warning: unmappable character for encoding ASCII
+eltGraphique/CasUtilisation.java:41: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le nouveau texte li?? au cas d'utilisation
 	                                     ^
-eltGraphique/CasUtilisation.java:42: warning: unmappable character for encoding ASCII
+eltGraphique/CasUtilisation.java:41: warning: unmappable character for encoding ASCII
 	 * @param p_texte Le nouveau texte li?? au cas d'utilisation
 	                                      ^
 Loading source file eltGraphique/ElementModelisation.java...
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
              ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
               ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
                    ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
                     ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
                            ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
                             ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
                               ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
                                ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
                                            ^
-eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:7: warning: unmappable character for encoding ASCII
  * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
                                             ^
-eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:8: warning: unmappable character for encoding ASCII
  * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
                                       ^
-eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:8: warning: unmappable character for encoding ASCII
  * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
                                        ^
-eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:8: warning: unmappable character for encoding ASCII
  * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
                                                                        ^
-eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:8: warning: unmappable character for encoding ASCII
  * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
                                                                         ^
-eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:8: warning: unmappable character for encoding ASCII
  * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
                                                                           ^
-eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:8: warning: unmappable character for encoding ASCII
  * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
                                                                            ^
-eltGraphique/ElementModelisation.java:11: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
  * de mod??lisation.
          ^
-eltGraphique/ElementModelisation.java:11: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
  * de mod??lisation.
           ^
-eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:15: warning: unmappable character for encoding ASCII
 	 * Texte ?? afficher avec l'??l??ment
 	         ^
-eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:15: warning: unmappable character for encoding ASCII
 	 * Texte ?? afficher avec l'??l??ment
 	          ^
-eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:15: warning: unmappable character for encoding ASCII
 	 * Texte ?? afficher avec l'??l??ment
 	                            ^
-eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:15: warning: unmappable character for encoding ASCII
 	 * Texte ?? afficher avec l'??l??ment
 	                             ^
-eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:15: warning: unmappable character for encoding ASCII
 	 * Texte ?? afficher avec l'??l??ment
 	                               ^
-eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:15: warning: unmappable character for encoding ASCII
 	 * Texte ?? afficher avec l'??l??ment
 	                                ^
-eltGraphique/ElementModelisation.java:22: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:19: warning: unmappable character for encoding ASCII
 	 * Position de l'??l??ment
 	                 ^
-eltGraphique/ElementModelisation.java:22: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:19: warning: unmappable character for encoding ASCII
 	 * Position de l'??l??ment
 	                  ^
-eltGraphique/ElementModelisation.java:22: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:19: warning: unmappable character for encoding ASCII
 	 * Position de l'??l??ment
 	                    ^
-eltGraphique/ElementModelisation.java:22: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:19: warning: unmappable character for encoding ASCII
 	 * Position de l'??l??ment
 	                     ^
-eltGraphique/ElementModelisation.java:26: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:23: warning: unmappable character for encoding ASCII
 	 * Taille en hauteur de l'??l??ment
 	                          ^
-eltGraphique/ElementModelisation.java:26: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:23: warning: unmappable character for encoding ASCII
 	 * Taille en hauteur de l'??l??ment
 	                           ^
-eltGraphique/ElementModelisation.java:26: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:23: warning: unmappable character for encoding ASCII
 	 * Taille en hauteur de l'??l??ment
 	                             ^
-eltGraphique/ElementModelisation.java:26: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:23: warning: unmappable character for encoding ASCII
 	 * Taille en hauteur de l'??l??ment
 	                              ^
-eltGraphique/ElementModelisation.java:30: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:27: warning: unmappable character for encoding ASCII
 	 * Taille en largeur de l'??l??ment
 	                          ^
-eltGraphique/ElementModelisation.java:30: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:27: warning: unmappable character for encoding ASCII
 	 * Taille en largeur de l'??l??ment
 	                           ^
-eltGraphique/ElementModelisation.java:30: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:27: warning: unmappable character for encoding ASCII
 	 * Taille en largeur de l'??l??ment
 	                             ^
-eltGraphique/ElementModelisation.java:30: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:27: warning: unmappable character for encoding ASCII
 	 * Taille en largeur de l'??l??ment
 	                              ^
-eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:34: warning: unmappable character for encoding ASCII
 	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
 	                 ^
-eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+eltGraphique/ElementModelisation.java:34: warning: unmappable character for encoding ASCII
 	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
 	                  ^
 Loading source file eltGraphique/EltGraphique.java...
@@ -362,42 +362,42 @@ symbol  : class mxGraph
 location: class eltGraphique.Acteur
     public mxGraph getGraph(){
            ^
-eltGraphique/ElementModelisation.java:45: cannot find symbol
+eltGraphique/ElementModelisation.java:42: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.ElementModelisation
 	public ElementModelisation(mxGraph p_graph, String p_texte) {
 	                           ^
-eltGraphique/EltGraphique.java:18: cannot find symbol
+eltGraphique/EltGraphique.java:17: cannot find symbol
 symbol  : class mxCell
 location: class eltGraphique.EltGraphique
     protected mxCell cellule;
               ^
-eltGraphique/EltGraphique.java:19: cannot find symbol
+eltGraphique/EltGraphique.java:18: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.EltGraphique
     protected mxGraph graph;    
               ^
-eltGraphique/EltGraphique.java:76: cannot find symbol
+eltGraphique/EltGraphique.java:75: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.EltGraphique
     public EltGraphique(mxGraph p_graph){
                         ^
-eltGraphique/EltGraphique.java:100: cannot find symbol
+eltGraphique/EltGraphique.java:99: cannot find symbol
 symbol  : class mxCell
 location: class eltGraphique.EltGraphique
     public mxCell getCellule(){
            ^
-eltGraphique/EltGraphique.java:108: cannot find symbol
+eltGraphique/EltGraphique.java:107: cannot find symbol
 symbol  : class mxCell
 location: class eltGraphique.EltGraphique
     public void setCellule(mxCell p_cellule){
                            ^
-eltGraphique/EltGraphique.java:116: cannot find symbol
+eltGraphique/EltGraphique.java:115: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.EltGraphique
     public mxGraph getGraph(){
            ^
-eltGraphique/EltGraphique.java:124: cannot find symbol
+eltGraphique/EltGraphique.java:123: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.EltGraphique
     public void setGraph(mxGraph p_graph){
@@ -408,7 +408,7 @@ import com.mxgraph.model.mxCell;
 eltGraphique/ActeurActif.java:4: package com.mxgraph.view does not exist
 import com.mxgraph.view.mxGraph;
                        ^
-eltGraphique/ActeurActif.java:21: cannot find symbol
+eltGraphique/ActeurActif.java:20: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.ActeurActif
     public ActeurActif(mxGraph p_graph, String p_texte){
@@ -419,7 +419,7 @@ import com.mxgraph.model.mxCell;
 eltGraphique/ActeurPassif.java:4: package com.mxgraph.view does not exist
 import com.mxgraph.view.mxGraph;
                        ^
-eltGraphique/ActeurPassif.java:19: cannot find symbol
+eltGraphique/ActeurPassif.java:18: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.ActeurPassif
     public ActeurPassif(mxGraph p_graph, String p_texte) {
@@ -430,7 +430,7 @@ import com.mxgraph.model.mxCell;
 eltGraphique/CasUtilisation.java:4: package com.mxgraph.view does not exist
 import com.mxgraph.view.mxGraph;
                        ^
-eltGraphique/CasUtilisation.java:18: cannot find symbol
+eltGraphique/CasUtilisation.java:17: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.CasUtilisation
     public CasUtilisation(mxGraph p_graph, String p_texte) {
@@ -438,7 +438,7 @@ location: class eltGraphique.CasUtilisation
 eltGraphique/Interface.java:3: package com.mxgraph.view does not exist
 import com.mxgraph.view.mxGraph;
                        ^
-eltGraphique/Interface.java:22: cannot find symbol
+eltGraphique/Interface.java:21: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.Interface
     public Interface(mxGraph p_graph, String p_texte){
@@ -452,17 +452,17 @@ import com.mxgraph.model.mxCell;
 eltGraphique/ligne/Lien.java:4: package com.mxgraph.view does not exist
 import com.mxgraph.view.mxGraph;
                        ^
-eltGraphique/Traitement.java:21: cannot find symbol
+eltGraphique/Traitement.java:20: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.Traitement
     public Traitement(mxGraph p_graph, String p_texte){
                       ^
-eltGraphique/ligne/Lien.java:21: cannot find symbol
+eltGraphique/ligne/Lien.java:20: cannot find symbol
 symbol  : class mxCell
 location: class eltGraphique.ligne.Lien
     private mxCell lien;    
             ^
-eltGraphique/ligne/Lien.java:23: cannot find symbol
+eltGraphique/ligne/Lien.java:22: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.ligne.Lien
     public Lien(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
@@ -470,7 +470,7 @@ location: class eltGraphique.ligne.Lien
 eltGraphique/classe/Classe.java:3: package com.mxgraph.view does not exist
 import com.mxgraph.view.mxGraph;
                        ^
-eltGraphique/classe/Classe.java:41: cannot find symbol
+eltGraphique/classe/Classe.java:39: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.classe.Classe
     public Classe(mxGraph p_graph, String p_texte){
@@ -489,7 +489,7 @@ import com.mxgraph.model.mxCell;
 eltGraphique/ligne/LienContinu.java:4: package com.mxgraph.view does not exist
 import com.mxgraph.view.mxGraph;
                        ^
-eltGraphique/ligne/LienContinu.java:13: cannot find symbol
+eltGraphique/ligne/LienContinu.java:12: cannot find symbol
 symbol  : class mxGraph
 location: class eltGraphique.ligne.LienContinu
     public LienContinu(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
@@ -514,6 +514,8 @@ Generating ../documentation/eltGraphique//ActeurActif.html...
 Generating ../documentation/eltGraphique//ActeurPassif.html...
 Generating ../documentation/eltGraphique//CasUtilisation.html...
 Generating ../documentation/eltGraphique//ElementModelisation.html...
+eltGraphique/ElementModelisation.java:13: warning - Tag @see: reference not found: Lien
+eltGraphique/ElementModelisation.java:42: warning - Tag @see: reference not found: Classe
 Generating ../documentation/eltGraphique//EltGraphique.html...
 Generating ../documentation/eltGraphique//Interface.html...
 Generating ../documentation/eltGraphique//Traitement.html...
@@ -548,4 +550,4 @@ Generating ../documentation/index.html...
 Generating ../documentation/overview-summary.html...
 Generating ../documentation/help-doc.html...
 Generating ../documentation/stylesheet.css...
-145 warnings
+147 warnings
