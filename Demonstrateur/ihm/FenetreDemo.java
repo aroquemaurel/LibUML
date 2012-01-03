@@ -20,8 +20,8 @@ import javax.swing.JPanel;
  * Classe concernant tout ce qui est l'affichage de la fenetre
  *
  *
- * @author satenske
  */
+
 public class FenetreDemo extends JFrame {
     private static final int HAUTEUR_FENETRE =
 		(int) (Toolkit.getDefaultToolkit().getScreenSize().height - 
