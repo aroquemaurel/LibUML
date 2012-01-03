@@ -16,12 +16,10 @@ public class LienContinu extends Lien {
     }
 
     public void creer(String p_style) {
-        mxCell uneCell;
-        super.setCellule((mxCell) super.getGraph().insertEdge(
+        super.cellule = (mxCell) super.getGraph().insertEdge(
             super.getGraph().getDefaultParent(), null, null,
             super.getOrigine().getCellule(), super.getExtremite().getCellule(), 
-            p_style));
-        super.setVisible(true);
+            p_style);
     }
 
     @Override
