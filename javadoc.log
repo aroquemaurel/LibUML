@@ -1,1 +1,529 @@
-/projets/git/checkout/projet_IUT/javadoc.sh: line 4: javadoc : commande introuvable
+Loading source file eltGraphique/Acteur.java...
+eltGraphique/Acteur.java:6: warning: unmappable character for encoding ASCII
+ * Classe anc??te aux deux types d'acteurs : actifs et passifs.
+             ^
+eltGraphique/Acteur.java:6: warning: unmappable character for encoding ASCII
+ * Classe anc??te aux deux types d'acteurs : actifs et passifs.
+              ^
+eltGraphique/Acteur.java:7: warning: unmappable character for encoding ASCII
+ * Ces deux types d'acteurs sont diff??renciers pour une raison de 
+                                     ^
+eltGraphique/Acteur.java:7: warning: unmappable character for encoding ASCII
+ * Ces deux types d'acteurs sont diff??renciers pour une raison de 
+                                      ^
+eltGraphique/Acteur.java:8: warning: unmappable character for encoding ASCII
+ * repr??sentation graphique principalement
+       ^
+eltGraphique/Acteur.java:8: warning: unmappable character for encoding ASCII
+ * repr??sentation graphique principalement
+        ^
+eltGraphique/Acteur.java:45: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte li?? ?? l'acteur
+	                             ^
+eltGraphique/Acteur.java:45: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte li?? ?? l'acteur
+	                              ^
+eltGraphique/Acteur.java:45: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte li?? ?? l'acteur
+	                                ^
+eltGraphique/Acteur.java:45: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte li?? ?? l'acteur
+	                                 ^
+Loading source file eltGraphique/ActeurActif.java...
+eltGraphique/ActeurActif.java:7: warning: unmappable character for encoding ASCII
+ * Classe propre aux acteurs passif (repr??sentation graphique)
+                                         ^
+eltGraphique/ActeurActif.java:7: warning: unmappable character for encoding ASCII
+ * Classe propre aux acteurs passif (repr??sentation graphique)
+                                          ^
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
+	 * Constructeur de la classe ActeurActif qui cr??er un acteur actif 
+	                                               ^
+eltGraphique/ActeurActif.java:16: warning: unmappable character for encoding ASCII
+	 * Constructeur de la classe ActeurActif qui cr??er un acteur actif 
+	                                                ^
+eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+	 * li?? ?? un graph donn?? avec un texte donn??
+	     ^
+eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+	 * li?? ?? un graph donn?? avec un texte donn??
+	      ^
+eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+	 * li?? ?? un graph donn?? avec un texte donn??
+	        ^
+eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+	 * li?? ?? un graph donn?? avec un texte donn??
+	         ^
+eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+	 * li?? ?? un graph donn?? avec un texte donn??
+	                        ^
+eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+	 * li?? ?? un graph donn?? avec un texte donn??
+	                         ^
+eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+	 * li?? ?? un graph donn?? avec un texte donn??
+	                                             ^
+eltGraphique/ActeurActif.java:17: warning: unmappable character for encoding ASCII
+	 * li?? ?? un graph donn?? avec un texte donn??
+	                                              ^
+eltGraphique/ActeurActif.java:19: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte li?? ?? l'acteur actif
+	                             ^
+eltGraphique/ActeurActif.java:19: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte li?? ?? l'acteur actif
+	                              ^
+eltGraphique/ActeurActif.java:19: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte li?? ?? l'acteur actif
+	                                ^
+eltGraphique/ActeurActif.java:19: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte li?? ?? l'acteur actif
+	                                 ^
+eltGraphique/ActeurActif.java:26: warning: unmappable character for encoding ASCII
+	 * Cr??e la repr??sentation de l'acteur actif
+	     ^
+eltGraphique/ActeurActif.java:26: warning: unmappable character for encoding ASCII
+	 * Cr??e la repr??sentation de l'acteur actif
+	      ^
+eltGraphique/ActeurActif.java:26: warning: unmappable character for encoding ASCII
+	 * Cr??e la repr??sentation de l'acteur actif
+	                ^
+eltGraphique/ActeurActif.java:26: warning: unmappable character for encoding ASCII
+	 * Cr??e la repr??sentation de l'acteur actif
+	                 ^
+Loading source file eltGraphique/ActeurPassif.java...
+eltGraphique/ActeurPassif.java:7: warning: unmappable character for encoding ASCII
+ * Classe repr??sentant un acteur passif
+              ^
+eltGraphique/ActeurPassif.java:7: warning: unmappable character for encoding ASCII
+ * Classe repr??sentant un acteur passif
+               ^
+eltGraphique/ActeurPassif.java:14: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte qui sera li?? ?? l'acteur passif
+	                                      ^
+eltGraphique/ActeurPassif.java:14: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte qui sera li?? ?? l'acteur passif
+	                                       ^
+eltGraphique/ActeurPassif.java:14: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte qui sera li?? ?? l'acteur passif
+	                                         ^
+eltGraphique/ActeurPassif.java:14: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte qui sera li?? ?? l'acteur passif
+	                                          ^
+eltGraphique/ActeurPassif.java:25: warning: unmappable character for encoding ASCII
+	 * Methode qui permet de cr??er l'apparence graphique de l'acteur passif
+	                           ^
+eltGraphique/ActeurPassif.java:25: warning: unmappable character for encoding ASCII
+	 * Methode qui permet de cr??er l'apparence graphique de l'acteur passif
+	                            ^
+eltGraphique/ActeurPassif.java:44: warning: unmappable character for encoding ASCII
+	 * Changer le texte li?? ?? l'acteur passif
+	                      ^
+eltGraphique/ActeurPassif.java:44: warning: unmappable character for encoding ASCII
+	 * Changer le texte li?? ?? l'acteur passif
+	                       ^
+eltGraphique/ActeurPassif.java:44: warning: unmappable character for encoding ASCII
+	 * Changer le texte li?? ?? l'acteur passif
+	                         ^
+eltGraphique/ActeurPassif.java:44: warning: unmappable character for encoding ASCII
+	 * Changer le texte li?? ?? l'acteur passif
+	                          ^
+eltGraphique/ActeurPassif.java:45: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le nouveau texte ?? lier 
+	                                   ^
+eltGraphique/ActeurPassif.java:45: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le nouveau texte ?? lier 
+	                                    ^
+Loading source file eltGraphique/CasUtilisation.java...
+eltGraphique/CasUtilisation.java:7: warning: unmappable character for encoding ASCII
+ * Mod??lise un cas d'utilisation par une ellipse et un texte
+      ^
+eltGraphique/CasUtilisation.java:7: warning: unmappable character for encoding ASCII
+ * Mod??lise un cas d'utilisation par une ellipse et un texte
+       ^
+eltGraphique/CasUtilisation.java:16: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte qui sera associ?? au cas d'utilisation
+	                                          ^
+eltGraphique/CasUtilisation.java:16: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le texte qui sera associ?? au cas d'utilisation
+	                                           ^
+eltGraphique/CasUtilisation.java:24: warning: unmappable character for encoding ASCII
+	 * Cr??e la repr??sentation graphique du cas d'utilisation
+	     ^
+eltGraphique/CasUtilisation.java:24: warning: unmappable character for encoding ASCII
+	 * Cr??e la repr??sentation graphique du cas d'utilisation
+	      ^
+eltGraphique/CasUtilisation.java:24: warning: unmappable character for encoding ASCII
+	 * Cr??e la repr??sentation graphique du cas d'utilisation
+	                ^
+eltGraphique/CasUtilisation.java:24: warning: unmappable character for encoding ASCII
+	 * Cr??e la repr??sentation graphique du cas d'utilisation
+	                 ^
+eltGraphique/CasUtilisation.java:42: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le nouveau texte li?? au cas d'utilisation
+	                                     ^
+eltGraphique/CasUtilisation.java:42: warning: unmappable character for encoding ASCII
+	 * @param p_texte Le nouveau texte li?? au cas d'utilisation
+	                                      ^
+Loading source file eltGraphique/ElementModelisation.java...
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+             ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+              ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+                   ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+                    ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+                           ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+                            ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+                              ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+                               ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+                                           ^
+eltGraphique/ElementModelisation.java:9: warning: unmappable character for encoding ASCII
+ * Classe anc??tre ?? tout ??l??ment de mod??lisation (classe, cas d'utilisation, 
+                                            ^
+eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+ * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
+                                      ^
+eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+ * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
+                                       ^
+eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+ * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
+                                                                       ^
+eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+ * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
+                                                                        ^
+eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+ * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
+                                                                          ^
+eltGraphique/ElementModelisation.java:10: warning: unmappable character for encoding ASCII
+ * acteurs, traitements, etc.). Les fl??ches sont des liens et non des ??l??ments
+                                                                           ^
+eltGraphique/ElementModelisation.java:11: warning: unmappable character for encoding ASCII
+ * de mod??lisation.
+         ^
+eltGraphique/ElementModelisation.java:11: warning: unmappable character for encoding ASCII
+ * de mod??lisation.
+          ^
+eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+	 * Texte ?? afficher avec l'??l??ment
+	         ^
+eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+	 * Texte ?? afficher avec l'??l??ment
+	          ^
+eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+	 * Texte ?? afficher avec l'??l??ment
+	                            ^
+eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+	 * Texte ?? afficher avec l'??l??ment
+	                             ^
+eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+	 * Texte ?? afficher avec l'??l??ment
+	                               ^
+eltGraphique/ElementModelisation.java:18: warning: unmappable character for encoding ASCII
+	 * Texte ?? afficher avec l'??l??ment
+	                                ^
+eltGraphique/ElementModelisation.java:22: warning: unmappable character for encoding ASCII
+	 * Position de l'??l??ment
+	                 ^
+eltGraphique/ElementModelisation.java:22: warning: unmappable character for encoding ASCII
+	 * Position de l'??l??ment
+	                  ^
+eltGraphique/ElementModelisation.java:22: warning: unmappable character for encoding ASCII
+	 * Position de l'??l??ment
+	                    ^
+eltGraphique/ElementModelisation.java:22: warning: unmappable character for encoding ASCII
+	 * Position de l'??l??ment
+	                     ^
+eltGraphique/ElementModelisation.java:26: warning: unmappable character for encoding ASCII
+	 * Taille en hauteur de l'??l??ment
+	                          ^
+eltGraphique/ElementModelisation.java:26: warning: unmappable character for encoding ASCII
+	 * Taille en hauteur de l'??l??ment
+	                           ^
+eltGraphique/ElementModelisation.java:26: warning: unmappable character for encoding ASCII
+	 * Taille en hauteur de l'??l??ment
+	                             ^
+eltGraphique/ElementModelisation.java:26: warning: unmappable character for encoding ASCII
+	 * Taille en hauteur de l'??l??ment
+	                              ^
+eltGraphique/ElementModelisation.java:30: warning: unmappable character for encoding ASCII
+	 * Taille en largeur de l'??l??ment
+	                          ^
+eltGraphique/ElementModelisation.java:30: warning: unmappable character for encoding ASCII
+	 * Taille en largeur de l'??l??ment
+	                           ^
+eltGraphique/ElementModelisation.java:30: warning: unmappable character for encoding ASCII
+	 * Taille en largeur de l'??l??ment
+	                             ^
+eltGraphique/ElementModelisation.java:30: warning: unmappable character for encoding ASCII
+	 * Taille en largeur de l'??l??ment
+	                              ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                 ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                  ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                    ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                     ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                                ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                                 ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                                   ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                                    ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                                                 ^
+eltGraphique/ElementModelisation.java:37: warning: unmappable character for encoding ASCII
+	 * Constructeur g??n??rique aux ??l??ments de mod??lisation
+	                                                  ^
+Loading source file eltGraphique/EltGraphique.java...
+Loading source file eltGraphique/Interface.java...
+Loading source file eltGraphique/Traitement.java...
+Loading source file eltGraphique/classe/Attribut.java...
+Loading source file eltGraphique/classe/Classe.java...
+Loading source file eltGraphique/classe/Methode.java...
+Loading source file eltGraphique/classe/Variable.java...
+Loading source file eltGraphique/classe/Visibilite.java...
+Loading source file eltGraphique/ligne/ArcCercle.java...
+Loading source file eltGraphique/ligne/Cardinalite.java...
+Loading source file eltGraphique/ligne/Lien.java...
+Loading source file eltGraphique/ligne/LienContinu.java...
+Loading source file eltGraphique/ligne/LienPointille.java...
+Loading source file diagramme/Diagramme.java...
+Loading source file diagramme/DiagrammeCasUtilisation.java...
+Loading source file diagramme/DiagrammeClasse.java...
+Loading source file diagramme/DiagrammeSequence.java...
+Constructing Javadoc information...
+eltGraphique/Acteur.java:3: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/ElementModelisation.java:3: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/EltGraphique.java:3: package com.mxgraph.model does not exist
+import com.mxgraph.model.mxCell;
+                        ^
+eltGraphique/EltGraphique.java:4: package com.mxgraph.util does not exist
+import com.mxgraph.util.mxConstants;
+                       ^
+eltGraphique/EltGraphique.java:5: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/EltGraphique.java:6: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxStylesheet;
+                       ^
+eltGraphique/EltGraphique.java:17: cannot find symbol
+symbol: class mxCell
+abstract public class EltGraphique extends mxCell {
+                                           ^
+eltGraphique/Acteur.java:39: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.Acteur
+	public Acteur(mxGraph p_graph, String p_texte) {
+	              ^
+eltGraphique/ElementModelisation.java:45: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.ElementModelisation
+	public ElementModelisation(mxGraph p_graph, String p_texte) {
+	                           ^
+eltGraphique/EltGraphique.java:18: cannot find symbol
+symbol  : class mxCell
+location: class eltGraphique.EltGraphique
+    protected mxCell cellule;
+              ^
+eltGraphique/EltGraphique.java:19: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.EltGraphique
+    protected mxGraph graph;    
+              ^
+eltGraphique/EltGraphique.java:76: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.EltGraphique
+    public EltGraphique(mxGraph p_graph){
+                        ^
+eltGraphique/EltGraphique.java:103: cannot find symbol
+symbol  : class mxCell
+location: class eltGraphique.EltGraphique
+    public mxCell getCellule(){
+           ^
+eltGraphique/EltGraphique.java:111: cannot find symbol
+symbol  : class mxCell
+location: class eltGraphique.EltGraphique
+    public void setCellule(mxCell p_cellule){
+                           ^
+eltGraphique/EltGraphique.java:120: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.EltGraphique
+    public mxGraph getGraph(){
+           ^
+eltGraphique/EltGraphique.java:128: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.EltGraphique
+    public void setGraph(mxGraph p_graph){
+                         ^
+eltGraphique/ActeurActif.java:3: package com.mxgraph.model does not exist
+import com.mxgraph.model.mxCell;
+                        ^
+eltGraphique/ActeurActif.java:4: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/ActeurActif.java:21: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.ActeurActif
+    public ActeurActif(mxGraph p_graph, String p_texte){
+                       ^
+eltGraphique/ActeurPassif.java:3: package com.mxgraph.model does not exist
+import com.mxgraph.model.mxCell;
+                        ^
+eltGraphique/ActeurPassif.java:4: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/ActeurPassif.java:19: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.ActeurPassif
+    public ActeurPassif(mxGraph p_graph, String p_texte) {
+                        ^
+eltGraphique/CasUtilisation.java:3: package com.mxgraph.model does not exist
+import com.mxgraph.model.mxCell;
+                        ^
+eltGraphique/CasUtilisation.java:4: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/CasUtilisation.java:18: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.CasUtilisation
+    public CasUtilisation(mxGraph p_graph, String p_texte) {
+                          ^
+eltGraphique/Interface.java:3: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/Interface.java:22: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.Interface
+    public Interface(mxGraph p_graph, String p_texte){
+                     ^
+eltGraphique/Traitement.java:3: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/ligne/Lien.java:3: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/Traitement.java:21: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.Traitement
+    public Traitement(mxGraph p_graph, String p_texte){
+                      ^
+eltGraphique/ligne/Lien.java:21: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.ligne.Lien
+    public Lien(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
+                                                                                ^
+eltGraphique/classe/Classe.java:3: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/classe/Classe.java:41: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.classe.Classe
+    public Classe(mxGraph p_graph, String p_texte){
+                  ^
+eltGraphique/ligne/ArcCercle.java:3: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/ligne/ArcCercle.java:11: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.ligne.ArcCercle
+    public ArcCercle(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
+                                                                                     ^
+eltGraphique/ligne/LienContinu.java:3: package com.mxgraph.model does not exist
+import com.mxgraph.model.mxCell;
+                        ^
+eltGraphique/ligne/LienContinu.java:4: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/ligne/LienContinu.java:13: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.ligne.LienContinu
+    public LienContinu(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
+                                                                                       ^
+eltGraphique/ligne/LienPointille.java:3: package com.mxgraph.view does not exist
+import com.mxgraph.view.mxGraph;
+                       ^
+eltGraphique/ligne/LienPointille.java:11: cannot find symbol
+symbol  : class mxGraph
+location: class eltGraphique.ligne.LienPointille
+    public LienPointille(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
+                                                                                         ^
+Standard Doclet version 1.6.0_18
+Building tree for all the packages and classes...
+Generating ../documentation/eltGraphique/ligne//ArcCercle.html...
+Generating ../documentation/eltGraphique/ligne//Cardinalite.html...
+Generating ../documentation/eltGraphique/ligne//Lien.html...
+Generating ../documentation/eltGraphique/ligne//LienContinu.html...
+Generating ../documentation/eltGraphique/ligne//LienPointille.html...
+Generating ../documentation/eltGraphique//Acteur.html...
+Generating ../documentation/eltGraphique//ActeurActif.html...
+Generating ../documentation/eltGraphique//ActeurPassif.html...
+Generating ../documentation/eltGraphique//CasUtilisation.html...
+Generating ../documentation/eltGraphique//ElementModelisation.html...
+Generating ../documentation/eltGraphique//EltGraphique.html...
+Generating ../documentation/eltGraphique//Interface.html...
+Generating ../documentation/eltGraphique//Traitement.html...
+Generating ../documentation/eltGraphique/classe//Classe.html...
+Generating ../documentation/eltGraphique/classe//Methode.html...
+Generating ../documentation/diagramme//Diagramme.html...
+Generating ../documentation/diagramme//DiagrammeCasUtilisation.html...
+Generating ../documentation/diagramme//DiagrammeClasse.html...
+Generating ../documentation/diagramme//DiagrammeSequence.html...
+Generating ../documentation/overview-frame.html...
+Generating ../documentation/diagramme//package-frame.html...
+Generating ../documentation/diagramme//package-summary.html...
+Generating ../documentation/diagramme//package-tree.html...
+Generating ../documentation/eltGraphique//package-frame.html...
+Generating ../documentation/eltGraphique//package-summary.html...
+Generating ../documentation/eltGraphique//package-tree.html...
+Generating ../documentation/eltGraphique/classe//package-frame.html...
+Generating ../documentation/eltGraphique/classe//package-summary.html...
+Generating ../documentation/eltGraphique/classe//package-tree.html...
+Generating ../documentation/eltGraphique/ligne//package-frame.html...
+Generating ../documentation/eltGraphique/ligne//package-summary.html...
+Generating ../documentation/eltGraphique/ligne//package-tree.html...
+Generating ../documentation/constant-values.html...
+Building index for all the packages and classes...
+Generating ../documentation/overview-tree.html...
+Generating ../documentation/index-all.html...
+Generating ../documentation/deprecated-list.html...
+Building index for all classes...
+Generating ../documentation/allclasses-frame.html...
+Generating ../documentation/allclasses-noframe.html...
+Generating ../documentation/index.html...
+Generating ../documentation/overview-summary.html...
+Generating ../documentation/help-doc.html...
+Generating ../documentation/stylesheet.css...
+140 warnings
