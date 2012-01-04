@@ -29,7 +29,15 @@ abstract public class EltGraphique extends mxCell {
 		HashMap<String, Object> styles =
 		    new HashMap<String, Object>();
 
+		/* Classe */
+		styles.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
+		styles.put(mxConstants.STYLE_OPACITY, 50);
+		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("CLASSE", styles);
+		
         /* Ateur */
+		styles = null;
+		styles = new HashMap<String, Object>();
 		styles.put(mxConstants.STYLE_SHAPE,
 			  mxConstants.SHAPE_ACTOR);
 		styles.put(mxConstants.STYLE_OPACITY, 50);
