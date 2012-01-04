@@ -41,24 +41,7 @@ abstract public class Acteur extends ElementModelisation {
 		super(p_graph, p_texte);
     }
 	
-	/**
-	 * 
-	 * @return La cellule représentée par l'acteur
-	 */
-	@Override
-    public mxCell getCellule(){
-        return this.cellule;
-    }
-	
-	/**
-	 * 
-	 * @param p_cellule La cellule représentée par l'acteur
-	 */
-	@Override
-    public void setCellule(mxCell p_cellule){
-        this.cellule = p_cellule;
-    }
-	
+
 	/**
 	 * 
 	 * @return Le graphe dans lequel est l'acteur
@@ -75,6 +58,6 @@ abstract public class Acteur extends ElementModelisation {
     @Override
     public void setTexte(String p_texte){
         super.setTexte(p_texte);
-        this.cellule.setValue(p_texte);
+        super.setValue(p_texte);
     }
 }

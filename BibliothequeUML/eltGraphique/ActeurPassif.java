@@ -29,7 +29,7 @@ public class ActeurPassif extends Acteur {
         
         super.setCellule((mxCell) super.getGraph().insertVertex(
             parent, null, super.getTexte(), 30, 30, 100, 35));
-        super.getCellule().setVisible(false);
+        super.setVisible(false);
     }
     
 	/**
@@ -37,7 +37,7 @@ public class ActeurPassif extends Acteur {
 	 */
     @Override
     public void afficher(){
-        super.getCellule().setVisible(true);     
+        super.setVisible(true);     
     }
     
 	/**
@@ -47,6 +47,6 @@ public class ActeurPassif extends Acteur {
     @Override
     public void setTexte(String p_texte){
         super.setTexte(p_texte);
-        super.getCellule().setValue(p_texte);
+        super.setValue(p_texte);
     }
 }

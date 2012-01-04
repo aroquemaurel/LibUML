@@ -44,16 +44,6 @@ abstract public class ElementModelisation extends EltGraphique {
 		this.texte = p_texte;
 	}
 	
-	/**
-	 * Fonction appellée à chaque action 'supprimer' relative à l'élément
-	 */
-	@Override
-    public void supprimer() {
-        this.cellule.removeFromParent();
-		// TODO le lien avec les actions des menus (barre/contextuel) et de la touche suppr
-        // TODO une redéfinition devra être fait pour Classe qui à plusieurs cellules
-    }
-	
 	/* GETTEURS */
 	
 	/**

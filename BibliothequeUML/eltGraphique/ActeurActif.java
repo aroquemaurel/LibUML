@@ -29,7 +29,7 @@ public class ActeurActif extends Acteur {
         Object parent = super.getGraph().getDefaultParent();
         super.setCellule((mxCell) super.getGraph().insertVertex(
             parent, null, super.getTexte(), 30, 30, 60, 85, "ACTEUR"));
-        super.getCellule().setVisible(false);
+        super.setVisible(false);
     }
 
 	/**
@@ -37,7 +37,7 @@ public class ActeurActif extends Acteur {
 	 */
     @Override
     public void afficher() {
-        super.getCellule().setVisible(true);
+        super.setVisible(true);
     }
 }
 

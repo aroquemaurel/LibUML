@@ -1,6 +1,7 @@
 package eltGraphique;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.model.mxICell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
@@ -13,8 +14,7 @@ import java.util.HashMap;
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
  */
-abstract public class EltGraphique {
-    protected mxCell cellule;
+abstract public class EltGraphique extends mxCell {
     protected mxGraph graph;    
     
 	/**
@@ -81,7 +81,7 @@ abstract public class EltGraphique {
 	 * Méthode généique qui supprime l'élément du graphe où il est
 	 */
     public void supprimer() {
-        this.cellule.removeFromParent();
+        super.getParent().removeFromParent();
     }
     
 	/**
@@ -89,23 +89,23 @@ abstract public class EltGraphique {
 	 * @param p_bool 
 	 */
     public void setVisible(boolean p_bool){
-        this.cellule.setVisible(p_bool);     
+        super.setVisible(p_bool);     
     }
-    
-	/**
+    /**
 	 * 
-	 * @return La cellule que représente l'élément graphique
+	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
-    public mxCell getCellule(){
-        return this.cellule;
-    }
-	
+    public mxICell getCellule(){
+        return (super.getTarget());
+    }    
+    
     /**
 	 * 
 	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
     public void setCellule(mxCell p_cellule){
-        this.cellule = p_cellule;
+        super.setTarget(p_cellule);
+        super.setParent(p_cellule);
     }    
     
 	/**
