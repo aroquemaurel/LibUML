@@ -19,6 +19,7 @@ public class LienContinu extends Lien {
             super.getGraph().getDefaultParent(), null, null,
             super.getOrigine().getCellule(), super.getExtremite().getCellule(), 
             p_style));
+        super.setConnectable(false);
     }
 
     @Override

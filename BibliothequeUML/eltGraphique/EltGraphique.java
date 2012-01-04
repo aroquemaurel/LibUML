@@ -36,7 +36,6 @@ abstract public class EltGraphique extends mxCell {
 		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		stylesheet.putCellStyle("ACTEUR", styles);
 
-
 		/* UseCase */
 		styles = null;
 		styles = new HashMap<String, Object>();
@@ -53,6 +52,7 @@ abstract public class EltGraphique extends mxCell {
 			  mxConstants.EDGESTYLE_ORTHOGONAL);
         styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
 		styles.put(mxConstants.STYLE_OPACITY, 50);
+        styles.put(mxConstants.STYLE_MOVABLE, 50);        
 		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 		stylesheet.putCellStyle("SPECIALISATION", styles);        
         
@@ -63,6 +63,7 @@ abstract public class EltGraphique extends mxCell {
 			  mxConstants.EDGESTYLE_ORTHOGONAL);
         styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
 		styles.put(mxConstants.STYLE_OPACITY, 50);
+        styles.put(mxConstants.STYLE_MOVABLE, 50);                
 		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 		stylesheet.putCellStyle("LIENCONTINU", styles);          
 	}
