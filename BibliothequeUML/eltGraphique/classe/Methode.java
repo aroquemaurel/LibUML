@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
 * Représente une méthode en général
 */
-public class Methode {
+class Methode {
 	/**
 	 * Nom de la méthode
 	 */
