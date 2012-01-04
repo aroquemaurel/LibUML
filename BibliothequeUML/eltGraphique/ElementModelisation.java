@@ -28,8 +28,6 @@ abstract public class ElementModelisation extends EltGraphique {
 	 */
     private double largeur;
 	
-//	abstract void setStyle();
-	
 	/**
 	 * Constructeur générique aux éléments de modélisation
 	 * 
