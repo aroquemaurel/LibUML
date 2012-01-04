@@ -1,6 +1,5 @@
 package eltGraphique;
 
-import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
 
 /**
@@ -11,7 +10,6 @@ import com.mxgraph.view.mxGraph;
  * @see ActeurActif
  * @see ActeurPassif
  *
- * @author satenske
  */
 abstract public class Acteur extends ElementModelisation {
 	/**
@@ -22,13 +20,6 @@ abstract public class Acteur extends ElementModelisation {
 	 */
     abstract public void creer();
   
-	/**
-	 * Mettre abstraite
-	 * 
-	 * @see ActeurActif
-	 * @see ActeurPassif
-	 */
-    abstract public void afficher();
     
 	/**
 	 * Constructeur le la classe Acteur
@@ -40,7 +31,6 @@ abstract public class Acteur extends ElementModelisation {
 	public Acteur(mxGraph p_graph, String p_texte) {
 		super(p_graph, p_texte);
     }
-	
 
 	/**
 	 * 

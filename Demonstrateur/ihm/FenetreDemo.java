@@ -100,12 +100,7 @@ public class FenetreDemo extends JFrame {
        // TODO ter -- Créer les différents styles de flêches
        CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 1");
        CasUtilisation useCase2 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 2");    
-        CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 3");    
-
-       useCase1.afficher();
-       useCase3.afficher();
-       useCase2.afficher();
-     
+        CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 3");        
        
        Lien monLien = new FlecheContinue(
            useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");

@@ -21,23 +21,16 @@ public class ActeurActif extends Acteur {
         super(p_graph, p_texte);
 		this.creer();
     }
+    
     /**
 	 * Crée la représentation de l'acteur actif
 	 */
     @Override
     public final void creer(){
-        Object parent = super.getGraph().getDefaultParent();
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            parent, null, super.getTexte(), 30, 30, 60, 85, "ACTEUR"));
+            super.getParent(), null, super.getTexte(), 30, 30, 60, 85, "ACTEUR"));
         super.setVisible(false);
     }
 
-	/**
-	 * Affiche l'acteur sur le graphe
-	 */
-    @Override
-    public void afficher() {
-        super.setVisible(true);
-    }
 }
 

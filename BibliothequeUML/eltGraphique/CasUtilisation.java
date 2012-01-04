@@ -25,16 +25,9 @@ public class CasUtilisation extends ElementModelisation {
     public final void creer(){
         super.setCellule((mxCell) this.graph.insertVertex(
             super.getParent(), null, super.getTexte(), 30, 30, 150, 75, "USECASE"));
-        //this.cellule.setVisible(false);
     }
   
-	/**
-	 * Affiche le cas d'utilisation sur le graphe
-	 */
-    public void afficher(){
-        super.setVisible(true);     
-    }
-    
+
 	/**
 	 *
 	 * @param p_texte Le nouveau texte lié au cas d'utilisation
