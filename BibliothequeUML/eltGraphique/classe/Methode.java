@@ -79,7 +79,7 @@ class Methode {
 	 */
 
 	/**
-	 * 
+	 * Retourne vrai si la methode est abstraite, faux sinon.
 	 * @return Méthode abstraite ?
 	 */
 	public boolean isAbstraite() {
@@ -87,7 +87,7 @@ class Methode {
 	}
 
 	/**
-	 * 
+	 * Modifie l'abstraction d'une méthode.
 	 * @param abstraite Méthode abstraite ?
 	 */
 	public void setAbstraite(boolean abstraite) {
@@ -95,15 +95,15 @@ class Methode {
 	}
 
 	/**
-	 * 
-	 * @return Le nouveau nom de la méthode
+	 * Retourne le nom de la méthode.
+	 * @return Le nom de la méthode
 	 */
 	public String getNom() {
 		return nom;
 	}
 
 	/**
-	 * 
+	 * Change le nom de la méthode.
 	 * @param nom Le nouveau nom de la méthode
 	 */
 	public void setNom(String nom) {
@@ -111,7 +111,7 @@ class Methode {
 	}
 	
 	/**
-	 * 
+	 * Retourne vrai si la méthode est constante, faux sinon.
 	 * @return Méthode constante ?
 	 */
 	public boolean estConstant() {
@@ -119,15 +119,15 @@ class Methode {
 	}
 
 	/**
-	 * 
-	 * @return Méthode constante ?
+	 * Retourne vrai si la méthode est de classe, faux sinon.
+	 * @return Méthode de classe ?
 	 */
 	public boolean estDeClasse() {
 		return (this.deClasse);
 	}
 
 	/**
-	 * 
+	 * Récupère les paramètres de la méthode.
 	 * @return La liste des paramètres de la méthode
 	 */
 	public ArrayList<Variable> getParametres() {
@@ -135,15 +135,15 @@ class Methode {
 	}
 
 	/**
-	 * 
-	 * @return Le type de retou de la méthode
+	 * Récupère le type de retour de la méthode.
+	 * @return Le type de retour de la méthode
 	 */
 	public String getTypeRetour() {
 		return (this.typeRetour);
 	}
 
 	/**
-	 * 
+	 * Récupère la visibilité de la méthode.
 	 * @return La visibilite de la méthode
 	 * @see Visibilite
 	 */
@@ -156,7 +156,7 @@ class Methode {
 	 */
 	
 	/**
-	 * 
+	 * Modifie les paramètres de la méthode.
 	 * @param p_parametres La nouvelle liste de paramètres de la méthode
 	 */
 	public void setParametres(ArrayList<Variable> p_parametres) {
@@ -164,7 +164,7 @@ class Methode {
 	}
 
 	/**
-	 * 
+	 * Modifie le type de retour de la variable
 	 * @param p_typeRetour Le nouveau type de retour de la méthode
 	 */
 	public void setTypeRetour(String p_typeRetour) {
@@ -172,7 +172,7 @@ class Methode {
 	}
 
 	/**
-	 * 
+	 * Modifie la constance d'une methode.
 	 * @param p_constant Méthode constante ?
 	 */
 	public void setConstant(boolean p_constant) {
@@ -180,7 +180,7 @@ class Methode {
 	}
 
 	/**
-	 * 
+	 * Modifie le fait que la méthode est de classe.
 	 * @param p_deClasse Méthode de classe ?
 	 */
 	public void setDeClasse(boolean p_deClasse) {
@@ -188,8 +188,9 @@ class Methode {
 	}
 
 	/**
-	 * 
+	 * Modifie la visibilité de la méthode
 	 * @param p_visibilite Nouvelle visibilite de la méthode
+         * @see Visibilite
 	 */
 	public void setVisibilite(Visibilite p_visibilite) {
 		this.visibilite = p_visibilite;
