@@ -5,8 +5,7 @@ import ihm.FenetreDemo;
 
 
 /**
- *
- * @author satenske
+ * Implémentation d'un click sur le bouton Traitement
  */
 public class BtnTraitement extends Btn {
 

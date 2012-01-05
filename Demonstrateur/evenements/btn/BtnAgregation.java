@@ -4,8 +4,7 @@ import evenements.Btn;
 import ihm.FenetreDemo;
 
 /**
- *
- * @author satenske
+ * Implémentation d'un click sur le bouton Agrégation
  */
 public class BtnAgregation extends Btn {
     public BtnAgregation(String p_string, FenetreDemo p_fenetre){

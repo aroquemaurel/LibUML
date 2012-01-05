@@ -6,8 +6,7 @@ import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
 
 /**
- *
- * @author satenske
+ * Implémentation d'un click sur le bouton BtnUseCase
  */
 public class BtnUseCase extends Btn {
     public BtnUseCase(String p_string, FenetreDemo p_fenetre){
@@ -16,8 +15,8 @@ public class BtnUseCase extends Btn {
 
 	@Override
     public void mouseClicked(MouseEvent event) {
-        CasUtilisation useCase = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), 
-            "Mon useCase");        
+        CasUtilisation useCase = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
+            "Mon useCase");
         useCase.creer();
     }
 

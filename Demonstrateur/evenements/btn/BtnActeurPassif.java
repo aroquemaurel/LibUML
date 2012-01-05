@@ -6,8 +6,7 @@ import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
 
 /**
- *
- * @author satenske
+ * Implémentation d'un click sur le bouton Acteur passif
  */
 public class BtnActeurPassif extends Btn {
     public BtnActeurPassif(String p_string, FenetreDemo p_fenetre){
@@ -16,7 +15,7 @@ public class BtnActeurPassif extends Btn {
 
     @Override
     public void mouseClicked(MouseEvent event) {
-        ActeurPassif acteur = new ActeurPassif(super.fenetre.getPanneauGraph().getGraph(), 
+        ActeurPassif acteur = new ActeurPassif(super.fenetre.getPanneauGraph().getGraph(),
             "Mon acteur Passif");
         acteur.creer();
     }
