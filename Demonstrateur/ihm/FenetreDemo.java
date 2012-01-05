@@ -6,7 +6,7 @@ import eltGraphique.ligne.Lien;
 import ihm.menu.BarreOutilsDessin;
 import ihm.menu.Menu;
 import ihm.menu.MenuDroite;
-import ihm.menu.MenuHaut;
+import ihm.menu.BarreMenus;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -38,7 +38,7 @@ public class FenetreDemo extends JFrame {
 
     private final PanneauGraph panneauGraph; // panneau contenant le graph
 
-    private final MenuHaut menuHaut; // Barre des menus (fichier, insérer, ...)
+    private final BarreMenus menuHaut; // Barre des menus (fichier, insérer, ...)
 
 	/* Paramètres la fenêtre */
     private void parametrerFenetre(){
@@ -70,9 +70,10 @@ public class FenetreDemo extends JFrame {
         this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
         this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
         this.menuDroite = new MenuDroite(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL, this);
-        this.menuHaut = new MenuHaut(LARGEUR_FENETRE, HAUTEUR_MENUBAR);
+        this.menuHaut = new BarreMenus(new Dimension(LARGEUR_FENETRE, HAUTEUR_MENUBAR));
     }
 
+	/* Afficher la fenêtre */
     public void afficherFenetre(){
         this.parametrerFenetre();
         this.ajouterBoutons();
