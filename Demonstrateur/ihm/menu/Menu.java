@@ -5,28 +5,23 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 /**
- *
- * @author satenske
+ * superClasse Menu
  */
 public abstract class Menu extends JPanel {
-    private final int largeurPanneau;
-    private final int longueurPanneau;
-    protected final FenetreDemo fenetre;
+    private final Dimension dimension; //Dimensions du panneau
+    protected final FenetreDemo fenetre; //Fenêtre dans lequel apparait le menu
 
+	/* Paramètres du Panneau contenant le menu */
     private void parametrerPanneau(){
-        this.setPreferredSize(new Dimension(this.largeurPanneau,this.longueurPanneau));
+        this.setPreferredSize(this.dimension);
     }
 
-    public Menu(int p_largeurPanneau, int p_longueurPanneau, FenetreDemo p_fenetre){
-        this.largeurPanneau = p_largeurPanneau;
-        this.longueurPanneau = p_longueurPanneau;
+	/* Construit le menu */
+    public Menu(Dimension p_dimension, FenetreDemo p_fenetre){
+        this.dimension= p_dimension;
         this.fenetre = p_fenetre;
 
-        parametrerPanneau();
-    }
-
-    public JPanel getPanneau(){
-        return (this);
+        this.parametrerPanneau();
     }
 
     abstract public void ajouterObjetsGraphiques();

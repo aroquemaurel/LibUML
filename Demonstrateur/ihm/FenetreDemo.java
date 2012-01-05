@@ -13,9 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- *
  * Classe concernant tout ce qui est l'affichage de la fenetre
- *
  */
 public class FenetreDemo extends JFrame {
 	/* Déclaration des paramètres de la fenêtre */
@@ -54,7 +52,7 @@ public class FenetreDemo extends JFrame {
         this.panneauPrincipal.add(this.menuHaut);
         this.panneauPrincipal.add(this.toolbar);
         this.panneauPrincipal.add(this.panneauGraph);
-        this.panneauPrincipal.add(this.menuDroite.getPanneau());
+        this.panneauPrincipal.add(this.menuDroite);
     }
 
 	/* ajouter les différents boutons dans les différents panneaux */
@@ -69,7 +67,7 @@ public class FenetreDemo extends JFrame {
         this.panneauPrincipal = new JPanel();
         this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
         this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
-        this.menuDroite = new MenuDroite(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL, this);
+        this.menuDroite = new MenuDroite(new Dimension(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL), this);
         this.menuHaut = new BarreMenus(new Dimension(LARGEUR_FENETRE, HAUTEUR_MENUBAR));
     }
 
