@@ -43,6 +43,9 @@ abstract public class EltGraphique extends mxCell {
 		styles.put(mxConstants.STYLE_OPACITY, 50);
 		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		stylesheet.putCellStyle("ACTEUR", styles);
+                //TODO Supprimer creerStyle() et dispatcher les styles dans creer() des classes filles
+                /* Exemple pour modifier un Acteur :
+                 * stylesheet.getStyles().get("ACTEUR").put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_CLOUD); */
 
 		/* UseCase */
 		styles = null;
@@ -62,7 +65,7 @@ abstract public class EltGraphique extends mxCell {
 		styles.put(mxConstants.STYLE_OPACITY, 50);
         styles.put(mxConstants.STYLE_MOVABLE, 50);        
 		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		stylesheet.putCellStyle("SPECIALISATION", styles);        
+		stylesheet.putCellStyle("SPECIALISATION", styles);
         
         /* Lien continu */
         styles = null;

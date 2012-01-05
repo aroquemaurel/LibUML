@@ -6,9 +6,8 @@
 package eltGraphique.ligne;
 
 /**
- *
- * @author satenske
+ * Gestion des cardinalités des liens
  */
-class Cardinalite {
+public class Cardinalite {
 
 }
