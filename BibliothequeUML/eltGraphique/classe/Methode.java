@@ -1,6 +1,6 @@
 package eltGraphique.classe;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
 * Représente une méthode en général
@@ -23,7 +23,7 @@ class Methode {
 	 * Liste des paramètres de la méthodes
 	 * @see Variable
 	 */
-	private ArrayList<Variable> parametres;
+	private List<Variable> parametres;
 	/**
 	 * Méthode constante ?
 	 */
@@ -48,7 +48,7 @@ class Methode {
 	 * @param p_constante Méthode constante ?
 	 */
 	public Methode(Visibilite p_visibilite, String p_typeDeRetour, String p_nom,
-					ArrayList<Variable> p_parametres,
+					List<Variable> p_parametres,
 					boolean p_abstraite,
 					boolean p_deClasse,
 					boolean p_constante) {
@@ -130,7 +130,7 @@ class Methode {
 	 * Récupère les paramètres de la méthode.
 	 * @return La liste des paramètres de la méthode
 	 */
-	public ArrayList<Variable> getParametres() {
+	public List<Variable> getParametres() {
 		return (this.parametres);
 	}
 
@@ -159,7 +159,7 @@ class Methode {
 	 * Modifie les paramètres de la méthode.
 	 * @param p_parametres La nouvelle liste de paramètres de la méthode
 	 */
-	public void setParametres(ArrayList<Variable> p_parametres) {
+	public void setParametres(List<Variable> p_parametres) {
 		this.parametres = p_parametres;
 	}
 
