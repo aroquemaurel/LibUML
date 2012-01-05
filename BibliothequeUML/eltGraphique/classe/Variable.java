@@ -30,7 +30,7 @@ abstract class Variable {
     }
 
 	/**
-	 * 
+	 * Retourne vrai si la variable est constante, faux sinon
 	 * @return Variable constante ?
 	 */
     public boolean isConstante() {
@@ -38,7 +38,7 @@ abstract class Variable {
     }
 
 	/**
-	 * 
+	 * Modifie la constance de la variable
 	 * @param p_constante Variable constante ?
 	 */
     public void setConstante(boolean p_constante) {
@@ -46,7 +46,7 @@ abstract class Variable {
     }
 
 	/**
-	 * 
+	 * Récupère le type de la variable
 	 * @return Le type de la variable
 	 */
     public String getType() {
@@ -54,7 +54,7 @@ abstract class Variable {
     }
 
 	/**
-	 * 
+	 * Modifie le type de la variable
 	 * @param p_typeLe nouveau type de la variable
 	 */
     public void setType(String p_type) {
@@ -62,7 +62,7 @@ abstract class Variable {
     }
 
 	/**
-	 * 
+	 * Récupère le nom de la variable
 	 * @return Le nom de la variable
 	 */
 	public String getNom() {
@@ -70,7 +70,7 @@ abstract class Variable {
 	}
 
 	/**
-	 * 
+	 * Modifie le nom de la variable
 	 * @param nom Le nouveau nom de la variable
 	 */
 	public void setNom(String nom) {
