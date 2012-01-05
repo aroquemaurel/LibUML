@@ -97,11 +97,12 @@ abstract public class EltGraphique extends mxCell {
 	 * Rend (in)visible l'élément grahique sur le graphe
 	 * @param p_bool 
 	 */
+    @Override
     public void setVisible(boolean p_bool){
         super.setVisible(p_bool);     
     }
     /**
-	 * 
+	 * Récupère la cellule associé à l'élément graphique
 	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
     public mxICell getCellule(){
@@ -109,7 +110,7 @@ abstract public class EltGraphique extends mxCell {
     }    
     
     /**
-	 * 
+	 * Modifie la cellule que représente l'élément
 	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
     public void setCellule(mxCell p_cellule){
@@ -118,15 +119,15 @@ abstract public class EltGraphique extends mxCell {
     }    
     
 	/**
-	 * 
-	 * @return Le graph auquel est associé la cellule
+	 * Récupère le graphe auquel est associ l'élément
+	 * @return Le graph auquel est associé l'élément
 	 */
     public mxGraph getGraph(){
         return (this.graph);
     }
     
 	/**
-	 * 
+	 * Modifie le graphe auquel est associé l'élément
 	 * @param p_graph Le nouveau graphe associé à l'élément graphique
 	 */
     public void setGraph(mxGraph p_graph){
@@ -135,6 +136,7 @@ abstract public class EltGraphique extends mxCell {
 	
 	/**
 	 * Methode abstraite
+         * Créer la représentation graphique de l'élément
 	 * 
 	 * @see ActeurActif
 	 * @see ActeurPassif
