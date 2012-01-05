@@ -17,9 +17,10 @@ public class Traitement extends ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
-    public Traitement(mxGraph p_graph, String p_texte){
+    public Traitement(mxGraph p_graph, String p_texte, Lien p_evenementDeclencheur){
         super(p_graph, p_texte);
-		this.creer();
+        this.evenementDeclencheur = p_evenementDeclencheur;
+	this.creer();
     }
     
 	/* 
@@ -32,7 +33,15 @@ public class Traitement extends ElementModelisation {
 	 * Crée la représentation graphique d'un traitement
 	 */
     @Override
-    public void creer() {
+    public final void creer() {
 		
+    }
+    
+    public Lien getEvenementDeclencheur() {
+        return evenementDeclencheur;
+    }
+
+    public void setEvenementDeclencheur(Lien evenementDeclencheur) {
+        this.evenementDeclencheur = evenementDeclencheur;
     }
 }
