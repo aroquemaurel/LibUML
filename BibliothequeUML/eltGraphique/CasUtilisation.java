@@ -10,8 +10,8 @@ import com.mxgraph.view.mxGraph;
 public class CasUtilisation extends ElementModelisation {
 
 	/**
-	 * Construteur de la classe CasUtilisation
-	 * @param p_graph Le graphe auquel sera ajouter le cas d'utilisation
+	 * Constructeur de la classe CasUtilisation
+	 * @param p_graph Le graphe auquel sera ajouté le cas d'utilisation
 	 * @param p_texte Le texte qui sera associé au cas d'utilisation
 	 */
     public CasUtilisation(mxGraph p_graph, String p_texte) {
@@ -29,7 +29,7 @@ public class CasUtilisation extends ElementModelisation {
   
 
 	/**
-	 *
+	 * Modifie le texte lié au cas d'utilisation
 	 * @param p_texte Le nouveau texte lié au cas d'utilisation
 	 */
     @Override

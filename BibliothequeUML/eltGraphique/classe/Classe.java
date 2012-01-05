@@ -2,7 +2,7 @@ package eltGraphique.classe;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -21,12 +21,12 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Liste des méthodes de la classe
 	 * @see Methode
 	 */
-    private ArrayList<Methode> methodes;
+    private List<Methode> methodes;
 	/**
 	 * Liste des attributs de la classe
 	 * @see Attribut
 	 */
-    private ArrayList<Attribut> attributs;
+    private List<Attribut> attributs;
 	/**
 	 * Classe cosntante ?
 	 */
@@ -39,7 +39,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 */
     public Classe(mxGraph p_graph, String p_texte){
         super(p_graph, p_texte);
-		this.creer();
+	this.creer();
     }
     
 	/**
@@ -54,7 +54,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 */
     public void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
 			       Visibilite p_visibilite, 
-			       ArrayList<Variable> p_parametres,
+			       List<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
 	    this.methodes.add(new Methode(p_visibilite, p_typeDeRetour,
@@ -85,7 +85,7 @@ public class Classe extends eltGraphique.ElementModelisation {
      * Guetteurs
      */
 	/**
-	 * 
+	 * Retourne vrai si la classe est constante, faux sinon.
 	 * @return Classe constante ?
 	 */
     public boolean estConstante() {
@@ -93,7 +93,7 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
 	/**
-	 * Classe abstraite ?
+	 * Retourne vrai si la classe est abstraite, faux sinon.
 	 * @return si la classe est abstraite ou non.
 	 */
     public boolean estAbstraite() {
@@ -101,25 +101,25 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
 	/**
-	 * 
+	 * Retourne la liste des attributs de la classe
 	 * @return Liste des attributs de la classe
 	 * @see Attribut
 	 */
-    public ArrayList<Attribut> getAttributs() {
+    public List<Attribut> getAttributs() {
         return (this.attributs);
     }
 
 	/**
-	 * 
+	 * Retourne la liste des méthodes de la classe
 	 * @return Liste des méthodes de la classe
 	 * @see Methode
 	 */
-    public ArrayList<Methode> getMethodes() {
+    public List<Methode> getMethodes() {
         return (this.methodes);
     }
 
 	/**
-	 * 
+	 * Retourne la visibilité de la classe
 	 * @return Visibilite de al classe
 	 * @see Visibilite
 	 */
@@ -131,7 +131,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Setters
 	 */
 	/**
-	 * 
+	 * Modifie la visibilité de la classe
 	 * @param p_visibilite Le nouvelle visibilite de la classe
 	 * @see Visibilite
 	 */
@@ -140,7 +140,7 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
 	/**
-	 * 
+	 * Modifie la constance de la classe
 	 * @param p_constante Classe constante ?
 	 */
     public void setConstante(boolean p_constante) {
@@ -148,7 +148,7 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
 	/**
-	 * 
+	 * Modifie l'abstraction de la classe
 	 * @param p_abstraite Classe abstraite ?
 	 */
     public void setAbstraite(boolean p_abstraite) {
@@ -156,20 +156,20 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
 	/**
-	 * 
+	 * Remplace la liste des attributs de la classe
 	 * @param p_attributs La nouvelle liste d'attributs
 	 * @see Attribut
 	 */
-    public void setAttributs(ArrayList<Attribut> p_attributs) {
+    public void setAttributs(List<Attribut> p_attributs) {
         this.attributs = p_attributs;
     }
 
 	/**
-	 * 
+	 * Remlpace la liste des méthodes de la classe
 	 * @param p_methodes La nouvelle liste de méthodes
 	 * @see Methode
 	 */
-    public void setMethodes(ArrayList<Methode> p_methodes) {
+    public void setMethodes(List<Methode> p_methodes) {
         this.methodes = p_methodes;
     }
 

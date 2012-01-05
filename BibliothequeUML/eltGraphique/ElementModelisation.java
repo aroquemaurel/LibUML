@@ -40,12 +40,13 @@ abstract public class ElementModelisation extends EltGraphique {
 	public ElementModelisation(mxGraph p_graph, String p_texte) {
 		super(p_graph);
 		this.texte = p_texte;
+                //TODO Initiliser hauteur/largeur/position. Utiliser Dimension ?
 	}
 	
 	/* GETTEURS */
 	
 	/**
-	 * 
+	 * Récupère la taille en hauteur de l'élément
 	 * @return La taille en hauteur de l'élément
 	 */
     public double getHauteur() {
@@ -53,7 +54,7 @@ abstract public class ElementModelisation extends EltGraphique {
     }
 
 	/**
-	 * 
+	 * Récupère la taille en largeur de l'élément
 	 * @return La taille en largeur de l'élément
 	 */
     public double getLargeur() {
@@ -61,7 +62,7 @@ abstract public class ElementModelisation extends EltGraphique {
     }
 
 	/**
-	 * 
+	 * Récupère le texte lié à l'élément
 	 * @return Le texte lié à l'élément
 	 */
     public String getTexte() {
@@ -69,7 +70,7 @@ abstract public class ElementModelisation extends EltGraphique {
     }
 
 	/**
-	 * 
+	 * Récupère la position de l'élément sur le graphe
 	 * @return La position de l'élément
 	 */
     public Point getPosition() {
@@ -81,7 +82,7 @@ abstract public class ElementModelisation extends EltGraphique {
 	 */
 	
 	/**
-	 * 
+	 * Modifie la hauteur de l'élément
 	 * @param p_hauteur La nouvelle taille en hauteur
 	 */
     public void setHauteur(double p_hauteur) {
@@ -89,7 +90,7 @@ abstract public class ElementModelisation extends EltGraphique {
     }
 
 	/**
-	 * 
+	 * Modifie la taille en largeur de l'élément
 	 * @param p_largeur La nouvelle taille en largeur
 	 */
     public void setLargeur(double p_largeur) {
@@ -97,7 +98,7 @@ abstract public class ElementModelisation extends EltGraphique {
     }
 
 	/**
-	 * 
+	 * Modifie le texte lié à l'élément
 	 * @param p_texte Le nouveau texte lié à l'élément
 	 */
     public void setTexte(String p_texte) {
@@ -105,7 +106,7 @@ abstract public class ElementModelisation extends EltGraphique {
     }
 
 	/**
-	 * 
+	 * Modifie la position de l'élément
 	 * @param p_position La nouvelle position de l'élement
 	 */
     public void setPosition(Point p_position) {
