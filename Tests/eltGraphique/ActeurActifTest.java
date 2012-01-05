@@ -2,7 +2,6 @@ package eltGraphique;
 
 
 import com.mxgraph.model.mxICell;
-import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
 import org.junit.After;
 import org.junit.Test;
@@ -19,7 +18,7 @@ public class ActeurActifTest {
     @Before
     public void setUp() {
         this.monActeur = new ActeurActif(new mxGraph(), "test");
-        this.monActeur = new ActeurActif(new mxGraph(), new String("test"));
+        this.monActeur = new ActeurActif(new mxGraph(), "test");
         this.monActeur.creer();
     }
 
