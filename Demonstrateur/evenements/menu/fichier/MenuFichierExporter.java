@@ -1,11 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package evenements.menu.fichier;
 
 /**
- *
+ * Implémentation d'une action sur l'élément Exporter
  */
 public class MenuFichierExporter extends MenuFichier {
 

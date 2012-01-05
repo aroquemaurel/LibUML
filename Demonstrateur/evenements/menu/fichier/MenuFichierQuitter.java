@@ -3,7 +3,7 @@ package evenements.menu.fichier;
 import java.awt.event.ActionEvent;
 
 /**
- *
+ * Implémentation d'une action sur l'élément Quitter
  */
 public class MenuFichierQuitter extends MenuFichier {
 
