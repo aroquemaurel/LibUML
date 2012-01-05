@@ -13,7 +13,8 @@ import com.mxgraph.view.mxGraph;
  */
 abstract public class Acteur extends ElementModelisation {
     /**
-     * Mettre abstraite
+     * Méthode abstraite
+     * Crée la représentation graphique de l'acteur
      * 
      * @see ActeurActif
      * @see ActeurPassif
