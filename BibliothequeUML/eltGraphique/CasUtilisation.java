@@ -29,7 +29,7 @@ public class CasUtilisation extends ElementModelisation {
   
 
 	/**
-	 *
+	 * Modifie le texte lié au cas d'utilisation
 	 * @param p_texte Le nouveau texte lié au cas d'utilisation
 	 */
     @Override

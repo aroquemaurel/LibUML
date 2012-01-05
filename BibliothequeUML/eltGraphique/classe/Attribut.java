@@ -17,7 +17,7 @@ class Attribut extends Variable {
 	 */
     private boolean deClasse;
 	/**
-	 * Constructeur de l'attribut
+	 * Constructeur de la classe attribut
 	 * @param p_visibilite Visibilité de l'attribut
 	 * @param p_deClasse Attribut de classe ?
 	 * @param p_constante Attribut constant ?
@@ -35,7 +35,7 @@ class Attribut extends Variable {
 	}
 
 	/**
-	 * 
+	 * Récupère la visibilite de l'attribut
 	 * @return La visibilite de l'attribut
 	 * @see Visibilite
 	 */
@@ -44,7 +44,7 @@ class Attribut extends Variable {
     }
 
 	/**
-	 * 
+	 * Modifie la visibilité de l'attribut
 	 * @param p_visibilite La nouvelle visibilité de l'attribut
 	 * @see Visibilite
 	 */
@@ -53,7 +53,7 @@ class Attribut extends Variable {
     }
 
 	/**
-	 * 
+	 * Retourne vrai si l'attribut est de classe, faux sinon
 	 * @return Attribut de classe ?
 	 */
 	public boolean isDeClasse() {
@@ -61,7 +61,7 @@ class Attribut extends Variable {
 	}
 
 	/**
-	 * 
+	 * Modifie le fait que l'attribut soit de classe
 	 * @param deClasse Attribut de classe ?
 	 */
 	public void setDeClasse(boolean deClasse) {
