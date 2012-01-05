@@ -1,8 +1,9 @@
 package ihm.menu;
 
-import evenements.menu.fichier.MenuFichier;
 import evenements.menu.fichier.MenuFichierEnregistrer;
 import evenements.menu.fichier.MenuFichierExporter;
+import evenements.menu.fichier.MenuFichierOuvrir;
+import evenements.menu.fichier.MenuFichierQuitter;
 import java.awt.Dimension;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -25,15 +26,13 @@ public class BarreMenus extends JMenuBar {
 
     public void ajouterObjetsGraphiques(){
 		/* Menu fichier */
-/*        JMenu fichier = new JMenu("Fichier");*/
 		JMenu fichier = new JMenu ("Fichier");
         MenuFichierEnregistrer enregistrer = new MenuFichierEnregistrer("Enregistrer");
-//        MenuFichierOuvrir ouvrir = new MenuFichierOuvrir("Ouvrir");
+        MenuFichierOuvrir ouvrir = new MenuFichierOuvrir("Ouvrir");
         MenuFichierExporter exporter = new MenuFichierExporter ("Exporter");
-        JMenuItem quitter = new JMenuItem("Quitter");
-
+        MenuFichierQuitter quitter = new MenuFichierQuitter("Quitter");
         fichier.add(enregistrer);
-//        fichier.add(ouvrir);
+        fichier.add(ouvrir);
         fichier.add(exporter);
         fichier.add(quitter);
 

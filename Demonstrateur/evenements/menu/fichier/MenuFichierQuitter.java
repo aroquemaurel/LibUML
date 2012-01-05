@@ -1,13 +1,19 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package evenements.menu.fichier;
+
+import java.awt.event.ActionEvent;
 
 /**
  *
- * @author satenske
  */
-public class MenuFichierQuitter {
+public class MenuFichierQuitter extends MenuFichier {
+
+	public MenuFichierQuitter(String p_string) {
+		super(p_string);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		System.exit(0);
+	}
 
 }
