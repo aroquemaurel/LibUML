@@ -7,8 +7,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 /**
- *
- * @author satenske
+ * Menu contenant la barre de menu (Fichier, Insérer, ...)
  */
 public class MenuHaut extends JMenuBar {
     private final JMenu fichier;
@@ -20,11 +19,7 @@ public class MenuHaut extends JMenuBar {
     private final JMenuItem quitter;
     private final JMenuItem carre;
 
-    private final FenetreDemo fenetre;
-
-    public MenuHaut(int p_largeurPanneau, int p_longueurPanneau, FenetreDemo p_fenetre){
-        this.fenetre = p_fenetre;
-
+    public MenuHaut(int p_largeurPanneau, int p_longueurPanneau){
         this.setPreferredSize(new Dimension(p_largeurPanneau, p_longueurPanneau));
         this.fichier = new JMenu("Fichier");
         this.inserer = new JMenu("Insérer");

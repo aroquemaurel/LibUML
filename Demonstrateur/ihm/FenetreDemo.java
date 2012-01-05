@@ -70,7 +70,7 @@ public class FenetreDemo extends JFrame {
         this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
         this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
         this.menuDroite = new MenuDroite(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL, this);
-        this.menuHaut = new MenuHaut(LARGEUR_FENETRE, HAUTEUR_MENUBAR, this);
+        this.menuHaut = new MenuHaut(LARGEUR_FENETRE, HAUTEUR_MENUBAR);
     }
 
     public void afficherFenetre(){
