@@ -13,14 +13,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * Classe concernant tout ce qui est l'affichage de la fenetre
  *
+ * Classe concernant tout ce qui est l'affichage de la fenetre
  *
  */
 
 public class FenetreDemo extends JFrame {
+	/* Déclaration des paramètres de la fenêtre */
     private static final int HAUTEUR_FENETRE =
-		(int) (Toolkit.getDefaultToolkit().getScreenSize().height - 
+		(int) (Toolkit.getDefaultToolkit().getScreenSize().height -
                        Toolkit.getDefaultToolkit().getScreenSize().height*0.05);
     private static final int LARGEUR_FENETRE =
 		Toolkit.getDefaultToolkit().getScreenSize().width;
@@ -32,27 +33,15 @@ public class FenetreDemo extends JFrame {
     private static final int LARGEUR_GRAPH =
                         LARGEUR_FENETRE - LARGEUR_MENUGAUCHE - LARGEUR_TABLEAUDROITE - 30;
 
-    private final JPanel panneauPrincipal;
-    private final BarreOutilsDessin toolbar;
-    private final Menu menuDroite;
+    private final JPanel panneauPrincipal; //panneau principal dans lequel est contenu les autres panneaux
+    private final BarreOutilsDessin toolbar; //barre contenant les outils
+    private final Menu menuDroite; // Menu avec le tableau
 
-    private final PanneauGraph panneauGraph;
+    private final PanneauGraph panneauGraph; // panneau contenant le graph
 
-    private final MenuHaut menuHaut;
+    private final MenuHaut menuHaut; // Barre des menus (fichier, insérer, ...)
 
-    private void ajouterPanneaux() {
-        this.panneauPrincipal.add(this.menuHaut);
-        this.panneauPrincipal.add(this.toolbar);
-        this.panneauPrincipal.add(this.panneauGraph);
-        this.panneauPrincipal.add(this.menuDroite.getPanneau());
-    }
-
-    private void ajouterBoutons(){
-        this.menuHaut.ajouterObjetsGraphiques();
-        this.toolbar.ajouterObjetsGraphiques();
-        this.menuDroite.ajouterObjetsGraphiques();
-    }
-
+	/* Paramètre la fenêtre */
     private void parametrerFenetre(){
         this.setTitle("Démonstrateur de la bibliothèque");
         this.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
@@ -61,7 +50,22 @@ public class FenetreDemo extends JFrame {
         this.setResizable(false);
     }
 
+	/* Ajouter au panneau principal les différents panneaux */
+    private void ajouterPanneaux() {
+        this.panneauPrincipal.add(this.menuHaut);
+        this.panneauPrincipal.add(this.toolbar);
+        this.panneauPrincipal.add(this.panneauGraph);
+        this.panneauPrincipal.add(this.menuDroite.getPanneau());
+    }
 
+	/* ajouter les différents boutons dans les différents panneaux */
+    private void ajouterBoutons(){
+        this.menuHaut.ajouterObjetsGraphiques();
+        this.toolbar.ajouterObjetsGraphiques();
+        this.menuDroite.ajouterObjetsGraphiques();
+    }
+
+	/* Construit la fenêtre de démonstration */
     public FenetreDemo(){
         this.panneauPrincipal = new JPanel();
         this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
@@ -79,6 +83,7 @@ public class FenetreDemo extends JFrame {
         this.setVisible(true);
     }
 
+	/* Retour le panneau contenant le graph */
     public PanneauGraph getPanneauGraph(){
         return (this.panneauGraph);
     }
@@ -90,18 +95,18 @@ public class FenetreDemo extends JFrame {
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
        fenetre.afficherFenetre();
-       
+
        // TODO -- à intégrer dans le démonstrateur. Actuellement juste des tests
-       // TODO bis -- Rédiger les JUnit. 
+       // TODO bis -- Rédiger les JUnit.
        // TODO ter -- Créer les différents styles de flêches
        CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 1");
-       Classe useCase2 = new Classe(fenetre.getPanneauGraph().getGraph(), "test 2");    
-        CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 3");        
-       
+       Classe useCase2 = new Classe(fenetre.getPanneauGraph().getGraph(), "test 2");
+        CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 3");
+
        Lien monLien = new Lien(
            useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
        monLien.creer();
-       
+
        useCase3.supprimer();
     }
 

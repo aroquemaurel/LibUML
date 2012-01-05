@@ -2,7 +2,6 @@ package ihm;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
-import java.awt.Color;
 import java.awt.Dimension;
 
 /**
