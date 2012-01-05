@@ -16,9 +16,8 @@ public class CasUtilisation extends ElementModelisation {
 	 */
     public CasUtilisation(mxGraph p_graph, String p_texte) {
 		super(p_graph, p_texte);
-        this.creer();        
     }
-    
+
 	/**
 	 * Crée la représentation graphique du cas d'utilisation
 	 */
@@ -26,7 +25,7 @@ public class CasUtilisation extends ElementModelisation {
         super.setCellule((mxCell) this.graph.insertVertex(
             super.getParent(), null, super.getTexte(), 30, 30, 150, 75, "USECASE"));
     }
-  
+
 
 	/**
 	 * Modifie le texte lié au cas d'utilisation

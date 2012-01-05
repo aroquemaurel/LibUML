@@ -4,7 +4,7 @@ import com.mxgraph.view.mxGraph;
 
 /**
  * Modélise une interface par un petit cercle et un texte
- * 
+ *
  */
 public class Interface extends ElementModelisation {
     /**
@@ -14,9 +14,8 @@ public class Interface extends ElementModelisation {
      */
     public Interface(mxGraph p_graph, String p_texte){
         super(p_graph, p_texte);
-	this.creer();
     }
-    
+
 
     /**
      * Crée la représentation graphique d'un traitement

@@ -31,7 +31,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Classe cosntante ?
 	 */
     private boolean constante;
-    
+
 	/**
 	 * Constructeur d'un élément 'classe'
 	 * @param p_graph Le graphe auquel sera ajouter la classe
@@ -39,9 +39,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 */
     public Classe(mxGraph p_graph, String p_texte){
         super(p_graph, p_texte);
-	this.creer();
     }
-    
+
 	/**
 	 * Ajoute une méthode à la liste des méthoes de la classe
 	 * @param p_nomMethode Nom de la méthode
@@ -53,7 +52,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_constante Méthode constante ?
 	 */
     public void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
-			       Visibilite p_visibilite, 
+			       Visibilite p_visibilite,
 			       List<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
