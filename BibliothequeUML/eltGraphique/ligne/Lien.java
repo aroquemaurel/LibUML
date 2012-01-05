@@ -6,18 +6,52 @@ import eltGraphique.ElementModelisation;
 import eltGraphique.EltGraphique;
 
 /**
- *
+ * Classe servant à la modélistaion des liens dans les différents diagrammes
+ * 
+ * Les différents types de liens sont gérés grâce à un attribut de type TypeLien
+ * 
+ * @see TypeLien
  */
 public class Lien extends EltGraphique {
-	private ElementModelisation origine;
-	private ElementModelisation extremite;
-	private String texteOrigine;
-	private String texteExtremite;
-	private String typeFlecheExtremite;
-	private String typeFlecheOrigine;
-	private Cardinalite cardinaliteOrigine;
-	private Cardinalite cardinaliteExtremite;
-    private mxCell lien;   
+    /**
+     * Element à l'origine du lien
+     * @see ElementModelisation
+     */
+    private ElementModelisation origine;
+    /**
+     * Element à l'extremite du lien
+     * @see ElementModelisation
+     */
+    private ElementModelisation extremite;
+    /**
+     * Rôle du côté de l'origine du lien
+     */
+    private String texteOrigine;
+    /**
+     * Rôle du côté de l'extrémité du lien
+     */
+    private String texteExtremite;
+    /**
+     * Le type de la flèche à l'extrémité
+     */
+    private String typeFlecheExtremite;
+    /**
+     * Le type de la flèche à l'origine
+     */
+    private String typeFlecheOrigine;
+    /**
+     * La cardinalité à l'origine
+     * @see Cardinalite
+     */
+    private Cardinalite cardinaliteOrigine;
+    /**
+     * La cardinalité à l'extrémité
+     * @see Cardinalite
+     */
+    private Cardinalite cardinaliteExtremite;
+    /**
+     * Le type de la flèche 
+     */
     private String typeFleche;
     
     public Lien(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph,
