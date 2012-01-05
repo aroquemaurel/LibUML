@@ -12,7 +12,7 @@ public class Diagramme {
      * liste des éléments graphiques
      */
     private List<EltGraphique> eltGraphique;
-    public boolean lienAutorise (EltGraphique origine , EltGraphique extremite){
+    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, String p_typeDeFleche){
         return true;
     }
     public boolean eltAutorise (EltGraphique p_element){
