@@ -1,6 +1,7 @@
 package eltGraphique;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.model.mxICell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
@@ -13,8 +14,7 @@ import java.util.HashMap;
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
  */
-abstract public class EltGraphique {
-    protected mxCell cellule;
+abstract public class EltGraphique extends mxCell {
     protected mxGraph graph;    
     
 	/**
@@ -26,45 +26,54 @@ abstract public class EltGraphique {
     private void creerLesStyle() {
 		mxStylesheet stylesheet =
 		    this.graph.getStylesheet();
-		HashMap<String, Object> style =
+		HashMap<String, Object> styles =
 		    new HashMap<String, Object>();
 
+		/* Classe */
+		styles.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
+		styles.put(mxConstants.STYLE_OPACITY, 50);
+		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("CLASSE", styles);
+		
         /* Ateur */
-		style.put(mxConstants.STYLE_SHAPE,
+		styles = null;
+		styles = new HashMap<String, Object>();
+		styles.put(mxConstants.STYLE_SHAPE,
 			  mxConstants.SHAPE_ACTOR);
-		style.put(mxConstants.STYLE_OPACITY, 50);
-		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-		stylesheet.putCellStyle("ACTEUR", style);
-
+		styles.put(mxConstants.STYLE_OPACITY, 50);
+		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("ACTEUR", styles);
 
 		/* UseCase */
-		style = null;
-		style = new HashMap<String, Object>();
-		style.put(mxConstants.STYLE_SHAPE,
+		styles = null;
+		styles = new HashMap<String, Object>();
+		styles.put(mxConstants.STYLE_SHAPE,
 			  mxConstants.SHAPE_ELLIPSE);
-		style.put(mxConstants.STYLE_OPACITY, 50);
-		style.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-		stylesheet.putCellStyle("USECASE", style);
+		styles.put(mxConstants.STYLE_OPACITY, 50);
+		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		stylesheet.putCellStyle("USECASE", styles);
         
         /* Spécialisation */
-        style = null;
-		style = new HashMap<String, Object>();
-		style.put(mxConstants.STYLE_EDGE,
+        styles = null;
+		styles = new HashMap<String, Object>();
+		styles.put(mxConstants.STYLE_EDGE,
 			  mxConstants.EDGESTYLE_ORTHOGONAL);
-        style.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
-		style.put(mxConstants.STYLE_OPACITY, 50);
-		style.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		stylesheet.putCellStyle("SPECIALISATION", style);        
+        styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+		styles.put(mxConstants.STYLE_OPACITY, 50);
+        styles.put(mxConstants.STYLE_MOVABLE, 50);        
+		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+		stylesheet.putCellStyle("SPECIALISATION", styles);        
         
         /* Lien continu */
-        style = null;
-		style = new HashMap<String, Object>();
-		style.put(mxConstants.STYLE_EDGE,
+        styles = null;
+		styles = new HashMap<String, Object>();
+		styles.put(mxConstants.STYLE_EDGE,
 			  mxConstants.EDGESTYLE_ORTHOGONAL);
-        style.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
-		style.put(mxConstants.STYLE_OPACITY, 50);
-		style.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		stylesheet.putCellStyle("LIENCONTINU", style);          
+        styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
+		styles.put(mxConstants.STYLE_OPACITY, 50);
+        styles.put(mxConstants.STYLE_MOVABLE, 50);                
+		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+		stylesheet.putCellStyle("LIENCONTINU", styles);          
 	}
    
 	/**
@@ -81,7 +90,7 @@ abstract public class EltGraphique {
 	 * Méthode généique qui supprime l'élément du graphe où il est
 	 */
     public void supprimer() {
-        this.cellule.removeFromParent();
+        super.getParent().removeFromParent();
     }
     
 	/**
@@ -89,23 +98,23 @@ abstract public class EltGraphique {
 	 * @param p_bool 
 	 */
     public void setVisible(boolean p_bool){
-        this.cellule.setVisible(p_bool);     
+        super.setVisible(p_bool);     
     }
-    
-	/**
+    /**
 	 * 
-	 * @return La cellule que représente l'élément graphique
+	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
-    public mxCell getCellule(){
-        return this.cellule;
-    }
-	
+    public mxICell getCellule(){
+        return (super.getTarget());
+    }    
+    
     /**
 	 * 
 	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
     public void setCellule(mxCell p_cellule){
-        this.cellule = p_cellule;
+        super.setTarget(p_cellule);
+        super.setParent(p_cellule);
     }    
     
 	/**

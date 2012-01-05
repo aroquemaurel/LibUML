@@ -1,5 +1,6 @@
 package eltGraphique.classe;
 
+import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
 import java.util.ArrayList;
 
@@ -38,6 +39,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 */
     public Classe(mxGraph p_graph, String p_texte){
         super(p_graph, p_texte);
+		this.creer();
     }
     
 	/**
@@ -175,8 +177,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Crée la représentation graphique de la classe
 	 */
     @Override
-    public void creer() {
-		
+    public final void creer() {
+		super.setCellule((mxCell) super.getGraph().insertVertex(
+            super.getParent(), null, super.getTexte(), 350, 350, 125, 150, "CLASSE"));
     }
-
 }

@@ -1,18 +1,14 @@
 package ihm;
 
-import com.mxgraph.util.mxConstants;
-import com.mxgraph.view.mxStylesheet;
 import eltGraphique.CasUtilisation;
+import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
-import eltGraphique.ligne.LienContinu;
-import eltGraphique.ligne.fleche.FlecheContinue;
 import ihm.menu.BarreOutilsDessin;
 import ihm.menu.Menu;
 import ihm.menu.MenuDroite;
 import ihm.menu.MenuHaut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -99,15 +95,10 @@ public class FenetreDemo extends JFrame {
        // TODO bis -- Rédiger les JUnit. 
        // TODO ter -- Créer les différents styles de flêches
        CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 1");
-       CasUtilisation useCase2 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 2");    
-        CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 3");    
-
-       useCase1.afficher();
-       useCase3.afficher();
-       useCase2.afficher();
-     
+       Classe useCase2 = new Classe(fenetre.getPanneauGraph().getGraph(), "test 2");    
+        CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 3");        
        
-       Lien monLien = new FlecheContinue(
+       Lien monLien = new Lien(
            useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
        monLien.creer();
        

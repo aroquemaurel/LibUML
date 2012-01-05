@@ -1,7 +1,8 @@
 package eltGraphique;
 
 
-import com.mxgraph.model.mxCell;
+import com.mxgraph.model.mxICell;
+import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
 import org.junit.After;
 import org.junit.Test;
@@ -28,7 +29,7 @@ public class ActeurActifTest {
     }
     @Test
     public void testCreer(){
-        mxCell maCellule = this.monActeur.getCellule();
+        mxICell maCellule = this.monActeur.getCellule();
         assertEquals(maCellule, this.monActeur.getCellule());
     }
 	

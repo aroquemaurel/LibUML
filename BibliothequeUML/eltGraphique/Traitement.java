@@ -21,6 +21,7 @@ public class Traitement extends ElementModelisation {
         super(p_graph, p_texte);
 		this.creer();
     }
+    
 	/* 
 	 * TODO Ajouter l'acteur associé  ca peut être intéressant ??
 	 * TODO String p_texte || Methode p_eltDeclencheur ? 

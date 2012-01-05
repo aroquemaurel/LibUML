@@ -25,20 +25,11 @@ public class ActeurPassif extends Acteur {
 	 */
     @Override
     public final void creer(){
-        Object parent = super.getGraph().getDefaultParent();
-        
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            parent, null, super.getTexte(), 30, 30, 100, 35));
-        super.getCellule().setVisible(false);
+            super.getParent(), null, super.getTexte(), 30, 30, 100, 35));
+        super.setVisible(false);
     }
     
-	/**
-	 * Rend visible la cellule sur le graphe
-	 */
-    @Override
-    public void afficher(){
-        super.getCellule().setVisible(true);     
-    }
     
 	/**
 	 * Changer le texte lié à l'acteur passif
@@ -47,6 +38,6 @@ public class ActeurPassif extends Acteur {
     @Override
     public void setTexte(String p_texte){
         super.setTexte(p_texte);
-        super.getCellule().setValue(p_texte);
+        super.setValue(p_texte);
     }
 }

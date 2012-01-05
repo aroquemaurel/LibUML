@@ -8,7 +8,7 @@ import eltGraphique.EltGraphique;
 /**
  *
  */
-abstract public class Lien extends EltGraphique {
+public class Lien extends EltGraphique {
 	private ElementModelisation origine;
 	private ElementModelisation extremite;
 	private String texteOrigine;
@@ -17,12 +17,15 @@ abstract public class Lien extends EltGraphique {
 	private String typeFlecheOrigine;
 	private Cardinalite cardinaliteOrigine;
 	private Cardinalite cardinaliteExtremite;
-    private mxCell lien;    
+    private mxCell lien;   
+    private String typeFleche;
     
-    public Lien(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph){
+    public Lien(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph,
+        String p_typeFleche){
         super(p_graph);
         this.origine = p_origine;
         this.extremite = p_extremite;
+        this.typeFleche = p_typeFleche;
     }
 	/*
 	 * Getters
@@ -73,5 +76,13 @@ abstract public class Lien extends EltGraphique {
 	public void setTypeFlecheOrigine(String p_typeFlecheOrigine) {
 		this.typeFlecheOrigine = p_typeFlecheOrigine;
 	}
-    abstract public void creer(String p_style);
+    
+    public void creer(){
+     super.setCellule((mxCell) super.getGraph().insertEdge(
+            super.getGraph().getDefaultParent(), null, null,
+            this.getOrigine().getCellule(), this.getExtremite().getCellule(), 
+            this.typeFleche));
+        super.setConnectable(false);        
+    }
+
 }
