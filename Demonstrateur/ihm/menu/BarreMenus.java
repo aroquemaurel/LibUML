@@ -15,15 +15,18 @@ import javax.swing.JMenuItem;
 public class BarreMenus extends JMenuBar {
 	private Dimension dimension;
 
+	/* Paramètres de la barre de menus */
 	private void parametrerBarreMenus(){
         this.setPreferredSize(this.dimension);
 	}
+
 	/* Construit la barre de menu */
     public BarreMenus(Dimension p_dimension){
 		this.dimension = p_dimension;
 		this.parametrerBarreMenus();
     }
 
+	/* Ajout les objets grpahiques dans la barre de menu */
     public void ajouterObjetsGraphiques(){
 		/* Menu fichier */
 		JMenu fichier = new JMenu ("Fichier");
