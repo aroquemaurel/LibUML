@@ -17,7 +17,6 @@ import javax.swing.JPanel;
  * Classe concernant tout ce qui est l'affichage de la fenetre
  *
  */
-
 public class FenetreDemo extends JFrame {
 	/* Déclaration des paramètres de la fenêtre */
     private static final int HAUTEUR_FENETRE =
@@ -41,7 +40,7 @@ public class FenetreDemo extends JFrame {
 
     private final MenuHaut menuHaut; // Barre des menus (fichier, insérer, ...)
 
-	/* Paramètre la fenêtre */
+	/* Paramètres la fenêtre */
     private void parametrerFenetre(){
         this.setTitle("Démonstrateur de la bibliothèque");
         this.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
@@ -90,7 +89,6 @@ public class FenetreDemo extends JFrame {
 
     /**
      * Méthode principale
-     * @param args
      */
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
