@@ -1,9 +1,9 @@
 package diagramme;
 
+import eltGraphique.ActeurActif;
 import eltGraphique.ActeurPassif;
 import eltGraphique.EltGraphique;
 import eltGraphique.Traitement;
-import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
 
 /**
@@ -53,6 +53,11 @@ public class DiagrammeSequence extends Diagramme {
             else{
                 if(p_element instanceof ActeurPassif){
                     valeurRetour = true;
+                }
+                else{
+                    if(p_element instanceof ActeurActif){
+                        valeurRetour = true;
+                    }
                 }
             }
         }
