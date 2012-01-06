@@ -34,12 +34,6 @@ abstract public class EltGraphique extends mxCell {
 		 * stylesheet.getStyles().get("ACTEUR").put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_CLOUD); */
 
 		/* UseCase */
-		styles = null;
-		styles = new HashMap<String, Object>();
-		styles.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
-		styles.put(mxConstants.STYLE_OPACITY, 50);
-		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-		stylesheet.putCellStyle("USECASE", styles);
 
         /* Spécialisation */
         styles = null;
