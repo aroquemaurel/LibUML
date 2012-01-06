@@ -25,7 +25,9 @@ public class CasUtilisation extends ElementModelisation {
 	@Override
     public final void creer(){
         super.setCellule((mxCell) this.graph.insertVertex(
-            super.getParent(), null, super.getTexte(), 30, 30, 150, 75, "USECASE"));
+            super.getParent(), null, super.getTexte(), 30, 30,
+			super.getDimension().getWidth(), super.getDimension().getHeight(),
+			"USECASE"));
     }
 
 

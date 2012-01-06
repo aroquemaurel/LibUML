@@ -23,6 +23,6 @@ public class Interface extends ElementModelisation {
      */
     @Override
     public final void creer() {
-        //TODO
+        //TODO création des interfaces
     }
 }

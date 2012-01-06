@@ -26,7 +26,8 @@ public class ActeurPassif extends Acteur {
     @Override
     public final void creer(){
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getParent(), null, super.getTexte(), 30, 30, 100, 35));
+            super.getParent(), null, super.getTexte(), 30, 30,
+			super.getDimension().getWidth(), super.getDimension().getHeight()));
         super.setVisible(false);
     }
 

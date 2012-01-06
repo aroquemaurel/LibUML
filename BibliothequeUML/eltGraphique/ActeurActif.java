@@ -28,7 +28,9 @@ public class ActeurActif extends Acteur {
     @Override
     public final void creer(){
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            null, null, super.getTexte(), 30, 30, 60, 85, "ACTEUR"));
+            null, null, super.getTexte(), 30, 30,
+			super.getDimension().getWidth(), super.getDimension().getHeight(),
+			"ACTEUR"));
         super.setVisible(false);
     }
 

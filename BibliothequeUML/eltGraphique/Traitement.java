@@ -34,6 +34,7 @@ public class Traitement extends ElementModelisation {
 	 */
     @Override
     public final void creer() {
+		// TODO création des traitements
 
     }
 
