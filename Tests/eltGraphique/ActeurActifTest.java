@@ -1,6 +1,7 @@
 package eltGraphique;
 
 
+import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
 import org.junit.After;
@@ -23,19 +24,31 @@ public class ActeurActifTest {
 
     @After
     public void tearDown() {
+		this.monActeur.setCellule(null);
         this.monActeur = null;
-		//this.monActeur.supprimer();
     }
 	@Test
-	public void testCreer(){
-//		this.monActeur.creer();
+	public void testCreer1(){
 		assertNotNull(this.monActeur.getCellule());
+	}
+
+	@Test
+	public void testCreer2(){
+		assertTrue(this.monActeur instanceof ActeurActif);
+	}
+
+	@Test
+	public void testCreer3(){
+		assertEquals("ACTEUR", this.monActeur.getCellule().getStyle());
 	}
 
     @Test
     public void testGetCellule(){
-        mxICell maCellule = this.monActeur.getParent();
-        assertEquals(maCellule, this.monActeur.getCellule());
+        mxICell maCellule1 = this.monActeur.getParent();
+        assertEquals(maCellule1, this.monActeur.getCellule());
+
+        mxICell maCellule2 = this.monActeur.getTarget();
+        assertEquals(maCellule2, this.monActeur.getCellule());
     }
 
     @Test
@@ -43,6 +56,14 @@ public class ActeurActifTest {
         this.monActeur.setTexte("testouille");
         assertEquals("testouille", this.monActeur.getTexte());
     }
+
+	@Test
+	public void testSetCellule(){
+		mxCell maCellulle = new mxCell();
+		this.monActeur.setCellule(maCellulle);
+		assertEquals(maCellulle, this.monActeur.getParent());
+		assertEquals(maCellulle, this.monActeur.getTarget());
+	}
 
 	@Test
     public void testSupprimer(){
