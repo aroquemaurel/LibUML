@@ -2,6 +2,7 @@ package eltGraphique.classe;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
+import java.awt.Dimension;
 import java.util.List;
 
 /**
@@ -38,7 +39,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_texte Le texte associé à la classe (son nom)
 	 */
     public Classe(mxGraph p_graph, String p_texte){
-        super(p_graph, p_texte, null);
+        super(p_graph, p_texte, new Dimension(125,150));
     }
 
 	/**
@@ -178,6 +179,8 @@ public class Classe extends eltGraphique.ElementModelisation {
     @Override
     public final void creer() {
 		super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getParent(), null, super.getTexte(), 350, 350, 125, 150, "CLASSE"));
+            super.getParent(), null, super.getTexte(), 350, 350,
+			super.getDimension().getWidth(), super.getDimension().getHeight(),
+			"CLASSE"));
     }
 }
