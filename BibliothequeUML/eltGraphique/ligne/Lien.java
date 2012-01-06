@@ -21,60 +21,60 @@ public class Lien extends EltGraphique {
      * Element à l'origine du lien
      * @see ElementModelisation
      */
-    private ElementModelisation origine;
+    private ElementModelisation source;
     /**
      * Element à l'extremite du lien
      * @see ElementModelisation
      */
-    private ElementModelisation extremite;
+    private ElementModelisation destination;
     /**
      * Rôle du côté de l'origine du lien
      */
-    private String texteOrigine;
+    private String roleSource;
     /**
      * Rôle du côté de l'extrémité du lien
      */
-    private String texteExtremite;
+    private String roleDestination;
     /**
      * Le type de la flèche à l'extrémité
      */
-    private String typeFlecheExtremite;
+    private String typePointeDestination;
     /**
      * Le type de la flèche à l'origine
      */
-    private String typeFlecheOrigine;
+    private String typePointeSource;
     /**
      * La cardinalité à l'origine
      * @see Cardinalite
      */
-    private Cardinalite cardinaliteOrigine;
+    private Cardinalite cardinaliteSource;
     /**
      * La cardinalité à l'extrémité
      * @see Cardinalite
      */
-    private Cardinalite cardinaliteExtremite;
+    private Cardinalite cardinaliteDestionation;
     /**
      * Le type de la flèche 
 	 * @see TypeLien
      */
-    private TypeLien typeFleche;
+    private TypeLien typeLien;
     
 	/**
 	 * Constructeur de la classe Lien modelisant tout type de lien dans un graphe
-	 * @param p_origine Element à l'origine de la flèche
-	 * @param p_extremite Elemet à l'extrémité de la flèche
+	 * @param p_source Element à l'origine de la flèche
+	 * @param p_destination Elemet à l'extrémité de la flèche
 	 * @param p_graph Graphe auquel est associé la flèche
 	 * @param p_typeFleche Type de la flèche
 	 * 
 	 * @see ElementModelisation
 	 * @see TypeLien
 	 */
-    public Lien(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph,
-        TypeLien p_typeFleche){
+    public Lien(ElementModelisation p_source, ElementModelisation p_destination, mxGraph p_graph,
+        TypeLien p_typeLien){
         super(p_graph);
-        this.origine = p_origine;
-        this.extremite = p_extremite;
-        this.typeFleche = p_typeFleche;
+        this.source = p_source;
+        this.destination = p_destination;
+        this.typeLien = p_typeLien;
     }
 	/*
 	 * Getters
@@ -83,40 +83,41 @@ public class Lien extends EltGraphique {
 	 * Récupère l'élément à l'extrémité de la flèche
 	 * @return L'élément à l'extrémité de la flèche
 	 */
-	public ElementModelisation getExtremite() {
-		return (this.extremite);
+	public ElementModelisation getDestination() {
+		return (this.destination);
 	}
 
 	/**
 	 * Récupère l'élément à l'origine de la flèche
 	 * @return L'élément à l'origine de la flèche
 	 */
-	public ElementModelisation getOrigine() {
-		return (this.origine);
+	@Override
+	public ElementModelisation getSource() {
+		return (this.source);
 	}
 
 	/**
 	 * Récupère le rôle du côté de l'origine de la flèche
 	 * @return Le rôle de l'origine de la pièce
 	 */
-	public String getTexteOrigine() {
-		return (this.texteOrigine);
+	public String getRoleSource() {
+		return (this.roleSource);
 	}
 
 	/**
 	 * Récupère le type de pointe de flèche à l'extrémité
 	 * @return Le type de pointe de flèche à l'extrémité
 	 */
-	public String getTypeFlecheExtremite() {
-		return (this.typeFlecheExtremite);
+	public String getTypePointeDestination() {
+		return (this.typePointeDestination);
 	}
 
 	/**
 	 * Récupère le type de pointe de flèche à l'origine
 	 * @return Le type de pointe de flèche à l'origine
 	 */
-	public String getTypeFlecheOrigine() {
-		return (this.typeFlecheOrigine);
+	public String getTypePointeSource() {
+		return (this.typePointeSource);
 	}
 
 	/*
@@ -125,50 +126,50 @@ public class Lien extends EltGraphique {
 	
 	/**
 	 * Modifie l'élément à l'extrémité de la flèche
-	 * @param p_extremite Le nouvel élément à l'éxtrémité de la flèche
+	 * @param p_destination Le nouvel élément à l'éxtrémité de la flèche
 	 */
-	public void setExtremite(ElementModelisation p_extremite) {
-		this.extremite = p_extremite;
+	public void setExtremite(ElementModelisation p_destination) {
+		this.destination = p_destination;
 	}
 
 	/**
 	 * Modifie l'élément à l'origine de la flèche
-	 * @param p_origine Le nouvelle élément à l'origine de la flèche
+	 * @param p_source Le nouvelle élément à l'origine de la flèche
 	 */
-	public void setOrigine(ElementModelisation p_origine) {
-		this.origine = p_origine;
+	public void setOrigine(ElementModelisation p_source) {
+		this.source = p_source;
 	}
 
 	/**
 	 * Modifie le rôle du côté de l'extrémité de la flèche
-	 * @param p_texteExtremite Le nouveau rôle de l'extrémité de la flèche
+	 * @param p_roleDestionation Le nouveau rôle de l'extrémité de la flèche
 	 */
-	public void setTexteExtremite(String p_texteExtremite) {
-		this.texteExtremite = p_texteExtremite;
+	public void setTexteExtremite(String p_roleDestionation) {
+		this.roleDestination = p_roleDestionation;
 	}
 
 	/**
 	 * Modifi le rôle du côté de l'origine de la flèche
-	 * @param p_texteOrigine Le nouveau rôle de l'origine de la flèche
+	 * @param p_roleSource Le nouveau rôle de l'origine de la flèche
 	 */
-	public void setTexteOrigine(String p_texteOrigine) {
-		this.texteOrigine = p_texteOrigine;
+	public void setTexteOrigine(String p_roleSource) {
+		this.roleSource = p_roleSource;
 	}
 
 	/**
 	 * Modifie le type de pointe de flèche du côté de l'extrémité de la flèche
-	 * @param p_typeFlecheExtremite Le nouveau type de pointe de flèche
+	 * @param p_typePointeDestionation Le nouveau type de pointe de flèche
 	 */
-	public void setTypeFlecheExtremite(String p_typeFlecheExtremite) {
-		this.typeFlecheExtremite = p_typeFlecheExtremite;
+	public void setTypeFlecheExtremite(String p_typePointeDestionation) {
+		this.typePointeDestination = p_typePointeDestionation;
 	}
 
 	/**
 	 * Modifie le type de pointe de flmèche du côté de l'origie de la flèche
-	 * @param p_typeFlecheOrigine Le nouveau type de pointe de flèche
+	 * @param p_typePointeSource Le nouveau type de pointe de flèche
 	 */
-	public void setTypeFlecheOrigine(String p_typeFlecheOrigine) {
-		this.typeFlecheOrigine = p_typeFlecheOrigine;
+	public void setTypeFlecheOrigine(String p_typePointeSource) {
+		this.typePointeSource = p_typePointeSource;
 	}
     
 	/**
@@ -180,7 +181,7 @@ public class Lien extends EltGraphique {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		
-		if (this.typeFleche.equals(TypeLien.SPECIALISATION)) {
+		if (this.typeLien.equals(TypeLien.SPECIALISATION)) {
 			nouveauStyle.put(mxConstants.STYLE_EDGE,
 			mxConstants.EDGESTYLE_ORTHOGONAL);
 			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
@@ -188,14 +189,14 @@ public class Lien extends EltGraphique {
 			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
 			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 			feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
-		} else if (this.typeFleche.equals(TypeLien.LIENCONTINU)) {
+		} else if (this.typeLien.equals(TypeLien.LIENCONTINU)) {
 			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
 			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
 			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
 			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
 			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 			feuilleStyles.putCellStyle("LIENCONTINU", nouveauStyle);
-		} else if (this.typeFleche.equals(TypeLien.FLECHECURVILIGNE)) {
+		} else if (this.typeLien.equals(TypeLien.FLECHECURVILIGNE)) {
 			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
 			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
 			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
@@ -207,8 +208,8 @@ public class Lien extends EltGraphique {
 		
 		super.setCellule((mxCell) super.getGraph().insertEdge(
 			super.getGraph().getDefaultParent(), null, null,
-			this.getOrigine().getCellule(), this.getExtremite().getCellule(), 
-			this.typeFleche.toString()));
+			this.getSource().getCellule(), this.getDestination().getCellule(), 
+			this.typeLien.toString()));
 		super.setConnectable(false);        
     }
 
