@@ -32,6 +32,7 @@ public class ActeurPassifTest {
     @Before
     public void setUp() {
 		this.monActeur = new ActeurPassif(new mxGraph(), "un super test");
+        this.monActeur.creer();
     }
 
     @After
@@ -39,9 +40,14 @@ public class ActeurPassifTest {
 		this.monActeur = null;
     }
 
+    @Test
+    public void testGetCellule(){
+        mxICell maCellule = this.monActeur.getParent();
+        assertEquals(maCellule, this.monActeur.getCellule());
+	}
+
 	@Test
 	public void testCreer (){
-        this.monActeur.creer();
         mxICell maCellule = this.monActeur.getCellule();
         assertEquals(maCellule, this.monActeur.getCellule());
 	}

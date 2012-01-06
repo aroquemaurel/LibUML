@@ -34,7 +34,7 @@ public class ActeurActifTest {
 
     @Test
     public void testGetCellule(){
-        mxICell maCellule = this.monActeur.getCellule();
+        mxICell maCellule = this.monActeur.getParent();
         assertEquals(maCellule, this.monActeur.getCellule());
     }
 
