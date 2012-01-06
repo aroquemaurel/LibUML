@@ -1,9 +1,13 @@
 package eltGraphique.ligne;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxStylesheet;
 import eltGraphique.ElementModelisation;
 import eltGraphique.EltGraphique;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Classe servant à la modélistaion des liens dans les différents diagrammes
@@ -113,11 +117,22 @@ public class Lien extends EltGraphique {
     
 	@Override
     public void creer(){
-     super.setCellule((mxCell) super.getGraph().insertEdge(
-            super.getGraph().getDefaultParent(), null, null,
-            this.getOrigine().getCellule(), this.getExtremite().getCellule(), 
-            this.typeFleche.toString()));
-        super.setConnectable(false);        
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		
+		nouveauStyle.put(mxConstants.STYLE_EDGE,
+		mxConstants.EDGESTYLE_ORTHOGONAL);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
+		
+		super.setCellule((mxCell) super.getGraph().insertEdge(
+			super.getGraph().getDefaultParent(), null, null,
+			this.getOrigine().getCellule(), this.getExtremite().getCellule(), 
+			this.typeFleche.toString()));
+		super.setConnectable(false);        
     }
 
 }

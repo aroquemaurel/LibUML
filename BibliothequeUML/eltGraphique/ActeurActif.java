@@ -34,7 +34,6 @@ public class ActeurActif extends Acteur {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
-		nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_SHAPE,
 			  mxConstants.SHAPE_ACTOR);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);

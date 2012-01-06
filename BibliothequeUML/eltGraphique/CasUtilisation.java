@@ -31,7 +31,6 @@ public class CasUtilisation extends ElementModelisation {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
-		nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
