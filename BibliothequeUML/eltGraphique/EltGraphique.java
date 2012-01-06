@@ -93,7 +93,9 @@ abstract public class EltGraphique extends mxCell {
 	 * Méthode généique qui supprime l'élément du graphe où il est
 	 */
     public void supprimer() {
-        super.getParent().removeFromParent();
+		super.getTarget().removeFromParent();
+		super.setTarget(null);
+		super.setParent(null));
     }
 
 	/**
