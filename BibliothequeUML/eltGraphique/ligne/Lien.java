@@ -52,10 +52,10 @@ public class Lien extends EltGraphique {
     /**
      * Le type de la flèche 
      */
-    private String typeFleche;
+    private TypeLien typeFleche;
     
     public Lien(ElementModelisation p_origine, ElementModelisation p_extremite, mxGraph p_graph,
-        String p_typeFleche){
+        TypeLien p_typeFleche){
         super(p_graph);
         this.origine = p_origine;
         this.extremite = p_extremite;
@@ -111,11 +111,12 @@ public class Lien extends EltGraphique {
 		this.typeFlecheOrigine = p_typeFlecheOrigine;
 	}
     
+	@Override
     public void creer(){
      super.setCellule((mxCell) super.getGraph().insertEdge(
             super.getGraph().getDefaultParent(), null, null,
             this.getOrigine().getCellule(), this.getExtremite().getCellule(), 
-            this.typeFleche));
+            this.typeFleche.toString()));
         super.setConnectable(false);        
     }
 
