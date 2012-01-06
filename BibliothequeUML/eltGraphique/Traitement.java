@@ -1,5 +1,6 @@
 package eltGraphique;
 
+import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
 import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
@@ -19,14 +20,12 @@ public class Traitement extends ElementModelisation {
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
     public Traitement(mxGraph p_graph, String p_texte, Lien p_evenementDeclencheur){
-        super(p_graph, p_texte, new Dimension(10,80));
+        super(p_graph, p_texte, new Dimension(20,80));
         this.evenementDeclencheur = p_evenementDeclencheur;
     }
 
 	/*
 	 * TODO Ajouter l'acteur associé  ca peut être intéressant ??
-	 * TODO String p_texte || Methode p_eltDeclencheur ?
-				Problème d'héritage : Pb de modélisation;
 	 */
 
 	/**
@@ -34,8 +33,18 @@ public class Traitement extends ElementModelisation {
 	 */
     @Override
     public final void creer() {
-		// TODO création des traitements
+		//TODO Bonne position de la fêche
+		//TODO Bonne position du texte
+		//TODO Voir la possibilité de faire une flêche curviligne
+        super.setCellule((mxCell) super.getGraph().insertVertex(
+            super.getParent(), null, super.getTexte(), 30, 30,
+			super.getDimension().getWidth(), super.getDimension().getHeight()));
+        super.setVisible(false);
 
+     super.setCellule((mxCell) super.getGraph().insertEdge(
+            super.getGraph().getDefaultParent(), null, null,
+            super.getParent(), super.getParent(),
+            "FLECHECURVILIGNE"));
     }
 
     public Lien getEvenementDeclencheur() {

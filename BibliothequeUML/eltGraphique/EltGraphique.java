@@ -50,8 +50,7 @@ abstract public class EltGraphique extends mxCell {
 		/* UseCase */
 		styles = null;
 		styles = new HashMap<String, Object>();
-		styles.put(mxConstants.STYLE_SHAPE,
-			  mxConstants.SHAPE_ELLIPSE);
+		styles.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
 		styles.put(mxConstants.STYLE_OPACITY, 50);
 		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		stylesheet.putCellStyle("USECASE", styles);
@@ -70,13 +69,22 @@ abstract public class EltGraphique extends mxCell {
         /* Lien continu */
         styles = null;
 		styles = new HashMap<String, Object>();
-		styles.put(mxConstants.STYLE_EDGE,
-			  mxConstants.EDGESTYLE_ORTHOGONAL);
+		styles.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
         styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
 		styles.put(mxConstants.STYLE_OPACITY, 50);
         styles.put(mxConstants.STYLE_MOVABLE, 50);
 		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 		stylesheet.putCellStyle("LIENCONTINU", styles);
+
+        /* Flêche curviligne*/
+        styles = null;
+		styles = new HashMap<String, Object>();
+		styles.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+        styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+		styles.put(mxConstants.STYLE_OPACITY, 50);
+        styles.put(mxConstants.STYLE_MOVABLE, 50);
+		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+		stylesheet.putCellStyle("FLECHECURVILIGNE", styles);
 	}
 
 	/**
