@@ -1,17 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package eltGraphique;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,7 +12,7 @@ import static org.junit.Assert.*;
  *
  */
 public class ActeurPassifTest {
-	private Acteur monActeur;
+	private ElementModelisation monActeur;
 
     @Before
     public void setUp() {

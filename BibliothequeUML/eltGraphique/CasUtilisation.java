@@ -30,14 +30,4 @@ public class CasUtilisation extends ElementModelisation {
 			"USECASE"));
     }
 
-
-	/**
-	 * Modifie le texte lié au cas d'utilisation
-	 * @param p_texte Le nouveau texte lié au cas d'utilisation
-	 */
-    @Override
-    public void setTexte(String p_texte){
-        super.setTexte(p_texte);
-        super.setValue(p_texte);
-    }
 }

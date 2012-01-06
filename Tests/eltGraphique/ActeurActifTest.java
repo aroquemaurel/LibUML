@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  *
  */
 public class ActeurActifTest {
-    private Acteur monActeur;
+    private ElementModelisation monActeur;
 
     @Before
     public void setUp() {
