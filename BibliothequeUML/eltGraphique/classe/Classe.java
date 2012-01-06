@@ -1,9 +1,13 @@
 package eltGraphique.classe;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxStylesheet;
 import java.awt.Dimension;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -178,6 +182,14 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 */
     @Override
     public final void creer() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		
+		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
+		
 		super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 350, 350,
 			super.getDimension().getWidth(), super.getDimension().getHeight(),
