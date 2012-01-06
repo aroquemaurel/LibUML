@@ -28,18 +28,10 @@ abstract public class EltGraphique extends mxCell {
 		    this.graph.getStylesheet();
 		HashMap<String, Object> styles =
 		    new HashMap<String, Object>();
-
-        /* Ateur */
-		styles = null;
-		styles = new HashMap<String, Object>();
-		styles.put(mxConstants.STYLE_SHAPE,
-			  mxConstants.SHAPE_ACTOR);
-		styles.put(mxConstants.STYLE_OPACITY, 50);
-		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-		stylesheet.putCellStyle("ACTEUR", styles);
-                //TODO Supprimer creerStyle() et dispatcher les styles dans creer() des classes filles
-                /* Exemple pour modifier un Acteur :
-                 * stylesheet.getStyles().get("ACTEUR").put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_CLOUD); */
+		
+		//TODO Supprimer creerStyle() et dispatcher les styles dans creer() des classes filles
+		/* Exemple pour modifier un Acteur :
+		 * stylesheet.getStyles().get("ACTEUR").put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_CLOUD); */
 
 		/* UseCase */
 		styles = null;

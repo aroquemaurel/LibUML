@@ -1,8 +1,12 @@
 package eltGraphique;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxStylesheet;
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Classe propre aux acteurs passif (représentation graphique)
@@ -27,10 +31,20 @@ public class ActeurActif extends Acteur {
 	 */
     @Override
     public final void creer(){
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+
+		nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_SHAPE,
+			  mxConstants.SHAPE_ACTOR);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+		feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
+		
         super.setCellule((mxCell) super.getGraph().insertVertex(
             null, null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(),
-			"ACTEUR"));
+			"ACTEUR_ACTIF"));
         super.setVisible(false);
     }
 
