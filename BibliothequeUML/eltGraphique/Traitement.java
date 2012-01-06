@@ -2,6 +2,7 @@ package eltGraphique;
 
 import com.mxgraph.view.mxGraph;
 import eltGraphique.ligne.Lien;
+import java.awt.Dimension;
 
 /**
  * Modélise un traitement par un rectangle vertical et un élément déclencheur
@@ -18,7 +19,7 @@ public class Traitement extends ElementModelisation {
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
     public Traitement(mxGraph p_graph, String p_texte, Lien p_evenementDeclencheur){
-        super(p_graph, p_texte);
+        super(p_graph, p_texte, new Dimension(10,80));
         this.evenementDeclencheur = p_evenementDeclencheur;
     }
 

@@ -38,7 +38,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_texte Le texte associé à la classe (son nom)
 	 */
     public Classe(mxGraph p_graph, String p_texte){
-        super(p_graph, p_texte);
+        super(p_graph, p_texte, null);
     }
 
 	/**

@@ -1,6 +1,7 @@
 package eltGraphique;
 
 import com.mxgraph.view.mxGraph;
+import java.awt.Dimension;
 
 /**
  * Modélise une interface par un petit cercle et un texte
@@ -13,7 +14,7 @@ public class Interface extends ElementModelisation {
      * @param p_texte Le texte qui sera associé au traitement
      */
     public Interface(mxGraph p_graph, String p_texte){
-        super(p_graph, p_texte);
+        super(p_graph, p_texte, new Dimension(10,10));
     }
 
 

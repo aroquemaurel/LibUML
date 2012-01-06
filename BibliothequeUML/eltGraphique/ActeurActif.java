@@ -2,6 +2,7 @@ package eltGraphique;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
+import java.awt.Dimension;
 
 /**
  * Classe propre aux acteurs passif (représentation graphique)
@@ -18,7 +19,7 @@ public class ActeurActif extends Acteur {
 	 * @param p_texte Le texte lié à l'acteur actif
 	 */
     public ActeurActif(mxGraph p_graph, String p_texte){
-        super(p_graph, p_texte);
+        super(p_graph, p_texte, new Dimension(60,85));
     }
 
     /**

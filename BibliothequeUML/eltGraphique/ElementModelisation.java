@@ -1,13 +1,16 @@
 package eltGraphique;
 
 import com.mxgraph.view.mxGraph;
+import eltGraphique.classe.Classe;
+import eltGraphique.ligne.Lien;
+import java.awt.Dimension;
 import java.awt.Point;
 
 /**
- * Classe ancêtre à tout élément de modélisation (classe, cas d'utilisation, 
+ * Classe ancêtre à tout élément de modélisation (classe, cas d'utilisation,
  * acteurs, traitements, etc.). Les flèches sont des liens et non des éléments
  * de modélisation.
- * 
+ *
  * @see Lien
  */
 abstract public class ElementModelisation extends EltGraphique {
@@ -15,50 +18,41 @@ abstract public class ElementModelisation extends EltGraphique {
 	 * Texte à afficher avec l'élément
 	 */
     private String texte;
+
 	/**
 	 * Position de l'élément
 	 */
     private Point position;
+
 	/**
-	 * Taille en hauteur de l'élément
+	 * Taille de l'élément (hauteur/largeur)
 	 */
-    private double hauteur;
-	/**
-	 * Taille en largeur de l'élément
-	 */
-    private double largeur;
-	
+	private Dimension dimension;
+
 	/**
 	 * Constructeur générique aux éléments de modélisation
-	 * 
+	 *
 	 * @see CasUtilisation
 	 * @see Acteur
 	 * @see Classe
 	 * @see Traitement
 	 * @see Interface
 	 */
-	public ElementModelisation(mxGraph p_graph, String p_texte) {
+	public ElementModelisation(mxGraph p_graph, String p_texte, Dimension p_dimension) {
 		super(p_graph);
 		this.texte = p_texte;
-                //TODO Initiliser hauteur/largeur/position. Utiliser Dimension ?
+		this.dimension = p_dimension;
+		//TODO Initiliser hauteur/largeur/position. Utiliser Dimension ?
 	}
-	
+
 	/* GETTEURS */
-	
-	/**
-	 * Récupère la taille en hauteur de l'élément
-	 * @return La taille en hauteur de l'élément
-	 */
-    public double getHauteur() {
-        return this.hauteur;
-    }
 
 	/**
-	 * Récupère la taille en largeur de l'élément
-	 * @return La taille en largeur de l'élément
+	 * Récupère la taille de l'élément (hauteur/largeur)
+	 * @return La dimension de l'élément (hauteur/largeur)
 	 */
-    public double getLargeur() {
-        return this.largeur;
+    public Dimension getDimension() {
+        return (this.dimension);
     }
 
 	/**
@@ -80,21 +74,13 @@ abstract public class ElementModelisation extends EltGraphique {
 	/*
 	 * setters
 	 */
-	
-	/**
-	 * Modifie la hauteur de l'élément
-	 * @param p_hauteur La nouvelle taille en hauteur
-	 */
-    public void setHauteur(double p_hauteur) {
-        this.hauteur = p_hauteur;
-    }
 
 	/**
-	 * Modifie la taille en largeur de l'élément
-	 * @param p_largeur La nouvelle taille en largeur
+	 * Modifie la dimension de l'élément (hauteur/largeur)
+	 * @param p_dimension La nouvelle dimension (hauteur/largeur)
 	 */
-    public void setLargeur(double p_largeur) {
-        this.largeur = p_largeur;
+    public void setDimension(Dimension p_dimension) {
+        this.dimension = p_dimension;
     }
 
 	/**

@@ -2,6 +2,7 @@ package eltGraphique;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
+import java.awt.Dimension;
 
 /**
  * Classe représentant un acteur passif
@@ -16,7 +17,7 @@ public class ActeurPassif extends Acteur {
 	 * @see ElementModelisation
 	 */
     public ActeurPassif(mxGraph p_graph, String p_texte) {
-        super(p_graph, "<<passif>>\n"+p_texte);
+        super(p_graph, "<<passif>>\n"+p_texte, new Dimension(100,35));
     }
 
 	/**

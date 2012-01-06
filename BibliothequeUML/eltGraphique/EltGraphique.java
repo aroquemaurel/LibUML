@@ -10,17 +10,17 @@ import java.util.HashMap;
 /**
  * Classe ancêtre à tout élément graphique
  *
- * 
+ *
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
  */
 abstract public class EltGraphique extends mxCell {
-    protected mxGraph graph;    
-    
+    protected mxGraph graph;
+
 	/**
-	 * Crée tous les styles nécessaires à la représentations des éléments 
+	 * Crée tous les styles nécessaires à la représentations des éléments
 	 * graphiques
-	 * 
+	 *
 	 * @see eltGraphique
 	 */
     private void creerLesStyle() {
@@ -34,7 +34,7 @@ abstract public class EltGraphique extends mxCell {
 		styles.put(mxConstants.STYLE_OPACITY, 50);
 		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		stylesheet.putCellStyle("CLASSE", styles);
-		
+
         /* Ateur */
 		styles = null;
 		styles = new HashMap<String, Object>();
@@ -55,7 +55,7 @@ abstract public class EltGraphique extends mxCell {
 		styles.put(mxConstants.STYLE_OPACITY, 50);
 		styles.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		stylesheet.putCellStyle("USECASE", styles);
-        
+
         /* Spécialisation */
         styles = null;
 		styles = new HashMap<String, Object>();
@@ -63,10 +63,10 @@ abstract public class EltGraphique extends mxCell {
 			  mxConstants.EDGESTYLE_ORTHOGONAL);
         styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
 		styles.put(mxConstants.STYLE_OPACITY, 50);
-        styles.put(mxConstants.STYLE_MOVABLE, 50);        
+        styles.put(mxConstants.STYLE_MOVABLE, 50);
 		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 		stylesheet.putCellStyle("SPECIALISATION", styles);
-        
+
         /* Lien continu */
         styles = null;
 		styles = new HashMap<String, Object>();
@@ -74,35 +74,35 @@ abstract public class EltGraphique extends mxCell {
 			  mxConstants.EDGESTYLE_ORTHOGONAL);
         styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
 		styles.put(mxConstants.STYLE_OPACITY, 50);
-        styles.put(mxConstants.STYLE_MOVABLE, 50);                
+        styles.put(mxConstants.STYLE_MOVABLE, 50);
 		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		stylesheet.putCellStyle("LIENCONTINU", styles);          
+		stylesheet.putCellStyle("LIENCONTINU", styles);
 	}
-   
+
 	/**
 	 * Constructeur générique des éléments graphiques
-	 * 
+	 *
 	 * @param p_graph Graphe auquel sera ajouté l'élément graphique
 	 */
     public EltGraphique(mxGraph p_graph){
         this.graph = p_graph;
         this.creerLesStyle();
     }
-    
+
     /**
 	 * Méthode généique qui supprime l'élément du graphe où il est
 	 */
     public void supprimer() {
         super.getParent().removeFromParent();
     }
-    
+
 	/**
 	 * Rend (in)visible l'élément grahique sur le graphe
-	 * @param p_bool 
+	 * @param p_bool
 	 */
     @Override
     public void setVisible(boolean p_bool){
-        super.setVisible(p_bool);     
+        super.setVisible(p_bool);
     }
     /**
 	 * Récupère la cellule associé à l'élément graphique
@@ -110,8 +110,8 @@ abstract public class EltGraphique extends mxCell {
 	 */
     public mxICell getCellule(){
         return (super.getTarget());
-    }    
-    
+    }
+
     /**
 	 * Modifie la cellule que représente l'élément
 	 * @param p_cellule La nouvelle cellule que représente l'élément
@@ -119,8 +119,8 @@ abstract public class EltGraphique extends mxCell {
     public void setCellule(mxCell p_cellule){
         super.setTarget(p_cellule);
         super.setParent(p_cellule);
-    }    
-    
+    }
+
 	/**
 	 * Récupère le graphe auquel est associ l'élément
 	 * @return Le graph auquel est associé l'élément
@@ -128,7 +128,7 @@ abstract public class EltGraphique extends mxCell {
     public mxGraph getGraph(){
         return (this.graph);
     }
-    
+
 	/**
 	 * Modifie le graphe auquel est associé l'élément
 	 * @param p_graph Le nouveau graphe associé à l'élément graphique
@@ -136,11 +136,11 @@ abstract public class EltGraphique extends mxCell {
     public void setGraph(mxGraph p_graph){
         this.graph = p_graph;
     }
-	
+
 	/**
 	 * Methode abstraite
          * Créer la représentation graphique de l'élément
-	 * 
+	 *
 	 * @see ActeurActif
 	 * @see ActeurPassif
 	 * @see CasUtilisation
@@ -148,5 +148,5 @@ abstract public class EltGraphique extends mxCell {
 	 * @see Traitement
 	 * @see classe.Classe
 	 */
-    abstract public void creer();    
+    abstract public void creer();
 }

@@ -100,6 +100,10 @@ public class FenetreDemo extends JFrame {
        Classe useCase2 = new Classe(fenetre.getPanneauGraph().getGraph(), "test 2");
         CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 3");
 
+		useCase1.creer();
+		useCase2.creer();
+		useCase3.creer();
+
        Lien monLien = new Lien(
            useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
        monLien.creer();
