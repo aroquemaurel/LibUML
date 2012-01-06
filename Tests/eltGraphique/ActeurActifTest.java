@@ -18,26 +18,33 @@ public class ActeurActifTest {
     @Before
     public void setUp() {
         this.monActeur = new ActeurActif(new mxGraph(), "test");
-        this.monActeur = new ActeurActif(new mxGraph(), "test");
         this.monActeur.creer();
     }
 
     @After
     public void tearDown() {
         this.monActeur = null;
+		//this.monActeur.supprimer();
     }
+	@Test
+	public void testCreer(){
+//		this.monActeur.creer();
+		assertNotNull(this.monActeur.getCellule());
+	}
+
     @Test
-    public void testCreer(){
+    public void testGetCellule(){
         mxICell maCellule = this.monActeur.getCellule();
         assertEquals(maCellule, this.monActeur.getCellule());
     }
-	
+
     @Test
     public void testSetTexte(){
         this.monActeur.setTexte("testouille");
         assertEquals("testouille", this.monActeur.getTexte());
     }
-    
+
+	@Test
     public void testSupprimer(){
         this.monActeur.supprimer();
         assertNull(this.monActeur.getCellule());

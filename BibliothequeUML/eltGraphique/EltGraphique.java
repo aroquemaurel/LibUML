@@ -95,7 +95,7 @@ abstract public class EltGraphique extends mxCell {
     public void supprimer() {
 		super.getTarget().removeFromParent();
 		super.setTarget(null);
-		super.setParent(null));
+		super.setParent(null);
     }
 
 	/**
