@@ -31,10 +31,6 @@ public class FlecheCurviligneTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    // TODO implémenter les tests de FlecheCurviligne
 
 }

@@ -69,4 +69,6 @@ public class ActeurActifTest {
         this.monActeur.supprimer();
         assertNull(this.monActeur.getCellule());
     }
+
+    // TODO ajouter des tests pour ActeurActif
 }
