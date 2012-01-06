@@ -120,13 +120,30 @@ public class Lien extends EltGraphique {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		
-		nouveauStyle.put(mxConstants.STYLE_EDGE,
-		mxConstants.EDGESTYLE_ORTHOGONAL);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
+		if (this.typeFleche.equals(TypeLien.SPECIALISATION)) {
+			nouveauStyle.put(mxConstants.STYLE_EDGE,
+			mxConstants.EDGESTYLE_ORTHOGONAL);
+			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
+			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+			feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
+		} else if (this.typeFleche.equals(TypeLien.LIENCONTINU)) {
+			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
+			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
+			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
+			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+			feuilleStyles.putCellStyle("LIENCONTINU", nouveauStyle);
+		} else if (this.typeFleche.equals(TypeLien.FLECHECURVILIGNE)) {
+			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
+			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+			feuilleStyles.putCellStyle("FLECHECURVILIGNE", nouveauStyle);
+			
+		}
 		
 		super.setCellule((mxCell) super.getGraph().insertEdge(
 			super.getGraph().getDefaultParent(), null, null,

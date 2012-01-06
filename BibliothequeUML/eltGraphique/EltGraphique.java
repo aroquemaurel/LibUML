@@ -18,63 +18,12 @@ abstract public class EltGraphique extends mxCell {
     protected mxGraph graph;
 
 	/**
-	 * Crée tous les styles nécessaires à la représentations des éléments
-	 * graphiques
-	 *
-	 * @see eltGraphique
-	 */
-    private void creerLesStyle() {
-		mxStylesheet stylesheet =
-		    this.graph.getStylesheet();
-		HashMap<String, Object> styles =
-		    new HashMap<String, Object>();
-		
-		//TODO Supprimer creerStyle() et dispatcher les styles dans creer() des classes filles
-		/* Exemple pour modifier un Acteur :
-		 * stylesheet.getStyles().get("ACTEUR").put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_CLOUD); */
-
-		/* UseCase */
-
-        /* Spécialisation */
-        styles = null;
-		styles = new HashMap<String, Object>();
-		styles.put(mxConstants.STYLE_EDGE,
-			  mxConstants.EDGESTYLE_ORTHOGONAL);
-        styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
-		styles.put(mxConstants.STYLE_OPACITY, 50);
-        styles.put(mxConstants.STYLE_MOVABLE, 50);
-		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		stylesheet.putCellStyle("SPECIALISATION", styles);
-
-        /* Lien continu */
-        styles = null;
-		styles = new HashMap<String, Object>();
-		styles.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
-        styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
-		styles.put(mxConstants.STYLE_OPACITY, 50);
-        styles.put(mxConstants.STYLE_MOVABLE, 50);
-		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		stylesheet.putCellStyle("LIENCONTINU", styles);
-
-        /* Flêche curviligne*/
-        styles = null;
-		styles = new HashMap<String, Object>();
-		styles.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-        styles.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
-		styles.put(mxConstants.STYLE_OPACITY, 50);
-        styles.put(mxConstants.STYLE_MOVABLE, 50);
-		styles.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		stylesheet.putCellStyle("FLECHECURVILIGNE", styles);
-	}
-
-	/**
 	 * Constructeur générique des éléments graphiques
 	 *
 	 * @param p_graph Graphe auquel sera ajouté l'élément graphique
 	 */
     public EltGraphique(mxGraph p_graph){
         this.graph = p_graph;
-        this.creerLesStyle();
     }
 
     /**
