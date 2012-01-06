@@ -78,7 +78,7 @@ abstract public class EltGraphique extends mxCell {
 
 	/**
 	 * Methode abstraite
-         * Créer la représentation graphique de l'élément
+	 * Créer la représentation graphique de l'élément
 	 *
 	 * @see ActeurActif
 	 * @see ActeurPassif
