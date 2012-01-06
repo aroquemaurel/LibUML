@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package eltGraphique;
 
 import org.junit.After;
@@ -14,7 +9,6 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author satenske
  */
 public class ClasseTest {
 

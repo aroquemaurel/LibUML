@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author satenske
  */
 public class ActeurActifTest {
     private Acteur monActeur;
