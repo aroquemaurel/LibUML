@@ -3,6 +3,7 @@ package ihm;
 import eltGraphique.CasUtilisation;
 import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 import ihm.menu.BarreOutilsDessin;
 import ihm.menu.Menu;
 import ihm.menu.MenuDroite;
@@ -105,7 +106,7 @@ public class FenetreDemo extends JFrame {
 		useCase3.creer();
 
        Lien monLien = new Lien(
-           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
+           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.LIENCONTINU);
        monLien.creer();
 
        useCase3.supprimer();
