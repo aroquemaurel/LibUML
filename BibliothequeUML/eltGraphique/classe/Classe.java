@@ -202,6 +202,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
         nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#e4e5ef");
         nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
 		feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
         
 		super.setCellule((mxCell) super.getGraph().insertVertex(
