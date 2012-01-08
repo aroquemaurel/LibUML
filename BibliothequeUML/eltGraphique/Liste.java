@@ -5,14 +5,13 @@ import java.util.ArrayList;
 /**
  *
  */
-public class Liste<T> {
-    private ArrayList<T> laListe; 
+public class Liste<T> extends ArrayList<T> {
     
     /**
      * Construit une liste vide
      */
     public Liste(){
-        this.laListe = new ArrayList<T>();
+        super();
     }
     
     /**
@@ -20,7 +19,7 @@ public class Liste<T> {
      * @param p_element
      */
     public void ajouterElement(T p_element){
-        this.laListe.add(p_element);
+        super.add(p_element);
     }
     
     /**
@@ -29,7 +28,7 @@ public class Liste<T> {
      * @return l'élément supprimé
      */
     public T supprimerElement(int p_index){
-        return (this.laListe.remove(p_index));
+        return (super.remove(p_index));
     }
 
     /**
@@ -38,7 +37,7 @@ public class Liste<T> {
      * @return L'élément à la place p_index
      */
     public T getElement(int p_index){
-        return (this.laListe.get(p_index));
+        return (super.get(p_index));
     }
         
     /**
@@ -46,14 +45,14 @@ public class Liste<T> {
      * @return si la liste est vide ou non
      */
     public boolean estVide(){
-        return (this.laListe.isEmpty());
+        return (super.isEmpty());
     }
     
     /**
      * Retourne le nombre d'éléments de la liste
      * @return La taille de la liste
      */
-    public int size(){
-        return (this.laListe.size());
+    public int taille(){
+        return (super.size());
     }
 }
