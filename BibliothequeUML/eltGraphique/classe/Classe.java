@@ -196,21 +196,27 @@ public class Classe extends eltGraphique.ElementModelisation {
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
 		
+        nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#e4e5ef");
+        nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+		feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
+        
 		super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 350, 350,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
         
 		this.celluleAttributs = (mxCell) super.getGraph().insertVertex(
             super.getCellule(), null, "Attributs", 0, 0,
-			super.getDimension().getWidth(), 60);       
+			super.getDimension().getWidth(), 60, "CONTENUCLASSE");       
+        
         this.celluleMethodes = (mxCell) super.getGraph().insertVertex(
             super.getCellule(), null, "Méthodes", 0, 100,
-			super.getDimension().getWidth(), 60);   
+			super.getDimension().getWidth(), 60, "CONTENUCLASSE");   
         
         this.celluleAttributs.setConnectable(false);
-        this.celluleAttributs.setCollapsed(false);        
         this.celluleMethodes.setConnectable(false);  
-        this.celluleAttributs.setCollapsed(false);        
-
     }
 }
+
