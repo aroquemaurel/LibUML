@@ -1,6 +1,7 @@
 package eltGraphique.classe;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.model.mxGeometry;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
@@ -38,7 +39,10 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 */
     private boolean constante;
 
-	/**
+    private mxCell celluleAttributs;
+    private mxCell celluleMethodes;
+    
+    /**
 	 * Constructeur d'un élément 'classe'
 	 * @param p_graph Le graphe auquel sera ajouter la classe
 	 * @param p_texte Le texte associé à la classe (son nom)
@@ -62,6 +66,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 			       List<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
+        
 	    this.methodes.ajouterElement(new Methode(p_visibilite, p_typeDeRetour,
 					p_nomMethode,
 					p_parametres,
@@ -193,7 +198,19 @@ public class Classe extends eltGraphique.ElementModelisation {
 		
 		super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 350, 350,
-			super.getDimension().getWidth(), super.getDimension().getHeight(),
-			"CLASSE"));
+			super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
+        
+		this.celluleAttributs = (mxCell) super.getGraph().insertVertex(
+            super.getCellule(), null, "Attributs", 0, 0,
+			super.getDimension().getWidth(), 60);       
+        this.celluleMethodes = (mxCell) super.getGraph().insertVertex(
+            super.getCellule(), null, "Méthodes", 0, 100,
+			super.getDimension().getWidth(), 60);   
+        
+        this.celluleAttributs.setConnectable(false);
+        this.celluleAttributs.setCollapsed(false);        
+        this.celluleMethodes.setConnectable(false);  
+        this.celluleAttributs.setCollapsed(false);        
+
     }
 }
