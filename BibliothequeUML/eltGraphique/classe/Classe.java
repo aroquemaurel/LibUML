@@ -4,6 +4,7 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
+import eltGraphique.ligne.Liste;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.List;
@@ -26,12 +27,12 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Liste des méthodes de la classe
 	 * @see Methode
 	 */
-    private List<Methode> methodes;
+    private Liste<Methode> methodes;
 	/**
 	 * Liste des attributs de la classe
 	 * @see Attribut
 	 */
-    private List<Attribut> attributs;
+    private Liste<Attribut> attributs;
 	/**
 	 * Classe cosntante ?
 	 */
@@ -61,7 +62,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 			       List<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
-	    this.methodes.add(new Methode(p_visibilite, p_typeDeRetour,
+	    this.methodes.ajouterElement(new Methode(p_visibilite, p_typeDeRetour,
 					p_nomMethode,
 					p_parametres,
 					p_abstraite, p_deClasse, p_constante));
@@ -78,7 +79,7 @@ public class Classe extends eltGraphique.ElementModelisation {
     public void ajouterAttribut(String p_type, String p_nom,
                                  Visibilite p_visibilite, boolean p_constante,
                                  boolean p_deClasse) {
-		this.attributs.add(new Attribut(p_visibilite,
+		this.attributs.ajouterElement(new Attribut(p_visibilite,
 										p_deClasse,
 										p_constante,
 										p_type,
@@ -109,7 +110,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @return Liste des attributs de la classe
 	 * @see Attribut
 	 */
-    public List<Attribut> getAttributs() {
+    public Liste<Attribut> getAttributs() {
         return (this.attributs);
     }
 
@@ -118,7 +119,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @return Liste des méthodes de la classe
 	 * @see Methode
 	 */
-    public List<Methode> getMethodes() {
+    public Liste<Methode> getMethodes() {
         return (this.methodes);
     }
 
@@ -164,7 +165,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_attributs La nouvelle liste d'attributs
 	 * @see Attribut
 	 */
-    public void setAttributs(List<Attribut> p_attributs) {
+    public void setAttributs(Liste<Attribut> p_attributs) {
         this.attributs = p_attributs;
     }
 
@@ -173,7 +174,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_methodes La nouvelle liste de méthodes
 	 * @see Methode
 	 */
-    public void setMethodes(List<Methode> p_methodes) {
+    public void setMethodes(Liste<Methode> p_methodes) {
         this.methodes = p_methodes;
     }
 
