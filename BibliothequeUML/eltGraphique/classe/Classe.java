@@ -193,6 +193,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 		
 		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
 		
