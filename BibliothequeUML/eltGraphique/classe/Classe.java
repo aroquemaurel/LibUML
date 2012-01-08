@@ -4,7 +4,7 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
-import eltGraphique.ligne.Liste;
+import eltGraphique.Liste;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.List;

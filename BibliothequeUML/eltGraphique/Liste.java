@@ -1,4 +1,4 @@
-package eltGraphique.ligne;
+package eltGraphique;
 
 import java.util.ArrayList;
 
