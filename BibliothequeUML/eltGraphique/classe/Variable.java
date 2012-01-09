@@ -15,8 +15,8 @@ abstract class Variable {
 	/**
 	 * Nom de la variable
 	 */
-    private String nom;	
-    
+    private String nom;
+
 	/**
 	 * Constructeur d'une variable
 	 * @param p_constante Variable constante ?
@@ -75,5 +75,15 @@ abstract class Variable {
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public String toString(){
+		String retour = "";
+		retour += this.type;
+		retour += " ";
+		retour += this.getNom();
+		retour += "\n";
+
+		return retour;
 	}
 }

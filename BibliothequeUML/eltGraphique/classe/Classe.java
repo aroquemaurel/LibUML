@@ -40,63 +40,34 @@ public class Classe extends eltGraphique.ElementModelisation {
     private mxCell celluleAttributs;
     private mxCell celluleMethodes;
     private String stringMethodes(){
-        String retour = new String("");
-        
-        /* TODO it's a test, to be continued! */
-        this.ajouterMethode("maMethode1", "void", visibilite.PROTECTED, null, false, false, false);
-        this.ajouterMethode("maMethode2", "void", visibilite.PRIVATE, null, false, false, false);
-        this.ajouterMethode("maMethode3", "void", visibilite.PUBLIC, null, false, false, false);
-       
+        String retour = new String();
+
        for(int i=0; i < this.methodes.taille(); i++){
-           /* TODO à mettre dans toString de methode*/
-           if(this.methodes.get(i).getVisibilite().equals(visibilite.PRIVATE))
-                retour += "- ";
-           else if(this.methodes.get(i).getVisibilite().equals(visibilite.PUBLIC))
-               retour += "+ ";
-           else if(this.methodes.get(i).getVisibilite().equals(visibilite.PROTECTED))
-               retour += "~ ";           
-           else if(this.methodes.get(i).getVisibilite().equals(visibilite.PACKAGE))
-               retour += "# ";                      
-           
-           retour += this.methodes.get(i).getTypeRetour();
-           retour += " ";
-           retour += this.methodes.get(i).getNom();
-           retour += "\n";
+		   retour += this.methodes.get(i);
        }
 
-       return retour; 
+       return retour;
     }
     private String stringAttributs(){
-        String retour = new String("");
-        
-        /* TODO it's a test, to be continued! */
-        this.ajouterAttribut( visibilite.PROTECTED,"int", "monAttribut1", false, false);
-        this.ajouterAttribut( visibilite.PRIVATE, "long", "monAttribut2",false, false);
-        this.ajouterAttribut( visibilite.PRIVATE,"Classe", "monAttribut3", false, false);
+        String retour = "";
+
        /* FIN TODO*/
        for(int i=0; i < this.attributs.taille(); i++){
-           
-           /*
-            *  TODO à mettre dans toString de Attributs
-            */ 
-           if(this.attributs.get(i).getVisibilite().equals(visibilite.PRIVATE))
+           if(this.attributs.get(i).getVisibilite().equals(Visibilite.PRIVATE))
                 retour += "- ";
-           else if(this.attributs.get(i).getVisibilite().equals(visibilite.PUBLIC))
+           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PUBLIC))
                retour += "+ ";
-           else if(this.attributs.get(i).getVisibilite().equals(visibilite.PROTECTED))
-               retour += "~ ";           
-           else if(this.attributs.get(i).getVisibilite().equals(visibilite.PACKAGE))
-               retour += "# ";                      
-           
-           retour += this.attributs.get(i).getType();
-           retour += " ";
-           retour += this.attributs.get(i).getNom();
-           retour += "\n";
+           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PROTECTED))
+               retour += "~ ";
+           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PACKAGE))
+               retour += "# ";
+
+           retour += this.attributs.get(i).toString() ;
        }
 
-       return retour; 
+       return retour;
     }
-    
+
     /**
 	 * Constructeur d'un élément 'classe'
 	 * @param p_graph Le graphe auquel sera ajouter la classe
@@ -104,8 +75,18 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 */
     public Classe(mxGraph p_graph, String p_texte){
         super(p_graph, p_texte, new Dimension(125,150));
+
         this.attributs = new Liste<Attribut>();
-        this.methodes = new Liste<Methode>();       
+        this.methodes = new Liste<Methode>();
+        /* TODO it's a test, to be continued! */
+        this.ajouterMethode("maMethode1", "void", Visibilite.PROTECTED, null, false, false, false);
+        this.ajouterMethode("maMethode2", "void", Visibilite.PRIVATE, null, false, false, false);
+        this.ajouterMethode("maMethode3", "void", Visibilite.PUBLIC, null, false, false, false);
+
+        /* TODO it's a test, to be continued! */
+        this.ajouterAttribut(Visibilite.PROTECTED,"int", "monAttribut1", false, false);
+        this.ajouterAttribut(Visibilite.PRIVATE, "long", "monAttribut2",false, false);
+       this.ajouterAttribut(Visibilite.PRIVATE,"Classe", "monAttribut3", false, false);
     }
 
 	/**
@@ -123,11 +104,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 			       Liste<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
-        
 	    this.methodes.ajouterElement(new Methode(p_visibilite, p_typeDeRetour,
-					p_nomMethode,
-					p_parametres,
-					p_abstraite, p_deClasse, p_constante));
+					p_nomMethode, p_parametres, p_abstraite, p_deClasse, p_constante));
     }
 
 	/**
@@ -247,13 +225,13 @@ public class Classe extends eltGraphique.ElementModelisation {
     public final void creer() {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		
+
 		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
         nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
-		
+
         nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
@@ -263,21 +241,21 @@ public class Classe extends eltGraphique.ElementModelisation {
         nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
 		feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
-        
+
 		super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 350, 350,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
-        
+
 		this.celluleAttributs = (mxCell) super.getGraph().insertVertex(
             super.getCellule(), null, this.stringAttributs(), 0, 0,
-			super.getDimension().getWidth(), 60, "CONTENUCLASSE");       
-        
+			super.getDimension().getWidth(), 60, "CONTENUCLASSE");
+
         this.celluleMethodes = (mxCell) super.getGraph().insertVertex(
             super.getCellule(), null, this.stringMethodes(), 0, 100,
-			super.getDimension().getWidth(), 60, "CONTENUCLASSE");   
-        
+			super.getDimension().getWidth(), 60, "CONTENUCLASSE");
+
         this.celluleAttributs.setConnectable(false);
-        this.celluleMethodes.setConnectable(false);  
+        this.celluleMethodes.setConnectable(false);
     }
 }
 

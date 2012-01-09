@@ -61,13 +61,13 @@ class Methode {
 		this.deClasse = p_deClasse;
 		this.constant = p_constante;
 	}
-	
+
 	/**
 	 * Ajoute un paramètre à la liste de paramètres de la méthode
 	 * @param p_nom Nom du paramètre à ajouter
 	 * @param p_type Type du paramètre à ajouter
 	 * @param p_constant Paramètre constant ?
-	 * 
+	 *
 	 * @see Variable
 	 */
 	public void ajouterParametre(String p_nom, String p_type, boolean p_constant) {
@@ -110,7 +110,7 @@ class Methode {
 	public void setNom(String nom) {
 			this.nom = nom;
 	}
-	
+
 	/**
 	 * Retourne vrai si la méthode est constante, faux sinon.
 	 * @return Méthode constante ?
@@ -155,7 +155,7 @@ class Methode {
 	/*
 	 * Setters
 	 */
-	
+
 	/**
 	 * Modifie les paramètres de la méthode.
 	 * @param p_parametres La nouvelle liste de paramètres de la méthode
@@ -195,5 +195,26 @@ class Methode {
 	 */
 	public void setVisibilite(Visibilite p_visibilite) {
 		this.visibilite = p_visibilite;
+	}
+
+	@Override
+	public String toString(){
+		String retour = "";
+
+           /* TODO à mettre dans toString de methode*/
+           if(this.visibilite.equals(Visibilite.PRIVATE))
+                retour += "- ";
+           else if(this.visibilite.equals(Visibilite.PUBLIC))
+               retour += "+ ";
+           else if(this.visibilite.equals(Visibilite.PROTECTED))
+               retour += "~ ";
+           else if(this.visibilite.equals(Visibilite.PACKAGE))
+               retour += "# ";
+
+           retour += this.typeRetour;
+           retour += " ";
+           retour += this.getNom();
+           retour += "\n";
+		return (retour);
 	}
 }
