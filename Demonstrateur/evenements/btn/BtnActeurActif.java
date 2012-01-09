@@ -16,7 +16,7 @@ public class BtnActeurActif extends Btn {
 
     @Override
     public void mouseClicked(MouseEvent event) {
-        Acteur acteur = new ActeurActif(super.fenetre.getPanneauGraph().getGraphDeModelisation(),
+        Acteur acteur = new ActeurActif(super.fenetre.getPanneauGraph().getGraph(),
             "Mon acteur Actif");
         acteur.creer();
     }

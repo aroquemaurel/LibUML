@@ -49,16 +49,7 @@ public class EvenementsEltGraphiques implements MouseListener {
 
             } 
             if(this.destinationCelluleARelier != null && sourceCelluleARelier != null){
-                if(destinationCelluleARelier.getStyle().equals("CLASSE")){
-                    //el1 = new Classe(this.panneauGraph.getGraph(), "test");
-                    //el1.creer();
-                    System.out.print("test1\n");
-                }                         
-                if(sourceCelluleARelier.getStyle().equals("CLASSE")){
-                    //el2 = new Classe(this.panneauGraph.getGraph(), "test");
-                   // el2.creer();
-                    System.out.print("test2\n");
-                }                
+                // TODO problème de castage. Ici doivent être relié les éléments graphiques
            //     Lien monLien = new Lien(el1, el2, this.panneauGraph.getGraph(), TypeLien.LIENCONTINU);
             //    monLien.creer();
             }
