@@ -39,6 +39,10 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     private mxCell celluleAttributs;
     private mxCell celluleMethodes;
+
+	/* TODO Faire une classe ListeMethodes avec cette méthode ?
+	 * TODO Faire une classe listeAttributs avec la méthode stringAttributs ?
+	 */
     private String stringMethodes(){
         String retour = new String();
 
@@ -51,7 +55,6 @@ public class Classe extends eltGraphique.ElementModelisation {
     private String stringAttributs(){
         String retour = "";
 
-       /* FIN TODO*/
        for(int i=0; i < this.attributs.taille(); i++){
            if(this.attributs.get(i).getVisibilite().equals(Visibilite.PRIVATE))
                 retour += "- ";
@@ -243,7 +246,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 		feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
 
 		super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getParent(), null, super.getTexte(), 350, 350,
+            null, null, super.getTexte(), 350, 350,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
 
 		this.celluleAttributs = (mxCell) super.getGraph().insertVertex(

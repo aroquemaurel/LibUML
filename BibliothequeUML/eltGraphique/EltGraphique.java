@@ -53,6 +53,7 @@ abstract public class EltGraphique extends mxCell {
 	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
     public void setCellule(mxCell p_cellule){
+		p_cellule.setConnectable(false);
         super.setTarget(p_cellule);
         super.setParent(p_cellule);
     }
