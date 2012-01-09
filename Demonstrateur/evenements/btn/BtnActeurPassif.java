@@ -15,7 +15,7 @@ public class BtnActeurPassif extends Btn {
 
     @Override
     public void mouseClicked(MouseEvent event) {
-        ActeurPassif acteur = new ActeurPassif(super.fenetre.getPanneauGraph().getGraph(),
+        ActeurPassif acteur = new ActeurPassif(super.fenetre.getPanneauGraph().getGraphDeModelisation(),
             "Mon acteur Passif");
         acteur.creer();
     }
