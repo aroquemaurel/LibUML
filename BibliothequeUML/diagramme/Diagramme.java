@@ -1,7 +1,7 @@
 package diagramme;
 
-import eltGraphique.EltGraphique;
-import java.util.List;
+import eltGraphique.ElementGraphique;
+import eltGraphique.Liste;
 
 /**
  *
@@ -11,11 +11,11 @@ public class Diagramme {
      /**
      * liste des éléments graphiques
      */
-    private List<EltGraphique> eltGraphique;
-    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, String p_typeDeFleche){
+    private Liste<ElementGraphique> eltGraphique;
+    public boolean lienAutorise (ElementGraphique p_origine , ElementGraphique p_extremite, String p_typeDeFleche){
         return true;
     }
-    public boolean eltAutorise (EltGraphique p_element){
+    public boolean eltAutorise (ElementGraphique p_element){
         return true;
     }
 }

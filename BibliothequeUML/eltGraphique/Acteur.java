@@ -1,6 +1,7 @@
 package eltGraphique;
 
 import com.mxgraph.view.mxGraph;
+import diagramme.Diagramme;
 import java.awt.Dimension;
 
 /**
@@ -31,8 +32,8 @@ abstract public class Acteur extends ElementModelisation {
      * @param p_texte le texte qui sera afficher sur l'acteur
      *
      */
-    public Acteur(mxGraph p_graph, String p_texte, Dimension p_dimension) {
-            super(p_graph, p_texte, p_dimension);
+    public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
+            super(p_graph, p_diagramme, p_texte, p_dimension);
     }
 
     /**

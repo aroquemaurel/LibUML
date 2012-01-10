@@ -1,6 +1,6 @@
  package diagramme;
 
-import eltGraphique.EltGraphique;
+import eltGraphique.ElementGraphique;
 import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
 
@@ -11,7 +11,7 @@ import eltGraphique.ligne.Lien;
  
 public class DiagrammeClasse extends Diagramme {
     @Override
-    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, String p_typeDeFleche){
+    public boolean lienAutorise (ElementGraphique p_origine , ElementGraphique p_extremite, String p_typeDeFleche){
         boolean valeurRetour = false;
         if ("composition".equals(p_typeDeFleche)){
             valeurRetour = this.autorisationComposition(p_origine , p_extremite); 
@@ -39,7 +39,7 @@ public class DiagrammeClasse extends Diagramme {
         return valeurRetour;
     }
     
-    private boolean autorisationAssociation(EltGraphique p_origine , EltGraphique p_extremite) {
+    private boolean autorisationAssociation(ElementGraphique p_origine , ElementGraphique p_extremite) {
         boolean valeurRetour = false;
         if(p_origine instanceof Classe && p_extremite instanceof Classe){
             valeurRetour = true;
@@ -53,7 +53,7 @@ public class DiagrammeClasse extends Diagramme {
         return(valeurRetour);
     }
 
-    private boolean autorisationAgregation(EltGraphique p_origine , EltGraphique p_extremite) {
+    private boolean autorisationAgregation(ElementGraphique p_origine , ElementGraphique p_extremite) {
         boolean valeurRetour = false;
         if(p_origine instanceof Classe && p_extremite instanceof Classe){
             valeurRetour = true;
@@ -61,7 +61,7 @@ public class DiagrammeClasse extends Diagramme {
         return(valeurRetour);
     }
 
-    private boolean autorisationComposition(EltGraphique p_origine , EltGraphique p_extremite) {
+    private boolean autorisationComposition(ElementGraphique p_origine , ElementGraphique p_extremite) {
            boolean valeurRetour = false;
         if(p_origine instanceof Classe && p_extremite instanceof Classe){
             valeurRetour = true;
@@ -69,7 +69,7 @@ public class DiagrammeClasse extends Diagramme {
         return(valeurRetour);
     }
 
-    private boolean autorisationGeneralisation(EltGraphique p_origine , EltGraphique p_extremite) {
+    private boolean autorisationGeneralisation(ElementGraphique p_origine , ElementGraphique p_extremite) {
            boolean valeurRetour = false;
         if(p_origine instanceof Classe && p_extremite instanceof Classe){
             valeurRetour = true;
@@ -77,7 +77,7 @@ public class DiagrammeClasse extends Diagramme {
         return(valeurRetour);
     }
 
-    private boolean autorisationDependance(EltGraphique p_origine , EltGraphique p_extremite) {
+    private boolean autorisationDependance(ElementGraphique p_origine , ElementGraphique p_extremite) {
            boolean valeurRetour = false;
         if(p_origine instanceof Classe && p_extremite instanceof Classe){
             valeurRetour = true;
@@ -91,7 +91,7 @@ public class DiagrammeClasse extends Diagramme {
         return(valeurRetour);
     }
     @Override
-    public boolean eltAutorise (EltGraphique p_element){
+    public boolean eltAutorise (ElementGraphique p_element){
         boolean valeurRetour = false;
         if(p_element instanceof Classe){
             valeurRetour = true;

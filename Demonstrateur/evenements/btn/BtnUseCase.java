@@ -16,7 +16,7 @@ public class BtnUseCase extends Btn {
 	@Override
     public void mouseClicked(MouseEvent event) {
         CasUtilisation useCase = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
-            "Mon useCase");
+            fenetre.getPanneauGraph().getDiagramme(), "Mon useCase");
         useCase.creer();
     }
 

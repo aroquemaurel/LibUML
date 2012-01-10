@@ -16,7 +16,7 @@ public class BtnClasse extends Btn {
 	@Override
 	public void mouseClicked(MouseEvent event) {
         Classe acteur = new Classe(super.fenetre.getPanneauGraph().getGraph(),
-            "Ma classe");
+            fenetre.getPanneauGraph().getDiagramme(), "Ma classe");
         acteur.creer();
 	}
 }

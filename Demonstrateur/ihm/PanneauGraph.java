@@ -2,6 +2,7 @@ package ihm;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
+import diagramme.Diagramme;
 import java.awt.Dimension;
 
 /**
@@ -10,6 +11,7 @@ import java.awt.Dimension;
 public class PanneauGraph extends mxGraphComponent {
     private final int largeurPanneau;
     private final int longueurPanneau;
+    private Diagramme diagramme;
 
 	/* Paramètres du panneau */
     private void parametrerPanneau(){
@@ -24,8 +26,13 @@ public class PanneauGraph extends mxGraphComponent {
 
         this.largeurPanneau = p_largeurPanneau;
         this.longueurPanneau = p_longueurPanneau;
+        this.diagramme = new Diagramme();
 
         this.parametrerPanneau();
+    }
+
+    public Diagramme getDiagramme() {
+        return diagramme;
     }
 
 }

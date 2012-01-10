@@ -1,6 +1,7 @@
 package eltGraphique;
 
 import com.mxgraph.view.mxGraph;
+import diagramme.Diagramme;
 import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
@@ -13,7 +14,7 @@ import java.awt.Point;
  *
  * @see Lien
  */
-abstract public class ElementModelisation extends EltGraphique {
+abstract public class ElementModelisation extends ElementGraphique {
 	/**
 	 * Texte à afficher avec l'élément
 	 */
@@ -28,6 +29,8 @@ abstract public class ElementModelisation extends EltGraphique {
 	 * Taille de l'élément (hauteur/largeur)
 	 */
 	private Dimension dimension;
+        
+        private Diagramme diagramme;
 
 	/**
 	 * Constructeur générique aux éléments de modélisation
@@ -38,8 +41,10 @@ abstract public class ElementModelisation extends EltGraphique {
 	 * @see Traitement
 	 * @see Interface
 	 */
-	public ElementModelisation(mxGraph p_graph, String p_texte, Dimension p_dimension) {
+	public ElementModelisation(mxGraph p_graph,
+                                   Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
 		super(p_graph);
+                this.diagramme = p_diagramme;
 		this.texte = p_texte;
 		this.dimension = p_dimension;
 		//TODO Initiliser hauteur/largeur/position. Utiliser Dimension ?

@@ -4,6 +4,7 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
+import diagramme.Diagramme;
 import eltGraphique.Liste;
 import java.awt.Dimension;
 import java.util.HashMap;
@@ -52,6 +53,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
        return retour;
     }
+    
     private String stringAttributs(){
         String retour = "";
 
@@ -76,8 +78,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouter la classe
 	 * @param p_texte Le texte associé à la classe (son nom)
 	 */
-    public Classe(mxGraph p_graph, String p_texte){
-        super(p_graph, p_texte, new Dimension(125,150));
+    public Classe(mxGraph p_graph, Diagramme p_diagramme, String p_texte){
+        super(p_graph, p_diagramme, p_texte, new Dimension(125,150));
 
         this.attributs = new Liste<Attribut>();
         this.methodes = new Liste<Methode>();
@@ -89,7 +91,7 @@ public class Classe extends eltGraphique.ElementModelisation {
         /* TODO it's a test, to be continued! */
         this.ajouterAttribut(Visibilite.PROTECTED,"int", "monAttribut1", false, false);
         this.ajouterAttribut(Visibilite.PRIVATE, "long", "monAttribut2",false, false);
-       this.ajouterAttribut(Visibilite.PRIVATE,"Classe", "monAttribut3", false, false);
+        this.ajouterAttribut(Visibilite.PRIVATE,"Classe", "monAttribut3", false, false);
     }
 
 	/**
@@ -102,13 +104,14 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_deClasse Méthode de classe ?
 	 * @param p_constante Méthode constante ?
 	 */
-    public void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
+    public final void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
 			       Visibilite p_visibilite,
 			       Liste<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
-	    this.methodes.ajouterElement(new Methode(p_visibilite, p_typeDeRetour,
-					p_nomMethode, p_parametres, p_abstraite, p_deClasse, p_constante));
+        this.methodes.ajouterElement(new Methode(p_visibilite, p_typeDeRetour,
+                                     p_nomMethode, p_parametres, p_abstraite,
+                                     p_deClasse, p_constante));
     }
 
 	/**
@@ -119,143 +122,148 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_constante Attribut constant ?
 	 * @param p_deClasse Attribut de classe ?
 	 */
-    public void ajouterAttribut(Visibilite p_visibilite, String p_type, String p_nom,
-                                  boolean p_constante,
-                                 boolean p_deClasse) {
-		this.attributs.ajouterElement(new Attribut(p_visibilite,
-										p_deClasse,
-										p_constante,
-										p_type,
-										p_nom));
+    public void ajouterAttribut(Visibilite p_visibilite, String p_type,
+                                String p_nom, boolean p_constante,
+                                boolean p_deClasse) {
+        this.attributs.ajouterElement(new Attribut(p_visibilite,
+                                                   p_deClasse,
+                                                   p_constante,
+                                                   p_type,
+                                                   p_nom));
     }
 
     /*
      * Guetteurs
      */
-	/**
-	 * Retourne vrai si la classe est constante, faux sinon.
-	 * @return Classe constante ?
-	 */
+    /**
+     * Retourne vrai si la classe est constante, faux sinon.
+     * @return Classe constante ?
+     */
     public boolean estConstante() {
         return (this.constante);
     }
 
-	/**
-	 * Retourne vrai si la classe est abstraite, faux sinon.
-	 * @return si la classe est abstraite ou non.
-	 */
+    /**
+     * Retourne vrai si la classe est abstraite, faux sinon.
+     * @return si la classe est abstraite ou non.
+     */
     public boolean estAbstraite() {
         return (this.abstraite);
     }
 
-	/**
-	 * Retourne la liste des attributs de la classe
-	 * @return Liste des attributs de la classe
-	 * @see Attribut
-	 */
+    /**
+     * Retourne la liste des attributs de la classe
+     * @return Liste des attributs de la classe
+     * @see Attribut
+     */
     public Liste<Attribut> getAttributs() {
         return (this.attributs);
     }
 
-	/**
-	 * Retourne la liste des méthodes de la classe
-	 * @return Liste des méthodes de la classe
-	 * @see Methode
-	 */
+    /**
+     * Retourne la liste des méthodes de la classe
+     * @return Liste des méthodes de la classe
+     * @see Methode
+     */
     public Liste<Methode> getMethodes() {
         return (this.methodes);
     }
 
-	/**
-	 * Retourne la visibilité de la classe
-	 * @return Visibilite de al classe
-	 * @see Visibilite
-	 */
+    /**
+     * Retourne la visibilité de la classe
+     * @return Visibilite de al classe
+     * @see Visibilite
+     */
     public Visibilite getVisibilite() {
         return (this.visibilite);
     }
 
-	/*
-	 * Setters
-	 */
-	/**
-	 * Modifie la visibilité de la classe
-	 * @param p_visibilite Le nouvelle visibilite de la classe
-	 * @see Visibilite
-	 */
-	public void setVisibilite(Visibilite p_visibilite) {
+    /*
+     * Setters
+     */
+    /**
+     * Modifie la visibilité de la classe
+     * @param p_visibilite Le nouvelle visibilite de la classe
+     * @see Visibilite
+     */
+    public void setVisibilite(Visibilite p_visibilite) {
         this.visibilite = p_visibilite;
     }
 
-	/**
-	 * Modifie la constance de la classe
-	 * @param p_constante Classe constante ?
-	 */
+    /**
+     * Modifie la constance de la classe
+     * @param p_constante Classe constante ?
+     */
     public void setConstante(boolean p_constante) {
         this.constante = p_constante;
     }
 
-	/**
-	 * Modifie l'abstraction de la classe
-	 * @param p_abstraite Classe abstraite ?
-	 */
+    /**
+     * Modifie l'abstraction de la classe
+     * @param p_abstraite Classe abstraite ?
+     */
     public void setAbstraite(boolean p_abstraite) {
         this.abstraite = p_abstraite;
     }
 
-	/**
-	 * Remplace la liste des attributs de la classe
-	 * @param p_attributs La nouvelle liste d'attributs
-	 * @see Attribut
-	 */
+    /**
+     * Remplace la liste des attributs de la classe
+     * @param p_attributs La nouvelle liste d'attributs
+     * @see Attribut
+     */
     public void setAttributs(Liste<Attribut> p_attributs) {
         this.attributs = p_attributs;
     }
 
-	/**
-	 * Remlpace la liste des méthodes de la classe
-	 * @param p_methodes La nouvelle liste de méthodes
-	 * @see Methode
-	 */
+    /**
+     * Remlpace la liste des méthodes de la classe
+     * @param p_methodes La nouvelle liste de méthodes
+     * @see Methode
+     */
     public void setMethodes(Liste<Methode> p_methodes) {
         this.methodes = p_methodes;
     }
 
-	/**
-	 * Crée la représentation graphique de la classe
-	 */
+    /**
+     * Crée la représentation graphique de la classe
+     */
     @Override
     public final void creer() {
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+        mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
-		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
         nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
-		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-		feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
+        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+        feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
 
         nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
         nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#e4e5ef");
         nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
-		feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
+        feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
 
-		super.setCellule((mxCell) super.getGraph().insertVertex(
-            null, null, super.getTexte(), 350, 350,
-			super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
+        super.setCellule((mxCell) super.getGraph().insertVertex(
+                         null, null, super.getTexte(), 350, 350,
+                         super.getDimension().getWidth(),
+                         super.getDimension().getHeight(), "CLASSE"));
 
-		this.celluleAttributs = (mxCell) super.getGraph().insertVertex(
-            super.getCellule(), null, this.stringAttributs(), 0, 0,
-			super.getDimension().getWidth(), 60, "CONTENUCLASSE");
+        this.celluleAttributs = (mxCell) super.getGraph().insertVertex(
+                                super.getCellule(), null,
+                                this.stringAttributs(), 0, 0,
+                                super.getDimension().getWidth(), 60,
+                                "CONTENUCLASSE");
 
         this.celluleMethodes = (mxCell) super.getGraph().insertVertex(
-            super.getCellule(), null, this.stringMethodes(), 0, 100,
-			super.getDimension().getWidth(), 60, "CONTENUCLASSE");
+                               super.getCellule(), null,
+                               this.stringMethodes(), 0, 100,
+                               super.getDimension().getWidth(), 60,
+                               "CONTENUCLASSE");
 
         this.celluleAttributs.setConnectable(false);
         this.celluleMethodes.setConnectable(false);

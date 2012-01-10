@@ -2,7 +2,7 @@ package diagramme;
 
 import eltGraphique.ActeurActif;
 import eltGraphique.CasUtilisation;
-import eltGraphique.EltGraphique;
+import eltGraphique.ElementGraphique;
 import eltGraphique.ligne.Lien;
 
 /**
@@ -11,7 +11,7 @@ import eltGraphique.ligne.Lien;
  */
 public class DiagrammeCasUtilisation extends Diagramme {
     @Override
-    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, String p_typeDeFleche){
+    public boolean lienAutorise (ElementGraphique p_origine , ElementGraphique p_extremite, String p_typeDeFleche){
         boolean valeurRetour = false;
         if("association".equals(p_typeDeFleche)){
                 valeurRetour = this.autorisationAssociation(p_origine , p_extremite);
@@ -29,7 +29,7 @@ public class DiagrammeCasUtilisation extends Diagramme {
         return valeurRetour;
     }
     
-    private boolean autorisationAssociation(EltGraphique p_origine , EltGraphique p_extremite) {
+    private boolean autorisationAssociation(ElementGraphique p_origine , ElementGraphique p_extremite) {
         boolean valeurRetour = false;
         if(p_origine instanceof ActeurActif && p_extremite instanceof CasUtilisation){
             valeurRetour = true;
@@ -43,7 +43,7 @@ public class DiagrammeCasUtilisation extends Diagramme {
         return(valeurRetour);
     }
 
-    private boolean autorisationGeneralisation(EltGraphique p_origine , EltGraphique p_extremite) {
+    private boolean autorisationGeneralisation(ElementGraphique p_origine , ElementGraphique p_extremite) {
            boolean valeurRetour = false;
         if(p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation){
             valeurRetour = true;
@@ -51,7 +51,7 @@ public class DiagrammeCasUtilisation extends Diagramme {
         return(valeurRetour);
     }
 
-    private boolean autorisationDependance(EltGraphique p_origine , EltGraphique p_extremite) {
+    private boolean autorisationDependance(ElementGraphique p_origine , ElementGraphique p_extremite) {
            boolean valeurRetour = false;
         if(p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation){
             valeurRetour = true;
@@ -59,7 +59,7 @@ public class DiagrammeCasUtilisation extends Diagramme {
         return(valeurRetour);
     }
     @Override
-    public boolean eltAutorise (EltGraphique p_element){
+    public boolean eltAutorise (ElementGraphique p_element){
         boolean valeurRetour = false;
         if(p_element instanceof CasUtilisation){
             valeurRetour = true;

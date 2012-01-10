@@ -1,6 +1,7 @@
 package eltGraphique;
 
 
+import diagramme.Diagramme;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
@@ -17,7 +18,9 @@ public class ActeurActifTest {
 
     @Before
     public void setUp() {
-        this.monActeur = new ActeurActif(new mxGraph(), "test");
+        this.monActeur = new ActeurActif(new mxGraph(),
+                                         new Diagramme(), 
+                                         "test");
         this.monActeur.creer();
     }
 

@@ -64,7 +64,7 @@ public class FenetreDemo extends JFrame {
     }
 
 	/* Construit la fenêtre de démonstration */
-    public FenetreDemo(){
+    public FenetreDemo() {
         this.panneauPrincipal = new JPanel();
         this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
         this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
@@ -98,18 +98,19 @@ public class FenetreDemo extends JFrame {
        // TODO bis -- Rédiger les JUnit.
        // TODO ter -- Créer les différents styles de flêches
        CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
-           "test 1\n truc");
-       Classe useCase2 = new Classe(fenetre.getPanneauGraph().getGraph(), "test 2");
+           fenetre.getPanneauGraph().getDiagramme(), "test 1\n truc");
+       Classe useCase2 = new Classe(fenetre.getPanneauGraph().getGraph(), 
+           fenetre.getPanneauGraph().getDiagramme(), "test 2");
        CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
-            "test 3");
+           fenetre.getPanneauGraph().getDiagramme(), "test 3");
 
 		useCase1.creer();
 		useCase2.creer();
 		useCase3.creer();
 
-       Lien monLien = new Lien(
-           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.COMPOSITION);
-       monLien.creer();
+     //  Lien monLien = new Lien(
+         //  useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.COMPOSITION);
+       //monLien.creer();
 
        useCase3.supprimer();
     }

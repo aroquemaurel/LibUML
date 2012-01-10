@@ -5,7 +5,7 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import eltGraphique.ElementModelisation;
-import eltGraphique.EltGraphique;
+import eltGraphique.ElementGraphique;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +16,7 @@ import java.util.Map;
  * 
  * @see TypeLien
  */
-public class Lien extends EltGraphique {
+public class Lien extends ElementGraphique {
     /**
      * Element à l'origine du lien
      * @see ElementModelisation

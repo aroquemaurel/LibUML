@@ -1,5 +1,6 @@
 package eltGraphique;
 
+import diagramme.Diagramme;
 import eltGraphique.classe.Classe;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
@@ -17,7 +18,9 @@ public class ClasseTest {
 
     @Before
     public void setUp() {
-		this.classe = new Classe (new mxGraph(), "un super test");
+		this.classe = new Classe (new mxGraph(), 
+                                          new Diagramme(), 
+                                          "un super test");
         this.classe.creer();
     }
 

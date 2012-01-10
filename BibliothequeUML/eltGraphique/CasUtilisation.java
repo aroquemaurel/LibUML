@@ -4,6 +4,7 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
+import diagramme.Diagramme;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,8 +20,8 @@ public class CasUtilisation extends ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouté le cas d'utilisation
 	 * @param p_texte Le texte qui sera associé au cas d'utilisation
 	 */
-    public CasUtilisation(mxGraph p_graph, String p_texte) {
-		super(p_graph, p_texte, new Dimension(150,75));
+    public CasUtilisation(mxGraph p_graph, Diagramme p_diagramme, String p_texte) {
+		super(p_graph, p_diagramme, p_texte, new Dimension(150,75));
     }
 
 	/**
@@ -36,7 +37,7 @@ public class CasUtilisation extends ElementModelisation {
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		feuilleStyles.putCellStyle("USECASE", nouveauStyle);
 		
-        super.setCellule((mxCell) this.graph.insertVertex(
+        super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(),
 			"USECASE"));

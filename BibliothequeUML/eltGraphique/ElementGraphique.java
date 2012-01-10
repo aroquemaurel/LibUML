@@ -3,6 +3,7 @@ package eltGraphique;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
+import diagramme.Diagramme;
 
 /**
  * Classe ancêtre à tout élément graphique
@@ -11,15 +12,15 @@ import com.mxgraph.view.mxGraph;
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
  */
-abstract public class EltGraphique extends mxCell {
-    protected mxGraph graph;
+abstract public class ElementGraphique extends mxCell {
+    private mxGraph graph;
 
 	/**
 	 * Constructeur générique des éléments graphiques
 	 *
 	 * @param p_graph Graphe auquel sera ajouté l'élément graphique
 	 */
-    public EltGraphique(mxGraph p_graph){
+    public ElementGraphique(mxGraph p_graph) {
         this.graph = p_graph;
     }
 

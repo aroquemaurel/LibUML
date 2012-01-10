@@ -1,5 +1,6 @@
 package eltGraphique;
 
+import diagramme.Diagramme;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
@@ -16,7 +17,9 @@ public class ActeurPassifTest {
 
     @Before
     public void setUp() {
-		this.monActeur = new ActeurPassif(new mxGraph(), "un super test");
+		this.monActeur = new ActeurPassif(new mxGraph(), 
+                                                  new Diagramme(), 
+                                                  "un super test");
         this.monActeur.creer();
     }
 

@@ -2,6 +2,7 @@ package eltGraphique;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.view.mxGraph;
+import diagramme.Diagramme;
 import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
 
@@ -19,8 +20,9 @@ public class Traitement extends ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
-    public Traitement(mxGraph p_graph, String p_texte, Lien p_evenementDeclencheur){
-        super(p_graph, p_texte, new Dimension(20,80));
+    public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte,
+                      Lien p_evenementDeclencheur){
+        super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
         this.evenementDeclencheur = p_evenementDeclencheur;
     }
 
@@ -35,10 +37,10 @@ public class Traitement extends ElementModelisation {
     public final void creer() {
 		//TODO Bonne position de la fêche
 		//TODO Bonne position du texte
-		//TODO Voir la possibilité de faire une flêche curviligne
         super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 30, 30,
-			super.getDimension().getWidth(), super.getDimension().getHeight()));
+			super.getDimension().getWidth(),
+                        super.getDimension().getHeight()));
         super.setVisible(false);
 
      super.setCellule((mxCell) super.getGraph().insertEdge(

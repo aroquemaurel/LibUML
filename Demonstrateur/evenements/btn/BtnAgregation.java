@@ -18,7 +18,8 @@ public class BtnAgregation extends Btn{
 	@Override
     public void mouseClicked(MouseEvent event) {
         EvenementsEltGraphiques evenement = 
-            new EvenementsEltGraphiques(super.fenetre.getPanneauGraph(), TypeLien.AGREGATION);
+            new EvenementsEltGraphiques(super.fenetre.getPanneauGraph(), 
+                    fenetre.getPanneauGraph().getDiagramme(), TypeLien.AGREGATION);
         super.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
     }    
 }
