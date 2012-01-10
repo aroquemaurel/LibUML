@@ -34,14 +34,21 @@ public class Diagramme {
         return (this.elementsGraphique);
     }
     
+    /**
+     * Retourne un élément graphique qu'il a obtenu depuis une cellule du graph
+     * @param p_cellule La cellule à laquelle on veut trouver l'élément graphique correspondant
+     * @return L'élément graphique obtenu ou null si aucun élément n'a été trouvé pour cette cellule
+     */
     public ElementGraphique getElementGraphiqueViaCellule(mxICell p_cellule){
         ElementGraphique retour = null;
         
         for(final ElementGraphique element : this.elementsGraphique){
+            // on compare les adresse pour savoir si c'est la même cellule
             if(element.getCellule() == p_cellule){
-                System.out.print("CACAMOU!!");
+                retour = element;
             }
         }
+        
         return (retour);
     }
 }

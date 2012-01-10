@@ -5,6 +5,7 @@
 
 package evenements;
 
+import com.mxgraph.model.mxCell;
 import diagramme.Diagramme;
 import eltGraphique.ElementModelisation;
 import eltGraphique.ligne.Lien;
@@ -22,10 +23,11 @@ public class EvenementsEltGraphiques implements MouseListener {
     private Diagramme diagramme;
     private TypeLien typeDeLien;
     private int numeroClique;
-    private ElementModelisation sourceCelluleARelier;
-    private ElementModelisation destinationCelluleARelier;
+    private mxCell sourceCelluleARelier;
+    private mxCell destinationCelluleARelier;
     
-    public EvenementsEltGraphiques(PanneauGraph p_panneauGraph, Diagramme p_diagramme, TypeLien p_typeDeLien) {
+    public EvenementsEltGraphiques(PanneauGraph p_panneauGraph, Diagramme p_diagramme, 
+                                    TypeLien p_typeDeLien) {
         this.panneauGraph = p_panneauGraph;
         this.diagramme = p_diagramme;
         this.typeDeLien = p_typeDeLien;
@@ -36,7 +38,7 @@ public class EvenementsEltGraphiques implements MouseListener {
     
     @Override
     public void mouseClicked(MouseEvent event) {
-        ElementModelisation celluleActuelle = (ElementModelisation) this.panneauGraph.getGraph().getSelectionCell();
+        mxCell celluleActuelle = (mxCell) this.panneauGraph.getGraph().getSelectionCell();
         if(celluleActuelle != null){
             if(this.sourceCelluleARelier == null) {
                 this.numeroClique++;
@@ -49,14 +51,15 @@ public class EvenementsEltGraphiques implements MouseListener {
 
             } 
             if(this.destinationCelluleARelier != null && sourceCelluleARelier != null){
-                Lien monLien = new Lien(this.sourceCelluleARelier,
-                                        this.destinationCelluleARelier,
-                                        this.panneauGraph.getGraph(),
-                                        this.typeDeLien);
+                Lien monLien = new Lien(
+                    (ElementModelisation) this.diagramme.getElementGraphiqueViaCellule(
+                                                                    this.sourceCelluleARelier),
+                    (ElementModelisation) this.diagramme.getElementGraphiqueViaCellule(
+                                                                    this.destinationCelluleARelier),
+                    this.panneauGraph.getGraph(),
+                    this.typeDeLien);
+                
                 monLien.creer();
-                // TODO problème de castage. Ici doivent être relié les éléments graphiques
-           //     Lien monLien = new Lien(el1, el2, this.panneauGraph.getGraph(), TypeLien.LIENCONTINU);
-            //    monLien.creer();
             }
         }
         

@@ -203,9 +203,14 @@ public class Lien extends ElementGraphique {
 			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
 			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
 			feuilleStyles.putCellStyle("FLECHECURVILIGNE", nouveauStyle);
-			
-		}
-		
+		} else if (this.typeLien.equals(TypeLien.AGREGATION)) {
+			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
+			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
+			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+			feuilleStyles.putCellStyle("FLECHECURVILIGNE", nouveauStyle);
+		}		
 		super.setCellule((mxCell) super.getGraph().insertEdge(
 			super.getGraph().getDefaultParent(), null, null,
 			this.getSource().getCellule(), this.getDestination().getCellule(), 
