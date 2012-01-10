@@ -1,5 +1,6 @@
 package eltGraphique.classe;
 
+import eltGraphique.Liste;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ class Methode {
 	 * Liste des paramètres de la méthodes
 	 * @see Variable
 	 */
-	private List<Variable> parametres;
+	private Liste<Variable> parametres;
 	/**
 	 * Méthode constante ?
 	 */
@@ -48,7 +49,7 @@ class Methode {
 	 * @param p_constante Méthode constante ?
 	 */
 	public Methode(Visibilite p_visibilite, String p_typeDeRetour, String p_nom,
-					List<Variable> p_parametres,
+					Liste<Variable> p_parametres,
 					boolean p_abstraite,
 					boolean p_deClasse,
 					boolean p_constante) {
@@ -60,13 +61,13 @@ class Methode {
 		this.deClasse = p_deClasse;
 		this.constant = p_constante;
 	}
-	
+
 	/**
 	 * Ajoute un paramètre à la liste de paramètres de la méthode
 	 * @param p_nom Nom du paramètre à ajouter
 	 * @param p_type Type du paramètre à ajouter
 	 * @param p_constant Paramètre constant ?
-	 * 
+	 *
 	 * @see Variable
 	 */
 	public void ajouterParametre(String p_nom, String p_type, boolean p_constant) {
@@ -109,7 +110,7 @@ class Methode {
 	public void setNom(String nom) {
 			this.nom = nom;
 	}
-	
+
 	/**
 	 * Retourne vrai si la méthode est constante, faux sinon.
 	 * @return Méthode constante ?
@@ -154,12 +155,12 @@ class Methode {
 	/*
 	 * Setters
 	 */
-	
+
 	/**
 	 * Modifie les paramètres de la méthode.
 	 * @param p_parametres La nouvelle liste de paramètres de la méthode
 	 */
-	public void setParametres(List<Variable> p_parametres) {
+	public void setParametres(Liste<Variable> p_parametres) {
 		this.parametres = p_parametres;
 	}
 
@@ -194,5 +195,26 @@ class Methode {
 	 */
 	public void setVisibilite(Visibilite p_visibilite) {
 		this.visibilite = p_visibilite;
+	}
+
+	@Override
+	public String toString(){
+		String retour = "";
+
+           /* TODO à mettre dans toString de methode*/
+           if(this.visibilite.equals(Visibilite.PRIVATE))
+                retour += "- ";
+           else if(this.visibilite.equals(Visibilite.PUBLIC))
+               retour += "+ ";
+           else if(this.visibilite.equals(Visibilite.PROTECTED))
+               retour += "~ ";
+           else if(this.visibilite.equals(Visibilite.PACKAGE))
+               retour += "# ";
+
+           retour += this.typeRetour;
+           retour += " ";
+           retour += this.getNom();
+           retour += "\n";
+		return (retour);
 	}
 }

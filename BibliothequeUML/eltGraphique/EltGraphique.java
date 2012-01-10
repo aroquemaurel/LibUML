@@ -2,10 +2,7 @@ package eltGraphique;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
-import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
-import com.mxgraph.view.mxStylesheet;
-import java.util.HashMap;
 
 /**
  * Classe ancêtre à tout élément graphique
@@ -56,6 +53,7 @@ abstract public class EltGraphique extends mxCell {
 	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
     public void setCellule(mxCell p_cellule){
+		p_cellule.setConnectable(false);
         super.setTarget(p_cellule);
         super.setParent(p_cellule);
     }

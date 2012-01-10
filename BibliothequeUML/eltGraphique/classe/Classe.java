@@ -4,9 +4,9 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
+import eltGraphique.Liste;
 import java.awt.Dimension;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,24 +26,70 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Liste des méthodes de la classe
 	 * @see Methode
 	 */
-    private List<Methode> methodes;
+    private Liste<Methode> methodes;
 	/**
 	 * Liste des attributs de la classe
 	 * @see Attribut
 	 */
-    private List<Attribut> attributs;
+    private Liste<Attribut> attributs;
 	/**
 	 * Classe cosntante ?
 	 */
     private boolean constante;
 
-	/**
+    private mxCell celluleAttributs;
+    private mxCell celluleMethodes;
+
+	/* TODO Faire une classe ListeMethodes avec cette méthode ?
+	 * TODO Faire une classe listeAttributs avec la méthode stringAttributs ?
+	 */
+    private String stringMethodes(){
+        String retour = new String();
+
+       for(int i=0; i < this.methodes.taille(); i++){
+		   retour += this.methodes.get(i);
+       }
+
+       return retour;
+    }
+    private String stringAttributs(){
+        String retour = "";
+
+       for(int i=0; i < this.attributs.taille(); i++){
+           if(this.attributs.get(i).getVisibilite().equals(Visibilite.PRIVATE))
+                retour += "- ";
+           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PUBLIC))
+               retour += "+ ";
+           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PROTECTED))
+               retour += "~ ";
+           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PACKAGE))
+               retour += "# ";
+
+           retour += this.attributs.get(i).toString() ;
+       }
+
+       return retour;
+    }
+
+    /**
 	 * Constructeur d'un élément 'classe'
 	 * @param p_graph Le graphe auquel sera ajouter la classe
 	 * @param p_texte Le texte associé à la classe (son nom)
 	 */
     public Classe(mxGraph p_graph, String p_texte){
         super(p_graph, p_texte, new Dimension(125,150));
+
+        this.attributs = new Liste<Attribut>();
+        this.methodes = new Liste<Methode>();
+        /* TODO it's a test, to be continued! */
+        this.ajouterMethode("maMethode1", "void", Visibilite.PROTECTED, null, false, false, false);
+        this.ajouterMethode("maMethode2", "void", Visibilite.PRIVATE, null, false, false, false);
+        this.ajouterMethode("maMethode3", "void", Visibilite.PUBLIC, null, false, false, false);
+
+        /* TODO it's a test, to be continued! */
+        this.ajouterAttribut(Visibilite.PROTECTED,"int", "monAttribut1", false, false);
+        this.ajouterAttribut(Visibilite.PRIVATE, "long", "monAttribut2",false, false);
+       this.ajouterAttribut(Visibilite.PRIVATE,"Classe", "monAttribut3", false, false);
     }
 
 	/**
@@ -58,13 +104,11 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 */
     public void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
 			       Visibilite p_visibilite,
-			       List<Variable> p_parametres,
+			       Liste<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
-	    this.methodes.add(new Methode(p_visibilite, p_typeDeRetour,
-					p_nomMethode,
-					p_parametres,
-					p_abstraite, p_deClasse, p_constante));
+	    this.methodes.ajouterElement(new Methode(p_visibilite, p_typeDeRetour,
+					p_nomMethode, p_parametres, p_abstraite, p_deClasse, p_constante));
     }
 
 	/**
@@ -75,10 +119,10 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_constante Attribut constant ?
 	 * @param p_deClasse Attribut de classe ?
 	 */
-    public void ajouterAttribut(String p_type, String p_nom,
-                                 Visibilite p_visibilite, boolean p_constante,
+    public void ajouterAttribut(Visibilite p_visibilite, String p_type, String p_nom,
+                                  boolean p_constante,
                                  boolean p_deClasse) {
-		this.attributs.add(new Attribut(p_visibilite,
+		this.attributs.ajouterElement(new Attribut(p_visibilite,
 										p_deClasse,
 										p_constante,
 										p_type,
@@ -109,7 +153,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @return Liste des attributs de la classe
 	 * @see Attribut
 	 */
-    public List<Attribut> getAttributs() {
+    public Liste<Attribut> getAttributs() {
         return (this.attributs);
     }
 
@@ -118,7 +162,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @return Liste des méthodes de la classe
 	 * @see Methode
 	 */
-    public List<Methode> getMethodes() {
+    public Liste<Methode> getMethodes() {
         return (this.methodes);
     }
 
@@ -164,7 +208,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_attributs La nouvelle liste d'attributs
 	 * @see Attribut
 	 */
-    public void setAttributs(List<Attribut> p_attributs) {
+    public void setAttributs(Liste<Attribut> p_attributs) {
         this.attributs = p_attributs;
     }
 
@@ -173,7 +217,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_methodes La nouvelle liste de méthodes
 	 * @see Methode
 	 */
-    public void setMethodes(List<Methode> p_methodes) {
+    public void setMethodes(Liste<Methode> p_methodes) {
         this.methodes = p_methodes;
     }
 
@@ -184,15 +228,37 @@ public class Classe extends eltGraphique.ElementModelisation {
     public final void creer() {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		
+
 		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
 		feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
-		
+
+        nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#e4e5ef");
+        nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
+		feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
+
 		super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getParent(), null, super.getTexte(), 350, 350,
-			super.getDimension().getWidth(), super.getDimension().getHeight(),
-			"CLASSE"));
+            null, null, super.getTexte(), 350, 350,
+			super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
+
+		this.celluleAttributs = (mxCell) super.getGraph().insertVertex(
+            super.getCellule(), null, this.stringAttributs(), 0, 0,
+			super.getDimension().getWidth(), 60, "CONTENUCLASSE");
+
+        this.celluleMethodes = (mxCell) super.getGraph().insertVertex(
+            super.getCellule(), null, this.stringMethodes(), 0, 100,
+			super.getDimension().getWidth(), 60, "CONTENUCLASSE");
+
+        this.celluleAttributs.setConnectable(false);
+        this.celluleMethodes.setConnectable(false);
     }
 }
+

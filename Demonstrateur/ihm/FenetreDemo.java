@@ -3,6 +3,7 @@ package ihm;
 import eltGraphique.CasUtilisation;
 import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 import ihm.menu.BarreOutilsDessin;
 import ihm.menu.Menu;
 import ihm.menu.MenuDroite;
@@ -96,16 +97,18 @@ public class FenetreDemo extends JFrame {
        // TODO -- à intégrer dans le démonstrateur. Actuellement juste des tests
        // TODO bis -- Rédiger les JUnit.
        // TODO ter -- Créer les différents styles de flêches
-       CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 1");
+       CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
+           "test 1\n truc");
        Classe useCase2 = new Classe(fenetre.getPanneauGraph().getGraph(), "test 2");
-        CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(), "test 3");
+       CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
+            "test 3");
 
 		useCase1.creer();
 		useCase2.creer();
 		useCase3.creer();
 
        Lien monLien = new Lien(
-           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), "SPECIALISATION");
+           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.COMPOSITION);
        monLien.creer();
 
        useCase3.supprimer();
