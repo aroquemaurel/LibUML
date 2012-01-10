@@ -3,11 +3,13 @@
 import eltGraphique.EltGraphique;
 import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 
 /**
  * Classe propre au diagramme de classe
  * 
  * @author satenske
+ * @author Marie-Ly
  */
  
 public class DiagrammeClasse extends Diagramme {
@@ -19,26 +21,27 @@ public class DiagrammeClasse extends Diagramme {
      * @param p_typeDeFleche
      * @return true s'il est autorisé, false sinon
      */
+    
     @Override
-    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, String p_typeDeFleche){
+    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, TypeLien p_typeDeFleche){
         boolean valeurRetour = false;
-        if ("composition".equals(p_typeDeFleche)){
+        if (p_typeDeFleche == TypeLien.COMPOSITION){
             valeurRetour = this.autorisationComposition(p_origine , p_extremite); 
         }
         else{
-            if("association".equals(p_typeDeFleche)){
+            if(p_typeDeFleche == TypeLien.ASSOCIATION){
                 valeurRetour = this.autorisationAssociation(p_origine , p_extremite);
             } 
             else{
-                if ("agrégation".equals(p_typeDeFleche)){
+                if (p_typeDeFleche == TypeLien.AGREGATION){
                     valeurRetour = this.autorisationAgregation(p_origine , p_extremite);
                 } 
                 else{
-                    if("généralisation".equals(p_typeDeFleche)){
+                    if(p_typeDeFleche == TypeLien.GENERALISATION){
                         valeurRetour = this.autorisationGeneralisation(p_origine , p_extremite);
                     }
                     else{
-                        if("dependance".equals(p_typeDeFleche)){
+                        if(p_typeDeFleche == TypeLien.DEPENDANCE){
                             valeurRetour = this.autorisationDependance( p_origine , p_extremite);
                         }
                     }
@@ -57,17 +60,7 @@ public class DiagrammeClasse extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationAssociation(EltGraphique p_origine , EltGraphique p_extremite) {
-        boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof Classe && p_extremite instanceof Lien){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof Lien && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }     
-        return(valeurRetour);
+        return((p_origine instanceof Classe && p_extremite instanceof Classe) || (p_origine instanceof Classe && p_extremite instanceof Lien) || (p_origine instanceof Lien && p_extremite instanceof Classe));
     }
     
     /**
@@ -79,11 +72,7 @@ public class DiagrammeClasse extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationAgregation(EltGraphique p_origine , EltGraphique p_extremite) {
-        boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof Classe && p_extremite instanceof Classe);
     }
     
     /**
@@ -95,11 +84,7 @@ public class DiagrammeClasse extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationComposition(EltGraphique p_origine , EltGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof Classe && p_extremite instanceof Classe);
     }
     
     /**
@@ -111,11 +96,7 @@ public class DiagrammeClasse extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationGeneralisation(EltGraphique p_origine , EltGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof Classe && p_extremite instanceof Classe);
     }
     
     /**
@@ -127,17 +108,7 @@ public class DiagrammeClasse extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationDependance(EltGraphique p_origine , EltGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof Classe && p_extremite instanceof Lien){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof Lien && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }     
-        return(valeurRetour);
+        return((p_origine instanceof Classe && p_extremite instanceof Classe) || (p_origine instanceof Classe && p_extremite instanceof Lien) || (p_origine instanceof Lien && p_extremite instanceof Classe));
     }
     
     /**
@@ -148,15 +119,6 @@ public class DiagrammeClasse extends Diagramme {
      */
     @Override
     public boolean eltAutorise (EltGraphique p_element){
-        boolean valeurRetour = false;
-        if(p_element instanceof Classe){
-            valeurRetour = true;
-        }
-        else{
-            if(p_element instanceof Lien){
-                valeurRetour = true;
-            }
-        }
-        return valeurRetour;       
+        return ((p_element instanceof Classe) || (p_element instanceof Lien));       
     }
 }
