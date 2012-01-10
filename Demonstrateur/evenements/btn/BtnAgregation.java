@@ -5,7 +5,6 @@ import evenements.Btn;
 import evenements.EvenementsEltGraphiques;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  * Implémentation d'un click sur le bouton Agrégation
@@ -18,8 +17,8 @@ public class BtnAgregation extends Btn{
 	@Override
     public void mouseClicked(MouseEvent event) {
         EvenementsEltGraphiques evenement = 
-            new EvenementsEltGraphiques(super.fenetre.getPanneauGraph(), 
-                    fenetre.getPanneauGraph().getDiagramme(), TypeLien.AGREGATION);
-        super.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
+            new EvenementsEltGraphiques(this.fenetre.getPanneauGraph(), 
+                    this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.AGREGATION);
+        this.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
     }    
 }
