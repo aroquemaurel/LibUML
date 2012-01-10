@@ -4,11 +4,13 @@ import eltGraphique.ActeurActif;
 import eltGraphique.CasUtilisation;
 import eltGraphique.EltGraphique;
 import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 
 /**
  * Classe propre au diagramme de cas d'utilisation
  * 
  * @author satenske
+ * @author Marie-Ly
  */
 public class DiagrammeCasUtilisation extends Diagramme {
     
@@ -20,18 +22,19 @@ public class DiagrammeCasUtilisation extends Diagramme {
      * @param p_typeDeFleche
      * @return true s'il est autorisé, false sinon
      */
+    
     @Override
-    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, String p_typeDeFleche){
+    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, TypeLien p_typeDeFleche){
         boolean valeurRetour = false;
-        if("association".equals(p_typeDeFleche)){
+        if(p_typeDeFleche == TypeLien.ASSOCIATION){
                 valeurRetour = this.autorisationAssociation(p_origine , p_extremite);
         } 
         else{
-            if("généralisation".equals(p_typeDeFleche)){
+            if(p_typeDeFleche == TypeLien.GENERALISATION){
                 valeurRetour = this.autorisationGeneralisation(p_origine , p_extremite);
             }
             else{
-                if("dependance".equals(p_typeDeFleche)){
+                if(p_typeDeFleche == TypeLien.DEPENDANCE){
                     valeurRetour = this.autorisationDependance(p_origine , p_extremite);
                 }
             }
@@ -47,18 +50,8 @@ public class DiagrammeCasUtilisation extends Diagramme {
      * @param p_extremite
      * @return true s'il est autorisé, false sinon
      */
-    private boolean autorisationAssociation(EltGraphique p_origine , EltGraphique p_extremite) {
-        boolean valeurRetour = false;
-        if(p_origine instanceof ActeurActif && p_extremite instanceof CasUtilisation){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof CasUtilisation && p_extremite instanceof ActeurActif){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation){
-            valeurRetour = true;
-        }     
-        return(valeurRetour);
+    private boolean autorisationAssociation(EltGraphique p_origine , EltGraphique p_extremite) {   
+        return((p_origine instanceof ActeurActif && p_extremite instanceof CasUtilisation) || (p_origine instanceof CasUtilisation && p_extremite instanceof ActeurActif) || (p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation));
     }
     
     /**
@@ -70,11 +63,7 @@ public class DiagrammeCasUtilisation extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationGeneralisation(EltGraphique p_origine , EltGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation);
     }
     
     /**
@@ -86,11 +75,7 @@ public class DiagrammeCasUtilisation extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationDependance(EltGraphique p_origine , EltGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation);
     }
     
      /**
@@ -101,20 +86,6 @@ public class DiagrammeCasUtilisation extends Diagramme {
      */
     @Override
     public boolean eltAutorise (EltGraphique p_element){
-        boolean valeurRetour = false;
-        if(p_element instanceof CasUtilisation){
-            valeurRetour = true;
-        }
-        else{
-            if(p_element instanceof Lien){
-                valeurRetour = true;
-            }
-            else{
-                if(p_element instanceof ActeurActif){
-                    valeurRetour = true;
-                }
-            }
-        }
-        return valeurRetour;  
+        return ((p_element instanceof CasUtilisation) || (p_element instanceof Lien) || (p_element instanceof ActeurActif));  
     }
 }

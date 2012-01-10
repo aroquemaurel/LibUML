@@ -5,11 +5,13 @@ import eltGraphique.ActeurPassif;
 import eltGraphique.EltGraphique;
 import eltGraphique.Traitement;
 import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 
 /**
  * Classe propre au diagramme de séquence
  * 
  * @author satenske
+ * @author Marie-Ly
  */
 public class DiagrammeSequence extends Diagramme {
     
@@ -21,14 +23,15 @@ public class DiagrammeSequence extends Diagramme {
      * @param p_typeDeFleche
      * @return true s'il est autorisé, false sinon
      */
+    
     @Override
-    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, String p_typeDeFleche){
+    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, TypeLien p_typeDeFleche){
         boolean valeurRetour = false;
-        if ("association".equals(p_typeDeFleche)){
+        if (p_typeDeFleche == TypeLien.ASSOCIATION){
             valeurRetour = this.autorisationAssociation(p_origine , p_extremite); 
         }
         else{
-            if("dependance".equals(p_typeDeFleche)){
+            if(p_typeDeFleche == TypeLien.DEPENDANCE){
                 valeurRetour = this.autorisationDependance( p_origine , p_extremite);
             }
         }      
@@ -44,11 +47,7 @@ public class DiagrammeSequence extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationAssociation(EltGraphique p_origine , EltGraphique p_extremite) {
-        boolean valeurRetour = false;
-        if(p_origine instanceof Traitement && p_extremite instanceof Traitement){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof Traitement && p_extremite instanceof Traitement);
     }
     
      /**
@@ -60,11 +59,7 @@ public class DiagrammeSequence extends Diagramme {
      * @return true s'il est autorisé, false sinon
      */
     private boolean autorisationDependance(EltGraphique p_origine , EltGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof Traitement && p_extremite instanceof Traitement){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof Traitement && p_extremite instanceof Traitement);
     }
     
     /**
@@ -75,25 +70,6 @@ public class DiagrammeSequence extends Diagramme {
      */
     @Override
     public boolean eltAutorise (EltGraphique p_element){
-        boolean valeurRetour = false;
-        if(p_element instanceof Traitement){
-            valeurRetour = true;
-        }
-        else{
-            if(p_element instanceof Lien){
-                valeurRetour = true;
-            }
-            else{
-                if(p_element instanceof ActeurPassif){
-                    valeurRetour = true;
-                }
-                else{
-                    if(p_element instanceof ActeurActif){
-                        valeurRetour = true;
-                    }
-                }
-            }
-        }
-        return valeurRetour;       
+        return ((p_element instanceof Traitement) || (p_element instanceof Lien) || (p_element instanceof ActeurPassif) || (p_element instanceof ActeurActif));       
     }
 }

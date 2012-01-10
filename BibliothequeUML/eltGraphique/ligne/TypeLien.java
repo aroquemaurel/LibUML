@@ -10,13 +10,18 @@ public enum TypeLien {
 	SPECIALISATION,
 	COMPOSITION,
 	AGREGATION,
+        ASSOCIATION,
+        DEPENDANCE,
+        GENERALISATION,
 	CLASSE_ASSOCIATION,
 	
 	/* Diagramme de séquence */
-	FLECHECURVILIGNE
-	
+	FLECHECURVILIGNE,
+
 	
 	/* Diagramme de cas d'utilisation */
+
+        
 	
 	
 	/* ... */
