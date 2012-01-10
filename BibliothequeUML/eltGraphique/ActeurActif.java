@@ -47,7 +47,7 @@ public class ActeurActif extends Acteur {
 			"ACTEUR_ACTIF"));
         super.setVisible(false);
         
-        super.getDiagramme().getElementsGraphique().add(this);
+        super.getDiagramme().getElementsGraphiques().add(this);
     }
 
 }

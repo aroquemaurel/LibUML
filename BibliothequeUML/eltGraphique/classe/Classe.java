@@ -267,6 +267,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 
         this.celluleAttributs.setConnectable(false);
         this.celluleMethodes.setConnectable(false);
+        
+         super.getDiagramme().getElementsGraphiques().add(this);        
     }
 }
 

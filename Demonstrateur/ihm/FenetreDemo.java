@@ -1,5 +1,6 @@
 package ihm;
 
+import com.mxgraph.model.mxCell;
 import eltGraphique.CasUtilisation;
 import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
@@ -107,12 +108,13 @@ public class FenetreDemo extends JFrame {
 		useCase1.creer();
 		useCase2.creer();
 		useCase3.creer();
-
-     //  Lien monLien = new Lien(
-         //  useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.COMPOSITION);
-       //monLien.creer();
+       
+       Lien monLien = new Lien(
+           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.SPECIALISATION);
+       monLien.creer();
 
        useCase3.supprimer();
+
     }
 
 }
