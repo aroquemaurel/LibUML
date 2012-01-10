@@ -1,6 +1,7 @@
 package diagramme;
 
 import eltGraphique.EltGraphique;
+import eltGraphique.ligne.TypeLien;
 import java.util.List;
 
 /**
@@ -10,6 +11,7 @@ import java.util.List;
  * par les éléments qui les constituent
  * 
  * @author satenske
+ * @author Marie-Ly
  */
 public class Diagramme {
      /**
@@ -20,7 +22,7 @@ public class Diagramme {
      * vérifie si le lien est autorisé
      * @return true s'il est autorisé
      */
-    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, String p_typeDeFleche){
+    public boolean lienAutorise (EltGraphique p_origine , EltGraphique p_extremite, TypeLien p_typeDeFleche){
         return true;
     }
     /**
