@@ -41,6 +41,7 @@ public class CasUtilisation extends ElementModelisation {
             super.getParent(), null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(),
 			"USECASE"));
+        super.getDiagramme().getElementsGraphique().add(this);        
     }
 
 }

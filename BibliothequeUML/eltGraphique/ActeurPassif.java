@@ -30,6 +30,7 @@ public class ActeurPassif extends Acteur {
             super.getParent(), null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight()));
         super.setVisible(false);
+        super.getDiagramme().getElementsGraphique().add(this);
     }
 
 

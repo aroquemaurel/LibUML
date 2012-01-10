@@ -2,8 +2,6 @@ package eltGraphique;
 
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
-import eltGraphique.classe.Classe;
-import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
 import java.awt.Point;
 
@@ -29,8 +27,11 @@ abstract public class ElementModelisation extends ElementGraphique {
 	 * Taille de l'élément (hauteur/largeur)
 	 */
 	private Dimension dimension;
-        
-        private Diagramme diagramme;
+    
+    /**
+     * Diagramme dans lequel apparait l'élément de modélisation
+     */
+    private Diagramme diagramme;
 
 	/**
 	 * Constructeur générique aux éléments de modélisation
@@ -76,6 +77,14 @@ abstract public class ElementModelisation extends ElementGraphique {
         return this.position;
     }
 
+    /**
+     * Récupère Le diagramme dans lequel est l'élément de modélisation
+     * @return Le diagramme
+     */
+    public Diagramme getDiagramme(){
+        return (this.diagramme);
+    }
+    
 	/*
 	 * setters
 	 */

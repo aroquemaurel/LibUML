@@ -46,6 +46,8 @@ public class ActeurActif extends Acteur {
 			super.getDimension().getWidth(), super.getDimension().getHeight(),
 			"ACTEUR_ACTIF"));
         super.setVisible(false);
+        
+        super.getDiagramme().getElementsGraphique().add(this);
     }
 
 }

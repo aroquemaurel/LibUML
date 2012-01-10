@@ -25,5 +25,6 @@ public class Interface extends ElementModelisation {
     @Override
     public final void creer() {
         //TODO création des interfaces
+        super.getDiagramme().getElementsGraphique().add(this);        
     }
 }

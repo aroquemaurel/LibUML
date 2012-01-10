@@ -47,6 +47,7 @@ public class Traitement extends ElementModelisation {
             super.getGraph().getDefaultParent(), null, null,
             super.getParent(), super.getParent(),
             "FLECHECURVILIGNE"));
+        super.getDiagramme().getElementsGraphique().add(this);     
     }
 
     public Lien getEvenementDeclencheur() {

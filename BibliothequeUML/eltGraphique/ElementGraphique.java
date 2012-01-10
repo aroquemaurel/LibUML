@@ -74,7 +74,7 @@ abstract public class ElementGraphique extends mxCell {
     public void setGraph(mxGraph p_graph){
         this.graph = p_graph;
     }
-
+   
 	/**
 	 * Methode abstraite
 	 * Créer la représentation graphique de l'élément
