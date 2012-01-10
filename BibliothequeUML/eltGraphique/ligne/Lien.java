@@ -181,45 +181,53 @@ public class Lien extends ElementGraphique {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		
-		if (this.typeLien.equals(TypeLien.SPECIALISATION)) {
-			nouveauStyle.put(mxConstants.STYLE_EDGE,
-			mxConstants.EDGESTYLE_ORTHOGONAL);
-			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
-			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
-			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-			feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
-		} else if (this.typeLien.equals(TypeLien.LIENCONTINU)) {
-			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
-			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
-			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
-			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-			feuilleStyles.putCellStyle("LIENCONTINU", nouveauStyle);
-		} else if (this.typeLien.equals(TypeLien.FLECHECURVILIGNE)) {
-			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
-			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
-			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-			feuilleStyles.putCellStyle("FLECHECURVILIGNE", nouveauStyle);
-		} else if (this.typeLien.equals(TypeLien.AGREGATION)) {
-			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-			nouveauStyle.put(mxConstants.STYLE_OPACITY, 100);
-			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
-			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-            nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#FFFFFF");
-            nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#FFFFFF");
-			feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
-		} else if (this.typeLien.equals(TypeLien.COMPOSITION)) {
-			nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-			nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-			nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-			nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
-			nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-			feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
-		}		        
+        switch(this.typeLien){
+            case SPECIALISATION: 
+                nouveauStyle.put(mxConstants.STYLE_EDGE,
+                mxConstants.EDGESTYLE_ORTHOGONAL);
+                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+                nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);                
+                break;
+            case LIENCONTINU:
+                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
+                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
+                nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+                nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                feuilleStyles.putCellStyle("LIENCONTINU", nouveauStyle);                
+                break;
+            case FLECHECURVILIGNE:
+                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+                nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                feuilleStyles.putCellStyle("FLECHECURVILIGNE", nouveauStyle);                
+                break;
+            case AGREGATION:
+                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
+                nouveauStyle.put(mxConstants.STYLE_OPACITY, 100);
+                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#FFFFFF");
+                nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#FFFFFF");
+                //TODO couleur de fond bout des flêches ?!
+                feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);                
+                break;
+            case COMPOSITION:
+                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
+                nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
+            break;               
+        }
+        
 		super.setCellule((mxCell) super.getGraph().insertEdge(
 			super.getGraph().getDefaultParent(), null, null,
 			this.getSource().getCellule(), this.getDestination().getCellule(), 
