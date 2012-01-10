@@ -110,7 +110,7 @@ public class FenetreDemo extends JFrame {
 		useCase3.creer();
        
        Lien monLien = new Lien(
-           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.SPECIALISATION);
+           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.AGREGATION);
        monLien.creer();
 
        useCase3.supprimer();

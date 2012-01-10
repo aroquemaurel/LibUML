@@ -44,5 +44,4 @@ public class CasUtilisation extends ElementModelisation {
         
         super.getDiagramme().getElementsGraphiques().add(this);        
     }
-
 }
