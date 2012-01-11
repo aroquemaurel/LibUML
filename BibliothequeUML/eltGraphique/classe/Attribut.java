@@ -6,7 +6,7 @@ package eltGraphique.classe;
  * @see Classe
  * @see Variable
  */
-class Attribut extends Variable {
+public class Attribut extends Variable {
 	/**
 	 * La visibilité de l'attribut
 	 * @see Visibilite

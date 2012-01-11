@@ -5,7 +5,7 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
-import eltGraphique.Liste;
+import util.Liste;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,11 +18,6 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Classe abstraite ?
 	 */
     private boolean abstraite;
-	/**
-	 * Visibilité de la classe
-	 * @see Visibilite
-	 */
-    private Visibilite visibilite;
 	/**
 	 * Liste des méthodes de la classe
 	 * @see Methode
@@ -83,6 +78,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 
         this.attributs = new Liste<Attribut>();
         this.methodes = new Liste<Methode>();
+		this.abstraite = false;
+		this.constante = false;
         /* TODO it's a test, to be continued! */
         this.ajouterMethode("maMethode1", "void", Visibilite.PROTECTED, null, false, false, false);
         this.ajouterMethode("maMethode2", "void", Visibilite.PRIVATE, null, false, false, false);
@@ -122,7 +119,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_constante Attribut constant ?
 	 * @param p_deClasse Attribut de classe ?
 	 */
-    public void ajouterAttribut(Visibilite p_visibilite, String p_type,
+    public final void ajouterAttribut(Visibilite p_visibilite, String p_type,
                                 String p_nom, boolean p_constante,
                                 boolean p_deClasse) {
         this.attributs.ajouterElement(new Attribut(p_visibilite,
@@ -169,27 +166,9 @@ public class Classe extends eltGraphique.ElementModelisation {
         return (this.methodes);
     }
 
-    /**
-     * Retourne la visibilité de la classe
-     * @return Visibilite de al classe
-     * @see Visibilite
-     */
-    public Visibilite getVisibilite() {
-        return (this.visibilite);
-    }
-
-    /*
-     * Setters
-     */
-    /**
-     * Modifie la visibilité de la classe
-     * @param p_visibilite Le nouvelle visibilite de la classe
-     * @see Visibilite
-     */
-    public void setVisibilite(Visibilite p_visibilite) {
-        this.visibilite = p_visibilite;
-    }
-
+	/* 
+	 * Setters
+	 */
     /**
      * Modifie la constance de la classe
      * @param p_constante Classe constante ?

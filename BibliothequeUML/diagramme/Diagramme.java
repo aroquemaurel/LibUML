@@ -2,7 +2,7 @@ package diagramme;
 
 import com.mxgraph.model.mxICell;
 import eltGraphique.ElementGraphique;
-import eltGraphique.Liste;
+import util.Liste;
 
 /**
  *

@@ -1,12 +1,12 @@
 package eltGraphique.classe;
 
-import eltGraphique.Liste;
+import util.Liste;
 import java.util.List;
 
 /**
 * Représente une méthode en général
 */
-class Methode {
+public class Methode {
 	/**
 	 * Nom de la méthode
 	 */
