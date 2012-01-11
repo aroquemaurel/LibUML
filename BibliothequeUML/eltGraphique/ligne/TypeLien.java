@@ -13,7 +13,8 @@ public enum TypeLien {
 	CLASSE_ASSOCIATION,
 
 	/* Diagramme de séquence */
-	FLECHE
+	FLECHE,
+	FLECHE_TRAITEMENT
 
 
 	/* Diagramme de cas d'utilisation */

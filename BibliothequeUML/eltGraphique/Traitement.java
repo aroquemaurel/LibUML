@@ -46,8 +46,8 @@ public class Traitement extends ElementModelisation {
      super.setCellule((mxCell) super.getGraph().insertEdge(
             super.getGraph().getDefaultParent(), null, null,
             super.getParent(), super.getParent(),
-            "FLECHECURVILIGNE"));
-        super.getDiagramme().getElementsGraphiques().add(this);     
+            "FLECHE_TRAITEMENT"));
+        super.getDiagramme().getElementsGraphiques().add(this);
     }
 
     public Lien getEvenementDeclencheur() {
