@@ -94,27 +94,6 @@ public class FenetreDemo extends JFrame {
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
        fenetre.afficherFenetre();
-
-       // TODO -- à intégrer dans le démonstrateur. Actuellement juste des tests
-       // TODO bis -- Rédiger les JUnit.
-       // TODO ter -- Créer les différents styles de flêches
-       CasUtilisation useCase1 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
-           fenetre.getPanneauGraph().getDiagramme(), "test 1\n truc");
-       Classe useCase2 = new Classe(fenetre.getPanneauGraph().getGraph(), 
-           fenetre.getPanneauGraph().getDiagramme(), "test 2");
-       CasUtilisation useCase3 = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
-           fenetre.getPanneauGraph().getDiagramme(), "test 3");
-
-		useCase1.creer();
-		useCase2.creer();
-		useCase3.creer();
-       
-       Lien monLien = new Lien(
-           useCase1, useCase2, fenetre.getPanneauGraph().getGraph(), TypeLien.AGREGATION);
-       monLien.creer();
-
-       useCase3.supprimer();
-
     }
 
 }
