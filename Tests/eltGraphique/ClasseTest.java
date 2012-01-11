@@ -1,9 +1,12 @@
 package eltGraphique;
 
+import java.util.List;
+import util.Liste;
 import diagramme.Diagramme;
-import eltGraphique.classe.Classe;
+import eltGraphique.classe.*;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
+import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import org.junit.After;
 import org.junit.Before;
@@ -14,7 +17,7 @@ import static org.junit.Assert.*;
  *
  */
 public class ClasseTest {
-	private ElementModelisation classe;
+	private Classe classe;
 
     @Before
     public void setUp() {
@@ -82,85 +85,131 @@ public class ClasseTest {
     }
 
 	@Test
-	public void testGenererChaineMethodes(){
-
+	public void testAjouterMethodeTailleListeMethodes(){
+		this.classe.ajouterMethode("methodeDeTest", "Oblect", Visibilite.PUBLIC, null, true, true, true);
+		assertEquals(4, this.classe.getMethodes().size());
 	}
-
-	@Test
-	public void testGenererChaineAttributs(){
-
-	}
-
-	@Test
-	public void testAjouterMethode(){
-
-	}
-
+	
 	@Test
 	public void testAjouterAttribut(){
-
+		this.classe.ajouterAttribut(Visibilite.PRIVATE, null, null, true, true);
+		assertEquals(4, this.classe.getAttributs().size());
 	}
 	
 	@Test
 	public void testEstConstante(){
-
+		this.classe.setConstante(true);
+		assertTrue(this.classe.estConstante());
 	}
 	
 	@Test
 	public void testEstAbstraite(){
-
+		this.classe.setAbstraite(true);
+		assertTrue(this.classe.estAbstraite());
 	}
 	
 	@Test
-	public void testGetAttributs(){
-
+	public void testGetAttributsInstance(){
+		assertTrue(this.classe.getAttributs() instanceof Liste);
 	}
 	
 	@Test
-	public void testGetMethodes(){
-
-	}
-	
-	@Test
-	public void testGetVisibilite(){
-
-	}
-	
-	@Test
-	public void testSetVisibilite(){
+	public void testGetMethodesInstance(){
+		assertTrue(this.classe.getMethodes() instanceof Liste);
 
 	}
 	
 	@Test
 	public void testSetAbstraite(){
-
+		this.classe.setAbstraite(true);
+		assertTrue(this.classe.estAbstraite());
 	}
 	
 	@Test
 	public void testSetConstante(){
+		this.classe.setConstante(true);
+		assertTrue(this.classe.estConstante());
 
 	}
 	
 	@Test
 	public void testSetAttributs(){
-
+		Liste<Attribut> nouvelleListe = new Liste<Attribut>();
+		for (int i = 0 ; i < 5 ; i++) {
+			nouvelleListe.add(
+				new Attribut(Visibilite.PRIVATE, true, true, null, null));
+		}
+		this.classe.setAttributs(nouvelleListe);
+		
+		assertEquals(nouvelleListe, this.classe.getAttributs());
 	}
 	
 	@Test
 	public void testSetMethodes(){
-
+		Liste<Methode> nouvelleListe = new Liste<Methode>();
+		for (int i = 0 ; i < 5 ; i++) {
+			nouvelleListe.add(
+				new Methode(Visibilite.PACKAGE, null, null, null, true, true, true));			
+		}
+		this.classe.setMethodes(nouvelleListe);
+		
+		assertEquals(nouvelleListe, this.classe.getMethodes());
 	}
 	
 	@Test
 	public void testCreerStyleClasse(){
-
+		assertTrue(this.classe.getGraph().getStylesheet().getStyles().containsKey("CLASSE"));
+		assertEquals(mxConstants.SHAPE_SWIMLANE, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CLASSE")
+									.get(mxConstants.STYLE_SHAPE));
+		assertEquals(50, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CLASSE")
+									.get(mxConstants.STYLE_OPACITY));
+		assertEquals(0, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CLASSE")
+									.get(mxConstants.STYLE_FOLDABLE));
+		assertEquals("#774400", 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CLASSE")
+									.get(mxConstants.STYLE_FONTCOLOR));
 	}
 	
 	@Test
 	public void testCreerStyleContenuclasse(){
-
+		assertTrue(this.classe.getGraph().getStylesheet().getStyles().containsKey("CONTENUCLASSE"));
+		
+		assertEquals(50, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CONTENUCLASSE")
+									.get(mxConstants.STYLE_OPACITY));
+		assertEquals("#e4e5ef", 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CONTENUCLASSE")
+									.get(mxConstants.STYLE_FILLCOLOR));
+		assertEquals(0, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CONTENUCLASSE")
+									.get(mxConstants.STYLE_MOVABLE));
+		assertEquals(0, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CONTENUCLASSE")
+									.get(mxConstants.STYLE_RESIZABLE));
+		assertEquals(0, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CONTENUCLASSE")
+									.get(mxConstants.STYLE_DELETABLE));
+		assertEquals(mxConstants.ALIGN_LEFT, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CONTENUCLASSE")
+									.get(mxConstants.STYLE_ALIGN));
+		assertEquals(mxConstants.SHAPE_RECTANGLE, 
+					 this.classe.getGraph().getStylesheet().getStyles()
+									.get("CONTENUCLASSE")
+									.get(mxConstants.STYLE_SHAPE));
 	}
-	
 	
     // TODO ajouter des tests pour Classe
 
