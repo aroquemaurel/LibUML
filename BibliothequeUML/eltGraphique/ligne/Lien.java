@@ -183,8 +183,7 @@ public class Lien extends ElementGraphique {
 
         switch(this.typeLien){
             case SPECIALISATION:
-                nouveauStyle.put(mxConstants.STYLE_EDGE,
-                mxConstants.EDGESTYLE_ORTHOGONAL);
+                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
                 nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);

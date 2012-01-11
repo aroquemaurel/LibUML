@@ -48,10 +48,10 @@ public class Classe extends eltGraphique.ElementModelisation {
 
        return retour;
     }
-    
+
     private String genererChaineAttributs(){
         String retour = "";
-
+		//TODO if elseif vers switch
        for(int i=0; i < this.attributs.taille(); i++){
            if(this.attributs.get(i).getVisibilite().equals(Visibilite.PRIVATE))
                 retour += "- ";
@@ -166,7 +166,7 @@ public class Classe extends eltGraphique.ElementModelisation {
         return (this.methodes);
     }
 
-	/* 
+	/*
 	 * Setters
 	 */
     /**
@@ -246,8 +246,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 
         this.celluleAttributs.setConnectable(false);
         this.celluleMethodes.setConnectable(false);
-        
-         super.getDiagramme().getElementsGraphiques().add(this);        
+
+         super.getDiagramme().getElementsGraphiques().add(this);
     }
 }
 

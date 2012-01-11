@@ -2,12 +2,15 @@ package eltGraphique;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
+import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -39,38 +42,52 @@ public class Traitement extends ElementModelisation {
 	 */
     @Override
     public final void creer() {
+		super.getGraph().getModel().beginUpdate();
+		mxCell cellule;
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
         Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+        nouveauStyle.put(mxConstants.STYLE_IMAGE_BACKGROUND, "images/btn_classe.jpg");
         nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
         nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
         feuilleStyles.putCellStyle("TRAITEMENT", nouveauStyle);
 
         nouveauStyle = new HashMap<String, Object>();
-        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
         nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#e4e5ef");
         nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_DIRECTION, mxConstants.DIRECTION_WEST);
         nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
         feuilleStyles.putCellStyle("FLECHE_TRAITEMENT", nouveauStyle);
-		//TODO Bonne position de la fêche
 		//TODO Bonne position du texte
         super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(),
-                        super.getDimension().getHeight()));
+                        super.getDimension().getHeight(), "TRAITEMENT"));
         super.setVisible(false);
 
-     super.setCellule((mxCell) super.getGraph().insertEdge(
-            super.getGraph().getDefaultParent(), null, null,
-            super.getParent(), super.getParent(),
-            "FLECHE_TRAITEMENT"));
-        super.getDiagramme().getElementsGraphiques().add(this);
-
+     cellule = (mxCell) super.getGraph().insertEdge(
+            super.getCellule(), null, "",
+            null, null,
+            "FLECHE_TRAITEMENT");
+	 // TODO pouroir mettre le texte là où on veut, ça roxx trop du poney !! :-)
+	//	 cellule.getGeometry().setOffset(new mxPoint(80, 80));
+		 List<mxPoint> listePoint = new ArrayList<mxPoint>();
+		 listePoint.add(new mxPoint(10.,-13.37));
+		 listePoint.add(new mxPoint(35.,-13.37));
+		 listePoint.add(new mxPoint(35., 13.37));
+		cellule.getGeometry().setPoints(listePoint);
+		System.out.println(cellule.getGeometry().getPoints());
+		 System.out.print(listePoint);
+		 cellule.getGeometry().setSourcePoint(new mxPoint(10.,0.));
+		 cellule.getGeometry().setTargetPoint(new mxPoint(20.,13.37));
+		super.getDiagramme().getElementsGraphiques().add(this);
+		super.getGraph().getModel().endUpdate();
     }
 
     public Lien getEvenementDeclencheur() {

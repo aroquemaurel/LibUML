@@ -201,16 +201,21 @@ public class Methode {
 	public String toString(){
 		String retour = "";
 
+		switch(this.visibilite){
            /* TODO à mettre dans toString de methode*/
-           if(this.visibilite.equals(Visibilite.PRIVATE))
+			case PRIVATE:
                 retour += "- ";
-           else if(this.visibilite.equals(Visibilite.PUBLIC))
+				break;
+			case PUBLIC:
                retour += "+ ";
-           else if(this.visibilite.equals(Visibilite.PROTECTED))
+			   break;
+			case PROTECTED:
                retour += "~ ";
-           else if(this.visibilite.equals(Visibilite.PACKAGE))
+			   break;
+			case PACKAGE:
                retour += "# ";
-
+				break;
+		}
            retour += this.typeRetour;
            retour += " ";
            retour += this.getNom();
