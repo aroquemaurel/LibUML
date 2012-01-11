@@ -17,12 +17,12 @@ public class BtnAssociation extends Btn {
     public BtnAssociation(String p_string, FenetreDemo p_fenetre){
         super(p_string, p_fenetre);
     }
-	
+
 	@Override
 	public void mouseClicked(MouseEvent event) {
 		EvenementsEltGraphiques evenement =
 			new EvenementsEltGraphiques(this.fenetre.getPanneauGraph(),
-					this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.AGREGATION);
+					this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.ASSOCIATION);
 		this.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
 	}
 }

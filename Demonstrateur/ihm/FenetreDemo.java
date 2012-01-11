@@ -1,10 +1,5 @@
 package ihm;
 
-import com.mxgraph.model.mxCell;
-import eltGraphique.CasUtilisation;
-import eltGraphique.classe.Classe;
-import eltGraphique.ligne.Lien;
-import eltGraphique.ligne.TypeLien;
 import ihm.menu.BarreOutilsDessin;
 import ihm.menu.Menu;
 import ihm.menu.MenuDroite;

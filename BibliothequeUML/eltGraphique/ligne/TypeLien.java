@@ -6,18 +6,18 @@ package eltGraphique.ligne;
 public enum TypeLien {
 	/* TODO Compléter la liste ! */
 	/* Diagramme de classe */
-	LIENCONTINU,
+	ASSOCIATION,
 	SPECIALISATION,
 	COMPOSITION,
 	AGREGATION,
 	CLASSE_ASSOCIATION,
-	
+
 	/* Diagramme de séquence */
-	FLECHECURVILIGNE
-	
-	
+	FLECHE
+
+
 	/* Diagramme de cas d'utilisation */
-	
-	
+
+
 	/* ... */
 }

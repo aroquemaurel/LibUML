@@ -11,9 +11,9 @@ import java.util.Map;
 
 /**
  * Classe servant à la modélistaion des liens dans les différents diagrammes
- * 
+ *
  * Les différents types de liens sont gérés grâce à un attribut de type TypeLien
- * 
+ *
  * @see TypeLien
  */
 public class Lien extends ElementGraphique {
@@ -54,18 +54,18 @@ public class Lien extends ElementGraphique {
      */
     private Cardinalite cardinaliteDestionation;
     /**
-     * Le type de la flèche 
+     * Le type de la flèche
 	 * @see TypeLien
      */
     private TypeLien typeLien;
-    
+
 	/**
 	 * Constructeur de la classe Lien modelisant tout type de lien dans un graphe
 	 * @param p_source Element à l'origine de la flèche
 	 * @param p_destination Elemet à l'extrémité de la flèche
 	 * @param p_graph Graphe auquel est associé la flèche
 	 * @param p_typeFleche Type de la flèche
-	 * 
+	 *
 	 * @see ElementModelisation
 	 * @see TypeLien
 	 */
@@ -123,7 +123,7 @@ public class Lien extends ElementGraphique {
 	/*
 	 * Setters
 	 */
-	
+
 	/**
 	 * Modifie l'élément à l'extrémité de la flèche
 	 * @param p_destination Le nouvel élément à l'éxtrémité de la flèche
@@ -171,41 +171,41 @@ public class Lien extends ElementGraphique {
 	public void setTypeFlecheOrigine(String p_typePointeSource) {
 		this.typePointeSource = p_typePointeSource;
 	}
-    
+
 	/**
-	 * Créer le style et la représentation de la flèche en fonction 
+	 * Créer le style et la représentation de la flèche en fonction
 	 * des attributs de la classe.
 	 */
 	@Override
     public void creer(){
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		
+
         switch(this.typeLien){
-            case SPECIALISATION: 
+            case SPECIALISATION:
                 nouveauStyle.put(mxConstants.STYLE_EDGE,
                 mxConstants.EDGESTYLE_ORTHOGONAL);
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
                 nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
                 nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-                feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);                
+                feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
                 break;
-            case LIENCONTINU:
+            case ASSOCIATION:
                 nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
                 nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
                 nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-                feuilleStyles.putCellStyle("LIENCONTINU", nouveauStyle);                
+                feuilleStyles.putCellStyle("ASSOCIATION", nouveauStyle);
                 break;
-            case FLECHECURVILIGNE:
+            case FLECHE:
                 nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
                 nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
                 nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-                feuilleStyles.putCellStyle("FLECHECURVILIGNE", nouveauStyle);                
+                feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
                 break;
             case AGREGATION:
                 nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
@@ -216,7 +216,7 @@ public class Lien extends ElementGraphique {
                 nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#FFFFFF");
                 nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#FFFFFF");
                 //TODO couleur de fond bout des flêches ?!
-                feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);                
+                feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
                 break;
             case COMPOSITION:
                 nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
@@ -225,14 +225,14 @@ public class Lien extends ElementGraphique {
                 nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
                 nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
                 feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
-            break;               
+            break;
         }
-        
+
 		super.setCellule((mxCell) super.getGraph().insertEdge(
 			super.getGraph().getDefaultParent(), null, null,
-			this.getSource().getCellule(), this.getDestination().getCellule(), 
+			this.getSource().getCellule(), this.getDestination().getCellule(),
 			this.typeLien.toString()));
-		super.setConnectable(false);        
+		super.setConnectable(false);
     }
 
 }
