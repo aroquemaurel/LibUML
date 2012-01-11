@@ -1,0 +1,112 @@
+
+\date{\today}
+
+\chead{\headCentre}
+\rhead{\headDroite}
+\lhead{\headGauche}
+\makeindex
+\lfoot{Université Paul Sabatier Toulouse III}
+\rfoot{--~\thepage~--}
+\cfoot{\footCentre}
+\makeglossary
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss \clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{}
+\begin{flushleft}
+	\vspace{1cm}
+	Antoine de \bsc{Roquemaurel}\\ 
+	Mathieu \bsc{Soum}\\
+	Geoffroy \bsc{Subias}\\
+	Marie-Ly \bsc{Tang}\\
+	\textit{Groupe B}\\
+\end{flushleft}
+\begin{flushright}
+	\vspace{-3cm}
+	\ifthenelse{\equal{\premierDestinataire}{}}{
+	}
+	{
+		Pour \premierDestinataire(\rolePremierDestinataire)\\
+	}
+	\ifthenelse{\equal{\secondDestinaire}{}}{
+	}
+	{
+		Pour \secondDestinaire(\roleSecondDestinaire)\\
+	}
+	\ifthenelse{\equal{\troisiemeDestinaire}{}}{
+	}
+	{
+		Pour \troisiemeDestinaire(\roleTroisiemeDestinaire)\\
+	}
+	\ifthenelse{\equal{\quatriemeDestinaire}{}}{
+	}
+	{
+		Pour \quatriemeDestinaire(\roleQuatriemeDestinaire)\\
+	}
+	\ifthenelse{\equal{\cinquiemeDestinaire}{}}{
+	}
+	{
+		Pour \cinquiemeDestinaire(\roleCinquiereDestinaire)\\
+	}
+\end{flushright}
+\vfill
+\vspace{1cm}
+\begin{flushleft}
+\usefont{OT1}{ptm}{m}{n}
+\huge \@title
+\end{flushleft}
+\par
+\hrule height 4pt
+\par
+\begin{flushright}
+\usefont{OT1}{phv}{m}{n}
+\Large \@author
+\par
+\end{flushright}
+\vspace{1cm}
+\vfill
+\vfill
+\bas{}{\@location, le \@date}{}
+}%
+\cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{Amiens}\blurb{}
+\makeatother
+\title{\titreDocument}
+\author{Bibliothèque d'objets graphiques UML}
+
+\location{Toulouse}
+\blurb{%
+Université Paul Sabatier -- Toulouse III\\
+IUT A - Toulouse Rangueil\\
+\textbf{Projet tuteuré}\\[1em]
+}%
+
+
+
+\pagestyle{fancy}
