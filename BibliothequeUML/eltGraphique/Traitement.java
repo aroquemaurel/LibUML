@@ -46,6 +46,7 @@ public class Traitement extends ElementModelisation {
 		mxCell cellule;
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
         Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		List<mxPoint> listePoint = new ArrayList<mxPoint>();
 
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
         nouveauStyle.put(mxConstants.STYLE_IMAGE_BACKGROUND, "images/btn_classe.jpg");
@@ -67,26 +68,21 @@ public class Traitement extends ElementModelisation {
 		//TODO Bonne position du texte
         super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 30, 30,
-			super.getDimension().getWidth(),
-                        super.getDimension().getHeight(), "TRAITEMENT"));
+			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
+
         super.setVisible(false);
 
-     cellule = (mxCell) super.getGraph().insertEdge(
-            super.getCellule(), null, "",
-            null, null,
-            "FLECHE_TRAITEMENT");
-	 // TODO pouroir mettre le texte là où on veut, ça roxx trop du poney !! :-)
-	//	 cellule.getGeometry().setOffset(new mxPoint(80, 80));
-		 List<mxPoint> listePoint = new ArrayList<mxPoint>();
-		 listePoint.add(new mxPoint(10.,-13.37));
-		 listePoint.add(new mxPoint(35.,-13.37));
-		 listePoint.add(new mxPoint(35., 13.37));
+		cellule = (mxCell) super.getGraph().insertEdge(
+								super.getCellule(), null, "", null, null, "FLECHE_TRAITEMENT");
+
+		listePoint.add(new mxPoint(10.,-13.37));
+		listePoint.add(new mxPoint(35.,-13.37));
+		listePoint.add(new mxPoint(35., 13.37));
 		cellule.getGeometry().setPoints(listePoint);
-		System.out.println(cellule.getGeometry().getPoints());
-		 System.out.print(listePoint);
-		 cellule.getGeometry().setSourcePoint(new mxPoint(10.,0.));
-		 cellule.getGeometry().setTargetPoint(new mxPoint(20.,13.37));
+		cellule.getGeometry().setSourcePoint(new mxPoint(10.,0.));
+		cellule.getGeometry().setTargetPoint(new mxPoint(20.,13.37));
 		super.getDiagramme().getElementsGraphiques().add(this);
+
 		super.getGraph().getModel().endUpdate();
     }
 
