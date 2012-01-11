@@ -44,7 +44,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	/* TODO Faire une classe ListeMethodes avec cette méthode ?
 	 * TODO Faire une classe listeAttributs avec la méthode stringAttributs ?
 	 */
-    private String stringMethodes(){
+    private String genererChaineMethodes(){
         String retour = new String();
 
        for(int i=0; i < this.methodes.taille(); i++){
@@ -54,7 +54,7 @@ public class Classe extends eltGraphique.ElementModelisation {
        return retour;
     }
     
-    private String stringAttributs(){
+    private String genererChaineAttributs(){
         String retour = "";
 
        for(int i=0; i < this.attributs.taille(); i++){
@@ -255,13 +255,13 @@ public class Classe extends eltGraphique.ElementModelisation {
 
         this.celluleAttributs = (mxCell) super.getGraph().insertVertex(
                                 super.getCellule(), null,
-                                this.stringAttributs(), 0, 0,
+                                this.genererChaineAttributs(), 0, 0,
                                 super.getDimension().getWidth(), 60,
                                 "CONTENUCLASSE");
 
         this.celluleMethodes = (mxCell) super.getGraph().insertVertex(
                                super.getCellule(), null,
-                               this.stringMethodes(), 0, 100,
+                               this.genererChaineMethodes(), 0, 100,
                                super.getDimension().getWidth(), 60,
                                "CONTENUCLASSE");
 

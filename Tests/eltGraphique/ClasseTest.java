@@ -39,18 +39,18 @@ public class ClasseTest {
 	}
 
 	@Test
-	public void testCreer1 (){
+	public void testCreerCellule (){
         mxICell maCellule = this.classe.getCellule();
         assertEquals(maCellule, this.classe.getCellule());
 	}
 
 	@Test
-	public void testCreer2(){
+	public void testCreerInstance(){
 		assertTrue(this.classe instanceof Classe );
 	}
 
 	@Test
-	public void testCreer3(){
+	public void testCreerStyle(){
 		assertEquals("CLASSE", this.classe.getCellule().getStyle());
 	}
 
@@ -62,10 +62,16 @@ public class ClasseTest {
     }
 
 	@Test
-	public void testSetCellule(){
+	public void testSetCelluleParent(){
 		mxCell maCellulle = new mxCell();
 		this.classe.setCellule(maCellulle);
 		assertEquals(maCellulle, this.classe.getParent());
+	}
+	
+	@Test
+	public void testSetCelluleTarget(){
+		mxCell maCellulle = new mxCell();
+		this.classe.setCellule(maCellulle);
 		assertEquals(maCellulle, this.classe.getTarget());
 	}
 
@@ -76,16 +82,86 @@ public class ClasseTest {
     }
 
 	@Test
-	public void testMethodes(){
+	public void testGenererChaineMethodes(){
 
 	}
 
 	@Test
-	public void testAttributs(){
+	public void testGenererChaineAttributs(){
 
 	}
 
+	@Test
+	public void testAjouterMethode(){
 
+	}
+
+	@Test
+	public void testAjouterAttribut(){
+
+	}
+	
+	@Test
+	public void testEstConstante(){
+
+	}
+	
+	@Test
+	public void testEstAbstraite(){
+
+	}
+	
+	@Test
+	public void testGetAttributs(){
+
+	}
+	
+	@Test
+	public void testGetMethodes(){
+
+	}
+	
+	@Test
+	public void testGetVisibilite(){
+
+	}
+	
+	@Test
+	public void testSetVisibilite(){
+
+	}
+	
+	@Test
+	public void testSetAbstraite(){
+
+	}
+	
+	@Test
+	public void testSetConstante(){
+
+	}
+	
+	@Test
+	public void testSetAttributs(){
+
+	}
+	
+	@Test
+	public void testSetMethodes(){
+
+	}
+	
+	@Test
+	public void testCreerStyleClasse(){
+
+	}
+	
+	@Test
+	public void testCreerStyleContenuclasse(){
+
+	}
+	
+	
     // TODO ajouter des tests pour Classe
 
 }
