@@ -1,6 +1,5 @@
 package eltGraphique;
 
-import java.util.List;
 import util.Liste;
 import diagramme.Diagramme;
 import eltGraphique.classe.*;
@@ -85,9 +84,23 @@ public class ClasseTest {
     }
 
 	@Test
-	public void testAjouterMethodeTailleListeMethodes(){
-		this.classe.ajouterMethode("methodeDeTest", "Oblect", Visibilite.PUBLIC, null, true, true, true);
+	public void testAjouterMethodeTailleListe(){
+		this.classe.ajouterMethode(Visibilite.PUBLIC, "methodeDeTest", "Oblect", null, true, true, true);
 		assertEquals(4, this.classe.getMethodes().size());
+	}
+	
+	@Test
+	public void testAjouterMethodeParamMethode(){
+		Methode maMethode = new Methode(Visibilite.PUBLIC, "methodeDeTest", "Oblect", null, true, true, true);
+		this.classe.ajouterMethode(maMethode);
+		assertTrue(this.classe.getMethodes().contains(maMethode));
+	}
+	
+	@Test
+	public void testAjouterMethodeParamMultiple(){
+		Methode maMethode = new Methode(Visibilite.PUBLIC, "methodeDeTest", "Oblect", null, true, true, true);
+		Methode nouvelleMethode = this.classe.ajouterMethode(Visibilite.PUBLIC, "methodeDeTest", "Oblect", null, true, true, true);
+		assertEquals(maMethode, nouvelleMethode);
 	}
 	
 	@Test
@@ -210,7 +223,4 @@ public class ClasseTest {
 									.get("CONTENUCLASSE")
 									.get(mxConstants.STYLE_SHAPE));
 	}
-	
-    // TODO ajouter des tests pour Classe
-
 }

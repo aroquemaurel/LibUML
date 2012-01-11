@@ -81,9 +81,9 @@ public class Classe extends eltGraphique.ElementModelisation {
 		this.abstraite = false;
 		this.constante = false;
         /* TODO it's a test, to be continued! */
-        this.ajouterMethode("maMethode1", "void", Visibilite.PROTECTED, null, false, false, false);
-        this.ajouterMethode("maMethode2", "void", Visibilite.PRIVATE, null, false, false, false);
-        this.ajouterMethode("maMethode3", "void", Visibilite.PUBLIC, null, false, false, false);
+        this.ajouterMethode(Visibilite.PROTECTED, "maMethode1", "void", null, false, false, false);
+        this.ajouterMethode(Visibilite.PRIVATE, "maMethode2", "void", null, false, false, false);
+        this.ajouterMethode(Visibilite.PUBLIC, "maMethode3", "void", null, false, false, false);
 
         /* TODO it's a test, to be continued! */
         this.ajouterAttribut(Visibilite.PROTECTED,"int", "monAttribut1", false, false);
@@ -92,7 +92,8 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
 	/**
-	 * Ajoute une méthode à la liste des méthoes de la classe
+	 * Ajoute une méthode à la liste des méthoes de la classe à partir
+	 * de tous les éléments d'une méthode
 	 * @param p_nomMethode Nom de la méthode
 	 * @param p_typeDeRetour Type de retour de la méthode
 	 * @param p_visibilite Visibilité de al méthode
@@ -100,16 +101,34 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @param p_abstraite Méthode abstraite ?
 	 * @param p_deClasse Méthode de classe ?
 	 * @param p_constante Méthode constante ?
+	 * @return La méthode ajoutée
+	 * 
+	 * @see Methode
+	 * @see Visibilite
 	 */
-    public final void ajouterMethode(String p_nomMethode, String p_typeDeRetour,
-			       Visibilite p_visibilite,
+    public final Methode ajouterMethode(Visibilite p_visibilite, String p_nomMethode, String p_typeDeRetour,
 			       Liste<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
-        this.methodes.ajouterElement(new Methode(p_visibilite, p_typeDeRetour,
+        Methode nouvelleMethode = new Methode(p_visibilite, p_typeDeRetour,
                                      p_nomMethode, p_parametres, p_abstraite,
-                                     p_deClasse, p_constante));
+                                     p_deClasse, p_constante);
+		this.methodes.ajouterElement(nouvelleMethode);
+		return(nouvelleMethode);
+		
     }
+	
+	/**
+	 * Ajoute la méthode passée en paramètre à la liste des méthodes
+	 * @param p_nouvelleMethode
+	 * @return La méthode ajoutée
+	 * 
+	 * @see Methode
+	 */
+	public final Methode ajouterMethode(Methode p_nouvelleMethode) {
+		this.methodes.ajouterElement(p_nouvelleMethode);
+		return(p_nouvelleMethode);
+	}
 
 	/**
 	 * Ajoue un attribut à la liste d'attributs de la classe
