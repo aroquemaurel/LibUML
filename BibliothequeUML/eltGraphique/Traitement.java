@@ -1,10 +1,14 @@
 package eltGraphique;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Modélise un traitement par un rectangle vertical et un élément déclencheur
@@ -35,6 +39,24 @@ public class Traitement extends ElementModelisation {
 	 */
     @Override
     public final void creer() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+
+        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+        feuilleStyles.putCellStyle("TRAITEMENT", nouveauStyle);
+
+        nouveauStyle = new HashMap<String, Object>();
+        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#e4e5ef");
+        nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
+        feuilleStyles.putCellStyle("FLECHE_TRAITEMENT", nouveauStyle);
 		//TODO Bonne position de la fêche
 		//TODO Bonne position du texte
         super.setCellule((mxCell) super.getGraph().insertVertex(
@@ -48,6 +70,7 @@ public class Traitement extends ElementModelisation {
             super.getParent(), super.getParent(),
             "FLECHE_TRAITEMENT"));
         super.getDiagramme().getElementsGraphiques().add(this);
+
     }
 
     public Lien getEvenementDeclencheur() {
