@@ -57,7 +57,6 @@ public class Traitement extends ElementModelisation {
         nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
         feuilleStyles.putCellStyle("FLECHE_EVENEMENT_DECLENCHEUR", nouveauStyle);
-
 	}
 
 	/**
@@ -65,15 +64,10 @@ public class Traitement extends ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
-    public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte,
-                      Lien p_evenementDeclencheur){
+    public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur){
         super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
         this.evenementDeclencheur = p_evenementDeclencheur;
     }
-
-	/*
-	 * TODO Ajouter l'acteur associé  ca peut être intéressant ??
-	 */
 
 	/**
 	 * Crée la représentation graphique d'un traitement
@@ -81,29 +75,32 @@ public class Traitement extends ElementModelisation {
     @Override
     public final void creer() {
 		super.getGraph().getModel().beginUpdate();
-		mxCell cellule;
+		mxCell celluleFlecheEvenementDeclencheur;
 		List<mxPoint> listePoint = new ArrayList<mxPoint>();
 
 		this.creerStyleTraitement();
 		this.creerStyleFlecheTraitement();
-		//TODO Bonne position du texte
+
         super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, null, 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
 
-        super.setVisible(false);
+		celluleFlecheEvenementDeclencheur = (mxCell) super.getGraph().insertEdge(super.getCellule(), null,
+				this.getTexte(), null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
 
-		cellule = (mxCell) super.getGraph().insertEdge(
-								super.getCellule(), null, this.getTexte(), null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
-
+		/* On créé une liste de point par laquelle passera la flèche evenemnt déclencheur */
 		listePoint.add(new mxPoint(GAUCHE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
 		listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
 		listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR, BAS_EVENEDECLENCHEUR));
-		cellule.getGeometry().setPoints(listePoint);
-		cellule.getGeometry().setSourcePoint(new mxPoint(GAUCHE_EVENEDECLENCHEUR, 0));
-		cellule.getGeometry().setTargetPoint(new mxPoint(super.getDimension().getWidth(),BAS_EVENEDECLENCHEUR));
-		super.getDiagramme().getElementsGraphiques().add(this);
+		celluleFlecheEvenementDeclencheur.getGeometry().setSourcePoint(
+				new mxPoint(GAUCHE_EVENEDECLENCHEUR, 0));
 
+		celluleFlecheEvenementDeclencheur.getGeometry().setTargetPoint(
+				new mxPoint(super.getDimension().getWidth(),BAS_EVENEDECLENCHEUR));
+
+		celluleFlecheEvenementDeclencheur.getGeometry().setPoints(listePoint);
+
+		super.getDiagramme().getElementsGraphiques().add(this);
 		super.getGraph().getModel().endUpdate();
     }
 
@@ -114,4 +111,5 @@ public class Traitement extends ElementModelisation {
     public void setEvenementDeclencheur(Lien evenementDeclencheur) {
         this.evenementDeclencheur = evenementDeclencheur;
     }
+
 }
