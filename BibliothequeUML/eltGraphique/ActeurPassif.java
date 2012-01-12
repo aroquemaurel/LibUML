@@ -51,6 +51,7 @@ public class ActeurPassif extends Acteur {
             super.getParent(), null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_PASSIF"));
         super.getDiagramme().getElementsGraphiques().add(this);
+        this.creerLigneDeVie();
     }
 
 
