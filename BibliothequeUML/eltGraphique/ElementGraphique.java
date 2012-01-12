@@ -11,7 +11,7 @@ import com.mxgraph.view.mxGraph;
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
  */
-abstract public class ElementGraphique extends mxCell {
+abstract public class ElementGraphique extends mxCell implements IntElementGraphique {
     private mxGraph graph;
 
 	/**
@@ -26,6 +26,7 @@ abstract public class ElementGraphique extends mxCell {
     /**
 	 * Méthode généique qui supprime l'élément du graphe où il est
 	 */
+	@Override
     public void supprimer() {
 		super.getTarget().removeFromParent();
 		super.setTarget(null);
@@ -44,6 +45,7 @@ abstract public class ElementGraphique extends mxCell {
 	 * Récupère la cellule associé à l'élément graphique
 	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
+	@Override
     public mxICell getCellule(){
         return (super.getTarget());
     }
@@ -52,6 +54,7 @@ abstract public class ElementGraphique extends mxCell {
 	 * Modifie la cellule que représente l'élément
 	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
+	@Override
     public void setCellule(mxCell p_cellule){
 		p_cellule.setConnectable(false);
         super.setTarget(p_cellule);
@@ -62,6 +65,7 @@ abstract public class ElementGraphique extends mxCell {
 	 * Récupère le graphe auquel est associ l'élément
 	 * @return Le graph auquel est associé l'élément
 	 */
+	@Override
     public mxGraph getGraph(){
         return (this.graph);
     }
@@ -70,6 +74,7 @@ abstract public class ElementGraphique extends mxCell {
 	 * Modifie le graphe auquel est associé l'élément
 	 * @param p_graph Le nouveau graphe associé à l'élément graphique
 	 */
+	@Override
     public void setGraph(mxGraph p_graph){
         this.graph = p_graph;
     }
@@ -85,5 +90,6 @@ abstract public class ElementGraphique extends mxCell {
 	 * @see Traitement
 	 * @see classe.Classe
 	 */
+	@Override
     abstract public void creer();
 }

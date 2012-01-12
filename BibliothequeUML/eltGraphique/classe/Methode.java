@@ -64,21 +64,33 @@ public class Methode {
 
 	/**
 	 * Ajoute un paramètre à la liste de paramètres de la méthode
-	 * @param p_nom Nom du paramètre à ajouter
-	 * @param p_type Type du paramètre à ajouter
-	 * @param p_constant Paramètre constant ?
+	 * @param p_nouveau Le paramètre qui sera ajouté
+	 * @return Le paramètre ajouté
 	 *
 	 * @see Variable
 	 */
-	public void ajouterParametre(String p_nom, String p_type, boolean p_constant) {
-		// TODO Variable est abstraite :/
-		// TODO Psition du paramètre ? Surcharger la méthode ?
+	public Variable ajouterParametre(Variable p_nouveauParametre) {
+		this.parametres.ajouterElement(p_nouveauParametre);
+		return(p_nouveauParametre);
+	}
+	
+	/**
+	 * Ajoute un paramètre à la liste de paramètre de la méthode
+	 * à la position souhaitée
+	 * @param p_nouveauParamètre Le paramèter qui sera ajouté
+	 * @param p_index La position du nouvel élément dans la liste (Indice de départ : 1)
+	 * @return La paramètre ajouté
+	 * 
+	 * @see Variable
+	 */
+	public Variable ajouterParametre(Variable p_nouveauParamètre, int p_index) {
+		this.parametres.add(p_index, p_nouveauParamètre);
+		return(p_nouveauParamètre);
 	}
 
 	/*
 	 * Getters
 	 */
-
 	/**
 	 * Retourne vrai si la methode est abstraite, faux sinon.
 	 * @return Méthode abstraite ?
@@ -218,7 +230,7 @@ public class Methode {
            retour += this.typeRetour;
            retour += " ";
            retour += this.getNom();
- //          retour += "\n";
+           retour += "\n";
 		return (retour);
 	}
 }

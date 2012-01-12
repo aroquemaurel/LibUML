@@ -3,7 +3,7 @@ package eltGraphique.classe;
 /**
  * Représente une variable en général
  */
-abstract class Variable {
+public class Variable {
 	/**
 	 * Variable constante ?
 	 */
