@@ -21,6 +21,10 @@ public class Traitement extends ElementModelisation {
 	 * L'élément qui déclenche le traitement (appel de méthode, etc.)
 	 */
 	private Lien evenementDeclencheur;
+	private static final double BAS_EVENEDECLENCHEUR = 13.37 ;
+	private static final double HAUT_EVENEDECLENCHEUR = -BAS_EVENEDECLENCHEUR;
+	private static final double GAUCHE_EVENEDECLENCHEUR = 10;
+	private static final double DROITE_EVENEDECLENCHEUR = 35;
 
 	/**
 	 * Créer le style pour le rectangle du traitement
@@ -52,7 +56,7 @@ public class Traitement extends ElementModelisation {
         nouveauStyle.put(mxConstants.STYLE_DIRECTION, mxConstants.DIRECTION_WEST);
         nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
-        feuilleStyles.putCellStyle("FLECHE_EVENEMENT_DECLENCHEUR_TRAITEMENT", nouveauStyle);
+        feuilleStyles.putCellStyle("FLECHE_EVENEMENT_DECLENCHEUR", nouveauStyle);
 
 	}
 
@@ -90,15 +94,14 @@ public class Traitement extends ElementModelisation {
         super.setVisible(false);
 
 		cellule = (mxCell) super.getGraph().insertEdge(
-								super.getCellule(), null, "", null, null,
-								"FLECHE_EVENEMENT_DECLENCHEUR_TRAITEMENT");
+								super.getCellule(), null, "", null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
 
-		listePoint.add(new mxPoint(10.,-13.37));
-		listePoint.add(new mxPoint(35.,-13.37));
-		listePoint.add(new mxPoint(35., 13.37));
+		listePoint.add(new mxPoint(GAUCHE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
+		listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
+		listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR, BAS_EVENEDECLENCHEUR));
 		cellule.getGeometry().setPoints(listePoint);
-		cellule.getGeometry().setSourcePoint(new mxPoint(10.,0.));
-		cellule.getGeometry().setTargetPoint(new mxPoint(20.,13.37));
+		cellule.getGeometry().setSourcePoint(new mxPoint(GAUCHE_EVENEDECLENCHEUR, 0));
+		cellule.getGeometry().setTargetPoint(new mxPoint(super.getDimension().getWidth(),BAS_EVENEDECLENCHEUR));
 		super.getDiagramme().getElementsGraphiques().add(this);
 
 		super.getGraph().getModel().endUpdate();
