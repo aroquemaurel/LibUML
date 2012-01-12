@@ -239,9 +239,6 @@ public class Lien extends ElementGraphique {
 	 */
 	@Override
     public void creer(){
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-
         switch(this.typeLien){
             case SPECIALISATION:
 				this.creerStyleSpecialisation();
