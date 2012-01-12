@@ -14,11 +14,10 @@ public enum TypeLien {
 
 	/* Diagramme de séquence */
 	FLECHE,
-	FLECHE_TRAITEMENT
+	FLECHE_EVENEMENT_DECLENCHEUR
 
 
 	/* Diagramme de cas d'utilisation */
-
 
 	/* ... */
 }

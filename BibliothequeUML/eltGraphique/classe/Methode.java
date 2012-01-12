@@ -202,7 +202,6 @@ public class Methode {
 		String retour = "";
 
 		switch(this.visibilite){
-           /* TODO à mettre dans toString de methode*/
 			case PRIVATE:
                 retour += "- ";
 				break;
@@ -219,7 +218,7 @@ public class Methode {
            retour += this.typeRetour;
            retour += " ";
            retour += this.getNom();
-           retour += "\n";
+ //          retour += "\n";
 		return (retour);
 	}
 }

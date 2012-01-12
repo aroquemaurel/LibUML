@@ -36,9 +36,6 @@ public class Classe extends eltGraphique.ElementModelisation {
     private mxCell celluleAttributs;
     private mxCell celluleMethodes;
 
-	/* TODO Faire une classe ListeMethodes avec cette méthode ?
-	 * TODO Faire une classe listeAttributs avec la méthode stringAttributs ?
-	 */
     private String genererChaineMethodes(){
         String retour = new String();
 
@@ -50,18 +47,24 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
     private String genererChaineAttributs(){
-        String retour = "";
-		//TODO if elseif vers switch
+       String retour = "";
+	   
        for(int i=0; i < this.attributs.taille(); i++){
-           if(this.attributs.get(i).getVisibilite().equals(Visibilite.PRIVATE))
-                retour += "- ";
-           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PUBLIC))
-               retour += "+ ";
-           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PROTECTED))
-               retour += "~ ";
-           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PACKAGE))
-               retour += "# ";
-
+		   switch(this.attributs.get(i).getVisibilite()) {
+			   case PRIVATE:
+				   retour += "- ";
+				   break;
+			   case PUBLIC:
+				   retour += "+ ";
+				   break;
+			   case PACKAGE:
+				   retour += "# ";
+				   break;
+			   case PROTECTED:
+				   retour += "~ ";
+				   
+		   }
+		   
            retour += this.attributs.get(i).toString() ;
        }
 
@@ -81,9 +84,9 @@ public class Classe extends eltGraphique.ElementModelisation {
 		this.abstraite = false;
 		this.constante = false;
         /* TODO it's a test, to be continued! */
-        this.ajouterMethode(Visibilite.PROTECTED, "maMethode1", "void", null, false, false, false);
-        this.ajouterMethode(Visibilite.PRIVATE, "maMethode2", "void", null, false, false, false);
-        this.ajouterMethode(Visibilite.PUBLIC, "maMethode3", "void", null, false, false, false);
+        this.ajouterMethode(Visibilite.PROTECTED, "void", "maMethode1", null, false, false, false);
+        this.ajouterMethode(Visibilite.PRIVATE, "void", "maMethode2", null, false, false, false);
+        this.ajouterMethode(Visibilite.PUBLIC, "void", "maMethode3", null, false, false, false);
 
         /* TODO it's a test, to be continued! */
         this.ajouterAttribut(Visibilite.PROTECTED,"int", "monAttribut1", false, false);
@@ -106,7 +109,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * @see Methode
 	 * @see Visibilite
 	 */
-    public final Methode ajouterMethode(Visibilite p_visibilite, String p_nomMethode, String p_typeDeRetour,
+    public final Methode ajouterMethode(Visibilite p_visibilite,
+				   String p_typeDeRetour, String p_nomMethode,
 			       Liste<Variable> p_parametres,
 			       boolean p_abstraite, boolean p_deClasse,
 			       boolean p_constante) {
