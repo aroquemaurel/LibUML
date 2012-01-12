@@ -21,7 +21,6 @@ public class Traitement extends ElementModelisation {
 	/**
 	 * L'élément qui déclenche le traitement (appel de méthode, etc.)
 	 */
-	private Lien evenementDeclencheur;
 	private static final double BAS_EVENEDECLENCHEUR = 13.37 ;
 	private static final double HAUT_EVENEDECLENCHEUR = -BAS_EVENEDECLENCHEUR;
 	private static final double GAUCHE_EVENEDECLENCHEUR = 10;
@@ -68,9 +67,8 @@ public class Traitement extends ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
-    public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur){
+    public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte){
         super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
-        this.evenementDeclencheur = p_evenementDeclencheur;
     }
 
 	/**
@@ -104,14 +102,6 @@ public class Traitement extends ElementModelisation {
 		celluleFlecheEvenementDeclencheur.getGeometry().setPoints(listePoint);
 		super.getDiagramme().getElementsGraphiques().add(this);
 		super.getGraph().getModel().endUpdate();
-    }
-
-    public Lien getEvenementDeclencheur() {
-        return evenementDeclencheur;
-    }
-
-    public void setEvenementDeclencheur(Lien evenementDeclencheur) {
-        this.evenementDeclencheur = evenementDeclencheur;
     }
 
 }
