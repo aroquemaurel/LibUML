@@ -4,6 +4,7 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
+import diagramme.Diagramme;
 import eltGraphique.ElementModelisation;
 import eltGraphique.ElementGraphique;
 import java.util.HashMap;
@@ -71,8 +72,8 @@ public class Lien extends ElementGraphique {
 	 * @see TypeLien
 	 */
     public Lien(ElementModelisation p_source, ElementModelisation p_destination, mxGraph p_graph,
-        TypeLien p_typeLien){
-        super(p_graph);
+			Diagramme p_diagramme, TypeLien p_typeLien){
+        super(p_graph, p_diagramme);
         this.source = p_source;
         this.destination = p_destination;
         this.typeLien = p_typeLien;

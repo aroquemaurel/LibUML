@@ -26,12 +26,6 @@ public interface IntElementModelisation {
 	 */
     public Point getPosition();
 
-    /**
-     * Récupère Le diagramme dans lequel est l'élément de modélisation
-     * @return Le diagramme
-     */
-    public Diagramme getDiagramme();
-
 	/**
 	 * Modifie la dimension de l'élément (hauteur/largeur)
 	 * @param p_dimension La nouvelle dimension (hauteur/largeur)

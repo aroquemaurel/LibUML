@@ -3,6 +3,7 @@ package eltGraphique;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
+import diagramme.Diagramme;
 
 /**
  *
@@ -41,6 +42,12 @@ public interface IntElementGraphique {
 	 * @param p_graph Le nouveau graphe associé à l'élément graphique
 	 */
     public void setGraph(mxGraph p_graph);
+
+    /**
+     * Récupère Le diagramme dans lequel est l'élément de modélisation
+     * @return Le diagramme
+     */
+    public Diagramme getDiagramme();
 
 	/**
 	 * Methode abstraite

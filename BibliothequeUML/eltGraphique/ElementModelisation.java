@@ -28,11 +28,6 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 */
 	private Dimension dimension;
 
-    /**
-     * Diagramme dans lequel apparait l'élément de modélisation
-     */
-    private Diagramme diagramme;
-
 	/**
 	 * Constructeur générique aux éléments de modélisation
 	 *
@@ -44,8 +39,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 */
 	public ElementModelisation(mxGraph p_graph,
                                    Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
-		super(p_graph);
-                this.diagramme = p_diagramme;
+		super(p_graph, p_diagramme);
 		this.texte = p_texte;
 		this.dimension = p_dimension;
 		//TODO Initiliser hauteur/largeur/position. Utiliser Dimension ?
@@ -78,15 +72,6 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	@Override
     public Point getPosition() {
         return this.position;
-    }
-
-    /**
-     * Récupère Le diagramme dans lequel est l'élément de modélisation
-     * @return Le diagramme
-     */
-	@Override
-    public Diagramme getDiagramme(){
-        return (this.diagramme);
     }
 
 	/**

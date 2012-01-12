@@ -3,6 +3,7 @@ package eltGraphique;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
+import diagramme.Diagramme;
 
 /**
  * Classe ancêtre à tout élément graphique
@@ -14,13 +15,19 @@ import com.mxgraph.view.mxGraph;
 abstract public class ElementGraphique extends mxCell implements IntElementGraphique {
     private mxGraph graph;
 
+    /**
+     * Diagramme dans lequel apparait l'élément de modélisation
+     */
+    private Diagramme diagramme;
+
 	/**
 	 * Constructeur générique des éléments graphiques
 	 *
 	 * @param p_graph Graphe auquel sera ajouté l'élément graphique
 	 */
-    public ElementGraphique(mxGraph p_graph) {
+    public ElementGraphique(mxGraph p_graph, Diagramme p_diagramme) {
         this.graph = p_graph;
+		this.diagramme = p_diagramme;
     }
 
     /**
@@ -77,6 +84,15 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 	@Override
     public void setGraph(mxGraph p_graph){
         this.graph = p_graph;
+    }
+
+    /**
+     * Récupère Le diagramme dans lequel est l'élément de modélisation
+     * @return Le diagramme
+     */
+	@Override
+    public Diagramme getDiagramme(){
+        return (this.diagramme);
     }
 
 	/**
