@@ -28,6 +28,11 @@ public class DiagrammeTest {
     public void tearDown() {
         this.monDiagramme = null;
     }
+    
+    @Test
+    public void lienAutorise(){
+        
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

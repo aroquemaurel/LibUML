@@ -7,6 +7,7 @@ import util.Liste;
 /**
  *
  * @author satenske
+ * @author Marie-Ly
  */
 public class Diagramme {
      /**

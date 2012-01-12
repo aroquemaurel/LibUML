@@ -9,6 +9,7 @@ import eltGraphique.ligne.TypeLien;
 /**
  *
  * @author satenske
+ * @author Marie-Ly
  */
 public class DiagrammeCasUtilisation extends Diagramme {
     

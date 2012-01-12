@@ -8,6 +8,7 @@ import eltGraphique.ligne.TypeLien;
 /**
  *
  * @author satenske
+ * @author Marie-Ly
  */
  
 public class DiagrammeClasse extends Diagramme {
