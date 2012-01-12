@@ -9,6 +9,7 @@ import diagramme.Diagramme;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
+import util.Constantes;
 
 /**
  * Classe propre aux acteurs passif (représentation graphique)
@@ -29,8 +30,9 @@ public class ActeurActif extends Acteur {
         mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ACTOR);
-        nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+        nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
         feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
 	}
 

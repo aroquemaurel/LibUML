@@ -8,12 +8,26 @@ import diagramme.Diagramme;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
+import util.Constantes;
 
 /**
  * Modélise un cas d'utilisation par une ellipse et un texte
  *
  */
 public class CasUtilisation extends ElementModelisation {
+	/**
+	 * Créer le style d'un Cas d'utilisation
+	 */
+	private void creerStyleCasUtilisation(){
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+
+		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+        nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
+		feuilleStyles.putCellStyle("USECASE", nouveauStyle);
+	}
 
 	/**
 	 * Constructeur de la classe CasUtilisation
@@ -29,19 +43,13 @@ public class CasUtilisation extends ElementModelisation {
 	 */
 	@Override
     public final void creer(){
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		this.creerStyleCasUtilisation();
 
-		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-		feuilleStyles.putCellStyle("USECASE", nouveauStyle);
-		
         super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(),
 			"USECASE"));
-        
-        super.getDiagramme().getElementsGraphiques().add(this);        
+
+        super.getDiagramme().getElementsGraphiques().add(this);
     }
 }

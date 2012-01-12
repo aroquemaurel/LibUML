@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import util.Constantes;
 
 /**
  * Modélise un traitement par un rectangle vertical et un élément déclencheur
@@ -34,9 +35,10 @@ public class Traitement extends ElementModelisation {
         Map<String, Object> nouveauStyle = new HashMap<String, Object>();
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
         nouveauStyle.put(mxConstants.STYLE_IMAGE_BACKGROUND, "images/btn_classe.jpg");
-        nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
-        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+        nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
+        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         feuilleStyles.putCellStyle("TRAITEMENT", nouveauStyle);
 	}
 
@@ -50,10 +52,12 @@ public class Traitement extends ElementModelisation {
         nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-        nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#e4e5ef");
+        nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, Constantes.COULEUR_FOND);
+        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_DIRECTION, mxConstants.DIRECTION_WEST);
+        nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
         nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
         feuilleStyles.putCellStyle("FLECHE_EVENEMENT_DECLENCHEUR", nouveauStyle);

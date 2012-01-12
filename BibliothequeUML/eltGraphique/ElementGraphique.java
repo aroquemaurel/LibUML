@@ -3,7 +3,6 @@ package eltGraphique;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
-import diagramme.Diagramme;
 
 /**
  * Classe ancêtre à tout élément graphique
@@ -74,7 +73,7 @@ abstract public class ElementGraphique extends mxCell {
     public void setGraph(mxGraph p_graph){
         this.graph = p_graph;
     }
-   
+
 	/**
 	 * Methode abstraite
 	 * Créer la représentation graphique de l'élément

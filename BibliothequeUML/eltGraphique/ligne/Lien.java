@@ -8,6 +8,7 @@ import eltGraphique.ElementModelisation;
 import eltGraphique.ElementGraphique;
 import java.util.HashMap;
 import java.util.Map;
+import util.Constantes;
 
 /**
  * Classe servant à la modélistaion des liens dans les différents diagrammes
@@ -187,15 +188,15 @@ public class Lien extends ElementGraphique {
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
                 nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
                 feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
                 break;
             case ASSOCIATION:
                 nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
-                nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-                nouveauStyle.put(mxConstants.STYLE_MOVABLE, 50);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+                nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
                 feuilleStyles.putCellStyle("ASSOCIATION", nouveauStyle);
                 break;
             case FLECHE:
@@ -203,7 +204,7 @@ public class Lien extends ElementGraphique {
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
                 nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
                 feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
                 break;
             case AGREGATION:
@@ -222,7 +223,7 @@ public class Lien extends ElementGraphique {
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
                 nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
                 feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
             break;
         }
