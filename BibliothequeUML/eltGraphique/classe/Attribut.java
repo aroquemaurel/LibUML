@@ -86,6 +86,7 @@ public class Attribut extends Variable {
 
 		}
 		retour += super.toString();
+		retour += "\n";
 		
 		return(retour);
 	}

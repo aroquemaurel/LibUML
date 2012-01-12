@@ -80,10 +80,9 @@ public class Variable {
 	@Override
 	public String toString(){
 		String retour = "";
-		retour += this.type;
-		retour += " ";
 		retour += this.getNom();
-		retour += "\n";
+		retour += ":";
+		retour += this.type;
 
 		return retour;
 	}

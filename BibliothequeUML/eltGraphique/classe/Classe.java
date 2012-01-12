@@ -81,23 +81,8 @@ public class Classe extends eltGraphique.ElementModelisation {
     private String genererChaineAttributs(){
        String retour = "";
 
-       for(int i=0; i < this.attributs.taille(); i++){
-		   switch(this.attributs.get(i).getVisibilite()) {
-			   case PRIVATE:
-				   retour += "- ";
-				   break;
-			   case PUBLIC:
-				   retour += "+ ";
-				   break;
-			   case PACKAGE:
-				   retour += "# ";
-				   break;
-			   case PROTECTED:
-				   retour += "~ ";
-
-		   }
-
-           retour += this.attributs.get(i).toString() ;
+       for(int i=0; i < this.attributs.taille(); i++) {
+		   retour += this.attributs.get(i).toString();
        }
 
        return retour;
