@@ -57,6 +57,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 * Récupère la taille de l'élément (hauteur/largeur)
 	 * @return La dimension de l'élément (hauteur/largeur)
 	 */
+	@Override
     public Dimension getDimension() {
         return (this.dimension);
     }
@@ -65,6 +66,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 * Récupère le texte lié à l'élément
 	 * @return Le texte lié à l'élément
 	 */
+	@Override
     public String getTexte() {
         return this.texte;
     }
@@ -73,6 +75,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 * Récupère la position de l'élément sur le graphe
 	 * @return La position de l'élément
 	 */
+	@Override
     public Point getPosition() {
         return this.position;
     }
@@ -81,18 +84,16 @@ abstract public class ElementModelisation extends ElementGraphique implements In
      * Récupère Le diagramme dans lequel est l'élément de modélisation
      * @return Le diagramme
      */
+	@Override
     public Diagramme getDiagramme(){
         return (this.diagramme);
     }
-
-	/*
-	 * setters
-	 */
 
 	/**
 	 * Modifie la dimension de l'élément (hauteur/largeur)
 	 * @param p_dimension La nouvelle dimension (hauteur/largeur)
 	 */
+	@Override
     public void setDimension(Dimension p_dimension) {
         this.dimension = p_dimension;
     }
@@ -101,6 +102,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 * Modifie le texte lié à l'élément
 	 * @param p_texte Le nouveau texte lié à l'élément
 	 */
+	@Override
     public void setTexte(String p_texte) {
         this.texte = p_texte;
     }
@@ -109,6 +111,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 * Modifie la position de l'élément
 	 * @param p_position La nouvelle position de l'élement
 	 */
+	@Override
     public void setPosition(Point p_position) {
         this.position = p_position;
     }

@@ -1,54 +1,57 @@
 package eltGraphique;
 
-import diagramme.Diagramme;
-import java.awt.Dimension;
-import java.awt.Point;
+import com.mxgraph.model.mxCell;
+import com.mxgraph.model.mxICell;
+import com.mxgraph.view.mxGraph;
 
 /**
  *
  */
 public interface IntElementGraphique {
-	/**
-	 * Récupère la taille de l'élément (hauteur/largeur)
-	 * @return La dimension de l'élément (hauteur/largeur)
+    /**
+	 * Méthode généique qui supprime l'élément du graphe où il est
 	 */
-    public Dimension getDimension();
+    public void supprimer();
 
 	/**
-	 * Récupère le texte lié à l'élément
-	 * @return Le texte lié à l'élément
+	 * Rend (in)visible l'élément grahique sur le graphe
+	 * @param p_bool
 	 */
-    public String getTexte();
-
-	/**
-	 * Récupère la position de l'élément sur le graphe
-	 * @return La position de l'élément
+    public void setVisible(boolean p_bool);
+    /**
+	 * Récupère la cellule associé à l'élément graphique
+	 * @param p_cellule La nouvelle cellule que représente l'élément
 	 */
-    public Point getPosition();
+    public mxICell getCellule();
 
     /**
-     * Récupère Le diagramme dans lequel est l'élément de modélisation
-     * @return Le diagramme
-     */
-    public Diagramme getDiagramme();
+	 * Modifie la cellule que représente l'élément
+	 * @param p_cellule La nouvelle cellule que représente l'élément
+	 */
+    public void setCellule(mxCell p_cellule);
 
 	/**
-	 * Modifie la dimension de l'élément (hauteur/largeur)
-	 * @param p_dimension La nouvelle dimension (hauteur/largeur)
+	 * Récupère le graphe auquel est associ l'élément
+	 * @return Le graph auquel est associé l'élément
 	 */
-    public void setDimension(Dimension p_dimension);
+    public mxGraph getGraph();
 
 	/**
-	 * Modifie le texte lié à l'élément
-	 * @param p_texte Le nouveau texte lié à l'élément
+	 * Modifie le graphe auquel est associé l'élément
+	 * @param p_graph Le nouveau graphe associé à l'élément graphique
 	 */
-    public void setTexte(String p_texte);
+    public void setGraph(mxGraph p_graph);
 
 	/**
-	 * Modifie la position de l'élément
-	 * @param p_position La nouvelle position de l'élement
+	 * Methode abstraite
+	 * Créer la représentation graphique de l'élément
+	 *
+	 * @see ActeurActif
+	 * @see ActeurPassif
+	 * @see CasUtilisation
+	 * @see Interface
+	 * @see Traitement
+	 * @see classe.Classe
 	 */
-    public void setPosition(Point p_position);
-
-
+    abstract public void creer();
 }
