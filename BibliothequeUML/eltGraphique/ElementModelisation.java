@@ -12,7 +12,7 @@ import java.awt.Point;
  *
  * @see Lien
  */
-abstract public class ElementModelisation extends ElementGraphique {
+abstract public class ElementModelisation extends ElementGraphique implements IntElementModelisation {
 	/**
 	 * Texte à afficher avec l'élément
 	 */
@@ -27,7 +27,7 @@ abstract public class ElementModelisation extends ElementGraphique {
 	 * Taille de l'élément (hauteur/largeur)
 	 */
 	private Dimension dimension;
-    
+
     /**
      * Diagramme dans lequel apparait l'élément de modélisation
      */
@@ -84,7 +84,7 @@ abstract public class ElementModelisation extends ElementGraphique {
     public Diagramme getDiagramme(){
         return (this.diagramme);
     }
-    
+
 	/*
 	 * setters
 	 */

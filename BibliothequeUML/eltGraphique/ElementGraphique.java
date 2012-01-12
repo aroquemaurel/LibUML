@@ -11,7 +11,7 @@ import com.mxgraph.view.mxGraph;
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
  */
-abstract public class ElementGraphique extends mxCell {
+abstract public class ElementGraphique extends mxCell implements IntElementGraphique {
     private mxGraph graph;
 
 	/**
