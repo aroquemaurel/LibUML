@@ -4,6 +4,12 @@
  */
 package diagramme;
 
+import com.mxgraph.view.mxGraph;
+import eltGraphique.ActeurActif;
+import eltGraphique.ActeurPassif;
+import eltGraphique.CasUtilisation;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -13,7 +19,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Marie-Ly
+ * @author geoffroy
  */
 public class DiagrammeTest {
     
@@ -30,9 +36,54 @@ public class DiagrammeTest {
     }
     
     @Test
-    public void lienAutorise(){
-      
+    public void testLienAutoriseAssociationActeurActifCasUtilisation(){
+      assertTrue(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(),
+			new Diagramme(), new String()), new CasUtilisation(new mxGraph(), new Diagramme(),
+			new String()), "ASSOCIATION"));
     }
+    
+    @Test
+    public void testLienAutoriseAssociationCasUtilisationActeurActif () {
+        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
+			new String()), new ActeurActif(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+    }
+    
+    @Test
+    public void testLienAutoriseAssociationCasUtilisationCasUtilisation () {
+        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
+			new String()), new CasUtilisation(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+    }
+    
+    @Test
+    public void testLienAutoriseAssociationActeurActifActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), new Diagramme(),
+			new String()), new ActeurActif(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+    } 
+    
+    @Test
+    public void testLienAutoriseAssociationActeurPassifCasUtilisation(){
+      assertTrue(this.monDiagramme.lienAutorise(new ActeurPassif(new mxGraph(),
+			new Diagramme(), new String()), new CasUtilisation(new mxGraph(), new Diagramme(),
+			new String()), "ASSOCIATION"));
+    }
+    
+    @Test
+    public void testLienAutoriseAssociationCasUtilisationActeurPassif () {
+        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
+			new String()), new ActeurPassif(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+    }
+          
+    @Test
+    public void testLienAutoriseAssociationActeurPassifActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(new ActeurPassif(new mxGraph(), new Diagramme(),
+			new String()), new ActeurPassif(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+    }     
+    
+    @Test
+    public void testEltAutoriseLien () {
+        assertTrue(this.monDiagramme.eltAutorise( new Lien( new ActeurPassif(new mxGraph(), new Diagramme(), new String()),new CasUtilisation(new mxGraph(), new Diagramme(), new String()), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION)));
+    }     
+    
     
     @Test
     public void eltAutorise(){
