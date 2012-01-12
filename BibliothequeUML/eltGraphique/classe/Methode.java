@@ -83,7 +83,7 @@ public class Methode {
 	 * 
 	 * @see Variable
 	 */
-	public Variable ajouterParametre(Variable p_nouveauParamètre, int p_index) {
+	public Variable ajouterParametre(int p_index, Variable p_nouveauParamètre) {
 		this.parametres.add(p_index, p_nouveauParamètre);
 		return(p_nouveauParamètre);
 	}
@@ -95,7 +95,7 @@ public class Methode {
 	 * Retourne vrai si la methode est abstraite, faux sinon.
 	 * @return Méthode abstraite ?
 	 */
-	public boolean isAbstraite() {
+	public boolean estAbstraite() {
 		return abstraite;
 	}
 
@@ -143,7 +143,7 @@ public class Methode {
 	 * Récupère les paramètres de la méthode.
 	 * @return La liste des paramètres de la méthode
 	 */
-	public List<Variable> getParametres() {
+	public Liste<Variable> getParametres() {
 		return (this.parametres);
 	}
 
@@ -227,9 +227,9 @@ public class Methode {
                retour += "# ";
 				break;
 		}
-           retour += this.typeRetour;
-           retour += " ";
            retour += this.getNom();
+           retour += ":";
+           retour += this.typeRetour;
            retour += "\n";
 		return (retour);
 	}
