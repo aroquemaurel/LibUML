@@ -32,68 +32,28 @@ public class DiagrammeClasse extends Diagramme {
         return valeurRetour;
     }
     
-    private boolean autorisationAssociation(ElementGraphique p_origine , ElementGraphique p_extremite) {
-        boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof Classe && p_extremite instanceof Lien){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof Lien && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }     
-        return(valeurRetour);
+    private boolean autorisationAssociation(ElementGraphique p_origine , ElementGraphique p_extremite) {   
+        return((p_origine instanceof Classe && p_extremite instanceof Classe) || (p_origine instanceof Classe && p_extremite instanceof Lien) || (p_origine instanceof Lien && p_extremite instanceof Classe));
     }
 
     private boolean autorisationAgregation(ElementGraphique p_origine , ElementGraphique p_extremite) {
-        boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof Classe && p_extremite instanceof Classe);
     }
 
     private boolean autorisationComposition(ElementGraphique p_origine , ElementGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof Classe && p_extremite instanceof Classe);
     }
 
     private boolean autorisationGeneralisation(ElementGraphique p_origine , ElementGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        return(valeurRetour);
+        return(p_origine instanceof Classe && p_extremite instanceof Classe);
     }
 
-    private boolean autorisationDependance(ElementGraphique p_origine , ElementGraphique p_extremite) {
-           boolean valeurRetour = false;
-        if(p_origine instanceof Classe && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof Classe && p_extremite instanceof Lien){
-            valeurRetour = true;
-        }
-        if(p_origine instanceof Lien && p_extremite instanceof Classe){
-            valeurRetour = true;
-        }     
-        return(valeurRetour);
+    private boolean autorisationDependance(ElementGraphique p_origine , ElementGraphique p_extremite) {   
+        return((p_origine instanceof Classe && p_extremite instanceof Classe) || (p_origine instanceof Classe && p_extremite instanceof Lien) || (p_origine instanceof Lien && p_extremite instanceof Classe));
     }
+           
     @Override
     public boolean eltAutorise (ElementGraphique p_element){
-        boolean valeurRetour = false;
-        if(p_element instanceof Classe){
-            valeurRetour = true;
-        }
-        else{
-            if(p_element instanceof Lien){
-                valeurRetour = true;
-            }
-        }
-        return valeurRetour;       
+        return ((p_element instanceof Classe) || (p_element instanceof Lien));       
     }
 }
