@@ -31,6 +31,11 @@ public class DiagrammeTest {
     
     @Test
     public void lienAutorise(){
+      
+    }
+    
+    @Test
+    public void eltAutorise(){
         
     }
     // TODO add test methods here.

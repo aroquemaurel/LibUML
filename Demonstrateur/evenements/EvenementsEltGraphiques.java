@@ -25,8 +25,8 @@ public class EvenementsEltGraphiques implements MouseListener {
     private int numeroClique;
     private mxCell sourceCelluleARelier;
     private mxCell destinationCelluleARelier;
-    
-    public EvenementsEltGraphiques(PanneauGraph p_panneauGraph, Diagramme p_diagramme, 
+
+    public EvenementsEltGraphiques(PanneauGraph p_panneauGraph, Diagramme p_diagramme,
                                     TypeLien p_typeDeLien) {
         this.panneauGraph = p_panneauGraph;
         this.diagramme = p_diagramme;
@@ -35,7 +35,7 @@ public class EvenementsEltGraphiques implements MouseListener {
         this.destinationCelluleARelier = null;
         this.numeroClique = 0;
     }
-    
+
     @Override
     public void mouseClicked(MouseEvent event) {
         mxCell celluleActuelle = (mxCell) this.panneauGraph.getGraph().getSelectionCell();
@@ -49,26 +49,26 @@ public class EvenementsEltGraphiques implements MouseListener {
                 this.numeroClique++;
                 this.destinationCelluleARelier = celluleActuelle;
 
-            } 
+            }
             if(this.destinationCelluleARelier != null && sourceCelluleARelier != null){
                 Lien monLien = new Lien(
                     (ElementModelisation) this.diagramme.getElementGraphiqueViaCellule(
                                                                     this.sourceCelluleARelier),
                     (ElementModelisation) this.diagramme.getElementGraphiqueViaCellule(
                                                                     this.destinationCelluleARelier),
-                    this.panneauGraph.getGraph(),
+                    this.panneauGraph.getGraph(), this.panneauGraph.getDiagramme(),
                     this.typeDeLien);
-                
+
                 monLien.creer();
             }
         }
-        
+
         if(numeroClique >= 2){
             this.panneauGraph.getGraphControl().removeMouseListener(this);
         }
-            
+
     }
-    
+
     public int getNumeroClique(){
         return (this.numeroClique);
     }
