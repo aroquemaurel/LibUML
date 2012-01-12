@@ -14,7 +14,7 @@ public enum TypeLien {
 
 	/* Diagramme de séquence */
 	FLECHE,
-	FLECHE_TRAITEMENT
+	FLECHE_EVENEMENT_DECLENCHEUR_TRAITEMENT
 
 
 	/* Diagramme de cas d'utilisation */
