@@ -228,7 +228,7 @@ public class Methode {
 				break;
 		}
            retour += this.getNom();
-           retour += ":";
+           retour += "():";
            retour += this.typeRetour;
            retour += "\n";
 		return (retour);
