@@ -36,18 +36,17 @@ public class DiagrammeSequenceTest {
     
     @Test
     public void testLienAutoriseAssociationTraitementTraitement () {
-        assertTrue(this.monDiagramme.lienAutorise(new Traitement(new mxGraph(), new Diagramme(), new String()), new Traitement(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), new Traitement(null, monDiagramme, null, null, true), "ASSOCIATION"));
     }
     
     @Test
     public void testLienDependanceAssociationTraitementTraitement () {
-        assertTrue(this.monDiagramme.lienAutorise(new Traitement(new mxGraph(), new Diagramme(), new String()), new Traitement(new mxGraph(), new Diagramme(), new String()), "DEPENDANCE"));
+        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), new Traitement(null, monDiagramme, null, null, true), "DEPENDANCE"));
     }
     
     @Test
     public void testEltAutoriseTraitement () {
-        assertTrue(this.monDiagramme.eltAutorise(new Traitement(new mxGraph(), new Diagramme(),
-			new String())));
+        assertTrue(this.monDiagramme.eltAutorise(new Traitement(null, monDiagramme, null, null, true)));
     }
     
     @Test
