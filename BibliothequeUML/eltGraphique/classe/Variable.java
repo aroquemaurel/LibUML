@@ -33,7 +33,7 @@ public class Variable {
 	 * Retourne vrai si la variable est constante, faux sinon
 	 * @return Variable constante ?
 	 */
-    public boolean isConstante() {
+    public boolean estConstante() {
         return (this.constante);
     }
 
