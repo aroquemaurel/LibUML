@@ -19,6 +19,65 @@ import util.Constantes;
  * @see TypeLien
  */
 public class Lien extends ElementGraphique {
+
+	private void creerStyleComposition() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
+	}
+
+	private void creerStyleAgregation() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 100);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
+		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#FFFFFF");
+		nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#FFFFFF");
+		//TODO couleur de fond bout des flêches ?!
+                feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
+	}
+
+	private void crerStyleFleche() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
+	}
+
+	private void creerStyleAssociation() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("ASSOCIATION", nouveauStyle);
+	}
+
+	private void creerStyleSpecialisation() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
+	}
+
     /**
      * Element à l'origine du lien
      * @see ElementModelisation
@@ -185,47 +244,19 @@ public class Lien extends ElementGraphique {
 
         switch(this.typeLien){
             case SPECIALISATION:
-                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
-                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
-                nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-                feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
+				this.creerStyleSpecialisation();
                 break;
             case ASSOCIATION:
-                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
-                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
-                nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-                nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-                feuilleStyles.putCellStyle("ASSOCIATION", nouveauStyle);
+				this.creerStyleAssociation();
                 break;
             case FLECHE:
-                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
-                nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-                feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
+				this.crerStyleFleche();
                 break;
             case AGREGATION:
-                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-                nouveauStyle.put(mxConstants.STYLE_OPACITY, 100);
-                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-                nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#FFFFFF");
-                nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#FFFFFF");
-                //TODO couleur de fond bout des flêches ?!
-                feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
+				this.creerStyleAgregation();
                 break;
             case COMPOSITION:
-                nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-                nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-                feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
+				this.creerStyleComposition();
             break;
         }
 
@@ -233,7 +264,8 @@ public class Lien extends ElementGraphique {
 			super.getGraph().getDefaultParent(), null, null,
 			this.getSource().getCellule(), this.getDestination().getCellule(),
 			this.typeLien.toString()));
-		super.setConnectable(false);
-    }
 
+		super.setConnectable(false);
+		super.getDiagramme().getElementsGraphiques().add(this);
+    }
 }
