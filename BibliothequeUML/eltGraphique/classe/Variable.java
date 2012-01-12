@@ -77,6 +77,7 @@ public class Variable {
 		this.nom = nom;
 	}
 
+	@Override
 	public String toString(){
 		String retour = "";
 		retour += this.type;

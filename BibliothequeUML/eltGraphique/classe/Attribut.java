@@ -56,7 +56,7 @@ public class Attribut extends Variable {
 	 * Retourne vrai si l'attribut est de classe, faux sinon
 	 * @return Attribut de classe ?
 	 */
-	public boolean isDeClasse() {
+	public boolean estDeClasse() {
 		return deClasse;
 	}
 
@@ -66,5 +66,27 @@ public class Attribut extends Variable {
 	 */
 	public void setDeClasse(boolean deClasse) {
 		this.deClasse = deClasse;
+	}
+	
+	@Override
+	public String toString() {
+		String retour = new String();
+		switch(this.visibilite) {
+			case PRIVATE:
+				retour += "- ";
+				break;
+			case PUBLIC:
+				retour += "+ ";
+				break;
+			case PACKAGE:
+				retour += "# ";
+				break;
+			case PROTECTED:
+				retour += "~ ";
+
+		}
+		retour += super.toString();
+		
+		return(retour);
 	}
 }
