@@ -53,14 +53,29 @@ public class Classe extends eltGraphique.ElementModelisation {
         String retour = "";
 		//TODO if elseif vers switch
        for(int i=0; i < this.attributs.taille(); i++){
-           if(this.attributs.get(i).getVisibilite().equals(Visibilite.PRIVATE))
+		   switch(this.attributs.get(i).getVisibilite()) {
+			   case PRIVATE:
+				   retour += "- ";
+				   break;
+			   case PUBLIC:
+				   retour += "+ ";
+				   break;
+			   case PACKAGE:
+				   retour += "# ";
+				   break;
+			   case PROTECTED:
+				   retour += "~ ";
+				   
+		   }
+		   
+/*           if(this.attributs.get(i).getVisibilite().equals(Visibilite.PRIVATE))
                 retour += "- ";
            else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PUBLIC))
                retour += "+ ";
            else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PROTECTED))
                retour += "~ ";
            else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PACKAGE))
-               retour += "# ";
+               retour += "# ";*/
 
            retour += this.attributs.get(i).toString() ;
        }
