@@ -85,35 +85,31 @@ public class ClasseTest {
 
 	@Test
 	public void testAjouterMethodeTailleListe(){
-		this.classe.ajouterMethode(Visibilite.PUBLIC, "Object", "methodeDeTest", null, true, true, true);
+		this.classe.ajouterMethode(
+			new Methode(Visibilite.PUBLIC, "Object", "methodeDeTest", null, true, true, true));
 		assertEquals(4, this.classe.getMethodes().size());
 	}
 	
 	@Test
-	public void testAjouterMethodeParamMethode(){
+	public void testAjouterMethode(){
 		Methode maMethode = new Methode(Visibilite.PUBLIC, "Object", "methodeDeTest", null, true, true, true);
 		this.classe.ajouterMethode(maMethode);
 		assertTrue(this.classe.getMethodes().contains(maMethode));
 	}
 	
 	@Test
-	public void testAjouterMethodeParamMultiple(){
-		//Methode maMethode = new Methode(Visibilite.PUBLIC, "Object", "methodeDeTest", null, true, true, true);
-		//Methode nouvelleMethode = this.classe.ajouterMethode(Visibilite.PUBLIC, "Object", "methodeDeTest", null, true, true, true);
-		Methode maMethode = new Methode(Visibilite.PUBLIC, "", "", null, true, true, true);
-		Methode nouvelleMethode = this.classe.ajouterMethode(Visibilite.PUBLIC, "", "", null, true, true, true);
-		System.out.println(maMethode);
-		System.out.println(nouvelleMethode);
-		assertEquals(maMethode.toString(), nouvelleMethode.toString());
-	}
-	
-	@Test
 	public void testAjouterAttribut(){
+		Attribut nouvelAttribut = new Attribut(Visibilite.PRIVATE, true, true, null, null);
+		this.classe.ajouterAttribut(nouvelAttribut);
+		assertTrue(this.classe.getAttributs().contains(nouvelAttribut));
+	}
+	@Test
+	public void testAjouterAttributTailleListe(){
 		int taille = this.classe.getAttributs().taille();
-		this.classe.ajouterAttribut(Visibilite.PRIVATE, null, null, true, true);
+		this.classe.ajouterAttribut(
+			new Attribut(Visibilite.PRIVATE, true, true, null, null));
 		assertEquals(taille+1, this.classe.getAttributs().size());
 	}
-	
 	@Test
 	public void testEstConstante(){
 		this.classe.setConstante(true);
