@@ -33,6 +33,7 @@ public class DiagrammeSequence extends Diagramme {
     private boolean autorisationDependance(ElementGraphique p_origine , ElementGraphique p_extremite) {
         return(p_origine instanceof Traitement && p_extremite instanceof Traitement);
     }
+    
     @Override
     public boolean eltAutorise (ElementGraphique p_element){
         return ((p_element instanceof Traitement) || (p_element instanceof Lien) || (p_element instanceof ActeurPassif) || (p_element instanceof ActeurActif));       
