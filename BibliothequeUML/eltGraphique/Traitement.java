@@ -22,7 +22,7 @@ public class Traitement extends ElementModelisation {
 	 * L'élément qui déclenche le traitement (appel de méthode, etc.)
 	 */
 	private Lien evenementDeclencheur;
-	private boolean debutDeSequence;
+	private boolean debutSequence;
 	private static final double BAS_EVENEDECLENCHEUR = 13.37 ;
 	private static final double HAUT_EVENEDECLENCHEUR = -BAS_EVENEDECLENCHEUR;
 	private static final double GAUCHE_EVENEDECLENCHEUR = 10;
@@ -72,7 +72,7 @@ public class Traitement extends ElementModelisation {
     public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
         super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
         this.evenementDeclencheur = p_evenementDeclencheur;
-		this.debutDeSequence = p_debutSequence;
+		this.debutSequence = p_debutSequence;
     }
 
 	/**
@@ -112,16 +112,16 @@ public class Traitement extends ElementModelisation {
         return evenementDeclencheur;
     }
 	
-	public boolean estDebutDeSequence() {
-		return this.debutDeSequence;
+	public boolean estDebutSequence() {
+		return this.debutSequence;
 	}
 
     public void setEvenementDeclencheur(Lien evenementDeclencheur) {
         this.evenementDeclencheur = evenementDeclencheur;
     }
 	
-	public void setDebutDeSequence(boolean p_boolean) {
-		this.debutDeSequence = p_boolean;
+	public void setDebutSequence(boolean p_boolean) {
+		this.debutSequence = p_boolean;
 		this.evenementDeclencheur.setVisible(p_boolean);
 	}
 
