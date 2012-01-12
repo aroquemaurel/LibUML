@@ -88,13 +88,13 @@ public class Traitement extends ElementModelisation {
 		this.creerStyleFlecheTraitement();
 		//TODO Bonne position du texte
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getParent(), null, super.getTexte(), 30, 30,
+            super.getParent(), null, null, 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
 
         super.setVisible(false);
 
 		cellule = (mxCell) super.getGraph().insertEdge(
-								super.getCellule(), null, "", null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
+								super.getCellule(), null, this.getTexte(), null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
 
 		listePoint.add(new mxPoint(GAUCHE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
 		listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
