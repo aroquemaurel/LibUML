@@ -48,7 +48,6 @@ public class Diagramme {
                 retour = element;
             }
         }
-        
         return (retour);
     }
 }

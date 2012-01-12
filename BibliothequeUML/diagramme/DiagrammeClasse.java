@@ -3,6 +3,7 @@
 import eltGraphique.ElementGraphique;
 import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 
 /**
  *
@@ -10,32 +11,23 @@ import eltGraphique.ligne.Lien;
  */
  
 public class DiagrammeClasse extends Diagramme {
-    @Override
-    public boolean lienAutorise (ElementGraphique p_origine , ElementGraphique p_extremite, String p_typeDeFleche){
+    
+    public boolean lienAutorise (ElementGraphique p_origine , ElementGraphique p_extremite, TypeLien p_typeDeFleche){
         boolean valeurRetour = false;
-        if ("composition".equals(p_typeDeFleche)){
-            valeurRetour = this.autorisationComposition(p_origine , p_extremite); 
+        switch (p_typeDeFleche){
+            case COMPOSITION: 
+            valeurRetour = this.autorisationComposition(p_origine , p_extremite);
+            case ASSOCIATION:
+                valeurRetour = this.autorisationAssociation(p_origine , p_extremite); 
+                break;
+            case GENERALISATION:
+                valeurRetour = this.autorisationGeneralisation(p_origine , p_extremite);
+                break;
+            case DEPENDANCE:
+                valeurRetour = this.autorisationDependance(p_origine , p_extremite);
+            case AGREGATION:
+                valeurRetour = this.autorisationAgregation(p_origine , p_extremite);    
         }
-        else{
-            if("association".equals(p_typeDeFleche)){
-                valeurRetour = this.autorisationAssociation(p_origine , p_extremite);
-            } 
-            else{
-                if ("agrégation".equals(p_typeDeFleche)){
-                    valeurRetour = this.autorisationAgregation(p_origine , p_extremite);
-                } 
-                else{
-                    if("généralisation".equals(p_typeDeFleche)){
-                        valeurRetour = this.autorisationGeneralisation(p_origine , p_extremite);
-                    }
-                    else{
-                        if("dependance".equals(p_typeDeFleche)){
-                            valeurRetour = this.autorisationDependance( p_origine , p_extremite);
-                        }
-                    }
-                }
-            }
-        }        
         return valeurRetour;
     }
     
