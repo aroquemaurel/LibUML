@@ -32,4 +32,8 @@ public class AttributTest {
 		assertTrue(this.attribut.estDeClasse());
 	}
 	
+	@Test
+	public void testToString() {
+		assertEquals("- attributPourLesTests:String\n", this.attribut.toString());
+	}
 }
