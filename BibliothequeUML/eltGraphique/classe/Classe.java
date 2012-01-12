@@ -36,9 +36,6 @@ public class Classe extends eltGraphique.ElementModelisation {
     private mxCell celluleAttributs;
     private mxCell celluleMethodes;
 
-	/* TODO Faire une classe ListeMethodes avec cette méthode ?
-	 * TODO Faire une classe listeAttributs avec la méthode stringAttributs ?
-	 */
     private String genererChaineMethodes(){
         String retour = new String();
 
@@ -50,18 +47,24 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
     private String genererChaineAttributs(){
-        String retour = "";
-		//TODO if elseif vers switch
+       String retour = "";
+	   
        for(int i=0; i < this.attributs.taille(); i++){
-           if(this.attributs.get(i).getVisibilite().equals(Visibilite.PRIVATE))
-                retour += "- ";
-           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PUBLIC))
-               retour += "+ ";
-           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PROTECTED))
-               retour += "~ ";
-           else if(this.attributs.get(i).getVisibilite().equals(Visibilite.PACKAGE))
-               retour += "# ";
-
+		   switch(this.attributs.get(i).getVisibilite()) {
+			   case PRIVATE:
+				   retour += "- ";
+				   break;
+			   case PUBLIC:
+				   retour += "+ ";
+				   break;
+			   case PACKAGE:
+				   retour += "# ";
+				   break;
+			   case PROTECTED:
+				   retour += "~ ";
+				   
+		   }
+		   
            retour += this.attributs.get(i).toString() ;
        }
 
@@ -81,41 +84,14 @@ public class Classe extends eltGraphique.ElementModelisation {
 		this.abstraite = false;
 		this.constante = false;
         /* TODO it's a test, to be continued! */
-        this.ajouterMethode(Visibilite.PROTECTED, "maMethode1", "void", null, false, false, false);
-        this.ajouterMethode(Visibilite.PRIVATE, "maMethode2", "void", null, false, false, false);
-        this.ajouterMethode(Visibilite.PUBLIC, "maMethode3", "void", null, false, false, false);
+        this.ajouterMethode(new Methode(Visibilite.PROTECTED, "void", "maMethode1", null, false, false, false));
+        this.ajouterMethode(new Methode(Visibilite.PRIVATE, "void", "maMethode2", null, false, false, false));
+		this.ajouterMethode(new Methode(Visibilite.PUBLIC, "void", "maMethode3", null, false, false, false));
 
         /* TODO it's a test, to be continued! */
-        this.ajouterAttribut(Visibilite.PROTECTED,"int", "monAttribut1", false, false);
-        this.ajouterAttribut(Visibilite.PRIVATE, "long", "monAttribut2",false, false);
-        this.ajouterAttribut(Visibilite.PRIVATE,"Classe", "monAttribut3", false, false);
-    }
-
-	/**
-	 * Ajoute une méthode à la liste des méthoes de la classe à partir
-	 * de tous les éléments d'une méthode
-	 * @param p_nomMethode Nom de la méthode
-	 * @param p_typeDeRetour Type de retour de la méthode
-	 * @param p_visibilite Visibilité de al méthode
-	 * @param p_parametres Parametres de la méthode
-	 * @param p_abstraite Méthode abstraite ?
-	 * @param p_deClasse Méthode de classe ?
-	 * @param p_constante Méthode constante ?
-	 * @return La méthode ajoutée
-	 * 
-	 * @see Methode
-	 * @see Visibilite
-	 */
-    public final Methode ajouterMethode(Visibilite p_visibilite, String p_nomMethode, String p_typeDeRetour,
-			       Liste<Variable> p_parametres,
-			       boolean p_abstraite, boolean p_deClasse,
-			       boolean p_constante) {
-        Methode nouvelleMethode = new Methode(p_visibilite, p_typeDeRetour,
-                                     p_nomMethode, p_parametres, p_abstraite,
-                                     p_deClasse, p_constante);
-		this.methodes.ajouterElement(nouvelleMethode);
-		return(nouvelleMethode);
-		
+        this.ajouterAttribut(new Attribut(Visibilite.PROTECTED, false, false, "int", "monAttribut1"));
+        this.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false, "long", "monAttribut2"));
+        this.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false,"Classe", "monAttribut3"));
     }
 	
 	/**
@@ -132,20 +108,14 @@ public class Classe extends eltGraphique.ElementModelisation {
 
 	/**
 	 * Ajoue un attribut à la liste d'attributs de la classe
-	 * @param p_type Type de l'atribut
-	 * @param p_nom Nom de l'attribut
-	 * @param p_visibilite Visibilité de l'atribut
-	 * @param p_constante Attribut constant ?
-	 * @param p_deClasse Attribut de classe ?
+	 * @param p_nouvelAttribut Le nouvel attribut à ajouter à la classe
+	 * @return Le nouvel attribut ajouté
+	 * 
+	 * @see Attribut
 	 */
-    public final void ajouterAttribut(Visibilite p_visibilite, String p_type,
-                                String p_nom, boolean p_constante,
-                                boolean p_deClasse) {
-        this.attributs.ajouterElement(new Attribut(p_visibilite,
-                                                   p_deClasse,
-                                                   p_constante,
-                                                   p_type,
-                                                   p_nom));
+    public final Attribut ajouterAttribut(Attribut p_nouvelAttribut) {
+        this.attributs.ajouterElement(p_nouvelAttribut);
+		return(p_nouvelAttribut);
     }
 
     /*

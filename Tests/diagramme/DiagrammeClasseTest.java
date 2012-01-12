@@ -13,9 +13,6 @@ public class DiagrammeClasseTest {
 
     private Diagramme monDiagramme;
 
-    public DiagrammeClasseTest() {
-    }
-
     @Before
     public void setUp() {
         this.monDiagramme = new DiagrammeClasse();
@@ -23,7 +20,7 @@ public class DiagrammeClasseTest {
 
     @After
     public void tearDown() {
-		this.monDiagramme = null;
+	this.monDiagramme = null;
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

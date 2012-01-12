@@ -17,23 +17,21 @@ import static org.junit.Assert.*;
  */
 public class DiagrammeTest {
     
-    public DiagrammeTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
+    private Diagramme monDiagramme;
     
     @Before
     public void setUp() {
+        this.monDiagramme = new Diagramme();
     }
     
     @After
     public void tearDown() {
+        this.monDiagramme = null;
+    }
+    
+    @Test
+    public void lienAutorise(){
+        
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

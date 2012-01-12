@@ -11,6 +11,8 @@ public enum TypeLien {
 	COMPOSITION,
 	AGREGATION,
 	CLASSE_ASSOCIATION,
+        GENERALISATION,
+        DEPENDANCE,
 
 	/* Diagramme de séquence */
 	FLECHE,
