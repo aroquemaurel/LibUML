@@ -2,6 +2,7 @@ package eltGraphique;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
+import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
@@ -17,6 +18,22 @@ import java.util.Map;
  *
  */
 public class ActeurActif extends Acteur {
+	private static final double OFFSET_TEXTE_ACTEUR_Y = 51;
+	private static final double OFFSET_TEXTE_ACTEUR_X = 0;
+
+	/**
+	 * Creer le style d'un acteur Actif
+	 */
+	private void creerStyleActeurActif() {
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+        mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+
+        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ACTOR);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
+        feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
+	}
+
     /**
      * Constructeur de la classe ActeurActif qui créer un acteur actif
      * lié à un graph donné avec un texte donné
@@ -32,22 +49,17 @@ public class ActeurActif extends Acteur {
      */
     @Override
     public final void creer(){
-        mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		super.getGraph().getModel().beginUpdate();
+		creerStyleActeurActif();
 
-        nouveauStyle.put(mxConstants.STYLE_SHAPE,
-                  mxConstants.SHAPE_ACTOR);
-        nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
-        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#774400");
-        feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
-		
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            null, null, super.getTexte(), 30, 30,
-			super.getDimension().getWidth(), super.getDimension().getHeight(),
-			"ACTEUR_ACTIF"));
-        super.setVisible(false);
-        
+            super.getGraph().getDefaultParent(), null, super.getTexte(), 30, 30,
+			super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_ACTIF"));
+
+		super.getCellule().getGeometry().setOffset(new mxPoint(OFFSET_TEXTE_ACTEUR_X, OFFSET_TEXTE_ACTEUR_Y));
         super.getDiagramme().getElementsGraphiques().add(this);
+
+		super.getGraph().getModel().endUpdate();
     }
 
 }
