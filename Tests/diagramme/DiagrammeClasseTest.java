@@ -1,13 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package diagramme;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,27 +10,20 @@ import static org.junit.Assert.*;
  * @author Marie-Ly
  */
 public class DiagrammeClasseTest {
-    
-    private monDiagramme
-    
+
+    private Diagramme monDiagramme;
+
     public DiagrammeClasseTest() {
     }
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-        this.monDiagramme
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-    
     @Before
     public void setUp() {
+        this.monDiagramme = new DiagrammeClasse();
     }
-    
+
     @After
     public void tearDown() {
+		this.monDiagramme = null;
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
