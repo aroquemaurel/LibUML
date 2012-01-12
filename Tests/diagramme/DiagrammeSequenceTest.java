@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package diagramme;
 
 import eltGraphique.ActeurPassif;
@@ -17,7 +13,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
  * @author Marie-Ly
  */
 public class DiagrammeSequenceTest {
@@ -36,12 +31,14 @@ public class DiagrammeSequenceTest {
     
     @Test
     public void testLienAutoriseAssociationTraitementTraitement () {
-        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), new Traitement(null, monDiagramme, null, null, true), "ASSOCIATION"));
+        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), 
+                new Traitement(null, monDiagramme, null, null, true), "ASSOCIATION"));
     }
     
     @Test
-    public void testLienDependanceAssociationTraitementTraitement () {
-        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), new Traitement(null, monDiagramme, null, null, true), "DEPENDANCE"));
+    public void testLienAutoriseDependanceTraitementTraitement () {
+        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), 
+                new Traitement(null, monDiagramme, null, null, true), "DEPENDANCE"));
     }
     
     @Test
@@ -51,13 +48,13 @@ public class DiagrammeSequenceTest {
     
     @Test
     public void testEltAutoriseLien () {
-        assertTrue(this.monDiagramme.eltAutorise(new Lien( new ActeurActif(new mxGraph(), new Diagramme(), new String()),new CasUtilisation(new mxGraph(), new Diagramme(), new String()), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION)));
+        assertTrue(this.monDiagramme.eltAutorise(new Lien(new ActeurActif(new mxGraph(), new Diagramme(), new String()),new CasUtilisation(new mxGraph(), new Diagramme(), new String()), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION)));
     }
 
     @Test
     public void testEltAutoriseActeurActif () {
-        assertTrue(this.monDiagramme.eltAutorise(new ActeurActif(new mxGraph(), new Diagramme(),
-			new String())));
+        assertTrue(this.monDiagramme.eltAutorise(new ActeurActif(new mxGraph(),
+                new Diagramme(), new String())));
     }
     
     @Test

@@ -6,7 +6,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
  * @author Marie-Ly
  */
 public class DiagrammeClasseTest {

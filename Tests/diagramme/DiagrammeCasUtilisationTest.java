@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package diagramme;
 
 import eltGraphique.ligne.Lien;
@@ -15,7 +11,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
  * @author Marie-Ly
  */
 public class DiagrammeCasUtilisationTest {
@@ -24,7 +19,7 @@ public class DiagrammeCasUtilisationTest {
 
     @Before
     public void setUp() {
-            this.monDiagramme = new DiagrammeCasUtilisation();
+        this.monDiagramme = new DiagrammeCasUtilisation();
     }
 
     @After
@@ -35,51 +30,60 @@ public class DiagrammeCasUtilisationTest {
     @Test
     public void testLienAutoriseAssociationActeurActifCasUtilisation () {
         assertTrue(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(),
-			new Diagramme(), new String()), new CasUtilisation(new mxGraph(), new Diagramme(),
-			new String()), "ASSOCIATION"));
+		new Diagramme(), new String()), 
+                new CasUtilisation(new mxGraph(), new Diagramme(),
+		new String()), "ASSOCIATION"));
     }
     @Test
     public void testLienAutoriseAssociationCasUtilisationActeurActif () {
-        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
-			new String()), new ActeurActif(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()), "ASSOCIATION"));
     }
     @Test
     public void testLienAutoriseAssociationCasUtilisationCasUtilisation () {
-        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
-			new String()), new CasUtilisation(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), "ASSOCIATION"));
     }
     @Test
     public void testLienAutoriseAssociationActeurActifActeurActif () {
-        assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), new Diagramme(),
-			new String()), new ActeurActif(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+        assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()), "ASSOCIATION"));
     }
 
     @Test
     public void testLienAutoriseGeneralisation () {
-        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
-			new String()), new CasUtilisation(new mxGraph(), new Diagramme(), new String()), "GENERALISATION"));
+        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), "GENERALISATION"));
     }
 
     @Test
     public void testLienAutoriseDependance () {
-        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
-			new String()), new CasUtilisation(new mxGraph(), new Diagramme(), new String()), "DEPENDANCE"));
+        assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), "DEPENDANCE"));
     }
 
     @Test
     public void testEltAutoriseCasUtilisation () {
-        assertTrue(this.monDiagramme.eltAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
-			new String())));
+        assertTrue(this.monDiagramme.eltAutorise(new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String())));
     }
 
     @Test
     public void testEltAutoriseLien () {
-        assertTrue(this.monDiagramme.eltAutorise(new Lien( new ActeurActif(new mxGraph(), new Diagramme(), new String()),new CasUtilisation(new mxGraph(), new Diagramme(), new String()), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION)));
+        assertTrue(this.monDiagramme.eltAutorise(new Lien(new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()),new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), new mxGraph(), 
+                new Diagramme(), TypeLien.ASSOCIATION)));
     }
 
     @Test
     public void testEltAutoriseActeurActif () {
-        assertTrue(this.monDiagramme.eltAutorise(new ActeurActif(new mxGraph(), new Diagramme(),
-			new String())));
+        assertTrue(this.monDiagramme.eltAutorise(new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String())));
 	}
 }
