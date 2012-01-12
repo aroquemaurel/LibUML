@@ -38,9 +38,8 @@ public class Lien extends ElementGraphique {
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 100);
 		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, "#000000");
-		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, "#FFFFFF");
-		nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, "#FFFFFF");
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
 		//TODO couleur de fond bout des flêches ?!
                 feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
 	}

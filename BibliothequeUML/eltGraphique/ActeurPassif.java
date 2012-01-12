@@ -21,6 +21,8 @@ public class ActeurPassif extends Acteur {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
         mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 
+        nouveauStyle.put(mxConstants.STYLE_AUTOSIZE, 0);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
@@ -48,7 +50,6 @@ public class ActeurPassif extends Acteur {
         super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_PASSIF"));
-
         super.getDiagramme().getElementsGraphiques().add(this);
     }
 

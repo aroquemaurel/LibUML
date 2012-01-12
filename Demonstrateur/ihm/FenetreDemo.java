@@ -1,5 +1,8 @@
 package ihm;
 
+import eltGraphique.ActeurActif;
+import eltGraphique.ElementGraphique;
+import eltGraphique.ElementModelisation;
 import ihm.menu.BarreOutilsDessin;
 import ihm.menu.Menu;
 import ihm.menu.MenuDroite;

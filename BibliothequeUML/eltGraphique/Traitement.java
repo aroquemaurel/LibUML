@@ -98,12 +98,10 @@ public class Traitement extends ElementModelisation {
 		listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR, BAS_EVENEDECLENCHEUR));
 		celluleFlecheEvenementDeclencheur.getGeometry().setSourcePoint(
 				new mxPoint(GAUCHE_EVENEDECLENCHEUR, 0));
-
 		celluleFlecheEvenementDeclencheur.getGeometry().setTargetPoint(
-				new mxPoint(super.getDimension().getWidth(),BAS_EVENEDECLENCHEUR));
+				new mxPoint(super.getDimension().getWidth(), BAS_EVENEDECLENCHEUR));
 
 		celluleFlecheEvenementDeclencheur.getGeometry().setPoints(listePoint);
-
 		super.getDiagramme().getElementsGraphiques().add(this);
 		super.getGraph().getModel().endUpdate();
     }

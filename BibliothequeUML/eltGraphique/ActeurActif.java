@@ -29,10 +29,13 @@ public class ActeurActif extends Acteur {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
         mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 
+        nouveauStyle.put(mxConstants.STYLE_AUTOSIZE, 0);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ACTOR);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
         feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
 	}
 
@@ -61,6 +64,7 @@ public class ActeurActif extends Acteur {
 		super.getCellule().getGeometry().setOffset(new mxPoint(OFFSET_TEXTE_ACTEUR_X, OFFSET_TEXTE_ACTEUR_Y));
         super.getDiagramme().getElementsGraphiques().add(this);
 
+		super.creerLigneDeVie();
 		super.getGraph().getModel().endUpdate();
     }
 

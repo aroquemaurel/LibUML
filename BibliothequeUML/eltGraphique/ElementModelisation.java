@@ -2,6 +2,8 @@ package eltGraphique;
 
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
+import eltGraphique.classe.Classe;
+import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
 import java.awt.Point;
 
@@ -42,7 +44,6 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 		super(p_graph, p_diagramme);
 		this.texte = p_texte;
 		this.dimension = p_dimension;
-		//TODO Initiliser hauteur/largeur/position. Utiliser Dimension ?
 	}
 
 	/**
@@ -80,8 +81,9 @@ abstract public class ElementModelisation extends ElementGraphique implements In
     public void setDimension(Dimension p_dimension) {
         this.dimension = p_dimension;
 		super.getGraph().getModel().beginUpdate();
-		super.getCellule().getGeometry().setWidth(p_dimension.getWidth());
-		super.getCellule().getGeometry().setHeight(p_dimension.getHeight());
+			super.getGraph().updateCellSize(super.getCellule());
+			super.getCellule().getGeometry().setWidth(p_dimension.getWidth());
+			super.getCellule().getGeometry().setHeight(p_dimension.getHeight());
 		super.getGraph().getModel().endUpdate();
     }
 
@@ -91,8 +93,8 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 */
 	@Override
     public void setTexte(String p_texte) {
-        this.texte = p_texte;
-		super.setValue(p_texte);
+			super.getCellule().setValue(p_texte);
+			this.texte = p_texte;
     }
 
 	/**

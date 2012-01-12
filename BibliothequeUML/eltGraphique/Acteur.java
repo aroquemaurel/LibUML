@@ -1,8 +1,15 @@
 package eltGraphique;
 
+import com.mxgraph.model.mxCell;
+import com.mxgraph.util.mxConstants;
+import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
+import util.Constantes;
 
 /**
  * Classe ancête aux deux types d'acteurs : actifs et passifs.
@@ -14,6 +21,22 @@ import java.awt.Dimension;
  *
  */
 abstract public class Acteur extends ElementModelisation {
+	private mxCell ligneDeVie;
+
+	private void creerStyleLigneDeVie(){
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, 100);
+		nouveauStyle.put(mxConstants.STYLE_DASHED, true);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+		feuilleStyles.putCellStyle("LIGNE_DE_VIE", nouveauStyle);
+
+	}
+
     /**
      * Méthode abstraite
      * Crée la représentation graphique de l'acteur
@@ -24,17 +47,23 @@ abstract public class Acteur extends ElementModelisation {
     @Override
     abstract public void creer();
 
-
-    /**
-     * Constructeur le la classe Acteur
-     *
-     * @param p_graph le graphe sur lequel il faut ajouter l'acteur
+    /** * Constructeur le la classe Acteur * * @param p_graph le graphe sur lequel il faut ajouter l'acteur
      * @param p_texte le texte qui sera afficher sur l'acteur
      *
      */
     public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
             super(p_graph, p_diagramme, p_texte, p_dimension);
     }
+
+	public void creerLigneDeVie(){
+		this.creerStyleLigneDeVie();
+		this.ligneDeVie = (mxCell) super.getGraph().insertEdge(
+			super.getCellule(), null, null, this.getCellule(), null, "LIGNE_DE_VIE");
+
+		this.ligneDeVie.getGeometry().setRelative(true);
+		this.ligneDeVie.getGeometry().setTargetPoint(new mxPoint(30, 602));
+		this.ligneDeVie.getGeometry().setSourcePoint(new mxPoint(10, 500));
+	}
 
     /**
      * Modifie le texte lié à l'acteur.
@@ -45,4 +74,12 @@ abstract public class Acteur extends ElementModelisation {
         super.setTexte(p_texte);
         super.setValue(p_texte);
     }
+
+	public mxCell getLigneDeVie(){
+		return (this.ligneDeVie);
+	}
+
+	public void setLigneDeVie(mxCell p_cellule){
+		this.ligneDeVie = p_cellule;
+	}
 }
