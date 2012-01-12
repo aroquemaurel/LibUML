@@ -22,6 +22,7 @@ public class Traitement extends ElementModelisation {
 	 * L'élément qui déclenche le traitement (appel de méthode, etc.)
 	 */
 	private Lien evenementDeclencheur;
+	private boolean debutDeSequence;
 	private static final double BAS_EVENEDECLENCHEUR = 13.37 ;
 	private static final double HAUT_EVENEDECLENCHEUR = -BAS_EVENEDECLENCHEUR;
 	private static final double GAUCHE_EVENEDECLENCHEUR = 10;
@@ -62,15 +63,16 @@ public class Traitement extends ElementModelisation {
         nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
         feuilleStyles.putCellStyle("FLECHE_EVENEMENT_DECLENCHEUR", nouveauStyle);
 	}
-
+	
 	/**
 	 * Constructeur de la classe traitement
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
-    public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur){
+    public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
         super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
         this.evenementDeclencheur = p_evenementDeclencheur;
+		this.debutDeSequence = p_debutSequence;
     }
 
 	/**
@@ -109,9 +111,18 @@ public class Traitement extends ElementModelisation {
     public Lien getEvenementDeclencheur() {
         return evenementDeclencheur;
     }
+	
+	public boolean estDebutDeSequence() {
+		return this.debutDeSequence;
+	}
 
     public void setEvenementDeclencheur(Lien evenementDeclencheur) {
         this.evenementDeclencheur = evenementDeclencheur;
     }
+	
+	public void setDebutDeSequence(boolean p_boolean) {
+		this.debutDeSequence = p_boolean;
+		this.evenementDeclencheur.setVisible(p_boolean);
+	}
 
 }

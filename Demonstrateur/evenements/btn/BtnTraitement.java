@@ -21,7 +21,7 @@ public class BtnTraitement extends Btn {
         Traitement traitement = new Traitement (super.fenetre.getPanneauGraph().getGraph(),
             fenetre.getPanneauGraph().getDiagramme(),
                 "Mon traitement", new Lien(null, null, super.fenetre.getPanneauGraph().getGraph(),
-													super.fenetre.getPanneauGraph().getDiagramme(), null));
+													super.fenetre.getPanneauGraph().getDiagramme(), null), true);
         traitement.creer();
     }
 
