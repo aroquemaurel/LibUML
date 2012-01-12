@@ -107,7 +107,7 @@ public class Traitement extends ElementModelisation {
 		super.getDiagramme().getElementsGraphiques().add(this);
 		super.getGraph().getModel().endUpdate();
     }
-
+	
     public Lien getEvenementDeclencheur() {
         return evenementDeclencheur;
     }
@@ -124,5 +124,4 @@ public class Traitement extends ElementModelisation {
 		this.debutSequence = p_boolean;
 		this.evenementDeclencheur.setVisible(p_boolean);
 	}
-
 }

@@ -4,10 +4,8 @@
  */
 package diagramme;
 
-import eltGraphique.ElementModelisation;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
-import java.awt.Dimension;
 import com.mxgraph.view.mxGraph;
 import eltGraphique.ActeurActif;
 import eltGraphique.CasUtilisation;
@@ -57,13 +55,13 @@ public class DiagrammeCasUtilisationTest {
     }
 
     @Test
-    public void testLienGeneralisation () {
+    public void testLienAutoriseGeneralisation () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
 			new String()), new CasUtilisation(new mxGraph(), new Diagramme(), new String()), "GENERALISATION"));
     }
 
     @Test
-    public void testLienDependance () {
+    public void testLienAutoriseDependance () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), new Diagramme(),
 			new String()), new CasUtilisation(new mxGraph(), new Diagramme(), new String()), "DEPENDANCE"));
     }
@@ -76,8 +74,7 @@ public class DiagrammeCasUtilisationTest {
 
     @Test
     public void testEltAutoriseLien () {
-//        assertTrue(this.monDiagramme.eltAutorise(new Lien(ElementModelisation, ElementModelisation,
-//			new mxGraph, newTypeLien())));
+        assertTrue(this.monDiagramme.eltAutorise(new Lien( new ActeurActif(new mxGraph(), new Diagramme(), new String()),new CasUtilisation(new mxGraph(), new Diagramme(), new String()), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION)));
     }
 
     @Test
@@ -85,9 +82,4 @@ public class DiagrammeCasUtilisationTest {
         assertTrue(this.monDiagramme.eltAutorise(new ActeurActif(new mxGraph(), new Diagramme(),
 			new String())));
 	}
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }

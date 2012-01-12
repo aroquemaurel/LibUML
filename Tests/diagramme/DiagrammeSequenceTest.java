@@ -4,10 +4,15 @@
  */
 package diagramme;
 
+import eltGraphique.ActeurPassif;
+import eltGraphique.ActeurActif;
+import eltGraphique.CasUtilisation;
+import com.mxgraph.view.mxGraph;
+import eltGraphique.Traitement;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -28,9 +33,37 @@ public class DiagrammeSequenceTest {
     public void tearDown() {
         this.monDiagramme = null;
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
+    @Test
+    public void testLienAutoriseAssociationTraitementTraitement () {
+        assertTrue(this.monDiagramme.lienAutorise(new Traitement(new mxGraph(), new Diagramme(), new String()), new Traitement(new mxGraph(), new Diagramme(), new String()), "ASSOCIATION"));
+    }
+    
+    @Test
+    public void testLienDependanceAssociationTraitementTraitement () {
+        assertTrue(this.monDiagramme.lienAutorise(new Traitement(new mxGraph(), new Diagramme(), new String()), new Traitement(new mxGraph(), new Diagramme(), new String()), "DEPENDANCE"));
+    }
+    
+    @Test
+    public void testEltAutoriseTraitement () {
+        assertTrue(this.monDiagramme.eltAutorise(new Traitement(new mxGraph(), new Diagramme(),
+			new String())));
+    }
+    
+    @Test
+    public void testEltAutoriseLien () {
+        assertTrue(this.monDiagramme.eltAutorise(new Lien( new ActeurActif(new mxGraph(), new Diagramme(), new String()),new CasUtilisation(new mxGraph(), new Diagramme(), new String()), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION)));
+    }
+
+    @Test
+    public void testEltAutoriseActeurActif () {
+        assertTrue(this.monDiagramme.eltAutorise(new ActeurActif(new mxGraph(), new Diagramme(),
+			new String())));
+    }
+    
+    @Test
+    public void testEltAutoriseActeurPassif () {
+        assertTrue(this.monDiagramme.eltAutorise(new ActeurPassif(new mxGraph(), new Diagramme(),
+			new String())));
+    }
 }
