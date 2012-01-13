@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
+ * Classe de test unitaires de la classe <b>DiagrammeClasse</b>.
  * @author Marie-Ly
  * @author Geoffroy
  */
