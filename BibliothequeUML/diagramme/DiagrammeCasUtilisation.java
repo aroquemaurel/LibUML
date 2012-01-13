@@ -7,21 +7,24 @@ import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 
 /**
+ * Cette classe permet de représenter et de manipuler <b>un Diagramme de Cas d'utilisation</b>.
  * @author satenske
  * @author Marie-Ly
+ * @author Geoffroy
  */
 public class DiagrammeCasUtilisation extends Diagramme {
     
     /**
-     * Méthode qui teste si le lien est autorisé ou non dans le diagrammme 
-     * cas d'utilisation en fonction de l'origine et de l'extrémité
-     * 
-     * @see Diagramme.java
-     * @param p_origine
-     * @param p_extremite
-     * @param p_typeDeFleche
-     * @return true s'il est, false sinon
-     */
+    * Méthode qui teste si le lien est autorisé ou non dans le diagrammme 
+    * cas d'utilisation en fonction de l'origine et de l'extrémité
+    * 
+    * @see Diagramme.java
+    * @param p_origine Element graphique d'origine
+    * @param p_extremite Element graphique d'arrivée
+    * @param p_typeDeFleche Type de lien utilisé entre les deux éléments graphiques
+    * @return vrai(true) si le lien entre deux éléments graphiques est autorisé
+    * ou faux(false) si le lien entre deux éléments graphiques n'est pas autorisé.
+    */
     @Override
     public boolean lienAutorise (ElementGraphique p_origine , 
             ElementGraphique p_extremite, TypeLien p_typeDeFleche){
@@ -47,14 +50,16 @@ public class DiagrammeCasUtilisation extends Diagramme {
      * Méthode privée qui autorise un lien d'association en fonction de 
      * l'origine et de l'extrémité
      * 
-     * @param p_origine
-     * @param p_extremite
-     * @return le lien d'association lorsque les p_origne et p_extremité sont 
-     * corrects
+     * @param p_origine Element graphique d'origine
+     * @param p_extremite Element graphique d'arrivée
+     * @return vrai(true) si le lien d'association entre deux éléments graphiques est autorisé
+     * ou faux(false) si le lien d'association entre deux éléments graphiques n'est pas autorisé.
      */
     private boolean autorisationAssociation(ElementGraphique p_origine , 
             ElementGraphique p_extremite) { 
-        return((p_origine instanceof ActeurActif && p_extremite instanceof CasUtilisation) || (p_origine instanceof CasUtilisation && p_extremite instanceof ActeurActif) || (p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation));
+        return((p_origine instanceof ActeurActif && p_extremite instanceof CasUtilisation) || 
+               (p_origine instanceof CasUtilisation && p_extremite instanceof ActeurActif) || 
+               (p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation));
     }
 
     /**
@@ -62,10 +67,10 @@ public class DiagrammeCasUtilisation extends Diagramme {
      * Méthode privée qui autorise un lien de généralisation en fonction de 
      * l'origine et de l'extrémité
      * 
-     * @param p_origine
-     * @param p_extremite
-     * @return le lien d'association lorsque les p_origne et p_extremité sont 
-     * corrects
+     * @param p_origine Element graphique d'origine
+     * @param p_extremite Element graphique d'arrivée
+     * @return vrai(true) si le lien de generalisation entre deux éléments graphiques est autorisé
+     * ou faux(false) si le lien de generalisation entre deux éléments graphiques n'est pas autorisé.
      */
     private boolean autorisationGeneralisation(ElementGraphique p_origine , 
             ElementGraphique p_extremite) {
@@ -77,10 +82,10 @@ public class DiagrammeCasUtilisation extends Diagramme {
      * Méthode privée qui autorise un lien de dépendance en fonction de 
      * l'origine et de l'extrémité
      * 
-     * @param p_origine
-     * @param p_extremite
-     * @return le lien d'association lorsque les p_origne et p_extremité sont 
-     * corrects
+     * @param p_origine Element graphique d'origine
+     * @param p_extremite Element graphique d'arrivée
+     * @return vrai(true) si le lien de dependance entre deux éléments graphiques est autorisé
+     * ou faux(false) si le lien de dependance entre deux éléments graphiques n'est pas autorisé.
      */
     private boolean autorisationDependance(ElementGraphique p_origine , 
             ElementGraphique p_extremite) {
@@ -92,7 +97,8 @@ public class DiagrammeCasUtilisation extends Diagramme {
      * cas d'utilisation
      * @see Diagramme.java
      * @param p_element
-     * @return true s'il est, false sinon
+     * @return vrai(true) si l'element est autorisé dans un diagramme de cas d'utilisation
+     * ou faux(false) si l'element n'est pas autorisé dans un diagramme de cas d'utilisation.
      */
     @Override
     public boolean eltAutorise (ElementGraphique p_element){

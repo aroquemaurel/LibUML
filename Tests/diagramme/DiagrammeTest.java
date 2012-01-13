@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
+ * @author Marie-Ly
  * @author geoffroy
  */
 public class DiagrammeTest {
@@ -34,49 +35,49 @@ public class DiagrammeTest {
         assertTrue(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(),
             new Diagramme(), new String()), 
             new CasUtilisation(new mxGraph(), new Diagramme(),
-            new String()), "ASSOCIATION"));
+            new String()), TypeLien.ASSOCIATION));
     }
     
     @Test
     public void testLienAutoriseAssociationCasUtilisationActeurActif () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
                 new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
-                new Diagramme(), new String()), "ASSOCIATION"));
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }
     
     @Test
     public void testLienAutoriseAssociationCasUtilisationCasUtilisation () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
                 new Diagramme(), new String()), new CasUtilisation(new mxGraph(), 
-                new Diagramme(), new String()), "ASSOCIATION"));
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }
     
     @Test
     public void testLienAutoriseAssociationActeurActifActeurActif () {
         assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), 
                 new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
-                new Diagramme(), new String()), "ASSOCIATION"));
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     } 
     
     @Test
     public void testLienAutoriseAssociationActeurPassifCasUtilisation(){
         assertTrue(this.monDiagramme.lienAutorise(new ActeurPassif(new mxGraph(),
             new Diagramme(), new String()), new CasUtilisation(new mxGraph(),
-            new Diagramme(), new String()), "ASSOCIATION"));
+            new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }
     
     @Test
     public void testLienAutoriseAssociationCasUtilisationActeurPassif () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
                 new Diagramme(), new String()), new ActeurPassif(new mxGraph(), 
-                new Diagramme(), new String()), "ASSOCIATION"));
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }
           
     @Test
     public void testLienAutoriseAssociationActeurPassifActeurPassif () {
         assertFalse(this.monDiagramme.lienAutorise(new ActeurPassif(new mxGraph(), 
                 new Diagramme(), new String()), new ActeurPassif(new mxGraph(), 
-                new Diagramme(), new String()), "ASSOCIATION"));
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }     
     
     @Test

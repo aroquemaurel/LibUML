@@ -1,5 +1,7 @@
 package diagramme;
 
+import eltGraphique.Interface;
+import eltGraphique.classe.Classe;
 import eltGraphique.ActeurPassif;
 import eltGraphique.ActeurActif;
 import eltGraphique.CasUtilisation;
@@ -31,24 +33,50 @@ public class DiagrammeSequenceTest {
     
     @Test
     public void testLienAutoriseAssociationTraitementTraitement () {
-        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), 
-                new Traitement(null, monDiagramme, null, null, true), TypeLien.ASSOCIATION));
+        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, 
+                null, null, true), new Traitement(null, monDiagramme, null, 
+                null, true), TypeLien.ASSOCIATION));
+    }
+    
+    @Test
+    public void testLienAutoriseAssociationActeurActifActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }
     
     @Test
     public void testLienAutoriseDependanceTraitementTraitement () {
-        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), 
-                new Traitement(null, monDiagramme, null, null, true), TypeLien.DEPENDANCE));
+        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, 
+                null, null, true), new Traitement(null, monDiagramme, 
+                        null, null, true), TypeLien.DEPENDANCE));
+    }
+    
+    @Test
+    public void testLienAutoriseDependanceActeurActifActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()), TypeLien.DEPENDANCE));
     }
     
     @Test
     public void testEltAutoriseTraitement () {
-        assertTrue(this.monDiagramme.eltAutorise(new Traitement(null, monDiagramme, null, null, true)));
+        assertTrue(this.monDiagramme.eltAutorise(new Traitement(null, monDiagramme, 
+                null, null, true)));
+    }
+    
+    @Test
+    public void testEltAutoriseClasse () {
+        assertFalse(this.monDiagramme.eltAutorise(
+                new Classe(new mxGraph(), new Diagramme(), new String())));    
     }
     
     @Test
     public void testEltAutoriseLien () {
-        assertTrue(this.monDiagramme.eltAutorise(new Lien(new ActeurActif(new mxGraph(), new Diagramme(), new String()),new CasUtilisation(new mxGraph(), new Diagramme(), new String()), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION)));
+        assertTrue(this.monDiagramme.eltAutorise(new Lien(new ActeurActif(new mxGraph(), 
+                new Diagramme(), new String()),new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String()), new mxGraph(), new Diagramme(), 
+                TypeLien.ASSOCIATION)));
     }
 
     @Test
@@ -59,7 +87,19 @@ public class DiagrammeSequenceTest {
     
     @Test
     public void testEltAutoriseActeurPassif () {
-        assertTrue(this.monDiagramme.eltAutorise(new ActeurPassif(new mxGraph(), new Diagramme(),
-			new String())));
+        assertTrue(this.monDiagramme.eltAutorise(new ActeurPassif(new mxGraph(), 
+                new Diagramme(), new String())));
+    }
+    
+    @Test
+    public void testEltAutoriseInterface () {
+        assertFalse(this.monDiagramme.eltAutorise(new Interface(new mxGraph(), 
+            new String(),new Diagramme())));
+    } 
+    
+    @Test
+    public void testEltAutoriseCasUtilisation () {
+        assertFalse(this.monDiagramme.eltAutorise(new CasUtilisation(new mxGraph(), 
+                new Diagramme(), new String())));
     }
 }
