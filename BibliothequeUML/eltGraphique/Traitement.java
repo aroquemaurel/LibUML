@@ -35,7 +35,6 @@ public class Traitement extends ElementModelisation {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
         Map<String, Object> nouveauStyle = new HashMap<String, Object>();
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
-        nouveauStyle.put(mxConstants.STYLE_IMAGE_BACKGROUND, "images/btn_classe.jpg");
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
@@ -108,18 +107,40 @@ public class Traitement extends ElementModelisation {
 		super.getGraph().getModel().endUpdate();
     }
 	
+	/**
+	 * Récupère l'évenement déclencheur du traitement
+	 * @return L'élément déclencheur
+	 * 
+	 * @see Lien
+	 */
     public Lien getEvenementDeclencheur() {
         return evenementDeclencheur;
     }
 	
+	/**
+	 * Retourn vrai si le traitement est le premier de la séquence, faux sinon
+	 * @return Debut de séquence ?
+	 */
 	public boolean estDebutSequence() {
 		return this.debutSequence;
 	}
 
+	/**
+	 * Remplace l'élément déclencheur par celui passé en paramètre
+	 * @param evenementDeclencheur Le nouvel élément déclencheur
+	 * 
+	 * @see Lien
+	 */
     public void setEvenementDeclencheur(Lien evenementDeclencheur) {
         this.evenementDeclencheur = evenementDeclencheur;
     }
 	
+	/**
+	 * Modifie le fait que le traitement soit en début de séquence (ou non).
+	 * Cela a pour but d'afficher (ou non) l'élément déclencheur représenté par un flèche qui reviens sur le traitement
+	 * 
+	 * @param p_boolean Debut de séquence ?
+	 */
 	public void setDebutSequence(boolean p_boolean) {
 		this.debutSequence = p_boolean;
 		this.evenementDeclencheur.setVisible(p_boolean);
