@@ -27,16 +27,14 @@ public class ActeurActif extends Acteur {
 	 */
 	private void creerStyleActeurActif() {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-        mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+        mxStylesheet feuilleStyles = super.getGraph().getStylesheet();
 
-        nouveauStyle.put(mxConstants.STYLE_AUTOSIZE, 0);
-        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ACTOR);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
         nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
-        
+
         feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
 	}
 
@@ -56,17 +54,18 @@ public class ActeurActif extends Acteur {
     @Override
     public final void creer(){
 		super.getGraph().getModel().beginUpdate();
-		creerStyleActeurActif();
+		this.creerStyleActeurActif();
 
-        
+
         super.setCellule((mxCell) super.getGraph().insertVertex(
             null, null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_ACTIF"));
 
 		super.getCellule().getGeometry().setOffset(new mxPoint(OFFSET_TEXTE_ACTEUR_X, OFFSET_TEXTE_ACTEUR_Y));
         super.getDiagramme().getElementsGraphiques().add(this);
-        
+
         super.creerLigneDeVie();
+		super.afficherLigneDeVie(false);
 		super.getGraph().getModel().endUpdate();
     }
 

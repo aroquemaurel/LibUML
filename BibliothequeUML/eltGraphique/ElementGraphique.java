@@ -40,6 +40,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 		super.setParent(null);
     }
 
+
 	/**
 	 * Rend (in)visible l'élément grahique sur le graphe
 	 * @param p_bool

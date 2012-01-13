@@ -23,7 +23,7 @@ public class CasUtilisation extends ElementModelisation {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
 		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
 		feuilleStyles.putCellStyle("USECASE", nouveauStyle);

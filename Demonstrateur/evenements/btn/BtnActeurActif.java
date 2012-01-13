@@ -20,5 +20,6 @@ public class BtnActeurActif extends Btn {
             this.fenetre.getPanneauGraph().getDiagramme(),
             "Mon acteur Actif");
         acteur.creer();
+		acteur.afficherLigneDeVie(false);
     }
 }
