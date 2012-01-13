@@ -82,13 +82,10 @@ public class DiagrammeTest {
     @Test
     public void testEltAutoriseLien () {
         assertTrue(this.monDiagramme.eltAutorise( new Lien( new ActeurPassif(new mxGraph(), new Diagramme(), new String()),new CasUtilisation(new mxGraph(), new Diagramme(), new String()), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION)));
-    }     
+    }    
     
     
-    @Test
-    public void eltAutorise(){
-        
-    }
+   
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
