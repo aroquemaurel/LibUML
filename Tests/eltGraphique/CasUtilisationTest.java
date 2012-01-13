@@ -3,78 +3,88 @@ package eltGraphique;
 import diagramme.Diagramme;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
+import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxStylesheet;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import util.Constantes;
 import static org.junit.Assert.*;
 
 /**
  *
  */
 public class CasUtilisationTest {
-	private ElementModelisation monUseCase;
+	private ElementModelisation casUtilisation;
 
     @Before
     public void setUp() {
-		this.monUseCase= new CasUtilisation(new mxGraph(), 
-                                                    new Diagramme(),
-                                                    "un super test");
-        this.monUseCase.creer();
+		this.casUtilisation= new CasUtilisation(new mxGraph(), 
+												new Diagramme(),
+												"casUtilisationPourLesTests");
+        this.casUtilisation.creer();
     }
 
     @After
     public void tearDown() {
-		this.monUseCase = null;
+		this.casUtilisation = null;
     }
 
     @Test
-    public void testGetCellule(){
-        mxICell maCellule1 = this.monUseCase.getParent();
-        assertEquals(maCellule1, this.monUseCase.getCellule());
-
-        mxICell maCellule2 = this.monUseCase.getTarget();
-        assertEquals(maCellule2, this.monUseCase.getCellule());
+    public void testCelluleParent() {
+        mxICell cellule = this.casUtilisation.getParent();
+        assertEquals(cellule, this.casUtilisation.getCellule());
+	}
+	
+	@Test
+	public void testCelluleTarget() {
+		
+        mxICell cellule = this.casUtilisation.getTarget();
+        assertEquals(cellule, this.casUtilisation.getCellule());
 	}
 
 	@Test
-	public void testCreer1 (){
-        mxICell maCellule = this.monUseCase.getCellule();
-        assertEquals(maCellule, this.monUseCase.getCellule());
+	public void testInstance(){
+		assertTrue(this.casUtilisation instanceof CasUtilisation);
 	}
 
 	@Test
-	public void testCreer2(){
-		assertTrue(this.monUseCase instanceof CasUtilisation);
+	public void testStyle(){
+		assertEquals("USECASE", this.casUtilisation.getCellule().getStyle());
 	}
-
+	
 	@Test
-	public void testCreer3(){
-		assertEquals("USECASE", this.monUseCase.getCellule().getStyle());
+	public void testCreerStyle() {
+		assertTrue(this.casUtilisation.getGraph().getStylesheet().getStyles().containsKey("USECASE"));
 	}
-
+	
+	@Test
+	public void testChampsStyle() {
+		mxStylesheet feuilleStyles = this.casUtilisation.getGraph().getStylesheet();
+		assertEquals(mxConstants.SHAPE_ELLIPSE, feuilleStyles.getStyles().get("USECASE").get(mxConstants.STYLE_SHAPE));
+		assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("USECASE").get(mxConstants.STYLE_OPACITY));
+		assertEquals(Constantes.COULEUR_TEXTE, feuilleStyles.getStyles().get("USECASE").get(mxConstants.STYLE_FONTCOLOR));
+		assertEquals(Constantes.COULEUR_BORDURE, feuilleStyles.getStyles().get("USECASE").get(mxConstants.STYLE_STROKECOLOR));
+	}
 
     @Test
     public void testSetTexte(){
-		this.monUseCase.setTexte("testouille");
-        assertEquals("testouille", this.monUseCase.getTexte());
+		this.casUtilisation.setTexte("testouille");
+        assertEquals("testouille", this.casUtilisation.getTexte());
     }
 
 	@Test
 	public void testSetCellule(){
 		mxCell maCellulle = new mxCell();
-		this.monUseCase.setCellule(maCellulle);
-		assertEquals(maCellulle, this.monUseCase.getParent());
-		assertEquals(maCellulle, this.monUseCase.getTarget());
+		this.casUtilisation.setCellule(maCellulle);
+		assertEquals(maCellulle, this.casUtilisation.getParent());
+		assertEquals(maCellulle, this.casUtilisation.getTarget());
 	}
 
 	@Test
     public void testSupprimer(){
-        this.monUseCase.supprimer();
-        assertNull(this.monUseCase.getCellule());
+        this.casUtilisation.supprimer();
+        assertNull(this.casUtilisation.getCellule());
     }
-
-
-    // TODO ajouter des tests pour CasUtilisation
-
 }
