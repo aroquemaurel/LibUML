@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 public class DiagrammeCasUtilisationTest {
 
     private Diagramme monDiagramme;
-
+    
     @Before
     public void setUp() {
         this.monDiagramme = new DiagrammeCasUtilisation();
