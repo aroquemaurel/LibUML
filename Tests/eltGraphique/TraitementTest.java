@@ -81,7 +81,4 @@ public class TraitementTest {
 		assertTrue(this.traitement.estDebutSequence());
 	}
 	
-
-    // TODO implémenter les tests de Traitement
-
 }

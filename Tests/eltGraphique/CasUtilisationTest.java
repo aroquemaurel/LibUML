@@ -68,11 +68,11 @@ public class CasUtilisationTest {
 		assertEquals(Constantes.COULEUR_BORDURE, feuilleStyles.getStyles().get("USECASE").get(mxConstants.STYLE_STROKECOLOR));
 	}
 
-    @Test
-    public void testSetTexte(){
-		this.casUtilisation.setTexte("testouille");
-        assertEquals("testouille", this.casUtilisation.getTexte());
-    }
+        @Test
+        public void testSetTexte(){
+                    this.casUtilisation.setTexte("testouille");
+            assertEquals("testouille", this.casUtilisation.getTexte());
+        }
 
 	@Test
 	public void testSetCellule(){
