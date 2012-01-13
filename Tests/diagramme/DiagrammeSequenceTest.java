@@ -33,30 +33,184 @@ public class DiagrammeSequenceTest {
     
     @Test
     public void testLienAutoriseAssociationTraitementTraitement () {
-        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, 
-                null, null, true), new Traitement(null, monDiagramme, null, 
-                null, true), TypeLien.ASSOCIATION));
+        assertTrue(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme,null, null, true),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.ASSOCIATION));
+    }
+    
+    @Test
+    public void testLienAutoriseAssociationActeurActifTraitement () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.ASSOCIATION));
+    } 
+    @Test
+    public void testLienAutoriseAssociationActeurPassifTraitement () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.ASSOCIATION));
+    }
+    
+    @Test
+    public void testLienAutoriseAssociationTraitementActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme,null, null, true),
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.ASSOCIATION));
+    }
+    
+    @Test
+    public void testLienAutoriseAssociationTraitementActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme,null, null, true),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.ASSOCIATION));
     }
     
     @Test
     public void testLienAutoriseAssociationActeurActifActeurActif () {
-        assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), 
-                new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
-                new Diagramme(), new String()), TypeLien.ASSOCIATION));
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.ASSOCIATION));
     }
     
     @Test
+    public void testLienAutoriseAssociationActeurPassifActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.ASSOCIATION));
+    } 
+    
+    @Test
+    public void testLienAutoriseAssociationActeurActifActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.ASSOCIATION));
+    } 
+    
+    @Test
+    public void testLienAutoriseAssociationActeurPassifActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.ASSOCIATION));
+    } 
+    
+    @Test
     public void testLienAutoriseDependanceTraitementTraitement () {
-        assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, 
-                null, null, true), new Traitement(null, monDiagramme, 
-                        null, null, true), TypeLien.DEPENDANCE));
+        assertTrue(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme, null, null, true),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.DEPENDANCE));
     }
     
     @Test
     public void testLienAutoriseDependanceActeurActifActeurActif () {
-        assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), 
-                new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
-                new Diagramme(), new String()), TypeLien.DEPENDANCE));
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()), 
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.DEPENDANCE));
+    }
+        
+    @Test
+    public void testLienAutoriseDependanceActeurActifTraitement () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.DEPENDANCE));
+    } 
+    @Test
+    public void testLienAutoriseDependanceActeurPassifTraitement () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.DEPENDANCE));
+    }
+    
+    @Test
+    public void testLienAutoriseDependanceTraitementActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme,null, null, true),
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.DEPENDANCE));
+    }
+    
+    @Test
+    public void testLienAutoriseDependanceTraitementActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme,null, null, true),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.DEPENDANCE));
+    }
+    
+    
+    @Test
+    public void testLienAutoriseDependanceActeurPassifActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.DEPENDANCE));
+    } 
+    
+    @Test
+    public void testLienAutoriseDependanceActeurActifActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.DEPENDANCE ));
+    } 
+    
+    @Test
+    public void testLienAutoriseDependanceActeurPassifActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.DEPENDANCE));
+    } 
+    
+    @Test
+    public void testLienAutoriseSpecialisation () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.SPECIALISATION));
+    }
+    
+    @Test
+    public void testLienAutoriseAgregation () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.AGREGATION));
+    } 
+    @Test
+    public void testLienAutoriseClasseAssociation () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.CLASSE_ASSOCIATION));
+    }
+    
+    @Test
+    public void testLienAutoriseGeneralisation () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.GENERALISATION));
+    }
+        
+    @Test
+    public void testLienAutoriseComposition () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.COMPOSITION));
     }
     
     @Test

@@ -33,6 +33,10 @@ public class DiagrammeClasse extends Diagramme {
                 valeurRetour = this.autorisationAssociation(p_origine , 
                         p_extremite); 
                 break;
+            case CLASSE_ASSOCIATION:
+                valeurRetour = this.autorisationClasseAssociation(p_origine , 
+                        p_extremite); 
+                break;
             case GENERALISATION:
                 valeurRetour = this.autorisationGeneralisation(p_origine , 
                         p_extremite);
@@ -60,9 +64,7 @@ public class DiagrammeClasse extends Diagramme {
      */
     private boolean autorisationAssociation(ElementGraphique p_origine ,
             ElementGraphique p_extremite) {   
-        return((p_origine instanceof Classe && p_extremite instanceof Classe) ||
-                (p_origine instanceof Classe && p_extremite instanceof Lien) ||
-                (p_origine instanceof Lien && p_extremite instanceof Classe));
+        return((p_origine instanceof Classe && p_extremite instanceof Classe));
     }
 
     /**
@@ -80,6 +82,23 @@ public class DiagrammeClasse extends Diagramme {
         return(p_origine instanceof Classe && p_extremite instanceof Classe);
     }
 
+    /**
+     * 
+     * Méthode privée qui autorise un lien de classe association en fonction de 
+     * l'origine et de l'extrémité
+     * 
+     * @param p_origine Element graphique d'origine
+     * @param p_extremite Element graphique d'arrivée
+     * @return vrai(true) si le lien de classe association entre deux éléments graphiques est autorisé
+     * ou faux(false) si le lien de classe association entre deux éléments graphiques n'est pas autorisé.
+     */
+    private boolean autorisationClasseAssociation(ElementGraphique p_origine , 
+            ElementGraphique p_extremite) {
+        return(p_origine instanceof Classe && p_extremite instanceof Lien
+            || p_origine instanceof Lien && p_extremite instanceof Classe);
+    }
+
+    
     /**
      * 
      * Méthode privée qui autorise un lien de composition en fonction de 
