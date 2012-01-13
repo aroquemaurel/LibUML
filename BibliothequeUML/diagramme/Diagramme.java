@@ -6,6 +6,7 @@ import eltGraphique.ligne.TypeLien;
 import util.Liste;
 
 /**
+ * Cette classe permet de représenter et de manipuler <b>un Diagramme</b>.
  * @author satenske
  * @author Marie-Ly
  */
