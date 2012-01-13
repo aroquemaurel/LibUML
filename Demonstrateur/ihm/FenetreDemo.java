@@ -3,6 +3,7 @@ package ihm;
 import eltGraphique.ActeurActif;
 import eltGraphique.ElementGraphique;
 import eltGraphique.ElementModelisation;
+import evenements.EvenementCelluleSelectionne;
 import ihm.menu.BarreOutilsDessin;
 import ihm.menu.Menu;
 import ihm.menu.MenuDroite;
@@ -64,9 +65,13 @@ public class FenetreDemo extends JFrame {
 
 	/* Construit la fenêtre de démonstration */
     public FenetreDemo() {
+        
         this.panneauPrincipal = new JPanel();
         this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
         this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
+        
+        EvenementCelluleSelectionne evenement = new EvenementCelluleSelectionne(panneauGraph);
+        this.panneauGraph.getGraphControl().addMouseListener(evenement); 
         this.menuDroite = new MenuDroite(new Dimension(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL), this);
         this.menuHaut = new BarreMenus(new Dimension(LARGEUR_FENETRE, HAUTEUR_MENUBAR));
     }

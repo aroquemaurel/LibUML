@@ -36,6 +36,7 @@ public class ActeurActif extends Acteur {
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
         nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
+        
         feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
 	}
 
@@ -57,14 +58,15 @@ public class ActeurActif extends Acteur {
 		super.getGraph().getModel().beginUpdate();
 		creerStyleActeurActif();
 
+        
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getGraph().getDefaultParent(), null, super.getTexte(), 30, 30,
+            null, null, super.getTexte(), 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_ACTIF"));
 
 		super.getCellule().getGeometry().setOffset(new mxPoint(OFFSET_TEXTE_ACTEUR_X, OFFSET_TEXTE_ACTEUR_Y));
         super.getDiagramme().getElementsGraphiques().add(this);
-
-		super.creerLigneDeVie();
+        
+        super.creerLigneDeVie();
 		super.getGraph().getModel().endUpdate();
     }
 

@@ -26,11 +26,16 @@ abstract public class Acteur extends ElementModelisation {
 	private void creerStyleLigneDeVie(){
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.NONE);
+        nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, 100);
 		nouveauStyle.put(mxConstants.STYLE_DASHED, true);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_AUTOSIZE, 0);
+        nouveauStyle.put(mxConstants.STYLE_AUTOSIZE, 0);
+        nouveauStyle.put(mxConstants.STYLE_TARGET_PERIMETER_SPACING, 3000);
+        nouveauStyle.put(mxConstants.STYLE_SOURCE_PERIMETER_SPACING, 30);
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
 		feuilleStyles.putCellStyle("LIGNE_DE_VIE", nouveauStyle);
@@ -58,11 +63,8 @@ abstract public class Acteur extends ElementModelisation {
 	public void creerLigneDeVie(){
 		this.creerStyleLigneDeVie();
 		this.ligneDeVie = (mxCell) super.getGraph().insertEdge(
-			super.getCellule(), null, null, this.getCellule(), null, "LIGNE_DE_VIE");
-
-		this.ligneDeVie.getGeometry().setRelative(true);
-		this.ligneDeVie.getGeometry().setTargetPoint(new mxPoint(30, 602));
-		this.ligneDeVie.getGeometry().setSourcePoint(new mxPoint(10, 500));
+			null, null, null, this.getCellule(), this.getCellule(), "LIGNE_DE_VIE");       
+        this.ligneDeVie.getGeometry().setX(420);
 	}
 
     /**
@@ -83,3 +85,4 @@ abstract public class Acteur extends ElementModelisation {
 		this.ligneDeVie = p_cellule;
 	}
 }
+

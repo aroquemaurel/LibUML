@@ -12,7 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *
  * @author Marie-Ly
  * @author Geoffroy
  */
