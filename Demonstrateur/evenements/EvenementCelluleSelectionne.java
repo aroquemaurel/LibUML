@@ -6,8 +6,11 @@
 package evenements;
 
 import com.mxgraph.model.mxCell;
+import eltGraphique.Acteur;
 import eltGraphique.ElementGraphique;
+import eltGraphique.Traitement;
 import eltGraphique.classe.Classe;
+import evenements.menu.contextuel.EvenementAfficherLigneDeVie;
 import evenements.menu.contextuel.EvenementSupprimer;
 import ihm.FenetreDemo;
 import ihm.PanneauGraph;
@@ -22,15 +25,13 @@ import javax.swing.JPopupMenu;
  */
 public class EvenementCelluleSelectionne implements MouseListener {
     private PanneauGraph panneauGraph;
-	private JPopupMenu menuConxtuelle;
-	private JMenuItem itemSupprimer;
+
 	private FenetreDemo fenetre;
-	private EvenementSupprimer evenementSupprimer;
+
 
     public EvenementCelluleSelectionne(PanneauGraph p_graph, FenetreDemo p_fenetre){
         this.panneauGraph = p_graph;
-		this.menuConxtuelle = new JPopupMenu();
-		this.itemSupprimer = new JMenuItem("Supprimer");
+        
         this.panneauGraph.getGraphControl().addMouseListener(this);
 		this.fenetre = p_fenetre;
     }
@@ -51,28 +52,59 @@ public class EvenementCelluleSelectionne implements MouseListener {
     public void mouseReleased(MouseEvent event) {
 		ElementGraphique element = this.panneauGraph.getDiagramme().getElementGraphiqueViaCellule(
 				(mxCell) this.panneauGraph.getGraph().getSelectionCell());
-
+                JPopupMenu menuContextuel;
+                
 		if(element != null){
-			this.evenementSupprimer = new EvenementSupprimer(element);
+			
 			if(event.getButton() == MouseEvent.BUTTON3){
-				this.menuConxtuelle.add(this.itemSupprimer);
-				this.fenetre.getPanneauPrincipal().add(this.menuConxtuelle);
-				this.itemSupprimer.addActionListener(evenementSupprimer);
-				/* On affiche le menu contextuel*/
-				this.menuConxtuelle.show(this.fenetre.getPanneauPrincipal(), event.getX(),event.getY());
-				this.menuConxtuelle.show(this.panneauGraph, event.getX(), event.getY());
+                            if(element instanceof Acteur){
+                                menuContextuel = construireMenuContextuel((Acteur) element);
+                            } else if (element instanceof Traitement){
+                                menuContextuel = construireMenuContextuel((Traitement) element);                                
+                            } else {
+                                menuContextuel = construireMenuContextuel((ElementGraphique) element);                                
+                            }
+                            
+                            /* On affiche le menu contextuel*/
+                            menuContextuel.show(this.fenetre.getPanneauPrincipal(), event.getX(),event.getY());
+                            menuContextuel.show(this.panneauGraph, event.getX(), event.getY());
 			}
 		}
 	}
 
     @Override
-    public void mouseEntered(MouseEvent arg0) {
-
-    }
+    public void mouseEntered(MouseEvent arg0) {}
 
     @Override
-    public void mouseExited(MouseEvent arg0) {
-
+    public void mouseExited(MouseEvent arg0) {}
+    
+    private JPopupMenu construireMenuContextuel(Acteur element){
+	JPopupMenu menuContextuel = new JPopupMenu();
+	JMenuItem itemSupprimer = new JMenuItem("Supprimer");
+        JMenuItem itemAfficherLigneDeVie = new JMenuItem("Afficher ligne de vie");
+        
+	EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
+        EvenementAfficherLigneDeVie evenementAfficherLigneDeVie = new EvenementAfficherLigneDeVie(element);
+        menuContextuel.add(itemSupprimer);
+        menuContextuel.add(itemAfficherLigneDeVie);
+        this.fenetre.getPanneauPrincipal().add(menuContextuel);
+        
+        itemSupprimer.addActionListener(evenementSupprimer);
+        itemAfficherLigneDeVie.addActionListener(evenementAfficherLigneDeVie);
+        return menuContextuel;
     }
-
+    
+    private JPopupMenu construireMenuContextuel(Traitement element){
+	JPopupMenu menuContextuel = new JPopupMenu();
+	JMenuItem itemSupprimer = new JMenuItem("Supprimer");           
+        
+        return menuContextuel;
+    }   
+    
+    private JPopupMenu construireMenuContextuel(ElementGraphique element){
+	JPopupMenu menuContextuel = new JPopupMenu();
+	JMenuItem itemSupprimer = new JMenuItem("Supprimer");               
+        
+        return menuContextuel;
+    }    
 }
