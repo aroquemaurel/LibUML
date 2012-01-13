@@ -188,6 +188,13 @@ public class DiagrammeSequenceTest {
                 null,
                 null,
                 TypeLien.AGREGATION));
+    } 
+    @Test
+    public void testLienAutoriseClasseAssociation () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.CLASSE_ASSOCIATION));
     }
     
     @Test

@@ -288,6 +288,15 @@ public class DiagrammeTest {
                 TypeLien.DEPENDANCE));
     }
      
+    
+    @Test
+    public void testLienAutoriseClasseAssociation () {
+        assertTrue(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.CLASSE_ASSOCIATION));
+    }
+    
     @Test
     public void testEltAutoriseTraitement () {
         assertTrue(this.monDiagramme.eltAutorise(new Traitement(null, monDiagramme, 

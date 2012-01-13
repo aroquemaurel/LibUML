@@ -71,15 +71,38 @@ public class DiagrammeClasseTest {
     }
     
     @Test
-    public void testLienAutoriseAssociationClasseLien () {
+    public void testLienAutoriseClasseAssociationClasseLien () {
         assertTrue(this.monDiagramme.lienAutorise(
+                new Classe(new mxGraph(), new Diagramme(), new String()), 
+                new Lien( null,null, new mxGraph(), new Diagramme(), null),
+                TypeLien.CLASSE_ASSOCIATION));    
+    }
+    @Test
+    public void testLienAutoriseClasseAssociationLienClasse () {
+        assertTrue(this.monDiagramme.lienAutorise(
+                new Lien( null,null, new mxGraph(), new Diagramme(), null),
+                new Classe(new mxGraph(), new Diagramme(),new String()),
+                TypeLien.CLASSE_ASSOCIATION));    
+    }
+    
+    @Test
+    public void testLienAutoriseClaseeAssociationLienLien () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new Lien( null,null, new mxGraph(), new Diagramme(), null),
+                new Lien( null,null, new mxGraph(), new Diagramme(), null),
+                TypeLien.CLASSE_ASSOCIATION));    
+    }
+    
+    @Test
+    public void testLienAutoriseAssociationClasseLien () {
+        assertFalse(this.monDiagramme.lienAutorise(
                 new Classe(new mxGraph(), new Diagramme(), new String()), 
                 new Lien( null,null, new mxGraph(), new Diagramme(), null),
                 TypeLien.ASSOCIATION));    
     }
     @Test
     public void testLienAutoriseAssociationLienClasse () {
-        assertTrue(this.monDiagramme.lienAutorise(
+        assertFalse(this.monDiagramme.lienAutorise(
                 new Lien( null,null, new mxGraph(), new Diagramme(), null),
                 new Classe(new mxGraph(), new Diagramme(),new String()),
                 TypeLien.ASSOCIATION));    

@@ -253,6 +253,14 @@ public class DiagrammeCasUtilisationTest {
     }
     
     @Test
+    public void testLienAutoriseClasseAssociation () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.CLASSE_ASSOCIATION));
+    }
+    
+    @Test
     public void testLienAutoriseComposition () {
         assertFalse(this.monDiagramme.lienAutorise(
                 null,
