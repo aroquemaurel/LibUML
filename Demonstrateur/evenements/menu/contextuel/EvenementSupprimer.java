@@ -16,7 +16,10 @@ public class EvenementSupprimer implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		this.element.supprimer();
+		if(this.element != null){
+			this.element.supprimer();
+			this.element = null;
+		}
 	}
 
 }
