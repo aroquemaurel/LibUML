@@ -4,6 +4,8 @@ import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
 import java.awt.Dimension;
+import java.awt.MenuItem;
+import java.awt.PopupMenu;
 
 /**
  * Panneau contenant le graph

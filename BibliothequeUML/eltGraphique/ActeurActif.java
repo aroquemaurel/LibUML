@@ -33,7 +33,7 @@ public class ActeurActif extends Acteur {
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
-        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
 
         feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
 	}
