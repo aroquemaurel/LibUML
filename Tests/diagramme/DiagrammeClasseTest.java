@@ -186,7 +186,7 @@ public class DiagrammeClasseTest {
     }
     
     @Test
-    public void testEltAutoriseAgregationClasse () {
+    public void testEltAutoriseClasse () {
         assertTrue(this.monDiagramme.eltAutorise(
                 new Classe(new mxGraph(), new Diagramme(), new String())));    
     }
