@@ -7,6 +7,7 @@ import evenements.btn.BtnAgregation;
 import evenements.btn.BtnAssociation;
 import evenements.btn.BtnClasse;
 import evenements.btn.BtnComposition;
+import evenements.btn.BtnDependanceFonctionnelle;
 import evenements.btn.BtnGeneralisation;
 import evenements.btn.BtnUseCase;
 import evenements.btn.BtnTraitement;
@@ -43,7 +44,9 @@ public class BarreOutilsDessin extends JToolBar {
 		Btn acteurPassif = new BtnActeurPassif("acteurPassif", this.fenetre);
         Btn traitement = new BtnTraitement("traitement", this.fenetre);
         Btn association = new BtnAssociation("association", this.fenetre);
+        Btn fonctionnelle = new BtnDependanceFonctionnelle("dependanceFonctionnelle", this.fenetre);
         Btn generalisation = new BtnGeneralisation("generalisation", this.fenetre);
+        Btn messageSynchrone = new BtnMessageSynchrone("messageSynchrone", this.fenetre);
         Btn agregation = new BtnAgregation("agregation", this.fenetre);
         Btn composition = new BtnComposition("composition", this.fenetre);
 
@@ -54,7 +57,9 @@ public class BarreOutilsDessin extends JToolBar {
         this.add(acteurPassif);
         this.add(traitement);
         this.add(association);
+        this.add(fonctionnelle);
         this.add(generalisation);
+        this.add(messageSynchrone);
         this.add(agregation);
         this.add(composition);
     }
