@@ -2,6 +2,7 @@ package diagramme;
 
 import com.mxgraph.model.mxICell;
 import eltGraphique.ElementGraphique;
+import eltGraphique.ligne.TypeLien;
 import util.Liste;
 
 /**
@@ -12,10 +13,13 @@ public class Diagramme {
      /**
      * Liste des éléments graphiques
      */
-    private Liste<ElementGraphique> elementsGraphique;
-
+    private Liste<ElementGraphique> elementsGraphiques;
+    
+    /**
+     * Constructeur qui crée une nouvelle liste d'éléments graphiques
+     */
     public Diagramme(){
-        this.elementsGraphique = new Liste<ElementGraphique>();
+        this.elementsGraphiques = new Liste<ElementGraphique>();
     }
     
     /**
@@ -27,7 +31,7 @@ public class Diagramme {
      * @return true s'il est, false sinon
      */
     public boolean lienAutorise (ElementGraphique p_origine , 
-            ElementGraphique p_extremite, String p_typeDeFleche){
+            ElementGraphique p_extremite, TypeLien p_typeDeFleche){
         return true;
     }
  
@@ -45,7 +49,7 @@ public class Diagramme {
      * @return La liste d'élément graphique
      */
     public Liste<ElementGraphique> getElementsGraphiques(){
-        return (this.elementsGraphique);
+        return (this.elementsGraphiques);
     }
     
     /**
@@ -58,7 +62,7 @@ public class Diagramme {
     public ElementGraphique getElementGraphiqueViaCellule(mxICell p_cellule){
         ElementGraphique retour = null;
         
-        for(final ElementGraphique element : this.elementsGraphique){
+        for(final ElementGraphique element : this.elementsGraphiques){
             // on compare les adresses pour savoir si c'est la même cellule
             if(element.getCellule() == p_cellule){
                 retour = element;

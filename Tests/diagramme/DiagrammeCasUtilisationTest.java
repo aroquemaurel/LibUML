@@ -32,39 +32,39 @@ public class DiagrammeCasUtilisationTest {
         assertTrue(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(),
 		new Diagramme(), new String()), 
                 new CasUtilisation(new mxGraph(), new Diagramme(),
-		new String()), "ASSOCIATION"));
+		new String()), TypeLien.ASSOCIATION));
     }
     @Test
     public void testLienAutoriseAssociationCasUtilisationActeurActif () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
                 new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
-                new Diagramme(), new String()), "ASSOCIATION"));
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }
     @Test
     public void testLienAutoriseAssociationCasUtilisationCasUtilisation () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
                 new Diagramme(), new String()), new CasUtilisation(new mxGraph(), 
-                new Diagramme(), new String()), "ASSOCIATION"));
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }
     @Test
     public void testLienAutoriseAssociationActeurActifActeurActif () {
         assertFalse(this.monDiagramme.lienAutorise(new ActeurActif(new mxGraph(), 
                 new Diagramme(), new String()), new ActeurActif(new mxGraph(), 
-                new Diagramme(), new String()), "ASSOCIATION"));
+                new Diagramme(), new String()), TypeLien.ASSOCIATION));
     }
 
     @Test
     public void testLienAutoriseGeneralisation () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
                 new Diagramme(), new String()), new CasUtilisation(new mxGraph(), 
-                new Diagramme(), new String()), "GENERALISATION"));
+                new Diagramme(), new String()), TypeLien.GENERALISATION));
     }
 
     @Test
     public void testLienAutoriseDependance () {
         assertTrue(this.monDiagramme.lienAutorise(new CasUtilisation(new mxGraph(), 
                 new Diagramme(), new String()), new CasUtilisation(new mxGraph(), 
-                new Diagramme(), new String()), "DEPENDANCE"));
+                new Diagramme(), new String()), TypeLien.DEPENDANCE));
     }
 
     @Test

@@ -32,13 +32,13 @@ public class DiagrammeSequenceTest {
     @Test
     public void testLienAutoriseAssociationTraitementTraitement () {
         assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), 
-                new Traitement(null, monDiagramme, null, null, true), "ASSOCIATION"));
+                new Traitement(null, monDiagramme, null, null, true), TypeLien.ASSOCIATION));
     }
     
     @Test
     public void testLienAutoriseDependanceTraitementTraitement () {
         assertTrue(this.monDiagramme.lienAutorise(new Traitement(null, monDiagramme, null, null, true), 
-                new Traitement(null, monDiagramme, null, null, true), "DEPENDANCE"));
+                new Traitement(null, monDiagramme, null, null, true), TypeLien.DEPENDANCE));
     }
     
     @Test
