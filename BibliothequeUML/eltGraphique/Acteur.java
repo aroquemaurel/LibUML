@@ -21,7 +21,7 @@ import util.Constantes;
  */
 abstract public class Acteur extends ElementModelisation {
 	private mxCell ligneDeVie;
-
+        private boolean visibiliteLigneDeVie;
 	private void creerStyleLigneDeVie(){
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
@@ -57,19 +57,20 @@ abstract public class Acteur extends ElementModelisation {
      */
     public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
             super(p_graph, p_diagramme, p_texte, p_dimension);
+            this.visibiliteLigneDeVie = false;
     }
 
-	public void creerLigneDeVie(){
-		this.creerStyleLigneDeVie();
-		this.ligneDeVie = (mxCell) super.getGraph().insertEdge(
-			null, null, null, this.getCellule(), this.getCellule(), "LIGNE_DE_VIE");
-	}
+    public void creerLigneDeVie(){
+            this.creerStyleLigneDeVie();
+            this.ligneDeVie = (mxCell) super.getGraph().insertEdge(
+                    null, null, null, this.getCellule(), this.getCellule(), "LIGNE_DE_VIE");
+    }
 
-	public void afficherLigneDeVie(boolean p_visible){
-		this.ligneDeVie.setVisible(p_visible);
-		super.mettreAJour();
-	}
-    /**
+    public void afficherLigneDeVie(boolean p_visible){
+            this.ligneDeVie.setVisible(p_visible);
+            super.mettreAJour();
+    }
+/**
      * Modifie le texte lié à l'acteur.
      * @param p_texte Le texte lié à l'acteur
      */
@@ -79,9 +80,13 @@ abstract public class Acteur extends ElementModelisation {
         super.setValue(p_texte);
     }
 
-	public mxCell getLigneDeVie(){
-		return (this.ligneDeVie);
-	}
-
+    public mxCell getLigneDeVie(){
+        return (this.ligneDeVie);
+    }
+    
+    public boolean getVisibiliteLigneDeVie(){
+        return (this.visibiliteLigneDeVie);
+    }
+    
 }
 
