@@ -55,7 +55,6 @@ public class EvenementCelluleSelectionne implements MouseListener {
                 JPopupMenu menuContextuel;
                 
 		if(element != null){
-			
 			if(event.getButton() == MouseEvent.BUTTON3){
                             if(element instanceof Acteur){
                                 menuContextuel = construireMenuContextuel((Acteur) element);

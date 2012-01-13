@@ -19,13 +19,14 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Creer le style d'une classe
 	 */
 	private void creerStyleClasse(){
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+                mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
         Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+        nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
         feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
 	}
 	/**
