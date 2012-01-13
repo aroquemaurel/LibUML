@@ -52,10 +52,11 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 */
 	public void mettreAJour(){
             super.getGraph().updateCellSize(super.getCellule());	
-                    super.getGraph().resizeCell(super.getCellule(),
-				new mxGeometry(super.getCellule().getGeometry().getX(),
-                                super.getCellule().getGeometry().getY(),
-                                this.getDimension().getWidth(),this.getDimension().getHeight()-0.00000001));
+            
+            super.getGraph().resizeCell(super.getCellule(),
+                        new mxGeometry(super.getCellule().getGeometry().getX(),
+                        super.getCellule().getGeometry().getY(),
+                        this.getDimension().getWidth(),this.getDimension().getHeight()));
 
 	}
 	/**

@@ -69,6 +69,7 @@ abstract public class Acteur extends ElementModelisation {
     public void afficherLigneDeVie(boolean p_visible){
             this.ligneDeVie.setVisible(p_visible);
             super.mettreAJour();
+            this.visibiliteLigneDeVie = p_visible;
     }
 /**
      * Modifie le texte lié à l'acteur.

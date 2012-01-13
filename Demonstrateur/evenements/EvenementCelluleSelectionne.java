@@ -10,7 +10,7 @@ import eltGraphique.Acteur;
 import eltGraphique.ElementGraphique;
 import eltGraphique.Traitement;
 import eltGraphique.classe.Classe;
-import evenements.menu.contextuel.EvenementAfficherLigneDeVie;
+import evenements.menu.contextuel.EvenementLigneDeVie;
 import evenements.menu.contextuel.EvenementSupprimer;
 import ihm.FenetreDemo;
 import ihm.PanneauGraph;
@@ -80,17 +80,28 @@ public class EvenementCelluleSelectionne implements MouseListener {
     
     private JPopupMenu construireMenuContextuel(Acteur element){
 	JPopupMenu menuContextuel = new JPopupMenu();
-	JMenuItem itemSupprimer = new JMenuItem("Supprimer");
-        JMenuItem itemAfficherLigneDeVie = new JMenuItem("Afficher ligne de vie");
+	
+        JMenuItem itemSupprimer = new JMenuItem("Supprimer");
+        EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
         
-	EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
-        EvenementAfficherLigneDeVie evenementAfficherLigneDeVie = new EvenementAfficherLigneDeVie(element);
+        JMenuItem itemLigneDeVie;
+        EvenementLigneDeVie evenementAfficherLigneDeVie = new EvenementLigneDeVie(element);
+        
+        if(!element.getVisibiliteLigneDeVie()) {
+           itemLigneDeVie = new JMenuItem("Afficher ligne de vie");
+        } else {
+            itemLigneDeVie = new JMenuItem("Ne pas afficher la ligne de vie");
+        }
+        
+	
+        
+        
         menuContextuel.add(itemSupprimer);
-        menuContextuel.add(itemAfficherLigneDeVie);
+        menuContextuel.add(itemLigneDeVie);
         this.fenetre.getPanneauPrincipal().add(menuContextuel);
         
         itemSupprimer.addActionListener(evenementSupprimer);
-        itemAfficherLigneDeVie.addActionListener(evenementAfficherLigneDeVie);
+        itemLigneDeVie.addActionListener(evenementAfficherLigneDeVie);
         return menuContextuel;
     }
     
