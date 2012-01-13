@@ -36,7 +36,7 @@ public class Lien extends ElementGraphique {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 100);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITEs);
 		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
