@@ -93,29 +93,44 @@ public class EvenementCelluleSelectionne implements MouseListener {
             itemLigneDeVie = new JMenuItem("Ne pas afficher la ligne de vie");
         }
         
-	
-        
-        
         menuContextuel.add(itemSupprimer);
         menuContextuel.add(itemLigneDeVie);
         this.fenetre.getPanneauPrincipal().add(menuContextuel);
         
         itemSupprimer.addActionListener(evenementSupprimer);
         itemLigneDeVie.addActionListener(evenementAfficherLigneDeVie);
+        
         return menuContextuel;
     }
     
     private JPopupMenu construireMenuContextuel(Traitement element){
 	JPopupMenu menuContextuel = new JPopupMenu();
-	JMenuItem itemSupprimer = new JMenuItem("Supprimer");           
+	
+        JMenuItem itemSupprimer = new JMenuItem("Supprimer");
+        EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
+        
+        menuContextuel.add(itemSupprimer);
+
+        this.fenetre.getPanneauPrincipal().add(menuContextuel);
+        
+        itemSupprimer.addActionListener(evenementSupprimer);
         
         return menuContextuel;
     }   
     
     private JPopupMenu construireMenuContextuel(ElementGraphique element){
 	JPopupMenu menuContextuel = new JPopupMenu();
-	JMenuItem itemSupprimer = new JMenuItem("Supprimer");               
+	
+        JMenuItem itemSupprimer = new JMenuItem("Supprimer");
+        EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
         
+        JMenuItem itemLigneDeVie;
+
+        menuContextuel.add(itemSupprimer);
+        this.fenetre.getPanneauPrincipal().add(menuContextuel);
+        
+        itemSupprimer.addActionListener(evenementSupprimer);
+
         return menuContextuel;
     }    
 }
