@@ -25,7 +25,7 @@ public class Lien extends ElementGraphique {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
 		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
@@ -36,7 +36,7 @@ public class Lien extends ElementGraphique {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITEs);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
 		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
@@ -44,12 +44,12 @@ public class Lien extends ElementGraphique {
                 feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
 	}
 
-	private void crerStyleFleche() {
+	private void creerStyleFleche() {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
 		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
@@ -61,7 +61,7 @@ public class Lien extends ElementGraphique {
 		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		feuilleStyles.putCellStyle("ASSOCIATION", nouveauStyle);
 	}
@@ -71,7 +71,7 @@ public class Lien extends ElementGraphique {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, 50);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
 		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
@@ -246,14 +246,13 @@ public class Lien extends ElementGraphique {
 				this.creerStyleAssociation();
                 break;
             case FLECHE:
-				this.crerStyleFleche();
+				this.creerStyleFleche();
                 break;
             case AGREGATION:
 				this.creerStyleAgregation();
                 break;
             case COMPOSITION:
 				this.creerStyleComposition();
-            break;
         }
 
 		super.setCellule((mxCell) super.getGraph().insertEdge(
