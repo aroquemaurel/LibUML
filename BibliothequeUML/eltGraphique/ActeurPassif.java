@@ -20,9 +20,6 @@ public class ActeurPassif extends Acteur {
 	private void creerStyleActeurPassif(){
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
         mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-
-        nouveauStyle.put(mxConstants.STYLE_AUTOSIZE, 0);
-        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
@@ -47,11 +44,13 @@ public class ActeurPassif extends Acteur {
     @Override
     public final void creer(){
 		this.creerStyleActeurPassif();
-        super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getParent(), null, super.getTexte(), 30, 30,
-			super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_PASSIF"));
+        super.setCellule((mxCell) super.getGraph().insertVertex( super.getParent(), null, super.getTexte(),
+				30, 30, super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_PASSIF"));
+
         super.getDiagramme().getElementsGraphiques().add(this);
-        this.creerLigneDeVie();
+
+        super.creerLigneDeVie();
+		super.afficherLigneDeVie(false);
     }
 
 

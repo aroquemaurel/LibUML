@@ -1,6 +1,7 @@
 package eltGraphique;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.model.mxGeometry;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
@@ -63,9 +64,12 @@ abstract public class Acteur extends ElementModelisation {
 		this.creerStyleLigneDeVie();
 		this.ligneDeVie = (mxCell) super.getGraph().insertEdge(
 			null, null, null, this.getCellule(), this.getCellule(), "LIGNE_DE_VIE");
-        this.ligneDeVie.getGeometry().setX(420);
 	}
 
+	public void afficherLigneDeVie(boolean p_visible){
+		this.ligneDeVie.setVisible(p_visible);
+		super.mettreAJour();
+	}
     /**
      * Modifie le texte lié à l'acteur.
      * @param p_texte Le texte lié à l'acteur

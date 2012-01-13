@@ -1,5 +1,6 @@
 package eltGraphique;
 
+import com.mxgraph.model.mxGeometry;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
 import eltGraphique.classe.Classe;
@@ -46,6 +47,16 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 		this.dimension = p_dimension;
 	}
 
+	/**
+	 * Met à jour l'élément grahique courant
+	 */
+	public void mettreAJour(){
+		super.getGraph().resizeCell(super.getCellule(),
+				new mxGeometry(super.getCellule().getGeometry().getX(),
+								super.getCellule().getGeometry().getY(),
+								this.getDimension().getWidth(),this.getDimension().getHeight()-0.00000001));
+
+	}
 	/**
 	 * Récupère la taille de l'élément (hauteur/largeur)
 	 * @return La dimension de l'élément (hauteur/largeur)
