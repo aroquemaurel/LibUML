@@ -51,10 +51,11 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 	 * Met à jour l'élément grahique courant
 	 */
 	public void mettreAJour(){
-		super.getGraph().resizeCell(super.getCellule(),
+            super.getGraph().updateCellSize(super.getCellule());	
+                    super.getGraph().resizeCell(super.getCellule(),
 				new mxGeometry(super.getCellule().getGeometry().getX(),
-								super.getCellule().getGeometry().getY(),
-								this.getDimension().getWidth(),this.getDimension().getHeight()-0.00000001));
+                                super.getCellule().getGeometry().getY(),
+                                this.getDimension().getWidth(),this.getDimension().getHeight()-0.00000001));
 
 	}
 	/**
