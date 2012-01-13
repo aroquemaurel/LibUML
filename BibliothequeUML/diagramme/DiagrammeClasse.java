@@ -21,7 +21,7 @@ public class DiagrammeClasse extends Diagramme {
     * @return vrai(true) si le lien entre deux éléments graphiques est autorisé
     * ou faux(false) si le liens entre deux éléments graphiques n'est pas autorisé.
     */
-
+    @Override
     public boolean lienAutorise (ElementGraphique p_origine , 
             ElementGraphique p_extremite, TypeLien p_typeDeFleche){
         boolean valeurRetour = false;
@@ -40,6 +40,7 @@ public class DiagrammeClasse extends Diagramme {
             case DEPENDANCE:
                 valeurRetour = this.autorisationDependance(p_origine , 
                         p_extremite);
+                break;
             case AGREGATION:
                 valeurRetour = this.autorisationAgregation(p_origine , 
                         p_extremite);    

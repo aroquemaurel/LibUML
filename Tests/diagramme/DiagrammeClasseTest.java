@@ -150,7 +150,7 @@ public class DiagrammeClasseTest {
     public void testLienAutoriseDependanceLienLien () {
         assertFalse(this.monDiagramme.lienAutorise(
                 new Lien( null,null, new mxGraph(), new Diagramme(), null), 
-                new Classe(new mxGraph(), new Diagramme(),new String()),
+                new Lien( null,null, new mxGraph(), new Diagramme(), null),
                 TypeLien.DEPENDANCE));    
     }
     @Test
@@ -216,7 +216,7 @@ public class DiagrammeClasseTest {
     
     @Test
     public void testEltAutoriseTraitement () {
-        assertFalse(this.monDiagramme.eltAutorise( new Traitement( new mxGraph(), new Diagramme(),new String(), null)));
+        assertFalse(this.monDiagramme.eltAutorise( new Traitement( new mxGraph(), new Diagramme(),new String(), null, false)));
     }  
     
     @Test
