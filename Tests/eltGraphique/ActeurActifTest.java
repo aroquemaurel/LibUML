@@ -37,6 +37,7 @@ public class ActeurActifTest {
 		mxStylesheet feuilleStyles = this.acteur.getGraph().getStylesheet();
 		assertTrue(feuilleStyles.getStyles().containsKey("ACTEUR_ACTIF"));
 		assertEquals(mxConstants.SHAPE_ACTOR, feuilleStyles.getStyles().get("ACTEUR_ACTIF").get(mxConstants.STYLE_SHAPE));
+		assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("ACTEUR_ACTIF").get(mxConstants.STYLE_FOLDABLE));
 		assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("ACTEUR_ACTIF").get(mxConstants.STYLE_OPACITY));
 		assertEquals(Constantes.COULEUR_TEXTE, feuilleStyles.getStyles().get("ACTEUR_ACTIF").get(mxConstants.STYLE_FONTCOLOR));
 		assertEquals(Constantes.COULEUR_BORDURE, feuilleStyles.getStyles().get("ACTEUR_ACTIF").get(mxConstants.STYLE_STROKECOLOR));

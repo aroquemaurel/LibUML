@@ -58,8 +58,6 @@ public class ActeurPassifTest {
 	public void testCreationStyle() {
 		mxStylesheet feuilleStyles = this.acteur.getGraph().getStylesheet();
 		assertTrue(feuilleStyles.getStyles().containsKey("ACTEUR_PASSIF"));
-		assertEquals(0, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_AUTOSIZE));
-		assertEquals(0, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_RESIZABLE));
 		assertEquals(mxConstants.SHAPE_RECTANGLE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_SHAPE));
 		assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_OPACITY));
 		assertEquals(Constantes.COULEUR_TEXTE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_FONTCOLOR));

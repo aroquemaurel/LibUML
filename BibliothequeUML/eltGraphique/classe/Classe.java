@@ -24,7 +24,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
 	}
@@ -39,9 +39,9 @@ public class Classe extends eltGraphique.ElementModelisation {
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
         nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
         nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, Constantes.COULEUR_FOND);
-        nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
-        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
-        nouveauStyle.put(mxConstants.STYLE_DELETABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, mxConstants.NONE);
+        nouveauStyle.put(mxConstants.STYLE_DELETABLE, mxConstants.NONE);
         nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);

@@ -7,9 +7,11 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
+import com.sun.corba.se.impl.orbutil.closure.Constant;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import util.Constantes;
 import static org.junit.Assert.*;
 
 /**
@@ -177,15 +179,15 @@ public class ClasseTest {
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CLASSE")
 									.get(mxConstants.STYLE_SHAPE));
-		assertEquals(50, 
+		assertEquals(Constantes.OPACITE, 
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CLASSE")
 									.get(mxConstants.STYLE_OPACITY));
-		assertEquals(0, 
+		assertEquals(mxConstants.NONE, 
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CLASSE")
 									.get(mxConstants.STYLE_FOLDABLE));
-		assertEquals("#774400", 
+		assertEquals(Constantes.COULEUR_TEXTE, 
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CLASSE")
 									.get(mxConstants.STYLE_FONTCOLOR));
@@ -195,23 +197,23 @@ public class ClasseTest {
 	public void testCreerStyleContenuclasse(){
 		assertTrue(this.classe.getGraph().getStylesheet().getStyles().containsKey("CONTENUCLASSE"));
 		
-		assertEquals(50, 
+		assertEquals(Constantes.OPACITE, 
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CONTENUCLASSE")
 									.get(mxConstants.STYLE_OPACITY));
-		assertEquals("#e4e5ef", 
+		assertEquals(Constantes.COULEUR_FOND, 
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CONTENUCLASSE")
 									.get(mxConstants.STYLE_FILLCOLOR));
-		assertEquals(0, 
+		assertEquals(mxConstants.NONE, 
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CONTENUCLASSE")
 									.get(mxConstants.STYLE_MOVABLE));
-		assertEquals(0, 
+		assertEquals(mxConstants.NONE, 
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CONTENUCLASSE")
 									.get(mxConstants.STYLE_RESIZABLE));
-		assertEquals(0, 
+		assertEquals(mxConstants.NONE, 
 					 this.classe.getGraph().getStylesheet().getStyles()
 									.get("CONTENUCLASSE")
 									.get(mxConstants.STYLE_DELETABLE));
