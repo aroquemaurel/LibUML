@@ -9,5 +9,7 @@ public class Constantes {
 	public static final String COULEUR_BORDURE = "#a9b8d4";
 	public static final String COULEUR_FLECHE = "#00000";
 	public static final int OPACITE = 100;
+	public static final int TAILLE_FLECHE = 9;
+	public static final int ESPACE_TIRETS = 10;
 
 }

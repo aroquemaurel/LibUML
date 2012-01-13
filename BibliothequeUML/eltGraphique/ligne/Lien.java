@@ -30,6 +30,20 @@ public class Lien extends ElementGraphique {
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
 	}
+	
+	private void creerStyleDependance() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_OPEN);
+		nouveauStyle.put(mxConstants.STYLE_ENDSIZE, Constantes.TAILLE_FLECHE);
+		nouveauStyle.put(mxConstants.STYLE_DASHED, true);
+		nouveauStyle.put(mxConstants.STYLE_DASH_PATTERN, Constantes.ESPACE_TIRETS);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("DEPENDANCE", nouveauStyle);
+	}
 
 	private void creerStyleAgregation() {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
@@ -253,6 +267,9 @@ public class Lien extends ElementGraphique {
                 break;
             case COMPOSITION:
 				this.creerStyleComposition();
+				break;
+			case DEPENDANCE:
+				this.creerStyleDependance();
         }
 
 		super.setCellule((mxCell) super.getGraph().insertEdge(
