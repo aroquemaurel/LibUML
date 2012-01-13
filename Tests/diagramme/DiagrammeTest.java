@@ -344,53 +344,53 @@ public class DiagrammeTest {
     public void getElementGraphiqueViaCelluleTraitement(){
         ElementGraphique ElemTeste = new Traitement(new mxGraph(), monDiagramme, null, null, true);
         ElemTeste.creer();
-        assertTrue(ElemTeste.getCellule() == ElemTeste);
+        assertTrue(this.monDiagramme.getElementGraphiqueViaCellule(ElemTeste.getCellule()) == ElemTeste);
     }
     
     @Test
     public void getElementGraphiqueViaCelluleClasse(){
-        ElementGraphique ElemTeste = new Classe(new mxGraph(), new Diagramme(), new String());
+        ElementGraphique ElemTeste = new Classe(new mxGraph(), monDiagramme, null);
         ElemTeste.creer();
-        assertTrue(ElemTeste.getCellule()==ElemTeste);
+        assertTrue(this.monDiagramme.getElementGraphiqueViaCellule(ElemTeste.getCellule()) == ElemTeste);
     }
     
     @Test
     public void getElementGraphiqueViaCelluleLien(){
         ElementGraphique ElemTeste = new Lien(
-                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
-                new CasUtilisation(new mxGraph(), new Diagramme(), new String()),
+                new ActeurActif(new mxGraph(), monDiagramme, null),
+                new CasUtilisation(new mxGraph(), monDiagramme, null),
                 new mxGraph(),
-                new Diagramme(), 
+                monDiagramme, 
                 TypeLien.ASSOCIATION);
         ElemTeste.creer();
-        assertTrue(ElemTeste.getCellule()==ElemTeste);
+        assertTrue(this.monDiagramme.getElementGraphiqueViaCellule(ElemTeste.getCellule()) == ElemTeste);
     }
     
     @Test
     public void getElementGraphiqueViaCelluleActeurActif(){
-        ElementGraphique ElemTeste = new ActeurActif(new mxGraph(), new Diagramme(), new String());
+        ElementGraphique ElemTeste = new ActeurActif(new mxGraph(), monDiagramme, null);
         ElemTeste.creer();
-        assertTrue(ElemTeste.getCellule()==ElemTeste);
+        assertTrue(this.monDiagramme.getElementGraphiqueViaCellule(ElemTeste.getCellule()) == ElemTeste);
     }
     
     @Test
     public void getElementGraphiqueViaCelluleActeurPassif(){
-        ElementGraphique ElemTeste = new ActeurPassif(new mxGraph(), new Diagramme(), new String());
+        ElementGraphique ElemTeste = new ActeurPassif(new mxGraph(), monDiagramme, null);
         ElemTeste.creer();
-        assertTrue(ElemTeste.getCellule()==ElemTeste);
+        assertTrue(this.monDiagramme.getElementGraphiqueViaCellule(ElemTeste.getCellule()) == ElemTeste);
     }
     
     @Test
     public void getElementGraphiqueViaCelluleInterface(){
-        ElementGraphique ElemTeste = new Interface(new mxGraph(), new String(),new Diagramme());
+        ElementGraphique ElemTeste = new Interface(new mxGraph(), null ,monDiagramme);
         ElemTeste.creer();
-        assertTrue(ElemTeste.getCellule()==ElemTeste);
+        assertTrue(this.monDiagramme.getElementGraphiqueViaCellule(ElemTeste.getCellule()) == ElemTeste);
     }
     
     @Test
     public void getElementGraphiqueViaCelluleCasUtilisation(){
-        ElementGraphique ElemTeste = new CasUtilisation(new mxGraph(),new Diagramme(), new String());
+        ElementGraphique ElemTeste = new CasUtilisation(new mxGraph(),monDiagramme, null);
         ElemTeste.creer();
-        assertTrue(ElemTeste.getCellule()==ElemTeste);
+        assertTrue(this.monDiagramme.getElementGraphiqueViaCellule(ElemTeste.getCellule()) == ElemTeste);
     }
 }
