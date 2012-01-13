@@ -57,7 +57,9 @@ public class DiagrammeCasUtilisation extends Diagramme {
      */
     private boolean autorisationAssociation(ElementGraphique p_origine , 
             ElementGraphique p_extremite) { 
-        return((p_origine instanceof ActeurActif && p_extremite instanceof CasUtilisation) || (p_origine instanceof CasUtilisation && p_extremite instanceof ActeurActif) || (p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation));
+        return((p_origine instanceof ActeurActif && p_extremite instanceof CasUtilisation) || 
+               (p_origine instanceof CasUtilisation && p_extremite instanceof ActeurActif) || 
+               (p_origine instanceof CasUtilisation && p_extremite instanceof CasUtilisation));
     }
 
     /**
