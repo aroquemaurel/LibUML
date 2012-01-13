@@ -41,7 +41,7 @@ public class TraitementTest {
 		mxStylesheet feuilleStyles = this.traitement.getGraph().getStylesheet();
 		assertEquals(mxConstants.SHAPE_RECTANGLE, feuilleStyles.getStyles().get("TRAITEMENT").get(mxConstants.STYLE_SHAPE));
 		assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("TRAITEMENT").get(mxConstants.STYLE_OPACITY));
-		assertEquals(0, feuilleStyles.getStyles().get("TRAITEMENT").get(mxConstants.STYLE_FOLDABLE));
+		assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("TRAITEMENT").get(mxConstants.STYLE_FOLDABLE));
 		assertEquals(Constantes.COULEUR_BORDURE, feuilleStyles.getStyles().get("TRAITEMENT").get(mxConstants.STYLE_STROKECOLOR));
 		assertEquals(Constantes.COULEUR_TEXTE, feuilleStyles.getStyles().get("TRAITEMENT").get(mxConstants.STYLE_FONTCOLOR));
 	}

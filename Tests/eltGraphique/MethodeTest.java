@@ -118,6 +118,6 @@ public class MethodeTest {
 	
 	@Test
 	public void testToString() {
-		assertEquals("+ laMethodePourLesTests:Object\n", this.methode.toString());
+		assertEquals("+ laMethodePourLesTests():Object\n", this.methode.toString());
 	}
 }
