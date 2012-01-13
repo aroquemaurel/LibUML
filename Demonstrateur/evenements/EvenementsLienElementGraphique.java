@@ -13,7 +13,7 @@ import java.awt.event.MouseListener;
  *
  * @author satenske
  */
-public class EvenementsEltGraphiques implements MouseListener {
+public class EvenementsLienElementGraphique implements MouseListener {
     private PanneauGraph panneauGraph;
     private Diagramme diagramme;
     private TypeLien typeDeLien;
@@ -21,7 +21,7 @@ public class EvenementsEltGraphiques implements MouseListener {
     private mxCell sourceCelluleARelier;
     private mxCell destinationCelluleARelier;
 
-    public EvenementsEltGraphiques(PanneauGraph p_panneauGraph, Diagramme p_diagramme,
+    public EvenementsLienElementGraphique(PanneauGraph p_panneauGraph, Diagramme p_diagramme,
                                     TypeLien p_typeDeLien) {
         this.panneauGraph = p_panneauGraph;
         this.diagramme = p_diagramme;

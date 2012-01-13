@@ -2,7 +2,7 @@ package evenements.btn;
 
 import eltGraphique.ligne.TypeLien;
 import evenements.Btn;
-import evenements.EvenementsEltGraphiques;
+import evenements.EvenementsLienElementGraphique;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
 
@@ -16,8 +16,8 @@ public class BtnGeneralisation extends Btn {
 	
 	@Override
 	public void mouseClicked(MouseEvent event) {
-		EvenementsEltGraphiques evenement =
-			new EvenementsEltGraphiques(this.fenetre.getPanneauGraph(),
+		EvenementsLienElementGraphique evenement =
+			new EvenementsLienElementGraphique(this.fenetre.getPanneauGraph(),
 					this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.SPECIALISATION);
 		this.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
 	}
