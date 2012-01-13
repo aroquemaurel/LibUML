@@ -7,9 +7,10 @@ import eltGraphique.CasUtilisation;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 import org.junit.After;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  * @author geoffroy
@@ -80,17 +81,16 @@ public class DiagrammeTest {
     
     @Test
     public void testEltAutoriseLien () {
+
         assertTrue(this.monDiagramme.eltAutorise(new Lien(new ActeurPassif(new mxGraph(), 
                 new Diagramme(), new String()),new CasUtilisation(new mxGraph(), 
                 new Diagramme(), new String()), new mxGraph(), new Diagramme(), 
                 TypeLien.ASSOCIATION)));
     }     
+
     
     
-    @Test
-    public void eltAutorise(){
-        
-    }
+   
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
