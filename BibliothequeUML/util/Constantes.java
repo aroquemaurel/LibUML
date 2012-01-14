@@ -2,6 +2,8 @@ package util;
 
 /**
  *
+ * @author Antoine
+ * @author Mathieu
  */
 public class Constantes {
 	public static final String COULEUR_TEXTE = "#774400";

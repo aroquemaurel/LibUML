@@ -1,11 +1,11 @@
 package eltGraphique;
 
-import diagramme.Diagramme;
 import java.awt.Dimension;
 import java.awt.Point;
 
 /**
  *
+ * @author Mathieu
  */
 public interface IntElementModelisation {
 	/**

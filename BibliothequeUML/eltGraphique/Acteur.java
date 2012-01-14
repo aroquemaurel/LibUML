@@ -17,7 +17,9 @@ import util.Constantes;
  *
  * @see ActeurActif
  * @see ActeurPassif
- *
+ * 
+ * @author Antoine
+ * @author Mathieu
  */
 abstract public class Acteur extends ElementModelisation {
 	private mxCell ligneDeVie;

@@ -16,6 +16,8 @@ import util.Constantes;
 
 /**
  * Modélise un traitement par un rectangle vertical et un élément déclencheur
+ * 
+ * @author Mathieu
  */
 public class Traitement extends ElementModelisation {
 	/**

@@ -2,6 +2,9 @@ package eltGraphique.ligne;
 
 /**
  * Enumération des différents types de liens
+ * 
+ * @author Mathieu
+ * @author Marie-ly
  */
 public enum TypeLien {
 	/* TODO Compléter la liste ! */

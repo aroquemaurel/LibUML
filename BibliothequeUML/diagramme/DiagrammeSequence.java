@@ -9,7 +9,6 @@ import eltGraphique.ligne.TypeLien;
 
 /**
  * Cette classe permet de représenter et de manipuler <b>un Diagramme de Sequence</b>.
- * @author satenske
  * @author Marie-Ly
  * @author Geoffroy
  */
