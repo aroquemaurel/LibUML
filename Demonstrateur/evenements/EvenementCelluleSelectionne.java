@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package evenements;
 
 import com.mxgraph.model.mxCell;
@@ -21,19 +16,18 @@ import javax.swing.JPopupMenu;
 
 /**
  *
- * @author satenske
  */
 public class EvenementCelluleSelectionne implements MouseListener {
-    private PanneauGraph panneauGraph;
+    private final PanneauGraph panneauGraph;
 
-	private FenetreDemo fenetre;
+    private final FenetreDemo fenetre;
 
 
     public EvenementCelluleSelectionne(PanneauGraph p_graph, FenetreDemo p_fenetre){
         this.panneauGraph = p_graph;
         
         this.panneauGraph.getGraphControl().addMouseListener(this);
-		this.fenetre = p_fenetre;
+        this.fenetre = p_fenetre;
     }
     @Override
     public void mouseClicked(MouseEvent event) {
@@ -84,13 +78,12 @@ public class EvenementCelluleSelectionne implements MouseListener {
         EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
         
         JMenuItem itemLigneDeVie;
+        String texteItemLigneDeVie;
         EvenementLigneDeVie evenementAfficherLigneDeVie = new EvenementLigneDeVie(element);
-        
-        if(!element.getVisibiliteLigneDeVie()) {
-           itemLigneDeVie = new JMenuItem("Afficher ligne de vie");
-        } else {
-            itemLigneDeVie = new JMenuItem("Ne pas afficher la ligne de vie");
-        }
+
+        texteItemLigneDeVie = 
+            (element.getVisibiliteLigneDeVie()) ? "Ne pas afficher ligne de vie" : "Afficher ligne de vie";
+        itemLigneDeVie = new JMenuItem(texteItemLigneDeVie);
         
         menuContextuel.add(itemSupprimer);
         menuContextuel.add(itemLigneDeVie);

@@ -7,10 +7,9 @@ import java.awt.event.ActionListener;
 
 /**
  *
-
  */
 public class EvenementLigneDeVie implements ActionListener {
-    private Acteur element;
+    private final Acteur element;
 
     public EvenementLigneDeVie (Acteur p_element){
         this.element = p_element;

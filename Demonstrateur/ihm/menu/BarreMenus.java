@@ -13,7 +13,7 @@ import javax.swing.JMenuItem;
  * Menu contenant la barre de menu (Fichier, Insérer, ...)
  */
 public class BarreMenus extends JMenuBar {
-	private Dimension dimension;
+	private final Dimension dimension;
 
 	/* Paramètres de la barre de menus */
 	private void parametrerBarreMenus(){

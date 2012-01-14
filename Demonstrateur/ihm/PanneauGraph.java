@@ -4,8 +4,6 @@ import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
 import java.awt.Dimension;
-import java.awt.MenuItem;
-import java.awt.PopupMenu;
 
 /**
  * Panneau contenant le graph
@@ -13,7 +11,7 @@ import java.awt.PopupMenu;
 public class PanneauGraph extends mxGraphComponent {
     private final int largeurPanneau;
     private final int longueurPanneau;
-    private Diagramme diagramme;
+    private final Diagramme diagramme;
 
 	/* Paramètres du panneau */
     private void parametrerPanneau(){

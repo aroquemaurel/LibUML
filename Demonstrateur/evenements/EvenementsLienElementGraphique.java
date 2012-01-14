@@ -14,9 +14,9 @@ import java.awt.event.MouseListener;
  * @author satenske
  */
 public class EvenementsLienElementGraphique implements MouseListener {
-    private PanneauGraph panneauGraph;
-    private Diagramme diagramme;
-    private TypeLien typeDeLien;
+    private final PanneauGraph panneauGraph;
+    private final Diagramme diagramme;
+    private final TypeLien typeDeLien;
     private int numeroClique;
     private mxCell sourceCelluleARelier;
     private mxCell destinationCelluleARelier;
