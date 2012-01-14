@@ -5,48 +5,16 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
-import util.Liste;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
+import util.Liste;
 
 /**
  *
  */
 public class Classe extends eltGraphique.ElementModelisation {
-	/**
-	 * Creer le style d'une classe
-	 */
-	private void creerStyleClasse(){
-                mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-
-        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
-        nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
-        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
-        nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
-        feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
-	}
-	/**
-	 * Créer le style du contenu d'une classe (cadre méthodes, cadre attributs)
-	 */
-	private void creerStyleContenuClasse(){
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-
-        nouveauStyle = new HashMap<String, Object>();
-        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
-        nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-        nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, Constantes.COULEUR_FOND);
-        nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, mxConstants.NONE);
-        nouveauStyle.put(mxConstants.STYLE_DELETABLE, mxConstants.NONE);
-        nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
-        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
-        feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
-	}
 	/**
 	 * Classe abstraite ?
 	 */
@@ -65,9 +33,39 @@ public class Classe extends eltGraphique.ElementModelisation {
 	 * Classe cosntante ?
 	 */
     private boolean constante;
+    
+        /**
+	 * Creer le style d'une classe
+	 */
+    private void creerStyleClasse(){
+        mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
-    private mxCell celluleAttributs;
-    private mxCell celluleMethodes;
+        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_SWIMLANE);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
+        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
+        feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
+	}
+	/**
+	 * Créer le style du contenu d'une classe (cadre méthodes, cadre attributs)
+	 */
+    private void creerStyleContenuClasse(){
+        mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+
+        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+        nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, Constantes.COULEUR_FOND);
+        nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, mxConstants.NONE);
+        nouveauStyle.put(mxConstants.STYLE_DELETABLE, mxConstants.NONE);
+        nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
+        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+        feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
+    }
+
 
     private String genererChaineMethodes(){
         String retour = new String();
@@ -215,22 +213,25 @@ public class Classe extends eltGraphique.ElementModelisation {
      */
     @Override
     public final void creer() {
-		this.creerStyleClasse();
-		this.creerStyleContenuClasse();
+        
+        mxCell celluleAttributs;
+        mxCell celluleMethodes;
+        this.creerStyleClasse();
+        this.creerStyleContenuClasse();
 
         super.setCellule((mxCell) super.getGraph().insertVertex( null, null, super.getTexte(), 350, 350,
                          super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
 
-        this.celluleAttributs = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,
+        celluleAttributs = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,
                                 this.genererChaineAttributs(), 0, 0, super.getDimension().getWidth(), 60,
                                 "CONTENUCLASSE");
 
-        this.celluleMethodes = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,
+        celluleMethodes = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,
                                this.genererChaineMethodes(), 0, 100, super.getDimension().getWidth(), 60,
                                "CONTENUCLASSE");
 
-        this.celluleAttributs.setConnectable(false);
-        this.celluleMethodes.setConnectable(false);
+        celluleAttributs.setConnectable(false);
+        celluleMethodes.setConnectable(false);
 
          super.getDiagramme().getElementsGraphiques().add(this);
     }

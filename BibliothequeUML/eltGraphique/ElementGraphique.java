@@ -18,7 +18,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     /**
      * Diagramme dans lequel apparait l'élément de modélisation
      */
-    private Diagramme diagramme;
+    private final Diagramme diagramme;
 
 	/**
 	 * Constructeur générique des éléments graphiques
@@ -45,6 +45,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 	 * Rend (in)visible l'élément grahique sur le graphe
 	 * @param p_bool
 	 */
+
     @Override
     public void setVisible(boolean p_bool){
         super.setVisible(p_bool);

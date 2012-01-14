@@ -47,7 +47,9 @@ public class DiagrammeClasse extends Diagramme {
                 break;
             case AGREGATION:
                 valeurRetour = this.autorisationAgregation(p_origine , 
-                        p_extremite);    
+                        p_extremite); 
+            default:
+                valeurRetour = false;
         }
         return valeurRetour;
     }

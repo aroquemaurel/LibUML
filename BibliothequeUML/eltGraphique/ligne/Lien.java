@@ -5,8 +5,8 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
-import eltGraphique.ElementModelisation;
 import eltGraphique.ElementGraphique;
+import eltGraphique.ElementModelisation;
 import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
@@ -150,9 +150,6 @@ public class Lien extends ElementGraphique {
         this.destination = p_destination;
         this.typeLien = p_typeLien;
     }
-	/*
-	 * Getters
-	 */
 	/**
 	 * Récupère l'élément à l'extrémité de la flèche
 	 * @return L'élément à l'extrémité de la flèche
@@ -193,11 +190,14 @@ public class Lien extends ElementGraphique {
 	public String getTypePointeSource() {
 		return (this.typePointeSource);
 	}
-
-	/*
-	 * Setters
-	 */
-
+        /**
+         * Récupère le type de lien de la flèche
+         * @return Le type de lien
+         */
+        public TypeLien getTypeLien(){
+            return (this.typeLien);
+        }
+        
 	/**
 	 * Modifie l'élément à l'extrémité de la flèche
 	 * @param p_destination Le nouvel élément à l'éxtrémité de la flèche
@@ -231,19 +231,20 @@ public class Lien extends ElementGraphique {
 	}
 
 	/**
-	 * Modifie le type de pointe de flèche du côté de l'extrémité de la flèche
-	 * @param p_typePointeDestionation Le nouveau type de pointe de flèche
+	 * Modifie le type de la flèche en fonction du type passé en paramètre
+	 * @param p_typeLien Le nouveau type de la flèche
 	 */
-	public void setTypeFlecheExtremite(String p_typePointeDestionation) {
-		this.typePointeDestination = p_typePointeDestionation;
-	}
+	public void setTypeFleche(TypeLien p_typeLien) {
+            this.typeLien = p_typeLien;
+            super.getCellule().setStyle(p_typeLien.toString());
+        }
 
 	/**
 	 * Modifie le type de pointe de flmèche du côté de l'origie de la flèche
 	 * @param p_typePointeSource Le nouveau type de pointe de flèche
 	 */
 	public void setTypeFlecheOrigine(String p_typePointeSource) {
-		this.typePointeSource = p_typePointeSource;
+            this.typePointeSource = p_typePointeSource;
 	}
 
 	/**
@@ -254,30 +255,34 @@ public class Lien extends ElementGraphique {
     public void creer(){
         switch(this.typeLien){
             case SPECIALISATION:
-				this.creerStyleSpecialisation();
+                this.creerStyleSpecialisation();
                 break;
             case ASSOCIATION:
-				this.creerStyleAssociation();
+                this.creerStyleAssociation();
                 break;
             case FLECHE:
-				this.creerStyleFleche();
+                this.creerStyleFleche();
                 break;
             case AGREGATION:
-				this.creerStyleAgregation();
+                this.creerStyleAgregation();
                 break;
             case COMPOSITION:
-				this.creerStyleComposition();
-				break;
-			case DEPENDANCE:
-				this.creerStyleDependance();
+                this.creerStyleComposition();
+                break;
+            case DEPENDANCE:
+                this.creerStyleDependance();
+                break;
+            default:
+              throw new UnsupportedOperationException("Type de flèche inconnu");
         }
 
-		super.setCellule((mxCell) super.getGraph().insertEdge(
-			super.getGraph().getDefaultParent(), null, null,
-			this.getSource().getCellule(), this.getDestination().getCellule(),
-			this.typeLien.toString()));
+        super.setCellule((mxCell) super.getGraph().insertEdge(
+                super.getGraph().getDefaultParent(), null, null,
+                this.getSource().getCellule(), this.getDestination().getCellule(),
+                this.typeLien.toString()));
 
-		super.setConnectable(false);
-		super.getDiagramme().getElementsGraphiques().add(this);
+        super.setConnectable(false);
+        super.getDiagramme().getElementsGraphiques().add(this);
     }
+
 }

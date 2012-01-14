@@ -25,18 +25,16 @@ public class DiagrammeSequence extends Diagramme {
     * @return vrai(true) si le lien entre deux éléments graphiques est autorisé
     * ou faux(false) si le lien entre deux éléments graphiques n'est pas autorisé.
     */
+    @Override
     public boolean lienAutorise (ElementGraphique p_origine , 
             ElementGraphique p_extremite, TypeLien p_typeDeFleche){
         boolean valeurRetour = false;
-        switch (p_typeDeFleche){
-            case ASSOCIATION:
-                valeurRetour = this.autorisationAssociation(p_origine , 
-                        p_extremite); 
-                break;
-            case DEPENDANCE:
-                valeurRetour = this.autorisationDependance(p_origine , 
-                        p_extremite);
+        if(p_typeDeFleche.equals(TypeLien.ASSOCIATION)) {
+            valeurRetour = this.autorisationAssociation(p_origine, p_extremite); 
+        } else if (p_typeDeFleche.equals((TypeLien.DEPENDANCE))) {
+            valeurRetour = this.autorisationDependance(p_origine, p_extremite);
         }
+
         return valeurRetour;
     }
     

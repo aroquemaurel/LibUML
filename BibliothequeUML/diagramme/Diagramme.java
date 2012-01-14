@@ -14,7 +14,7 @@ public class Diagramme {
      /**
      * Liste des éléments graphiques
      */
-    private Liste<ElementGraphique> elementsGraphiques;
+    private final Liste<ElementGraphique> elementsGraphiques;
     
     /**
      * Constructeur qui crée une nouvelle liste d'éléments graphiques

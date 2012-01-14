@@ -70,24 +70,25 @@ public class Attribut extends Variable {
 	
 	@Override
 	public String toString() {
-		String retour = new String();
-		switch(this.visibilite) {
-			case PRIVATE:
-				retour += "- ";
-				break;
-			case PUBLIC:
-				retour += "+ ";
-				break;
-			case PACKAGE:
-				retour += "# ";
-				break;
-			case PROTECTED:
-				retour += "~ ";
+            String retour = new String();
+            switch(this.visibilite) {
+                case PRIVATE:
+                    retour += "- ";
+                    break;
+                case PUBLIC:
+                    retour += "+ ";
+                    break;
+                case PACKAGE:
+                    retour += "# ";
+                    break;
+                case PROTECTED:
+                    retour += "~ ";
+                default:
+                    retour += " ";                   
+            }
+            retour += super.toString();
+            retour += "\n";
 
-		}
-		retour += super.toString();
-		retour += "\n";
-		
-		return(retour);
+            return(retour);
 	}
 }
