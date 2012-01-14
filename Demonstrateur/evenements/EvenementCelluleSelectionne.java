@@ -31,13 +31,11 @@ public class EvenementCelluleSelectionne implements MouseListener {
     }
     @Override
     public void mouseClicked(MouseEvent event) {
-        if(this.panneauGraph.getDiagramme().getElementGraphiqueViaCellule((mxCell)
-            this.panneauGraph.getGraph().getSelectionCell()) instanceof Classe) {
-            // TODO ici, c'est que c'est une classe, on pourra donc afficher le supertableau de la
-				// mort qui tue
+        ElementGraphique element = this.panneauGraph.getDiagramme().getElementGraphiqueViaCellule((mxCell)
+            this.panneauGraph.getGraph().getSelectionCell());
+        
+    }   
 
-        }
-    }
 
     @Override
     public void mousePressed(MouseEvent arg0) { }
@@ -49,6 +47,11 @@ public class EvenementCelluleSelectionne implements MouseListener {
                 JPopupMenu menuContextuel;
                 
 		if(element != null){
+                    if(element instanceof Classe) {
+                        this.fenetre.getPanneauDroite().afficherTableauClasse((Classe) element);
+                        // TODO ici, c'est que c'est une classe, on pourra donc afficher le supertableau de la
+                        // mort qui tue -- Le tableau ne s'affiche qu'avec un clic droit ?!
+                    }
 			if(event.getButton() == MouseEvent.BUTTON3){
                             if(element instanceof Acteur){
                                 menuContextuel = construireMenuContextuel((Acteur) element);

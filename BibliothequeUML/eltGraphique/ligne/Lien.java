@@ -17,6 +17,8 @@ import util.Constantes;
  * Les différents types de liens sont gérés grâce à un attribut de type TypeLien
  *
  * @see TypeLien
+ * 
+ * @author Antoine
  */
 public class Lien extends ElementGraphique {
 

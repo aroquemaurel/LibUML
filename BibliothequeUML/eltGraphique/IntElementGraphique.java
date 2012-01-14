@@ -7,6 +7,7 @@ import diagramme.Diagramme;
 
 /**
  *
+ * @author Antoine
  */
 public interface IntElementGraphique {
     /**

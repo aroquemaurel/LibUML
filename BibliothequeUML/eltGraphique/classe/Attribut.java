@@ -5,6 +5,8 @@ package eltGraphique.classe;
  * 
  * @see Classe
  * @see Variable
+ * 
+ * @author Mathieu
  */
 public class Attribut extends Variable {
 	/**

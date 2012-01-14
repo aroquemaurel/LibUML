@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
+ * @author Antoine
  */
 public class Liste<T> extends ArrayList<T> {
     

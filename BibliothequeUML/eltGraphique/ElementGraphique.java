@@ -11,6 +11,9 @@ import diagramme.Diagramme;
  *
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
+ * 
+ * @author Mathieu
+ * @author Antoine
  */
 abstract public class ElementGraphique extends mxCell implements IntElementGraphique {
     private mxGraph graph;

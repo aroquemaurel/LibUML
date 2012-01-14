@@ -1,5 +1,6 @@
 package ihm.menu;
 
+import eltGraphique.classe.Classe;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.JScrollPane;
@@ -16,7 +17,7 @@ public class MenuDroite extends Menu {
 
 	/* Ajoute les objets graphiques du Menu (le tableau) */
     @Override
-    public void ajouterObjetsGraphiques() {
+    public void ajouterObjetsGraphiques() {/*
         Object[][] donnees = {
                 {"Private", "boolean", "jeSuisUnattribut","o","n"},
                 {"Protected", "int", "jeSuisUnattribut","o","n"},
@@ -35,7 +36,27 @@ public class MenuDroite extends Menu {
         tableau.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         TableColumn col = tableau.getColumnModel().getColumn(2);
      //    col.setPreferredWidth(200);
-        super.add(new JScrollPane(tableau));
+        super.add(new JScrollPane(tableau));*/
     }
 
+    public void afficherTableauClasse(Classe classe){
+        Object[][] donnees = {
+                {"Private", "boolean", "jeSuisUnattribut","o","n"},
+                {"Protected", "int", "jeSuisUnattribut","o","n"},
+                {"Protected", "int", "jeSuisUnattribut","o","n"},
+                {"Protected", "int", "jeSuisUnattribut","o","n"},
+                {"Protected", "int", "jeSuisUnattribut","o","n"},
+                {"Protected", "int", "jeSuisUnattribut","o","n"},
+                {"Private", "double", "jeSuisUnattribut","o","n"},
+                {"Private", "double", "jeSuisUnattribut","o","n"},
+                {"Private", "float", "jeSuisUnattribut","o","n"}
+            };
+        //Les titres des colonnes
+        String  title[] = {"Visibilité", "Type", "Nom", "Static", "Final"};
+        JTable tableau = new JTable(donnees, title);
+
+        tableau.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        TableColumn col = tableau.getColumnModel().getColumn(2);
+        super.add(new JScrollPane(tableau));
+    }
 }

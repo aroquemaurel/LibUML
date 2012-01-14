@@ -12,6 +12,9 @@ import util.Constantes;
 
 /**
  * Classe représentant un acteur passif
+ * 
+ * @author Antoine
+ * @author Mathieu
  */
 public class ActeurPassif extends Acteur {
 	/**

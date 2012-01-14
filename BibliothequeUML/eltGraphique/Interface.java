@@ -7,6 +7,7 @@ import java.awt.Dimension;
 /**
  * Modélise une interface par un petit cercle et un texte
  *
+ * 
  */
 public class Interface extends ElementModelisation {
     /**

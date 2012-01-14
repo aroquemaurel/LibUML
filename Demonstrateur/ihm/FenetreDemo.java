@@ -30,7 +30,7 @@ public class FenetreDemo extends JFrame {
 
     private final JPanel panneauPrincipal; //panneau principal dans lequel est contenu les autres panneaux
     private final BarreOutilsDessin toolbar; //barre contenant les outils
-    private final Menu menuDroite; // Menu avec le tableau
+    private final MenuDroite menuDroite; // Menu avec le tableau
 
     private final PanneauGraph panneauGraph; // panneau contenant le graph
 
@@ -88,9 +88,13 @@ public class FenetreDemo extends JFrame {
         return (this.panneauGraph);
     }
 
-	public JPanel getPanneauPrincipal(){
-		return (this.panneauPrincipal);
-	}
+    public JPanel getPanneauPrincipal(){
+            return (this.panneauPrincipal);
+    }
+    
+    public MenuDroite getPanneauDroite(){
+        return (this.menuDroite);
+    }
 
     /**
      * Méthode principale

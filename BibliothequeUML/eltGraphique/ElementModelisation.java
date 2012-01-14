@@ -14,6 +14,9 @@ import java.awt.Point;
  * de modélisation.
  *
  * @see Lien
+ * 
+ * @author Antoine
+ * @author Mathieu
  */
 abstract public class ElementModelisation extends ElementGraphique implements IntElementModelisation {
 	/**

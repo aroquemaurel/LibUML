@@ -13,6 +13,8 @@ import util.Liste;
 
 /**
  *
+ * @author Mathieu
+ * @author Antoine
  */
 public class Classe extends eltGraphique.ElementModelisation {
 	/**

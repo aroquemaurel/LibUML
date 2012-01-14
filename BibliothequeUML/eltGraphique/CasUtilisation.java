@@ -13,6 +13,7 @@ import util.Constantes;
 /**
  * Modélise un cas d'utilisation par une ellipse et un texte
  *
+ * @author Antoine
  */
 public class CasUtilisation extends ElementModelisation {
 	/**

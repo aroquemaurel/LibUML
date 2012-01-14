@@ -17,6 +17,8 @@ import util.Constantes;
  * @see Acteur
  * @see ActeurPassif
  *
+ * @author Antoine
+ * @author Mathieu
  */
 public class ActeurActif extends Acteur {
 	private static final double OFFSET_TEXTE_ACTEUR_Y = 51;

@@ -2,6 +2,8 @@ package eltGraphique.classe;
 
 /**
  * Représente une variable en général
+ * 
+ * @author Mathieu
  */
 public class Variable {
 	/**

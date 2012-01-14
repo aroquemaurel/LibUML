@@ -1,10 +1,11 @@
 package eltGraphique.classe;
 
 import util.Liste;
-import java.util.List;
 
 /**
 * Représente une méthode en général
+* 
+* @author Mathieu
 */
 public class Methode {
 	/**
