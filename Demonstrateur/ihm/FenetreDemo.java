@@ -67,7 +67,7 @@ public class FenetreDemo extends JFrame {
         this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
         this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
 
-        EvenementCelluleSelectionne evenement = new EvenementCelluleSelectionne(this.panneauGraph, this);
+        EvenementCelluleSelectionne evenement = new EvenementCelluleSelectionne(this);
         this.panneauGraph.getGraphControl().addMouseListener(evenement);
         this.menuDroite = new MenuDroite(new Dimension(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL), this);
         this.menuHaut = new BarreMenus(new Dimension(LARGEUR_FENETRE, HAUTEUR_MENUBAR));

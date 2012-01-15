@@ -11,14 +11,14 @@ import java.awt.event.ActionListener;
 public class EvenementLigneDeVie implements ActionListener {
     private final Acteur element;
     
-    /**
-    * Créer l'objet pour l'évenement sur un clique de l'élément passé en paramètre
-    * @param p_element L'acteur à qui ont veut ajouter la ligne de vie
+    /*
+    * Construit l'objet pour l'affichage de la ligne de vie pour l'élément passé en paramètre
     */
     public EvenementLigneDeVie (Acteur p_element){
         this.element = p_element;
     }
 
+    /* Action sur le menu contextuel */
     @Override
     public void actionPerformed(ActionEvent event) {
         this.element.afficherLigneDeVie(!this.element.getVisibiliteLigneDeVie());
