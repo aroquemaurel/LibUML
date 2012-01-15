@@ -34,7 +34,7 @@ public class Traitement extends ElementModelisation {
 	/**
 	 * Constante représentant la côte basse de l'élément déclencheur
 	 */
-	private final double BAS_EVENEDECLENCHEUR = 13.37 ;
+	private static final double BAS_EVENEDECLENCHEUR = 13.37 ;
 	
 	/**
 	 * Constante représentant la côte haute de l'élément déclencheur
@@ -44,12 +44,12 @@ public class Traitement extends ElementModelisation {
 	/**
 	 * Constante représentant la côte gauche de l'élément déclencheur
 	 */
-	private final double GAUCHE_EVENEDECLENCHEUR = 10;
+	private static final double GAUCHE_EVENEDECLENCHEUR = 10;
 	
 	/**
 	 * Constante représentant la côte droite de l'élément déclencheur
 	 */
-	private final double DROITE_EVENEDECLENCHEUR = 35;
+	private static final double DROITE_EVENEDECLENCHEUR = 35;
 
 	/**
 	 * Créer le style pour le rectangle du traitement
@@ -167,7 +167,8 @@ public class Traitement extends ElementModelisation {
 	
 	/**
 	 * Modifie le fait que le traitement soit en début de séquence (ou non).
-	 * Cela a pour but d'afficher (ou non) l'élément déclencheur représenté par un flèche qui reviens sur le traitement
+	 * Cela a pour but d'afficher (ou non) l'élément déclencheur représenté par une flèche qui reviens sur le 
+         * traitement
 	 * 
 	 * @param p_boolean Debut de séquence ?
 	 */

@@ -19,11 +19,11 @@ public class FenetreDemo extends JFrame {
                        Toolkit.getDefaultToolkit().getScreenSize().height*0.05);
     private final int LARGEUR_FENETRE =
 		Toolkit.getDefaultToolkit().getScreenSize().width;
-    private final int HAUTEUR_MENUBAR = 20;
+    private final static int HAUTEUR_MENUBAR = 20;
     private final int HAUTEUR_ZONEDETRAVAIL = HAUTEUR_FENETRE - HAUTEUR_MENUBAR - 80;
 
-    private final int LARGEUR_MENUGAUCHE = 100;
-    private final int LARGEUR_TABLEAUDROITE = 500;
+    private final static int LARGEUR_MENUGAUCHE = 100;
+    private final static int LARGEUR_TABLEAUDROITE = 500;
     private final int LARGEUR_GRAPH =
                         LARGEUR_FENETRE - LARGEUR_MENUGAUCHE - LARGEUR_TABLEAUDROITE - 30;
 
