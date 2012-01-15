@@ -1,12 +1,14 @@
 package eltGraphique;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.model.mxICell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,10 +27,30 @@ public class Traitement extends ElementModelisation {
 	 * L'élément qui déclenche le traitement (appel de méthode, etc.)
 	 */
 	private Lien evenementDeclencheur;
+	
+	/**
+	 * Traitement de début de séquence ?
+	 */
 	private boolean debutSequence;
+	
+	/**
+	 * Constante représentant la côte basse de l'élément déclencheur
+	 */
 	private final double BAS_EVENEDECLENCHEUR = 13.37 ;
+	
+	/**
+	 * Constante représentant la côte haute de l'élément déclencheur
+	 */
 	private final double HAUT_EVENEDECLENCHEUR = -BAS_EVENEDECLENCHEUR;
+	
+	/**
+	 * Constante représentant la côte gauche de l'élément déclencheur
+	 */
 	private final double GAUCHE_EVENEDECLENCHEUR = 10;
+	
+	/**
+	 * Constante représentant la côte droite de l'élément déclencheur
+	 */
 	private final double DROITE_EVENEDECLENCHEUR = 35;
 
 	/**
@@ -73,8 +95,8 @@ public class Traitement extends ElementModelisation {
 	 */
     public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
         super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
-        this.evenementDeclencheur = p_evenementDeclencheur;
 		this.debutSequence = p_debutSequence;
+		this.evenementDeclencheur = p_evenementDeclencheur;
     }
 
 	/**
@@ -83,29 +105,37 @@ public class Traitement extends ElementModelisation {
     @Override
     public final void creer() {
 		super.getGraph().getModel().beginUpdate();
-		mxCell celluleFlecheEvenementDeclencheur;
-		List<mxPoint> listePoint = new ArrayList<mxPoint>();
 
 		this.creerStyleTraitement();
-		this.creerStyleFlecheTraitement();
 
         super.setCellule((mxCell) super.getGraph().insertVertex(
             super.getParent(), null, null, 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
 
-		celluleFlecheEvenementDeclencheur = (mxCell) super.getGraph().insertEdge(super.getCellule(), null,
-				this.getTexte(), null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
+		if (this.evenementDeclencheur == null) {
+			this.evenementDeclencheur = new Lien(this, this, super.getGraph(), super.getDiagramme(), null);
+			
+			mxCell celluleFlecheEvenementDeclencheur;
+			List<mxPoint> listePoint = new ArrayList<mxPoint>();
+			
+			this.creerStyleFlecheTraitement();
 
-		/* On créé une liste de point par laquelle passera la flèche evenemnt déclencheur */
-		listePoint.add(new mxPoint(GAUCHE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
-		listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
-		listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR, BAS_EVENEDECLENCHEUR));
-		celluleFlecheEvenementDeclencheur.getGeometry().setSourcePoint(
-				new mxPoint(GAUCHE_EVENEDECLENCHEUR, 0));
-		celluleFlecheEvenementDeclencheur.getGeometry().setTargetPoint(
-				new mxPoint(super.getDimension().getWidth(), BAS_EVENEDECLENCHEUR));
+			celluleFlecheEvenementDeclencheur = (mxCell) super.getGraph().insertEdge(super.getCellule(), null,
+					this.getTexte(), null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
 
-		celluleFlecheEvenementDeclencheur.getGeometry().setPoints(listePoint);
+			/* On créé une liste de point par laquelle passera la flèche correspondant à l'événement déclencheur */
+			listePoint.add(new mxPoint(GAUCHE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
+			listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
+			listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR, BAS_EVENEDECLENCHEUR));
+			celluleFlecheEvenementDeclencheur.getGeometry().setSourcePoint(
+					new mxPoint(GAUCHE_EVENEDECLENCHEUR, 0));
+			celluleFlecheEvenementDeclencheur.getGeometry().setTargetPoint(
+					new mxPoint(super.getDimension().getWidth(), BAS_EVENEDECLENCHEUR));
+
+			celluleFlecheEvenementDeclencheur.getGeometry().setPoints(listePoint);
+			celluleFlecheEvenementDeclencheur.setVisible(this.debutSequence);
+			this.evenementDeclencheur.setCellule(celluleFlecheEvenementDeclencheur);
+		}
 		super.getDiagramme().getElementsGraphiques().add(this);
 		super.getGraph().getModel().endUpdate();
     }
@@ -117,7 +147,7 @@ public class Traitement extends ElementModelisation {
 	 * @see Lien
 	 */
     public Lien getEvenementDeclencheur() {
-        return evenementDeclencheur;
+        return(this.evenementDeclencheur);
     }
 	
 	/**
@@ -125,7 +155,7 @@ public class Traitement extends ElementModelisation {
 	 * @return Debut de séquence ?
 	 */
 	public boolean estDebutSequence() {
-		return this.debutSequence;
+		return(this.debutSequence);
 	}
 
 	/**
@@ -146,6 +176,6 @@ public class Traitement extends ElementModelisation {
 	 */
 	public void setDebutSequence(boolean p_boolean) {
 		this.debutSequence = p_boolean;
-		this.evenementDeclencheur.setVisible(p_boolean);
+		this.evenementDeclencheur.getCellule().setVisible(p_boolean);
 	}
 }
