@@ -31,8 +31,9 @@ public class PanneauGraph extends mxGraphComponent {
         this.parametrerPanneau();
     }
 
-    public Diagramme getDiagramme() {
-        return diagramme;
+	/* Retourne le diagramme contenant tous les éléments grahiques */
+	public Diagramme getDiagramme() {
+        return (this.diagramme);
     }
 
 }

@@ -38,24 +38,25 @@ public class EvenementsLienElementGraphique implements MouseListener {
     }
 
     /**
-    * Cette classe permet de gérer les actions produites lors d'un click avec la souris.
-    * @param event évènement en cours
+    * Cette méthode permet de gérer les actions produites lors d'un clic avec la souris.
     */
     @Override
     public void mouseClicked(MouseEvent event) {
         mxCell celluleActuelle = (mxCell) this.panneauGraph.getGraph().getSelectionCell();
-        if(celluleActuelle != null){
-            if(this.sourceCelluleARelier == null) {
+
+		
+        if(celluleActuelle != null){ // si on a selectioné une cellule
+            if(this.sourceCelluleARelier == null) { // si on a pas déjà trouvé la source, on l'affecte, on incrémente le nombre de clic
                 this.numeroClique++;
                 this.sourceCelluleARelier = celluleActuelle;
 
                 celluleActuelle = null;
-            } else if(!celluleActuelle.equals(sourceCelluleARelier)){
+            } else if(!celluleActuelle.equals(sourceCelluleARelier)){ // sinon, si la cellule ne correspond pas déjà à la source, on affecte la destination
                 this.numeroClique++;
                 this.destinationCelluleARelier = celluleActuelle;
 
             }
-            if(this.destinationCelluleARelier != null && sourceCelluleARelier != null){
+            if(this.destinationCelluleARelier != null && sourceCelluleARelier != null){ //on a trouvé la source et la destination, on peut les relier
                 Lien monLien = new Lien(
                     (ElementModelisation) this.diagramme.getElementGraphiqueViaCellule(
                                                                     this.sourceCelluleARelier),
@@ -68,7 +69,7 @@ public class EvenementsLienElementGraphique implements MouseListener {
             }
         }
 
-        if(numeroClique >= 2){
+        if(numeroClique >= 2){ //Deux clic, c'est bon, on supprime le listener
             this.panneauGraph.getGraphControl().removeMouseListener(this);
         }
 
@@ -82,38 +83,21 @@ public class EvenementsLienElementGraphique implements MouseListener {
         return (this.numeroClique);
     }
 
-    /**
-    * Cette classe permet de gérer les actions produites lors d'une pression avec la souris.
-    * @param arg0 évènement en cours
-    */
     @Override
     public void mousePressed(MouseEvent arg0) {
     }
 
-    /**
-    * Cette classe permet de gérer les actions produites lors d'une release avec la souris.
-    * @param event évènement en cours
-    */
     @Override
     public void mouseReleased(MouseEvent arg0) {
 
     }
 
-    /**
-    * Cette classe permet de gérer les actions produites lors d'une entrée avec la souris.
-    * @param arg0 évènement en cours
-    */
     @Override
     public void mouseEntered(MouseEvent arg0) {
     }
 
-    /**
-    * Cette classe permet de gérer les actions produites lors d'une sortie avec la souris.
-    * @param arg0 évènement en cours
-    */
     @Override
     public void mouseExited(MouseEvent arg0) {
     }
 
-    /* TODO Relire la JavaDoc */
 }

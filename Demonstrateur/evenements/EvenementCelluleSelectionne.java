@@ -21,7 +21,7 @@ public class EvenementCelluleSelectionne implements MouseListener {
     private final FenetreDemo fenetre; // la fenêtre dans lequel les cellules apparraissent
     
     /*
-     * Méthode permettant d'afficher le menu contextuel au clique sur un Acteur
+     * Méthode permettant d'afficher le menu contextuel au clic sur un Acteur
      */
     private JPopupMenu construireMenuContextuel(Acteur element){
 	JPopupMenu menuContextuel = new JPopupMenu();
@@ -48,7 +48,7 @@ public class EvenementCelluleSelectionne implements MouseListener {
     }
     
     /*
-     * Méthode permettant d'afficher le menu contextuel au clique sur un Traitement
+     * Méthode permettant d'afficher le menu contextuel au clic sur un Traitement
      */
     private JPopupMenu construireMenuContextuel(Traitement element){
 	JPopupMenu menuContextuel = new JPopupMenu();
@@ -76,7 +76,7 @@ public class EvenementCelluleSelectionne implements MouseListener {
     }   
     
     /*
-     * Méthode permettant d'afficher le menu contextuel au clique sur un ElementGrahique autre que Traitement et Acteur
+     * Méthode permettant d'afficher le menu contextuel au clic sur un ElementGrahique autre que Traitement et Acteur
      */
     private JPopupMenu construireMenuContextuel(ElementGraphique element){
 	JPopupMenu menuContextuel = new JPopupMenu();
@@ -110,20 +110,24 @@ public class EvenementCelluleSelectionne implements MouseListener {
     @Override
     public void mousePressed(MouseEvent arg0) { }
 
+	/*
+	 * Méthode s'executant à la selection d'un élément graphique 
+	 */
     @Override
     public void mouseReleased(MouseEvent event) {
         ElementGraphique element = this.fenetre.getPanneauGraph().getDiagramme().getElementGraphiqueViaCellule(
                             (mxCell) this.fenetre.getPanneauGraph().getGraph().getSelectionCell());
         JPopupMenu menuContextuel;
 
-        if(element != null){
+		if(element != null){ /* Si on un a séléctionné un élément graphique */
             if(element instanceof Classe) {
                 this.fenetre.getPanneauDroite().afficherTableauClasse((Classe) element);
-                // TODO ici, c'est que c'est une classe, on pourra donc afficher le supertableau de la
-                // mort qui tue -- Le tableau ne s'affiche qu'avec un clic droit ?!
+				// TODO -- Le tableau ne s'affiche qu'avec un clic droit 
+				// TODO -- Le tableau ne se recharge pas à chaque classe
+				// TODO -- Le tableau s'affiche deux fois
             }
             if(event.getButton() == MouseEvent.BUTTON3){
-                /* Au clique droit on affiche le menu contextuel, qui est différent en fonction de l'élément graphique*/
+                /* Au clique droit on construit le menu contextuel, qui est différent en fonction de l'élément graphique*/
                 if(element instanceof Acteur){
                     menuContextuel = construireMenuContextuel((Acteur) element);
                 } else if (element instanceof Traitement){
@@ -132,7 +136,7 @@ public class EvenementCelluleSelectionne implements MouseListener {
                     menuContextuel = construireMenuContextuel((ElementGraphique) element);                                
                 }
 
-                /* On affiche le menu contextuel*/
+                /* On affiche le menu contextuel construit précédemment */
                 menuContextuel.show(this.fenetre.getPanneauPrincipal(), event.getX(),event.getY());
                 menuContextuel.show(this.fenetre.getPanneauGraph(), event.getX(), event.getY());
             }
@@ -144,6 +148,4 @@ public class EvenementCelluleSelectionne implements MouseListener {
     
     @Override
     public void mouseExited(MouseEvent arg0) {}
-    
-
 }

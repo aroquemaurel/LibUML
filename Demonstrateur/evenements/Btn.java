@@ -9,18 +9,21 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
-* Cette superclass Btn permet de gérer l'ensemble des boutons utilisés par le démonstrateur.
+* Cette superclasse Btn permet de gérer l'ensemble des boutons utilisés par le démonstrateur.
 */
 public class Btn extends JButton implements MouseListener {
+	/**
+	 * La fenêtre dans laquelle apparait le bouton
+	 */
     protected FenetreDemo fenetre;
 
     /* paramètres des boutons */
     private void parametrerBtn(){
-            super.setOpaque(false);
-            super.setBorderPainted(false);
-            super.setPreferredSize(new Dimension(25,25));
-            super.setFocusPainted(false);
-            this.addMouseListener(this);
+		super.setOpaque(false);
+		super.setBorderPainted(false);
+		super.setPreferredSize(new Dimension(25,25));
+		super.setFocusPainted(false);
+		this.addMouseListener(this);
     }
 
     /**
@@ -30,16 +33,16 @@ public class Btn extends JButton implements MouseListener {
     */
     public Btn(String p_nomImage, FenetreDemo p_fenetre){
         /* on transforme p_nomImage pour obtenir le lien de l'image en question */
-            super(new ImageIcon("images/btn_".
-                concat(p_nomImage).
-                concat(".jpg")));
+		super(new ImageIcon("images/btn_".
+			concat(p_nomImage).
+			concat(".jpg")));
 
-            this.fenetre = p_fenetre;
-            this.parametrerBtn();
+		this.fenetre = p_fenetre;
+		this.parametrerBtn();
     }
 
     /**
-    * Cette classe permet de gérer l'action de click avec la souris.
+    * Cette méthode permet de gérer l'action de clic avec la souris.
     * @param event évènement en cours
     */
     @Override
@@ -48,33 +51,31 @@ public class Btn extends JButton implements MouseListener {
     }
 
     /**
-    * Cette classe permet de gérer l'action d'entrée avec la souris.
+    * Cette méthode permet de gérer l'action d'entrée avec la souris.
     * @param event évènement en cours
     */
     @Override
     public void mouseEntered(MouseEvent event) { }
 
     /**
-    * Cette classe permet de gérer l'action de sortie avec la souris.
+    * Cette méthode permet de gérer l'action de sortie avec la souris.
     * @param event évènement en cours
     */
     @Override
     public void mouseExited(MouseEvent event) { }
 
     /**
-    * Cette classe permet de gérer l'action de pression avec la souris.
+    * Cette méthode permet de gérer l'action de pression avec la souris.
     * @param event évènement en cours
     */
     @Override
     public void mousePressed(MouseEvent event) { }
 
     /**
-    * Cette classe permet de gérer l'action de release avec la souris.
+    * Cette méthode permet de gérer l'action de release avec la souris.
     * @param event évènement en cours
     */
     @Override
     public void mouseReleased(MouseEvent event) { }
     
-    /* TODO revoir la description de la javadoc des methodes */
-
 }

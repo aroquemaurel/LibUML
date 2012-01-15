@@ -83,15 +83,17 @@ public class FenetreDemo extends JFrame {
         this.setVisible(true);
     }
 
-    /* Retour le panneau contenant le graph */
+    /* Retourne le panneau contenant le graph */
     public PanneauGraph getPanneauGraph(){
         return (this.panneauGraph);
     }
 
-    public JPanel getPanneauPrincipal(){
+	/* Retourne le panneau contenant tous les autres panneaux */ 
+	public JPanel getPanneauPrincipal(){
             return (this.panneauPrincipal);
     }
-    
+   
+	/* Retourne le panneau de droite contenant le tableau de la classe */
     public MenuDroite getPanneauDroite(){
         return (this.menuDroite);
     }
@@ -102,9 +104,6 @@ public class FenetreDemo extends JFrame {
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
        fenetre.afficherFenetre();
-       Traitement t = new Traitement(fenetre.getPanneauGraph().getGraph(), 
-               fenetre.getPanneauGraph().getDiagramme(), "", null, true);
-       t.creer();
     }
 
 }
