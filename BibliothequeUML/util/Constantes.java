@@ -1,7 +1,7 @@
 package util;
 
 /**
- *
+ *Cette classe implémente les différentes constantes utilisées dans le projet.
  * @author Antoine
  * @author Mathieu
  */

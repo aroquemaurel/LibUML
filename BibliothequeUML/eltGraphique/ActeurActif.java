@@ -21,24 +21,24 @@ import util.Constantes;
  * @author Mathieu
  */
 public class ActeurActif extends Acteur {
-	private static final double OFFSET_TEXTE_ACTEUR_Y = 51;
-	private static final double OFFSET_TEXTE_ACTEUR_X = 0;
+    private static final double OFFSET_TEXTE_ACTEUR_Y = 51;
+    private static final double OFFSET_TEXTE_ACTEUR_X = 0;
 
-	/**
-	 * Creer le style d'un acteur Actif
-	 */
-	private void creerStyleActeurActif() {
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-        mxStylesheet feuilleStyles = super.getGraph().getStylesheet();
+    /**
+        * Creer le style d'un acteur Actif
+        */
+    private void creerStyleActeurActif() {
+            Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+    mxStylesheet feuilleStyles = super.getGraph().getStylesheet();
 
-        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ACTOR);
-        nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
-        nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
-        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
+    nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ACTOR);
+    nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+    nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+    nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
+    nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
 
-        feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
-	}
+    feuilleStyles.putCellStyle("ACTEUR_ACTIF", nouveauStyle);
+    }
 
     /**
      * Constructeur de la classe ActeurActif qui créer un acteur actif
@@ -55,8 +55,8 @@ public class ActeurActif extends Acteur {
      */
     @Override
     public final void creer(){
-		super.getGraph().getModel().beginUpdate();
-		this.creerStyleActeurActif();
+        super.getGraph().getModel().beginUpdate();
+        this.creerStyleActeurActif();
 
 
         super.setCellule((mxCell) super.getGraph().insertVertex(

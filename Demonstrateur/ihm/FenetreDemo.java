@@ -1,10 +1,9 @@
 package ihm;
 
 import evenements.EvenementCelluleSelectionne;
-import ihm.menu.BarreOutilsDessin;
-import ihm.menu.Menu;
-import ihm.menu.MenuDroite;
 import ihm.menu.BarreMenus;
+import ihm.menu.BarreOutilsDessin;
+import ihm.menu.MenuDroite;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -36,7 +35,7 @@ public class FenetreDemo extends JFrame {
 
     private final BarreMenus menuHaut; // Barre des menus (fichier, insérer, ...)
 
-	/* Paramètres la fenêtre */
+    /* Paramètres la fenêtre */
     private void parametrerFenetre(){
         this.setTitle("Démonstrateur de la bibliothèque");
         this.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
@@ -45,7 +44,7 @@ public class FenetreDemo extends JFrame {
         this.setResizable(false);
     }
 
-	/* Ajouter au panneau principal les différents panneaux */
+    /* Ajouter au panneau principal les différents panneaux */
     private void ajouterPanneaux() {
         this.panneauPrincipal.add(this.menuHaut);
         this.panneauPrincipal.add(this.toolbar);
@@ -53,14 +52,14 @@ public class FenetreDemo extends JFrame {
         this.panneauPrincipal.add(this.menuDroite);
     }
 
-	/* ajouter les différents boutons dans les différents panneaux */
+    /* ajouter les différents boutons dans les différents panneaux */
     private void ajouterBoutons(){
         this.menuHaut.ajouterObjetsGraphiques();
         this.toolbar.ajouterObjetsGraphiques();
         this.menuDroite.ajouterObjetsGraphiques();
     }
 
-	/* Construit la fenêtre de démonstration */
+    /* Construit la fenêtre de démonstration */
     public FenetreDemo() {
 
         this.panneauPrincipal = new JPanel();
@@ -73,7 +72,7 @@ public class FenetreDemo extends JFrame {
         this.menuHaut = new BarreMenus(new Dimension(LARGEUR_FENETRE, HAUTEUR_MENUBAR));
     }
 
-	/* Afficher la fenêtre */
+    /* Afficher la fenêtre */
     public void afficherFenetre(){
         this.parametrerFenetre();
         this.ajouterBoutons();
@@ -83,7 +82,7 @@ public class FenetreDemo extends JFrame {
         this.setVisible(true);
     }
 
-	/* Retour le panneau contenant le graph */
+    /* Retour le panneau contenant le graph */
     public PanneauGraph getPanneauGraph(){
         return (this.panneauGraph);
     }
@@ -97,8 +96,8 @@ public class FenetreDemo extends JFrame {
     }
 
     /**
-     * Méthode principale
-     */
+    * Méthode principale
+    */
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
        fenetre.afficherFenetre();

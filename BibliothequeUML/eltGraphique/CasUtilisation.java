@@ -16,40 +16,40 @@ import util.Constantes;
  * @author Antoine
  */
 public class CasUtilisation extends ElementModelisation {
-	/**
-	 * Créer le style d'un Cas d'utilisation
-	 */
-	private void creerStyleCasUtilisation(){
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+    /**
+    * Créer le style d'un Cas d'utilisation
+    */
+    private void creerStyleCasUtilisation(){
+            mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+            Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
-		nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
-        nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
-		feuilleStyles.putCellStyle("USECASE", nouveauStyle);
-	}
+            nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
+            nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+            nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+            nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
+            feuilleStyles.putCellStyle("USECASE", nouveauStyle);
+    }
 
-	/**
-	 * Constructeur de la classe CasUtilisation
-	 * @param p_graph Le graphe auquel sera ajouté le cas d'utilisation
-	 * @param p_texte Le texte qui sera associé au cas d'utilisation
-	 */
+    /**
+    * Constructeur de la classe CasUtilisation
+    * @param p_graph Le graphe auquel sera ajouté le cas d'utilisation
+    * @param p_texte Le texte qui sera associé au cas d'utilisation
+    */
     public CasUtilisation(mxGraph p_graph, Diagramme p_diagramme, String p_texte) {
 		super(p_graph, p_diagramme, p_texte, new Dimension(150,75));
     }
 
-	/**
-	 * Crée la représentation graphique du cas d'utilisation
-	 */
-	@Override
+    /**
+    * Crée la représentation graphique du cas d'utilisation
+    */
+    @Override
     public final void creer(){
-		this.creerStyleCasUtilisation();
+        this.creerStyleCasUtilisation();
 
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getParent(), null, super.getTexte(), 30, 30,
-			super.getDimension().getWidth(), super.getDimension().getHeight(),
-			"USECASE"));
+                super.getParent(), null, super.getTexte(), 30, 30,
+                super.getDimension().getWidth(), super.getDimension().getHeight(),
+                "USECASE"));
 
         super.getDiagramme().getElementsGraphiques().add(this);
     }

@@ -12,32 +12,39 @@ public class Methode {
 	 * Nom de la méthode
 	 */
 	private String nom;
+        
 	/**
 	 * Type de retour de la méthode
 	 */
 	private String typeRetour;
+        
 	/**
 	 * Visibilite de la méthode
 	 * @see Visibilite
 	 */
 	private Visibilite visibilite;
+        
 	/**
 	 * Liste des paramètres de la méthodes
 	 * @see Variable
 	 */
 	private Liste<Variable> parametres;
+        
 	/**
-	 * Méthode constante ?
+	 * Méthode constante
 	 */
 	private boolean constant;
+        
 	/**
-	 * Méthode acstraite ?
+	 * Méthode acstraite
 	 */
 	private boolean abstraite;
+        
 	/**
-	 * Méthode de classe ?
+	 * Méthode de classe
 	 */
 	private boolean deClasse;
+        
 
 	/**
 	 * Constructeur d'une méthode
@@ -209,7 +216,10 @@ public class Methode {
 	public void setVisibilite(Visibilite p_visibilite) {
 		this.visibilite = p_visibilite;
 	}
-
+        
+        /**
+	 * Retourne une description sous forme de chaine de caractères de l'état de visibilité de la méthode.
+	 */
 	@Override
 	public String toString(){
 		String retour = "";

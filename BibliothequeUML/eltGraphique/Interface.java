@@ -6,10 +6,9 @@ import java.awt.Dimension;
 
 /**
  * Modélise une interface par un petit cercle et un texte
- *
- * 
  */
 public class Interface extends ElementModelisation {
+    
     /**
      * Constructeur de la classe traitement
      * @param p_graph Le graphe auquel sera ajouter le traitement

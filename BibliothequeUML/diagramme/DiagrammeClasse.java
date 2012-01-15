@@ -1,4 +1,4 @@
- package diagramme;
+package diagramme;
 
 import eltGraphique.ElementGraphique;
 import eltGraphique.classe.Classe;
@@ -46,7 +46,8 @@ public class DiagrammeClasse extends Diagramme {
                 break;
             case AGREGATION:
                 valeurRetour = this.autorisationAgregation(p_origine , 
-                        p_extremite); 
+                        p_extremite);
+                break;
             default:
                 valeurRetour = false;
         }

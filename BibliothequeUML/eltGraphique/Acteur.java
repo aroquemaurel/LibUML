@@ -73,7 +73,8 @@ abstract public class Acteur extends ElementModelisation {
             super.mettreAJour();
             this.visibiliteLigneDeVie = p_visible;
     }
-/**
+    
+    /**
      * Modifie le texte lié à l'acteur.
      * @param p_texte Le texte lié à l'acteur
      */

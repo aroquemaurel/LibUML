@@ -6,31 +6,31 @@ import eltGraphique.ligne.TypeLien;
 import util.Liste;
 
 /**
- * Cette classe permet de représenter et de manipuler <b>un Diagramme</b>.
- * @author Antoine
- * @author Marie-Ly
- */
+* Cette classe permet de représenter et de manipuler <b>un Diagramme</b>.
+* @author Antoine
+* @author Marie-Ly
+*/
 public class Diagramme {
-     /**
-     * Liste des éléments graphiques
-     */
+    /**
+    * Liste des éléments graphiques
+    */
     private final Liste<ElementGraphique> elementsGraphiques;
     
     /**
-     * Constructeur qui crée une nouvelle liste d'éléments graphiques
-     */
+    * Constructeur qui crée une nouvelle liste d'éléments graphiques
+    */
     public Diagramme(){
         this.elementsGraphiques = new Liste<ElementGraphique>();
     }
     
     /**
-     * Méthode qui teste si le lien est autorisé ou non, en fonction du 
-     * diagramme, de l'origine et de l'extrémité
-     * @param p_origine
-     * @param p_extremite
-     * @param p_typeDeFleche
-     * @return true s'il est, false sinon
-     */
+    * Méthode qui teste si le lien est autorisé ou non, en fonction du 
+    * diagramme, de l'origine et de l'extrémité
+    * @param p_origine
+    * @param p_extremite
+    * @param p_typeDeFleche
+    * @return true s'il est, false sinon
+    */
     public boolean lienAutorise (ElementGraphique p_origine , 
             ElementGraphique p_extremite, TypeLien p_typeDeFleche){
         return true;
@@ -61,6 +61,7 @@ public class Diagramme {
      * trouvé pour cette cellule
      */
     public ElementGraphique getElementGraphiqueViaCellule(mxICell p_cellule){
+        
         ElementGraphique retour = null;
         
         for(final ElementGraphique element : this.elementsGraphiques){

@@ -17,28 +17,31 @@ import util.Liste;
  * @author Antoine
  */
 public class Classe extends eltGraphique.ElementModelisation {
-	/**
-	 * Classe abstraite ?
-	 */
+    /**
+            * Classe abstraite ?
+            */
     private boolean abstraite;
-	/**
-	 * Liste des méthodes de la classe
-	 * @see Methode
-	 */
+    
+    /**
+    * Liste des méthodes de la classe
+    * @see Methode
+    */
     private Liste<Methode> methodes;
-	/**
-	 * Liste des attributs de la classe
-	 * @see Attribut
-	 */
+    
+    /**
+    * Liste des attributs de la classe
+    * @see Attribut
+    */
     private Liste<Attribut> attributs;
-	/**
-	 * Classe cosntante ?
-	 */
+    
+    /**
+    * Classe cosntante ?
+    */
     private boolean constante;
     
-        /**
-	 * Creer le style d'une classe
-	 */
+    /**
+    * Creer le style d'une classe
+    */
     private void creerStyleClasse(){
         mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
         Map<String, Object> nouveauStyle = new HashMap<String, Object>();
@@ -50,9 +53,10 @@ public class Classe extends eltGraphique.ElementModelisation {
         nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
         feuilleStyles.putCellStyle("CLASSE", nouveauStyle);
 	}
-	/**
-	 * Créer le style du contenu d'une classe (cadre méthodes, cadre attributs)
-	 */
+    
+    /**
+    * Créer le style du contenu d'une classe (cadre méthodes, cadre attributs)
+    */
     private void creerStyleContenuClasse(){
         mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
         Map<String, Object> nouveauStyle = new HashMap<String, Object>();
@@ -70,7 +74,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
 
     private String genererChaineMethodes(){
-        String retour = new String();
+       String retour = new String();
 
        for(int i=0; i < this.methodes.taille(); i++){
 		   retour += this.methodes.get(i);
@@ -90,10 +94,10 @@ public class Classe extends eltGraphique.ElementModelisation {
     }
 
     /**
-	 * Constructeur d'un élément 'classe'
-	 * @param p_graph Le graphe auquel sera ajouter la classe
-	 * @param p_texte Le texte associé à la classe (son nom)
-	 */
+    * Constructeur d'un élément 'classe'
+    * @param p_graph Le graphe auquel sera ajouter la classe
+    * @param p_texte Le texte associé à la classe (son nom)
+    */
     public Classe(mxGraph p_graph, Diagramme p_diagramme, String p_texte){
         super(p_graph, p_diagramme, p_texte, new Dimension(125,150));
 
@@ -112,25 +116,25 @@ public class Classe extends eltGraphique.ElementModelisation {
         this.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false,"Classe", "monAttribut3"));
     }
 
-	/**
-	 * Ajoute la méthode passée en paramètre à la liste des méthodes
-	 * @param p_nouvelleMethode
-	 * @return La méthode ajoutée
-	 *
-	 * @see Methode
-	 */
-	public final Methode ajouterMethode(Methode p_nouvelleMethode) {
-		this.methodes.ajouterElement(p_nouvelleMethode);
-		return(p_nouvelleMethode);
-	}
+    /**
+    * Ajoute la méthode passée en paramètre à la liste des méthodes
+    * @param p_nouvelleMethode
+    * @return La méthode ajoutée
+    *
+    * @see Methode
+    */
+    public final Methode ajouterMethode(Methode p_nouvelleMethode) {
+            this.methodes.ajouterElement(p_nouvelleMethode);
+            return(p_nouvelleMethode);
+    }
 
-	/**
-	 * Ajoue un attribut à la liste d'attributs de la classe
-	 * @param p_nouvelAttribut Le nouvel attribut à ajouter à la classe
-	 * @return Le nouvel attribut ajouté
-	 *
-	 * @see Attribut
-	 */
+    /**
+    * Ajoue un attribut à la liste d'attributs de la classe
+    * @param p_nouvelAttribut Le nouvel attribut à ajouter à la classe
+    * @return Le nouvel attribut ajouté
+    *
+    * @see Attribut
+    */
     public final Attribut ajouterAttribut(Attribut p_nouvelAttribut) {
         this.attributs.ajouterElement(p_nouvelAttribut);
 		return(p_nouvelAttribut);
@@ -235,7 +239,7 @@ public class Classe extends eltGraphique.ElementModelisation {
         celluleAttributs.setConnectable(false);
         celluleMethodes.setConnectable(false);
 
-         super.getDiagramme().getElementsGraphiques().add(this);
+        super.getDiagramme().getElementsGraphiques().add(this);
     }
 }
 

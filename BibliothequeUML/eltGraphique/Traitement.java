@@ -1,14 +1,12 @@
 package eltGraphique;
 
 import com.mxgraph.model.mxCell;
-import com.mxgraph.model.mxICell;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ligne.Lien;
-import eltGraphique.ligne.TypeLien;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,20 +70,20 @@ public class Traitement extends ElementModelisation {
 	 */
 	private void creerStyleFlecheTraitement(){
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+                Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
-        nouveauStyle = new HashMap<String, Object>();
+                nouveauStyle = new HashMap<String, Object>();
 		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
-        nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-        nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, Constantes.COULEUR_FOND);
-        nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
-        nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, mxConstants.NONE);
-        nouveauStyle.put(mxConstants.STYLE_DIRECTION, mxConstants.DIRECTION_WEST);
-        nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-        nouveauStyle.put(mxConstants.STYLE_DELETABLE, mxConstants.NONE);
-        nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
-        feuilleStyles.putCellStyle("FLECHE_EVENEMENT_DECLENCHEUR", nouveauStyle);
+                nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+                nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, Constantes.COULEUR_FOND);
+                nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+                nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+                nouveauStyle.put(mxConstants.STYLE_RESIZABLE, mxConstants.NONE);
+                nouveauStyle.put(mxConstants.STYLE_DIRECTION, mxConstants.DIRECTION_WEST);
+                nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+                nouveauStyle.put(mxConstants.STYLE_DELETABLE, mxConstants.NONE);
+                nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
+                feuilleStyles.putCellStyle("FLECHE_EVENEMENT_DECLENCHEUR", nouveauStyle);
 	}
 	
 	/**
@@ -93,23 +91,22 @@ public class Traitement extends ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
-    public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
-        super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
-		this.debutSequence = p_debutSequence;
-		this.evenementDeclencheur = p_evenementDeclencheur;
-    }
+        public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
+            super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
+            this.debutSequence = p_debutSequence;
+            this.evenementDeclencheur = p_evenementDeclencheur;
+        }
 
 	/**
 	 * Crée la représentation graphique d'un traitement
 	 */
-    @Override
-    public final void creer() {
+        @Override
+        public final void creer() {
 		super.getGraph().getModel().beginUpdate();
+                this.creerStyleTraitement();
 
-		this.creerStyleTraitement();
-
-        super.setCellule((mxCell) super.getGraph().insertVertex(
-            super.getParent(), null, null, 30, 30,
+                super.setCellule((mxCell) super.getGraph().insertVertex(
+                        super.getParent(), null, null, 30, 30,
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
 
 		if (this.evenementDeclencheur == null) {
@@ -138,7 +135,7 @@ public class Traitement extends ElementModelisation {
 		}
 		super.getDiagramme().getElementsGraphiques().add(this);
 		super.getGraph().getModel().endUpdate();
-    }
+        }
 	
 	/**
 	 * Récupère l'évenement déclencheur du traitement
@@ -146,9 +143,9 @@ public class Traitement extends ElementModelisation {
 	 * 
 	 * @see Lien
 	 */
-    public Lien getEvenementDeclencheur() {
-        return(this.evenementDeclencheur);
-    }
+        public Lien getEvenementDeclencheur() {
+            return(this.evenementDeclencheur);
+        }
 	
 	/**
 	 * Retourn vrai si le traitement est le premier de la séquence, faux sinon
@@ -164,9 +161,9 @@ public class Traitement extends ElementModelisation {
 	 * 
 	 * @see Lien
 	 */
-    public void setEvenementDeclencheur(Lien evenementDeclencheur) {
-        this.evenementDeclencheur = evenementDeclencheur;
-    }
+        public void setEvenementDeclencheur(Lien evenementDeclencheur) {
+            this.evenementDeclencheur = evenementDeclencheur;
+        }
 	
 	/**
 	 * Modifie le fait que le traitement soit en début de séquence (ou non).

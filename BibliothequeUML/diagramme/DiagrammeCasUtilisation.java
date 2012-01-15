@@ -40,6 +40,7 @@ public class DiagrammeCasUtilisation extends Diagramme {
             case DEPENDANCE:
                 valeurRetour = this.autorisationDependance(p_origine , 
                         p_extremite);
+                break;
             default:
                 valeurRetour = false;
         }

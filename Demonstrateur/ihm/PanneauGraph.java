@@ -13,14 +13,14 @@ public class PanneauGraph extends mxGraphComponent {
     private final int longueurPanneau;
     private final Diagramme diagramme;
 
-	/* Paramètres du panneau */
+    /* Paramètres du panneau */
     private void parametrerPanneau(){
         this.setGridVisible(false);
         this.setInvokesStopCellEditing(true);
         this.setPreferredSize(new Dimension(this.largeurPanneau, this.longueurPanneau));
     }
 
-	/* Construit le panneau du graph */
+    /* Construit le panneau du graph */
     public PanneauGraph(int p_largeurPanneau, int p_longueurPanneau){
         super(new mxGraph());
 

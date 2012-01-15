@@ -4,9 +4,9 @@ import eltGraphique.classe.Methode;
 import eltGraphique.classe.Variable;
 import eltGraphique.classe.Visibilite;
 import org.junit.After;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import util.Liste;
 
 public class MethodeTest {

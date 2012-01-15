@@ -3,9 +3,10 @@ package eltGraphique;
 import eltGraphique.classe.Attribut;
 import eltGraphique.classe.Visibilite;
 import org.junit.After;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class AttributTest {
 	private Attribut attribut;

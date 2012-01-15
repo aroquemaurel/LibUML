@@ -8,14 +8,14 @@ import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 
 /**
- * Menu contenant le tableau avec les données
- */
+* Menu contenant le tableau avec les données
+*/
 public class MenuDroite extends Menu {
     public MenuDroite (Dimension p_dimension, FenetreDemo p_fenetre){
         super(p_dimension, p_fenetre);
     }
 
-	/* Ajoute les objets graphiques du Menu (le tableau) */
+    /* Ajoute les objets graphiques du Menu (le tableau) */
     @Override
     public void ajouterObjetsGraphiques() {/*
         Object[][] donnees = {

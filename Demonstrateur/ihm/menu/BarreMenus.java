@@ -13,20 +13,21 @@ import javax.swing.JMenuItem;
  * Menu contenant la barre de menu (Fichier, Insérer, ...)
  */
 public class BarreMenus extends JMenuBar {
-	private final Dimension dimension;
+    
+    private final Dimension dimension;
 
-	/* Paramètres de la barre de menus */
-	private void parametrerBarreMenus(){
-        this.setPreferredSize(this.dimension);
-	}
+    /* Paramètres de la barre de menus */
+    private void parametrerBarreMenus(){
+    this.setPreferredSize(this.dimension);
+    }
 
-	/* Construit la barre de menu */
+    /* Construit la barre de menu */
     public BarreMenus(Dimension p_dimension){
 		this.dimension = p_dimension;
 		this.parametrerBarreMenus();
     }
 
-	/* Ajout les objets grpahiques dans la barre de menu */
+    /* Ajout les objets grpahiques dans la barre de menu */
     public void ajouterObjetsGraphiques(){
 		/* Menu fichier */
 		JMenu fichier = new JMenu ("Fichier");

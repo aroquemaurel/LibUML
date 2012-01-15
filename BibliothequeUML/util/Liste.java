@@ -3,7 +3,7 @@ package util;
 import java.util.ArrayList;
 
 /**
- *
+ * Cette classe permet de gérer et de modifier la liste des éléments d'un diagramme.
  * @author Antoine
  */
 public class Liste<T> extends ArrayList<T> {

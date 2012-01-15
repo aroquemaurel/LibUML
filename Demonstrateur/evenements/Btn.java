@@ -3,53 +3,78 @@ package evenements;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
-import javax.swing.JButton;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
- * superClasse btn
- */
+* Cette superclass Btn permet de gérer l'ensemble des boutons utilisés par le démonstrateur.
+*/
 public class Btn extends JButton implements MouseListener {
     protected FenetreDemo fenetre;
 
-	/* paramètres des boutons */
-	private void parametrerBtn(){
-		super.setOpaque(false);
-		super.setBorderPainted(false);
-		super.setPreferredSize(new Dimension(25,25));
-		super.setFocusPainted(false);
-        this.addMouseListener(this);
-	}
-
-	/* Constructeur appellé par les classes filles */
-    public Btn(String p_nomImage, FenetreDemo p_fenetre){
-        /* on transforme p_nomImage pour obtenir le lien de l'image en question */
-		super(new ImageIcon("images/btn_".
-            concat(p_nomImage).
-            concat(".jpg")));
-
-        this.fenetre = p_fenetre;
-		this.parametrerBtn();
+    /* paramètres des boutons */
+    private void parametrerBtn(){
+            super.setOpaque(false);
+            super.setBorderPainted(false);
+            super.setPreferredSize(new Dimension(25,25));
+            super.setFocusPainted(false);
+            this.addMouseListener(this);
     }
 
-	@Override
+    /**
+    * Constructeur de la classe Btn qui est appellé par les classes filles.
+    * @param p_nomImage nom de l'image utilisé pour le graphique du bouton.
+    * @param p_fenetre nom de la fenêtre dans laquelle apparait le bouton
+    */
+    public Btn(String p_nomImage, FenetreDemo p_fenetre){
+        /* on transforme p_nomImage pour obtenir le lien de l'image en question */
+            super(new ImageIcon("images/btn_".
+                concat(p_nomImage).
+                concat(".jpg")));
+
+            this.fenetre = p_fenetre;
+            this.parametrerBtn();
+    }
+
+    /**
+    * Cette classe permet de gérer l'action de click avec la souris.
+    * @param event évènement en cours
+    */
+    @Override
     public void mouseClicked(MouseEvent event) {
         JOptionPane.showMessageDialog(null,"Cette fonctionnalité n'est pas implémentée");
     }
 
-	@Override
+    /**
+    * Cette classe permet de gérer l'action d'entrée avec la souris.
+    * @param event évènement en cours
+    */
+    @Override
     public void mouseEntered(MouseEvent event) { }
 
-	@Override
+    /**
+    * Cette classe permet de gérer l'action de sortie avec la souris.
+    * @param event évènement en cours
+    */
+    @Override
     public void mouseExited(MouseEvent event) { }
 
-	@Override
+    /**
+    * Cette classe permet de gérer l'action de pression avec la souris.
+    * @param event évènement en cours
+    */
+    @Override
     public void mousePressed(MouseEvent event) { }
 
-	@Override
+    /**
+    * Cette classe permet de gérer l'action de release avec la souris.
+    * @param event évènement en cours
+    */
+    @Override
     public void mouseReleased(MouseEvent event) { }
-
+    
+    /* TODO revoir la description de la javadoc des methodes */
 
 }

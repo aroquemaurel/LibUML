@@ -8,10 +8,11 @@ import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 import org.junit.After;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import util.Constantes;
-import static org.junit.Assert.*;
 
 public class LienTest {
 	private Lien lienComposition;
