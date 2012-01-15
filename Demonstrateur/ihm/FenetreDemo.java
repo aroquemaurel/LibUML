@@ -15,17 +15,17 @@ import javax.swing.JPanel;
  */
 public class FenetreDemo extends JFrame {
 	/* Déclaration des paramètres de la fenêtre */
-    private static final int HAUTEUR_FENETRE =
+    private final int HAUTEUR_FENETRE =
 		(int) (Toolkit.getDefaultToolkit().getScreenSize().height -
                        Toolkit.getDefaultToolkit().getScreenSize().height*0.05);
-    private static final int LARGEUR_FENETRE =
+    private final int LARGEUR_FENETRE =
 		Toolkit.getDefaultToolkit().getScreenSize().width;
-    private static final int HAUTEUR_MENUBAR = 20;
-    private static final int HAUTEUR_ZONEDETRAVAIL = HAUTEUR_FENETRE - HAUTEUR_MENUBAR - 80;
+    private final int HAUTEUR_MENUBAR = 20;
+    private final int HAUTEUR_ZONEDETRAVAIL = HAUTEUR_FENETRE - HAUTEUR_MENUBAR - 80;
 
-    private static final int LARGEUR_MENUGAUCHE = 100;
-    private static final int LARGEUR_TABLEAUDROITE = 500;
-    private static final int LARGEUR_GRAPH =
+    private final int LARGEUR_MENUGAUCHE = 100;
+    private final int LARGEUR_TABLEAUDROITE = 500;
+    private final int LARGEUR_GRAPH =
                         LARGEUR_FENETRE - LARGEUR_MENUGAUCHE - LARGEUR_TABLEAUDROITE - 30;
 
     private final JPanel panneauPrincipal; //panneau principal dans lequel est contenu les autres panneaux

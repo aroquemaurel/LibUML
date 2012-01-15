@@ -26,10 +26,10 @@ public class Traitement extends ElementModelisation {
 	 */
 	private Lien evenementDeclencheur;
 	private boolean debutSequence;
-	private static final double BAS_EVENEDECLENCHEUR = 13.37 ;
-	private static final double HAUT_EVENEDECLENCHEUR = -BAS_EVENEDECLENCHEUR;
-	private static final double GAUCHE_EVENEDECLENCHEUR = 10;
-	private static final double DROITE_EVENEDECLENCHEUR = 35;
+	private final double BAS_EVENEDECLENCHEUR = 13.37 ;
+	private final double HAUT_EVENEDECLENCHEUR = -BAS_EVENEDECLENCHEUR;
+	private final double GAUCHE_EVENEDECLENCHEUR = 10;
+	private final double DROITE_EVENEDECLENCHEUR = 35;
 
 	/**
 	 * Créer le style pour le rectangle du traitement
