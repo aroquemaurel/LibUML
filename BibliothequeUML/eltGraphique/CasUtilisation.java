@@ -17,7 +17,7 @@ import util.Constantes;
  */
 public class CasUtilisation extends ElementModelisation {
     /**
-    * Créer le style d'un Cas d'utilisation
+    * Crée le style d'un Cas d'utilisation
     */
     private void creerStyleCasUtilisation(){
             mxStylesheet feuilleStyles = this.getGraph().getStylesheet();

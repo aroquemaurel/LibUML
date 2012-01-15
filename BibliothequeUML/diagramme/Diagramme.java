@@ -26,10 +26,10 @@ public class Diagramme {
     /**
     * Méthode qui teste si le lien est autorisé ou non, en fonction du 
     * diagramme, de l'origine et de l'extrémité
-	*
-    * @param p_origine
-    * @param p_extremite
-    * @param p_typeDeFleche
+    *
+    * @param p_origine Element graphique qui est l'origne du lien
+    * @param p_extremite Element graphique qui est l'extrémité du lien
+    * @param p_typeDeFleche Type de lien testé
     * @return true s'il est, false sinon
     */
     public boolean lienAutorise (ElementGraphique p_origine , 
@@ -39,8 +39,8 @@ public class Diagramme {
  
     /**
      * Méthode qui teste si l'élément est autorisé ou pas dans le diagramme
-	 *
-     * @param p_element
+     *
+     * @param p_element Element à tester
      * @return true s'il est, false sinon
      */
     public boolean eltAutorise (ElementGraphique p_element){
@@ -49,7 +49,7 @@ public class Diagramme {
     
     /**
      * Retourne la liste des éléments graphiques présents dans le diagramme
-	 *
+     *
      * @return La liste d'élément graphique
      */
     public Liste<ElementGraphique> getElementsGraphiques(){
@@ -69,7 +69,7 @@ public class Diagramme {
         
         for(final ElementGraphique element : this.elementsGraphiques){
             // on compare les adresses pour savoir si c'est la même cellule, 
-			// si c'est le cas, on a trouvé l'élément graphique, on quitte le foreach
+	    // si c'est le cas, on a trouvé l'élément graphique, on quitte le foreach
             if(element.getCellule() == p_cellule){
                 retour = element;
 				break;

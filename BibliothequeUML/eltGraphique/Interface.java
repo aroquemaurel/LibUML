@@ -11,7 +11,7 @@ public class Interface extends ElementModelisation {
     
     /**
      * Constructeur de la classe traitement
-     * @param p_graph Le graphe auquel sera ajouter le traitement
+     * @param p_graph Le graphe auquel sera ajouté le traitement
      * @param p_texte Le texte qui sera associé au traitement
      */
     public Interface(mxGraph p_graph, String p_texte, Diagramme p_diagramme){
