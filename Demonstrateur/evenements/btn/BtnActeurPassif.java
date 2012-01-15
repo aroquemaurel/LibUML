@@ -12,7 +12,7 @@ public class BtnActeurPassif extends Btn {
     
     /**
     * Constructeur d'un bouton acteur Passif
-    * @param p_string message
+    * @param p_string image du bouton
     * @param p_fenetre fenêtre dans laquel se trouve le bouton
     */
     public BtnActeurPassif(String p_string, FenetreDemo p_fenetre){
@@ -20,7 +20,7 @@ public class BtnActeurPassif extends Btn {
     }
     
     /**
-    * Cette classe permet de gérer l'action de click avec la souris sur un bouton Acteur Passif.
+    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton Acteur Passif.
     * @param event évènement en cours
     */
     @Override

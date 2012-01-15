@@ -15,7 +15,7 @@ public class BtnClasse extends Btn {
     
     /**
     * Constructeur d'un bouton Classe
-    * @param p_string message
+    * @param p_string image du bouton
     * @param p_fenetre fenêtre dans laquel se trouve le bouton
     */
     public BtnClasse(String p_string, FenetreDemo p_fenetre){
@@ -23,7 +23,7 @@ public class BtnClasse extends Btn {
     }
 
     /**
-    * Cette classe permet de gérer l'action de clique avec la souris sur un bouton Classe.
+    * Cette méthode permet de gérer l'action de clique avec la souris sur un bouton Classe.
     * @param event évènement en cours
     */
     @Override

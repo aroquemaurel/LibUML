@@ -22,7 +22,7 @@ public class BtnTraitement extends Btn {
     }
 
     /**
-    * Cette classe permet de gérer l'action de click avec la souris sur un bouton de Traitement.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton de Traitement.
     * @param event évènement en cours
     */
     @Override

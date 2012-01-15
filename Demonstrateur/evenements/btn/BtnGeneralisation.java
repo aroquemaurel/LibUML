@@ -13,7 +13,7 @@ public class BtnGeneralisation extends Btn {
     
     /**
     * Constructeur d'un bouton de generalisation
-    * @param p_string message
+    * @param p_string image du bouton
     * @param p_fenetre fenêtre dans laquel se trouve le bouton
     */
     public BtnGeneralisation(String p_string, FenetreDemo p_fenetre){
@@ -21,7 +21,7 @@ public class BtnGeneralisation extends Btn {
     }
 	
     /**
-    * Cette classe permet de gérer l'action de click avec la souris sur un bouton de Generalisation.
+    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton de Generalisation.
     * @param event évènement en cours
     */
     @Override

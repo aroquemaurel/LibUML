@@ -12,7 +12,7 @@ public class BtnUseCase extends Btn {
     
     /**
     * Constructeur d'un bouton de UseCase
-    * @param p_string message
+    * @param p_string lien de l'image du bouton
     * @param p_fenetre fenêtre dans laquel se trouve le bouton
     */
     public BtnUseCase(String p_string, FenetreDemo p_fenetre){
@@ -20,7 +20,7 @@ public class BtnUseCase extends Btn {
     }
 
     /**
-    * Cette classe permet de gérer l'action de click avec la souris sur un bouton de UseCase.
+    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton de UseCase.
     * @param event évènement en cours
     */
     @Override

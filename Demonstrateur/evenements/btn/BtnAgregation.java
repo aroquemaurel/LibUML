@@ -13,7 +13,7 @@ public class BtnAgregation extends Btn{
    
     /**
     * Constructeur d'un bouton Agregation
-    * @param p_string message
+    * @param p_string image du bouton
     * @param p_fenetre fenêtre dans laquel se trouve le bouton
     */
     public BtnAgregation(String p_string, FenetreDemo p_fenetre){
@@ -21,7 +21,7 @@ public class BtnAgregation extends Btn{
     }
     
     /**
-    * Cette classe permet de gérer l'action de click avec la souris sur un bouton Agregation.
+    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton Agregation.
     * @param event évènement en cours
     */
     @Override

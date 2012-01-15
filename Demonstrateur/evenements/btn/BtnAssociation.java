@@ -13,7 +13,7 @@ public class BtnAssociation extends Btn {
     
     /**
     * Constructeur d'un bouton acteur Association
-    * @param p_string message
+    * @param p_string image du bouton
     * @param p_fenetre fenêtre dans laquel se trouve le bouton
     */
     public BtnAssociation(String p_string, FenetreDemo p_fenetre){
@@ -21,7 +21,7 @@ public class BtnAssociation extends Btn {
     }
 
     /**
-    * Cette classe permet de gérer l'action de click avec la souris sur un bouton Association.
+    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton Association.
     * @param event évènement en cours
     */
     @Override
