@@ -29,8 +29,7 @@ public class BtnTraitement extends Btn {
     public void mouseClicked(MouseEvent event) {
         Traitement traitement = new Traitement (super.fenetre.getPanneauGraph().getGraph(),
             fenetre.getPanneauGraph().getDiagramme(),
-                "Mon traitement", new Lien(null, null, super.fenetre.getPanneauGraph().getGraph(),
-													super.fenetre.getPanneauGraph().getDiagramme(), null), true);
+                "Mon traitement", null, true);
         traitement.creer();
     }
 

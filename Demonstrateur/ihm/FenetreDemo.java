@@ -1,5 +1,6 @@
 package ihm;
 
+import eltGraphique.Traitement;
 import evenements.EvenementCelluleSelectionne;
 import ihm.menu.BarreMenus;
 import ihm.menu.BarreOutilsDessin;
@@ -101,6 +102,9 @@ public class FenetreDemo extends JFrame {
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
        fenetre.afficherFenetre();
+       Traitement t = new Traitement(fenetre.getPanneauGraph().getGraph(), 
+               fenetre.getPanneauGraph().getDiagramme(), "", null, true);
+       t.creer();
     }
 
 }

@@ -1,5 +1,6 @@
 package evenements;
 
+import evenements.menu.contextuel.EvenementDebutSequence;
 import com.mxgraph.model.mxCell;
 import eltGraphique.Acteur;
 import eltGraphique.ElementGraphique;
@@ -80,21 +81,13 @@ public class EvenementCelluleSelectionne implements MouseListener {
 		}
 	}
     
-    /**
-    * Cette classe permet de gérer les actions produites lors d'une entrée avec la souris.
-    * @param arg0 évènement en cours
-    */
     @Override
     public void mouseEntered(MouseEvent arg0) {}
     
-    /**
-    * Cette classe permet de gérer les actions produites lors d'une sortie avec la souris.
-    * @param arg0 évènement en cours
-    */
     @Override
     public void mouseExited(MouseEvent arg0) {}
     
-    // Méthode permettant de construire le menu contextuel en ajoutant un Acteur.
+    // Méthode permettant d'afficher le menu contextuel au clique sur un Acteur
     private JPopupMenu construireMenuContextuel(Acteur element){
 	JPopupMenu menuContextuel = new JPopupMenu();
 	
@@ -119,18 +112,28 @@ public class EvenementCelluleSelectionne implements MouseListener {
         return menuContextuel;
     }
     
-    // Méthode permettant de constuire le menu contextuel en ajoutant un Traitement.
+    // Méthode permettant de constuire le menu contextuel lors de la séléction d'un traitement
     private JPopupMenu construireMenuContextuel(Traitement element){
 	JPopupMenu menuContextuel = new JPopupMenu();
 	
         JMenuItem itemSupprimer = new JMenuItem("Supprimer");
         EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
         
-        menuContextuel.add(itemSupprimer);
+        JMenuItem itemLigneDeVie;
+        String texteItemLigneDeVie;
+        EvenementDebutSequence evenementDebutSequence = new EvenementDebutSequence(element);
 
+        texteItemLigneDeVie = 
+            (element.estDebutSequence()) ? "Ne pas afficher la flèche de début de séquence" : 
+                "Afficher la flèche de début de séquence";
+        itemLigneDeVie = new JMenuItem(texteItemLigneDeVie);
+        
+        menuContextuel.add(itemSupprimer);
+        menuContextuel.add(itemLigneDeVie);
         this.fenetre.getPanneauPrincipal().add(menuContextuel);
         
         itemSupprimer.addActionListener(evenementSupprimer);
+        itemLigneDeVie.addActionListener(evenementDebutSequence);
         
         return menuContextuel;
     }   

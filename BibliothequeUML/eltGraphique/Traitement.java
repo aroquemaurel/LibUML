@@ -181,8 +181,9 @@ public class Traitement extends ElementModelisation {
 	 * @param p_boolean Debut de séquence ?
 	 */
 	public void setDebutSequence(boolean p_boolean) {
-		this.debutSequence = p_boolean;
-		this.evenementDeclencheur.getCellule().setVisible(p_boolean);
+            this.debutSequence = p_boolean;
+            this.evenementDeclencheur.getCellule().setVisible(p_boolean);
+            super.mettreAJour();
 	}
 
 }
