@@ -13,7 +13,6 @@ import util.Constantes;
 
 /**
  * Classe servant à la modélistaion des liens dans les différents diagrammes
- *
  * Les différents types de liens sont gérés grâce à un attribut de type TypeLien
  *
  * @see TypeLien
@@ -21,78 +20,6 @@ import util.Constantes;
  * @author Antoine
  */
 public class Lien extends ElementGraphique {
-
-	private void creerStyleComposition() {
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-		feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
-	}
-	
-	private void creerStyleDependance() {
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_OPEN);
-		nouveauStyle.put(mxConstants.STYLE_ENDSIZE, Constantes.TAILLE_FLECHE);
-		nouveauStyle.put(mxConstants.STYLE_DASHED, true);
-		nouveauStyle.put(mxConstants.STYLE_DASH_PATTERN, Constantes.ESPACE_TIRETS);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-		feuilleStyles.putCellStyle("DEPENDANCE", nouveauStyle);
-	}
-
-	private void creerStyleAgregation() {
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
-		//TODO couleur de fond bout des flêches ?!
-                feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
-	}
-
-	private void creerStyleFleche() {
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-		feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
-	}
-
-	private void creerStyleAssociation() {
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-		feuilleStyles.putCellStyle("ASSOCIATION", nouveauStyle);
-	}
-
-	private void creerStyleSpecialisation() {
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
-	}
-
     /**
      * Element à l'origine du lien
      * @see ElementModelisation
@@ -121,22 +48,115 @@ public class Lien extends ElementGraphique {
     private String typePointeSource;
     /**
      * La cardinalité à l'origine
+	 *
      * @see Cardinalite
      */
     private Cardinalite cardinaliteSource;
     /**
      * La cardinalité à l'extrémité
+	 *
      * @see Cardinalite
      */
     private Cardinalite cardinaliteDestionation;
     /**
      * Le type de la flèche
+	 * 
 	 * @see TypeLien
      */
     private TypeLien typeLien;
 
+	/* 
+	 * Construit le style d'une composition
+	 */ 
+	private void creerStyleComposition() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("COMPOSITION", nouveauStyle);
+	}
+	
+	/* 
+	 * Construit le style d'une dépendance 
+	 */ 
+	private void creerStyleDependance() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_OPEN);
+		nouveauStyle.put(mxConstants.STYLE_ENDSIZE, Constantes.TAILLE_FLECHE);
+		nouveauStyle.put(mxConstants.STYLE_DASHED, true);
+		nouveauStyle.put(mxConstants.STYLE_DASH_PATTERN, Constantes.ESPACE_TIRETS);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("DEPENDANCE", nouveauStyle);
+	}
+
+	/* 
+	 * Construit le style d'une d'agrégation
+	 */ 
+	private void creerStyleAgregation() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
+		//TODO couleur de fond bout des flêches ?!
+                feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
+	}
+
+	/* 
+	 * Construit le style d'une classique
+	 */ 
+	private void creerStyleFleche() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
+	}
+
+	/* 
+	 * Construit le style d'une association
+	 */ 
+	private void creerStyleAssociation() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_SPACING);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("ASSOCIATION", nouveauStyle);
+	}
+
+	/* 
+	 * Construit le style d'une spécialisation 
+	 */ 
+	private void creerStyleSpecialisation() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
+	}
+
 	/**
 	 * Constructeur de la classe Lien modelisant tout type de lien dans un graphe
+	 * 
 	 * @param p_source Element à l'origine de la flèche
 	 * @param p_destination Elemet à l'extrémité de la flèche
 	 * @param p_graph Graphe auquel est associé la flèche
@@ -152,8 +172,10 @@ public class Lien extends ElementGraphique {
         this.destination = p_destination;
         this.typeLien = p_typeLien;
     }
+
 	/**
 	 * Récupère l'élément à l'extrémité de la flèche
+	 *
 	 * @return L'élément à l'extrémité de la flèche
 	 */
 	public ElementModelisation getDestination() {
@@ -162,6 +184,7 @@ public class Lien extends ElementGraphique {
 
 	/**
 	 * Récupère l'élément à l'origine de la flèche
+	 *
 	 * @return L'élément à l'origine de la flèche
 	 */
 	@Override
@@ -171,6 +194,7 @@ public class Lien extends ElementGraphique {
 
 	/**
 	 * Récupère le rôle du côté de l'origine de la flèche
+	 *
 	 * @return Le rôle de l'origine de la pièce
 	 */
 	public String getRoleSource() {
@@ -179,6 +203,7 @@ public class Lien extends ElementGraphique {
 
 	/**
 	 * Récupère le type de pointe de flèche à l'extrémité
+	 *
 	 * @return Le type de pointe de flèche à l'extrémité
 	 */
 	public String getTypePointeDestination() {
@@ -187,21 +212,25 @@ public class Lien extends ElementGraphique {
 
 	/**
 	 * Récupère le type de pointe de flèche à l'origine
+	 *
 	 * @return Le type de pointe de flèche à l'origine
 	 */
 	public String getTypePointeSource() {
 		return (this.typePointeSource);
 	}
-        /**
-         * Récupère le type de lien de la flèche
-         * @return Le type de lien
-         */
-        public TypeLien getTypeLien(){
-            return (this.typeLien);
-        }
+
+	/**
+	 * Récupère le type de lien de la flèche
+	 *
+	 * @return Le type de lien
+	 */
+	public TypeLien getTypeLien(){
+		return (this.typeLien);
+	}
         
 	/**
 	 * Modifie l'élément à l'extrémité de la flèche
+	 *
 	 * @param p_destination Le nouvel élément à l'éxtrémité de la flèche
 	 */
 	public void setExtremite(ElementModelisation p_destination) {
@@ -210,6 +239,7 @@ public class Lien extends ElementGraphique {
 
 	/**
 	 * Modifie l'élément à l'origine de la flèche
+	 *
 	 * @param p_source Le nouvelle élément à l'origine de la flèche
 	 */
 	public void setOrigine(ElementModelisation p_source) {
@@ -218,6 +248,7 @@ public class Lien extends ElementGraphique {
 
 	/**
 	 * Modifie le rôle du côté de l'extrémité de la flèche
+	 * 
 	 * @param p_roleDestionation Le nouveau rôle de l'extrémité de la flèche
 	 */
 	public void setTexteExtremite(String p_roleDestionation) {
@@ -225,7 +256,8 @@ public class Lien extends ElementGraphique {
 	}
 
 	/**
-	 * Modifi le rôle du côté de l'origine de la flèche
+	 * Modifie le rôle du côté de l'origine de la flèche
+	 *
 	 * @param p_roleSource Le nouveau rôle de l'origine de la flèche
 	 */
 	public void setTexteOrigine(String p_roleSource) {
@@ -234,15 +266,17 @@ public class Lien extends ElementGraphique {
 
 	/**
 	 * Modifie le type de la flèche en fonction du type passé en paramètre
+	 *
 	 * @param p_typeLien Le nouveau type de la flèche
 	 */
 	public void setTypeFleche(TypeLien p_typeLien) {
-            this.typeLien = p_typeLien;
-            super.getCellule().setStyle(p_typeLien.toString());
-        }
+		this.typeLien = p_typeLien;
+		super.getCellule().setStyle(p_typeLien.toString());
+	}
 
 	/**
 	 * Modifie le type de pointe de flmèche du côté de l'origie de la flèche
+	 *
 	 * @param p_typePointeSource Le nouveau type de pointe de flèche
 	 */
 	public void setTypeFlecheOrigine(String p_typePointeSource) {

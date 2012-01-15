@@ -7,6 +7,7 @@ import diagramme.Diagramme;
 
 /**
  * Interface d'un élément graphique
+ *
  * @author Antoine
  */
 public interface IntElementGraphique {
@@ -17,36 +18,42 @@ public interface IntElementGraphique {
 
     /**
     * Rend (in)visible l'élément grahique sur le graphe
+	*
     * @param p_bool
     */
     public void setVisible(boolean p_bool);
     
     /**
     * Récupère la cellule associé à l'élément graphique
+	*
     * @param p_cellule La nouvelle cellule que représente l'élément
     */
     public mxICell getCellule();
 
     /**
     * Modifie la cellule que représente l'élément
+	*
     * @param p_cellule La nouvelle cellule que représente l'élément
     */
     public void setCellule(mxCell p_cellule);
 
     /**
     * Récupère le graphe auquel est associ l'élément
+	* 
     * @return Le graph auquel est associé l'élément
     */
     public mxGraph getGraph();
 
     /**
     * Modifie le graphe auquel est associé l'élément
+	*
     * @param p_graph Le nouveau graphe associé à l'élément graphique
     */
     public void setGraph(mxGraph p_graph);
 
     /**
      * Récupère Le diagramme dans lequel est l'élément de modélisation
+	 *
      * @return Le diagramme
      */
     public Diagramme getDiagramme();

@@ -8,7 +8,6 @@ import diagramme.Diagramme;
 /**
  * Classe ancêtre à tout élément graphique
  *
- *
  * @see eltGraphique.ligne.Lien
  * @see ElementModelisation
  * 
@@ -16,10 +15,13 @@ import diagramme.Diagramme;
  * @author Antoine
  */
 abstract public class ElementGraphique extends mxCell implements IntElementGraphique {
-    private mxGraph graph;
+	/**
+	 * Graph dans lequel aparait l'élément graphique 
+	 */
+	private mxGraph graph;
 
     /**
-     * Diagramme dans lequel apparait l'élément de modélisation
+     * Diagramme dans lequel apparait l'élément graphique 
      */
     private final Diagramme diagramme;
 
@@ -34,7 +36,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
 
     /**
-    * Méthode généique qui supprime l'élément du graphe où il est
+    * Méthode générique qui supprime l'élément du graphe où il est
     */
     @Override
     public void supprimer() {
@@ -42,7 +44,6 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
         super.setTarget(null);
         super.setParent(null);
     }
-
 
     /**
     * Rend (in)visible l'élément grahique sur le graphe

@@ -23,7 +23,7 @@ public class BtnClasse extends Btn {
     }
 
     /**
-    * Cette méthode permet de gérer l'action de clique avec la souris sur un bouton Classe.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton Classe.
     * @param event évènement en cours
     */
     @Override

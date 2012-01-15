@@ -22,8 +22,19 @@ import util.Constantes;
  * @author Mathieu
  */
 abstract public class Acteur extends ElementModelisation {
+	/**
+	 * Cellule correspondant à la ligne de vie
+	 */
 	private mxCell ligneDeVie;
-        private boolean visibiliteLigneDeVie;
+
+	/**
+	 * true si on veut afficher la ligne de vie, false sinon
+	 */
+	private boolean visibiliteLigneDeVie;
+
+	/**
+	 * Créer le style de la ligne de vie 
+	 */
 	private void creerStyleLigneDeVie(){
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
@@ -43,6 +54,66 @@ abstract public class Acteur extends ElementModelisation {
 
 	}
 
+    /** Constructeur le la classe Acteur 
+	 *
+	 * @param p_graph le graphe sur lequel il faut ajouter l'acteur
+     * @param p_texte le texte qui sera afficher sur l'acteur
+     *
+     */
+    public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
+            super(p_graph, p_diagramme, p_texte, p_dimension);
+            this.visibiliteLigneDeVie = false;
+    }
+
+	/** 
+	 * Créé la ligne vie avec les tyle prédéfini auparavant 
+	 */
+    public void creerLigneDeVie(){
+            this.creerStyleLigneDeVie();
+            this.ligneDeVie = (mxCell) super.getGraph().insertEdge(
+                    null, null, null, this.getCellule(), this.getCellule(), "LIGNE_DE_VIE");
+    }
+
+	/**
+	 * True affiche la ligne de vie, false n'affiche plus la ligne de vie 
+	 *
+	 * @param p_visible Le booléen permettant de choisir si on affiche la ligne de vie, ou non
+	 */
+    public void afficherLigneDeVie(boolean p_visible){
+            this.ligneDeVie.setVisible(p_visible);
+            super.mettreAJour();
+            this.visibiliteLigneDeVie = p_visible;
+    }
+    
+	/**
+	 * Obtient la cellule corespondant à la ligne de vie
+	 *
+	 * @return La cellule correspondant à la ligne de vie
+	 */
+    public mxCell getLigneDeVie(){
+        return (this.ligneDeVie);
+    }
+   
+	/**
+	 * Retourn esi la ligne de vie est affichée, ou non
+	 *
+	 * @return True si la ligne de vie est visible, false sinon
+	 */
+    public boolean getVisibiliteLigneDeVie(){
+        return (this.visibiliteLigneDeVie);
+    }
+
+    /**
+     * Modifie le texte lié à l'acteur.
+	 *
+     * @param p_texte Le texte lié à l'acteur
+     */
+    @Override
+    public void setTexte(String p_texte){
+        super.setTexte(p_texte);
+        super.setValue(p_texte);
+    }
+
     /**
      * Méthode abstraite
      * Crée la représentation graphique de l'acteur
@@ -52,45 +123,6 @@ abstract public class Acteur extends ElementModelisation {
      */
     @Override
     abstract public void creer();
-
-    /** * Constructeur le la classe Acteur * * @param p_graph le graphe sur lequel il faut ajouter l'acteur
-     * @param p_texte le texte qui sera afficher sur l'acteur
-     *
-     */
-    public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
-            super(p_graph, p_diagramme, p_texte, p_dimension);
-            this.visibiliteLigneDeVie = false;
-    }
-
-    public void creerLigneDeVie(){
-            this.creerStyleLigneDeVie();
-            this.ligneDeVie = (mxCell) super.getGraph().insertEdge(
-                    null, null, null, this.getCellule(), this.getCellule(), "LIGNE_DE_VIE");
-    }
-
-    public void afficherLigneDeVie(boolean p_visible){
-            this.ligneDeVie.setVisible(p_visible);
-            super.mettreAJour();
-            this.visibiliteLigneDeVie = p_visible;
-    }
-    
-    /**
-     * Modifie le texte lié à l'acteur.
-     * @param p_texte Le texte lié à l'acteur
-     */
-    @Override
-    public void setTexte(String p_texte){
-        super.setTexte(p_texte);
-        super.setValue(p_texte);
-    }
-
-    public mxCell getLigneDeVie(){
-        return (this.ligneDeVie);
-    }
-    
-    public boolean getVisibiliteLigneDeVie(){
-        return (this.visibiliteLigneDeVie);
-    }
     
 }
 

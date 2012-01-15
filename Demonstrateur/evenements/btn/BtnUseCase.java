@@ -1,4 +1,4 @@
-package evenements.btn;
+package  evenements.btn;
 
 import eltGraphique.CasUtilisation;
 import evenements.Btn;
@@ -6,7 +6,7 @@ import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
 
 /**
-* Cette classe permet de gérer un click sur le bouton de UseCase.
+* Cette classe permet de gérer un clic sur le bouton de UseCase.
 */
 public class BtnUseCase extends Btn {
     
@@ -20,7 +20,7 @@ public class BtnUseCase extends Btn {
     }
 
     /**
-    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton de UseCase.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton de UseCase.
     * @param event évènement en cours
     */
     @Override

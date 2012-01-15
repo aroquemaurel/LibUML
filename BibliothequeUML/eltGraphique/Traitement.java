@@ -79,7 +79,7 @@ public class Traitement extends ElementModelisation {
         this.evenementDeclencheur.setCellule(celluleFlecheEvenementDeclencheur);
     }
     
-        /**
+	/**
 	 * Créer le style pour le rectangle du traitement
 	 */
 	private void creerStyleTraitement() {
@@ -119,41 +119,21 @@ public class Traitement extends ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
-        public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
-            super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
-            this.debutSequence = p_debutSequence;
-            this.evenementDeclencheur = p_evenementDeclencheur;
-        }
+	public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
+		super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
+		this.debutSequence = p_debutSequence;
+		this.evenementDeclencheur = p_evenementDeclencheur;
+	}
 
-	/**
-	 * Crée la représentation graphique d'un traitement
-	 */
-        @Override
-        public final void creer() {
-		super.getGraph().getModel().beginUpdate();
-                this.creerStyleTraitement();
-
-                super.setCellule((mxCell) super.getGraph().insertVertex(
-                        super.getParent(), null, null, 30, 30,
-			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
-
-		if (this.evenementDeclencheur == null) {
-                    this.creerFlecheDebutSequence(); 
-
-		}
-		super.getDiagramme().getElementsGraphiques().add(this);
-		super.getGraph().getModel().endUpdate();
-        }
-	
 	/**
 	 * Récupère l'évenement déclencheur du traitement
 	 * @return L'élément déclencheur
 	 * 
 	 * @see Lien
 	 */
-        public Lien getEvenementDeclencheur() {
-            return(this.evenementDeclencheur);
-        }
+	public Lien getEvenementDeclencheur() {
+		return(this.evenementDeclencheur);
+	}
 	
 	/**
 	 * Retourn vrai si le traitement est le premier de la séquence, faux sinon
@@ -169,21 +149,42 @@ public class Traitement extends ElementModelisation {
 	 * 
 	 * @see Lien
 	 */
-        public void setEvenementDeclencheur(Lien evenementDeclencheur) {
-            this.evenementDeclencheur = evenementDeclencheur;
-        }
+	public void setEvenementDeclencheur(Lien evenementDeclencheur) {
+		this.evenementDeclencheur = evenementDeclencheur;
+	}
 	
 	/**
 	 * Modifie le fait que le traitement soit en début de séquence (ou non).
 	 * Cela a pour but d'afficher (ou non) l'élément déclencheur représenté par une flèche qui reviens sur le 
-         * traitement
+	 * traitement
 	 * 
 	 * @param p_boolean Debut de séquence ?
 	 */
 	public void setDebutSequence(boolean p_boolean) {
-            this.debutSequence = p_boolean;
-            this.evenementDeclencheur.getCellule().setVisible(p_boolean);
-            super.mettreAJour();
+		this.debutSequence = p_boolean;
+		this.evenementDeclencheur.getCellule().setVisible(p_boolean);
+		super.mettreAJour();
 	}
+
+	/**
+	 * Crée la représentation graphique d'un traitement
+	 */
+	@Override
+	public final void creer() {
+		super.getGraph().getModel().beginUpdate();
+                this.creerStyleTraitement();
+
+                super.setCellule((mxCell) super.getGraph().insertVertex(
+                        super.getParent(), null, null, 30, 30,
+			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
+
+		if (this.evenementDeclencheur == null) {
+                    this.creerFlecheDebutSequence(); 
+
+		}
+		super.getDiagramme().getElementsGraphiques().add(this);
+		super.getGraph().getModel().endUpdate();
+	}
+	
 
 }

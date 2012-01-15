@@ -57,7 +57,6 @@ public class ActeurPassif extends Acteur {
         super.afficherLigneDeVie(false);
     }
 
-
     /**
     * Changer le texte lié à l'acteur passif
     * @param p_texte Le nouveau texte à lier

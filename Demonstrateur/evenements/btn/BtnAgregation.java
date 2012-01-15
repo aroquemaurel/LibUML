@@ -21,7 +21,7 @@ public class BtnAgregation extends Btn{
     }
     
     /**
-    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton Agregation.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton Agregation.
     * @param event évènement en cours
     */
     @Override

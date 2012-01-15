@@ -17,7 +17,7 @@ public class Diagramme {
     private final Liste<ElementGraphique> elementsGraphiques;
     
     /**
-    * Constructeur qui crée une nouvelle liste d'éléments graphiques
+    * Constructeur qui crée une liste vide d'éléments graphiques 
     */
     public Diagramme(){
         this.elementsGraphiques = new Liste<ElementGraphique>();
@@ -26,6 +26,7 @@ public class Diagramme {
     /**
     * Méthode qui teste si le lien est autorisé ou non, en fonction du 
     * diagramme, de l'origine et de l'extrémité
+	*
     * @param p_origine
     * @param p_extremite
     * @param p_typeDeFleche
@@ -38,6 +39,7 @@ public class Diagramme {
  
     /**
      * Méthode qui teste si l'élément est autorisé ou pas dans le diagramme
+	 *
      * @param p_element
      * @return true s'il est, false sinon
      */
@@ -47,6 +49,7 @@ public class Diagramme {
     
     /**
      * Retourne la liste des éléments graphiques présents dans le diagramme
+	 *
      * @return La liste d'élément graphique
      */
     public Liste<ElementGraphique> getElementsGraphiques(){
@@ -65,11 +68,14 @@ public class Diagramme {
         ElementGraphique retour = null;
         
         for(final ElementGraphique element : this.elementsGraphiques){
-            // on compare les adresses pour savoir si c'est la même cellule
+            // on compare les adresses pour savoir si c'est la même cellule, 
+			// si c'est le cas, on a trouvé l'élément graphique, on quitte le foreach
             if(element.getCellule() == p_cellule){
                 retour = element;
+				break;
             }
         }
+
         return (retour);
     }
 }

@@ -20,7 +20,7 @@ public class BtnActeurPassif extends Btn {
     }
     
     /**
-    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton Acteur Passif.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton Acteur Passif.
     * @param event évènement en cours
     */
     @Override

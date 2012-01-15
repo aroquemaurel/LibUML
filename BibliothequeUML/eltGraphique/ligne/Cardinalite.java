@@ -5,4 +5,5 @@ package eltGraphique.ligne;
  */
 public class Cardinalite {
 
+	// TODO Implémenter les cardinalités 
 }

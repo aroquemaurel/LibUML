@@ -7,7 +7,7 @@ import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
 
 /**
-* Cette classe permet de gérer un click sur le bouton Acteur actif
+* Cette classe permet de gérer un clic sur le bouton Acteur actif
 */
 public class BtnActeurActif extends Btn {
     
@@ -21,7 +21,7 @@ public class BtnActeurActif extends Btn {
     }
 
     /**
-    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton Acteur Actif.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton Acteur Actif.
     * @param event évènement en cours
     */
     @Override

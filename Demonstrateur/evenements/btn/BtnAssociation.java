@@ -21,7 +21,7 @@ public class BtnAssociation extends Btn {
     }
 
     /**
-    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton Association.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton Association.
     * @param event évènement en cours
     */
     @Override

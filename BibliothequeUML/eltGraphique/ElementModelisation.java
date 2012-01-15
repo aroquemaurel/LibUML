@@ -61,8 +61,10 @@ abstract public class ElementModelisation extends ElementGraphique implements In
                     this.getDimension().getWidth(),this.getDimension().getHeight()));
 
     }
+
     /**
     * Récupère la taille de l'élément (hauteur/largeur)
+	*
     * @return La dimension de l'élément (hauteur/largeur)
     */
     @Override
@@ -72,6 +74,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 
     /**
     * Récupère le texte lié à l'élément
+	*
     * @return Le texte lié à l'élément
     */
     @Override
@@ -81,6 +84,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 
     /**
     * Récupère la position de l'élément sur le graphe
+	*
     * @return La position de l'élément
     */
     @Override
@@ -90,6 +94,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 
     /**
     * Modifie la dimension de l'élément (hauteur/largeur)
+	*
     * @param p_dimension La nouvelle dimension (hauteur/largeur)
     */
     @Override
@@ -104,6 +109,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 
     /**
     * Modifie le texte lié à l'élément
+	*
     * @param p_texte Le nouveau texte lié à l'élément
     */
     @Override
@@ -114,6 +120,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 
     /**
     * Modifie la position de l'élément
+	*
     * @param p_position La nouvelle position de l'élement
     */
     @Override

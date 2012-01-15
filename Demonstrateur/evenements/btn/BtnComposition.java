@@ -21,7 +21,7 @@ public class BtnComposition extends Btn {
     }
 	
      /**
-    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton Composition.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton Composition.
     * @param event évènement en cours
     */
     @Override

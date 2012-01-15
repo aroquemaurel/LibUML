@@ -21,7 +21,7 @@ public class BtnGeneralisation extends Btn {
     }
 	
     /**
-    * Cette méthode permet de gérer l'action de click avec la souris sur un bouton de Generalisation.
+    * Cette méthode permet de gérer l'action de clic avec la souris sur un bouton de Generalisation.
     * @param event évènement en cours
     */
     @Override
