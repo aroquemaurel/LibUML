@@ -51,7 +51,35 @@ public class Traitement extends ElementModelisation {
 	 */
 	private static final double DROITE_EVENEDECLENCHEUR = 35;
 
-	/**
+        /**
+         * Créé la flèche de début de séquence (flèche partant d'un traitement et revenant sur les même traitement)
+         */
+    private void creerFlecheDebutSequence() {
+        this.evenementDeclencheur = new Lien(this, this, super.getGraph(), super.getDiagramme(), null);
+
+        mxCell celluleFlecheEvenementDeclencheur;
+        List<mxPoint> listePoint = new ArrayList<mxPoint>();
+
+        this.creerStyleFlecheTraitement();
+
+        celluleFlecheEvenementDeclencheur = (mxCell) super.getGraph().insertEdge(super.getCellule(), null,
+                        this.getTexte(), null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
+
+        /* On créé une liste de point par laquelle passera la flèche correspondant à l'événement déclencheur */
+        listePoint.add(new mxPoint(GAUCHE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
+        listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
+        listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR, BAS_EVENEDECLENCHEUR));
+        celluleFlecheEvenementDeclencheur.getGeometry().setSourcePoint(
+                        new mxPoint(GAUCHE_EVENEDECLENCHEUR, 0));
+        celluleFlecheEvenementDeclencheur.getGeometry().setTargetPoint(
+                        new mxPoint(super.getDimension().getWidth(), BAS_EVENEDECLENCHEUR));
+
+        celluleFlecheEvenementDeclencheur.getGeometry().setPoints(listePoint);
+        celluleFlecheEvenementDeclencheur.setVisible(this.debutSequence);
+        this.evenementDeclencheur.setCellule(celluleFlecheEvenementDeclencheur);
+    }
+    
+        /**
 	 * Créer le style pour le rectangle du traitement
 	 */
 	private void creerStyleTraitement() {
@@ -157,28 +185,4 @@ public class Traitement extends ElementModelisation {
 		this.evenementDeclencheur.getCellule().setVisible(p_boolean);
 	}
 
-    private void creerFlecheDebutSequence() {
-        this.evenementDeclencheur = new Lien(this, this, super.getGraph(), super.getDiagramme(), null);
-
-        mxCell celluleFlecheEvenementDeclencheur;
-        List<mxPoint> listePoint = new ArrayList<mxPoint>();
-
-        this.creerStyleFlecheTraitement();
-
-        celluleFlecheEvenementDeclencheur = (mxCell) super.getGraph().insertEdge(super.getCellule(), null,
-                        this.getTexte(), null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
-
-        /* On créé une liste de point par laquelle passera la flèche correspondant à l'événement déclencheur */
-        listePoint.add(new mxPoint(GAUCHE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
-        listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
-        listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR, BAS_EVENEDECLENCHEUR));
-        celluleFlecheEvenementDeclencheur.getGeometry().setSourcePoint(
-                        new mxPoint(GAUCHE_EVENEDECLENCHEUR, 0));
-        celluleFlecheEvenementDeclencheur.getGeometry().setTargetPoint(
-                        new mxPoint(super.getDimension().getWidth(), BAS_EVENEDECLENCHEUR));
-
-        celluleFlecheEvenementDeclencheur.getGeometry().setPoints(listePoint);
-        celluleFlecheEvenementDeclencheur.setVisible(this.debutSequence);
-        this.evenementDeclencheur.setCellule(celluleFlecheEvenementDeclencheur);
-    }
 }
