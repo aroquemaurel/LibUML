@@ -43,6 +43,8 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
         super.getTarget().removeFromParent();
         super.setTarget(null);
         super.setParent(null);
+        
+        //TODO supprimer la flèche qui va avec l'élément.... ^^
     }
 
     /**
@@ -56,6 +58,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     
     /**
     * Récupère la cellule associé à l'élément graphique
+    * 
     * @param p_cellule La nouvelle cellule que représente l'élément
     */
     @Override
@@ -65,6 +68,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 
     /**
     * Modifie la cellule que représente l'élément
+    * 
     * @param p_cellule La nouvelle cellule que représente l'élément
     */
     @Override
@@ -76,6 +80,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 
     /**
     * Récupère le graphe auquel est associ l'élément
+    * 
     * @return Le graph auquel est associé l'élément
     */
     @Override
@@ -85,6 +90,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 
     /**
     * Modifie le graphe auquel est associé l'élément
+    * 
     * @param p_graph Le nouveau graphe associé à l'élément graphique
     */
     @Override
@@ -94,6 +100,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 
     /**
      * Récupère Le diagramme dans lequel est l'élément de modélisation
+     * 
      * @return Le diagramme
      */
     @Override
