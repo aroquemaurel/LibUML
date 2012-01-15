@@ -105,15 +105,6 @@ public class Classe extends eltGraphique.ElementModelisation {
         this.methodes = new Liste<Methode>();
 		this.abstraite = false;
 		this.constante = false;
-        /* TODO it's a test, to be continued! */
-        this.ajouterMethode(new Methode(Visibilite.PROTECTED, "void", "maMethode1", null, false, false, false));
-        this.ajouterMethode(new Methode(Visibilite.PRIVATE, "void", "maMethode2", null, false, false, false));
-	this.ajouterMethode(new Methode(Visibilite.PUBLIC, "void", "maMethode3", null, false, false, false));
-
-        /* TODO it's a test, to be continued! */
-        this.ajouterAttribut(new Attribut(Visibilite.PROTECTED, false, false, "int", "monAttribut1"));
-        this.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false, "long", "monAttribut2"));
-        this.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false,"Classe", "monAttribut3"));
     }
 
     /**
