@@ -1,4 +1,5 @@
 \usepackage{verbatim}
+\usepackage{datatool}
 
 \date{\today}
 
@@ -111,19 +112,36 @@ IUT A - Toulouse Rangueil\\
 }%
 
 \makeatletter
+\newcommand{\sortitem}[3]{%
+	\DTLnewrow{list}%
+	\DTLnewdbentry{list}{nom}{#1}%
+	\DTLnewdbentry{list}{page}{#2}%
+	\DTLnewdbentry{list}{definition}{#3}%
+}
+
+\newenvironment{sortedlist}%
+{%
+\DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}%
+}%
+{%
+\DTLsort{nom,page,definition}{list}%a
+	\DTLforeach*{list}{\theNom=nom,\laPage=page,\theDefinition=definition}{%
+	\paragraph{\theNom}\hspace{-8px}(p \laPage)~--~\theDefinition\hfill 
+}%
+}
+
 %\newwrite{\verbatim@out@one}
 %\newcommand\initiateglossary[1]{\immediate\openout \verbatim@out@one #1}
 
 %\def\terminateglossary{\immediate\closeout\verbatim@out@one\@esphack}
-%\DeclareTextFontCommand{\policeGlossaire}{\fontfamily{cmvtt}\selectfont}
+\DeclareTextFontCommand{\policeGlossaire}{\fontfamily{cmvtt}\selectfont}
 
 \newwrite\glossaireVar
 \openout\glossaireVar=glossaire
 \write\glossaireVar{\noexpand\chapter{Glossaire}}
-\newcommand{\glo}[2]{
-%	\policeGlossaire{#1}
-%	\immediate\write\verbatim@out@one{\noexpand\paragraph{#1} #2}
-	\write\glossaireVar{\noexpand\paragraph{#1} #2}
+\newcommand{\glo}[3]{
+	\policeGlossaire{#1}
+	\write\glossaireVar{\noexpand\sortitem{#2}{\thepage}{#3}}
 }
 
 \makeatother
