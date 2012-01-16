@@ -111,15 +111,19 @@ IUT A - Toulouse Rangueil\\
 }%
 
 \makeatletter
-\newwrite{\verbatim@out@one}
-\newcommand\initiateglossary[1]{\immediate\openout \verbatim@out@one #1}
+%\newwrite{\verbatim@out@one}
+%\newcommand\initiateglossary[1]{\immediate\openout \verbatim@out@one #1}
 
-\def\terminateglossary{\immediate\closeout\verbatim@out@one\@esphack}
-\DeclareTextFontCommand{\policeGlossaire}{\fontfamily{cmvtt}\selectfont}
+%\def\terminateglossary{\immediate\closeout\verbatim@out@one\@esphack}
+%\DeclareTextFontCommand{\policeGlossaire}{\fontfamily{cmvtt}\selectfont}
 
+\newwrite\glossaireVar
+\openout\glossaireVar=glossaire
+\write\glossaireVar{\noexpand\chapter{Glossaire}}
 \newcommand{\glo}[2]{
-	\policeGlossaire{#1}
-	\immediate\write\verbatim@out@one{\noexpand\paragraph{#1} #2}
+%	\policeGlossaire{#1}
+%	\immediate\write\verbatim@out@one{\noexpand\paragraph{#1} #2}
+	\write\glossaireVar{\noexpand\paragraph{#1} #2}
 }
 
 \makeatother
