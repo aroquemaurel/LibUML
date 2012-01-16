@@ -1,3 +1,4 @@
+\usepackage{verbatim}
 
 \date{\today}
 
@@ -109,6 +110,18 @@ IUT A - Toulouse Rangueil\\
 \textbf{Projet tuteuré \#20}\\[1em]
 }%
 
+\makeatletter
+\newwrite{\verbatim@out@one}
+\newcommand\initiateglossary[1]{\immediate\openout \verbatim@out@one #1}
 
+\def\terminateglossary{\immediate\closeout\verbatim@out@one\@esphack}
+\DeclareTextFontCommand{\policeGlossaire}{\fontfamily{cmvtt}\selectfont}
+
+\newcommand{\glo}[2]{
+	\policeGlossaire{#1}
+	\immediate\write\verbatim@out@one{\noexpand\paragraph{#1} #2}
+}
+
+\makeatother
 
 \pagestyle{fancy}
