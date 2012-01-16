@@ -12,9 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- */
 public class ActeurPassifTest {
 	private ElementModelisation acteur;
 
@@ -38,30 +35,30 @@ public class ActeurPassifTest {
 	}
 	
     @Test
-            public void testCelluleTarget() {
-    mxICell cellule = this.acteur.getTarget();
-    assertEquals(cellule, this.acteur.getCellule());
+	public void testCelluleTarget() {
+		mxICell cellule = this.acteur.getTarget();
+		assertEquals(cellule, this.acteur.getCellule());
     }
 
     @Test
     public void testCellule(){
-    mxICell cellule = this.acteur.getCellule();
-    assertEquals(cellule, this.acteur.getCellule());
+		mxICell cellule = this.acteur.getCellule();
+		assertEquals(cellule, this.acteur.getCellule());
     }
 
     @Test
     public void testInstance(){
-            assertTrue(this.acteur instanceof ActeurPassif);
+		assertTrue(this.acteur instanceof ActeurPassif);
     }
 
     @Test
     public void testCreationStyle() {
-            mxStylesheet feuilleStyles = this.acteur.getGraph().getStylesheet();
-            assertTrue(feuilleStyles.getStyles().containsKey("ACTEUR_PASSIF"));
-            assertEquals(mxConstants.SHAPE_RECTANGLE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_SHAPE));
-            assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_OPACITY));
-            assertEquals(Constantes.COULEUR_TEXTE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_FONTCOLOR));
-            assertEquals(Constantes.COULEUR_BORDURE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_STROKECOLOR));
+		mxStylesheet feuilleStyles = this.acteur.getGraph().getStylesheet();
+		assertTrue(feuilleStyles.getStyles().containsKey("ACTEUR_PASSIF"));
+		assertEquals(mxConstants.SHAPE_RECTANGLE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_SHAPE));
+		assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_OPACITY));
+		assertEquals(Constantes.COULEUR_TEXTE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_FONTCOLOR));
+		assertEquals(Constantes.COULEUR_BORDURE, feuilleStyles.getStyles().get("ACTEUR_PASSIF").get(mxConstants.STYLE_STROKECOLOR));
     }
 	
     @Test
@@ -77,25 +74,22 @@ public class ActeurPassifTest {
 
     @Test
     public void testSetCelluleParent(){
-            mxCell maCellulle = new mxCell();
-            this.acteur.setCellule(maCellulle);
-            assertEquals(maCellulle, this.acteur.getParent());
+		mxCell maCellulle = new mxCell();
+		this.acteur.setCellule(maCellulle);
+		assertEquals(maCellulle, this.acteur.getParent());
     }
 
     @Test
     public void testSetCelluleTarget(){
-            mxCell maCellulle = new mxCell();
-            this.acteur.setCellule(maCellulle);
-            assertEquals(maCellulle, this.acteur.getTarget());
+		mxCell maCellulle = new mxCell();
+		this.acteur.setCellule(maCellulle);
+		assertEquals(maCellulle, this.acteur.getTarget());
     }
 
     @Test
     public void testSupprimer(){
-    this.acteur.supprimer();
-    assertNull(this.acteur.getCellule());
+		this.acteur.supprimer();
+		assertNull(this.acteur.getCellule());
     }
-
-
-    // TODO ajouter des tests pour ActeurPassif
 
 }

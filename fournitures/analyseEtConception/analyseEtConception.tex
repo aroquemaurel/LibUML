@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,openany]{article}
+\documentclass[12pt,a4paper,openany]{report}
 %%%% JNLP 
 \usepackage{lmodern}
 \usepackage{xcolor}
@@ -15,21 +15,19 @@
 \usepackage{ifthen}
 \usepackage{makeidx}
 \usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, urlcolor=blue]{hyperref}
+\usepackage{wrapfig}
 
-\newcommand{\headGauche}{}
-\newcommand{\headCentre}{}
-\newcommand{\headDroite}{}
 %\newCommand{\footGauche}{} Université paul sabatier Toulouse III
 \newcommand{\footCentre}{}
 %\newCommand{\footDroite}{} Numéro de page
-\newcommand{\premierDestinataire}{Monsieur Thierry Millan}
-\newcommand{\rolePremierDestinataire}{Client}
+\newcommand{\premierDestinataire}{Monsieur Max \bsc{Chevalier}}
+\newcommand{\rolePremierDestinataire}{Responsable projets}
 
-\newcommand{\secondDestinaire}{Madame Caroline Kross}
-\newcommand{\roleSecondDestinaire}{Tutrice}
+\newcommand{\secondDestinaire}{Monsieur Thierry \bsc{Millan}}
+\newcommand{\roleSecondDestinaire}{Client}
 
-\newcommand{\troisiemeDestinaire}{}
-\newcommand{\roleTroisiemeDestinaire}{}
+\newcommand{\troisiemeDestinaire}{Madame Caroline \bsc{Kross}}
+\newcommand{\roleTroisiemeDestinaire}{Tutrice}
 
 \newcommand{\quatriemeDestinaire}{}
 \newcommand{\roleQuatriemeDestinaire}{}
@@ -45,4 +43,83 @@
 	\newpage
 	\tableofcontents
 	\newpage
+	\chapter{Analyse}
+	\chapter{Conception}
+	\section{Architecture générale du projet}
+		L'architecture est la base d'une conception telle que nous l'avons choisie. En utilisant la notation UML, 
+		nous sommes parvenu à élaborer un ``meta-modèle'' de cette notation mais en isolant uniquement l'aspect 
+		graphique, faisant ainsi abstraction des multipes règles de conception que la norme UML impose. Après 
+		discussion avec le client, de nombreuses modifications ont été apportées à l'archetecture d'origine 
+		pour aboutir à une solution stable. Cette nouvelle architecture se compose de vingt classes, réparties 
+		en quatre paquetages comme suit :
+	\newline
+	\begin{wrapfigure}{r}{9cm}
+		\paragraph{~ ~}
+		Dans cet arbre représentant notre architecture, on peut voir certains noms \textbf{en gras} ou \textit{en italique}. 
+		Les noms \textbf{en gras} représentent les différents paquetages que nous avons séparés. Ceux \textit{en italiques} 
+		sont des classes abstraites crées afin de factoriser le code dans l'optique de réaliser une programmation objet optimale 
+		et de suivre les objectifs de propreté du code imposés par le client.\vspace{7px}
+		
+		Dans un premier temps, nous avons séparer les diagrammes des éléments graphiques. En effet, un diagramme sera composé de
+		toute sorte d'éléments graphiques. Puis nous avons découper ces derniers en deux, isolant ainsi les lignes des elements
+		de modélisation tels que les classes, les traitements ou les cas d'utilisation.\vspace{8px}
+		
+		\textit{ElementGraphique} et \textit{ElementModelisation} sont des classes abstraites car elle regroupe les fonctions communes
+		à toues les lasses de leur package respectifs sans pour autant en fournir une implémentation de chacune d'elles -- comme par exemple la méthode qui crée la
+		représentation graphique d'un élément ou celle qui permet de le supprimer d'un diagramme.
+	\end{wrapfigure}
+	% Arbre de classe
+	\begin{itemize}
+		\item \textbf{eltGraphique}
+			\begin{itemize}
+				\item \textit{ElementGraphique}
+				\item \textbf{eltModelisation}
+					\begin{itemize}
+						\item \textit{Acteur}
+						\item ActeurActif
+						\item ActeurPassif
+						\item Attribut
+						\item CasUtilisation
+						\item Classe
+						\item \textit{ElementModelisation}
+						\item Interface
+						\item Methode
+						\item Traitement
+						\item Visibilite
+						\item Variable
+					\end{itemize}
+				\item \textbf{ligne}
+					\begin{itemize}
+						\item Cardinalite
+						\item Lien
+						\item TypeLien
+					\end{itemize}
+			\end{itemize}
+		\item \textbf{diagramme}
+			\begin{itemize}
+				\item Diagramme
+				\item DiagrammeCasUtilisation
+				\item DiagrammeClasse
+				\item DiagrammeSequence
+			\end{itemize}
+	\end{itemize}\newpage 
+	\paragraph{}Prenons maintenant chaque paquetage séparément 
+	\subsection{Package eltGraphique}
+	Le package eltGraphique regroupe toutes les classes qui représentent des éléments graphiques. Il regroupe la classe 
+	\textit{ElementGraphique} et deux packages \textbf{eltModelisation} et \textbf{ligne}. Cette classe possède deux attributs 
+	\texttt{graph} et \texttt{diagramme}, correspondant repectivement au graphe dans lequel sont stockés les éléments 
+	et le diagramme afficher à l'écran. Elle comprend également (en plus d'un constructeur initialisant les attributs) 
+	les méthodes \texttt{supprimer} permettant de supprimer un élément du graphe et du diagramme, ainsi que \texttt{creer}, 
+	méthode abstraite réimplémentée dans les classes descendentes servant à creer la représentation graphique de l'objet 
+	et l'afficher sur le diagramme.
+	\paragraph{Package eltModelisation} Ce package regroupe toutes les classes représentant les différents éléments de 
+	modélisation que l'on trouver dans les diagrammes UML de cas d'utilisation, classe et de séquence. \textit{Acteur} 
+	est une classe abstraite car les acteur actif et passifs ont beaucoup de caractéristiques identiques mais n'ont pas 
+	la même représentation sur un diagramme. Les classes Visibilite, Methode et Attribut permettent au client de créer 
+	facilement une interface de saisie de ces éléments, facilitant l'usage du logiciel final. De plus, l'ajout de ces 
+	méthodes et attributs dans des classes, des acteurs des traitements ou des interfaces pourra faciliter l'ajout futur 
+	de nouvelle fonctionnalités comme apr exemple de la génération de code Java.
+	\paragraph{Package ligne} Ce package regroupe peu de classe. TypeLien est une classe énumérée servant à recenser
+	toutes les types graphiques de liens existant dans la notation UML.
+	
 \end{document}

@@ -1,9 +1,9 @@
 
 \date{\today}
 
-\chead{\headCentre}
-\rhead{\headDroite}
-\lhead{\headGauche}
+\chead{}
+\rhead{Projet \#20}
+\lhead{Bibliothèque d'objets grahiques UML}
 \makeindex
 \lfoot{Université Paul Sabatier Toulouse III}
 \rfoot{--~\thepage~--}
@@ -40,31 +40,33 @@
 \end{flushleft}
 \begin{flushright}
 	\vspace{-3cm}
+\begin{tabular}{r@{~}l}
 	\ifthenelse{\equal{\premierDestinataire}{}}{
 	}
 	{
-		Pour \premierDestinataire(\rolePremierDestinataire)\\
+		Pour \premierDestinataire & (\rolePremierDestinataire) \\
 	}
 	\ifthenelse{\equal{\secondDestinaire}{}}{
 	}
 	{
-		Pour \secondDestinaire(\roleSecondDestinaire)\\
+		\secondDestinaire & (\roleSecondDestinaire) \\
 	}
 	\ifthenelse{\equal{\troisiemeDestinaire}{}}{
 	}
 	{
-		Pour \troisiemeDestinaire(\roleTroisiemeDestinaire)\\
+		\troisiemeDestinaire & (\roleTroisiemeDestinaire) \\
 	}
 	\ifthenelse{\equal{\quatriemeDestinaire}{}}{
 	}
 	{
-		Pour \quatriemeDestinaire(\roleQuatriemeDestinaire)\\
+		\quatriemeDestinaire & (\roleQuatriemeDestinaire) \\
 	}
 	\ifthenelse{\equal{\cinquiemeDestinaire}{}}{
 	}
 	{
-		Pour \cinquiemeDestinaire(\roleCinquiereDestinaire)\\
+		\cinquiemeDestinaire & (\roleCinquiereDestinaire) \\
 	}
+\end{tabular}
 \end{flushright}
 \vfill
 \vspace{1cm}
@@ -104,7 +106,7 @@
 \blurb{%
 Université Paul Sabatier -- Toulouse III\\
 IUT A - Toulouse Rangueil\\
-\textbf{Projet tuteuré}\\[1em]
+\textbf{Projet tuteuré \#20}\\[1em]
 }%
 
 
