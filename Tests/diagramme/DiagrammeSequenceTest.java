@@ -1,21 +1,19 @@
 package diagramme;
 
-import eltGraphique.Interface;
-import eltGraphique.classe.Classe;
-import eltGraphique.ActeurPassif;
-import eltGraphique.ActeurActif;
-import eltGraphique.CasUtilisation;
 import com.mxgraph.view.mxGraph;
-import eltGraphique.Traitement;
+import eltGraphique.*;
+import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 import org.junit.After;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  * @author Marie-Ly
+ * @author Geoffroy
  */
 public class DiagrammeSequenceTest {
     
@@ -172,7 +170,78 @@ public class DiagrammeSequenceTest {
                 new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
                 new ActeurActif(new mxGraph(), new Diagramme(), new String()),
                 TypeLien.DEPENDANCE));
+    }
+    
+    @Test
+    public void testLienAutoriseFlecheTraitementTraitement () {
+        assertTrue(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme,null, null, true),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.FLECHE));
+    }
+    
+    @Test
+    public void testLienAutoriseFlecheActeurActifTraitement () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.FLECHE));
     } 
+    @Test
+    public void testLienAutoriseFlecheActeurPassifTraitement () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new Traitement(null, monDiagramme, null, null, true),
+                TypeLien.FLECHE));
+    }
+    
+    @Test
+    public void testLienAutoriseFlecheTraitementActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme,null, null, true),
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.FLECHE));
+    }
+    
+    @Test
+    public void testLienAutoriseFlecheTraitementActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new Traitement(null, monDiagramme,null, null, true),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.FLECHE));
+    }
+    
+    @Test
+    public void testLienAutoriseFlecheActeurActifActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.FLECHE));
+    }
+    
+    @Test
+    public void testLienAutoriseFlecheActeurPassifActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.FLECHE));
+    } 
+    
+    @Test
+    public void testLienAutoriseFlecheActeurActifActeurPassif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.FLECHE));
+    } 
+    
+    @Test
+    public void testLienAutoriseFlecheActeurPassifActeurActif () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                new ActeurPassif(new mxGraph(), new Diagramme(), new String()),
+                new ActeurActif(new mxGraph(), new Diagramme(), new String()),
+                TypeLien.FLECHE));
+    }
     
     @Test
     public void testLienAutoriseSpecialisation () {
@@ -204,7 +273,7 @@ public class DiagrammeSequenceTest {
                 null,
                 TypeLien.GENERALISATION));
     }
-        
+    
     @Test
     public void testLienAutoriseComposition () {
         assertFalse(this.monDiagramme.lienAutorise(

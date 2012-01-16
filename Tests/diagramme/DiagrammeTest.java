@@ -298,6 +298,14 @@ public class DiagrammeTest {
     }
     
     @Test
+    public void testLienAutoriseFleche () {
+        assertTrue(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.FLECHE));
+    }
+    
+    @Test
     public void testEltAutoriseTraitement () {
         assertTrue(this.monDiagramme.eltAutorise(new Traitement(null, monDiagramme, 
                 null, null, true)));
