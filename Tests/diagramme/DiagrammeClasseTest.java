@@ -218,6 +218,14 @@ public class DiagrammeClasseTest {
     }
     
     @Test
+    public void testLienAutoriseFleche () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.FLECHE));
+    }
+    
+    @Test
     public void testEltAutoriseClasse () {
         assertTrue(this.monDiagramme.eltAutorise(
                 new Classe(new mxGraph(), new Diagramme(), new String())));    

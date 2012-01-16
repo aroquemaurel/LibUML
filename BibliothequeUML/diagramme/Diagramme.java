@@ -9,6 +9,7 @@ import util.Liste;
 * Cette classe permet de représenter et de manipuler <b>un Diagramme</b>.
 * @author Antoine
 * @author Marie-Ly
+* @author Geoffroy
 */
 public class Diagramme {
     /**

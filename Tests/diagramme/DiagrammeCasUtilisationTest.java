@@ -275,7 +275,15 @@ public class DiagrammeCasUtilisationTest {
                 null,
                 TypeLien.SPECIALISATION));
     }
-         
+      
+    @Test
+    public void testLienAutoriseFleche () {
+        assertFalse(this.monDiagramme.lienAutorise(
+                null,
+                null,
+                TypeLien.FLECHE));
+    }
+    
     @Test
     public void testEltAutoriseCasUtilisation () {
         assertTrue(this.monDiagramme.eltAutorise(

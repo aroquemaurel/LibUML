@@ -29,12 +29,20 @@ public class DiagrammeSequence extends Diagramme {
     public boolean lienAutorise (ElementGraphique p_origine , 
             ElementGraphique p_extremite, TypeLien p_typeDeFleche){
         boolean valeurRetour = false;
-        if(p_typeDeFleche.equals(TypeLien.ASSOCIATION)) {
-            valeurRetour = this.autorisationAssociation(p_origine, p_extremite); 
-        } else if (p_typeDeFleche.equals((TypeLien.DEPENDANCE))) {
-            valeurRetour = this.autorisationDependance(p_origine, p_extremite);
+        
+        switch (p_typeDeFleche){
+            case ASSOCIATION:
+                valeurRetour = this.autorisationAssociation(p_origine, p_extremite);
+                break; 
+            case DEPENDANCE:
+                valeurRetour = this.autorisationDependance(p_origine, p_extremite);
+                break;
+            case FLECHE:
+                valeurRetour = this.autorisationFleche(p_origine, p_extremite);
+                break;
+            default:
+                valeurRetour = false;
         }
-
         return valeurRetour;
     }
     
@@ -48,6 +56,20 @@ public class DiagrammeSequence extends Diagramme {
      * ou faux(false) si le lien d'association entre deux éléments graphiques n'est pas autorisé.
      */
     private boolean autorisationAssociation(ElementGraphique p_origine , 
+            ElementGraphique p_extremite) {
+        return(p_origine instanceof Traitement && p_extremite instanceof Traitement);
+    }
+    
+    /**
+     * Méthode privée qui autorise un lien de type flèche en fonction de 
+     * l'origine et de l'extrémité
+     * 
+     * @param p_origine Element graphique d'origine
+     * @param p_extremite Element graphique d'arrivée
+     * @return vrai(true) si le lien de type flèche entre deux éléments graphiques est autorisé
+     * ou faux(false) si le lien de type flèche entre deux éléments graphiques n'est pas autorisé.
+     */
+    private boolean autorisationFleche(ElementGraphique p_origine , 
             ElementGraphique p_extremite) {
         return(p_origine instanceof Traitement && p_extremite instanceof Traitement);
     }
