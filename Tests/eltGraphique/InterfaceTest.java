@@ -26,6 +26,12 @@ public class InterfaceTest {
         this.monInterface = null;
     }
 
+	@Test
+	public void testFail() {
+		fail("Not implemented yet!");
+	}
+	
+	/*
     @Test
     public void testCelluleParent() {
     mxICell cellule = this.monInterface.getParent();
@@ -82,5 +88,5 @@ public class InterfaceTest {
         this.monInterface.supprimer();
         assertNull(this.monInterface.getCellule());
     }
-
+*/
 }

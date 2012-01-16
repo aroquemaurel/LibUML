@@ -1,0 +1,181 @@
+\definecolor{gris1}{gray}{0.40}
+\definecolor{gris2}{gray}{0.55}
+\definecolor{gris3}{gray}{0.65}
+\definecolor{gris4}{gray}{0.50}
+\definecolor{vert}{rgb}{0,0.4,0}
+\definecolor{bleu1}{rgb}{0,0,0.8}
+\definecolor{bleu2}{rgb}{0,0.2,0.6}
+\definecolor{bleu3}{rgb}{0,0.2,0.2}
+
+
+\lstdefinelanguage{algo}{%
+   morekeywords={%
+    %%% couleur 1
+		importer, programme, glossaire, fonction, procedure, constante, type, 
+	%%% IMPORT & Co.
+		si, sinon, alors, fin, tantque, debut, faire, lorsque, fin lorsque, 
+		declenche, declencher, enregistrement, tableau, retourne, retourner, =, 
+		/=, <, >, traite,exception, 
+	%%% types 
+		Entier, Reel, Booleen, Caractere, Réél, Booléen, Caractère,
+	%%% types 
+		entree, maj, sortie,entrée,
+	%%% types 
+		et, ou, non,
+	},
+  sensitive=true,
+  morecomment=[l]{--},
+  morestring=[b]',
+}
+
+\lstset{language=algo,
+    %%% BOUCLE, TEST & Co.
+      emph={importer, programme, glossaire, fonction, procedure, constante, type},
+      emphstyle=\color{bleu2},
+    %%% IMPORT & Co.  
+	emph={[2]
+		si, sinon, alors, fin , tantque, debut, faire, lorsque, fin lorsque, 
+		declencher, retourner, et, ou, non,enregistrement, retourner, retourne, 
+		tableau, /=, <, =, >, traite,exception
+	},
+      emphstyle=[2]\color{bleu1},
+    %%% FONCTIONS NUMERIQUES
+      emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
+      emphstyle=[3]\color{gris1},
+    %%% FONCTIONS NUMERIQUES
+      emph={[4]entree, maj, sortie, entrée},	
+      emphstyle=[4]\color{gris1},
+}
+\lstdefinelanguage{wl}{%
+   morekeywords={%
+    %%% couleur 1
+		importer, programme, glossaire, fonction, procedure, constante, type, 
+	%%% IMPORT & Co.
+		si, sinon, alors, fin, TANTQUE, tantque, FIN, PROCEDURE, debut, faire, lorsque, 
+		fin lorsque, declenche, declencher, enregistrement, tableau, retourne, retourner, =, 
+		/=, <, >, traite,exception, 
+	%%% types 
+		Entier, Reel, Booleen, Caractere, Réél, Booléen, Caractère,
+	%%% types 
+		entree, maj, sortie,entrée,
+	%%% types 
+		et, ou, non,
+	},
+  sensitive=true,
+  morecomment=[l]{//},
+  morestring=[b]',
+}
+
+\lstset{language=wl,
+    %%% BOUCLE, TEST & Co.
+      emph={importer, programme, glossaire, fonction, procedure, constante, type},
+      emphstyle=\color{bleu2},
+    %%% IMPORT & Co.  
+	emph={[2]
+		si, sinon, alors, fin , tantque, debut, faire, lorsque, fin lorsque, 
+		declencher, retourner, et, ou, non,enregistrement, retourner, retourne, 
+		tableau, /=, <, =, >, traite,exception
+	},
+      emphstyle=[2]\color{bleu1},
+    %%% FONCTIONS NUMERIQUES
+      emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
+      emphstyle=[3]\color{gris1},
+    %%% FONCTIONS NUMERIQUES
+      emph={[4]entree, maj, sortie, entrée},	
+      emphstyle=[4]\color{gris1},
+}
+\lstdefinelanguage{css}{%
+   morekeywords={%
+    %%% couleur 1
+		background, image, repeat, position, index, color, border, font, 
+		size, url, family, style, variant, weight, letter, spacing, line, 
+		height, text, decoration, align, indent, transform, shadow, 
+		background, image, repeat, position, index, color, border, font, 
+		size, url, family, style, variant, weight, letter, spacing, line, 
+		height, text, decoration, align, indent, transform, shadow, 
+		vertical, align, white, space, word, spacing,attachment, width, 
+		max, min, margin, padding, clip, direction, display, overflow,
+		visibility, clear, float, top, right, bottom, left, list, type, 
+		collapse, side, empty, cells, table, layout, cursor, marks, page, break,
+		before, after, inside, orphans, windows, azimuth, after, before, cue, 
+		elevation, pause, play, during, pitch, range, richness, spek, header, 
+		numeral, punctuation, rate, stress, voice, volume,
+	%%% types 
+		left, right, bottom, top, none, center, solid, black, blue, red, green,
+	},
+  sensitive=true,
+  sensitive=true,
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+}
+\lstset{language=css,
+    %%% BOUCLE, TEST & Co.
+      emph={
+		background, image, repeat, position, index, color, border, font, 
+		size, url, family, style, variant, weight, letter, spacing, line, 
+		height, text, decoration, align, indent, transform, shadow, 
+		background, image, repeat, position, index, color, border, font, 
+		size, url, family, style, variant, weight, letter, spacing, line, 
+		height, text, decoration, align, indent, transform, shadow, 
+		vertical, align, white, space, word, spacing,attachment, width, 
+		max, min, margin, padding, clip, direction, display, overflow,
+		visibility, clear, float, top, right, bottom, left, list, type, 
+		collapse, side, empty, cells, table, layout, cursor, marks, page, break,
+		before, after, inside, orphans, windows, azimuth, after, before, cue, 
+		elevation, pause, play, during, pitch, range, richness, spek, header, 
+		numeral, punctuation, rate, stress, voice, volume,
+	  },
+      emphstyle=\color{bleu2},
+    %%% FONCTIONS NUMERIQUES
+      emph={[3]
+		left, right, bottom, top,none, solid, black, blue, green,
+		  },
+      emphstyle=[3]\color{bleu3},
+    %%% FONCTIONS NUMERIQUES
+}
+\lstdefinelanguage{SQL}{%
+   morekeywords={%
+    %%% couleur 1
+	INSERT, if, end, begin,UPDATE, DELETE, SET, WHERE, 
+	CREATE, OR, REPLACE, AND, FROM, SELECT, VIEW, TRIGGER, AS, GROUP,
+	BY, ORDER, after, for, each, then, else, of, on
+	},
+  sensitive=true,
+  morecomment=[l]{--},
+  morestring=[b]',
+}
+
+\lstset{language=SQL,
+    %%% BOUCLE, TEST & Co.
+      emph={INSERT, UPDATE, DELETE, WHERE, SET, GROUP, BY, ORDER},
+      emphstyle=\color{bleu2},
+    %%% IMPORT & Co.  
+	emph={[2]
+		if, end, begin, then, for, each, else, after, of, on
+	},
+      emphstyle=[2]\color{bleu1},
+    %%% FONCTIONS NUMERIQUES
+      emph={[3]Entier, Reel, Booleen, Caractere, Booléen, Réél, Caractère},
+      emphstyle=[3]\color{gris1},
+    %%% FONCTIONS NUMERIQUES
+      emph={[4]entree, maj, sortie, entrée},	
+      emphstyle=[4]\color{gris1},
+}
+\lstset{ % general style for listings 
+   numbers=left 
+   , literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ê}{{\^e}}1 {É}{{\'E}}1 {ô}{{\^o}}1 {€}{{\euro}}1{°}{{$^{\circ}$}}1 {ç}{ {c}}1
+	, extendedchars=\true
+   , tabsize=2 
+   , frame=single 
+   , breaklines=true 
+   , basicstyle=\ttfamily 
+   , numberstyle=\tiny\ttfamily 
+   , framexleftmargin=0mm 
+   , xleftmargin=0mm 
+   , captionpos=b 
+	, keywordstyle=\color{bleu2}
+	, commentstyle=\color{vert}
+	, showstringspaces=false
+	, extendedchars=true
+	, mathescape=true
+} 

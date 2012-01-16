@@ -91,7 +91,7 @@ public class ClasseTest {
     public void testAjouterMethodeTailleListe(){
             this.classe.ajouterMethode(
                     new Methode(Visibilite.PUBLIC, "Object", "methodeDeTest", null, true, true, true));
-            assertEquals(4, this.classe.getMethodes().size());
+            assertEquals(1, this.classe.getMethodes().size());
     }
 
     @Test
