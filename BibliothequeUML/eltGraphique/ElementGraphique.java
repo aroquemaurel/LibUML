@@ -16,7 +16,7 @@ import diagramme.Diagramme;
  */
 abstract public class ElementGraphique extends mxCell implements IntElementGraphique {
 	/**
-	 * Graph dans lequel aparait l'élément graphique 
+	 * Graph dans lequel aparrait l'élément graphique 
 	 */
 	private mxGraph graph;
 
@@ -57,7 +57,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
     
     /**
-    * Récupère la cellule associé à l'élément graphique
+    * Récupère la cellule associée à l'élément graphique
     * 
     * @param p_cellule La nouvelle cellule que représente l'élément
     */
@@ -79,7 +79,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
 
     /**
-    * Récupère le graphe auquel est associ l'élément
+    * Récupère le graphe auquel est associé l'élément
     * 
     * @return Le graph auquel est associé l'élément
     */
@@ -99,7 +99,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
 
     /**
-     * Récupère Le diagramme dans lequel est l'élément de modélisation
+     * Récupère le diagramme dans lequel est l'élément de modélisation
      * 
      * @return Le diagramme
      */
@@ -110,7 +110,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 
     /**
     * Methode abstraite
-    * Créer la représentation graphique de l'élément
+    * Crée la représentation graphique de l'élément
     *
     * @see ActeurActif
     * @see ActeurPassif

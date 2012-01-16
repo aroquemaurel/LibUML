@@ -40,7 +40,7 @@ public class Attribut extends Variable {
 
     /**
     * Récupère la visibilite de l'attribut
-	*
+    *
     * @return La visibilite de l'attribut
     * @see Visibilite
     */
@@ -50,7 +50,7 @@ public class Attribut extends Variable {
 
     /**
     * Modifie la visibilité de l'attribut
-	*
+    *
     * @param p_visibilite La nouvelle visibilité de l'attribut
     * @see Visibilite
     */
@@ -60,7 +60,7 @@ public class Attribut extends Variable {
 
     /**
     * Retourne vrai si l'attribut est de classe, faux sinon
-	*
+    *
     * @return Attribut de classe ?
     */
     public boolean estDeClasse() {
@@ -69,7 +69,7 @@ public class Attribut extends Variable {
 
     /**
     * Modifie le fait que l'attribut soit de classe
-	*
+    *
     * @param deClasse Attribut de classe ?
     */
     public void setDeClasse(boolean deClasse) {

@@ -14,7 +14,7 @@ public class DiagrammeClasse extends Diagramme {
 
     /**
     * Cette classe permet de représenter et de manipuler <b>un Diagramme de Classe</b>.
-	* 
+    * 
     * @param p_origine Element graphique d'origine
     * @param p_extremite Element graphique d'arrivée
     * @param p_typeDeFleche Type de lien utilisé entre les deux éléments graphiques
