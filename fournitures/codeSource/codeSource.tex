@@ -1,0 +1,50 @@
+\documentclass[12pt,a4paper,openany]{article}
+%%%% JNLP 
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.7cm, bottom=1.7cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{fancyhdr}
+\usepackage{multido}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{ifthen}
+\usepackage{makeidx}
+\usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, urlcolor=blue]{hyperref}
+
+\newcommand{\headGauche}{}
+\newcommand{\headCentre}{}
+\newcommand{\headDroite}{}
+%\newCommand{\footGauche}{} Université paul sabatier Toulouse III
+\newcommand{\footCentre}{}
+%\newCommand{\footDroite}{} Numéro de page
+\newcommand{\premierDestinataire}{Monsieur Thierry Millan}
+\newcommand{\rolePremierDestinataire}{Client}
+
+\newcommand{\secondDestinaire}{Madame Caroline Kross}
+\newcommand{\roleSecondDestinaire}{Tutrice}
+
+\newcommand{\troisiemeDestinaire}{}
+\newcommand{\roleTroisiemeDestinaire}{}
+
+\newcommand{\quatriemeDestinaire}{}
+\newcommand{\roleQuatriemeDestinaire}{}
+
+\newcommand{\cinquiemeDestinaire}{}
+\newcommand{\roleCinquiereDestinaire}{}
+\newcommand{\titreDocument}{Le code source}
+
+
+\input{../couverture_entete.tex}
+\input{../listings.tex}
+\begin{document}
+	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
+\end{document}
