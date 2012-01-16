@@ -20,8 +20,7 @@ public class TraitementTest {
 	
     @Before
     public void setUp() {
-		this.traitement = new Traitement(new mxGraph(), new Diagramme(), null, new Lien(null, null, new mxGraph(),
-												  new Diagramme(), null), false);
+		this.traitement = new Traitement(new mxGraph(), new Diagramme(), null, null, false);
 		this.traitement.creer();
     }
 
@@ -55,14 +54,14 @@ public class TraitementTest {
     public void testChampStyleFleche() {
             mxStylesheet feuilleStyles = this.traitement.getGraph().getStylesheet();
             assertEquals(mxConstants.ARROW_BLOCK, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_SHAPE));
-            assertEquals(50, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_OPACITY));
+            assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_OPACITY));
             assertEquals(Constantes.COULEUR_FOND, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_FILLCOLOR));
             assertEquals(Constantes.COULEUR_TEXTE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_FONTCOLOR));
-            assertEquals(0, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_MOVABLE));
-            assertEquals(0, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_RESIZABLE));
+            assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_MOVABLE));
+            assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_RESIZABLE));
             assertEquals(mxConstants.DIRECTION_WEST, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_DIRECTION));
             assertEquals(Constantes.COULEUR_FLECHE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_STROKECOLOR));
-            assertEquals(0, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_DELETABLE));
+            assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_DELETABLE));
             assertEquals(mxConstants.ALIGN_LEFT, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_ALIGN));
     }
 
