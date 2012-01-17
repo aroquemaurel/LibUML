@@ -113,11 +113,11 @@ public class FenetreDemo extends JFrame {
                fenetre.getPanneauGraph().getDiagramme(), "", null, true);
        t1.creer();
        t2.creer();
-       t1.ajouterMessage(t2, "test", true);
-       t2.ajouterMessage(t1, "test", true);
-       t1.ajouterMessage(t2, "test", false);
-       t2.ajouterMessage(t1, "test", true);
-       t2.ajouterMessage(t1, "test", false);
+       t1.ajouterMessage(t2, "test", TypeLien.FLECHE);
+       t2.ajouterMessage(t1, "test", TypeLien.FLECHE_POINTILLEE);
+       t1.ajouterMessage(t2, "test", TypeLien.FLECHE);
+       t2.ajouterMessage(t1, "test", TypeLien.FLECHE);
+       t2.ajouterMessage(t1, "test", TypeLien.FLECHE_POINTILLEE);
     }
 
 }

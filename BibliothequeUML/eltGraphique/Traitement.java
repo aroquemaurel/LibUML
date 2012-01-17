@@ -150,7 +150,7 @@ public class Traitement extends ElementModelisation {
                 this.nbMessages = 0;
 	}
 
-        public void ajouterMessage(Traitement p_destination, String p_message, boolean pointillee){
+        public void ajouterMessage(Traitement p_destination, String p_message, TypeLien p_typeLien){          
             mxCell sourceSousCellule, destinationSousCellule;
             /* on incrémente le nombre de message présent dans les traitements */
             this.incrementerNbMessages();
@@ -170,7 +170,7 @@ public class Traitement extends ElementModelisation {
             
             /* On créer le lien */
             Lien msg = new MessageTraitement(this, p_destination, sourceSousCellule, 
-                    destinationSousCellule, p_message, super.getGraph(), super.getDiagramme(), TypeLien.FLECHE);
+                    destinationSousCellule, p_message, super.getGraph(), super.getDiagramme(), p_typeLien);
             msg.creer();
             
             /* on empèche la connection manuelle */

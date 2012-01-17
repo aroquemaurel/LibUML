@@ -18,5 +18,6 @@ public enum TypeLien {
 
 	/* Diagramme de séquence */
 	FLECHE,
-	FLECHE_EVENEMENT_DECLENCHEUR
+	FLECHE_POINTILLEE,
+        FLECHE_EVENEMENT_DECLENCHEUR
 }
