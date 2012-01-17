@@ -7,6 +7,7 @@ import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ElementGraphique;
 import eltGraphique.ElementModelisation;
+import eltGraphique.Traitement;
 import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
@@ -171,10 +172,33 @@ public class Lien extends ElementGraphique {
         this.source = p_source;
         this.destination = p_destination;
         this.typeLien = p_typeLien;
-        
-
     }
-
+    
+        public void creerLesStylesDeFleches(){
+            switch(this.typeLien){
+                case SPECIALISATION:
+                    this.creerStyleSpecialisation();
+                    break;
+                case ASSOCIATION:
+                    this.creerStyleAssociation();
+                    break;
+                case FLECHE:
+                    this.creerStyleFleche();
+                    break;
+                case AGREGATION:
+                    this.creerStyleAgregation();
+                    break;
+                case COMPOSITION:
+                    this.creerStyleComposition();
+                    break;
+                case DEPENDANCE:
+                    this.creerStyleDependance();
+                    break;
+                default:
+                throw new UnsupportedOperationException("Type de flèche inconnu");
+            }   
+        }
+    
 	/**
 	 * Récupère l'élément à l'extrémité de la flèche
 	 *
@@ -291,29 +315,9 @@ public class Lien extends ElementGraphique {
 	 */
 	@Override
     public void creer(){
-        switch(this.typeLien){
-            case SPECIALISATION:
-                this.creerStyleSpecialisation();
-                break;
-            case ASSOCIATION:
-                this.creerStyleAssociation();
-                break;
-            case FLECHE:
-                this.creerStyleFleche();
-                break;
-            case AGREGATION:
-                this.creerStyleAgregation();
-                break;
-            case COMPOSITION:
-                this.creerStyleComposition();
-                break;
-            case DEPENDANCE:
-                this.creerStyleDependance();
-                break;
-            default:
-              throw new UnsupportedOperationException("Type de flèche inconnu");
-        }
+       this.creerLesStylesDeFleches();
 
+        
         super.setCellule((mxCell) super.getGraph().insertEdge(
                 super.getGraph().getDefaultParent(), null, null,
                 this.getSource().getCellule(), this.getDestination().getCellule(),
