@@ -32,5 +32,8 @@ public class MessageTraitement extends Lien {
         super.getGraph().getDefaultParent(), null, this.message,
         this.sourceSousCellule, this.destinationSousCellule, super.getTypeLien().toString()));
         this.getCellule().getGeometry().setOffset(new mxPoint(0, OFFSET_MESSAGE));
+        
+        super.getSource().getLiens().ajouterElement(this);
+        super.getDestination().getLiens().ajouterElement(this);
     }
 }
