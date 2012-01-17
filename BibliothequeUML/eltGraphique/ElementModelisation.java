@@ -7,6 +7,7 @@ import eltGraphique.classe.Classe;
 import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
 import java.awt.Point;
+import util.Liste;
 
 /**
  * Classe ancêtre à tout élément de modélisation (classe, cas d'utilisation,
@@ -62,6 +63,16 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 
     }
 
+        /**
+    * Met à jour la liste des éléments de la liste
+    * @param p_elements La liste d'éléments graphiques à mettre à jour
+    */
+    static public void mettreAJour(Liste<ElementModelisation> p_elements){
+        for(ElementModelisation element : p_elements){
+            element.mettreAJour();
+        }
+    }
+    
     /**
     * Récupère la taille de l'élément (hauteur/largeur)
 	*

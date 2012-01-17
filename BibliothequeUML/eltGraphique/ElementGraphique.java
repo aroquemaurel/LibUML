@@ -60,11 +60,10 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
             elementRelies.add(element.getSource());
             element.supprimer();
         }
+        
+        /* on met à jour le diagramme */
+       ElementModelisation.mettreAJour(elementRelies);
 
-        for(ElementModelisation element : elementRelies){
-            element.mettreAJour();
-        }
-                      
         super.setTarget(null);
         super.setParent(null);
     }
