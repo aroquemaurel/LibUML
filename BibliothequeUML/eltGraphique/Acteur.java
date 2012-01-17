@@ -11,8 +11,8 @@ import java.util.Map;
 import util.Constantes;
 
 /**
- * Classe ancêtre aux deux types d'acteurs : actifs et passifs.
- * Ces deux types d'acteurs sont différenciés pour une raison de
+ * Classe ancête aux deux types d'acteurs : actifs et passifs.
+ * Ces deux types d'acteurs sont différenciers pour une raison de
  * représentation graphique principalement
  *
  * @see ActeurActif
@@ -33,7 +33,7 @@ abstract public class Acteur extends ElementModelisation {
 	private boolean visibiliteLigneDeVie;
 
 	/**
-	 * Crée le style de la ligne de vie 
+	 * Créer le style de la ligne de vie 
 	 */
 	private void creerStyleLigneDeVie(){
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
@@ -54,10 +54,10 @@ abstract public class Acteur extends ElementModelisation {
 
 	}
 
-    /** Constructeur de la classe Acteur 
-     *
-     * @param p_graph le graphe sur lequel il faut ajouter l'acteur
-     * @param p_texte le texte qui sera affiché sur l'acteur
+    /** Constructeur le la classe Acteur 
+	 *
+	 * @param p_graph le graphe sur lequel il faut ajouter l'acteur
+     * @param p_texte le texte qui sera afficher sur l'acteur
      *
      */
     public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
@@ -66,7 +66,7 @@ abstract public class Acteur extends ElementModelisation {
     }
 
 	/** 
-	 * Crée la ligne vie avec les tyle prédéfinis auparavant 
+	 * Créé la ligne vie avec les tyle prédéfini auparavant 
 	 */
     public void creerLigneDeVie(){
             this.creerStyleLigneDeVie();
@@ -77,8 +77,7 @@ abstract public class Acteur extends ElementModelisation {
 	/**
 	 * True affiche la ligne de vie, false n'affiche plus la ligne de vie 
 	 *
-	 * @param p_visible Le booléen permettant de choisir si on affiche la 
-         * ligne de vie, ou non
+	 * @param p_visible Le booléen permettant de choisir si on affiche la ligne de vie, ou non
 	 */
     public void afficherLigneDeVie(boolean p_visible){
             this.ligneDeVie.setVisible(p_visible);
@@ -87,16 +86,16 @@ abstract public class Acteur extends ElementModelisation {
     }
     
 	/**
-	 * Obtient la cellule corespondante à la ligne de vie
+	 * Obtient la cellule corespondant à la ligne de vie
 	 *
-	 * @return La cellule correspondante à la ligne de vie
+	 * @return La cellule correspondant à la ligne de vie
 	 */
     public mxCell getLigneDeVie(){
         return (this.ligneDeVie);
     }
    
 	/**
-	 * Retourn si la ligne de vie est affichée, ou non
+	 * Retourn esi la ligne de vie est affichée, ou non
 	 *
 	 * @return True si la ligne de vie est visible, false sinon
 	 */
@@ -106,7 +105,7 @@ abstract public class Acteur extends ElementModelisation {
 
     /**
      * Modifie le texte lié à l'acteur.
-     *
+	 *
      * @param p_texte Le texte lié à l'acteur
      */
     @Override

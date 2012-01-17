@@ -12,7 +12,7 @@ import java.util.Map;
 import util.Constantes;
 
 /**
- * Classe propre aux acteurs passifs (représentation graphique)
+ * Classe propre aux acteurs passif (représentation graphique)
  *
  * @see Acteur
  * @see ActeurPassif
@@ -24,9 +24,9 @@ public class ActeurActif extends Acteur {
     private static final double OFFSET_TEXTE_ACTEUR_Y = 51;
     private static final double OFFSET_TEXTE_ACTEUR_X = 0;
 
-   /**
-    * Créer le style d'un acteur Actif
-    */
+    /**
+	 * Creer le style d'un acteur Actif
+	 */
     private void creerStyleActeurActif() {
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 		mxStylesheet feuilleStyles = super.getGraph().getStylesheet();
@@ -41,9 +41,9 @@ public class ActeurActif extends Acteur {
     }
 
     /**
-     * Constructeur de la classe ActeurActif qui crée un acteur actif
+     * Constructeur de la classe ActeurActif qui créer un acteur actif
      * lié à un graph donné avec un texte donné
-     *
+	 *
      * @param p_graph Le graphe sur lequel sera l'acteur actif
      * @param p_texte Le texte lié à l'acteur actif
      */

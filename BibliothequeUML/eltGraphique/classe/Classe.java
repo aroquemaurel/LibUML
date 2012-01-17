@@ -12,28 +12,28 @@ import util.Constantes;
 import util.Liste;
 
 /**
- * Modélise une classe par trois carrés contenant le titre de la classe, 
+ * Modélise une classe par une trois carrés contenant le titre de la classe, 
  * les attributs et les méthodes 
  *
  * @author Mathieu
  * @author Antoine
  */
 public class Classe extends eltGraphique.ElementModelisation {
-        /**
+    /**
 	 * Classe abstraite ?
 	 */
     private boolean abstraite;
     
-   /**
+    /**
     * Liste des méthodes de la classe
-    *
+	*
     * @see Methode
     */
     private Liste<Methode> methodes;
     
     /**
     * Liste des attributs de la classe
-    *
+	*
     * @see Attribut
     */
     private Liste<Attribut> attributs;
@@ -44,7 +44,7 @@ public class Classe extends eltGraphique.ElementModelisation {
     private boolean constante;
     
     /**
-    * Crée le style d'une classe
+    * Creer le style d'une classe
     */
     private void creerStyleClasse(){
         mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
@@ -59,7 +59,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 	}
     
     /**
-    * Crée le style du contenu d'une classe (cadre méthodes, cadre attributs)
+    * Créer le style du contenu d'une classe (cadre méthodes, cadre attributs)
     */
     private void creerStyleContenuClasse(){
         mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
@@ -76,7 +76,7 @@ public class Classe extends eltGraphique.ElementModelisation {
         feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
     }
 
-	/**
+	/*
 	 * Génère la chaine de caractère contenant toutes les méthodes
 	 *
 	 * @return La chaine de caractère
@@ -108,8 +108,8 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
     * Constructeur d'un élément 'classe'
-    *
-    * @param p_graph Le graphe auquel sera ajouté la classe
+	*
+    * @param p_graph Le graphe auquel sera ajouter la classe
     * @param p_texte Le texte associé à la classe (son nom)
     */
     public Classe(mxGraph p_graph, Diagramme p_diagramme, String p_texte){
@@ -123,7 +123,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
     * Ajoute la méthode passée en paramètre à la liste des méthodes
-    *
+	*
     * @param p_nouvelleMethode
     * @return La méthode ajoutée
     * @see Methode
@@ -135,7 +135,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
     * Ajoute un attribut à la liste d'attributs de la classe
-    *
+	*
     * @param p_nouvelAttribut Le nouvel attribut à ajouter à la classe
     * @return Le nouvel attribut ajouté
     * @see Attribut
@@ -147,7 +147,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
      * Retourne vrai si la classe est constante, faux sinon.
-     *
+	 *
      * @return Classe constante ?
      */
     public boolean estConstante() {
@@ -156,7 +156,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
      * Retourne vrai si la classe est abstraite, faux sinon.
-     *
+	 *
      * @return si la classe est abstraite ou non.
      */
     public boolean estAbstraite() {
@@ -165,7 +165,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
      * Retourne la liste des attributs de la classe
-     *
+	 *
      * @return Liste des attributs de la classe
      * @see Attribut
      */
@@ -175,7 +175,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
      * Retourne la liste des méthodes de la classe
-     *
+	 *
      * @return Liste des méthodes de la classe
      * @see Methode
      */
@@ -185,7 +185,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
      * Modifie la constance de la classe
-     *
+	 *
      * @param p_constante Classe constante ?
      */
     public void setConstante(boolean p_constante) {
@@ -194,7 +194,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
      * Modifie l'abstraction de la classe
-     *
+	 *
      * @param p_abstraite Classe abstraite ?
      */
     public void setAbstraite(boolean p_abstraite) {
@@ -203,7 +203,7 @@ public class Classe extends eltGraphique.ElementModelisation {
 
     /**
      * Remplace la liste des attributs de la classe
-     *
+	 *
      * @param p_attributs La nouvelle liste d'attributs
      * @see Attribut
      */

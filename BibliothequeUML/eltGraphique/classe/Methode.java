@@ -26,7 +26,7 @@ public class Methode {
 	private Visibilite visibilite;
         
 	/**
-	 * Liste des paramètres de la méthode
+	 * Liste des paramètres de la méthodes
 	 *
 	 * @see Variable
 	 */
@@ -38,7 +38,7 @@ public class Methode {
 	private boolean constant;
         
 	/**
-	 * Méthode abstraite
+	 * Méthode acstraite
 	 */
 	private boolean abstraite;
         
@@ -89,7 +89,7 @@ public class Methode {
 	 * Ajoute un paramètre à la liste de paramètre de la méthode
 	 * à la position souhaitée
 	 *
-	 * @param p_nouveauParamètre Le paramètre qui sera ajouté
+	 * @param p_nouveauParamètre Le paramèter qui sera ajouté
 	 * @param p_index La position du nouvel élément dans la liste (Indice de départ : 1)
 	 * @return La paramètre ajouté
 	 * @see Variable

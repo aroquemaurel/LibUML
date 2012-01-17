@@ -52,7 +52,7 @@ public class Traitement extends ElementModelisation {
 	private static final double DROITE_EVENEDECLENCHEUR = 35;
 
         /**
-         * Crée la flèche de début de séquence (flèche partant d'un traitement et revenant sur le même traitement)
+         * Créé la flèche de début de séquence (flèche partant d'un traitement et revenant sur les même traitement)
          */
     private void creerFlecheDebutSequence() {
         this.evenementDeclencheur = new Lien(this, this, super.getGraph(), super.getDiagramme(), null);
@@ -65,7 +65,7 @@ public class Traitement extends ElementModelisation {
         celluleFlecheEvenementDeclencheur = (mxCell) super.getGraph().insertEdge(super.getCellule(), null,
                         this.getTexte(), null, null, "FLECHE_EVENEMENT_DECLENCHEUR");
 
-        /* On crée une liste de point par laquelle passera la flèche correspondante à l'événement déclencheur */
+        /* On créé une liste de point par laquelle passera la flèche correspondant à l'événement déclencheur */
         listePoint.add(new mxPoint(GAUCHE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
         listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR,HAUT_EVENEDECLENCHEUR));
         listePoint.add(new mxPoint(DROITE_EVENEDECLENCHEUR, BAS_EVENEDECLENCHEUR));
@@ -80,7 +80,7 @@ public class Traitement extends ElementModelisation {
     }
     
 	/**
-	 * Crée le style pour le rectangle du traitement
+	 * Créer le style pour le rectangle du traitement
 	 */
 	private void creerStyleTraitement() {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
@@ -94,7 +94,7 @@ public class Traitement extends ElementModelisation {
 	}
 
 	/**
-	 * Crée le style pour la fleche de l'événement déclencheur du traitement
+	 * Creer le style pour la fleche de l'événement déclencheur du traitement
 	 */
 	private void creerStyleFlecheTraitement(){
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
@@ -116,7 +116,7 @@ public class Traitement extends ElementModelisation {
 	
 	/**
 	 * Constructeur de la classe traitement
-	 * @param p_graph Le graphe auquel sera ajouté le traitement
+	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
 	public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
@@ -155,7 +155,7 @@ public class Traitement extends ElementModelisation {
 	
 	/**
 	 * Modifie le fait que le traitement soit en début de séquence (ou non).
-	 * Cela a pour but d'afficher (ou non) l'élément déclencheur représenté par une flèche qui revient sur le 
+	 * Cela a pour but d'afficher (ou non) l'élément déclencheur représenté par une flèche qui reviens sur le 
 	 * traitement
 	 * 
 	 * @param p_boolean Debut de séquence ?

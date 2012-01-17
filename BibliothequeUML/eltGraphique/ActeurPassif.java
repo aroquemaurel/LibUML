@@ -18,7 +18,7 @@ import util.Constantes;
  */
 public class ActeurPassif extends Acteur {
     /**
-    * Crée le style d'un acteur passif
+    * Créer le style d'un acteur passif
     */
     private void creerStyleActeurPassif(){
             Map<String, Object> nouveauStyle = new HashMap<String, Object>();

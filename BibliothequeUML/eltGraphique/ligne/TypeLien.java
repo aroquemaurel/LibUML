@@ -7,6 +7,7 @@ package eltGraphique.ligne;
  * @author Marie-ly
  */
 public enum TypeLien {
+	/* Diagramme de classe */
 	ASSOCIATION,
 	SPECIALISATION,
 	COMPOSITION,
@@ -14,6 +15,8 @@ public enum TypeLien {
 	CLASSE_ASSOCIATION,
 	GENERALISATION,
 	DEPENDANCE,
+
+	/* Diagramme de séquence */
 	FLECHE,
 	FLECHE_EVENEMENT_DECLENCHEUR
 }

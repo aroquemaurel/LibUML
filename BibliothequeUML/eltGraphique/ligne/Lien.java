@@ -171,6 +171,8 @@ public class Lien extends ElementGraphique {
         this.source = p_source;
         this.destination = p_destination;
         this.typeLien = p_typeLien;
+        
+
     }
 
 	/**
@@ -319,6 +321,9 @@ public class Lien extends ElementGraphique {
 
         super.setConnectable(false);
         super.getDiagramme().getElementsGraphiques().add(this);
+        
+        this.source.ajouterLien(this);
+        this.destination.ajouterLien(this);
     }
 
 }

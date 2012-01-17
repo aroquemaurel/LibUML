@@ -23,7 +23,7 @@ public class Variable {
 
     /**
     * Constructeur d'une variable
-    *
+	*
     * @param p_constante Variable constante ?
     * @param p_type Type de la variable
     * @param p_nom Nom de la variable
@@ -36,7 +36,7 @@ public class Variable {
 
     /**
     * Retourne vrai si la variable est constante, faux sinon
-    *
+	*
     * @return Variable constante ?
     */
     public boolean estConstante() {
@@ -45,7 +45,7 @@ public class Variable {
 
     /**
     * Modifie la constance de la variable
-    *
+	*
     * @param p_constante Variable constante ?
     */
     public void setConstante(boolean p_constante) {
@@ -54,7 +54,7 @@ public class Variable {
 
     /**
     * Récupère le type de la variable
-    *
+	*
     * @return Le type de la variable
     */
     public String getType() {
@@ -63,7 +63,7 @@ public class Variable {
 
     /**
     * Modifie le type de la variable
-    *
+	*
     * @param p_typeLe nouveau type de la variable
     */
     public void setType(String p_type) {
@@ -72,7 +72,7 @@ public class Variable {
 
     /**
     * Récupère le nom de la variable
-    *
+	*
     * @return Le nom de la variable
     */
     public String getNom() {
@@ -81,7 +81,7 @@ public class Variable {
 
     /**
     * Modifie le nom de la variable
-    *
+	*
     * @param nom Le nouveau nom de la variable
     */
     public void setNom(String nom) {

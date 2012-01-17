@@ -4,6 +4,8 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
+import eltGraphique.ligne.Lien;
+import util.Liste;
 
 /**
  * Classe ancêtre à tout élément graphique
@@ -16,10 +18,17 @@ import diagramme.Diagramme;
  */
 abstract public class ElementGraphique extends mxCell implements IntElementGraphique {
 	/**
-	 * Graph dans lequel aparrait l'élément graphique 
+	 * Graph dans lequel aparait l'élément graphique 
 	 */
-	private mxGraph graph;
-
+    private mxGraph graph;
+    
+    
+    /** 
+     * Liste de liens partant ou pointant de l'élément graphique 
+     */
+    private Liste <Lien> liens;
+            
+       
     /**
      * Diagramme dans lequel apparait l'élément graphique 
      */
@@ -33,6 +42,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     public ElementGraphique(mxGraph p_graph, Diagramme p_diagramme) {
         this.graph = p_graph;
         this.diagramme = p_diagramme;
+        this.liens = new Liste<Lien>();
     }
 
     /**
@@ -40,13 +50,28 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     */
     @Override
     public void supprimer() {
-        super.getTarget().removeFromParent();
+        Liste<ElementModelisation> elementRelies = new Liste<ElementModelisation>();
+        
+        super.getTarget().removeFromParent();  
+
+        /* on supprime tous les liens qui vont avec l'élément graphique */
+        for(Lien element : this.liens){
+            elementRelies.add(element.getDestination());
+            elementRelies.add(element.getSource());
+            element.supprimer();
+        }
+
+        for(ElementModelisation element : elementRelies){
+            element.mettreAJour();
+        }
+                      
         super.setTarget(null);
         super.setParent(null);
-        
-        //TODO supprimer la flèche qui va avec l'élément.... ^^
     }
 
+    public void ajouterLien(Lien p_lien){
+        this.liens.ajouterElement(p_lien);
+    }
     /**
     * Rend (in)visible l'élément grahique sur le graphe
     * @param p_bool
@@ -57,7 +82,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
     
     /**
-    * Récupère la cellule associée à l'élément graphique
+    * Récupère la cellule associé à l'élément graphique
     * 
     * @param p_cellule La nouvelle cellule que représente l'élément
     */
@@ -79,7 +104,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
 
     /**
-    * Récupère le graphe auquel est associé l'élément
+    * Récupère le graphe auquel est associ l'élément
     * 
     * @return Le graph auquel est associé l'élément
     */
@@ -99,7 +124,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
 
     /**
-     * Récupère le diagramme dans lequel est l'élément de modélisation
+     * Récupère Le diagramme dans lequel est l'élément de modélisation
      * 
      * @return Le diagramme
      */
@@ -110,7 +135,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 
     /**
     * Methode abstraite
-    * Crée la représentation graphique de l'élément
+    * Créer la représentation graphique de l'élément
     *
     * @see ActeurActif
     * @see ActeurPassif
