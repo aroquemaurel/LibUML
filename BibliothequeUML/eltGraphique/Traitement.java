@@ -152,9 +152,13 @@ public class Traitement extends ElementModelisation {
 
         public void ajouterMessage(Traitement p_destination, String p_message, boolean pointillee){
             mxCell sourceSousCellule, destinationSousCellule;
+            /* on incrémente le nombre de message présent dans les traitements */
             this.incrementerNbMessages();
             p_destination.incrementerNbMessages();
 
+            /* On créer une cellule sur laquelle pointera la flèche avec le message, une pour la source
+             * une pour la destination
+             */
             this.creerStyleSousCelluleTraitement();
             sourceSousCellule = (mxCell) super.getGraph().insertVertex(
             super.getCellule(), null, null, 0, 20*this.nbMessages,
@@ -163,9 +167,13 @@ public class Traitement extends ElementModelisation {
             destinationSousCellule = (mxCell) super.getGraph().insertVertex(
             p_destination.getCellule(), null, null, 0, 20*p_destination.getNbMessages(),
             super.getDimension().getWidth(), 20, "SOUS_CELLULE_TRAITEMENT");
+            
+            /* On créer le lien */
             Lien msg = new MessageTraitement(this, p_destination, sourceSousCellule, 
                     destinationSousCellule, super.getGraph(), super.getDiagramme(), TypeLien.FLECHE);
             msg.creer();
+            
+            /* on empèche la connection manuelle */
             sourceSousCellule.setConnectable(false);
             destinationSousCellule.setConnectable(false);
             
