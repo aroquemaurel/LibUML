@@ -170,7 +170,7 @@ public class Traitement extends ElementModelisation {
             
             /* On créer le lien */
             Lien msg = new MessageTraitement(this, p_destination, sourceSousCellule, 
-                    destinationSousCellule, super.getGraph(), super.getDiagramme(), TypeLien.FLECHE);
+                    destinationSousCellule, p_message, super.getGraph(), super.getDiagramme(), TypeLien.FLECHE);
             msg.creer();
             
             /* on empèche la connection manuelle */
