@@ -144,7 +144,7 @@ public class Traitement extends ElementModelisation {
 	 */
 	public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, 
                 Lien p_evenementDeclencheur, boolean p_debutSequence){
-		super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
+		super(p_graph, p_diagramme, p_texte, new Dimension(20,20));
 		this.debutSequence = p_debutSequence;
 		this.evenementDeclencheur = p_evenementDeclencheur;
                 this.nbMessages = 0;
@@ -155,7 +155,11 @@ public class Traitement extends ElementModelisation {
             /* on incrémente le nombre de message présent dans les traitements */
             this.incrementerNbMessages();
             p_destination.incrementerNbMessages();
-
+            
+            super.setDimension(new Dimension((int) super.getDimension().getWidth(), 
+                    (int) super.getDimension().getHeight() + 20));
+            p_destination.setDimension(new Dimension((int) super.getDimension().getWidth(), 
+                    (int) super.getDimension().getHeight() + 20));            
             /* On créer une cellule sur laquelle pointera la flèche avec le message, une pour la source
              * une pour la destination
              */

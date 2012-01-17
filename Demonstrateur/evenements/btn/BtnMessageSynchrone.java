@@ -22,9 +22,10 @@ public class BtnMessageSynchrone extends Btn {
 
 	@Override
 	public void mouseClicked(MouseEvent event) {
-		EvenementsLienElementGraphique evenement =
-			new EvenementsLienElementGraphique(this.fenetre.getPanneauGraph(),
-					this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.SPECIALISATION);
-		this.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
+            EvenementsLienElementGraphique evenement =
+                    new EvenementsLienElementGraphique(this.fenetre.getPanneauGraph(),
+                    this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.SPECIALISATION);
+		
+            this.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
 	}
 }
