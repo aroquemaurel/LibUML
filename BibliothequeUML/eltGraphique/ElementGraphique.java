@@ -50,26 +50,22 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     */
     @Override
     public void supprimer() {
-        Liste<ElementModelisation> elementRelies = new Liste<ElementModelisation>();
+        Liste<ElementModelisation> elementsRelies = new Liste<ElementModelisation>();
         
-        super.getTarget().removeFromParent();  
-
         /* on supprime tous les liens qui vont avec l'élément graphique */
         for(Lien element : this.liens){
-            elementRelies.add(element.getDestination());
-            elementRelies.add(element.getSource());
+            elementsRelies.add(element.getDestination());
+            elementsRelies.add(element.getSource());
             element.supprimer();
         }
         
         /* on met à jour le diagramme */
-       ElementModelisation.mettreAJour(elementRelies);
-
-        super.setTarget(null);
-        super.setParent(null);
+       ElementModelisation.mettreAJour(elementsRelies);
+       super.getTarget().removeFromParent();  
     }
 
-    public void ajouterLien(Lien p_lien){
-        this.liens.ajouterElement(p_lien);
+    public Liste<Lien> getLiens(){
+        return (this.liens);
     }
     /**
     * Rend (in)visible l'élément grahique sur le graphe

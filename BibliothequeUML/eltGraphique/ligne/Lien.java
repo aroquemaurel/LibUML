@@ -322,8 +322,8 @@ public class Lien extends ElementGraphique {
         super.setConnectable(false);
         super.getDiagramme().getElementsGraphiques().add(this);
         
-        this.source.ajouterLien(this);
-        this.destination.ajouterLien(this);
+        this.source.getLiens().ajouterElement(this);
+        this.destination.getLiens().ajouterElement(this);
     }
 
 }
