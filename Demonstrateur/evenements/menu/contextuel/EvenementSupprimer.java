@@ -1,6 +1,6 @@
 package evenements.menu.contextuel;
 
-import eltModelisation.ElementGraphique;
+import eltGraphique.ElementGraphique;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
