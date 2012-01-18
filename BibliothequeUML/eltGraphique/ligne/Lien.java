@@ -7,6 +7,7 @@ import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ElementGraphique;
 import eltGraphique.ElementModelisation;
+import eltGraphique.Traitement;
 import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
@@ -112,21 +113,36 @@ public class Lien extends ElementGraphique {
                 feuilleStyles.putCellStyle("AGREGATION", nouveauStyle);
 	}
 
-	/* 
-	 * Construit le style d'une classique
+	/** 
+	 * Construit le style d'une flèche classique
 	 */ 
 	private void creerStyleFleche() {
-		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
-		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
-		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
-		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
-		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-		feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
+            mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+            Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+            nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+            nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+            nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+            nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+            nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+            feuilleStyles.putCellStyle("FLECHE", nouveauStyle);
 	}
-
-	/* 
+        
+        /**
+         * Construit le style d'une flèche en pointillée
+         */
+        private void creerStyleFlechePointille() {
+            mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+            Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+            nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+            nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC);
+            nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+            nouveauStyle.put(mxConstants.STYLE_DASHED, true);
+            nouveauStyle.put(mxConstants.STYLE_DASH_PATTERN, Constantes.ESPACE_TIRETS);
+            nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+            nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+            feuilleStyles.putCellStyle("FLECHE_POINTILLEE", nouveauStyle);
+        }
+	/**
 	 * Construit le style d'une association
 	 */ 
 	private void creerStyleAssociation() {
@@ -140,7 +156,7 @@ public class Lien extends ElementGraphique {
 		feuilleStyles.putCellStyle("ASSOCIATION", nouveauStyle);
 	}
 
-	/* 
+	/**
 	 * Construit le style d'une spécialisation 
 	 */ 
 	private void creerStyleSpecialisation() {
@@ -153,6 +169,7 @@ public class Lien extends ElementGraphique {
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
 		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
 	}
+
 
 	/**
 	 * Constructeur de la classe Lien modelisant tout type de lien dans un graphe
@@ -171,10 +188,36 @@ public class Lien extends ElementGraphique {
         this.source = p_source;
         this.destination = p_destination;
         this.typeLien = p_typeLien;
-        
-
     }
-
+    
+    public void creerLesStylesDeFleches(){
+        switch(this.typeLien){
+            case SPECIALISATION:
+                this.creerStyleSpecialisation();
+                break;
+            case ASSOCIATION:
+                this.creerStyleAssociation();
+                break;
+            case FLECHE:
+                this.creerStyleFleche();
+                break;
+            case FLECHE_POINTILLEE:
+                this.creerStyleFlechePointille();
+                break;                    
+            case AGREGATION:
+                this.creerStyleAgregation();
+                break;
+            case COMPOSITION:
+                this.creerStyleComposition();
+                break;
+            case DEPENDANCE:
+                this.creerStyleDependance();
+                break;
+            default:
+            throw new UnsupportedOperationException("Type de flèche inconnu");
+        }   
+    }
+    
 	/**
 	 * Récupère l'élément à l'extrémité de la flèche
 	 *
@@ -291,29 +334,9 @@ public class Lien extends ElementGraphique {
 	 */
 	@Override
     public void creer(){
-        switch(this.typeLien){
-            case SPECIALISATION:
-                this.creerStyleSpecialisation();
-                break;
-            case ASSOCIATION:
-                this.creerStyleAssociation();
-                break;
-            case FLECHE:
-                this.creerStyleFleche();
-                break;
-            case AGREGATION:
-                this.creerStyleAgregation();
-                break;
-            case COMPOSITION:
-                this.creerStyleComposition();
-                break;
-            case DEPENDANCE:
-                this.creerStyleDependance();
-                break;
-            default:
-              throw new UnsupportedOperationException("Type de flèche inconnu");
-        }
+       this.creerLesStylesDeFleches();
 
+        
         super.setCellule((mxCell) super.getGraph().insertEdge(
                 super.getGraph().getDefaultParent(), null, null,
                 this.getSource().getCellule(), this.getDestination().getCellule(),
@@ -322,8 +345,9 @@ public class Lien extends ElementGraphique {
         super.setConnectable(false);
         super.getDiagramme().getElementsGraphiques().add(this);
         
-        this.source.ajouterLien(this);
-        this.destination.ajouterLien(this);
+        this.source.getLiens().ajouterElement(this);
+        this.destination.getLiens().ajouterElement(this);
     }
+
 
 }

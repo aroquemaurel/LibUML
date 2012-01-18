@@ -7,6 +7,8 @@ import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.MessageTraitement;
+import eltGraphique.ligne.TypeLien;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,6 +52,11 @@ public class Traitement extends ElementModelisation {
 	 * Constante représentant la côte droite de l'élément déclencheur
 	 */
 	private static final double DROITE_EVENEDECLENCHEUR = 35;
+        
+        /**
+         * Nombre de messages en destination ou en source du Traitement
+         */
+        private int nbMessages;
 
         /**
          * Créé la flèche de début de séquence (flèche partant d'un traitement et revenant sur les même traitement)
@@ -82,7 +89,7 @@ public class Traitement extends ElementModelisation {
 	/**
 	 * Créer le style pour le rectangle du traitement
 	 */
-	private void creerStyleTraitement() {
+    private void creerStyleTraitement() {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
         Map<String, Object> nouveauStyle = new HashMap<String, Object>();
         nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
@@ -91,7 +98,23 @@ public class Traitement extends ElementModelisation {
         nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
         nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
         feuilleStyles.putCellStyle("TRAITEMENT", nouveauStyle);
-	}
+    }
+    
+    	/**
+	 * Créer le style pour les rectangles présents dans un traitement permettant de tracer plusieurs liens
+	 */
+    private void creerStyleSousCelluleTraitement() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+        Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+        nouveauStyle.put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_RECTANGLE);
+        nouveauStyle.put(mxConstants.STYLE_OPACITY, 0);
+        nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
+        nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, 0);
+        nouveauStyle.put(mxConstants.STYLE_MOVABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_RESIZABLE, 0);
+        nouveauStyle.put(mxConstants.STYLE_AUTOSIZE, 0);
+        feuilleStyles.putCellStyle("SOUS_CELLULE_TRAITEMENT", nouveauStyle);
+    }
 
 	/**
 	 * Creer le style pour la fleche de l'événement déclencheur du traitement
@@ -119,12 +142,58 @@ public class Traitement extends ElementModelisation {
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
-	public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Lien p_evenementDeclencheur, boolean p_debutSequence){
-		super(p_graph, p_diagramme, p_texte, new Dimension(20,80));
+	public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, 
+                Lien p_evenementDeclencheur, boolean p_debutSequence){
+		super(p_graph, p_diagramme, p_texte, new Dimension(20,20));
 		this.debutSequence = p_debutSequence;
 		this.evenementDeclencheur = p_evenementDeclencheur;
+                this.nbMessages = 0;
 	}
 
+        public void ajouterMessage(Traitement p_destination, String p_message, TypeLien p_typeLien){          
+            mxCell sourceSousCellule, destinationSousCellule;
+            /* on incrémente le nombre de message présent dans les traitements */
+            this.incrementerNbMessages();
+            p_destination.incrementerNbMessages();
+            
+            super.setDimension(new Dimension((int) super.getDimension().getWidth(), 
+                    (int) super.getDimension().getHeight() + 20));
+            p_destination.setDimension(new Dimension((int) super.getDimension().getWidth(), 
+                    (int) super.getDimension().getHeight() + 20));            
+            /* On créer une cellule sur laquelle pointera la flèche avec le message, une pour la source
+             * une pour la destination
+             */
+            this.creerStyleSousCelluleTraitement();
+            sourceSousCellule = (mxCell) super.getGraph().insertVertex(
+            super.getCellule(), null, null, 0, 20*this.nbMessages,
+            super.getDimension().getWidth(), 20, "SOUS_CELLULE_TRAITEMENT");
+            
+            destinationSousCellule = (mxCell) super.getGraph().insertVertex(
+            p_destination.getCellule(), null, null, 0, 20*p_destination.getNbMessages(),
+            super.getDimension().getWidth(), 20, "SOUS_CELLULE_TRAITEMENT");
+            
+            /* On créer le lien */
+            Lien msg = new MessageTraitement(this, p_destination, sourceSousCellule, 
+                    destinationSousCellule, p_message, super.getGraph(), super.getDiagramme(), p_typeLien);
+            msg.creer();
+            
+            /* on empèche la connection manuelle */
+            sourceSousCellule.setConnectable(false);
+            destinationSousCellule.setConnectable(false);
+            
+        }
+
+        public void incrementerNbMessages(){
+            this.nbMessages++;
+        }
+
+        public void decrementerNbMessages(){
+            this.nbMessages--;
+        }
+
+        public int getNbMessages(){
+            return (this.nbMessages);
+        }
 	/**
 	 * Récupère l'évenement déclencheur du traitement
 	 * @return L'élément déclencheur

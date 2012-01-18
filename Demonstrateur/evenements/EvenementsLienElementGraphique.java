@@ -3,6 +3,7 @@ package evenements;
 import com.mxgraph.model.mxCell;
 import diagramme.Diagramme;
 import eltGraphique.ElementModelisation;
+import eltGraphique.Traitement;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 import ihm.PanneauGraph;
@@ -46,26 +47,33 @@ public class EvenementsLienElementGraphique implements MouseListener {
 
 		
         if(celluleActuelle != null){ // si on a selectioné une cellule
-            if(this.sourceCelluleARelier == null) { // si on a pas déjà trouvé la source, on l'affecte, on incrémente le nombre de clic
+            // si on a pas déjà trouvé la source, on l'affecte, on incrémente le nombre de clic
+            if(this.sourceCelluleARelier == null) { 
                 this.numeroClique++;
                 this.sourceCelluleARelier = celluleActuelle;
-
-                celluleActuelle = null;
-            } else if(!celluleActuelle.equals(sourceCelluleARelier)){ // sinon, si la cellule ne correspond pas déjà à la source, on affecte la destination
+            } // sinon, si la cellule ne correspond pas déjà à la source, on affecte la destination
+            else if(!celluleActuelle.equals(sourceCelluleARelier)){ 
                 this.numeroClique++;
                 this.destinationCelluleARelier = celluleActuelle;
 
             }
-            if(this.destinationCelluleARelier != null && sourceCelluleARelier != null){ //on a trouvé la source et la destination, on peut les relier
-                Lien monLien = new Lien(
-                    (ElementModelisation) this.diagramme.getElementGraphiqueViaCellule(
-                                                                    this.sourceCelluleARelier),
-                    (ElementModelisation) this.diagramme.getElementGraphiqueViaCellule(
-                                                                    this.destinationCelluleARelier),
-                    this.panneauGraph.getGraph(), this.panneauGraph.getDiagramme(),
-                    this.typeDeLien);
-
-                monLien.creer();
+             //on a trouvé la source et la destination, on peut les relier
+            if(this.destinationCelluleARelier != null && sourceCelluleARelier != null){
+                ElementModelisation sourceElementModelisation = (ElementModelisation) 
+                        this.diagramme.getElementGraphiqueViaCellule(this.sourceCelluleARelier);
+                ElementModelisation destinationElementModelisation = (ElementModelisation) 
+                        this.diagramme.getElementGraphiqueViaCellule(this.destinationCelluleARelier);
+                
+                if(destinationElementModelisation instanceof Traitement && 
+                        sourceElementModelisation instanceof Traitement){
+                    Traitement traitementSource = (Traitement) sourceElementModelisation;
+                    traitementSource.ajouterMessage((Traitement) destinationElementModelisation, "Message", 
+                            this.typeDeLien);
+                } else {
+                    Lien monLien = new Lien(sourceElementModelisation, destinationElementModelisation, 
+                            this.panneauGraph.getGraph(), this.panneauGraph.getDiagramme(), this.typeDeLien);
+                    monLien.creer();
+                }
             }
         }
 
