@@ -66,8 +66,8 @@
 % - Utilisez la commande \inst uniquement s'il y a plusieurs affectations
 % - Faîtes quelque chose de simple, personne ne s'intéresse à votre adresse
 
-\date[ ~ ~ ~ 01 / 12 / 2011] % (facultatif, peut être une abréviation du nom de la conférence)
-{\today}
+\date[ ~ ~ ~ 26 / 01 / 2012] % (facultatif, peut être une abréviation du nom de la conférence)
+{26 / 01 / 2012}
 % - Utilisez à la fois le nom de la conférence et son abréviation.
 % - N'a pas réellement d'importance pour l'assistance qui sera présente lors de la conférence,
 %   mais en a surtout pour les personnes (y compris vous-même) qui liront les transparents en ligne.
@@ -121,91 +121,18 @@
 \begin{frame}
   \titlepage
 \end{frame}
-\input{intro.tex}
-\section{Besoin et contraintes}
-\subsection{Besoins}
-\begin{frame}{Les besoins}
-\begin{itemize}
-	\item<1-> Dessiner un diagramme de cas d'utilisation 
-	\item<2-> Dessiner un diagramme de séquence 
-	\item<3-> Dessiner un diagramme de classe
-	\item<4-> Avoir un démonstrateur 
-\end{itemize}
-	\begin{figure}
-		\begin{center}
-	\includegraphics<1,4>[width=2.8cm]{diagrammeUsecase.jpeg} ~ ~
-	\includegraphics<2,4>[width=2.8cm]{diagrammeSequence.jpeg} ~ ~
-	\includegraphics<3,4>[width=1.3cm]{diagrammeClasse.jpeg} 
-		\end{center}
-		\caption{Les différents diagrammes}
-	\end{figure}
-\end{frame}
-\subsection{Contraintes}
-\begin{frame}{Les contraintes}
-	\begin{itemize}
-		\item Rapidité et légèreté
-			\pause
-		\item Portabilité 
-			\pause
-		\item Ergonomie
-			\pause
-		\item Documentation
-			\pause
-		\item Propreté du code
-	\end{itemize}
-\end{frame}
-\section{Projet de résolution}
-\subsection{Méthodologie}
-\begin{frame}{Principe de la méthode}
-\begin{center}
-	{Incrément $=$ Nouvelle fonctionnalité}\newline
-	\includegraphics[width=9cm]{001.png} \newline
-	\pause
-	{Méthode incrémentale $\ne$ Méthode itérative}
-	\includegraphics[width=9cm]{002.png}
-\end{center}
-\end{frame}
-\begin{frame}{Intérets de cette méthode}
-	Intêrets de cette méthode:
-	\begin{itemize}
-		\item Maîtrise du projet
-		\item Attentes du client
-	\end{itemize}
-	
-	\pause
-	\begin{minipage}{4.4cm}
-	\begin{exampleblock}{Avantages}
-		\begin{itemize}
-			\item Produit utilisable
-			\item Modifiable
-		\end{itemize}
-	\end{exampleblock}
-\end{minipage}
-~ ~
-	\begin{minipage}[r]{4.4cm}
-	\begin{alertblock}{Inconvénients}
-		\begin{itemize}
-			\item Temps
-			\item Coût
-		\end{itemize}
-	\end{alertblock}
-\end{minipage}
-\end{frame}
-\subsection{Planning}
-\begin{frame}{\bsc{Gantt} prévisionnel}
-		\includegraphics[width=10cm]{projetiut-gantt.png}	
-\end{frame}
-\appendix
-\begin{frame}{Conclusion}
-	\begin{block}{~}
-		Méthodologie stricte \newline
-		Rendu régulier \newline
-	\end{block}
-	\pause
-	\begin{block}{Mais \ldots}
-		Retard sur le projet \newline
-		Mauvaise évaluation du travail à réaliser \newline
-	\end{block}
-\end{frame}
+% Introduction 2'
+%   - Glossaire
+\section{Objectifs} % 4'
+\subsection{Problème} % Poser problème/sujet
+\subsection{Architecture} % Architecture (package) -> pour la suite
+\section{Methode} % 4'
+\subsection{Outils} % Redmine/git && Javadoc && PMD
+\subsection{Développement} % Méthode incrémentale
+\section{Résultat} % 3'
+\subsection{Démonstration} % Show time!
+\subsection{Et après\ldots} % Génération code / Respect norme UML 2.0 / Ajout diagrammes
+% Conclusion 2'
+%    GANTT passé & présent
 \end{document}
 

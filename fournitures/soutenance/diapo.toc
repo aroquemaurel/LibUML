@@ -1,11 +1,9 @@
 \beamer@endinputifotherversion {3.07pt}
 \select@language {french}
-\beamer@sectionintoc {1}{Notre projet}{6}{0}{1}
-\beamer@subsectionintoc {1}{1}{Pr\'esentation des acteurs}{7}{0}{1}
-\beamer@subsectionintoc {1}{2}{D\'etails du projet}{15}{0}{1}
-\beamer@sectionintoc {2}{Besoin et contraintes}{20}{0}{2}
-\beamer@subsectionintoc {2}{1}{Besoins}{21}{0}{2}
-\beamer@subsectionintoc {2}{2}{Contraintes}{25}{0}{2}
-\beamer@sectionintoc {3}{Projet de r\'esolution}{30}{0}{3}
-\beamer@subsectionintoc {3}{1}{M\'ethodologie}{31}{0}{3}
-\beamer@subsectionintoc {3}{2}{Planning}{35}{0}{3}
+\beamer@sectionintoc {1}{Objectifs}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Probl\`eme}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Architecture}{3}{0}{1}
+\beamer@sectionintoc {2}{Methode}{3}{0}{2}
+\beamer@subsectionintoc {2}{1}{Outils}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{D\'eveloppement}{4}{0}{2}
+\beamer@sectionintoc {3}{R\'esultat}{4}{0}{3}
