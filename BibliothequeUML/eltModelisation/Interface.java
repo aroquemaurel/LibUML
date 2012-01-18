@@ -1,4 +1,4 @@
-package eltGraphique;
+package eltModelisation;
 
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;

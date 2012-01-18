@@ -1,6 +1,8 @@
 package eltGraphique;
 
 
+import eltModelisation.ActeurActif;
+import eltModelisation.ElementModelisation;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.util.mxConstants;

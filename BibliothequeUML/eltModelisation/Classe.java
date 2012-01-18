@@ -1,4 +1,4 @@
-package eltGraphique.classe;
+package eltModelisation;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
@@ -18,7 +18,7 @@ import util.Liste;
  * @author Mathieu
  * @author Antoine
  */
-public class Classe extends eltGraphique.ElementModelisation {
+public class Classe extends eltModelisation.ElementModelisation {
     /**
 	 * Classe abstraite ?
 	 */

@@ -4,11 +4,10 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
-import eltGraphique.Traitement;
+import eltModelisation.Traitement;
 
 /**
  *
- * @author Antoine
  */
 public class MessageTraitement extends Lien {
     private mxCell sourceSousCellule;

@@ -1,5 +1,7 @@
 package eltGraphique;
 
+import eltModelisation.ElementModelisation;
+import eltModelisation.ActeurPassif;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxStylesheet;
 import util.Constantes;

@@ -1,9 +1,9 @@
 package evenements.btn;
 
-import eltGraphique.classe.Attribut;
-import eltGraphique.classe.Classe;
-import eltGraphique.classe.Methode;
-import eltGraphique.classe.Visibilite;
+import eltModelisation.Attribut;
+import eltModelisation.Classe;
+import eltModelisation.Methode;
+import eltModelisation.Visibilite;
 import evenements.Btn;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;

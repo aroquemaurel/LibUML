@@ -1,8 +1,8 @@
 package eltGraphique;
 
-import eltGraphique.classe.Methode;
-import eltGraphique.classe.Variable;
-import eltGraphique.classe.Visibilite;
+import eltModelisation.Methode;
+import eltModelisation.Variable;
+import eltModelisation.Visibilite;
 import org.junit.After;
 import static org.junit.Assert.*;
 import org.junit.Before;

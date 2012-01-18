@@ -1,6 +1,6 @@
 package  evenements.btn;
 
-import eltGraphique.CasUtilisation;
+import eltModelisation.CasUtilisation;
 import evenements.Btn;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;

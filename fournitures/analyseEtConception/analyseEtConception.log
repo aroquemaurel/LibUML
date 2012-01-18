@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.22)  16 JAN 2012 17:18
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.29)  18 JAN 2012 09:42
 entering extended mode
  %&-line parsing enabled.
 **analyseEtConception.tex
@@ -796,15 +796,28 @@ File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
 Package: wrapfig 2003/01/31  v 3.6
 )
 (../couverture_entete.tex
+(/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks29
+\verbatim@line=\toks30
+\verbatim@in@stream=\read1
+)
+
+! LaTeX Error: File `datatool.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
 \@indexfile=\write4
 \openout4 = `analyseEtConception.idx'.
-
 
 Writing index file analyseEtConception.idx
 \@glossaryfile=\write5
 \openout5 = `analyseEtConception.glo'.
 
 Writing glossary file analyseEtConception.glo 
+\glossaireVar=\write6
 ) (./analyseEtConception.aux)
 \openout1 = `analyseEtConception.aux'.
 
@@ -833,11 +846,11 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \scratchbox=\box39
 \nofMPsegments=\count138
 \nofMParguments=\count139
-\everyMPshowfont=\toks29
+\everyMPshowfont=\toks31
 \MPscratchCnt=\count140
 \MPscratchDim=\dimen167
 \MPnumerator=\count141
-\everyMPtoPDFconversion=\toks30
+\everyMPtoPDFconversion=\toks32
 )
 LaTeX Info: Redefining \degres on input line 41.
 LaTeX Info: Redefining \dots on input line 41.
@@ -900,8 +913,8 @@ LaTeX Info: Redefining \ref on input line 41.
 LaTeX Info: Redefining \pageref on input line 41.
 
 (./analyseEtConception.out) (./analyseEtConception.out)
-\@outlinefile=\write6
-\openout6 = `analyseEtConception.out'.
+\@outlinefile=\write7
+\openout7 = `analyseEtConception.out'.
 
 \AtBeginShipoutBox=\box40
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 42.
@@ -953,10 +966,12 @@ LaTeX Font Info:    Try loading font information for OT1+phv on input line 42.
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 ) [1
 
+\openout6 = `glossaire.tex'.
+
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./analyseEtConception.toc
 )
-\tf@toc=\write7
-\openout7 = `analyseEtConception.toc'.
+\tf@toc=\write8
+\openout8 = `analyseEtConception.toc'.
 
  [2
 
@@ -988,10 +1003,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [5] (./analyseEtConception.aux) ) 
 Here is how much of TeX's memory you used:
- 14845 strings out of 495061
- 237215 string characters out of 1182621
- 314865 words of memory out of 3000000
- 17646 multiletter control sequences out of 15000+50000
+ 14896 strings out of 495061
+ 237941 string characters out of 1182620
+ 315813 words of memory out of 3000000
+ 17693 multiletter control sequences out of 15000+50000
  52815 words of font info for 49 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  47i,11n,49p,347b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1002,7 +1017,7 @@ type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb>
 /public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/
 share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texli
 ve/fonts/type1/urw/times/utmr8a.pfb>
-Output written on analyseEtConception.pdf (5 pages, 148334 bytes).
+Output written on analyseEtConception.pdf (5 pages, 148327 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  15 named destinations out of 1000 (max. 500000)

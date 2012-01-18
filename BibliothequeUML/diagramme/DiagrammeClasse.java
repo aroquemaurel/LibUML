@@ -1,7 +1,7 @@
 package diagramme;
 
 import eltGraphique.ElementGraphique;
-import eltGraphique.classe.Classe;
+import eltModelisation.Classe;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 
