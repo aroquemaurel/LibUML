@@ -106,7 +106,7 @@ public class FenetreDemo extends JFrame {
        FenetreDemo fenetre = new FenetreDemo();
 
        fenetre.afficherFenetre();
-       BoiteDialogueDiagramme boiteDialogue = new BoiteDialogueDiagramme(fenetre, true);       
+       BoiteDialogueDiagramme boiteDialogue = new BoiteDialogueDiagramme(fenetre);       
        boiteDialogue.afficherBoiteDialogue();
        
        Traitement t1 = new Traitement(fenetre.getPanneauGraph().getGraph(), 
