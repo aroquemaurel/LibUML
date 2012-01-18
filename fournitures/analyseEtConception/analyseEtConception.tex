@@ -39,6 +39,7 @@
 
 \input{../couverture_entete.tex}
 \begin{document}
+\setcounter{tocdepth}{4}
 	\maketitle
 	\newpage
 	\tableofcontents
@@ -54,18 +55,17 @@
 		en quatre paquetages comme suit :
 	\newline
 	\begin{wrapfigure}{r}{9cm}
-		\paragraph{~ ~}
 		Dans cet arbre représentant notre architecture, on peut voir certains noms \textbf{en gras} ou \textit{en italique}. 
 		Les noms \textbf{en gras} représentent les différents paquetages que nous avons séparés. Ceux \textit{en italiques} 
 		sont des classes abstraites crées afin de factoriser le code dans l'optique de réaliser une programmation objet optimale 
-		et de suivre les objectifs de propreté du code imposés par le client.\vspace{7px}
+		et de suivre les objectifs de propreté du code imposés par le client.\vspace{2px}
 		
 		Dans un premier temps, nous avons séparer les diagrammes des éléments graphiques. En effet, un diagramme sera composé de
 		toute sorte d'éléments graphiques. Puis nous avons découper ces derniers en deux, isolant ainsi les lignes des elements
-		de modélisation tels que les classes, les traitements ou les cas d'utilisation.\vspace{8px}
+		de modélisation tels que les classes, les traitements ou les cas d'utilisation.\vspace{2px}
 		
 		\textit{ElementGraphique} et \textit{ElementModelisation} sont des classes abstraites car elle regroupe les fonctions communes
-		à toues les lasses de leur package respectifs sans pour autant en fournir une implémentation de chacune d'elles -- comme par exemple la méthode qui crée la
+		à toues les lasses de leur paquetage respectifs sans pour autant en fournir une implémentation de chacune d'elles -- comme par exemple la méthode qui crée la
 		représentation graphique d'un élément ou celle qui permet de le supprimer d'un diagramme.
 	\end{wrapfigure}
 	% Arbre de classe
@@ -92,6 +92,7 @@
 					\begin{itemize}
 						\item Cardinalite
 						\item Lien
+						\item MessageTraitement
 						\item TypeLien
 					\end{itemize}
 			\end{itemize}
@@ -102,24 +103,35 @@
 				\item DiagrammeClasse
 				\item DiagrammeSequence
 			\end{itemize}
-	\end{itemize}\newpage 
-	\paragraph{}Prenons maintenant chaque paquetage séparément 
+	\end{itemize}
+	\newpage 
+	Prenons maintenant chaque paquetage séparément 
 	\subsection{Package eltGraphique}
-	Le package eltGraphique regroupe toutes les classes qui représentent des éléments graphiques. Il regroupe la classe 
-	\textit{ElementGraphique} et deux packages \textbf{eltModelisation} et \textbf{ligne}. Cette classe possède deux attributs 
+	Le paquetage eltGraphique regroupe toutes les classes qui représentent des éléments graphiques. Il regroupe la classe 
+	\textit{ElementGraphique} et deux paquetages \textbf{eltModelisation} et \textbf{ligne}. Cette classe possède deux attributs 
 	\texttt{graph} et \texttt{diagramme}, correspondant repectivement au graphe dans lequel sont stockés les éléments 
 	et le diagramme afficher à l'écran. Elle comprend également (en plus d'un constructeur initialisant les attributs) 
 	les méthodes \texttt{supprimer} permettant de supprimer un élément du graphe et du diagramme, ainsi que \texttt{creer}, 
 	méthode abstraite réimplémentée dans les classes descendentes servant à creer la représentation graphique de l'objet 
 	et l'afficher sur le diagramme.
-	\paragraph{Package eltModelisation} Ce package regroupe toutes les classes représentant les différents éléments de 
+	\paragraph{Package eltModelisation} Ce paquetage regroupe toutes les classes représentant les différents éléments de 
 	modélisation que l'on trouver dans les diagrammes UML de cas d'utilisation, classe et de séquence. \textit{Acteur} 
 	est une classe abstraite car les acteur actif et passifs ont beaucoup de caractéristiques identiques mais n'ont pas 
 	la même représentation sur un diagramme. Les classes Visibilite, Methode et Attribut permettent au client de créer 
 	facilement une interface de saisie de ces éléments, facilitant l'usage du logiciel final. De plus, l'ajout de ces 
 	méthodes et attributs dans des classes, des acteurs des traitements ou des interfaces pourra faciliter l'ajout futur 
 	de nouvelle fonctionnalités comme apr exemple de la génération de code Java.
-	\paragraph{Package ligne} Ce package regroupe peu de classe. TypeLien est une classe énumérée servant à recenser
-	toutes les types graphiques de liens existant dans la notation UML.
+	\paragraph{Package ligne} Ce paquetage regroupe peu de classe. TypeLien est une classe énumérée servant à recenser
+	toutes les types graphiques de liens existant dans la notation UML. Cardinalite quant à elle, permet comme Methode 
+	ou Attribut, d'aider le client à permettre un saisie facilité des cardinalités d'un lien dans un diagramme de classe par exemple.
+	La classe Lien comprend la méthode \texttt{creer} qui va configurer tous les styles de liens et applique au nouveau lien
+	le style choisi par l'utilisateur. MessageTraitement spécialise Lien, permettant de créer un style de lien particulier
+	aux massages entre traitement dans les diagrammes de séquences.
+	\subsection{Package diagramme}
+	La paquetage \textbf{diagramme} comprend plusieurs type de diagramme prédéfinis qui sont cas d'utilisation, classe et séquence.
+	Ils descendent de la classe Diagramme. Chaque type de diagramme implémente deux méthode \texttt{eltAutorise} et \texttt{lienAutorise}
+	qui permettent respectivement d'autoriser ou interdire un type d'élément particulier et un type de lien entre deux types d'éléments
+	particuliers. La classe Diagramme est générique. Par défaut elle autorise tous les éléments et tous les liens. Il est donc possible
+	au client de réimplémnter ses propres méthodes pour créer ses propres règles.
 	
 \end{document}
