@@ -1,9 +1,9 @@
-package eltGraphique;
+package eltModelisation;
 
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
-import eltGraphique.classe.Classe;
+import eltGraphique.ElementGraphique;
 import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
 import java.awt.Point;

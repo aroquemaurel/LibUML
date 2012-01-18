@@ -1,4 +1,4 @@
-package eltGraphique.classe;
+package eltModelisation;
 
 /**
  * Représente une variable en général

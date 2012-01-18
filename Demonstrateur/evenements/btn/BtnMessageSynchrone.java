@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package evenements.btn;
 
 import eltGraphique.ligne.TypeLien;
@@ -12,7 +8,6 @@ import java.awt.event.MouseEvent;
 
 /**
  *
- * @author satenske
  */
 public class BtnMessageSynchrone extends Btn {
 

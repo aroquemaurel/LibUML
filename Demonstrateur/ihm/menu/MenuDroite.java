@@ -1,6 +1,6 @@
 package ihm.menu;
 
-import eltGraphique.classe.Classe;
+import eltModelisation.Classe;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.JScrollPane;

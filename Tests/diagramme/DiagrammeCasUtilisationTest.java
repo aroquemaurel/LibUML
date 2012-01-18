@@ -1,8 +1,11 @@
 package diagramme;
 
-import eltGraphique.classe.Classe;
-import eltGraphique.Traitement;
-import eltGraphique.ActeurPassif;
+import eltModelisation.ActeurActif;
+import eltModelisation.CasUtilisation;
+import eltModelisation.Interface;
+import eltModelisation.Classe;
+import eltModelisation.Traitement;
+import eltModelisation.ActeurPassif;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 import com.mxgraph.view.mxGraph;

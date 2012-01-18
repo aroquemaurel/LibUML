@@ -1,10 +1,10 @@
 package diagramme;
 
 import com.mxgraph.view.mxGraph;
-import eltGraphique.*;
-import eltGraphique.classe.Classe;
+import eltGraphique.ElementGraphique;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
+import eltModelisation.*;
 import java.util.List;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;

@@ -1,10 +1,10 @@
 package evenements;
 
 import com.mxgraph.model.mxCell;
-import eltGraphique.Acteur;
 import eltGraphique.ElementGraphique;
-import eltGraphique.Traitement;
-import eltGraphique.classe.Classe;
+import eltModelisation.Acteur;
+import eltModelisation.Classe;
+import eltModelisation.Traitement;
 import evenements.menu.contextuel.EvenementDebutSequence;
 import evenements.menu.contextuel.EvenementLigneDeVie;
 import evenements.menu.contextuel.EvenementSupprimer;

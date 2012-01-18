@@ -1,8 +1,7 @@
 package ihm;
 
-import eltGraphique.Traitement;
-import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
+import eltModelisation.Traitement;
 import evenements.EvenementCelluleSelectionne;
 import ihm.menu.BarreMenus;
 import ihm.menu.BarreOutilsDessin;

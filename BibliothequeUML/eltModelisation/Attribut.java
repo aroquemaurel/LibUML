@@ -1,4 +1,4 @@
-package eltGraphique.classe;
+package eltModelisation;
 
 /**
  * Représente un attibut d'une classe

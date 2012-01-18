@@ -5,6 +5,8 @@ import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
 import eltGraphique.ligne.Lien;
+import eltModelisation.ElementModelisation;
+import eltModelisation.IntElementGraphique;
 import util.Liste;
 
 /**

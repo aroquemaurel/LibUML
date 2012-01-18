@@ -1,6 +1,6 @@
 package evenements.btn;
 
-import eltGraphique.ActeurPassif;
+import eltModelisation.ActeurPassif;
 import evenements.Btn;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;

@@ -1,11 +1,11 @@
 package diagramme;
 
-import eltGraphique.ActeurActif;
-import eltGraphique.ActeurPassif;
 import eltGraphique.ElementGraphique;
-import eltGraphique.Traitement;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
+import eltModelisation.ActeurActif;
+import eltModelisation.ActeurPassif;
+import eltModelisation.Traitement;
 
 /**
  * Cette classe permet de représenter et de manipuler <b>un Diagramme de Sequence</b>.

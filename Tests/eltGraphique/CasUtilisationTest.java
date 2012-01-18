@@ -1,5 +1,7 @@
 package eltGraphique;
 
+import eltModelisation.CasUtilisation;
+import eltModelisation.ElementModelisation;
 import diagramme.Diagramme;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;

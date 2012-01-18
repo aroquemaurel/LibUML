@@ -1,7 +1,6 @@
 package evenements.btn;
 
-import eltGraphique.Traitement;
-import eltGraphique.ligne.Lien;
+import eltModelisation.Traitement;
 import evenements.Btn;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;

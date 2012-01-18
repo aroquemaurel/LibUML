@@ -2,8 +2,8 @@ package evenements;
 
 import com.mxgraph.model.mxCell;
 import diagramme.Diagramme;
-import eltGraphique.ElementModelisation;
-import eltGraphique.Traitement;
+import eltModelisation.ElementModelisation;
+import eltModelisation.Traitement;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 import ihm.PanneauGraph;
