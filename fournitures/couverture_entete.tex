@@ -140,9 +140,9 @@ IUT A - Toulouse Rangueil\\
 
 \newwrite\glossaireVar
 \openout\glossaireVar=glossaire
-\write\glossaireVar{\noexpand\chapter{Glossaire}}
+\write\glossaireVar{\noexpand}
 \newcommand{\glo}[3]{
-\policeGlossaire{\hspace{-4px}#1\hspace{-8px}}
+\policeGlossaire{\hspace{-4px}#1\hspace{-6px}}
 	\write\glossaireVar{\noexpand\sortitem{#2}{\thepage}{#3}}
 }
 
