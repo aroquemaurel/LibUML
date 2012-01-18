@@ -104,7 +104,10 @@ public class FenetreDemo extends JFrame {
     */
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
+
        fenetre.afficherFenetre();
+       BoiteDialogueDiagramme boiteDialogue = new BoiteDialogueDiagramme(fenetre, true);       
+       boiteDialogue.afficherBoiteDialogue();
        
        Traitement t1 = new Traitement(fenetre.getPanneauGraph().getGraph(), 
                fenetre.getPanneauGraph().getDiagramme(), "", null, true);
