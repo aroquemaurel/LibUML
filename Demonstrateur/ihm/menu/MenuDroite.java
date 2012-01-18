@@ -1,8 +1,11 @@
 package ihm.menu;
 
 import eltModelisation.Classe;
+import evenements.EvenementListeDiagramme;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
@@ -10,14 +13,32 @@ import javax.swing.table.TableColumn;
 /**
 * Menu contenant le tableau avec les données
 */
-public class MenuDroite extends Menu {
+public class MenuDroite extends Menu {   
+    private void parametrerMenuDroite(){
+    }
+    
     public MenuDroite (Dimension p_dimension, FenetreDemo p_fenetre){
         super(p_dimension, p_fenetre);
-    }
+/*        this.listeDeroulanteDiagrammes = new JComboBox();
+        this.labelListeDeroulante = new JLabel("Type de contrainte: ");
+        this.evenementListeDiagramme = new EvenementListeDiagramme(this.listeDeroulanteDiagrammes);
+        this.parametrerMenuDroite();
+  */  }
 
     /*  */
     @Override
-    public void ajouterObjetsGraphiques() {}
+    public void ajouterObjetsGraphiques() {
+      /*  super.add(labelListeDeroulante);
+        super.add(listeDeroulanteDiagrammes);
+        
+        this.listeDeroulanteDiagrammes.addItem("Aucune contrainte");
+        this.listeDeroulanteDiagrammes.addItem("Diagramme de cas d'utilisation");
+        this.listeDeroulanteDiagrammes.addItem("Diagramme de classe");
+        this.listeDeroulanteDiagrammes.addItem("Diagramme de séquence");
+        
+        this.listeDeroulanteDiagrammes.addActionListener(this.evenementListeDiagramme);
+    */
+    }
 
     public void afficherTableauClasse(Classe classe){
         Object[][] donnees = new Object[classe.getAttributs().size()][5];
