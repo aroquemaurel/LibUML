@@ -39,12 +39,74 @@
 
 \input{../couverture_entete.tex}
 \begin{document}
-\setcounter{tocdepth}{4}
+%\setcounter{tocdepth}{4}
 	\maketitle
 	\newpage
 	\tableofcontents
 	\newpage
-	\chapter{Analyse}
+	\chapter{Spécification des besoins}
+	\section{Objectifs, champ d'application, limites du système}
+	La demande de ce système émane de Monsieur Thierry \bsc{Millan}, enseignant à l'IUT A Toulouse et chercheur
+	à l'IRIT, qui nous a demandé la création d'une bibliothèque d'objets graphiques représentant
+	les différents éléments de modélisation de la norme UML 2 en suivant un modèle de développement incrémental.
+	La particularité de cette bibliothèque etant de respecter la norme UML 2 ce qui impose des restrictions
+	d'utilisation sur chacun des éléments graphiques utilisés.
+
+	Cette bibliothèque d'objets graphiques doit comprendre l'ensemble des éléments graphiques composant
+	les principaux diagrammes utilisés dans la norme UML afin d'être utilisable par toutes les personnes
+	participant à la production d'un projet. % Mouais.... 
+	
+	Suivant la demande du client, nous nous sommes limités aux 3 diagrammes principaux de la norme UML 2 :
+	diagramme de cas d'utilisation, de classe et de séquence.
+
+	Nous avons choisi de developper notre projet en utilisant la bibliothèque JGraphX
+	qui est une bibliothèque graphique contenant une multitude d'éléments permettant
+	par exemple de dessiner facilement des graphes ou des organigrammes. De plus, elle intègre les principaux 
+	pictogrammes que l'on retrouve dans les différents diagrammes UML tels que les cas d'utilisation (ellipse)
+	ou les acteurs (bonhomme).
+
+	\subsection{Fonctionnalités du système}
+	\begin{itemize}
+		\item Permettre de dessiner un \glo{diagramme de classe}{Diagramme de classe}{Schéma utilisé en
+			génie logiciel pour représenter les classes et les interfaces des systèmes ainsi que les différentes
+			relations entre celles-ci.}.
+		\item Permettre de dessiner un \glo{diagramme de séquence}{Diagramme de séquence}{
+			Représentation graphique des interactions entre les acteurs et le système
+	selon un ordre chronologique. Ce diagramme est inclus dans la partie dynamique d'UML.}.
+		\item Permettre de dessiner un diagramme de cas d'utilisation.
+		\item Permettre de restreindre l'utilisation des éléments graphiques aux seuls diagrammes dans lesquels ils sont utilisés.
+	\end{itemize}
+	\subsection{Etats de sortie du système}
+	D'autres logiciels utiliseront la bibliothèque en tant que composant, la bibliothèque graphique
+	permettra à chaque utilisateur d'intégrer séparément chaque objet graphique dans d'autres projets,
+	et ainsi être réutilisée dans d'autres objectifs ou en association avec d'autres composants.
+	Par conséquent le système n'a pas d'états de sortie à proprement parler.\\
+	Néanmoins nous avons développé un démonstrateur parallèlement au projet dans le but de démontrer
+	le bon fonctionnement de notre système.
+	Ce dernier, utilise notre bibliothèque d'objet graphique et a pour états de sortie la représentation
+	graphique à l'écran des différents diagrammes UML dessinés. % screen !
+
+	\section{Besoins non-fonctionnels}
+		\paragraph{En efficacité :}
+		Temps de réponse - Le temps de réponse doit être suffisament rapide pour permettre une utilisation fluide du système.
+		Consomation de mémoire - Le système ne doit pas consommer plus de 200 Mo de mémoire vive.
+		\paragraph{En implémentation :}
+		Propreté du code - Le nombre cyclomatique ne doit pas dépasser 15.
+		\paragraph{En interopérabilité :}
+		La capture des erreurs d'entrée-sortie - comment traiter les échecs d'interface électroniques, etc.
+		Le traitement des mauvaises données - import de données, marquer-et-continuer ou arrêt la politique d'importation, etc.
+		Intégrité des données - intégrité référentielle dans tables de base de données et interfaces
+		\paragraph{En compatibilité :}
+		La compatibilité avec des applications utilisant le système en tant que composant - Le système doit être facilement
+		utilisable par des applications extérieurs qui l'utiliserait comme composant.
+		La compatibilité sur des systèmes d'exploitation différents. Le système doit être capable de fonctionner sur les 
+		systèmes d'exploitations les plus courant (Windows, Mac OS, Linux).
+		\paragraph{En ergonomie :}
+		Les standards d'ergonomie - la densité d'éléments sur les écrans, la disposition et le flux, les couleurs, l'Interface 
+		Utilisateur et les raccourcis clavier doivent correspondre aux normes d'ergonomie.
+		Internationalisation / besoins de localisation - Le système doit pouvoir être utilisé par des utilisateurs de nationalité autre que française.
+		\paragraph{En documentation :}
+		Eléments de documentation requis - Le système doit être suffisament documenter pour être compréhensible rapidement.
 	\chapter{Conception}
 	\section{Architecture générale du projet}
 		L'architecture est la base d'une conception telle que nous l'avons choisie. En utilisant la notation UML, 
@@ -139,4 +201,8 @@
 	documentation ou à l'adresse \\
 	$\rhd$ \url{http://documentation.joohoo.fr/libUML}
 	
+	\chapter{Glossaire}
+	\begin{sortedlist}
+		\input{glossaire.tex}
+	\end{sortedlist}
 \end{document}
