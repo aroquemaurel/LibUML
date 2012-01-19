@@ -5,7 +5,7 @@ import eltModelisation.Classe;
 import eltModelisation.Methode;
 import eltModelisation.Visibilite;
 import evenements.Btn;
-import ihm.FenetreAjoutClasse;
+import ihm.FenetreAjoutMethode;
 import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdiction;
 import ihm.fenetreInterdiction.FenetreInterdictionAjoutElement;
@@ -46,9 +46,7 @@ public class BtnClasse extends Btn {
         classe.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false,"Classe", "monAttribut3"));
         
         if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(classe)){
-            //classe.creer();
-            FenetreAjoutClasse fenetreClasse = new FenetreAjoutClasse(this.fenetre, "Ajout d'une méthode");
-            fenetreClasse.afficherFenetre();
+            classe.creer();
         } else {
             FenetreInterdiction fenetreInterdiction = new FenetreInterdictionAjoutElement(this.fenetre);
             fenetreInterdiction.afficherInterdiction();

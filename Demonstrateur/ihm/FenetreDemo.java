@@ -1,7 +1,7 @@
 package ihm;
 
-import eltGraphique.ligne.TypeLien;
-import eltModelisation.Traitement;
+import diagramme.Diagramme;
+import eltModelisation.Classe;
 import evenements.EvenementCelluleSelectionne;
 import ihm.menu.BarreMenus;
 import ihm.menu.BarreOutilsDessin;
@@ -109,9 +109,15 @@ public class FenetreDemo extends JFrame {
     */
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
-       FenetreAjoutClasse fenetreA = new FenetreAjoutClasse(fenetre, "Ajout d'une méthode");      
-     //  fenetre.afficherFenetre();
+       fenetre.getPanneauGraph().initialiserDiagramme(new Diagramme());
+       Classe maClasse  = new Classe(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "test");
+       FenetreAjoutMethode fenetreA = new FenetreAjoutMethode(fenetre, "Ajout d'une méthode", 
+               maClasse);      
+     
        fenetreA.afficherFenetre();
+       fenetre.afficherFenetre();
+       maClasse.creer();
+       
      //  fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
 
     }
