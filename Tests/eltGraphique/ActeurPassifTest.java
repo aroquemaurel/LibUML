@@ -45,25 +45,49 @@ public class ActeurPassifTest {
 		this.acteur = null;
     }
 
-	
+	/**
+	 * Test unitaire qui teste l'acteur passif n'a pas d'élément parent
+	 * 
+	 * Vérifie que :
+	 *  - la cellule parente est la même que la cellule actuelle
+	 */
     @Test
     public void testCelluleParent(){
         mxICell cellule = this.acteur.getParent();
         assertEquals(cellule, this.acteur.getCellule());
 	}
 	
+	/**
+	 * Test unitaire qui teste que l'acteur passif n'a pas d'élément cible
+	 * 
+	 * Vérifie que :
+	 *  - la cellule cible est la même que la cellule actuelle
+	 */
     @Test
 	public void testCelluleTarget() {
 		mxICell cellule = this.acteur.getTarget();
 		assertEquals(cellule, this.acteur.getCellule());
     }
 
+	/**
+	 * Test unitaire qui teste que la methode getCellule retourne
+	 * bien la bonne cellule
+	 * 
+	 * Vérifie que :
+	 *  - la cellule renvoyée par getCellule est correcte
+	 */
     @Test
     public void testCellule(){
 		mxICell cellule = this.acteur.getCellule();
 		assertEquals(cellule, this.acteur.getCellule());
     }
 
+	/**
+	 * Test unitaire que teste l'instanciation du champ
+	 * 
+	 * Vérifie que :
+	 *  - le champ est une instance de la classe ActeurPassif
+	 */
     @Test
     public void testInstance(){
 		assertTrue(this.acteur instanceof ActeurPassif);
