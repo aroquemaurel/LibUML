@@ -12,7 +12,6 @@ import javax.swing.JPanel;
  *
  */
 public class FenetreInterdiction extends JDialog {
-    //private JButton boutonJeNeLeFeraisPlus;
     private JLabel texteInterdiction;
     private JPanel panneau;
     private ImageIcon panneauErreur;
