@@ -20,15 +20,54 @@ import util.Liste;
  */
 public class DiagrammeTest {
     
+    /**
+    * Le champ diagramme sur lequel on effectuera les tests
+    */
     private Diagramme monDiagramme;
+    
+    /**
+    * Le champ graphe sur lequel on effectuera les tests
+    */
     private mxGraph monGraph;
+    
+    /**
+    * Le champ message sur lequel on effectuera les tests
+    */
     private String maString;
+    
+    /**
+    * Le champ acteur actif sur lequel on effectuera les tests
+    */
     private ActeurActif monActeurActif;
+    
+    /**
+    * Le champ cas d'utilisation sur lequel on effectuera les tests
+    */
     private CasUtilisation monCasUtilisation;
+    
+    /**
+    * Le champ acteur passif sur lequel on effectuera les tests
+    */
     private ActeurPassif monActeurPassif;
+    
+    /**
+    * Le champ traitement sur lequel on effectuera les tests
+    */
     private Traitement monTraitement;
+    
+    /**
+    * Le champ classe sur lequel on effectuera les tests
+    */
     private Classe maClasse;
+    
+    /**
+    * Le champ interface sur lequel on effectuera les tests
+    */
     private Interface monInterface;
+    
+    /**
+    * Le champ lien sur lequel on effectuera les tests
+    */
     private Lien monLien;
     
     @Before
@@ -49,6 +88,16 @@ public class DiagrammeTest {
     @After
     public void tearDown() {
         this.monDiagramme = null;
+        this.monGraph = null;
+        this.maString = null;
+        
+        this.monActeurActif = null;
+        this.monActeurPassif = null;
+        this.monCasUtilisation = null;
+        this.monTraitement = null;
+        this.maClasse = null;
+        this.monInterface = null;
+        this.monLien = null;
     }
     
     @Test
