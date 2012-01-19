@@ -13,11 +13,14 @@ import javax.swing.JDialog;
 public class BoutonFenetres extends JButton implements MouseListener {
     private JDialog fenetre;
     
-    public BoutonFenetres(FenetreAjoutClasse p_fenetre, String p_texte){
+    public BoutonFenetres(JDialog p_fenetre, String p_texte){
         super(p_texte);
         this.fenetre = p_fenetre;
     }
 
+    public JDialog getFenetre(){
+        return (this.fenetre);
+    }
     @Override
     public void mouseClicked(MouseEvent me) {
         throw new UnsupportedOperationException("Not supported yet.");
