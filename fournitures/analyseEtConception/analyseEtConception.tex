@@ -16,6 +16,8 @@
 \usepackage{makeidx}
 \usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, urlcolor=blue]{hyperref}
 \usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{array}
 
 %\newCommand{\footGauche}{} Université paul sabatier Toulouse III
 \newcommand{\footCentre}{}
@@ -46,24 +48,35 @@
 	\newpage
 	\chapter{Spécification des besoins}
 	\section{Objectifs, champ d'application, limites du système}
-	La demande de ce système émane de Monsieur Thierry \bsc{Millan}, enseignant à l'IUT A Toulouse et chercheur
-	à l'IRIT, qui nous a demandé la création d'une bibliothèque d'objets graphiques représentant
-	les différents éléments de modélisation de la norme UML 2 en suivant un modèle de développement incrémental.
-	La particularité de cette bibliothèque etant de respecter la norme UML 2 ce qui impose des restrictions
+	La demande de ce système émane de Monsieur Thierry \bsc{Millan}, enseignant à l'IUT\footnote{Institut Universitaire de Technologie}
+	'A' Toulouse et chercheur à l'IRIT\footnote{Institut de Recherche Informatique de Toulouse},
+	qui nous a demandé la création d'une bibliothèque d'objets graphiques représentant
+	les différents éléments de modélisation de la norme \glo{UML}{UML}{(Unified Modeling Language) Langage de modélisation
+	graphique à base de pictogramme. Il est apparu dans le monde du génie logiciel dans le cadre de la conception orientée
+	objet. Ce langage est composé de différents diagrammes, allant du développement à la simple analyse des besoins.}
+	\footnote{Unified Modeling Language} 2.0 en suivant un modèle de développement \glo{incrémental}
+	{Incrément}{Fonctionnalité du logiciel, ayant un cycle de developpement lui étant propre (Analyse, Développement, Tests).
+	Cette fonctionnalité doit être opérationnelle pour que l'incrément soit terminé. Il doit améliorer le logiciel
+	par rapport à l'incrément précédent, et ne doit pas altérer les fonctionnalités précédentes.}.
+	La particularité de cette bibliothèque etant de respecter la norme UML 2.0 ce qui impose des restrictions
 	d'utilisation sur chacun des éléments graphiques utilisés.
 
+
 	Cette bibliothèque d'objets graphiques doit comprendre l'ensemble des éléments graphiques composant
-	les principaux diagrammes utilisés dans la norme UML afin d'être utilisable par toutes les personnes
-	participant à la production d'un projet. % Mouais.... 
+	les principaux diagrammes vue durant les cours de PRL\footnote{Production de logiciel} de M. \bsc{Millan} afin
+	d'être utilisable pour toutes les étapes de la conception de projets respectant la norme UML 2.0.
 	
-	Suivant la demande du client, nous nous sommes limités aux 3 diagrammes principaux de la norme UML 2 :
+	Suivant la demande du client, nous nous sommes limités aux trois diagrammes principaux de la norme UML 2.0 :
 	diagramme de cas d'utilisation, de classe et de séquence.
 
 	Nous avons choisi de developper notre projet en utilisant la bibliothèque JGraphX
 	qui est une bibliothèque graphique contenant une multitude d'éléments permettant
 	par exemple de dessiner facilement des graphes ou des organigrammes. De plus, elle intègre les principaux 
-	pictogrammes que l'on retrouve dans les différents diagrammes UML tels que les cas d'utilisation (ellipse)
+	pictogrammes que l'on retrouve dans les différents diagrammes UML 2.0 tels que les cas d'utilisation (ellipse)
 	ou les acteurs (bonhomme).
+	\glo{}{Modèle de développement incrémental}{Méthode de développement d'un projet dans laquel le projet final
+	est divisé en plusieurs fonctionnalités appellé incrément qui sont développées et ajouté au projet 
+	au fur et à mesure.}
 
 	\subsection{Fonctionnalités du système}
 	\begin{itemize}
@@ -73,7 +86,8 @@
 		\item Permettre de dessiner un \glo{diagramme de séquence}{Diagramme de séquence}{
 			Représentation graphique des interactions entre les acteurs et le système
 	selon un ordre chronologique. Ce diagramme est inclus dans la partie dynamique d'UML.}.
-		\item Permettre de dessiner un diagramme de cas d'utilisation.
+		\item Permettre de dessiner un \glo{diagramme de cas d'utilisation}{Diagramme de cas d'utilisation}
+			{Représentation graphique permettant de décrire les intéractions entre les acteurs et le système.}.
 		\item Permettre de restreindre l'utilisation des éléments graphiques aux seuls diagrammes dans lesquels ils sont utilisés.
 	\end{itemize}
 	\subsection{Etats de sortie du système}
@@ -87,7 +101,7 @@
 	graphique à l'écran des différents diagrammes UML dessinés. % screen !
 
 	\section{Besoins non-fonctionnels}
-		\paragraph{En efficacité :}
+		\paragraph{En efficacité~ :}
 		Temps de réponse - Le temps de réponse doit être suffisament rapide pour permettre une utilisation fluide du système.
 		Consomation de mémoire - Le système ne doit pas consommer plus de 200 Mo de mémoire vive.
 		\paragraph{En implémentation :}
@@ -107,6 +121,61 @@
 		Internationalisation / besoins de localisation - Le système doit pouvoir être utilisé par des utilisateurs de nationalité autre que française.
 		\paragraph{En documentation :}
 		Eléments de documentation requis - Le système doit être suffisament documenter pour être compréhensible rapidement.
+	\section{Cas d'utilisations}
+
+	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
+	Cas d'utilisation & Permettre de modéliser un diagramme de classe.\\
+	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de classe.
+	(C'est à dire les fonctionnalités permettant de dessiner les objets graphiques : classe, association, classe-assosiation,
+	Agrégation, Composition, Héritage) \\
+	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner un
+	élément graphique utilisé dans un diagramme de classe.\\
+	Entrées & -\\
+	Sorties & -\\
+	Préconditions & L'utilisateur devra spécifier que son diagramme est un diagramme de classe.\\
+	Postconditions & -\\\vspace{10px}
+	Anomalies & -\\
+	\end{longtable}
+	\newpage
+	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
+
+	Cas d'utilisation & Permettre de modéliser un diagramme de séquence.\\
+	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de séquence.
+	(C'est à dire les fonctionnalités permettant de dessiner les objets graphiques : Acteur actif, Acteur passif, Traitement,
+	Message synchrone, message asynchrone et ligne de vie)\\
+	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner une élément
+	graphique utilisé dans un diagramme de séquence.\\
+	Entrées & -\\
+	Sorties & -\\
+	Préconditions & L'utilisateur devra spécifier que son diagramme est un diagramme de séquence. \\
+	Postconditions & -\\\vspace{10px}
+	Anomalies & -\\
+
+	Cas d'utilisation & Permettre de modéliser un diagramme de cas d'utilisation.\\
+	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de cas d'utilisation.
+	(C'est à dire les fonctionnalités permettant de dessiner les objets graphiques : Acteur Actif, Acteur passif, Association,
+	Dependance fonctionnelle, Spécialisation)\\
+	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner une
+	élément graphique utilisé dans un diagramme de cas d'utilisation.\\
+	Entrées & -\\
+	Sorties & -\\
+	Préconditions & L'utilisateur devra spécifier que son diagramme est un diagramme de cas d'utilisation.\\
+	Postconditions & -\\\vspace{10px}
+	Anomalies & -\\
+
+	Cas d'utilisation & Permettre de restreindre l'utilisation des éléments graphiques aux seuls diagrammes dans lesquels ils sont utilisés.\\
+	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de restreindre l'utilisation des éléments
+	graphiques aux seuls diagrammes dans lesquels ils sont utilisés. Permettant ainsi à un utilisateur de la bibliothèque de sélectionner quel
+	diagramme il veut dessiner et de n'avoir la possibilité de dessinner que les éléments graphiques utilisables pour le diagramme selectionné.
+	Evitant ainsi la surcharge de possibilités et donc une utilisation plus simple de la bibliothèque.)\\
+	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur choisit un type de diagramme précis à dessiner.\\
+	Entrées & -\\
+	Sorties & -\\
+	Préconditions & -\\
+	Postconditions & -\\\vspace{10px}
+	Anomalies & -\\
+	\end{longtable}
+
 	\chapter{Conception}
 	\section{Architecture générale du projet}
 		L'architecture est la base d'une conception telle que nous l'avons choisie. En utilisant la notation UML, 
@@ -201,6 +270,8 @@
 	documentation ou à l'adresse \\
 	$\rhd$ \url{http://documentation.joohoo.fr/libUML}
 	
+	\appendix
+	\closeout\glossaireVar
 	\chapter{Glossaire}
 	\begin{sortedlist}
 		\input{glossaire.tex}
