@@ -55,8 +55,8 @@ abstract public class Acteur extends ElementModelisation {
 	}
 
     /** Constructeur le la classe Acteur 
-	 *
-	 * @param p_graph le graphe sur lequel il faut ajouter l'acteur
+    *
+    * @param p_graph le graphe sur lequel il faut ajouter l'acteur
      * @param p_texte le texte qui sera afficher sur l'acteur
      *
      */
@@ -64,10 +64,17 @@ abstract public class Acteur extends ElementModelisation {
             super(p_graph, p_diagramme, p_texte, p_dimension);
             this.visibiliteLigneDeVie = false;
     }
-
-	/** 
-	 * Créé la ligne vie avec les tyle prédéfini auparavant 
-	 */
+    
+    @Override
+    public void supprimer(){
+        this.afficherLigneDeVie(false);
+        this.getLigneDeVie().removeFromParent();
+        super.supprimer();
+    }
+    
+    /** 
+     * Créé la ligne vie avec les tyle prédéfini auparavant 
+     */
     public void creerLigneDeVie(){
             this.creerStyleLigneDeVie();
             this.ligneDeVie = (mxCell) super.getGraph().insertEdge(
