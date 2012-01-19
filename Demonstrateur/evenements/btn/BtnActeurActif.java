@@ -4,6 +4,9 @@ import eltModelisation.Acteur;
 import eltModelisation.ActeurActif;
 import evenements.Btn;
 import ihm.FenetreDemo;
+import ihm.FenetreInterdiction;
+import ihm.FenetreInterdictionAjoutElement;
+import ihm.FenetreInterdictionLiaisonElement;
 import java.awt.event.MouseEvent;
 
 /**
@@ -26,10 +29,19 @@ public class BtnActeurActif extends Btn {
     */
     @Override
     public void mouseClicked(MouseEvent event) {
+
         Acteur acteur = new ActeurActif(super.fenetre.getPanneauGraph().getGraph(),
             this.fenetre.getPanneauGraph().getDiagramme(),
             "Mon acteur Actif");
-        acteur.creer();
-		acteur.afficherLigneDeVie(false);
+        
+        if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(acteur)){
+            acteur.creer();
+            acteur.afficherLigneDeVie(false);
+        } else {
+            FenetreInterdiction fenetreInterdiction = new FenetreInterdictionAjoutElement(this.fenetre);
+            fenetreInterdiction.afficherInterdiction();
+        }
+        
+        
     }
 }

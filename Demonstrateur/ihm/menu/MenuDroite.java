@@ -1,11 +1,8 @@
 package ihm.menu;
 
 import eltModelisation.Classe;
-import evenements.EvenementListeDiagramme;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;

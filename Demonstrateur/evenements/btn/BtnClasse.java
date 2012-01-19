@@ -6,6 +6,9 @@ import eltModelisation.Methode;
 import eltModelisation.Visibilite;
 import evenements.Btn;
 import ihm.FenetreDemo;
+import ihm.FenetreInterdiction;
+import ihm.FenetreInterdictionAjoutElement;
+import ihm.FenetreInterdictionLiaisonElement;
 import java.awt.event.MouseEvent;
 
 /**
@@ -42,7 +45,12 @@ public class BtnClasse extends Btn {
         classe.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false, "long", "monAttribut2"));
         classe.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false,"Classe", "monAttribut3"));
         
-        classe.creer();
+        if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(classe)){
+            classe.creer();
+        } else {
+            FenetreInterdiction fenetreInterdiction = new FenetreInterdictionAjoutElement(this.fenetre);
+            fenetreInterdiction.afficherInterdiction();
+        }
 
     }
 }

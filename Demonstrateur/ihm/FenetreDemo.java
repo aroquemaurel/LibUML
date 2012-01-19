@@ -36,6 +36,8 @@ public class FenetreDemo extends JFrame {
     private final PanneauGraph panneauGraph; // panneau contenant le graph
 
     private final BarreMenus menuHaut; // Barre des menus (fichier, insérer, ...)
+    
+    private final BoiteDialogueDiagramme fenetreChoixDiagramme;
 
     /* Paramètres la fenêtre */
     private void parametrerFenetre(){
@@ -63,7 +65,6 @@ public class FenetreDemo extends JFrame {
 
     /* Construit la fenêtre de démonstration */
     public FenetreDemo() {
-
         this.panneauPrincipal = new JPanel();
         this.toolbar = new BarreOutilsDessin(new Dimension(LARGEUR_FENETRE, 30), this);
         this.panneauGraph = new PanneauGraph(LARGEUR_GRAPH, HAUTEUR_ZONEDETRAVAIL);
@@ -72,6 +73,7 @@ public class FenetreDemo extends JFrame {
         this.panneauGraph.getGraphControl().addMouseListener(evenement);
         this.menuDroite = new MenuDroite(new Dimension(LARGEUR_TABLEAUDROITE, HAUTEUR_ZONEDETRAVAIL), this);
         this.menuHaut = new BarreMenus(new Dimension(LARGEUR_FENETRE, HAUTEUR_MENUBAR));
+        this.fenetreChoixDiagramme = new BoiteDialogueDiagramme(this);
     }
 
     /* Afficher la fenêtre */
@@ -89,9 +91,9 @@ public class FenetreDemo extends JFrame {
         return (this.panneauGraph);
     }
 
-	/* Retourne le panneau contenant tous les autres panneaux */ 
-	public JPanel getPanneauPrincipal(){
-            return (this.panneauPrincipal);
+    /* Retourne le panneau contenant tous les autres panneaux */ 
+    public JPanel getPanneauPrincipal(){
+        return (this.panneauPrincipal);
     }
    
 	/* Retourne le panneau de droite contenant le tableau de la classe */
@@ -99,6 +101,9 @@ public class FenetreDemo extends JFrame {
         return (this.menuDroite);
     }
 
+    public BoiteDialogueDiagramme getFenetreChoixDiagramme(){
+        return (this.fenetreChoixDiagramme);
+    }
     /**
     * Méthode principale
     */
@@ -106,8 +111,7 @@ public class FenetreDemo extends JFrame {
        FenetreDemo fenetre = new FenetreDemo();
 
        fenetre.afficherFenetre();
-       BoiteDialogueDiagramme boiteDialogue = new BoiteDialogueDiagramme(fenetre, true);       
-       boiteDialogue.afficherBoiteDialogue();
+       fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
        
        Traitement t1 = new Traitement(fenetre.getPanneauGraph().getGraph(), 
                fenetre.getPanneauGraph().getDiagramme(), "", null, true);

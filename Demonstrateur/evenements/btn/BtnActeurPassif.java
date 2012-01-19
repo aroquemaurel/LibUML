@@ -3,6 +3,9 @@ package evenements.btn;
 import eltModelisation.ActeurPassif;
 import evenements.Btn;
 import ihm.FenetreDemo;
+import ihm.FenetreInterdiction;
+import ihm.FenetreInterdictionAjoutElement;
+import ihm.FenetreInterdictionLiaisonElement;
 import java.awt.event.MouseEvent;
 
 /**
@@ -27,6 +30,13 @@ public class BtnActeurPassif extends Btn {
     public void mouseClicked(MouseEvent event) {
         ActeurPassif acteur = new ActeurPassif(super.fenetre.getPanneauGraph().getGraph(),
             fenetre.getPanneauGraph().getDiagramme(), "Mon acteur Passif");
-        acteur.creer();
+        
+        if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(acteur)){
+            acteur.creer();
+            acteur.afficherLigneDeVie(false);
+        } else {
+            FenetreInterdiction fenetreInterdiction = new FenetreInterdictionAjoutElement(this.fenetre);
+            fenetreInterdiction.afficherInterdiction();
+        }
     }
 }

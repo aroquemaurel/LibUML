@@ -11,7 +11,7 @@ import java.awt.Dimension;
 public class PanneauGraph extends mxGraphComponent {
     private final int largeurPanneau;
     private final int longueurPanneau;
-    private final Diagramme diagramme;
+    private Diagramme diagramme;
 
     /* Paramètres du panneau */
     private void parametrerPanneau(){
@@ -26,14 +26,18 @@ public class PanneauGraph extends mxGraphComponent {
 
         this.largeurPanneau = p_largeurPanneau;
         this.longueurPanneau = p_longueurPanneau;
-        this.diagramme = new Diagramme();
 
+        this.diagramme = null;
         this.parametrerPanneau();
     }
 
-	/* Retourne le diagramme contenant tous les éléments grahiques */
-	public Diagramme getDiagramme() {
+    /* Retourne le diagramme contenant tous les éléments grahiques */
+    public Diagramme getDiagramme() {
         return (this.diagramme);
+    }
+    
+    public void initialiserDiagramme(Diagramme p_diagramme){
+        this.diagramme = p_diagramme;
     }
 
 }
