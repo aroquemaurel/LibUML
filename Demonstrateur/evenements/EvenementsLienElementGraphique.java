@@ -7,7 +7,7 @@ import eltGraphique.ligne.TypeLien;
 import eltModelisation.ElementModelisation;
 import eltModelisation.Traitement;
 import ihm.FenetreDemo;
-import ihm.FenetreInterdictionLiaisonElement;
+import ihm.fenetreInterdiction.FenetreInterdictionLiaisonElement;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
