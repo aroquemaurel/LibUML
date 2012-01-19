@@ -9,7 +9,7 @@ import javax.swing.*;
 /**
  *
  */
-public class FenetreAjoutMethode extends JDialog {
+public class FenetreAjoutMethode extends FenetreDialog {
     private Classe classe;
     
     private JPanel panneauPrincipal;

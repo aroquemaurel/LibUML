@@ -1,10 +1,10 @@
 package evenements.btn;
 
 import ihm.FenetreAjoutMethode;
+import ihm.FenetreDialog;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
-import javax.swing.JDialog;
 
 /**
  *

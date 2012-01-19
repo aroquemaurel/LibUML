@@ -6,7 +6,6 @@ import eltModelisation.Variable;
 import eltModelisation.Visibilite;
 import ihm.FenetreAjoutMethode;
 import java.awt.event.MouseEvent;
-import javax.swing.JDialog;
 import util.Liste;
 
 /**
@@ -29,7 +28,7 @@ public class BtnValiderAjoutMethode extends BoutonFenetres {
         Visibilite visibilite;
         Liste<Variable> liste = new Liste<Variable>();
         liste.ajouterElement(new Variable(true, "test", "truc"));
-        switch(this.getFenetre().getVisibiliteListe().getSelectedIndex()){
+        switch(this.getFenetre().getVisibiliteListe().getSelectedIndex()) {  
              case PROTECTED:
                  visibilite = Visibilite.PROTECTED;
                 break;
