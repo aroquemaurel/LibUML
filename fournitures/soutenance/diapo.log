@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.29)  1 DEC 2011 10:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.29)  18 JAN 2012 17:48
 entering extended mode
  %&-line parsing enabled.
 **diapo.tex
@@ -872,7 +872,7 @@ Overfull \hbox (2.80698pt too wide) in paragraph at lines 120--120
 [][]  
  []
 
-<logo.jpg, id=56, 97.3236pt x 60.4659pt>
+<logo.jpg, id=44, 97.3236pt x 60.4659pt>
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
 Overfull \hbox (6.0pt too wide) in paragraph at lines 120--120
@@ -893,23 +893,7 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./logo.jpg>]
-(./intro.tex
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 15.
-LaTeX Font Info:    Try loading font information for U+msa on input line 15.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 15.
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 15.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
+(./diapo.toc)
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
 Overfull \hbox (72.59995pt too wide) has occurred while \output is active
@@ -923,7 +907,7 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 
 [2
 
-]
+] (./diapo.toc)
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
 Overfull \hbox (72.59995pt too wide) has occurred while \output is active
@@ -937,7 +921,7 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 
 [3
 
-]
+] (./diapo.toc)
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
 Overfull \hbox (72.59995pt too wide) has occurred while \output is active
@@ -951,504 +935,6 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 
 [4
 
-] (./diapo.toc)
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[5
-
-] (./diapo.toc)
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[6
-
-]
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 47.
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[7
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[8
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[9
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[10
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[11
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[12
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[13
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[14
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[15
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[16
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[17
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[18
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[19
-
-]) (./diapo.toc)
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[20
-
-] <diagrammeUsecase.jpeg, id=860, 234.8775pt x 221.82875pt>
-File: diagrammeUsecase.jpeg Graphic file (type jpg)
-
-<use diagrammeUsecase.jpeg>
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[21
-
- <./diagrammeUsecase.jpeg>]
-<diagrammeSequence.jpeg, id=899, 220.825pt x 171.64125pt>
-File: diagrammeSequence.jpeg Graphic file (type jpg)
-
-<use diagrammeSequence.jpeg>
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[22
-
- <./diagrammeSequence.jpeg>]
-<diagrammeClasse.jpeg, id=937, 88.33pt x 136.51pt>
-File: diagrammeClasse.jpeg Graphic file (type jpg)
- <use diagrammeClasse.jpeg>
-File: logo.jpg Graphic file (type jpg)
-
-<use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[23
-
- <./diagrammeClasse.jpeg>]
-File: diagrammeUsecase.jpeg Graphic file (type jpg)
- <use diagrammeUsecase.jpeg>
-File: diagrammeSequence.jpeg Graphic file (type jpg)
-
-<use diagrammeSequence.jpeg>
-File: diagrammeClasse.jpeg Graphic file (type jpg)
- <use diagrammeClasse.jpeg>
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[24
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[25
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[26
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[27
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[28
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[29
-
-] (./diapo.toc)
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[30
-
-] <001.png, id=1239, 642.4pt x 173.64874pt>
-File: 001.png Graphic file (type png)
- <use 001.png>
-<002.png, id=1241, 642.4pt x 173.64874pt>
-File: 002.png Graphic file (type png)
- <use 002.png>
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[31
-
- <./001.png> <./002.png>]
-File: 001.png Graphic file (type png)
- <use 001.png>
-File: 002.png Graphic file (type png)
- <use 002.png>
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[32
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[33
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[34
-
-] <projetiut-gantt.png, id=1402, 774.895pt x 501.875pt>
-File: projetiut-gantt.png Graphic file (type png)
-
-<use projetiut-gantt.png>
-Overfull \hbox (15.38487pt too wide) in paragraph at lines 197--197
-[][]  
- []
-
-File: logo.jpg Graphic file (type jpg)
-<use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[35
-
- <./projetiut-gantt.png>]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[36
-
-]
-File: logo.jpg Graphic file (type jpg)
- <use logo.jpg>
-Overfull \hbox (72.59995pt too wide) has occurred while \output is active
-[] [][] 
- []
-
-
-Overfull \hbox (2.80698pt too wide) has occurred while \output is active
-[][] 
- []
-
-[37
-
 ]
 \tf@nav=\write5
 \openout5 = `diapo.nav'.
@@ -1461,21 +947,19 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 
  (./diapo.aux) ) 
 Here is how much of TeX's memory you used:
- 13973 strings out of 495061
- 244794 string characters out of 1182620
- 340395 words of memory out of 3000000
- 16659 multiletter control sequences out of 15000+50000
- 72587 words of font info for 71 fonts, out of 3000000 for 9000
+ 13623 strings out of 495061
+ 238541 string characters out of 1182620
+ 334408 words of memory out of 3000000
+ 16422 multiletter control sequences out of 15000+50000
+ 34573 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 48i,20n,65p,313b,758s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,20n,65p,313b,718s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/
-type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helveti
-c/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on diapo.pdf (37 pages, 769655 bytes).
+re/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/
+fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on diapo.pdf (4 pages, 103765 bytes).
 PDF statistics:
- 1537 PDF objects out of 1728 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
+ 172 words of extra memory for PDF output out of 10000 (max. 10000000)
 
