@@ -1,6 +1,7 @@
-package ihm;
+package ihm.fenetreInterdiction;
 
 import evenements.btn.BtnJeNeLeFeraisPlus;
+import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;

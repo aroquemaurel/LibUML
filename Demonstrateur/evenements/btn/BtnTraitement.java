@@ -3,9 +3,8 @@ package evenements.btn;
 import eltModelisation.Traitement;
 import evenements.Btn;
 import ihm.FenetreDemo;
-import ihm.FenetreInterdiction;
-import ihm.FenetreInterdictionAjoutElement;
-import ihm.FenetreInterdictionLiaisonElement;
+import ihm.fenetreInterdiction.FenetreInterdiction;
+import ihm.fenetreInterdiction.FenetreInterdictionAjoutElement;
 import java.awt.event.MouseEvent;
 
 

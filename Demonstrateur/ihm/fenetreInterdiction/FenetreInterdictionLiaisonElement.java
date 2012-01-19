@@ -1,4 +1,6 @@
-package ihm;
+package ihm.fenetreInterdiction;
+
+import ihm.FenetreDemo;
 
 /**
  *
