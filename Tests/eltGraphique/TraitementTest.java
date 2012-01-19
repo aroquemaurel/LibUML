@@ -1,6 +1,6 @@
 package eltGraphique;
 
-import eltModelisation.Traitement;
+import eltGraphique.eltModelisation.Traitement;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;

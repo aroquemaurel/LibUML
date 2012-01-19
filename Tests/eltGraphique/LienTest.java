@@ -6,7 +6,7 @@ import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
-import eltModelisation.Classe;
+import eltGraphique.eltModelisation.Classe;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

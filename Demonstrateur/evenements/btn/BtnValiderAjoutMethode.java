@@ -1,9 +1,9 @@
 package evenements.btn;
 
-import eltModelisation.Classe;
-import eltModelisation.Methode;
-import eltModelisation.Variable;
-import eltModelisation.Visibilite;
+import eltGraphique.eltModelisation.Classe;
+import eltGraphique.eltModelisation.Methode;
+import eltGraphique.eltModelisation.Variable;
+import eltGraphique.eltModelisation.Visibilite;
 import ihm.FenetreAjoutMethode;
 import java.awt.event.MouseEvent;
 import util.Liste;
@@ -27,7 +27,18 @@ public class BtnValiderAjoutMethode extends BoutonFenetres {
     public void mousePressed(MouseEvent me) {
         Visibilite visibilite;
         Liste<Variable> liste = new Liste<Variable>();
-        liste.ajouterElement(new Variable(true, "test", "truc"));
+        liste.ajouterElement(new Variable(super.getFenetre().getConstantParametre1CheckBox().isSelected(),
+                super.getFenetre().getTypeParametre1ChampTexte().getText(), 
+                super.getFenetre().getNomParametre1ChampTexte().getText()));
+        
+        liste.ajouterElement(new Variable(super.getFenetre().getConstantParametre2CheckBox().isSelected(),
+                super.getFenetre().getTypeParametre2ChampTexte().getText(), 
+                super.getFenetre().getNomParametre2ChampTexte().getText()));        
+        
+        liste.ajouterElement(new Variable(super.getFenetre().getConstantParametre3CheckBox().isSelected(),
+                super.getFenetre().getTypeParametre3ChampTexte().getText(), 
+                super.getFenetre().getNomParametre3ChampTexte().getText()));
+        
         switch(this.getFenetre().getVisibiliteListe().getSelectedIndex()) {  
              case PROTECTED:
                  visibilite = Visibilite.PROTECTED;
@@ -46,8 +57,7 @@ public class BtnValiderAjoutMethode extends BoutonFenetres {
         this.classe.ajouterMethode(new Methode(visibilite,
                 super.getFenetre().getTypeRetourChampTexte().getText(),
                 super.getFenetre().getNomMethodeChampTexte().getText(), 
-                null, true, true, true));
-        System.out.print(super.getFenetre().getTypeRetourChampTexte().getText());
+                liste, true, true, true));
         
         super.getFenetre().setVisible(false);
         

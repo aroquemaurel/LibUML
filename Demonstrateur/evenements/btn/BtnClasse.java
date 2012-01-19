@@ -1,9 +1,9 @@
 package evenements.btn;
 
-import eltModelisation.Attribut;
-import eltModelisation.Classe;
-import eltModelisation.Methode;
-import eltModelisation.Visibilite;
+import eltGraphique.eltModelisation.Attribut;
+import eltGraphique.eltModelisation.Classe;
+import eltGraphique.eltModelisation.Methode;
+import eltGraphique.eltModelisation.Visibilite;
 import evenements.Btn;
 import ihm.FenetreAjoutMethode;
 import ihm.FenetreDemo;

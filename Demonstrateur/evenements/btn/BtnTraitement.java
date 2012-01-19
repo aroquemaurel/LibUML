@@ -1,6 +1,6 @@
 package evenements.btn;
 
-import eltModelisation.Traitement;
+import eltGraphique.eltModelisation.Traitement;
 import evenements.Btn;
 import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdiction;

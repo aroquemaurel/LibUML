@@ -1,6 +1,6 @@
 package ihm;
 
-import eltModelisation.Classe;
+import eltGraphique.eltModelisation.Classe;
 import evenements.btn.BtnAnnulerAjoutMethode;
 import evenements.btn.BtnValiderAjoutMethode;
 import java.awt.Dimension;
@@ -187,7 +187,6 @@ public class FenetreAjoutMethode extends FenetreDialog {
         this.constantParametre3Label = new JLabel("Est constant paramètre 3    ");
         this.espaceParametre3Label = new JLabel("                                          ");
         this.panneauConstantParametre3 = new JPanel();    
-
         
         this.boutonValider = new BtnValiderAjoutMethode(this, p_classe);
         this.boutonAnnuler = new BtnAnnulerAjoutMethode(this);
@@ -203,8 +202,44 @@ public class FenetreAjoutMethode extends FenetreDialog {
         this.setVisible(true);
     }
 
+    public JCheckBox getConstantParametre1CheckBox() {
+        return constantParametre1CheckBox;
+    }
+
+    public JCheckBox getConstantParametre2CheckBox() {
+        return constantParametre2CheckBox;
+    }
+
+    public JCheckBox getConstantParametre3CheckBox() {
+        return constantParametre3CheckBox;
+    }
+
     public JTextField getNomMethodeChampTexte() {
         return nomMethodeChampTexte;
+    }
+
+    public JTextField getNomParametre1ChampTexte() {
+        return nomParametre1ChampTexte;
+    }
+
+    public JTextField getNomParametre2ChampTexte() {
+        return nomParametre2ChampTexte;
+    }
+
+    public JTextField getNomParametre3ChampTexte() {
+        return nomParametre3ChampTexte;
+    }
+
+    public JTextField getTypeParametre1ChampTexte() {
+        return typeParametre1ChampTexte;
+    }
+
+    public JTextField getTypeParametre2ChampTexte() {
+        return typeParametre2ChampTexte;
+    }
+
+    public JTextField getTypeParametre3ChampTexte() {
+        return typeParametre3ChampTexte;
     }
 
     public JTextField getTypeRetourChampTexte() {

@@ -4,7 +4,7 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
-import eltModelisation.Traitement;
+import eltGraphique.eltModelisation.Traitement;
 
 /**
  *

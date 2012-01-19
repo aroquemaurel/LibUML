@@ -1,7 +1,7 @@
 package eltGraphique;
 
-import eltModelisation.Attribut;
-import eltModelisation.Visibilite;
+import eltGraphique.eltModelisation.Attribut;
+import eltGraphique.eltModelisation.Visibilite;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

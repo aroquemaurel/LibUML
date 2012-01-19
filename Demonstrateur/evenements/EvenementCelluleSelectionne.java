@@ -2,9 +2,9 @@ package evenements;
 
 import com.mxgraph.model.mxCell;
 import eltGraphique.ElementGraphique;
-import eltModelisation.Acteur;
-import eltModelisation.Classe;
-import eltModelisation.Traitement;
+import eltGraphique.eltModelisation.Acteur;
+import eltGraphique.eltModelisation.Classe;
+import eltGraphique.eltModelisation.Traitement;
 import evenements.menu.contextuel.EvenementDebutSequence;
 import evenements.menu.contextuel.EvenementLigneDeVie;
 import evenements.menu.contextuel.EvenementSupprimer;
@@ -76,6 +76,34 @@ public class EvenementCelluleSelectionne implements MouseListener {
     }   
     
     /*
+     * Méthode permettant d'afficher le menu contextuel au clic sur un Traitement
+     */
+    private JPopupMenu construireMenuContextuel(Classe element){
+	JPopupMenu menuContextuel = new JPopupMenu();
+	
+        JMenuItem itemSupprimer = new JMenuItem("Supprimer");
+        EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
+        
+        JMenuItem itemAjouterMethode = new JMenuItem("Ajouter une méthode");
+        EvenementAjouterMethode evenementAjouterMethode = new EvenementAjouterMethode(element);
+
+        JMenuItem itemAjouterAttribut = new JMenuItem("Ajouter un attribut");
+        EvenementAjouterAttribut evenementAjouterAttribut = new EvenementAjouterAttribut(this.fenetre, element);
+              
+        menuContextuel.add(itemSupprimer);
+        menuContextuel.add(itemAjouterAttribut);
+        menuContextuel.add(itemAjouterMethode);
+        this.fenetre.getPanneauPrincipal().add(menuContextuel);
+        
+        itemSupprimer.addActionListener(evenementSupprimer);
+        itemAjouterAttribut.addActionListener(evenementAjouterAttribut);
+        itemAjouterMethode.addActionListener(evenementAjouterMethode);
+        
+        return menuContextuel;
+    }       
+    
+    
+    /*
      * Méthode permettant d'afficher le menu contextuel au clic sur un ElementGrahique autre que Traitement et Acteur
      */
     private JPopupMenu construireMenuContextuel(ElementGraphique element){
@@ -131,7 +159,9 @@ public class EvenementCelluleSelectionne implements MouseListener {
                 if(element instanceof Acteur){
                     menuContextuel = construireMenuContextuel((Acteur) element);
                 } else if (element instanceof Traitement){
-                    menuContextuel = construireMenuContextuel((Traitement) element);                                
+                    menuContextuel = construireMenuContextuel((Traitement) element);                               
+                } else if (element instanceof Classe) {
+                    menuContextuel = construireMenuContextuel((Classe) element);                               
                 } else {
                     menuContextuel = construireMenuContextuel((ElementGraphique) element);                                
                 }

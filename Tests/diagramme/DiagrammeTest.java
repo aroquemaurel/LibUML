@@ -1,10 +1,15 @@
 package diagramme;
 
+import eltGraphique.eltModelisation.Traitement;
+import eltGraphique.eltModelisation.CasUtilisation;
+import eltGraphique.eltModelisation.Interface;
+import eltGraphique.eltModelisation.ActeurPassif;
+import eltGraphique.eltModelisation.ActeurActif;
+import eltGraphique.eltModelisation.Classe;
 import com.mxgraph.view.mxGraph;
 import eltGraphique.ElementGraphique;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
-import eltModelisation.*;
 import java.util.List;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;

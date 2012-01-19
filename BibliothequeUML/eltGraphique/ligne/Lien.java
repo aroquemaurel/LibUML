@@ -6,7 +6,7 @@ import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
 import eltGraphique.ElementGraphique;
-import eltModelisation.ElementModelisation;
+import eltGraphique.eltModelisation.ElementModelisation;
 import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
