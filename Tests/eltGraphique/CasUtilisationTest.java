@@ -46,7 +46,7 @@ public class CasUtilisationTest {
     }
 
 	/**
-	 * Test unitaire qui teste le cas d'utilisation n'a pas d'élément parent
+	 * Test unitaire qui teste que le cas d'utilisation n'a pas d'élément parent
 	 * 
 	 * Vérifie que :
 	 *  - la cellule parente est la même que la cellule actuelle
@@ -115,23 +115,49 @@ public class CasUtilisationTest {
 		assertEquals(Constantes.COULEUR_BORDURE, feuilleStyles.getStyles().get("USECASE").get(mxConstants.STYLE_STROKECOLOR));
     }
 
+	/**
+	 * Test unitaire qui teste que la modification du texte est effective
+	 * 
+	 * Vérifie que :
+	 *  - le nouveau texte est attribué correctement
+	 */
     @Test
     public void testSetTexte(){
 		this.casUtilisation.setTexte("testouille");
         assertEquals("testouille", this.casUtilisation.getTexte());
     }
 
+	/**
+	 * Test unitaire qui teste que la modification d'une cellule est effective
+	 * 
+	 * Vérifie que :
+	 *  - la cellule actuelle est modifiée correctement
+	 *  - la cellule parente est modifiée correctement
+	 *  - la cellule cible est modifiée correctement
+	 */
     @Test
     public void testSetCellule(){
 		mxCell maCellulle = new mxCell();
 		this.casUtilisation.setCellule(maCellulle);
+		assertEquals(maCellulle, this.casUtilisation.getCellule());
 		assertEquals(maCellulle, this.casUtilisation.getParent());
 		assertEquals(maCellulle, this.casUtilisation.getTarget());
     }
 
+	/**
+	 * Test unitaire qui vérifie que la méthode supprimer fonctionne
+	 * correctement
+	 * 
+	 * Vérifie que :
+	 *  - la cellule actuelle est à null
+	 *  - la cellule parente est à null
+	 *  - la cellule cible est à null
+	 */
     @Test
     public void testSupprimer(){
 		this.casUtilisation.supprimer();
 		assertNull(this.casUtilisation.getCellule());
+		assertNull(this.casUtilisation.getParent());
+		assertNull(this.casUtilisation.getTarget());
     }
 }

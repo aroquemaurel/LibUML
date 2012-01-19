@@ -156,7 +156,6 @@ public class ActeurPassifTest {
 		assertEquals(maCellule, this.acteur.getParent());
     }
 	
-	
 	/**
 	 * Test unitaire qui teste la modification de la cellule
 	 * lié à l'acteur passif
