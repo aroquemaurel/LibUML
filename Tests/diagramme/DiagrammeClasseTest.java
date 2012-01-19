@@ -457,7 +457,7 @@ public class DiagrammeClasseTest {
     * Test unitaire qui vérifie que l'élément classe est autorisé dans un diagramme de classe
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne vrai
+    *  - la méthode eltAutorise() retourne vrai
     */
     @Test
     public void testEltAutoriseClasse () {
