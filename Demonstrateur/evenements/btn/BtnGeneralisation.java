@@ -27,7 +27,7 @@ public class BtnGeneralisation extends Btn {
     @Override
     public void mouseClicked(MouseEvent event) {
             EvenementsLienElementGraphique evenement =
-                    new EvenementsLienElementGraphique(this.fenetre.getPanneauGraph(),
+                    new EvenementsLienElementGraphique(this.fenetre,
                                     this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.SPECIALISATION);
             this.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
     }

@@ -3,6 +3,9 @@ package evenements.btn;
 import eltModelisation.Traitement;
 import evenements.Btn;
 import ihm.FenetreDemo;
+import ihm.FenetreInterdiction;
+import ihm.FenetreInterdictionAjoutElement;
+import ihm.FenetreInterdictionLiaisonElement;
 import java.awt.event.MouseEvent;
 
 
@@ -29,7 +32,11 @@ public class BtnTraitement extends Btn {
         Traitement traitement = new Traitement (super.fenetre.getPanneauGraph().getGraph(),
             fenetre.getPanneauGraph().getDiagramme(),
                 "Mon traitement", null, true);
-        traitement.creer();
-    }
+        if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(traitement)){
+            traitement.creer();
+        } else {
+            FenetreInterdiction fenetreInterdiction = new FenetreInterdictionAjoutElement(this.fenetre);
+            fenetreInterdiction.afficherInterdiction();
+        }    }
 
 }

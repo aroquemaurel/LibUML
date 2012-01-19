@@ -2,11 +2,12 @@ package evenements;
 
 import com.mxgraph.model.mxCell;
 import diagramme.Diagramme;
-import eltModelisation.ElementModelisation;
-import eltModelisation.Traitement;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
-import ihm.PanneauGraph;
+import eltModelisation.ElementModelisation;
+import eltModelisation.Traitement;
+import ihm.FenetreDemo;
+import ihm.FenetreInterdictionLiaisonElement;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -15,7 +16,7 @@ import java.awt.event.MouseListener;
  * @author satenske
  */
 public class EvenementsLienElementGraphique implements MouseListener {
-    private final PanneauGraph panneauGraph;
+    private final FenetreDemo fenetre;
     private final Diagramme diagramme;
     private final TypeLien typeDeLien;
     private int numeroClique;
@@ -28,9 +29,9 @@ public class EvenementsLienElementGraphique implements MouseListener {
     * @param  p_diagramme diagramme dans lequel le lien est fait
     * @param p_typeDeLien type du lien créé
     */
-    public EvenementsLienElementGraphique(PanneauGraph p_panneauGraph, Diagramme p_diagramme,
+    public EvenementsLienElementGraphique(FenetreDemo p_fenetre, Diagramme p_diagramme,
                                     TypeLien p_typeDeLien) {
-        this.panneauGraph = p_panneauGraph;
+        this.fenetre = p_fenetre;
         this.diagramme = p_diagramme;
         this.typeDeLien = p_typeDeLien;
         this.sourceCelluleARelier = null;
@@ -43,7 +44,7 @@ public class EvenementsLienElementGraphique implements MouseListener {
     */
     @Override
     public void mouseClicked(MouseEvent event) {
-        mxCell celluleActuelle = (mxCell) this.panneauGraph.getGraph().getSelectionCell();
+        mxCell celluleActuelle = (mxCell) this.fenetre.getPanneauGraph().getGraph().getSelectionCell();
 
 		
         if(celluleActuelle != null){ // si on a selectioné une cellule
@@ -71,14 +72,22 @@ public class EvenementsLienElementGraphique implements MouseListener {
                             this.typeDeLien);
                 } else {
                     Lien monLien = new Lien(sourceElementModelisation, destinationElementModelisation, 
-                            this.panneauGraph.getGraph(), this.panneauGraph.getDiagramme(), this.typeDeLien);
-                    monLien.creer();
+                            this.fenetre.getPanneauGraph().getGraph(), this.fenetre.getPanneauGraph().getDiagramme(), this.typeDeLien);
+                    
+                    if(this.fenetre.getPanneauGraph().getDiagramme().lienAutorise(sourceElementModelisation, 
+                                                                    destinationElementModelisation, this.typeDeLien)){
+                        monLien.creer();
+                    } else {
+                        FenetreInterdictionLiaisonElement fenetreInterdiction = 
+                                new FenetreInterdictionLiaisonElement(this.fenetre);
+                        fenetreInterdiction.afficherInterdiction();
+                    }  
                 }
             }
         }
 
         if(numeroClique >= 2){ //Deux clic, c'est bon, on supprime le listener
-            this.panneauGraph.getGraphControl().removeMouseListener(this);
+            this.fenetre.getPanneauGraph().getGraphControl().removeMouseListener(this);
         }
 
     }

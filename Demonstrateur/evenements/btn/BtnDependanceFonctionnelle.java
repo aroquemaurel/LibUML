@@ -27,8 +27,9 @@ public class BtnDependanceFonctionnelle extends Btn {
     @Override
     public void mouseClicked(MouseEvent event) {
             EvenementsLienElementGraphique evenement =
-                    new EvenementsLienElementGraphique(this.fenetre.getPanneauGraph(),
-                                    this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.DEPENDANCE);
+                    new EvenementsLienElementGraphique(this.fenetre, this.fenetre.getPanneauGraph().getDiagramme(), 
+                    TypeLien.DEPENDANCE);
+            
             this.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
     }
 }

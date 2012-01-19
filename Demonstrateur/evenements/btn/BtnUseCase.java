@@ -3,6 +3,8 @@ package  evenements.btn;
 import eltModelisation.CasUtilisation;
 import evenements.Btn;
 import ihm.FenetreDemo;
+import ihm.FenetreInterdiction;
+import ihm.FenetreInterdictionAjoutElement;
 import java.awt.event.MouseEvent;
 
 /**
@@ -27,7 +29,12 @@ public class BtnUseCase extends Btn {
     public void mouseClicked(MouseEvent event) {
         CasUtilisation useCase = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
             fenetre.getPanneauGraph().getDiagramme(), "Mon useCase");
-        useCase.creer();
-    }
+        if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(useCase)){
+            useCase.creer();
+        } else {
+            FenetreInterdiction fenetreInterdiction = new FenetreInterdictionAjoutElement(this.fenetre);
+            fenetreInterdiction.afficherInterdiction();
+        }    
+    }    
 
 }

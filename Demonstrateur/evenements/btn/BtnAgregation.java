@@ -27,7 +27,7 @@ public class BtnAgregation extends Btn{
     @Override
     public void mouseClicked(MouseEvent event) {
         EvenementsLienElementGraphique evenement = 
-            new EvenementsLienElementGraphique(this.fenetre.getPanneauGraph(), 
+            new EvenementsLienElementGraphique(this.fenetre, 
                     this.fenetre.getPanneauGraph().getDiagramme(), TypeLien.AGREGATION);
         this.fenetre.getPanneauGraph().getGraphControl().addMouseListener(evenement);
     }    

@@ -41,12 +41,16 @@ public class BoiteDialogueDiagramme extends JDialog {
         this.labelListeDeroulante = new JLabel("Choisir le type de diagramme");
         this.listeDeroulanteDiagrammes = new JComboBox();
         this.boutonValider = new JButton("Valider");
-        this.evenementBoutonValider = new EvenementChoixDiagramme(this);
+        this.evenementBoutonValider = new EvenementChoixDiagramme(p_fenetre);
         this.ajouterObjetsGraphiques();
         this.parametrerBoiteDialogue();
     }
     public void afficherBoiteDialogue(){
         this.setVisible(true);        
+    }
+    
+    public JComboBox getListe(){
+        return (this.listeDeroulanteDiagrammes);
     }
 
 }

@@ -1,16 +1,7 @@
 package ihm.menu;
 
 import evenements.Btn;
-import evenements.btn.BtnActeurActif;
-import evenements.btn.BtnActeurPassif;
-import evenements.btn.BtnAgregation;
-import evenements.btn.BtnAssociation;
-import evenements.btn.BtnClasse;
-import evenements.btn.BtnComposition;
-import evenements.btn.BtnDependanceFonctionnelle;
-import evenements.btn.BtnGeneralisation;
-import evenements.btn.BtnUseCase;
-import evenements.btn.BtnTraitement;
+import evenements.btn.*;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.JToolBar;
