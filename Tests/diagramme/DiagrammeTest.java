@@ -49,6 +49,15 @@ public class DiagrammeTest {
     @After
     public void tearDown() {
         this.monDiagramme = null;
+        this.monGraph = null;
+        this.maString = null;
+        
+        this.monActeurActif = null;
+        this.monActeurPassif = null;
+        this.monCasUtilisation = null;
+        this.monTraitement = null;
+        this.maClasse = null;
+        this.monInterface = null;
     }
     
     @Test
