@@ -469,7 +469,7 @@ public class DiagrammeClasseTest {
     * Test unitaire qui vérifie que l'élément lien est autorisé dans un diagramme de classe
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne vrai
+    *  - la méthode eltAutorise() retourne vrai
     */
     @Test
     public void testEltAutoriseLien () {
@@ -480,7 +480,7 @@ public class DiagrammeClasseTest {
     * Test unitaire qui vérifie que l'élément cas d'utilisation n'est pas autorisé dans un diagramme de classe
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseCasUtilisation () {
@@ -491,7 +491,7 @@ public class DiagrammeClasseTest {
     * Test unitaire qui vérifie que l'élément acteur actif n'est pas autorisé dans un diagramme de classe
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseActeurActif () {
@@ -502,7 +502,7 @@ public class DiagrammeClasseTest {
     * Test unitaire qui vérifie que l'élément acteur passif n'est pas autorisé dans un diagramme de classe
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseActeurPassif () {
@@ -513,7 +513,7 @@ public class DiagrammeClasseTest {
     * Test unitaire qui vérifie que l'élément traitement n'est pas autorisé dans un diagramme de classe
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseTraitement () {
@@ -524,7 +524,7 @@ public class DiagrammeClasseTest {
     * Test unitaire qui vérifie que l'élément interface n'est pas autorisé dans un diagramme de classe
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseInterface () {
