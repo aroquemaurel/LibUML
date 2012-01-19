@@ -38,7 +38,7 @@ public class ActeurPassifTest {
     }
 
 	/**
-	 * Suppression de ce champaprès chaque test
+	 * Suppression de ce champ après chaque test
 	 */
     @After
     public void tearDown() {
