@@ -109,21 +109,11 @@ public class FenetreDemo extends JFrame {
     */
     public static void main(String[] args) {
        FenetreDemo fenetre = new FenetreDemo();
+       FenetreAjoutClasse fenetreA = new FenetreAjoutClasse(fenetre, "Ajout d'une méthode");      
+     //  fenetre.afficherFenetre();
+       fenetreA.afficherFenetre();
+     //  fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
 
-       fenetre.afficherFenetre();
-       fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
-       
-       Traitement t1 = new Traitement(fenetre.getPanneauGraph().getGraph(), 
-               fenetre.getPanneauGraph().getDiagramme(), "", null, true);
-       Traitement t2 = new Traitement(fenetre.getPanneauGraph().getGraph(), 
-               fenetre.getPanneauGraph().getDiagramme(), "", null, true);
-       t1.creer();
-       t2.creer();
-       t1.ajouterMessage(t2, "test", TypeLien.FLECHE);
-       t2.ajouterMessage(t1, "test", TypeLien.FLECHE_POINTILLEE);
-       t1.ajouterMessage(t2, "test", TypeLien.FLECHE);
-       t2.ajouterMessage(t1, "test", TypeLien.FLECHE);
-       t2.ajouterMessage(t1, "test", TypeLien.FLECHE_POINTILLEE);
     }
 
 }
