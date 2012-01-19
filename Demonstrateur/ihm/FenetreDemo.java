@@ -114,11 +114,11 @@ public class FenetreDemo extends JFrame {
        FenetreAjoutMethode fenetreA = new FenetreAjoutMethode(fenetre, "Ajout d'une méthode", 
                maClasse);      
      
-       fenetreA.afficherFenetre();
+       //fenetreA.afficherFenetre();
        fenetre.afficherFenetre();
-       maClasse.creer();
+       //maClasse.creer();
        
-     //  fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
+       fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
 
     }
 
