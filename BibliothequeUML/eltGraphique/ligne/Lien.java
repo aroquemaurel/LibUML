@@ -176,7 +176,7 @@ public class Lien extends ElementGraphique {
 	 * @param p_source Element à l'origine de la flèche
 	 * @param p_destination Elemet à l'extrémité de la flèche
 	 * @param p_graph Graphe auquel est associé la flèche
-	 * @param p_typeFleche Type de la flèche
+	 * @param p_typeLien Type de la flèche
 	 *
 	 * @see ElementModelisation
 	 * @see TypeLien

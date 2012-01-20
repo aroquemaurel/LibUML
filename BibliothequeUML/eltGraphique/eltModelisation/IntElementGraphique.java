@@ -19,7 +19,7 @@ public interface IntElementGraphique {
     /**
     * Rend (in)visible l'élément grahique sur le graphe
 	*
-    * @param p_bool
+    * @param p_bool la nouvelle visibilité
     */
     public void setVisible(boolean p_bool);
     

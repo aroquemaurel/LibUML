@@ -64,7 +64,7 @@ public class Variable {
     /**
     * Modifie le type de la variable
 	*
-    * @param p_typeLe nouveau type de la variable
+    * @param p_type Le nouveau type de la variable
     */
     public void setType(String p_type) {
         this.type = p_type;
