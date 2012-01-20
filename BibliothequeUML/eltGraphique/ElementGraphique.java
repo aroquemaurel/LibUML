@@ -140,7 +140,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     * @see eltGraphique.eltModelisation.CasUtilisation
     * @see eltGraphique.eltModelisation.Interface
     * @see eltGraphique.eltModelisation.Traitement
-    * @see eltGraphique.eltModelisation.classe.Classe
+    * @see eltGraphique.eltModelisation.Classe
     */
     @Override
     abstract public void creer();
