@@ -1,12 +1,7 @@
 package diagramme;
 
-import eltGraphique.eltModelisation.Traitement;
-import eltGraphique.eltModelisation.CasUtilisation;
-import eltGraphique.eltModelisation.Interface;
-import eltGraphique.eltModelisation.ActeurPassif;
-import eltGraphique.eltModelisation.ActeurActif;
-import eltGraphique.eltModelisation.Classe;
 import com.mxgraph.view.mxGraph;
+import eltGraphique.eltModelisation.*;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 import org.junit.After;
@@ -16,7 +11,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe de test unitaires de la classe <b>DiagrammeClasse</b>.
+ * Cas de test JUnit regroupant les tests unitaires de chaque méthode
+ * de la classe DiagrammeTest
+ * 
+ * @see Diagramme
+ * 
  * @author Marie-Ly
  * @author Geoffroy
  */

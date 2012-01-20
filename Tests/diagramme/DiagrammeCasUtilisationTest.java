@@ -1,12 +1,7 @@
 package diagramme;
 
-import eltGraphique.eltModelisation.Traitement;
-import eltGraphique.eltModelisation.CasUtilisation;
-import eltGraphique.eltModelisation.Interface;
-import eltGraphique.eltModelisation.ActeurPassif;
-import eltGraphique.eltModelisation.ActeurActif;
-import eltGraphique.eltModelisation.Classe;
 import com.mxgraph.view.mxGraph;
+import eltGraphique.eltModelisation.*;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
 import org.junit.After;
@@ -17,7 +12,7 @@ import org.junit.Test;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
- * de la classe ActeurActif
+ * de la classe DiagrammeCasUtilisationTest
  * 
  * @see DiagrammeCasUtilisation
  * 
