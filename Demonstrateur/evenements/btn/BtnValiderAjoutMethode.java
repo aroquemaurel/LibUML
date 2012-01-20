@@ -4,7 +4,7 @@ import eltGraphique.eltModelisation.Classe;
 import eltGraphique.eltModelisation.Methode;
 import eltGraphique.eltModelisation.Variable;
 import eltGraphique.eltModelisation.Visibilite;
-import ihm.FenetreAjoutMethode;
+import ihm.fenetreClasses.FenetreAjoutMethode;
 import java.awt.event.MouseEvent;
 import util.Liste;
 
@@ -52,7 +52,6 @@ public class BtnValiderAjoutMethode extends BoutonFenetres {
             default : //PACKAGE
                 visibilite = Visibilite.PACKAGE;
         }
-        System.out.print(this.classe);
         
         this.classe.ajouterMethode(new Methode(visibilite,
                 super.getFenetre().getTypeRetourChampTexte().getText(),

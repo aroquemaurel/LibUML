@@ -1,11 +1,11 @@
-package evenements.btn;
+package evenements.btn.toolbar;
 
 import eltGraphique.eltModelisation.Attribut;
 import eltGraphique.eltModelisation.Classe;
 import eltGraphique.eltModelisation.Methode;
 import eltGraphique.eltModelisation.Visibilite;
 import evenements.Btn;
-import ihm.FenetreAjoutMethode;
+import ihm.fenetreClasses.FenetreAjoutMethode;
 import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdiction;
 import ihm.fenetreInterdiction.FenetreInterdictionAjoutElement;

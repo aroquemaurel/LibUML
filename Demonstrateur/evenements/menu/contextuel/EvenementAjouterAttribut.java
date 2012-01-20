@@ -1,7 +1,7 @@
 package evenements.menu.contextuel;
 
 import eltGraphique.eltModelisation.Classe;
-import ihm.FenetreAjoutAttribut;
+import ihm.fenetreClasses.FenetreAjoutAttribut;
 import ihm.FenetreDemo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

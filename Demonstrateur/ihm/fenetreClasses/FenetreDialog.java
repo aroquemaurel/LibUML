@@ -1,5 +1,6 @@
-package ihm;
+package ihm.fenetreClasses;
 
+import ihm.FenetreDemo;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JTextField;

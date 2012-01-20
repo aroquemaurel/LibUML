@@ -1,6 +1,6 @@
 package evenements.btn;
 
-import ihm.FenetreAjoutAttribut;
+import ihm.fenetreClasses.FenetreAjoutAttribut;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;

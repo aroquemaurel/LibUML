@@ -1,5 +1,16 @@
 package ihm.menu;
 
+import evenements.btn.toolbar.BtnUseCase;
+import evenements.btn.toolbar.BtnTraitement;
+import evenements.btn.toolbar.BtnAgregation;
+import evenements.btn.toolbar.BtnComposition;
+import evenements.btn.toolbar.BtnActeurActif;
+import evenements.btn.toolbar.BtnAssociation;
+import evenements.btn.toolbar.BtnGeneralisation;
+import evenements.btn.toolbar.BtnClasse;
+import evenements.btn.toolbar.BtnDependanceFonctionnelle;
+import evenements.btn.toolbar.BtnActeurPassif;
+import evenements.btn.toolbar.BtnMessageSynchrone;
 import evenements.Btn;
 import evenements.btn.*;
 import ihm.FenetreDemo;

@@ -4,7 +4,7 @@ import eltGraphique.eltModelisation.Attribut;
 import eltGraphique.eltModelisation.Classe;
 import eltGraphique.eltModelisation.Variable;
 import eltGraphique.eltModelisation.Visibilite;
-import ihm.FenetreAjoutAttribut;
+import ihm.fenetreClasses.FenetreAjoutAttribut;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;

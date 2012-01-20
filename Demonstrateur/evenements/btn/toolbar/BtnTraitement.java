@@ -1,4 +1,4 @@
-package evenements.btn;
+package evenements.btn.toolbar;
 
 import eltGraphique.eltModelisation.Traitement;
 import evenements.Btn;

@@ -1,8 +1,9 @@
-package ihm;
+package ihm.fenetreClasses;
 
 import eltGraphique.eltModelisation.Classe;
 import evenements.btn.BtnAnnulerAjoutMethode;
 import evenements.btn.BtnValiderAjoutMethode;
+import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.*;
 
