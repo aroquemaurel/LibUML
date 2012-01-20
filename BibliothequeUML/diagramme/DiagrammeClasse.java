@@ -37,7 +37,7 @@ public class DiagrammeClasse extends Diagramme {
                 valeurRetour = this.autorisationClasseAssociation(p_origine , 
                         p_extremite); 
                 break;
-            case GENERALISATION:
+            case SPECIALISATION:
                 valeurRetour = this.autorisationGeneralisation(p_origine , 
                         p_extremite);
                 break;
