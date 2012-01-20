@@ -189,7 +189,12 @@ public class Lien extends ElementGraphique {
         this.typeLien = p_typeLien;
     }
     
-    public void creerLesStylesDeFleches(){
+	/**
+	 * Crée le style de flèche adéquat, en fonction de l'attribut typeLien
+	 * 
+	 * @see eltGraphique.ligne.TypeLien
+	 */
+    protected void creerLesStylesDeFleches(){
         switch(this.typeLien){
             case SPECIALISATION:
                 this.creerStyleSpecialisation();
