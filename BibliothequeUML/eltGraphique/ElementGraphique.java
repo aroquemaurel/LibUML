@@ -13,7 +13,7 @@ import util.Liste;
  * Classe ancêtre à tout élément graphique
  *
  * @see eltGraphique.ligne.Lien
- * @see ElementModelisation
+ * @see eltGraphique.eltModelisation.ElementModelisation
  * 
  * @author Mathieu
  * @author Antoine
@@ -72,7 +72,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
     /**
     * Rend (in)visible l'élément grahique sur le graphe
-    * @param p_bool
+    * @param p_bool L'élément est vsible ?
     */
     @Override
     public void setVisible(boolean p_bool){
@@ -82,7 +82,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     /**
     * Récupère la cellule associé à l'élément graphique
     * 
-    * @param p_cellule La nouvelle cellule que représente l'élément
+    * @return la cellule associé
     */
     @Override
     public mxICell getCellule(){
@@ -135,12 +135,12 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     * Methode abstraite
     * Créer la représentation graphique de l'élément
     *
-    * @see ActeurActif
-    * @see ActeurPassif
-    * @see CasUtilisation
-    * @see Interface
-    * @see Traitement
-    * @see classe.Classe
+    * @see eltGraphique.eltModelisation.ActeurActif
+    * @see eltGraphique.eltModelisation.ActeurPassif
+    * @see eltGraphique.eltModelisation.CasUtilisation
+    * @see eltGraphique.eltModelisation.Interface
+    * @see eltGraphique.eltModelisation.Traitement
+    * @see eltGraphique.eltModelisation.Classe
     */
     @Override
     abstract public void creer();

@@ -12,7 +12,7 @@ import org.junit.Test;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
- * de la classe ActeurActif
+ * de la classe DiagrammeCasUtilisationTest
  * 
  * @see DiagrammeCasUtilisation
  * 

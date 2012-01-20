@@ -16,6 +16,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
+ * Cas de test JUnit regroupant les tests unitaires de chaque méthode
+ * de la classe DiagrammeSequenceTest
+ * 
+ * @see DiagrammeSequence
+ * 
  * @author Marie-Ly
  * @author Geoffroy
  */

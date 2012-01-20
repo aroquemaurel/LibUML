@@ -19,14 +19,14 @@ public interface IntElementGraphique {
     /**
     * Rend (in)visible l'élément grahique sur le graphe
 	*
-    * @param p_bool
+    * @param p_bool L'élément est visible ?
     */
     public void setVisible(boolean p_bool);
     
     /**
     * Récupère la cellule associé à l'élément graphique
 	*
-    * @param p_cellule La nouvelle cellule que représente l'élément
+    * @return la cellule assicié à l'élément
     */
     public mxICell getCellule();
 
@@ -62,12 +62,12 @@ public interface IntElementGraphique {
     * Methode abstraite
     * Créer la représentation graphique de l'élément
     *
-    * @see ActeurActif
-    * @see ActeurPassif
-    * @see CasUtilisation
-    * @see Interface
-    * @see Traitement
-    * @see classe.Classe
+    * @see eltGraphique.eltModelisation.ActeurActif
+    * @see eltGraphique.eltModelisation.ActeurPassif
+    * @see eltGraphique.eltModelisation.CasUtilisation
+    * @see eltGraphique.eltModelisation.Interface
+    * @see eltGraphique.eltModelisation.Traitement
+    * @see eltGraphique.eltModelisation.Classe
     */
     abstract public void creer();
 }

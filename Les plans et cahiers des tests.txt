@@ -1,0 +1,64 @@
+La planification des test:
+	
+
+	Pour les tests de non régression:
+
+		Notre projet consiste en la création d'un système ce qui par définition ne nous permet pas de faire régresser le système puisqu'il n'y avait rien de créé avant ce système.
+		Par conséquent, aucun tests de non-régression est réalisable.
+
+	Pour les tests de validation:
+
+		Nous avons développé un démonstrateur qui utilise notre bibliothèque et qui fait office de test de validation qui nous permet de vérifier que toutes les attentes du client sont comblées.
+		Il nous permet également de montrer au client les possibilités de notre librairie. 
+
+		les jeux d'essais:
+
+			Dessiner un diagramme de classe, un diagramme de séquence ainsi qu'un diagramme de cas d'utilisation chacun utilisant tous les objets graphiques possibles.
+			De plus, l'ensemble des fonctionnalités du démonstrateur seront utilisées pour présenter un large éventail des possibilités de notre bibliotèque.
+
+
+		les résultats attendus:
+
+			Représentation graphique des différents diagrammes respectant les normes UML 2.
+
+
+	Pour les tests d'intégration :
+			
+			Nous avons développé un démonstrateur qui utilise notre bibliothèque et qui fait office de test d'integration démontrant que notre système
+			est utilisable en tant que composant par un logiciel extérieur. Il nous permet également de montrer au client les possibilités de notre librairie. 
+
+		les composants à tester:
+
+			Notre bibliothèque d'objet graphique en tant que composant de notre démonstrateur.
+
+		les jeux d'essais:
+			
+			Dessiner un diagramme de classe, un diagramme de séquence ainsi qu'un diagramme de cas d'utilisation chacun utilisant tous les objets graphiques possibles.
+			De plus, l'ensemble des fonctionnalités du démonstrateur seront utilisées pour présenter un large éventail des possibilités de notre bibliotèque.
+
+		les résultats attendus:
+			
+			Représentation graphique des différents diagrammes respectant les normes UML 2.
+
+			
+
+	Pour les tests unitaires : => JAVADOC
+		
+			Il nous a été demandé par le client d'écrire une javadoc complete et détaillée.
+
+		la description détaillée des cas de tests:
+
+		les données nécessaires au test:
+
+		les résultats attendus:
+
+		l’état du système avant le test:
+
+		l’état du système après:
+
+		les critères d'acceptation:
+
+		la traçabilité vis-à-vis de la conception détaillée:
+
+		la traçabilité vis-à-vis des besoins fonctionnel:
+

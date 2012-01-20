@@ -176,7 +176,7 @@ public class Lien extends ElementGraphique {
 	 * @param p_source Element à l'origine de la flèche
 	 * @param p_destination Elemet à l'extrémité de la flèche
 	 * @param p_graph Graphe auquel est associé la flèche
-	 * @param p_typeFleche Type de la flèche
+	 * @param p_typeLien Type de la flèche
 	 *
 	 * @see ElementModelisation
 	 * @see TypeLien
@@ -189,7 +189,12 @@ public class Lien extends ElementGraphique {
         this.typeLien = p_typeLien;
     }
     
-    public void creerLesStylesDeFleches(){
+	/**
+	 * Crée le style de flèche adéquat, en fonction de l'attribut typeLien
+	 * 
+	 * @see eltGraphique.ligne.TypeLien
+	 */
+    protected void creerLesStylesDeFleches(){
         switch(this.typeLien){
             case SPECIALISATION:
                 this.creerStyleSpecialisation();
