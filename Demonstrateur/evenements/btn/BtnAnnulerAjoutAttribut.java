@@ -14,6 +14,7 @@ public class BtnAnnulerAjoutAttribut extends JButton implements MouseListener {
     public BtnAnnulerAjoutAttribut(FenetreAjoutAttribut p_fenetre) {
         super("Je ne veut plus !");
         this.fenetre = p_fenetre;
+        this.addMouseListener(this);
     }
 
     @Override

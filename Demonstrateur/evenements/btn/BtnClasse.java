@@ -33,17 +33,6 @@ public class BtnClasse extends Btn {
     public void mouseClicked(MouseEvent event) {
         Classe classe = new Classe(super.fenetre.getPanneauGraph().getGraph(),
             fenetre.getPanneauGraph().getDiagramme(), "Ma classe");
-
-        /* On ajoute des méthodes et des attributs dans la classe
-         * Le démonstrateur ne gère pas directement l'ajout d'attributs et/ou de méthodes
-         */
-        classe.ajouterMethode(new Methode(Visibilite.PROTECTED, "void", "maMethode1", null, false, false, false));
-        classe.ajouterMethode(new Methode(Visibilite.PRIVATE, "void", "maMethode2", null, false, false, false));
-        classe.ajouterMethode(new Methode(Visibilite.PUBLIC, "void", "maMethode3", null, false, false, false));
-
-        classe.ajouterAttribut(new Attribut(Visibilite.PROTECTED, false, false, "int", "monAttribut1"));
-        classe.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false, "long", "monAttribut2"));
-        classe.ajouterAttribut(new Attribut(Visibilite.PRIVATE, false, false,"Classe", "monAttribut3"));
         
         if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(classe)){
             classe.creer();

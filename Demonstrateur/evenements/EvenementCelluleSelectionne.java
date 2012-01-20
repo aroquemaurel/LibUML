@@ -5,9 +5,7 @@ import eltGraphique.ElementGraphique;
 import eltGraphique.eltModelisation.Acteur;
 import eltGraphique.eltModelisation.Classe;
 import eltGraphique.eltModelisation.Traitement;
-import evenements.menu.contextuel.EvenementDebutSequence;
-import evenements.menu.contextuel.EvenementLigneDeVie;
-import evenements.menu.contextuel.EvenementSupprimer;
+import evenements.menu.contextuel.*;
 import ihm.FenetreDemo;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -85,7 +83,7 @@ public class EvenementCelluleSelectionne implements MouseListener {
         EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
         
         JMenuItem itemAjouterMethode = new JMenuItem("Ajouter une méthode");
-        EvenementAjouterMethode evenementAjouterMethode = new EvenementAjouterMethode(element);
+        EvenementAjouterMethode evenementAjouterMethode = new EvenementAjouterMethode(this.fenetre, element);
 
         JMenuItem itemAjouterAttribut = new JMenuItem("Ajouter un attribut");
         EvenementAjouterAttribut evenementAjouterAttribut = new EvenementAjouterAttribut(this.fenetre, element);
