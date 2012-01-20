@@ -61,16 +61,21 @@
 	La particularité de cette bibliothèque etant de respecter la norme UML 2.0 ce qui impose des restrictions
 	d'utilisation sur chacun des éléments graphiques utilisés.
 
-
 	Cette bibliothèque d'objets graphiques doit comprendre l'ensemble des éléments graphiques composant
 	les principaux diagrammes vue durant les cours de PRL\footnote{Production de logiciel} de M. \bsc{Millan} afin
 	d'être utilisable pour toutes les étapes de la conception de projets respectant la norme UML 2.0.
 	
-	Suivant la demande du client, nous nous sommes limités aux trois diagrammes principaux de la norme UML 2.0 :
+	Suivant la demande du client, nous avons traité les trois diagrammes principaux de la norme UML 2.0 :
 	diagramme de cas d'utilisation, de classe et de séquence.
 
-	Nous avons choisi de developper notre projet en utilisant la bibliothèque JGraphX
-	qui est une bibliothèque graphique contenant une multitude d'éléments permettant
+	La problématique du projet était à l'origine une étude de faisabilité sur la réalisation de cette bibliothèque.
+	À l'issue de notre projet, nous devrons estimé une durée de développement pour fournir une bibliothèque complète
+	pouvant être facilement intégré dans une application plus importante, telle qu'un éditeur de saisie ou un générateur de code par exemple.
+	De plus, nous devrons trouver une potentielle utilité à un outils fragmenté, contrairement à celui utilisé à l'IUT,
+	où un outil ne permettra de créer qu'un seul type de diagramme et non regrouper tous les éléments de la modélisation UML.
+
+	Nous avons choisi de developper notre projet en utilisant la bibliothèque JGraphX,
+	bibliothèque graphique contenant une multitude d'éléments permettant
 	par exemple de dessiner facilement des graphes ou des organigrammes. De plus, elle intègre les principaux 
 	pictogrammes que l'on retrouve dans les différents diagrammes UML 2.0 tels que les cas d'utilisation (ellipse)
 	ou les acteurs (bonhomme).
@@ -91,14 +96,13 @@
 		\item Permettre de restreindre l'utilisation des éléments graphiques aux seuls diagrammes dans lesquels ils sont utilisés.
 	\end{itemize}
 	\subsection{Etats de sortie du système}
-	D'autres logiciels utiliseront la bibliothèque en tant que composant, la bibliothèque graphique
-	permettra à chaque utilisateur d'intégrer séparément chaque objet graphique dans d'autres projets,
-	et ainsi être réutilisée dans d'autres objectifs ou en association avec d'autres composants.
-	Par conséquent le système n'a pas d'états de sortie à proprement parler.\\
-	Néanmoins nous avons développé un démonstrateur parallèlement au projet dans le but de démontrer
-	le bon fonctionnement de notre système.
-	Ce dernier, utilise notre bibliothèque d'objet graphique et a pour états de sortie la représentation
-	graphique à l'écran des différents diagrammes UML dessinés. % screen !
+	Une bibliothèque est, par définition, un composant indépendant fournissant des méthodes déjà implémentées,
+	facilitant le développement de d'une application plus importante. Notre bibliothèque sera donc intégrée dans d'autres logiciels
+	plus complets.  Par conséquent le système n'a pas d'états de sortie à proprement parler.\\
+	Néanmoins nous avons développé un démonstrateur parallèlement au projet dans le but de valider l'ensemble
+	des fonctionnalités de notre bibliothèque et d'avoir une idée d'un potentiel rendu final.
+	Ce dernier consiste en une interface graphique qui intègre notre compsant et qui fourni en 
+	état de sortie la représentation graphique d'un diagramme simple.
 
 	\section{Besoins non-fonctionnels}
 		\paragraph{En efficacité~ :}
@@ -121,24 +125,26 @@
 		Internationalisation / besoins de localisation - Le système doit pouvoir être utilisé par des utilisateurs de nationalité autre que française.
 		\paragraph{En documentation :}
 		Eléments de documentation requis - Le système doit être suffisament documenter pour être compréhensible rapidement.
+	\newpage
 	\section{Cas d'utilisations}
 
 	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
 	Cas d'utilisation & Permettre de modéliser un diagramme de classe.\\
 	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de classe.
 	(C'est à dire les fonctionnalités permettant de dessiner les objets graphiques : classe, association, classe-assosiation,
-	Agrégation, Composition, Héritage) \\
+	agrégation, composition, héritage) \\
 	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner un
 	élément graphique utilisé dans un diagramme de classe.\\
 	Entrées & -\\
 	Sorties & -\\
 	Préconditions & L'utilisateur devra spécifier que son diagramme est un diagramme de classe.\\
-	Postconditions & -\\\vspace{10px}
+	Postconditions & -\\
 	Anomalies & -\\
 	\end{longtable}
-	\newpage
+	\begin{center}
+	\rule{12.6cm}{.5pt}
+	\end{center}
 	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
-
 	Cas d'utilisation & Permettre de modéliser un diagramme de séquence.\\
 	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de séquence.
 	(C'est à dire les fonctionnalités permettant de dessiner les objets graphiques : Acteur actif, Acteur passif, Traitement,
@@ -148,9 +154,13 @@
 	Entrées & -\\
 	Sorties & -\\
 	Préconditions & L'utilisateur devra spécifier que son diagramme est un diagramme de séquence. \\
-	Postconditions & -\\\vspace{10px}
+	Postconditions & -\\
 	Anomalies & -\\
-
+	\end{longtable}
+	\begin{center}
+	\rule{12.6cm}{.5pt}
+	\end{center}
+	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
 	Cas d'utilisation & Permettre de modéliser un diagramme de cas d'utilisation.\\
 	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de cas d'utilisation.
 	(C'est à dire les fonctionnalités permettant de dessiner les objets graphiques : Acteur Actif, Acteur passif, Association,
@@ -160,9 +170,10 @@
 	Entrées & -\\
 	Sorties & -\\
 	Préconditions & L'utilisateur devra spécifier que son diagramme est un diagramme de cas d'utilisation.\\
-	Postconditions & -\\\vspace{10px}
+	Postconditions & -\\
 	Anomalies & -\\
-
+	\end{longtable}
+	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
 	Cas d'utilisation & Permettre de restreindre l'utilisation des éléments graphiques aux seuls diagrammes dans lesquels ils sont utilisés.\\
 	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de restreindre l'utilisation des éléments
 	graphiques aux seuls diagrammes dans lesquels ils sont utilisés. Permettant ainsi à un utilisateur de la bibliothèque de sélectionner quel
@@ -172,7 +183,7 @@
 	Entrées & -\\
 	Sorties & -\\
 	Préconditions & -\\
-	Postconditions & -\\\vspace{10px}
+	Postconditions & -\\
 	Anomalies & -\\
 	\end{longtable}
 
@@ -265,7 +276,7 @@
 	particuliers. La classe Diagramme est générique. Par défaut elle autorise tous les éléments et tous les liens. Il est donc possible
 	au client de réimplémnter ses propres méthodes pour créer ses propres règles.
 
-	\subsection{Conception détaillée}
+	\section{Conception détaillée}
 	La description détaillée des méthodes et des attributs de chaque classe est disponible sous forme papier dans le dossier spécifié à la
 	documentation ou à l'adresse \\
 	$\rhd$ \url{http://documentation.joohoo.fr/libUML}

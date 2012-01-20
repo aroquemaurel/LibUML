@@ -26,7 +26,7 @@ public class MessageTraitement extends Lien {
     
     @Override
     public void creer(){
-        super.creerLesStylesDeFleches();
+        super.creerLeStyleDeLien();
         super.setCellule((mxCell) super.getGraph().insertEdge(
         super.getGraph().getDefaultParent(), null, this.message,
         this.sourceSousCellule, this.destinationSousCellule, super.getTypeLien().toString()));

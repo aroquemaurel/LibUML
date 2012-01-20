@@ -338,7 +338,7 @@ public class Lien extends ElementGraphique {
 	 */
 	@Override
     public void creer(){
-       this.creerLesStylesDeFleches();
+       this.creerLeStyleDeLien();
 
         
         super.setCellule((mxCell) super.getGraph().insertEdge(
