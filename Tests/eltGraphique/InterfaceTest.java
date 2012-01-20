@@ -1,32 +1,45 @@
 package eltGraphique;
 
-import eltGraphique.eltModelisation.Interface;
-import com.mxgraph.model.mxCell;
-import com.mxgraph.model.mxICell;
-import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
-import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
+import eltGraphique.eltModelisation.Interface;
 import org.junit.After;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import util.Constantes;
 
+/**
+ * Cas de test JUnit regroupant les tests unitaires de chaque méthode
+ * de la classe Interface
+ * 
+ * @see Interface
+ */
 public class InterfaceTest {
-        private Interface monInterface;    
+	/**
+	 * Le champ sur lequel on effectuera les tests
+	 */
+	private Interface monInterface;
 
+	/**
+	 * Initialisation du champ avant chaque test
+	 */
     @Before
     public void setUp() {
         this.monInterface = new Interface(new mxGraph(), null, new Diagramme());
         this.monInterface.creer();
     }
 
+	/**
+	 * Suppression de ce champ après chaque test
+	 */
     @After
     public void tearDown() {
         this.monInterface = null;
     }
 
+	/**
+	 * Les tests unitaires ne sont pas encore implémentés pour cette classe
+	 */
 	@Test
 	public void testFail() {
 		fail("Not implemented yet!");

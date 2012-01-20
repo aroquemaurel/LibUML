@@ -89,14 +89,14 @@ public class Methode {
 	 * Ajoute un paramètre à la liste de paramètre de la méthode
 	 * à la position souhaitée
 	 *
-	 * @param p_nouveauParamètre Le paramèter qui sera ajouté
+	 * @param p_nouveauParametre Le paramèter qui sera ajouté
 	 * @param p_index La position du nouvel élément dans la liste (Indice de départ : 1)
 	 * @return La paramètre ajouté
 	 * @see Variable
 	 */
-	public Variable ajouterParametre(int p_index, Variable p_nouveauParamètre) {
-		this.parametres.add(p_index, p_nouveauParamètre);
-		return (p_nouveauParamètre);
+	public Variable ajouterParametre(int p_index, Variable p_nouveauParametre) {
+		this.parametres.add(p_index, p_nouveauParametre);
+		return (p_nouveauParametre);
 	}
 
 	/**

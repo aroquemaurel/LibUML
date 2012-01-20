@@ -38,7 +38,7 @@ public class ActeurActifTest {
     }
 
 	/**
-	 * Suppression de ce champaprès chaque test
+	 * Suppression de ce champ après chaque test
 	 */
     @After
     public void tearDown() {
@@ -51,7 +51,7 @@ public class ActeurActifTest {
 	 * 
 	 * Vérifie que :
 	 *  - le style est créé
-	 *  - la forme est celle d'un acteur
+	 *  - la forme est celle d'un acteur actif
 	 *  - l'inclusion d'un autre élément soit impossible
 	 *  - l'opacite est correcte
 	 *  - la couleur du texte est correcte
