@@ -194,7 +194,7 @@ public class Lien extends ElementGraphique {
 	 * 
 	 * @see eltGraphique.ligne.TypeLien
 	 */
-    protected void creerLesStylesDeFleches(){
+    protected void creerLeStyleDeLien(){
         switch(this.typeLien){
             case SPECIALISATION:
                 this.creerStyleSpecialisation();
