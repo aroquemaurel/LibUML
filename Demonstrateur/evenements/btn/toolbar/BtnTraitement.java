@@ -1,6 +1,6 @@
-package evenements.btn;
+package evenements.btn.toolbar;
 
-import eltModelisation.Traitement;
+import eltGraphique.eltModelisation.Traitement;
 import evenements.Btn;
 import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdiction;

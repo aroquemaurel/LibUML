@@ -2,10 +2,10 @@ package evenements;
 
 import com.mxgraph.model.mxCell;
 import diagramme.Diagramme;
+import eltGraphique.eltModelisation.ElementModelisation;
+import eltGraphique.eltModelisation.Traitement;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
-import eltModelisation.ElementModelisation;
-import eltModelisation.Traitement;
 import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdictionLiaisonElement;
 import java.awt.event.MouseEvent;

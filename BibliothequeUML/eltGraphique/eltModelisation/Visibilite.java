@@ -1,4 +1,4 @@
-package eltModelisation;
+package eltGraphique.eltModelisation;
 
 /**
  * Visibilité d'un attribut, d'une méthode, d'une classe, etc.

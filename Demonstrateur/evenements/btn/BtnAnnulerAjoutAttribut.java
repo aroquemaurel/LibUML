@@ -1,7 +1,6 @@
 package evenements.btn;
 
-import ihm.fenetreClasses.FenetreAjoutMethode;
-import ihm.fenetreClasses.FenetreDialog;
+import ihm.fenetreClasses.FenetreAjoutAttribut;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
@@ -10,24 +9,21 @@ import javax.swing.JButton;
  *
  * @author satenske
  */
-public class BoutonFenetres extends JButton implements MouseListener {
-    private FenetreAjoutMethode fenetre;
-    
-    public BoutonFenetres(FenetreAjoutMethode p_fenetre, String p_texte){
-        super(p_texte);
+public class BtnAnnulerAjoutAttribut extends JButton implements MouseListener {
+    private FenetreAjoutAttribut fenetre;
+    public BtnAnnulerAjoutAttribut(FenetreAjoutAttribut p_fenetre) {
+        super("Je ne veut plus !");
         this.fenetre = p_fenetre;
         this.addMouseListener(this);
     }
 
-    public FenetreAjoutMethode getFenetre(){
-        return (this.fenetre);
-    }
     @Override
     public void mouseClicked(MouseEvent me) {
     }
 
     @Override
     public void mousePressed(MouseEvent me) {
+        this.fenetre.setVisible(false);
     }
 
     @Override
@@ -41,4 +37,5 @@ public class BoutonFenetres extends JButton implements MouseListener {
     @Override
     public void mouseExited(MouseEvent me) {
     }
+    
 }

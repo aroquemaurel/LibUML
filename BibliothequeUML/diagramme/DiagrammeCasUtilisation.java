@@ -3,8 +3,8 @@ package diagramme;
 import eltGraphique.ElementGraphique;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
-import eltModelisation.ActeurActif;
-import eltModelisation.CasUtilisation;
+import eltGraphique.eltModelisation.ActeurActif;
+import eltGraphique.eltModelisation.CasUtilisation;
 
 /**
  * Cette classe permet de représenter et de manipuler <b>un Diagramme de Cas d'utilisation</b>.

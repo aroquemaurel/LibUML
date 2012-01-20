@@ -1,9 +1,14 @@
 package diagramme;
 
+import eltGraphique.eltModelisation.Traitement;
+import eltGraphique.eltModelisation.CasUtilisation;
+import eltGraphique.eltModelisation.Interface;
+import eltGraphique.eltModelisation.ActeurPassif;
+import eltGraphique.eltModelisation.ActeurActif;
+import eltGraphique.eltModelisation.Classe;
 import com.mxgraph.view.mxGraph;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
-import eltModelisation.*;
 import org.junit.After;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -559,7 +564,7 @@ public class DiagrammeCasUtilisationTest {
     * Test unitaire qui vérifie que l'élément cas d'utilisation est autorisé dans un diagramme de cas d'utilisation
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne vrai
+    *  - la méthode eltAutorise() retourne vrai
     */
     @Test
     public void testEltAutoriseCasUtilisation () {
@@ -571,7 +576,7 @@ public class DiagrammeCasUtilisationTest {
     * Test unitaire qui vérifie que l'élément lien est autorisé dans un diagramme de cas d'utilisation
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne vrai
+    *  - la méthode eltAutorise() retourne vrai
     */
     @Test
     public void testEltAutoriseLien () {
@@ -588,7 +593,7 @@ public class DiagrammeCasUtilisationTest {
     * Test unitaire qui vérifie que l'élément acteur actif est autorisé dans un diagramme de cas d'utilisation
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne vrai
+    *  - la méthode eltAutorise() retourne vrai
     */
     @Test
     public void testEltAutoriseActeurActif () {
@@ -600,7 +605,7 @@ public class DiagrammeCasUtilisationTest {
     * Test unitaire qui vérifie que l'élément acteur passif n'est pas autorisé dans un diagramme de cas d'utilisation
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseActeurPassif () {
@@ -612,7 +617,7 @@ public class DiagrammeCasUtilisationTest {
     * Test unitaire qui vérifie que l'élément traitement n'est pas autorisé dans un diagramme de cas d'utilisation
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseTraitement () {
@@ -624,7 +629,7 @@ public class DiagrammeCasUtilisationTest {
     * Test unitaire qui vérifie que l'élément classe n'est pas autorisé dans un diagramme de cas d'utilisation
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseClasse () {
@@ -636,7 +641,7 @@ public class DiagrammeCasUtilisationTest {
     * Test unitaire qui vérifie que l'élément Interface n'est pas autorisé dans un diagramme de cas d'utilisation
     * 
     * Vérifie que :
-    *  - la méthode lienAutorise() retourne faux
+    *  - la méthode eltAutorise() retourne faux
     */
     @Test
     public void testEltAutoriseInterface () {

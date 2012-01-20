@@ -1,4 +1,4 @@
-package eltModelisation;
+package eltGraphique.eltModelisation;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.util.mxConstants;
@@ -18,7 +18,7 @@ import util.Liste;
  * @author Mathieu
  * @author Antoine
  */
-public class Classe extends eltModelisation.ElementModelisation {
+public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     /**
 	 * Classe abstraite ?
 	 */
@@ -42,6 +42,16 @@ public class Classe extends eltModelisation.ElementModelisation {
     * Classe constante ?
     */
     private boolean constante;
+    
+    /**
+     * Cellule contenant les attributs 
+     */
+    private mxCell celluleAttributs;
+    
+    /**
+     * Cellule contenant les méthodes 
+     */
+    private mxCell celluleMethodes;
     
     /**
     * Creer le style d'une classe
@@ -118,8 +128,10 @@ public class Classe extends eltModelisation.ElementModelisation {
 
         this.attributs = new Liste<Attribut>();
         this.methodes = new Liste<Methode>();
-		this.abstraite = false;
-		this.constante = false;
+        this.abstraite = false;
+        this.constante = false;
+        this.celluleAttributs = new mxCell();
+        this.celluleMethodes = new mxCell();
     }
 
     /**
@@ -130,8 +142,11 @@ public class Classe extends eltModelisation.ElementModelisation {
     * @see Methode
     */
     public final Methode ajouterMethode(Methode p_nouvelleMethode) {
-            this.methodes.ajouterElement(p_nouvelleMethode);
-            return(p_nouvelleMethode);
+        this.methodes.ajouterElement(p_nouvelleMethode);
+        this.celluleMethodes.setValue(this.genererChaineAttributs());
+        super.mettreAJour();
+        
+        return(p_nouvelleMethode);
     }
 
     /**
@@ -143,7 +158,10 @@ public class Classe extends eltModelisation.ElementModelisation {
     */
     public final Attribut ajouterAttribut(Attribut p_nouvelAttribut) {
         this.attributs.ajouterElement(p_nouvelAttribut);
-		return(p_nouvelAttribut);
+        this.celluleAttributs.setValue(this.genererChaineAttributs());
+        super.mettreAJour();
+        // TODO problème de mise à jour pour les classes! à régler (redéfinition ?)
+        return(p_nouvelAttribut);
     }
 
     /**
@@ -227,25 +245,22 @@ public class Classe extends eltModelisation.ElementModelisation {
      */
     @Override
     public final void creer() {
-        
-        mxCell celluleAttributs;
-        mxCell celluleMethodes;
         this.creerStyleClasse();
         this.creerStyleContenuClasse();
 
         super.setCellule((mxCell) super.getGraph().insertVertex( null, null, super.getTexte(), 350, 350,
                          super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
 
-        celluleAttributs = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,
+        this.celluleAttributs = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,
                                 this.genererChaineAttributs(), 0, 0, super.getDimension().getWidth(), 60,
                                 "CONTENUCLASSE");
 
-        celluleMethodes = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,
+        this.celluleMethodes = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,
                                this.genererChaineMethodes(), 0, 100, super.getDimension().getWidth(), 60,
                                "CONTENUCLASSE");
 
-        celluleAttributs.setConnectable(false);
-        celluleMethodes.setConnectable(false);
+        this.celluleAttributs.setConnectable(false);
+        this.celluleMethodes.setConnectable(false);
 
         super.getDiagramme().getElementsGraphiques().add(this);
     }

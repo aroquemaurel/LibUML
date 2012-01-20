@@ -1,8 +1,8 @@
 package eltGraphique;
 
-import eltModelisation.Interface;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
+import eltGraphique.eltModelisation.Interface;
 import org.junit.After;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -18,7 +18,7 @@ public class InterfaceTest {
 	/**
 	 * Le champ sur lequel on effectuera les tests
 	 */
-	private Interface monInterface;    
+	private Interface monInterface;
 
 	/**
 	 * Initialisation du champ avant chaque test

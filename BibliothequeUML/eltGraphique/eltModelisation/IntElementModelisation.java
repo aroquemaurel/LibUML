@@ -1,4 +1,4 @@
-package eltModelisation;
+package eltGraphique.eltModelisation;
 
 import java.awt.Dimension;
 import java.awt.Point;

@@ -1,4 +1,4 @@
-package eltModelisation;
+package eltGraphique.eltModelisation;
 
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
