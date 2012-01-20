@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,openany]{article}
+\documentclass[12pt,a4paper,openany]{report}
 %%%% JNLP 
 \usepackage{lmodern}
 \usepackage{xcolor}
@@ -10,6 +10,7 @@
 \usepackage{listingsutf8}
 \usepackage{fancyhdr}
 \usepackage{multido}
+\usepackage{multicol}
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{ifthen}
@@ -43,6 +44,115 @@
 \begin{document}
 	\maketitle
 	\newpage
+	\setcounter{tocdepth}{4}
+	\setcounter{secnumdepth}{3}
 	\tableofcontents
 	\newpage
+	\chapter{Les plans de tests}
+	\section{Les plans de non régression}
+	Notre projet est de développé une bibliothèque UML\footnote{Unified Modeling Language}, aucun système n'existant
+	au départ, il est donc inutile de faire un test de non régression étant donné que nous ne continuons pas un système, il n'y aura pas 
+	de régression.
+	\section{Les tests de validation}
+		Nous avons développé un démonstrateur qui utilise notre bibliothèque et qui fait office de test de validation. Il nous permet de vérifier que toutes les attentes du client sont respectés. \\
+		Avec ce démonstrateur, nous pouvons montrer au client les différentes possibilités de la bibliothèque, ainsi qu'un exemple d'utilisation.
+
+		\subsection{Jeux d'essais}
+		\subsubsection{Dessiner un diagramme complet}
+		Nous avons effectués plusieurs jeux d'essais, le but est de pouvoir dessiner un pour chacun des types de diagrammes demandés par le client,
+		un diagramme utilisant tous les composant de la norme UML 2.0 et respectant cette même norme, ceci pour chacun des diagrammes 
+		demandés par notre client. 
+		\begin{itemize}
+			\item Dessiner un diagramme de classe
+			\item Dessiner un diagramme de séquence
+			\item Dessiner un diagramme de cas d'utilisation
+		\end{itemize}
+	
+		\subsubsection{Respecter les contraintes d'ajout d'éléments}
+		Pour chacun des diagrammes, les contraintes doivent être respectés, ainsi en fonction du type de diagramme, certains éléments ne doivent pas pouvoir
+		être inséré. Voici la liste des éléments autorisés en fonction du type de diagramme.
+		\begin{multicols}{2}
+		\paragraph{Diagramme de cas d'utilisation}
+		\begin{itemize}
+			\item Cas d'utilisation
+			\item Acteur actif
+		\end{itemize}
+		\paragraph{Diagramme de classe}
+		\begin{itemize}
+			\item Classe
+			\item Interface
+		\end{itemize}
+		\paragraph{Diagramme de séquence}
+		\begin{itemize}
+			\item Traitement
+			\item Acteur actif 
+			\item Acteur passif
+			\item Ligne de vie 
+		\end{itemize}
+		\end{multicols}
+
+		\subsubsection{Respecter les contraintes de liaisons d'éléments}
+		Nous devons également respecter les contraintes de liaison entre les différents éléments. Ainsi voici la liste des liaisons possible.
+		\begin{multicols}{2}
+		\paragraph{Diagramme de classe}	
+		\begin{itemize}
+			\item Entre deux classes
+				\begin{itemize}
+					\item Agrégation
+					\item Composition
+					\item Association
+					\item Spécialisation
+				\end{itemize}
+			\item Entre une classe et une interface
+				\begin{itemize}
+					\item Spécialisation
+					\item Dépendance fonctionnelle 
+						\\ \\
+				\end{itemize}
+		\end{itemize}
+		\paragraph{Diagramme de cas d'utilisation}	
+		\begin{itemize}
+			\item Entre un acteur un cas d'utilisation
+				\begin{itemize}
+					\item Association
+				\end{itemize}
+			\item Entre deux cas d'utilisations
+				\begin{itemize}
+					\item Dépendance fonctionnelle
+				\end{itemize}
+		\end{itemize}
+		\paragraph{Diagramme de séquence}
+		\begin{itemize}
+			\item Entre deux traitements
+				\begin{itemize}
+					\item Dépendance fonctionnelle
+					\item Déclenchements
+				\end{itemize}
+		\end{itemize}
+		\end{multicols}
+		\subsection{Résultats obtenus}
+		Nous vérifierons que les diagrammes sont bien réalisés, qu'il n'y a aucune erreur, et qu'ils correspondent aux besoins du client.\\
+		Également, nous vérifierons que nous ne pouvons pas relier ou ajouter des éléments non autorisés par la norme UML 2.0.
+
+	\section{Les tests d'intégration}
+		Nous avons développé un démonstrateur qui utilise notre bibliothèque et qui fait office de test d'integration démontrant que notre système
+		est utilisable en tant que composant par un logiciel extérieur. Il nous permet également de montrer au client les possibilités de notre librairie. 
+
+		\subsection{Les composants à tester}
+
+			Notre bibliothèque d'objet graphique en tant que composant de notre démonstrateur.
+
+			\subsection{Les jeux d'essais}
+			
+			Dessiner un diagramme de classe, un diagramme de séquence ainsi qu'un diagramme de cas d'utilisation chacun utilisant tous les objets graphiques possibles.
+			De plus, l'ensemble des fonctionnalités du démonstrateur seront utilisées pour présenter un large éventail des possibilités de notre bibliotèque.
+
+			\subsection{Les résultats attendus}
+			
+			Représentation graphique des différents diagrammes respectant les normes UML 2.
+
+
+
+	
+	
 \end{document}
