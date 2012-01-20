@@ -295,7 +295,7 @@ public class ClasseTest {
     }
 	
 	/**
-	 * Test unitaire qui teste la création du style de l'acteur passif
+	 * Test unitaire qui teste la création du style de la classe
 	 * en vérifiant chaque champ du nouveau style
 	 * 
 	 * Vérifie que :
