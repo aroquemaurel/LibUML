@@ -18,7 +18,7 @@ public class DiagrammeSequence extends Diagramme {
     * Méthode qui teste si le lien est autorisé ou non dans le diagrammme de
     * séquence en fonction de l'origine et de l'extrémité    
     *
-    * @see Diagramme.java
+    * @see Diagramme
     * @param p_origine Element graphique d'origine
     * @param p_extremite Element graphique d'arrivée
     * @param p_typeDeFleche Type de lien utilisé entre les deux éléments graphiques
@@ -92,7 +92,7 @@ public class DiagrammeSequence extends Diagramme {
      * Méthode qui teste si l'élément est autorisé ou pas dans le diagramme
      * de séquence
      *
-     * @see Diagramme.java
+     * @see Diagramme
      * @param p_element
      * @return vrai(true) si l'element est autorisé dans un diagramme de sequence
      * ou faux(false) si l'element n'est pas autorisé dans un diagramme de sequence.

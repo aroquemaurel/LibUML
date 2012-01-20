@@ -152,7 +152,7 @@ public class DiagrammeClasse extends Diagramme {
      /**
      * Méthode qui teste si l'élément est autorisé ou pas dans le diagramme
      * de classe
-     * @see Diagramme.java
+     * @see Diagramme
      * @param p_element
      * @return vrai(true) si l'element est autorisé dans un diagramme de classe
      * ou faux(false) si l'element n'est pas autorisé dans un diagramme de classe.
