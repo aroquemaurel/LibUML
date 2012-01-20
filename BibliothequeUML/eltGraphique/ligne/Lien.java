@@ -161,12 +161,28 @@ public class Lien extends ElementGraphique {
 	private void creerStyleSpecialisation() {
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
 		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_ORTHOGONAL);
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+            nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+            nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+            nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+			nouveauStyle.put(mxConstants.STYLE_ENDSIZE, Constantes.TAILLE_FLECHE+10);
+            nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
+            nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
+		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
+	}
+
+	/**
+	 * Construit le style d'un message synchrone
+	 */ 
+	private void creerStyleMessageSynchrone() {
+		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
+		Map<String, Object> nouveauStyle = new HashMap<String, Object>();
+		nouveauStyle.put(mxConstants.STYLE_EDGE, mxConstants.EDGESTYLE_TOPTOBOTTOM);
+		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_OPEN);
 		nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
+		nouveauStyle.put(mxConstants.STYLE_ENDSIZE, Constantes.TAILLE_FLECHE);
 		nouveauStyle.put(mxConstants.STYLE_MOVABLE, mxConstants.NONE);
 		nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_FLECHE);
-		feuilleStyles.putCellStyle("SPECIALISATION", nouveauStyle);
+		feuilleStyles.putCellStyle("MESSAGE_SYNCHRONE", nouveauStyle);
 	}
 
 
@@ -216,6 +232,9 @@ public class Lien extends ElementGraphique {
                 break;
             case DEPENDANCE:
                 this.creerStyleDependance();
+                break;
+            case MESSAGE_SYNCHRONE:
+                this.creerStyleMessageSynchrone();
                 break;
             default:
             throw new UnsupportedOperationException("Type de flèche inconnu");
