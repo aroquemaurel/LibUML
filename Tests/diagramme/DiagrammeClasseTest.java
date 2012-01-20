@@ -12,9 +12,9 @@ import org.junit.Test;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
- * de la classe DiagrammeTest
+ * de la classe DiagrammeClasseTest
  * 
- * @see Diagramme
+ * @see DiagrammeClasse
  * 
  * @author Marie-Ly
  * @author Geoffroy
