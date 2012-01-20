@@ -19,7 +19,11 @@ import org.junit.Test;
 import util.Liste;
 
 /**
- * Classe de test unitaires de la classe <b>Diagramme</b>.
+ * Cas de test JUnit regroupant les tests unitaires de chaque méthode
+ * de la classe DiagrammeTest
+ * 
+ * @see Diagramme
+ * 
  * @author Marie-Ly
  * @author Geoffroy
  */
