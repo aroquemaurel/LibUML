@@ -27,6 +27,7 @@ public class CasUtilisation extends ElementModelisation {
             nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
             nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);
             nouveauStyle.put(mxConstants.STYLE_STROKECOLOR, Constantes.COULEUR_BORDURE);
+            nouveauStyle.put(mxConstants.STYLE_FOLDABLE, mxConstants.NONE);
             feuilleStyles.putCellStyle("USECASE", nouveauStyle);
     }
 

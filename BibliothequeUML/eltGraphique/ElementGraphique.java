@@ -65,6 +65,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
        ElementModelisation.mettreAJour(elementsRelies);
        super.getTarget().removeFromParent();  
        super.setTarget(null);
+       super.setParent(null);
     }
 
     public Liste<Lien> getLiens(){

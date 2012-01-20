@@ -124,7 +124,7 @@ public class Traitement extends ElementModelisation {
                 Map<String, Object> nouveauStyle = new HashMap<String, Object>();
 
                 nouveauStyle = new HashMap<String, Object>();
-		nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
+                nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
                 nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, Constantes.COULEUR_FOND);
                 nouveauStyle.put(mxConstants.STYLE_FONTCOLOR, Constantes.COULEUR_TEXTE);

@@ -84,18 +84,28 @@ public class TraitementTest {
 	 */
     @Test
     public void testCreerStyleFleche() {
-            mxStylesheet feuilleStyles = this.traitement.getGraph().getStylesheet();
-            assertTrue(feuilleStyles.getStyles().containsKey("FLECHE_EVENEMENT_DECLENCHEUR"));
-            assertEquals(mxConstants.ARROW_BLOCK, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_SHAPE));
-            assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_OPACITY));
-            assertEquals(Constantes.COULEUR_FOND, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_FILLCOLOR));
-            assertEquals(Constantes.COULEUR_TEXTE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_FONTCOLOR));
-            assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_MOVABLE));
-            assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_RESIZABLE));
-            assertEquals(mxConstants.DIRECTION_WEST, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_DIRECTION));
-            assertEquals(Constantes.COULEUR_FLECHE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_STROKECOLOR));
-            assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_DELETABLE));
-            assertEquals(mxConstants.ALIGN_LEFT, feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_ALIGN));
+        mxStylesheet feuilleStyles = this.traitement.getGraph().getStylesheet();
+        assertTrue(feuilleStyles.getStyles().containsKey("FLECHE_EVENEMENT_DECLENCHEUR"));
+        assertEquals(mxConstants.ARROW_BLOCK, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_ENDARROW));
+        assertEquals(Constantes.OPACITE, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_OPACITY));
+        assertEquals(Constantes.COULEUR_FOND, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_FILLCOLOR));
+        assertEquals(Constantes.COULEUR_TEXTE, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_FONTCOLOR));
+        assertEquals(mxConstants.NONE, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_MOVABLE));
+        assertEquals(mxConstants.NONE, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_RESIZABLE));
+        assertEquals(mxConstants.DIRECTION_WEST, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_DIRECTION));
+        assertEquals(Constantes.COULEUR_FLECHE, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_STROKECOLOR));
+        assertEquals(mxConstants.NONE, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_DELETABLE));
+        assertEquals(mxConstants.ALIGN_LEFT, 
+                feuilleStyles.getStyles().get("FLECHE_EVENEMENT_DECLENCHEUR").get(mxConstants.STYLE_ALIGN));
     }
 
 	/**
