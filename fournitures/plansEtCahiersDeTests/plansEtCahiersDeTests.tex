@@ -151,10 +151,12 @@
 			Représentation graphique des différents diagrammes respectant les normes UML 2.0 avec possibilité d'ajout ou de suppression de données.
 	\section{Les tests unitaires}
 	Les tests unitaires servent à tester chacune des méthodes de notre bibliothèque.\\
-	La description des tests unitaires est disponible sous format Javadoc à l'annexe ?? page ??. %//TODO
+	Nous avons utiliser JUnit pour tester toutes les méthodes de notre bibliothèque. Les tests sont validés si 
+	la bibliothèque JUnit nous indique que tous les tests passent et ne posent pas de problème.
+	La description des tests unitaires est disponible sous format Javadoc à l'annexe \ref{junitdoc} page \pageref{junitdoc}.
+	Elle est également disponible sous format HTML à l'adresse suivante: \\
+	$\rhd$ \url{http://documentation.joohoo.fr/libUML/junitTests/index.html}\\
 		
-	Il nous a été demandé par le client d'écrire une Javadoc complète et détaillée.
-
 	\section{Le test de charges}
 		\subsection{Le jeux d'essai}
 		Le test de charge permet de savoir si la création d'un grand nombre d'élément graphique ne posera pas de problème. 
@@ -171,6 +173,15 @@
 		Une fois ces éléments suivants créer, nous supprimerons 40 éléments, qui devront supprimer les liens reliés aux éléments.
 		\subsection{Les résultats attendus}
 		Aucune exception, les éléments ont été bien créer et certains éléments ont été supprimés avec les liens.
-	
-	
+	\chapter{Les cahiers de tests}	
+	\section{Les tests de validation}
+	\section{Les tests unitaires}
+	Après lancement des tests unitaires, ils sont tous passéss. Nous pouvons donc en conclure que les différents modules de la bibliothèque UML fonctionnent. \\
+	\begin{center}
+	\includegraphics[width=13cm]{junitPassed.jpg}
+	\end{center}
+	\appendix	
+	\chapter{Documentation des tests unitaires}
+	\label{junitdoc}
+	\includepdf[page=1-23]{docJUnit.pdf}
 \end{document}
