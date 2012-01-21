@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
+import util.Position;
 
 /**
  * Classe représentant un acteur passif
@@ -39,8 +40,8 @@ public class ActeurPassif extends Acteur {
     * @see Acteur
     * @see ElementModelisation
     */
-    public ActeurPassif(mxGraph p_graph, Diagramme p_diagramme, String p_texte) {
-        super(p_graph, p_diagramme, "<<passif>>\n"+p_texte, new Dimension(100,35));
+    public ActeurPassif(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Position p_position) {
+        super(p_graph, p_diagramme, "<<passif>>\n"+p_texte, new Dimension(100,35), p_position);
     }
 
     /**
@@ -50,7 +51,9 @@ public class ActeurPassif extends Acteur {
     public final void creer(){
         this.creerStyleActeurPassif();
         super.setCellule((mxCell) super.getGraph().insertVertex( super.getParent(), null, super.getTexte(),
-				30, 30, super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_PASSIF"));
+                        super.getPosition().getAbscisse(), 
+                        super.getPosition().getOrdonne(), super.getDimension().getWidth(),
+                        super.getDimension().getHeight(), "ACTEUR_PASSIF"));
 
         super.getDiagramme().getElementsGraphiques().add(this);
 

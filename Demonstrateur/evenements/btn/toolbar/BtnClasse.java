@@ -1,15 +1,12 @@
 package evenements.btn.toolbar;
 
-import eltGraphique.eltModelisation.Attribut;
 import eltGraphique.eltModelisation.Classe;
-import eltGraphique.eltModelisation.Methode;
-import eltGraphique.eltModelisation.Visibilite;
 import evenements.Btn;
-import ihm.fenetreClasses.FenetreAjoutMethode;
 import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdiction;
 import ihm.fenetreInterdiction.FenetreInterdictionAjoutElement;
 import java.awt.event.MouseEvent;
+import util.Position;
 
 /**
 * Cette classe permet de gérer un click sur le bouton Classe.
@@ -32,7 +29,7 @@ public class BtnClasse extends Btn {
     @Override
     public void mouseClicked(MouseEvent event) {
         Classe classe = new Classe(super.fenetre.getPanneauGraph().getGraph(),
-            fenetre.getPanneauGraph().getDiagramme(), "Ma classe");
+            fenetre.getPanneauGraph().getDiagramme(), "Ma classe", new Position(20,20));
         
         if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(classe)){
             classe.creer();

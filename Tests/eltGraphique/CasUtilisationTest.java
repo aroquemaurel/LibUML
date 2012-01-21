@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import util.Constantes;
 import static org.junit.Assert.*;
+import util.Position;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
@@ -32,8 +33,7 @@ public class CasUtilisationTest {
     @Before
     public void setUp() {
 		this.casUtilisation= new CasUtilisation(new mxGraph(), 
-												new Diagramme(),
-												"casUtilisationPourLesTests");
+                        new Diagramme(), "casUtilisationPourLesTests", new Position(42,42));
         this.casUtilisation.creer();
     }
 

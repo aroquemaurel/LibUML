@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
 import util.Liste;
+import util.Position;
 
 /**
  * Modélise une classe par une trois carrés contenant le titre de la classe, 
@@ -123,8 +124,8 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     * @param p_graph Le graphe auquel sera ajouter la classe
     * @param p_texte Le texte associé à la classe (son nom)
     */
-    public Classe(mxGraph p_graph, Diagramme p_diagramme, String p_texte){
-        super(p_graph, p_diagramme, p_texte, new Dimension(125,150));
+    public Classe(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Position p_position){
+        super(p_graph, p_diagramme, p_texte, new Dimension(125,150), p_position);
 
         this.attributs = new Liste<Attribut>();
         this.methodes = new Liste<Methode>();
@@ -248,7 +249,8 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
         this.creerStyleClasse();
         this.creerStyleContenuClasse();
 
-        super.setCellule((mxCell) super.getGraph().insertVertex( null, null, super.getTexte(), 350, 350,
+        super.setCellule((mxCell) super.getGraph().insertVertex( null, null, super.getTexte(), 
+                super.getPosition().getAbscisse(), super.getPosition().getOrdonne(),
                          super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
 
         this.celluleAttributs = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,

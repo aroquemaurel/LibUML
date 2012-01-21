@@ -13,6 +13,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import util.Position;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
@@ -31,9 +32,7 @@ public class ActeurPassifTest {
 	 */
     @Before
     public void setUp() {
-		this.acteur = new ActeurPassif(new mxGraph(), 
-									   new Diagramme(), 
-									   "un super test");
+		this.acteur = new ActeurPassif(new mxGraph(),  new Diagramme(), "un super test", new Position(42,42));
         this.acteur.creer();
     }
 

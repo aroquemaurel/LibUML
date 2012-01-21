@@ -47,11 +47,21 @@ public class LienTest {
 	 */
 	@Before
 	public void setUp() {
-		this.lienComposition = new Lien(new Classe(null, null, null), new Classe(null, null, null), new mxGraph(), new Diagramme(), TypeLien.COMPOSITION);
-		this.lienAgregation = new Lien(new Classe(null, null, null), new Classe(null, null, null), new mxGraph(), new Diagramme(), TypeLien.AGREGATION);
-		this.lienAssociation = new Lien(new Classe(null, null, null), new Classe(null, null, null), new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION);
-		this.lienSpecialisation = new Lien(new Classe(null, null, null), new Classe(null, null, null), new mxGraph(), new Diagramme(), TypeLien.SPECIALISATION);
-		this.lienFleche = new Lien(new Classe(null, null, null), new Classe(null, null, null), new mxGraph(), new Diagramme(), TypeLien.FLECHE);
+		this.lienComposition = new 
+                        Lien(new Classe(null, null, null, null), 
+                        new Classe(null, null, null, null), new mxGraph(), new Diagramme(), TypeLien.COMPOSITION);
+		this.lienAgregation = 
+                        new Lien(new Classe(null, null, null, null), new Classe(null, null, null, null), 
+                        new mxGraph(), new Diagramme(), TypeLien.AGREGATION);
+		this.lienAssociation =
+                        new Lien(new Classe(null, null, null, null), new Classe(null, null, null, null), 
+                        new mxGraph(), new Diagramme(), TypeLien.ASSOCIATION);
+		this.lienSpecialisation =
+                        new Lien(new Classe(null, null, null, null), new Classe(null, null, null, null), 
+                        new mxGraph(), new Diagramme(), TypeLien.SPECIALISATION);
+		this.lienFleche = 
+                        new Lien(new Classe(null, null, null, null), new Classe(null, null, null, null), 
+                        new mxGraph(), new Diagramme(), TypeLien.FLECHE);
 		
 		this.lienComposition.creer();
 		this.lienAgregation.creer();

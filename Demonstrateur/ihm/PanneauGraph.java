@@ -13,6 +13,7 @@ public class PanneauGraph extends mxGraphComponent {
     private final int longueurPanneau;
     private Diagramme diagramme;
 
+
     /* Paramètres du panneau */
     private void parametrerPanneau(){
         this.setGridVisible(false);

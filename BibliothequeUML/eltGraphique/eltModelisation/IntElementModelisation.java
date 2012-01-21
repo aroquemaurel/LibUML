@@ -1,7 +1,7 @@
 package eltGraphique.eltModelisation;
 
 import java.awt.Dimension;
-import java.awt.Point;
+import util.Position;
 
 /**
  * Interface d'un élément de modélisation
@@ -28,7 +28,7 @@ public interface IntElementModelisation {
 	*
     * @return La position de l'élément
     */
-    public Point getPosition();
+    public Position getPosition();
 
     /**
     * Modifie la dimension de l'élément (hauteur/largeur)
@@ -49,6 +49,6 @@ public interface IntElementModelisation {
 	*
     * @param p_position La nouvelle position de l'élement
     */
-    public void setPosition(Point p_position);
+    public void setPosition(Position p_position);
 
 }

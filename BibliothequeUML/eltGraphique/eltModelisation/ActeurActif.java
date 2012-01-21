@@ -10,6 +10,7 @@ import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
+import util.Position;
 
 /**
  * Classe propre aux acteurs passif (représentation graphique)
@@ -47,8 +48,8 @@ public class ActeurActif extends Acteur {
      * @param p_graph Le graphe sur lequel sera l'acteur actif
      * @param p_texte Le texte lié à l'acteur actif
      */
-    public ActeurActif(mxGraph p_graph, Diagramme p_diagramme, String p_texte){
-        super(p_graph, p_diagramme, p_texte, new Dimension(60,85));
+    public ActeurActif(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Position p_position){
+        super(p_graph, p_diagramme, p_texte, new Dimension(60,85), p_position);
     }
 
     /**
@@ -60,7 +61,8 @@ public class ActeurActif extends Acteur {
         this.creerStyleActeurActif();
 
         super.setCellule((mxCell) super.getGraph().insertVertex(
-            null, null, super.getTexte(), 30, 30,
+            null, null, super.getTexte(), super.getPosition().getAbscisse(), 
+                        super.getPosition().getOrdonne(),
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_ACTIF"));
 
 		super.getCellule().getGeometry().setOffset(new mxPoint(OFFSET_TEXTE_ACTEUR_X, OFFSET_TEXTE_ACTEUR_Y));

@@ -6,6 +6,7 @@ import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdiction;
 import ihm.fenetreInterdiction.FenetreInterdictionAjoutElement;
 import java.awt.event.MouseEvent;
+import util.Position;
 
 
 /**
@@ -30,7 +31,7 @@ public class BtnTraitement extends Btn {
     public void mouseClicked(MouseEvent event) {
         Traitement traitement = new Traitement (super.fenetre.getPanneauGraph().getGraph(),
             fenetre.getPanneauGraph().getDiagramme(),
-                "Mon traitement", null, true);
+                "Mon traitement",  null, new Position(20,20), true);
         if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(traitement)){
             traitement.creer();
         } else {

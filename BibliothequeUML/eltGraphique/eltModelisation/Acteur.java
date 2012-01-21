@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
 import util.Constantes;
+import util.Position;
 
 /**
  * Classe ancête aux deux types d'acteurs : actifs et passifs.
@@ -60,8 +61,8 @@ abstract public class Acteur extends ElementModelisation {
      * @param p_texte le texte qui sera afficher sur l'acteur
      *
      */
-    public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
-            super(p_graph, p_diagramme, p_texte, p_dimension);
+    public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension, Position p_position) {
+            super(p_graph, p_diagramme, p_texte, p_dimension, p_position);
             this.visibiliteLigneDeVie = false;
     }
     

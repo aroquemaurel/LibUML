@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import util.Constantes;
+import util.Position;
 
 /**
  * Modélise un traitement par un rectangle vertical et un élément déclencheur
@@ -136,20 +137,21 @@ public class Traitement extends ElementModelisation {
                 nouveauStyle.put(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT);
                 feuilleStyles.putCellStyle("FLECHE_EVENEMENT_DECLENCHEUR", nouveauStyle);
 	}
-	
+
 	/**
+         * // TODO javadoc est pas à jour!! param
 	 * Constructeur de la classe traitement
 	 * @param p_graph Le graphe auquel sera ajouter le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
 	 */
 	public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, 
-                Lien p_evenementDeclencheur, boolean p_debutSequence){
-		super(p_graph, p_diagramme, p_texte, new Dimension(20,20));
+                Lien p_evenementDeclencheur, Position p_position, boolean p_debutSequence){
+		super(p_graph, p_diagramme, p_texte, new Dimension(20,20), p_position);
 		this.debutSequence = p_debutSequence;
 		this.evenementDeclencheur = p_evenementDeclencheur;
                 this.nbMessages = 0;
-	}
-
+	}        
+        
         public void ajouterMessage(Traitement p_destination, String p_message, TypeLien p_typeLien){          
             mxCell sourceSousCellule, destinationSousCellule;
             /* on incrémente le nombre de message présent dans les traitements */
@@ -244,7 +246,8 @@ public class Traitement extends ElementModelisation {
                 this.creerStyleTraitement();
 
                 super.setCellule((mxCell) super.getGraph().insertVertex(
-                        super.getParent(), null, null, 30, 30,
+                        super.getParent(), null, null, super.getPosition().getAbscisse(), 
+                        super.getPosition().getOrdonne(),
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
 
 		if (this.evenementDeclencheur == null) {

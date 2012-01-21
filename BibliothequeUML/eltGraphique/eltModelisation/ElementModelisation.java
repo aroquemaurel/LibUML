@@ -6,8 +6,8 @@ import diagramme.Diagramme;
 import eltGraphique.ElementGraphique;
 import eltGraphique.ligne.Lien;
 import java.awt.Dimension;
-import java.awt.Point;
 import util.Liste;
+import util.Position;
 
 /**
  * Classe ancêtre à tout élément de modélisation (classe, cas d'utilisation,
@@ -28,16 +28,17 @@ abstract public class ElementModelisation extends ElementGraphique implements In
     /**
     * Position de l'élément
     */
-    private Point position;
+    private Position position;
 
     /**
     * Taille de l'élément (hauteur/largeur)
     */
     private Dimension dimension;
 
+  
     /**
     * Constructeur générique aux éléments de modélisation
-    *
+    * TODO @param
     * @see CasUtilisation
     * @see Acteur
     * @see Classe
@@ -45,12 +46,13 @@ abstract public class ElementModelisation extends ElementGraphique implements In
     * @see Interface
     */
     public ElementModelisation(mxGraph p_graph,
-                                Diagramme p_diagramme, String p_texte, Dimension p_dimension) {
+                                Diagramme p_diagramme, String p_texte, Dimension p_dimension, Position p_position) {
             super(p_graph, p_diagramme);
             this.texte = p_texte;
             this.dimension = p_dimension;
+            this.position = p_position;
     }
-
+    
     /**
     * Met à jour l'élément grahique courant
     */
@@ -95,11 +97,11 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 
     /**
     * Récupère la position de l'élément sur le graphe
-	*
+    * 
     * @return La position de l'élément
     */
     @Override
-    public Point getPosition() {
+    public Position getPosition() {
         return this.position;
     }
 
@@ -135,7 +137,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
     * @param p_position La nouvelle position de l'élement
     */
     @Override
-    public void setPosition(Point p_position) {
+    public void setPosition(Position p_position) {
         this.position = p_position;
     }
 

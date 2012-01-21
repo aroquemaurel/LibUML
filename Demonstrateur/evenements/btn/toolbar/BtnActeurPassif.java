@@ -6,6 +6,7 @@ import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdiction;
 import ihm.fenetreInterdiction.FenetreInterdictionAjoutElement;
 import java.awt.event.MouseEvent;
+import util.Position;
 
 /**
 * Cette classe permet de gérer un click sur le bouton Acteur actif
@@ -28,7 +29,7 @@ public class BtnActeurPassif extends Btn {
     @Override
     public void mouseClicked(MouseEvent event) {
         ActeurPassif acteur = new ActeurPassif(super.fenetre.getPanneauGraph().getGraph(),
-            fenetre.getPanneauGraph().getDiagramme(), "Mon acteur Passif");
+            fenetre.getPanneauGraph().getDiagramme(), "Mon acteur Passif", new Position(20,20));
         
         if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(acteur)){
             acteur.creer();

@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import util.Constantes;
+import util.Position;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
@@ -33,7 +34,7 @@ public class ActeurActifTest {
     public void setUp() {
         this.acteur = new ActeurActif(new mxGraph(),
                                          new Diagramme(), 
-                                         "test");
+                                         "test", new Position(42,42));
         this.acteur.creer();
     }
 

@@ -17,6 +17,7 @@ import org.junit.Before;
 import org.junit.Test;
 import util.Constantes;
 import util.Liste;
+import util.Position;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
@@ -37,7 +38,7 @@ public class ClasseTest {
     public void setUp() {
 		this.classe = new Classe (new mxGraph(), 
                                           new Diagramme(), 
-                                          "un super test");
+                                          "un super test", new Position(42,42));
         this.classe.creer();
     }
 

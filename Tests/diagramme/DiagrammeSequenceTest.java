@@ -14,6 +14,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
+import util.Position;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
@@ -76,6 +77,7 @@ public class DiagrammeSequenceTest {
     */
     private Lien monLien;
     
+    private Position position;
     
    /**
     * Initialisation des champ avant chaque test
@@ -85,13 +87,14 @@ public class DiagrammeSequenceTest {
         this.monDiagramme = new DiagrammeSequence();
         this.monGraph = new mxGraph();
         this.maString = "un test";
+        this.position = new Position(42,42);
         
-        this.monActeurActif = new ActeurActif(monGraph, monDiagramme, maString);
-        this.monActeurPassif = new ActeurPassif(monGraph, monDiagramme, maString);
-        this.monCasUtilisation = new CasUtilisation(monGraph, monDiagramme, maString);
-        this.monTraitement = new Traitement(monGraph, monDiagramme, maString, null, false);
-        this.maClasse = new Classe(monGraph, monDiagramme, maString);
-        this.monInterface = new Interface (monGraph, maString, monDiagramme);
+        this.monActeurActif = new ActeurActif(monGraph, monDiagramme, maString, position);
+        this.monActeurPassif = new ActeurPassif(monGraph, monDiagramme, maString, position);
+        this.monCasUtilisation = new CasUtilisation(monGraph, monDiagramme, maString, position);
+        this.monTraitement = new Traitement(monGraph, monDiagramme, maString, null, position, false);
+        this.maClasse = new Classe(monGraph, monDiagramme, maString, position);
+        this.monInterface = new Interface (monGraph, maString, monDiagramme, position);
         this.monLien = new Lien (null, null, monGraph, monDiagramme, null);
     }
     

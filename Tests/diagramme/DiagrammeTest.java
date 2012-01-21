@@ -10,13 +10,13 @@ import com.mxgraph.view.mxGraph;
 import eltGraphique.ElementGraphique;
 import eltGraphique.ligne.Lien;
 import eltGraphique.ligne.TypeLien;
-import java.util.List;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import util.Liste;
+import util.Position;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
@@ -79,6 +79,8 @@ public class DiagrammeTest {
     */
     private Lien monLien;
     
+    private Position position;
+    
     /**
     * Suppression de ces champs après chaque test
     */
@@ -87,13 +89,14 @@ public class DiagrammeTest {
         this.monDiagramme = new Diagramme();
         this.monGraph = new mxGraph();
         this.maString = "un test";
+        this.position = new Position(42,42);
         
-        this.monActeurActif = new ActeurActif(monGraph, monDiagramme, maString);
-        this.monActeurPassif = new ActeurPassif(monGraph, monDiagramme, maString);
-        this.monCasUtilisation = new CasUtilisation(monGraph, monDiagramme, maString);
-        this.monTraitement = new Traitement(monGraph, monDiagramme, maString, null, false);
-        this.maClasse = new Classe(monGraph, monDiagramme, maString);
-        this.monInterface = new Interface (monGraph, maString, monDiagramme);
+        this.monActeurActif = new ActeurActif(monGraph, monDiagramme, maString, position);
+        this.monActeurPassif = new ActeurPassif(monGraph, monDiagramme, maString, position);
+        this.monCasUtilisation = new CasUtilisation(monGraph, monDiagramme, maString, position);
+        this.monTraitement = new Traitement(monGraph, monDiagramme, maString, null, position, false);
+        this.maClasse = new Classe(monGraph, monDiagramme, maString, position);
+        this.monInterface = new Interface (monGraph, maString, monDiagramme, position);
         this.monLien = new Lien (this.monActeurActif, this.monCasUtilisation, monGraph, monDiagramme, TypeLien.ASSOCIATION);
     }
     

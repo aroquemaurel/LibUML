@@ -7,6 +7,7 @@ import org.junit.After;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import util.Position;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
@@ -25,7 +26,7 @@ public class InterfaceTest {
 	 */
     @Before
     public void setUp() {
-        this.monInterface = new Interface(new mxGraph(), null, new Diagramme());
+        this.monInterface = new Interface(new mxGraph(), null, new Diagramme(), new Position(42,42));
         this.monInterface.creer();
     }
 

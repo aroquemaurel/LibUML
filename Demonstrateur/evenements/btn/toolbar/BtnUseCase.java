@@ -6,6 +6,7 @@ import ihm.FenetreDemo;
 import ihm.fenetreInterdiction.FenetreInterdiction;
 import ihm.fenetreInterdiction.FenetreInterdictionAjoutElement;
 import java.awt.event.MouseEvent;
+import util.Position;
 
 /**
 * Cette classe permet de gérer un clic sur le bouton de UseCase.
@@ -28,7 +29,7 @@ public class BtnUseCase extends Btn {
     @Override
     public void mouseClicked(MouseEvent event) {
         CasUtilisation useCase = new CasUtilisation(fenetre.getPanneauGraph().getGraph(),
-            fenetre.getPanneauGraph().getDiagramme(), "Mon useCase");
+            fenetre.getPanneauGraph().getDiagramme(), "Mon useCase", new Position(20,20));
         if(this.fenetre.getPanneauGraph().getDiagramme().eltAutorise(useCase)){
             useCase.creer();
         } else {

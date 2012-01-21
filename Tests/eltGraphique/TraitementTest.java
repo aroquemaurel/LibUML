@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import util.Constantes;
+import util.Position;
 
 /**
  * Cas de test JUnit regroupant les tests unitaires de chaque méthode
@@ -30,7 +31,7 @@ public class TraitementTest {
 	 */
     @Before
     public void setUp() {
-		this.traitement = new Traitement(new mxGraph(), new Diagramme(), null, null, false);
+		this.traitement = new Traitement(new mxGraph(), new Diagramme(), null, null, new Position(42,42), false);
 		this.traitement.creer();
     }
 

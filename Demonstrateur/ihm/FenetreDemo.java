@@ -1,7 +1,7 @@
 package ihm;
 
 import diagramme.Diagramme;
-import eltGraphique.eltModelisation.Classe;
+import eltGraphique.eltModelisation.Traitement;
 import evenements.EvenementCelluleSelectionne;
 import ihm.menu.BarreMenus;
 import ihm.menu.BarreOutilsDessin;
@@ -10,6 +10,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import util.Position;
 
 /**
  * Classe concernant tout ce qui est l'affichage de la fenetre
@@ -115,6 +116,11 @@ public class FenetreDemo extends JFrame {
        fenetre.afficherFenetre();
        
        fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
+       Position p = new Position(45, 42);
+       Traitement t = 
+        new Traitement(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "", null,  
+               p, false);
+       t.creer();
 
     }
 
