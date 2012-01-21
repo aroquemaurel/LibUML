@@ -39,8 +39,8 @@
 \newcommand{\roleCinquiereDestinaire}{}
 \newcommand{\titreDocument}{Les plans et les cahiers de tests}
 
-
 \input{../couverture_entete.tex}
+\input{../listings.tex}
 \begin{document}
 	\maketitle
 	\newpage
@@ -177,9 +177,20 @@
 	\section{Les tests de validation}
 	\section{Les tests d'intégration}
 	\section{Les tests unitaires}
+	\subsection{Création des tests}
+	Nous avons donc créer des tests unitaires JUnit, une classe de test pour une classe à tester. Chaque méthodes doivent être testés, 
+	avec un ou plusieurs tests.\\
+	Vous pouvez avoir les détails des tests unitaires avec la documentation en Annexe \ref{junitdoc} page \pageref{junitdoc}.
+	\subsection{Résultat des tests}
 	Après lancement des tests unitaires, ils sont tous passéss. Nous pouvons donc en conclure que les différents modules de la bibliothèque UML fonctionnent. 
 	\begin{center} \includegraphics[width=8cm]{junitPassed.jpg} \end{center}
+		\newpage
 	\section{Le test de charge}
+	\subsection{Création du test}
+	Le test de charge à été effectuée en créant les éléments graphiques répértorié dans les plans de tests. Voici le code permettant d'effectuer ce tests:
+	\lstinputlisting[language=Java, caption=Code du test de charge]{ChargeTest.java}
+	\subsection{Résultat du test}
+	\includegraphics[width=25cm, angle=90]{testCharge.jpg}
 	\appendix	
 	\chapter{Documentation des tests unitaires}
 	\label{junitdoc}
