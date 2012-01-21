@@ -150,7 +150,6 @@ public class LienTest {
 	public void testCreerStyleSpecialisation() {
 		mxStylesheet feuilleStyles = this.lienSpecialisation.getGraph().getStylesheet();
 		assertTrue(feuilleStyles.getStyles().containsKey("SPECIALISATION"));
-		assertEquals(mxConstants.EDGESTYLE_ORTHOGONAL, feuilleStyles.getStyles().get("SPECIALISATION").get(mxConstants.STYLE_EDGE));
 		assertEquals(mxConstants.ARROW_BLOCK, feuilleStyles.getStyles().get("SPECIALISATION").get(mxConstants.STYLE_ENDARROW));
 		assertEquals(Constantes.OPACITE, feuilleStyles.getStyles().get("SPECIALISATION").get(mxConstants.STYLE_OPACITY));
 		assertEquals(mxConstants.NONE, feuilleStyles.getStyles().get("SPECIALISATION").get(mxConstants.STYLE_MOVABLE));

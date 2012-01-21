@@ -272,7 +272,7 @@ public class DiagrammeClasseTest {
         assertTrue(this.monDiagramme.lienAutorise(
                 this.maClasse, 
                 this.maClasse,
-                TypeLien.GENERALISATION));    
+                TypeLien.SPECIALISATION));    
     }
     
     /**
