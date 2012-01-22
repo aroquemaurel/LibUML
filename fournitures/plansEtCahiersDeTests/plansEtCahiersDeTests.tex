@@ -7,8 +7,7 @@
 \usepackage[francais]{babel}
 \usepackage[top=1.7cm, bottom=1.7cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage{pdfpages}
-\usepackage{listingsutf8}
-\usepackage{fancyhdr}
+\usepackage{listingsutf8} \usepackage{fancyhdr}
 \usepackage{multido}
 \usepackage{multicol}
 \usepackage{amssymb}
@@ -50,13 +49,12 @@
 	\newpage
 	\setcounter{tocdepth}{3}
 	\setcounter{secnumdepth}{3}
-	\tableofcontents
 	\input{../intro.tex}
+	\tableofcontents
 	\newpage
 	\chapter{Les plans de tests}
 	\section{Les plans de non régression}
-	Notre projet est de développé une \glo{bibliothèque}{Bibliothèque}{Une bibliothèque est une ensemble de fonctionnalités permettant à un client de pouvoir
-	utiliser les fonctionnalités simplement} \glo{UML}{UML}{(Unified Modeling Language) Langage de modélisation graphique à base de pictogramme. Il est apparu dans le monde du génie logiciel dans le cadre de la conception orientée objet. Ce langage est composé de différents diagrammes, allant du développement à la simple analyse des besoins. } \footnote{Unified Modeling Language}, aucun système n'existant
+	Notre projet est de développé une \glo{bibliothèque}{Bibliothèque}{Un composant indépendant fournissant des méthodes déjà implémentées, facilitant le développement de d'une application plus importante.} \glo{UML}{UML}{(Unified Modeling Language) Langage de modélisation graphique à base de pictogramme. Il est apparu dans le monde du génie logiciel dans le cadre de la conception orientée objet. Ce langage est composé de différents diagrammes, allant du développement à la simple analyse des besoins. } \footnote{Unified Modeling Language}, aucun système n'existant
 	au départ, il est donc inutile de faire un test de non régression étant donné que nous ne continuons pas un système, il n'y aura pas 
 	de régression.
 	\section{Les tests de validation}
