@@ -55,11 +55,12 @@
 	\newpage
 	\chapter{Les plans de tests}
 	\section{Les plans de non régression}
-	Notre projet est de développé une bibliothèque UML\footnote{Unified Modeling Language}, aucun système n'existant
+	Notre projet est de développé une \glo{bibliothèque}{Bibliothèque}{Une bibliothèque est une ensemble de fonctionnalités permettant à un client de pouvoir
+	utiliser les fonctionnalités simplement} \glo{UML}{UML}{(Unified Modeling Language) Langage de modélisation graphique à base de pictogramme. Il est apparu dans le monde du génie logiciel dans le cadre de la conception orientée objet. Ce langage est composé de différents diagrammes, allant du développement à la simple analyse des besoins. } \footnote{Unified Modeling Language}, aucun système n'existant
 	au départ, il est donc inutile de faire un test de non régression étant donné que nous ne continuons pas un système, il n'y aura pas 
 	de régression.
 	\section{Les tests de validation}
-		Nous avons développé un démonstrateur qui utilise notre bibliothèque et qui fait office de test de validation. Il nous permet de vérifier que toutes les attentes du client sont respectés. \\
+	Nous avons développé un \glo{démonstrateur}{Démonstrateur}{Un démonstrateur est un logiciel simple, permettant de montrer les possibilités d'une bibliothèque} qui utilise notre bibliothèque et qui fait office de test de validation. Il nous permet de vérifier que toutes les attentes du client sont respectés. \\
 		Avec ce démonstrateur, nous pouvons montrer au client les différentes possibilités de la bibliothèque, ainsi qu'un exemple d'utilisation.
 
 		\subsection{Jeux d'essais}
@@ -68,9 +69,9 @@
 		un diagramme utilisant tous les composant de la norme UML 2.0 et respectant cette même norme, ceci pour chacun des diagrammes 
 		demandés par notre client. 
 		\begin{itemize}
-			\item Dessiner un diagramme de classe
-			\item Dessiner un diagramme de séquence
-			\item Dessiner un diagramme de cas d'utilisation
+			\item Dessiner un \glo{diagramme de classe}{Diagramme de classe}{Schéma utilisé en génie logiciel pour représenter les classes et les interfaces des systèmes ainsi que les différentes relations entre celles-ci.}.
+			\item Dessiner un \glo{diagramme de séquence}{Diagramme de séquence}{ Représentation graphique des interactions entre les acteurs et le système selon un ordre chronologique. Ce diagramme est inclus dans la partie dynamique d'UML.}.
+			\item Dessiner un \glo{diagramme de cas d'utilisation}{Diagramme de cas d'utilisation} {Représentation graphique permettant de décrire les intéractions entre les acteurs et le système.}.
 		\end{itemize}
 	
 		\subsubsection{Respecter les contraintes d'ajout d'éléments}
@@ -157,8 +158,8 @@
 			\newpage
 	\section{Les tests unitaires}
 	Les tests unitaires servent à tester chacune des méthodes de notre bibliothèque.\\
-	Nous avons utiliser \texttt{JUnit} pour tester toutes les méthodes de notre bibliothèque. Les tests sont validés si 
-	la bibliothèque JUnit nous indique que tous les tests passent et ne posent pas de problème.
+	Nous avons utiliser \glo{JUnit}{JUnit}{Bibliothèque permettant de créer des tests unitaires simplement} pour tester toutes les méthodes de notre bibliothèque. Les tests sont validés si 
+	la bibliothèque \texttt{JUnit} nous indique que tous les tests passent et ne posent pas de problème.
 	La description des tests unitaires est disponible sous format Javadoc à l'annexe \ref{junitdoc} page \pageref{junitdoc}.
 	Elle est également disponible sous format HTML à l'adresse suivante: \\
 	$\rhd$ \url{http://documentation.joohoo.fr/libUML/junitTests/index.html}\\
@@ -217,8 +218,8 @@
 		\newpage
 			\begin{figure}[H]
 				\section{Les tests d'intégration}
-					\begin{flushleft}	Nous avons créer un diagramme sans aucune contrainte, tous les éléments pouvant donc être reliés entre eux. \end{flushleft}
-							\centering
+					\begin{flushleft} Nous avons créer un diagramme sans aucune contrainte, tous les éléments pouvant donc être reliés entre eux. \end{flushleft}
+					\centering
 					\includegraphics[width=18cm]{integration1.jpg}
 					\caption{Diagramme sans aucune contrainte}
 				\includegraphics[width=18cm]{integration2.jpg}
@@ -228,13 +229,12 @@
 				\section{Les tests unitaires}
 				\subsection{Création des tests}
 				\begin{flushleft}
-					Nous avons donc créer des tests unitaires JUnit, une classe de test pour une classe à tester. Chaque méthodes doivent être testés, 
+					Nous avons donc créer des tests unitaires \texttt{JUnit}, une classe de test pour une classe à tester. Chaque méthodes doivent être testés, 
 					avec un ou plusieurs tests.\\
 					Vous pouvez avoir les détails des tests unitaires avec la documentation en Annexe \ref{junitdoc} page \pageref{junitdoc}.
 				\subsection{Résultat des tests}
 				Après lancement des tests unitaires, ils sont tous passéss. Nous pouvons donc en conclure que les différents modules de la bibliothèque UML fonctionnent. 
 				\end{flushleft}
-
 				\centering
 				\includegraphics[width=9.75cm]{junitPassed.jpg} 
 			\end{figure}
