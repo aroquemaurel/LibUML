@@ -1,7 +1,7 @@
 package util;
 
 /**
- *Cette classe implémente les différentes constantes utilisées dans le projet.
+ * Cette classe implémente les différentes constantes utilisées dans le projet.
  * @author Antoine
  * @author Mathieu
  */
@@ -27,8 +27,8 @@ public class Constantes {
 	public static final String COULEUR_FLECHE = "#00000";
 
 	/**
-	 * Le pourcentage d'opcaité des éléments graphies
-	 * Le nombre doit être compris entre 0 et 100
+	 * Le pourcentage d'opcaité des éléments graphiques
+	 * Le nombre doit être compris entre 0 (transparent) et 100 (opaque)
 	 */
 	public static final int OPACITE = 100;
 

@@ -18,7 +18,7 @@ public class Liste<T> extends ArrayList<T> {
     /**
      * Ajouter un élément à la fin de la liste
 	 *
-     * @param p_element
+     * @param p_element L'élément qui sera ajouté
      */
     public void ajouterElement(T p_element){
         super.add(p_element);
@@ -27,7 +27,7 @@ public class Liste<T> extends ArrayList<T> {
     /**
      * Supprimer l'élément à l'index spécifié
 	 *
-     * @param p_index le rang à supprimer
+     * @param p_index le rang de l'élément à supprimer
      * @return l'élément supprimé
      */
     public T supprimerElement(int p_index){
@@ -35,9 +35,9 @@ public class Liste<T> extends ArrayList<T> {
     }
 
     /**
-     * Retour l'élément à l'index spécifié
+     * Retourne l'élément à l'index spécifié
 	 *
-     * @param p_index Le numéro de l'élément à retourner
+     * @param p_index L'index de l'élément à retourner
      * @return L'élément à la place p_index
      */
     public T getElement(int p_index){
@@ -45,9 +45,10 @@ public class Liste<T> extends ArrayList<T> {
     }
         
     /**
-     * Retourne vrai si la liste est vide
+     * Méthode qui contrôle si la liste est vide
+	 * Equivalent à (l.taille() == 0)
 	 *
-     * @return si la liste est vide ou non
+     * @return Vrai si la liste est vide, faux sinon
      */
     public boolean estVide(){
         return (super.isEmpty());
