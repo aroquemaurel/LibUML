@@ -15,6 +15,7 @@
 \usepackage{tikz}
 \usepackage{ifthen}
 \usepackage{makeidx}
+\usepackage{float}
 \usepackage[urlbordercolor={1 1 1}, linkbordercolor={1 1 1}, urlcolor=blue]{hyperref}
 
 \newcommand{\headGauche}{}
@@ -41,12 +42,17 @@
 
 \input{../couverture_entete.tex}
 \input{../listings.tex}
+\addto\captionsfrench{%
+	\renewcommand{\listfigurename}{Liste des figures}%
+}
 \begin{document}
 	\maketitle
 	\newpage
-	\setcounter{tocdepth}{4}
+	\setcounter{tocdepth}{3}
 	\setcounter{secnumdepth}{3}
 	\tableofcontents
+	\listoffigures
+	\input{../intro.tex}
 	\newpage
 	\chapter{Les plans de tests}
 	\section{Les plans de non régression}
@@ -151,7 +157,7 @@
 			Représentation graphique des différents diagrammes respectant les normes UML 2.0 avec possibilité d'ajout ou de suppression de données.
 	\section{Les tests unitaires}
 	Les tests unitaires servent à tester chacune des méthodes de notre bibliothèque.\\
-	Nous avons utiliser JUnit pour tester toutes les méthodes de notre bibliothèque. Les tests sont validés si 
+	Nous avons utiliser \texttt{JUnit} pour tester toutes les méthodes de notre bibliothèque. Les tests sont validés si 
 	la bibliothèque JUnit nous indique que tous les tests passent et ne posent pas de problème.
 	La description des tests unitaires est disponible sous format Javadoc à l'annexe \ref{junitdoc} page \pageref{junitdoc}.
 	Elle est également disponible sous format HTML à l'adresse suivante: \\
@@ -174,24 +180,73 @@
 		\subsection{Les résultats attendus}
 		Aucune exception, les éléments ont été bien créer et certains éléments ont été supprimés avec les liens.
 	\chapter{Les cahiers de tests}	
+	\section{Création du démonstrateur}
+	Pour les tests de validation, nous avons donc créer un démonstrateur, ce démonstrateur à évolué tout au long du développement de la bibliothèque UML, 
+	lorsque nous rajoutions des éléments dans la bibliothèque, nous modifions le démonstrateur pour pouvoir les intégrer.
+	\newpage
 	\section{Les tests de validation}
-	\section{Les tests d'intégration}
-	\section{Les tests unitaires}
-	\subsection{Création des tests}
-	Nous avons donc créer des tests unitaires JUnit, une classe de test pour une classe à tester. Chaque méthodes doivent être testés, 
-	avec un ou plusieurs tests.\\
-	Vous pouvez avoir les détails des tests unitaires avec la documentation en Annexe \ref{junitdoc} page \pageref{junitdoc}.
-	\subsection{Résultat des tests}
-	Après lancement des tests unitaires, ils sont tous passéss. Nous pouvons donc en conclure que les différents modules de la bibliothèque UML fonctionnent. 
-	\begin{center} \includegraphics[width=8cm]{junitPassed.jpg} \end{center}
+		\subsection{Dessiner un diagramme de cas d'utilisation}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=16cm]{validation3.jpg}\\ \vspace{25px} 
+			\caption{Création d'un diagramme de cas d'utilisation simple}
+			\includegraphics[width=16cm]{validation4.jpg}
+			\caption{Validation de l'interdiction d'ajouter des éléments non autorisés}
+		\end{figure}
+		\subsection{Dessiner un diagramme de classe}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=18cm]{validation1.jpg}\\ \vspace{25px} 
+			\caption{Création d'un diagramme de classe simple}
+			\includegraphics[width=18cm]{validation2.jpg}
+			\caption{Validation de l'interdiction d'ajouter des éléments non autorisés}
+		\end{figure}
+		\subsection{Dessiner un diagramme de séquence}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=18cm]{validation5.jpg}\\ \vspace{25px} 
+			\caption{Création d'un diagramme de séquence simple}
+			\includegraphics[width=18cm]{validation6.jpg}
+			\caption{Validation de l'interdiction d'ajouter des éléments non autorisés}
+		\end{figure}
 		\newpage
+			\begin{figure}[H]
+				\section{Les tests d'intégration}
+					\begin{flushleft}	Nous avons créer un diagramme sans aucune contrainte, tous les éléments pouvant donc être reliés entre eux. \end{flushleft}
+							\centering
+					\includegraphics[width=18cm]{integration1.jpg}
+					\caption{Diagramme sans aucune contrainte}
+				\includegraphics[width=18cm]{integration2.jpg}
+				\caption{Le même diagramme après suppresion de l'acteur au centre}
+			\end{figure}
+			\begin{figure}[H]
+				\section{Les tests unitaires}
+				\subsection{Création des tests}
+				\begin{flushleft}
+					Nous avons donc créer des tests unitaires JUnit, une classe de test pour une classe à tester. Chaque méthodes doivent être testés, 
+					avec un ou plusieurs tests.\\
+					Vous pouvez avoir les détails des tests unitaires avec la documentation en Annexe \ref{junitdoc} page \pageref{junitdoc}.
+				\subsection{Résultat des tests}
+				Après lancement des tests unitaires, ils sont tous passéss. Nous pouvons donc en conclure que les différents modules de la bibliothèque UML fonctionnent. 
+				\end{flushleft}
+
+				\centering
+				\includegraphics[width=9.75cm]{junitPassed.jpg} 
+			\end{figure}
+			\newpage
 	\section{Le test de charge}
 	\subsection{Création du test}
 	Le test de charge à été effectuée en créant les éléments graphiques répértorié dans les plans de tests. Voici le code permettant d'effectuer ce tests:
 	\lstinputlisting[language=Java, caption=Code du test de charge]{ChargeTest.java}
 	\subsection{Résultat du test}
 	\includegraphics[width=25cm, angle=90]{testCharge.jpg}
+	\closeout\glossaireVar
 	\appendix	
+	\chapter{Glossaire}
+	\begin{sortedlist}
+		\input{glossaire.tex}
+	\end{sortedlist}
+
 	\chapter{Documentation des tests unitaires}
 	\label{junitdoc}
 	\includepdf[page=1-23]{docJUnit.pdf}
