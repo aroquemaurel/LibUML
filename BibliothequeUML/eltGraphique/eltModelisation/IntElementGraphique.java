@@ -12,7 +12,7 @@ import diagramme.Diagramme;
  */
 public interface IntElementGraphique {
     /**
-    * Méthode généique qui supprime l'élément du graphe où il est
+    * Méthode générique qui supprime l'élément du graphe où il est
     */
     public void supprimer();
 
@@ -40,7 +40,7 @@ public interface IntElementGraphique {
     /**
     * Récupère le graphe auquel est associ l'élément
 	* 
-    * @return Le graph auquel est associé l'élément
+    * @return Le graphe auquel est associé l'élément
     */
     public mxGraph getGraph();
 

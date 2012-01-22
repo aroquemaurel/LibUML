@@ -13,7 +13,7 @@ import util.Liste;
 import util.Position;
 
 /**
- * Modélise une classe par une trois carrés contenant le titre de la classe, 
+ * Modélise une classe par trois carrés contenant le titre de la classe, 
  * les attributs et les méthodes 
  *
  * @author Mathieu
@@ -29,6 +29,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     * Liste des méthodes de la classe
 	*
     * @see Methode
+	* @see util.Liste
     */
     private Liste<Methode> methodes;
     
@@ -36,6 +37,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     * Liste des attributs de la classe
 	*
     * @see Attribut
+	* @see util.Liste
     */
     private Liste<Attribut> attributs;
     
@@ -88,7 +90,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
         feuilleStyles.putCellStyle("CONTENUCLASSE", nouveauStyle);
     }
 
-	/*
+	/**
 	 * Génère la chaine de caractère contenant toutes les méthodes
 	 *
 	 * @return La chaine de caractère
@@ -103,7 +105,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
        return retour;
     }
 
-	/*
+	/**
 	 * Génère la chaine de caractère contenant tous les attributs
 	 *
 	 * @return La chaine de caractère
@@ -138,7 +140,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     /**
     * Ajoute la méthode passée en paramètre à la liste des méthodes
 	*
-    * @param p_nouvelleMethode
+    * @param p_nouvelleMethode La méthode qui sera ajoutée
     * @return La méthode ajoutée
     * @see Methode
     */
@@ -187,6 +189,8 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
      * Retourne la liste des attributs de la classe
 	 *
      * @return Liste des attributs de la classe
+	 * 
+	 * @see util.Liste
      * @see Attribut
      */
     public Liste<Attribut> getAttributs() {
@@ -197,6 +201,8 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
      * Retourne la liste des méthodes de la classe
 	 *
      * @return Liste des méthodes de la classe
+	 * 
+	 * @see util.Liste
      * @see Methode
      */
     public Liste<Methode> getMethodes() {
@@ -250,7 +256,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
         this.creerStyleContenuClasse();
 
         super.setCellule((mxCell) super.getGraph().insertVertex( null, null, super.getTexte(), 
-                super.getPosition().getAbscisse(), super.getPosition().getOrdonne(),
+                super.getPosition().getAbscisse(), super.getPosition().getOrdonnee(),
                          super.getDimension().getWidth(), super.getDimension().getHeight(), "CLASSE"));
 
         this.celluleAttributs = (mxCell) super.getGraph().insertVertex( super.getCellule(), null,

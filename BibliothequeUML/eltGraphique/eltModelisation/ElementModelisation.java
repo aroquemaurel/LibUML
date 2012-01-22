@@ -14,6 +14,7 @@ import util.Position;
  * acteurs, traitements, etc.). Les flèches sont des liens et non des éléments
  * de modélisation.
  *
+ * @see eltGraphique.ElementGraphique
  * @see Lien
  * 
  * @author Antoine
@@ -34,17 +35,25 @@ abstract public class ElementModelisation extends ElementGraphique implements In
     * Taille de l'élément (hauteur/largeur)
     */
     private Dimension dimension;
-
-  
-    /**
-    * Constructeur générique aux éléments de modélisation
-    * TODO @param
-    * @see CasUtilisation
-    * @see Acteur
-    * @see Classe
-    * @see Traitement
-    * @see Interface
-    */
+	
+	/**
+     * Constructeur générique aux éléments de modélisation
+	 * 
+	 * @param p_graph Le graph auquel sera ajouté l'élément de modélisation
+	 * @param p_diagramme Le diagramme auquel sera ajouté l'élément de modélisation
+	 * @param p_texte Le texte qui sera associé à l'élément de modélisation
+	 * @param p_dimension Les dimension de l'élément de modélisation
+	 * @param p_position La position de l'élément de modélisation
+	 * 
+     * @see CasUtilisation
+     * @see Acteur
+     * @see Classe
+     * @see Traitement
+     * @see Interface
+	 * 
+	 * @see diagramme.Diagramme
+	 * @see util.Position
+	 */
     public ElementModelisation(mxGraph p_graph,
                                 Diagramme p_diagramme, String p_texte, Dimension p_dimension, Position p_position) {
             super(p_graph, p_diagramme);
@@ -65,7 +74,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
 
     }
 
-        /**
+	/**
     * Met à jour la liste des éléments de la liste
     * @param p_elements La liste d'éléments graphiques à mettre à jour
     */
@@ -76,7 +85,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
     }
     
     /**
-    * Récupère la taille de l'élément (hauteur/largeur)
+    * Récupère la dimension de l'élément (hauteur/largeur)
 	*
     * @return La dimension de l'élément (hauteur/largeur)
     */
@@ -99,6 +108,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
     * Récupère la position de l'élément sur le graphe
     * 
     * @return La position de l'élément
+	* @see util.Position
     */
     @Override
     public Position getPosition() {
@@ -135,6 +145,7 @@ abstract public class ElementModelisation extends ElementGraphique implements In
     * Modifie la position de l'élément
 	*
     * @param p_position La nouvelle position de l'élement
+	* @see util.Position
     */
     @Override
     public void setPosition(Position p_position) {

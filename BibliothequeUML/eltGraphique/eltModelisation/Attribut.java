@@ -59,9 +59,9 @@ public class Attribut extends Variable {
     }
 
     /**
-    * Retourne vrai si l'attribut est de classe, faux sinon
+    * Attribut de classe ?
 	*
-    * @return Attribut de classe ?
+    * @return Retourne vrai si l'attribut est de classe, faux sinon
     */
     public boolean estDeClasse() {
             return deClasse;
@@ -77,7 +77,7 @@ public class Attribut extends Variable {
     }
 
 	/**
-	 * Affiche en mettant en forme l'attribut
+	 * Chaîne formatée des caractéristiques de l'attribut
 	 *
 	 * @return La chaîne de caractère contenant l'attribut formaté 
 	 */

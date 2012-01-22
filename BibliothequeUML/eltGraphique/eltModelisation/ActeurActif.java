@@ -22,7 +22,14 @@ import util.Position;
  * @author Mathieu
  */
 public class ActeurActif extends Acteur {
+	/**
+	 * Décalage du texte lié à l'acteur (ordonnée)
+	 */
     private static final double OFFSET_TEXTE_ACTEUR_Y = 51;
+	
+	/**
+	 * Décalage du texte lié à l'acteur (abscisse)
+	 */
     private static final double OFFSET_TEXTE_ACTEUR_X = 0;
 
     /**
@@ -43,9 +50,9 @@ public class ActeurActif extends Acteur {
 
     /**
      * Constructeur de la classe ActeurActif qui créer un acteur actif
-     * lié à un graph donné avec un texte donné
+     * lié à un graphe donné avec un texte donné
 	 *
-     * @param p_graph Le graphe sur lequel sera l'acteur actif
+     * @param p_graph Le graphe sur lequel sera ajouté l'acteur actif
      * @param p_texte Le texte lié à l'acteur actif
      */
     public ActeurActif(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Position p_position){
@@ -62,7 +69,7 @@ public class ActeurActif extends Acteur {
 
         super.setCellule((mxCell) super.getGraph().insertVertex(
             null, null, super.getTexte(), super.getPosition().getAbscisse(), 
-                        super.getPosition().getOrdonne(),
+                        super.getPosition().getOrdonnee(),
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "ACTEUR_ACTIF"));
 
 		super.getCellule().getGeometry().setOffset(new mxPoint(OFFSET_TEXTE_ACTEUR_X, OFFSET_TEXTE_ACTEUR_Y));

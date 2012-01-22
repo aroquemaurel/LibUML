@@ -60,7 +60,7 @@ public class Traitement extends ElementModelisation {
         private int nbMessages;
 
         /**
-         * Créé la flèche de début de séquence (flèche partant d'un traitement et revenant sur les même traitement)
+         * Crée la flèche de début de séquence (flèche partant du traitement et revenant sur lui-même)
          */
     private void creerFlecheDebutSequence() {
         this.evenementDeclencheur = new Lien(this, this, super.getGraph(), super.getDiagramme(), null);
@@ -123,8 +123,6 @@ public class Traitement extends ElementModelisation {
 	private void creerStyleFlecheTraitement(){
 		mxStylesheet feuilleStyles = this.getGraph().getStylesheet();
                 Map<String, Object> nouveauStyle = new HashMap<String, Object>();
-
-                nouveauStyle = new HashMap<String, Object>();
                 nouveauStyle.put(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK);
                 nouveauStyle.put(mxConstants.STYLE_OPACITY, Constantes.OPACITE);
                 nouveauStyle.put(mxConstants.STYLE_FILLCOLOR, Constantes.COULEUR_FOND);
@@ -139,10 +137,18 @@ public class Traitement extends ElementModelisation {
 	}
 
 	/**
-         * // TODO javadoc est pas à jour!! param
+	 * 
 	 * Constructeur de la classe traitement
-	 * @param p_graph Le graphe auquel sera ajouter le traitement
+	 * @param p_graph Le graphe auquel sera ajouté le traitement
+	 * @param p_diagramme Le diagramme auquel sera ajouté le traitement
 	 * @param p_texte Le texte qui sera associé au traitement
+	 * @param p_evenementDeclencheur L'évenement déclencheur du traitement ou null si début de séquence
+	 * @param p_position Position du traitement
+	 * @param p_debutSequence Traitement de début de séquence ?
+	 * 
+	 * @see diagramme.Diagramme
+	 * @see util.Position
+	 * @see eltGraphique.ligne.Lien
 	 */
 	public Traitement(mxGraph p_graph, Diagramme p_diagramme, String p_texte, 
                 Lien p_evenementDeclencheur, Position p_position, boolean p_debutSequence){
@@ -152,50 +158,66 @@ public class Traitement extends ElementModelisation {
                 this.nbMessages = 0;
 	}        
         
-        public void ajouterMessage(Traitement p_destination, String p_message, TypeLien p_typeLien){          
-            mxCell sourceSousCellule, destinationSousCellule;
-            /* on incrémente le nombre de message présent dans les traitements */
-            this.incrementerNbMessages();
-            p_destination.incrementerNbMessages();
-            
-            super.setDimension(new Dimension((int) super.getDimension().getWidth(), 
-                    (int) super.getDimension().getHeight() + 20));
-            p_destination.setDimension(new Dimension((int) super.getDimension().getWidth(), 
-                    (int) super.getDimension().getHeight() + 20));            
-            /* On créer une cellule sur laquelle pointera la flèche avec le message, une pour la source
-             * une pour la destination
-             */
-            this.creerStyleSousCelluleTraitement();
-            sourceSousCellule = (mxCell) super.getGraph().insertVertex(
-            super.getCellule(), null, null, 0, 20*this.nbMessages,
-            super.getDimension().getWidth(), 20, "SOUS_CELLULE_TRAITEMENT");
-            
-            destinationSousCellule = (mxCell) super.getGraph().insertVertex(
-            p_destination.getCellule(), null, null, 0, 20*p_destination.getNbMessages(),
-            super.getDimension().getWidth(), 20, "SOUS_CELLULE_TRAITEMENT");
-            
-            /* On créer le lien */
-            Lien msg = new MessageTraitement(this, p_destination, sourceSousCellule, 
-                    destinationSousCellule, p_message, super.getGraph(), super.getDiagramme(), p_typeLien);
-            msg.creer();
-            
-            /* on empèche la connection manuelle */
-            sourceSousCellule.setConnectable(false);
-            destinationSousCellule.setConnectable(false);
-            
-        }
+	/**
+	 * Méthode qui ajoute un message au traitement
+	 * @param p_destination Traitement de destination
+	 * @param p_message Le message à transmettre
+	 * @param p_typeLien Le type de lien du message
+	 */
+	public void ajouterMessage(Traitement p_destination, String p_message, TypeLien p_typeLien){          
+		mxCell sourceSousCellule, destinationSousCellule;
+		/* on incrémente le nombre de message présent dans les traitements */
+		this.incrementerNbMessages();
+		p_destination.incrementerNbMessages();
 
-        public void incrementerNbMessages(){
-            this.nbMessages++;
-        }
+		super.setDimension(new Dimension((int) super.getDimension().getWidth(), 
+				(int) super.getDimension().getHeight() + 20));
+		p_destination.setDimension(new Dimension((int) super.getDimension().getWidth(), 
+				(int) super.getDimension().getHeight() + 20));            
+		/* On créer une cellule sur laquelle pointera la flèche avec le message, une pour la source
+			* une pour la destination
+			*/
+		this.creerStyleSousCelluleTraitement();
+		sourceSousCellule = (mxCell) super.getGraph().insertVertex(
+		super.getCellule(), null, null, 0, 20*this.nbMessages,
+		super.getDimension().getWidth(), 20, "SOUS_CELLULE_TRAITEMENT");
 
-        public void decrementerNbMessages(){
-            this.nbMessages--;
-        }
+		destinationSousCellule = (mxCell) super.getGraph().insertVertex(
+		p_destination.getCellule(), null, null, 0, 20*p_destination.getNbMessages(),
+		super.getDimension().getWidth(), 20, "SOUS_CELLULE_TRAITEMENT");
 
-        public int getNbMessages(){
-            return (this.nbMessages);
-        }
+		/* On créer le lien */
+		Lien msg = new MessageTraitement(this, p_destination, sourceSousCellule, 
+				destinationSousCellule, p_message, super.getGraph(), super.getDiagramme(), p_typeLien);
+		msg.creer();
+
+		/* on empèche la connection manuelle */
+		sourceSousCellule.setConnectable(false);
+		destinationSousCellule.setConnectable(false);
+
+	}
+
+	/**
+	 * Incrémente le nombre de messages
+	 */
+	public void incrementerNbMessages(){
+		this.nbMessages++;
+	}
+
+	/**
+	 * Incrémente le nombre de messages
+	 */
+	public void decrementerNbMessages(){
+		this.nbMessages--;
+	}
+
+	/**
+	 * Récupère le nombre de messages du traitement
+	 * @return Le nombre de message
+	 */
+	public int getNbMessages(){
+		return (this.nbMessages);
+	}
 	/**
 	 * Récupère l'évenement déclencheur du traitement
 	 * @return L'élément déclencheur
@@ -207,7 +229,7 @@ public class Traitement extends ElementModelisation {
 	}
 	
 	/**
-	 * Retourn vrai si le traitement est le premier de la séquence, faux sinon
+	 * Retourne vrai si le traitement est le premier de la séquence, faux sinon
 	 * @return Debut de séquence ?
 	 */
 	public boolean estDebutSequence() {
@@ -247,7 +269,7 @@ public class Traitement extends ElementModelisation {
 
                 super.setCellule((mxCell) super.getGraph().insertVertex(
                         super.getParent(), null, null, super.getPosition().getAbscisse(), 
-                        super.getPosition().getOrdonne(),
+                        super.getPosition().getOrdonnee(),
 			super.getDimension().getWidth(), super.getDimension().getHeight(), "TRAITEMENT"));
 
 		if (this.evenementDeclencheur == null) {
