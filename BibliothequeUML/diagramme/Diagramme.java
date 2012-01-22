@@ -13,7 +13,7 @@ import util.Liste;
 */
 public class Diagramme {
     /**
-    * Liste des éléments graphiques
+    * Liste des éléments graphiques présents sur le diagramme
     */
     private final Liste<ElementGraphique> elementsGraphiques;
     
@@ -25,13 +25,19 @@ public class Diagramme {
     }
     
     /**
-    * Méthode qui teste si le lien est autorisé ou non, en fonction du 
+    * Méthode qui teste si le lien est autorisé, en fonction du 
     * diagramme, de l'origine et de l'extrémité
+	* 
+	* Méthode surchargée dans les classes déscendantes. Ici, elle ne 
+	* restreint aucune combinaison.
     *
-    * @param p_origine Element graphique qui est l'origne du lien
-    * @param p_extremite Element graphique qui est l'extrémité du lien
+    * @param p_origine Elément graphique qui est l'origne du lien
+    * @param p_extremite Elément graphique qui est l'extrémité du lien
     * @param p_typeDeFleche Type de lien testé
-    * @return true s'il est, false sinon
+    * @return Vrai si la combinaison est autorisée, faux sinon
+	* 
+	* @see eltGraphique.ElementGraphique
+	* @see eltGraphique.ligne.TypeLien
     */
     public boolean lienAutorise (ElementGraphique p_origine , 
             ElementGraphique p_extremite, TypeLien p_typeDeFleche){
@@ -40,9 +46,12 @@ public class Diagramme {
  
     /**
      * Méthode qui teste si l'élément est autorisé ou pas dans le diagramme
+	 * 
+	 * Méthode surchargée dans les classes déscendantes. Ici, elle n'interdit
+	 * aucun élément.
      *
-     * @param p_element Element à tester
-     * @return true s'il est, false sinon
+     * @param p_element Elément à tester
+     * @return Vrai si l'élément est autiorisé dans le diagramme, faux sinon
      */
     public boolean eltAutorise (ElementGraphique p_element){
         return true;
@@ -58,9 +67,12 @@ public class Diagramme {
     }
     
     /**
-     * Retourne un élément graphique qu'il a obtenu depuis une cellule du graph
+     * Retourne l'élément graphique correspondant à une cellule passée
+	 * en paramètre
+	 * 
      * @param p_cellule La cellule à laquelle on veut trouver l'élément 
      * graphique correspondant
+	 * 
      * @return L'élément graphique obtenu ou null si aucun élément n'a été 
      * trouvé pour cette cellule
      */
