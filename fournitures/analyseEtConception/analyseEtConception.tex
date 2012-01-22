@@ -18,6 +18,7 @@
 \usepackage{wrapfig}
 \usepackage{longtable}
 \usepackage{array}
+\usepackage{float}
 
 %\newCommand{\footGauche}{} Université paul sabatier Toulouse III
 \newcommand{\footCentre}{}
@@ -185,16 +186,64 @@
 	Anomalies & -\\
 	\end{longtable}
 	\separateur
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=19cm]{casUtilisation.jpg}
+		\caption{Diagramme de cas d'utilisation}
+	\end{figure}
 	\chapter{Conception}
 	\section{Architecture générale du projet}
+		\vspace{10px}
+	\begin{wrapfigure}{l}{7cm}
+	\begin{tikzpicture}
+		\draw (0,0.0) -- (0,-10.2) ;
+		\draw (0.0,-0.0) -- (1.50,-0.0) ;
+		\draw (0.0,-10.2) -- (1.50,-10.2) ;
+		\node at (1.5,0.2) {\textbf{eltGraphique}} ;
+		\node at (2.0,-0.3) {\textit{ElementGraphique}} ;
+		\node at (2.0,-0.7) {\textbf{eltModelisation}} ;
+		\draw (0.3,-1.1) -- (0.3,-7.0) ;
+		\draw (0.3,-1.1) -- (0.80,-1.1) ;
+		\draw (0.35,-7.0) -- (0.85,-7.0) ;
+		\node at (1.27,-1.3) {\textit{Acteur}} ;
+		\node at (1.74,-1.7) {ActeurActif} ;
+		\node at (1.84,-2.2) {ActeurPassif} ;
+		\node at (1.45,-2.7) {Attribut} ;
+		\node at (1.99,-3.2) {CasUtilisation} ;
+		\node at (1.33,-3.7) {Classe} ;
+		\node at (2.6,-4.2) {\textit{ElementModelisation}} ;
+		\node at (1.58,-4.7) {Interface} ;
+		\node at (1.58,-5.2) {Methode} ;
+		\node at (1.75,-5.7) {Traitement} ;
+		\node at (1.6,-6.2) {Visibilite} ;
+		\node at (1.55,-6.7) {Variable} ;
+
+		\node at (0.9,-7.7) {\textbf{ligne}} ;
+		\draw (0.3,-8.0) -- (0.3,-10.0) ;
+		\draw (0.3,-8.0) -- (0.80,-8.0) ;
+		\draw (0.3,-10) -- (0.80,-10) ;
+		\node at (1.85,-8.3) {Cardinalite} ;
+		\node at (1.25,-8.8) {Lien} ;
+		\node at (2.57,-9.3) {MessageTraitement} ;
+		\node at (1.70,-9.8) {TypeLien} ;
+		\node at (1.0,-10.8) {\textbf{diagramme}} ;
+
+		\draw (0.0,-11.0) -- (0.0,-13.0) ;
+		\draw (0.0,-11.0) -- (0.50,-11.0) ;
+		\draw (0.0,-13.0) -- (0.50,-13.0) ;
+		\node at (1.4,-11.3) {Diagramme} ;
+		\node at (2.7,-11.8) {DiagrammeCasUtilisation} ;
+		\node at (2.0,-12.3) {DiagrammeClasse} ;
+		\node at (2.25,-12.8) {DiagrammeSequence} ;
+	\end{tikzpicture}
+	\end{wrapfigure}
 		L'architecture est la base d'une conception telle que nous l'avons choisie. En utilisant la notation UML, 
 		nous sommes parvenu à élaborer un ``meta-modèle'' de cette notation mais en isolant uniquement l'aspect 
 		graphique, faisant ainsi abstraction des multipes règles de conception que la norme UML impose. Après 
 		discussion avec le client, de nombreuses modifications ont été apportées à l'archetecture d'origine 
 		pour aboutir à une solution stable. Cette nouvelle architecture se compose de vingt classes, réparties 
-		en quatre paquetages comme suit :
-	\newline
-	\begin{wrapfigure}{r}{9cm}
+		en quatre \glo{paquetages}{Paquetage}{Un paquetage en Java est un regroupement de classes ayant la même thématique.} comme suit :\\
+
 		Dans cet arbre représentant notre architecture, on peut voir certains noms \textbf{en gras} ou \textit{en italique}. 
 		Les noms \textbf{en gras} représentent les différents paquetages que nous avons séparés. Ceux \textit{en italiques} 
 		sont des classes abstraites crées afin de factoriser le code dans l'optique de réaliser une programmation objet optimale 
@@ -206,46 +255,9 @@
 		
 		\textit{ElementGraphique} et \textit{ElementModelisation} sont des classes abstraites car elle regroupe les fonctions communes
 		à toues les lasses de leur paquetage respectifs sans pour autant en fournir une implémentation de chacune d'elles -- comme par exemple la méthode qui crée la
-		représentation graphique d'un élément ou celle qui permet de le supprimer d'un diagramme.
-	\end{wrapfigure}
+		représentation graphique d'un élément ou celle qui permet de le supprimer d'un diagramme.\\ 
+	Prenons maintenant chaque paquetage séparément pour vois comment ils fonctionnent plus en détails.
 	% Arbre de classe
-	\begin{itemize}
-		\item \textbf{eltGraphique}
-			\begin{itemize}
-				\item \textit{ElementGraphique}
-				\item \textbf{eltModelisation}
-					\begin{itemize}
-						\item \textit{Acteur}
-						\item ActeurActif
-						\item ActeurPassif
-						\item Attribut
-						\item CasUtilisation
-						\item Classe
-						\item \textit{ElementModelisation}
-						\item Interface
-						\item Methode
-						\item Traitement
-						\item Visibilite
-						\item Variable
-					\end{itemize}
-				\item \textbf{ligne}
-					\begin{itemize}
-						\item Cardinalite
-						\item Lien
-						\item MessageTraitement
-						\item TypeLien
-					\end{itemize}
-			\end{itemize}
-		\item \textbf{diagramme}
-			\begin{itemize}
-				\item Diagramme
-				\item DiagrammeCasUtilisation
-				\item DiagrammeClasse
-				\item DiagrammeSequence
-			\end{itemize}
-	\end{itemize}
-	\newpage 
-	Prenons maintenant chaque paquetage séparément 
 	\subsection{Package eltGraphique}
 	Le paquetage eltGraphique regroupe toutes les classes qui représentent des éléments graphiques. Il regroupe la classe 
 	\textit{ElementGraphique} et deux paquetages \textbf{eltModelisation} et \textbf{ligne}. Cette classe possède deux attributs 
@@ -260,7 +272,7 @@
 	la même représentation sur un diagramme. Les classes Visibilite, Methode et Attribut permettent au client de créer 
 	facilement une interface de saisie de ces éléments, facilitant l'usage du logiciel final. De plus, l'ajout de ces 
 	méthodes et attributs dans des classes, des acteurs des traitements ou des interfaces pourra faciliter l'ajout futur 
-	de nouvelle fonctionnalités comme apr exemple de la génération de code Java.
+	de nouvelle fonctionnalités comme par exemple de la génération de code \glo{Java}{Java}{Langage de programmation orienté objet moderne, il compile le programme pour ensuite l'exécuter sur une machine Java, ainsi le programme une fois compilé peut être exécuté sur différentes plateformes (Windows, Linux, Mac OS X, \ldots).}.
 	\paragraph{Package ligne} Ce paquetage regroupe peu de classe. TypeLien est une classe énumérée servant à recenser
 	toutes les types graphiques de liens existant dans la notation UML. Cardinalite quant à elle, permet comme Methode 
 	ou Attribut, d'aider le client à permettre un saisie facilité des cardinalités d'un lien dans un diagramme de classe par exemple.
@@ -275,11 +287,15 @@
 	au client de réimplémnter ses propres méthodes pour créer ses propres règles.
 
 	\section{Conception détaillée}
+	\subsection{Documentation}
 	La description détaillée des méthodes et des attributs de chaque classe est disponible sous forme numérique
 	avec la recette ainsi qu'en trois exemplaires à l'adresse \\
-	$\rhd$ \url{http://documentation.joohoo.fr/libUML/public} (Documentation des méthodes publiques et protégées)\\
-	$\rhd$ \url{http://documentation.joohoo.fr/libUML/private} (Documentation des méthodes privée, protégées, pu\-bliques et des attributs)\\
-	$\rhd$ \url{http://documentation.joohoo.fr/libUML/junitTests} (Documentation des tests unitaires)
+	$\rhd$ \url{http://documentation.joohoo.fr/libUML/public} (Documentation publique et protégée)\\
+	$\rhd$ \url{http://documentation.joohoo.fr/libUML/private} (Documentation publique, protégées et pri\-vée)\\
+	$\rhd$ \url{http://documentation.joohoo.fr/libUML/junitTests} (Tests unitaires)\\	
+	\subsection{Relations entre les classes}	
+	Le diagramme de paquetage est disponible à l'annexe \ref{diagrammePaquetage} page \pageref{diagrammePaquetage}. Celui-ci vous permettra de repérer les 
+	relations entre les classes.
 	
 	\appendix
 	\closeout\glossaireVar
@@ -287,4 +303,6 @@
 	\begin{sortedlist}
 		\input{glossaire.tex}
 	\end{sortedlist}
+	\chapter{Diagramme de paquetage} \label{diagrammePaquetage}
+	\includepdf[page=1]{paquetageSansMethodes.pdf}
 \end{document}
