@@ -2,6 +2,11 @@ package eltGraphique.eltModelisation;
 
 /**
  * Représente une variable en général
+ * Le type Variable est utiliser pour les paramètres des méthodes
+ * Le type Attribut possède en plus une Visibilite
+ * 
+ * @see eltGraphique.eltModelisation.Attribut
+ * @see eltGraphique.eltModelisation.Visibilite
  * 
  * @author Mathieu
  */
@@ -89,7 +94,7 @@ public class Variable {
     }
 
 	/**
-	 * Retourne une description sous forme de chaine de caractères de la Variable (type et nom)
+	 * Retourne une description sous forme de chaine de caractères de la variable (type et nom)
 	 *
 	 * @return La chaine de caractère
 	 */

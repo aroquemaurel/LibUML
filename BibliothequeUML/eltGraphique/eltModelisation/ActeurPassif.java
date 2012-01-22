@@ -34,11 +34,12 @@ public class ActeurPassif extends Acteur {
     
     /**
     * Constructeur de la classe ActeurPassif
-    * @param p_graph Le graph dans lequel sera l'acteur passif
+    * @param p_graph Le graphe dans lequel sera ajouté l'acteur passif
     * @param p_texte Le texte qui sera lié à l'acteur passif
     *
-    * @see Acteur
-    * @see ElementModelisation
+    * @see eltGraphique.eltModelisation.Acteur
+    * @see diagramme.Diagramme
+	* @see util.Position
     */
     public ActeurPassif(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Position p_position) {
         super(p_graph, p_diagramme, "<<passif>>\n"+p_texte, new Dimension(100,35), p_position);
@@ -52,7 +53,7 @@ public class ActeurPassif extends Acteur {
         this.creerStyleActeurPassif();
         super.setCellule((mxCell) super.getGraph().insertVertex( super.getParent(), null, super.getTexte(),
                         super.getPosition().getAbscisse(), 
-                        super.getPosition().getOrdonne(), super.getDimension().getWidth(),
+                        super.getPosition().getOrdonnee(), super.getDimension().getWidth(),
                         super.getDimension().getHeight(), "ACTEUR_PASSIF"));
 
         super.getDiagramme().getElementsGraphiques().add(this);

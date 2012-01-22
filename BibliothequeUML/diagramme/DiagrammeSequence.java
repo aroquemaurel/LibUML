@@ -1,11 +1,11 @@
 package diagramme;
 
 import eltGraphique.ElementGraphique;
-import eltGraphique.ligne.Lien;
-import eltGraphique.ligne.TypeLien;
 import eltGraphique.eltModelisation.ActeurActif;
 import eltGraphique.eltModelisation.ActeurPassif;
 import eltGraphique.eltModelisation.Traitement;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 
 /**
  * Cette classe permet de représenter et de manipuler <b>un Diagramme de Sequence</b>.
@@ -15,20 +15,22 @@ import eltGraphique.eltModelisation.Traitement;
 public class DiagrammeSequence extends Diagramme {
     
     /**
-    * Méthode qui teste si le lien est autorisé ou non dans le diagrammme de
-    * séquence en fonction de l'origine et de l'extrémité    
+    * Méthode qui teste si le lien est autorisé dans le diagrammme de
+    * séquence, en fonction de l'origine et de l'extrémité
+	* 
+	* Méthode surchargée de Diagramme
     *
-    * @see Diagramme
-    * @param p_origine Element graphique d'origine
-    * @param p_extremite Element graphique d'arrivée
+    * @param p_origine Elément graphique d'origine
+    * @param p_extremite Elément graphique d'arrivée
     * @param p_typeDeFleche Type de lien utilisé entre les deux éléments graphiques
-    * @return vrai(true) si le lien entre deux éléments graphiques est autorisé
-    * ou faux(false) si le lien entre deux éléments graphiques n'est pas autorisé.
+    * @return Vrai si le lien entre les deux éléments graphiques est autorisé, faux sinon
+	* 
+    * @see Diagramme
     */
     @Override
     public boolean lienAutorise (ElementGraphique p_origine , 
             ElementGraphique p_extremite, TypeLien p_typeDeFleche){
-        boolean valeurRetour = false;
+        boolean valeurRetour;
         
         switch (p_typeDeFleche){
             case ASSOCIATION:
@@ -47,13 +49,12 @@ public class DiagrammeSequence extends Diagramme {
     }
     
      /**
-     * Méthode privée qui autorise un lien d'association en fonction de 
-     * l'origine et de l'extrémité
+     * Méthode privée qui teste si un lien d'association, en fonction de 
+     * l'origine et de l'extrémité, est autorisé
      * 
      * @param p_origine Element graphique d'origine
      * @param p_extremite Element graphique d'arrivée
-     * @return vrai(true) si le lien d'association entre deux éléments graphiques est autorisé
-     * ou faux(false) si le lien d'association entre deux éléments graphiques n'est pas autorisé.
+     * @return Vrai si le lien d'association entre les deux éléments graphiques est autorisé, faux sinon
      */
     private boolean autorisationAssociation(ElementGraphique p_origine , 
             ElementGraphique p_extremite) {
@@ -61,13 +62,12 @@ public class DiagrammeSequence extends Diagramme {
     }
     
     /**
-     * Méthode privée qui autorise un lien de type flèche en fonction de 
-     * l'origine et de l'extrémité
+     * Méthode privée qui teste si un lien de type flèche, en fonction de 
+     * l'origine et de l'extrémité, est autorisé
      * 
-     * @param p_origine Element graphique d'origine
-     * @param p_extremite Element graphique d'arrivée
-     * @return vrai(true) si le lien de type flèche entre deux éléments graphiques est autorisé
-     * ou faux(false) si le lien de type flèche entre deux éléments graphiques n'est pas autorisé.
+     * @param p_origine Elément graphique d'origine
+     * @param p_extremite Elément graphique d'arrivée
+     * @return Vrai si le lien de type flèche entre les deux éléments graphiques est autorisé, faux sinon
      */
     private boolean autorisationFleche(ElementGraphique p_origine , 
             ElementGraphique p_extremite) {
@@ -75,13 +75,12 @@ public class DiagrammeSequence extends Diagramme {
     }
 
     /**
-     * Méthode privée qui autorise un lien de dépendance en fonction de 
-     * l'origine et de l'extrémité
+     * Méthode privée qui test si un lien de dépendance, en fonction de 
+     * l'origine et de l'extrémité, est autorisé
      * 
-     * @param p_origine Element graphique d'origine
-     * @param p_extremite Element graphique d'arrivée
-     * @return vrai(true) si le lien de dependance entre deux éléments graphiques est autorisé
-     * ou faux(false) si le lien de dependance entre deux éléments graphiques n'est pas autorisé.
+     * @param p_origine Elément graphique d'origine
+     * @param p_extremite Elément graphique d'arrivée
+     * @return Vrai si le lien de dependance entre les deux éléments graphiques est autorisé, faux sinon
      */
     private boolean autorisationDependance(ElementGraphique p_origine , 
             ElementGraphique p_extremite) {
@@ -89,13 +88,13 @@ public class DiagrammeSequence extends Diagramme {
     }
     
     /**
-     * Méthode qui teste si l'élément est autorisé ou pas dans le diagramme
+     * Méthode qui teste si l'élément est autorisé dans le diagramme
      * de séquence
      *
+     * @param p_element L'élément à tester
+     * @return Vrai si l'élément est autorisé dans un diagramme de sequence, faux sinon
+	 * 
      * @see Diagramme
-     * @param p_element
-     * @return vrai(true) si l'element est autorisé dans un diagramme de sequence
-     * ou faux(false) si l'element n'est pas autorisé dans un diagramme de sequence.
      */
     @Override
     public boolean eltAutorise (ElementGraphique p_element){

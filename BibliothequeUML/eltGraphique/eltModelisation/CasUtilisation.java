@@ -50,7 +50,7 @@ public class CasUtilisation extends ElementModelisation {
 
         super.setCellule((mxCell) super.getGraph().insertVertex(
                 super.getParent(), null, super.getTexte(), super.getPosition().getAbscisse(), 
-                        super.getPosition().getOrdonne(),
+                        super.getPosition().getOrdonnee(),
                 super.getDimension().getWidth(), super.getDimension().getHeight(),
                 "USECASE"));
 

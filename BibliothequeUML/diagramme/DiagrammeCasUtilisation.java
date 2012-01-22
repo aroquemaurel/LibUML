@@ -1,10 +1,10 @@
 package diagramme;
 
 import eltGraphique.ElementGraphique;
-import eltGraphique.ligne.Lien;
-import eltGraphique.ligne.TypeLien;
 import eltGraphique.eltModelisation.ActeurActif;
 import eltGraphique.eltModelisation.CasUtilisation;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 
 /**
  * Cette classe permet de représenter et de manipuler <b>un Diagramme de Cas d'utilisation</b>.
@@ -14,20 +14,22 @@ import eltGraphique.eltModelisation.CasUtilisation;
 public class DiagrammeCasUtilisation extends Diagramme {
     
     /**
-    * Méthode qui teste si le lien est autorisé ou non dans le diagrammme 
-    * cas d'utilisation en fonction de l'origine et de l'extrémité
+    * Méthode qui teste si le lien est autorisé dans le diagrammme de 
+    * cas d'utilisation, en fonction de l'origine et de l'extrémité
+	* 
+	* Méthode surchargée de Diagramme
     * 
-    * @see Diagramme
-    * @param p_origine Element graphique d'origine
-    * @param p_extremite Element graphique d'arrivée
+    * @param p_origine Elément graphique d'origine
+    * @param p_extremite Elément graphique d'arrivée
     * @param p_typeDeFleche Type de lien utilisé entre les deux éléments graphiques
-    * @return vrai(true) si le lien entre deux éléments graphiques est autorisé
-    * ou faux(false) si le lien entre deux éléments graphiques n'est pas autorisé.
+    * @return Vrai si la combinaison est autorisée, faux sinon
+	* 
+    * @see Diagramme
     */
     @Override
     public boolean lienAutorise (ElementGraphique p_origine , 
             ElementGraphique p_extremite, TypeLien p_typeDeFleche){
-        boolean valeurRetour = false;
+        boolean valeurRetour;
         switch (p_typeDeFleche){
             case ASSOCIATION:
                 valeurRetour = this.autorisationAssociation(p_origine , 
@@ -49,13 +51,13 @@ public class DiagrammeCasUtilisation extends Diagramme {
     
     /**
      * 
-     * Méthode privée qui autorise un lien d'association en fonction de 
-     * l'origine et de l'extrémité
+     * Méthode privée qui teste si un lien d'association, en fonction de 
+     * l'origine et de l'extrémité, est autorisé
      * 
      * @param p_origine Element graphique d'origine
      * @param p_extremite Element graphique d'arrivée
-     * @return vrai(true) si le lien d'association entre deux éléments graphiques est autorisé
-     * ou faux(false) si le lien d'association entre deux éléments graphiques n'est pas autorisé.
+     * @return Vrai si le lien d'association entre les deux éléments
+	 * graphiques est autorisé faux sinon
      */
     private boolean autorisationAssociation(ElementGraphique p_origine , 
             ElementGraphique p_extremite) { 
@@ -66,13 +68,16 @@ public class DiagrammeCasUtilisation extends Diagramme {
 
     /**
      * 
-     * Méthode privée qui autorise un lien de généralisation en fonction de 
-     * l'origine et de l'extrémité
+     * Méthode privée qui teste si un lien de généralisation, en fonction de 
+     * l'origine et de l'extrémité, est autorisé
      * 
-     * @param p_origine Element graphique d'origine
-     * @param p_extremite Element graphique d'arrivée
-     * @return vrai(true) si le lien de generalisation entre deux éléments graphiques est autorisé
-     * ou faux(false) si le lien de generalisation entre deux éléments graphiques n'est pas autorisé.
+     * @param p_origine Elément graphique d'origine
+     * @param p_extremite Elément graphique d'arrivée
+     * @return Vrai si le lien de generalisation entre les
+	 * deux éléments graphiques est autorisé faux sinon
+	 * 
+	 * @see eltGraphique.ElementGraphique
+	 * @see eltGraphique.ligne.TypeLien
      */
     private boolean autorisationGeneralisation(ElementGraphique p_origine , 
             ElementGraphique p_extremite) {
@@ -81,13 +86,12 @@ public class DiagrammeCasUtilisation extends Diagramme {
 
     /**
      * 
-     * Méthode privée qui autorise un lien de dépendance en fonction de 
-     * l'origine et de l'extrémité
+     * Méthode privée qui teste si un lien de dépendance, en fonction de 
+     * l'origine et de l'extrémité, est autorisé
      * 
-     * @param p_origine Element graphique d'origine
-     * @param p_extremite Element graphique d'arrivée
-     * @return vrai(true) si le lien de dependance entre deux éléments graphiques est autorisé
-     * ou faux(false) si le lien de dependance entre deux éléments graphiques n'est pas autorisé.
+     * @param p_origine Elément graphique d'origine
+     * @param p_extremite Elément graphique d'arrivée
+     * @return Vrai si le lien de dependance entre les deux éléments graphiques est autorisé, faux sinon
      */
     private boolean autorisationDependance(ElementGraphique p_origine , 
             ElementGraphique p_extremite) {
@@ -95,12 +99,16 @@ public class DiagrammeCasUtilisation extends Diagramme {
     }
     
     /**
-     * Méthode qui teste si l'élément est autorisé ou pas dans le diagramme
+     * Méthode qui teste si l'élément est autorisé dans un diagramme de
      * cas d'utilisation
+	* 
+	* Méthode surchargée de Diagramme
+	 * 
+     * @param p_element L'élément à tester
+     * @return Vrai si l'élément est autorisé dans un diagramme de cas
+	 * d'utilisation, faux sinon
+	 * 
      * @see Diagramme
-     * @param p_element
-     * @return vrai(true) si l'element est autorisé dans un diagramme de cas d'utilisation
-     * ou faux(false) si l'element n'est pas autorisé dans un diagramme de cas d'utilisation.
      */
     @Override
     public boolean eltAutorise (ElementGraphique p_element){

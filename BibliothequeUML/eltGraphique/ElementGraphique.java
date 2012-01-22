@@ -4,9 +4,9 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import com.mxgraph.view.mxGraph;
 import diagramme.Diagramme;
-import eltGraphique.ligne.Lien;
 import eltGraphique.eltModelisation.ElementModelisation;
 import eltGraphique.eltModelisation.IntElementGraphique;
+import eltGraphique.ligne.Lien;
 import util.Liste;
 
 /**
@@ -24,12 +24,10 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
 	 */
     private mxGraph graph;
     
-    
     /** 
      * Liste de liens partant ou pointant de l'élément graphique 
      */
     private Liste <Lien> liens;
-            
        
     /**
      * Diagramme dans lequel apparait l'élément graphique 
@@ -40,6 +38,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     * Constructeur générique des éléments graphiques
     *
     * @param p_graph Graphe auquel sera ajouté l'élément graphique
+	* @param p_diagramme Diagramme auquel sera ajouté l'élément graphique
     */
     public ElementGraphique(mxGraph p_graph, Diagramme p_diagramme) {
         this.graph = p_graph;
@@ -71,6 +70,7 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     public Liste<Lien> getLiens(){
         return (this.liens);
     }
+	
     /**
     * Rend (in)visible l'élément grahique sur le graphe
     * @param p_bool L'élément est vsible ?
@@ -103,9 +103,9 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
 
     /**
-    * Récupère le graphe auquel est associ l'élément
+    * Récupère le graphe auquel est associé l'élément
     * 
-    * @return Le graph auquel est associé l'élément
+    * @return Le graphe auquel est associé l'élément
     */
     @Override
     public mxGraph getGraph(){
@@ -123,9 +123,9 @@ abstract public class ElementGraphique extends mxCell implements IntElementGraph
     }
 
     /**
-     * Récupère Le diagramme dans lequel est l'élément de modélisation
+     * Récupère le diagramme dans lequel est l'élément de modélisation
      * 
-     * @return Le diagramme
+     * @return Le diagramme dans lequel apparaît l'élément de modélisation
      */
     @Override
     public Diagramme getDiagramme(){

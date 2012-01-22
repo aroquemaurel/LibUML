@@ -29,9 +29,9 @@ abstract public class Acteur extends ElementModelisation {
 	private mxCell ligneDeVie;
 
 	/**
-	 * true si on veut afficher la ligne de vie, false sinon
+	 * Vrai si on veut afficher la ligne de vie, faux sinon
 	 */
-	private boolean visibiliteLigneDeVie;
+	private boolean visibleLigneDeVie;
 
 	/**
 	 * Créer le style de la ligne de vie 
@@ -55,17 +55,23 @@ abstract public class Acteur extends ElementModelisation {
 
 	}
 
-    /** Constructeur le la classe Acteur 
-    *
-    * @param p_graph le graphe sur lequel il faut ajouter l'acteur
-     * @param p_texte le texte qui sera afficher sur l'acteur
+    /** 
+	 * Constructeur de la classe Acteur 
+     *
+     * @param p_graph Le graphe sur lequel sera ajouté l'acteur
+     * @param p_texte Le texte qui sera affiché sur l'acteur
      *
      */
     public Acteur(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Dimension p_dimension, Position p_position) {
             super(p_graph, p_diagramme, p_texte, p_dimension, p_position);
-            this.visibiliteLigneDeVie = false;
+            this.visibleLigneDeVie = false;
     }
     
+	/**
+	 * Surcharge le la méthode supprimer qui supprime un acteur du graphe
+	 * 
+	 * @see eltGraphique.ElementGraphique
+	 */
     @Override
     public void supprimer(){
         this.afficherLigneDeVie(false);
@@ -74,7 +80,7 @@ abstract public class Acteur extends ElementModelisation {
     }
     
     /** 
-     * Créé la ligne vie avec les tyle prédéfini auparavant 
+     * Créé la ligne vie avec les tyle prédéfini
      */
     public void creerLigneDeVie(){
             this.creerStyleLigneDeVie();
@@ -83,14 +89,14 @@ abstract public class Acteur extends ElementModelisation {
     }
 
 	/**
-	 * True affiche la ligne de vie, false n'affiche plus la ligne de vie 
+	 * Méthode qui permet de rendre (in)visible la ligne de vie
 	 *
 	 * @param p_visible Le booléen permettant de choisir si on affiche la ligne de vie, ou non
 	 */
     public void afficherLigneDeVie(boolean p_visible){
             this.ligneDeVie.setVisible(p_visible);
             super.mettreAJour();
-            this.visibiliteLigneDeVie = p_visible;
+            this.visibleLigneDeVie = p_visible;
     }
     
 	/**
@@ -103,12 +109,12 @@ abstract public class Acteur extends ElementModelisation {
     }
    
 	/**
-	 * Retourn esi la ligne de vie est affichée, ou non
+	 * Retourne si la ligne de vie est affichée, ou non
 	 *
-	 * @return True si la ligne de vie est visible, false sinon
+	 * @return Vrai si la ligne de vie est visible, faux sinon
 	 */
     public boolean getVisibiliteLigneDeVie(){
-        return (this.visibiliteLigneDeVie);
+        return (this.visibleLigneDeVie);
     }
 
     /**
