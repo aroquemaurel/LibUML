@@ -58,30 +58,30 @@
 	au départ, il est donc inutile de faire un test de non régression étant donné que nous ne continuons pas un système, il n'y aura pas 
 	de régression.
 	\section{Les tests de validation}
-	Nous avons développé un \glo{démonstrateur}{Démonstrateur}{Un démonstrateur est un logiciel simple, permettant de montrer les possibilités d'une bibliothèque} qui utilise notre bibliothèque et qui fait office de test de validation. Il nous permet de vérifier que toutes les attentes du client sont respectés. \\
+	Nous avons développé un \glo{démonstrateur}{Démonstrateur}{Un démonstrateur est un logiciel simple, permettant de montrer les possibilités d'une bibliothèque} qui utilise notre bibliothèque et qui fait office de test de validation. Il nous permet de vérifier que toutes les attentes du client sont respectées. \\
 		Avec ce démonstrateur, nous pouvons montrer au client les différentes possibilités de la bibliothèque, ainsi qu'un exemple d'utilisation.
 
 		\subsection{Jeux d'essais}
 		\subsubsection{Dessiner un diagramme complet}
-		Nous avons effectués plusieurs jeux d'essais, le but est de pouvoir dessiner pour chacun des types de diagrammes demandés par le client,
-		un diagramme utilisant tous les composant de la norme UML 2.0 et respectant cette même norme, ceci pour chacun des diagrammes 
+		Nous avons effectué plusieurs jeux d'essais, le but est de pouvoir dessiner pour chacun des types de diagrammes demandés par le client,
+		un diagramme utilisant tous les composants de la norme UML 2.0 et respectant cette même norme, ceci pour chacun des diagrammes 
 		demandés par notre client. 
 		\begin{itemize}
-			\item Dessiner un \glo{diagramme de classe}{Diagramme de classe}{Schéma utilisé en génie logiciel pour représenter les classes et les interfaces des systèmes ainsi que les différentes relations entre celles-ci.}.
+			\item Dessiner un \glo{diagramme de classes}{Diagramme de classes}{Schéma utilisé en génie logiciel pour représenter les classes et les interfaces des systèmes ainsi que les différentes relations entre celles-ci.}.
 			\item Dessiner un \glo{diagramme de séquence}{Diagramme de séquence}{ Représentation graphique des interactions entre les acteurs et le système selon un ordre chronologique. Ce diagramme est inclus dans la partie dynamique d'UML.}.
 			\item Dessiner un \glo{diagramme de cas d'utilisation}{Diagramme de cas d'utilisation} {Représentation graphique permettant de décrire les intéractions entre les acteurs et le système.}.
 		\end{itemize}
 	
 		\subsubsection{Respecter les contraintes d'ajout d'éléments}
-		Pour chacun des diagrammes, les contraintes doivent être respectés, ainsi en fonction du type de diagramme, certains éléments ne doivent pas pouvoir
-		être inséré. Voici la liste des éléments autorisés en fonction du type de diagramme.
+		Pour chacun des diagrammes, les contraintes doivent être respectées, ainsi en fonction du type de diagramme, certains éléments ne doivent pas pouvoir
+		être insérés. Voici la liste des éléments autorisés en fonction du type de diagramme.
 		\begin{multicols}{2}
 		\paragraph{Diagramme de cas d'utilisation}
 		\begin{itemize}
 			\item Cas d'utilisation
 			\item Acteur actif
 		\end{itemize}
-		\paragraph{Diagramme de classe}
+		\paragraph{Diagramme de classes}
 		\begin{itemize}
 			\item Classe
 			\item Interface
@@ -143,16 +143,16 @@
 		est utilisable en tant que composant par un logiciel extérieur. Il nous permet également de montrer au client les possibilités de notre bibliothèque.
 
 		\subsection{Les composants à tester}
-			Notre bibliothèque d'objet graphique en tant que composant de notre démonstrateur.
+			Notre bibliothèque d'objets graphiques en tant que composant de notre démonstrateur.
 
 			\subsection{Les jeux d'essais}
-			Dessiner un diagramme de classe, un diagramme de séquence ainsi qu'un diagramme de cas d'utilisation chacun utilisant tous les objets graphiques 
+			Dessiner un diagramme de classes, un diagramme de séquence ainsi qu'un diagramme de cas d'utilisation chacun utilisant tous les objets graphiques 
 			possibles. \\
 			Une fois ces diagrammes dessinés, nous testerons la suppression\footnote{La suppression d'un élément devant supprimer les liens de l'élément supprimé},
 			l'ajout de méthodes et d'attributs dans une classe, ainsi que la modification de données.
 
 			\subsection{Les résultats attendus}
-			Représentation graphique des différents diagrammes respectant les normes UML 2.0 avec possibilité d'ajout ou de suppression de données.
+			Représentation graphique des différents diagrammes respectant la norme UML 2.0 avec possibilité d'ajout ou de suppression de données.
 			\newpage
 	\section{Les tests unitaires}
 	Les tests unitaires servent à tester chacune des méthodes de notre bibliothèque.\\
@@ -163,9 +163,9 @@
 	Elle est également disponible sous format HTML à l'adresse suivante: \\
 	$\rhd$ \url{http://documentation.joohoo.fr/libUML/junitTests/index.html}\\
 		
-	\section{Le test de charges}
-		\subsection{Le jeux d'essai}
-		Le test de charge permet de savoir si la création d'un grand nombre d'élément graphique ne posera pas de problème. 
+	\section{Le test de charge}
+		\subsection{Le jeu d'essai}
+		Le test de charge permet de savoir si la création d'un grand nombre d'éléments graphiques ne posera pas de problème. 
 		Ainsi, nous allons créer les éléments suivants dans un diagramme sans contraintes.
 		\begin{itemize}
 			\item 20 Classes
@@ -173,16 +173,15 @@
 			\item 20 Traitements
 			\item 20 Acteurs actifs
 			\item 20 Acteurs passifs
-			\item 20 interface 
-			\item 60 liens
+			\item 60 Liens
 		\end{itemize}
-		Une fois ces éléments suivants créer, nous supprimerons 40 éléments, qui devront supprimer les liens reliés aux éléments.
+		Une fois ces éléments créés, nous supprimerons 40 éléments, qui devront supprimer les liens reliés aux éléments.
 		\subsection{Les résultats attendus}
-		Aucune exception, les éléments ont été bien créer et certains éléments ont été supprimés avec les liens.
+		Aucune exception, les éléments ont été bien créés et certains éléments ont été supprimés avec les liens.
 	\chapter{Les cahiers de tests}	
 	\section{Création du démonstrateur}
-	Pour les tests de validation, nous avons donc créer un démonstrateur, ce démonstrateur à évolué tout au long du développement de la bibliothèque UML, 
-	lorsque nous rajoutions des éléments dans la bibliothèque, nous modifions le démonstrateur pour pouvoir les intégrer.
+	Pour les tests de validation, nous avons donc créé un démonstrateur, ce démonstrateur a évolué tout au long du développement de la bibliothèque UML, 
+	lorsque nous rajoutions des éléments dans la bibliothèque, nous modifions le démonstrateur pour les intégrer.
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=18cm]{choixDiagramme.jpg}
@@ -198,11 +197,11 @@
 			\includegraphics[width=16cm]{validation4.jpg}
 			\caption{Validation de l'interdiction d'ajouter des éléments non autorisés}
 		\end{figure}
-		\subsection{Dessiner un diagramme de classe}
+		\subsection{Dessiner un diagramme de classes}
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=18cm]{validation1.jpg}
-			\caption{Création d'un diagramme de classe simple}
+			\caption{Création d'un diagramme de classes simple}
 			\includegraphics[width=18cm]{validation2.jpg}
 			\caption{Validation de l'interdiction d'ajouter des éléments non autorisés}
 		\end{figure}
@@ -217,22 +216,22 @@
 		\newpage
 			\begin{figure}[H]
 				\section{Les tests d'intégration}
-					\begin{flushleft} Nous avons créer un diagramme sans aucune contrainte, tous les éléments pouvant donc être reliés entre eux. \end{flushleft}
+					\begin{flushleft} Nous avons créé un diagramme sans aucune contrainte, tous les éléments pouvant donc être reliés entre eux. \end{flushleft}
 					\centering
 					\includegraphics[width=18cm]{integration1.jpg}
 					\caption{Diagramme sans aucune contrainte}
 				\includegraphics[width=18cm]{integration2.jpg}
-				\caption{Le même diagramme après suppresion de l'acteur au centre}
+				\caption{Le même diagramme après suppression de l'acteur au centre}
 			\end{figure}
 			\begin{figure}[H]
 				\section{Les tests unitaires}
 				\subsection{Création des tests}
 				\begin{flushleft}
-					Nous avons donc créer des tests unitaires \texttt{JUnit}, une classe de test pour une classe à tester. Chaque méthodes doivent être testés, 
+					Nous avons donc créé des tests unitaires \texttt{JUnit}, une classe de test pour une classe à tester.\\ Chacune des méthodes doivent être testés, 
 					avec un ou plusieurs tests.\\
 					Vous pouvez avoir les détails des tests unitaires avec la documentation en Annexe \ref{junitdoc} page \pageref{junitdoc}.
 				\subsection{Résultat des tests}
-				Après lancement des tests unitaires, ils sont tous passéss. Nous pouvons donc en conclure que les différents modules de la bibliothèque UML fonctionnent. 
+				Après lancement des tests unitaires, ils sont tous passés. Nous pouvons donc en conclure que les différents modules de la bibliothèque UML fonctionnent. 
 				\end{flushleft}
 				\centering
 				\includegraphics[width=9.75cm]{junitPassed.jpg} 
@@ -240,7 +239,7 @@
 			\newpage
 	\section{Le test de charge}
 	\subsection{Création du test}
-	Le test de charge à été effectuée en créant les éléments graphiques répértorié dans les plans de tests. Voici le code permettant d'effectuer ce tests:
+	Le test de charge a été effectué en créant les éléments graphiques répertoriés dans les plans de tests. Voici le code permettant d'effectuer ce test:
 	\lstinputlisting[language=Java, caption=Code du test de charge]{ChargeTest.java}
 	\subsection{Résultat du test}
 	\includegraphics[width=25cm, angle=90]{testCharge.jpg}

@@ -46,8 +46,8 @@
 %\setcounter{tocdepth}{4}
 	\maketitle
 	\newpage
-	\tableofcontents
 	\input{../intro.tex}
+	\tableofcontents
 	\newpage
 	\chapter{Spécification des besoins}
 	\section{Objectifs, champ d'application, limites du système}
@@ -57,48 +57,48 @@
 	les différents éléments de modélisation de la norme \glo{UML}{UML}{(Unified Modeling Language) Langage de modélisation
 	graphique à base de pictogramme. Il est apparu dans le monde du génie logiciel dans le cadre de la conception orientée
 	objet. Ce langage est composé de différents diagrammes, allant du développement à la simple analyse des besoins.}
-	\footnote{Unified Modeling Language} 2.0 en suivant un modèle de développement \glo{incrémental}
-	{Incrément}{Fonctionnalité du logiciel, ayant un cycle de developpement lui étant propre (Analyse, Développement, Tests).
+	\footnote{Unified Modeling Language} 2.0 en suivant un mo\-dèle de développement \glo{incrémental}
+	{Incrément}{Fonctionnalité du logiciel, ayant un cycle de développement lui étant propre (Analyse, Développement, Tests).
 	Cette fonctionnalité doit être opérationnelle pour que l'incrément soit terminé. Il doit améliorer le logiciel
 	par rapport à l'incrément précédent, et ne doit pas altérer les fonctionnalités précédentes.}.
 	\paragraph{}
 	La particularité de cette bibliothèque étant de respecter la norme UML 2.0, cela impose des restrictions
 	d'utilisation sur chacun des éléments graphiques utilisés.
 	Cette bibliothèque d'objets graphiques doit comprendre l'ensemble des éléments graphiques composant
-	les principaux diagrammes vue durant les cours de PRL\footnote{Production de logiciel} de M. \bsc{Millan} afin
+	les principaux diagrammes vus durant les cours de PRL\footnote{Production de logiciel} de M. \bsc{Millan} afin
 	d'être utilisable pour toutes les étapes de la conception d'un projet simple. 
 	
 	\paragraph{}
 	Suivant la demande du client, nous avons traité les trois diagrammes principaux de la norme UML 2.0 :
 	diagramme de \glo{cas d'utilisation}{Diagramme de cas d'utilisation}{
-	Représentation graphique permettant de décrire les intéractions entre les acteurs et le système.}, de 
-	\glo{classe}{Diagramme de classe}{Schéma utilisé en génie logiciel pour représenter les classes et les interfaces des systèmes ainsi que les différentes relations entre celles-ci.} et de \glo{séquence}{Diagramme de séquence}{Représentation graphique des interactions entre les acteurs et le système selon un ordre chronologique. Ce diagramme est inclus dans la partie dynamique d'UML.}.
+	Représentation graphique permettant de décrire les interactions entre les acteurs et le système.}, de 
+	\glo{classes}{Diagramme de classes}{Schéma utilisé en génie logiciel pour représenter les classes et les interfaces des systèmes ainsi que les différentes relations entre celles-ci.} et de \glo{séquence}{Diagramme de séquence}{Représentation graphique des interactions entre les acteurs et le système selon un ordre chronologique. Ce diagramme est inclus dans la partie dynamique d'UML.}.
 %%%
 	La problématique du projet était à l'origine une étude de faisabilité sur la réalisation de cette bibliothèque.
-	À l'issue de notre projet, nous devrons estimé une durée de développement pour fournir une bibliothèque complète
-	pouvant être facilement intégré dans une application plus importante, telle qu'un éditeur de saisie ou un générateur de code par exemple.
-	De plus, nous devrons trouver une potentielle utilité à un outils fragmenté, contrairement à celui utilisé à l'IUT,
-	cet outil permettrai de ne créer qu'un seul type de diagramme et non regrouper tous les éléments de la modélisation UML.
+	À l'issue de notre projet, nous devrons estimer une durée de développement pour fournir une bibliothèque complète
+	pouvant être facilement intégrée dans une application plus importante, tel qu'un éditeur de saisie ou un générateur de code par exemple.
+	De plus, nous devrons trouver une potentielle utilité à un outil fragmenté, contrairement à celui utilisé à l'IUT,
+	cet outil permettrai de ne créer qu'un seul type de diagramme et non de regrouper tous les éléments de la modélisation UML.
 
 	\paragraph{}
-	Nous avons choisi de developper notre projet en utilisant la bibliothèque \texttt{JGraphX},
+	Nous avons choisi de développer notre projet en utilisant la bibliothèque \texttt{JGraphX},
 	bibliothèque graphique contenant une multitude d'éléments permettant
 	par exemple de dessiner facilement des graphes ou des organigrammes. De plus, elle intègre les principaux 
 	pictogrammes que l'on retrouve dans les différents diagrammes UML 2.0 tels que les cas d'utilisation (ellipse)
 	ou les acteurs (bonhomme).
-	\glo{}{Modèle de développement incrémental}{Méthode de développement d'un projet dans laquel le projet final
-	est divisé en plusieurs fonctionnalités appelé incrément qui sont développées et ajouté au projet 
+	\glo{}{Modèle de développement incrémental}{Méthode de développement d'un projet dans laquelle le projet final
+	est divisé en plusieurs fonctionnalités appelées incréments qui sont développés et ajoutées au projet 
 	au fur et à mesure.}
 \newpage
 	\subsection{Fonctionnalités du système}
-	Les fonctionnalités principales attendus par notre client sont les suivantes:
+	Les fonctionnalités principales attendues par notre client sont les suivantes:
 	\begin{itemize}
 		\item Dessiner un diagramme de cas d'utilisation
 		\item Dessiner un diagramme de classes
 		\item Dessiner un diagramme de séquence 
 		\item Restreindre l'utilisation des éléments graphiques aux seuls diagrammes dans lesquels ils sont utilisés.  \end{itemize}
 	\subsection{États de sortie du système}
-	Une \glo{bibliothèque}{Bibliothèque}{un composant indépendant fournissant des méthodes déjà implémentées, facilitant le développement de d'une application plus 
+	Une \glo{bibliothèque}{Bibliothèque}{Un composant indépendant fournissant des méthodes déjà implémentées, facilitant le développement d'une application plus 
 	importante.} 
 	est, par définition, un composant indépendant fournissant des méthodes déjà implémentées, facilitant le développement d'une application plus importante. 
 	Notre bibliothèque sera donc intégrée dans d'autres logiciels plus complets. Par conséquent le système n'a pas d'état de sortie à proprement parler.
@@ -125,12 +125,12 @@
 		utilisateur et les raccourcis clavier doivent correspondre aux normes d'ergonomie.
 		\paragraph{Internationalisation / besoins de localisation} Le système doit pouvoir être utilisé par des utilisateurs de nationalité autre que française.
 		\subsection{En documentation :}
-		\paragraph{Éléments de documentation requis} Le système doit être suffisamment documenter pour être compréhensible rapidement.
+		\paragraph{Éléments de documentation requis} Le système doit être suffisamment documenté pour être compréhensible rapidement.
 	\section{Cas d'utilisations}
 
 	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
 	Cas d'utilisation & Permettre de modéliser un diagramme de classe.\\
-	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de classe.
+	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessiner un diagramme de classe.
 	(C'est-à-dire les fonctionnalités permettant de dessiner les objets graphiques : classe, association, classe-assosiation,
 	agrégation, composition, héritage) \\
 	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner un
@@ -144,10 +144,10 @@
 		\separateur
 	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
 	Cas d'utilisation & Permettre de modéliser un diagramme de séquence.\\
-	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de séquence.
-	(C'est à dire les fonctionnalités permettant de dessiner les objets graphiques : Acteur actif, Acteur passif, Traitement,
+	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessiner un diagramme de séquence.
+	(C'est-à-dire les fonctionnalités permettant de dessiner les objets graphiques : Acteur actif, Acteur passif, Traitement,
 	Message synchrone, message asynchrone et ligne de vie)\\
-	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner une élément
+	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner un
 	graphique utilisé dans un diagramme de séquence.\\
 	Entrées & -\\
 	Sorties & -\\
@@ -156,12 +156,13 @@
 	Anomalies & -\\
 	\end{longtable}
 	\separateur
+	\newpage
 	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
 	Cas d'utilisation & Permettre de modéliser un diagramme de cas d'utilisation.\\
-	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessinner un diagramme de cas d'utilisation.
-	(C'est à dire les fonctionnalités permettant de dessiner les objets graphiques : Acteur Actif, Acteur passif, Association,
-	Dependance fonctionnelle, Spécialisation)\\
-	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner une
+	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de dessiner un diagramme de cas d'utilisation.
+	(C'est-à-dire les fonctionnalités permettant de dessiner les objets graphiques : Acteur Actif, Acteur passif, Association,
+	Dépendance fonctionnelle, Spécialisation)\\
+	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur utilise une fonctionnalité permettant de dessiner un
 	élément graphique utilisé dans un diagramme de cas d'utilisation.\\
 	Entrées & -\\
 	Sorties & -\\
@@ -169,12 +170,13 @@
 	Postconditions & -\\
 	Anomalies & -\\
 	\end{longtable}
+	\separateur
 	\begin{longtable}{>{\begin{bf}} r <{\end{bf}}!{:}p{13.5cm}}
 	Cas d'utilisation & Permettre de restreindre l'utilisation des éléments graphiques aux seuls diagrammes dans lesquels ils sont utilisés.\\
 	Rôle & Ce cas d'utilisation regroupe toutes les fonctionnalités permettant de restreindre l'utilisation des éléments
 	graphiques aux seuls diagrammes dans lesquels ils sont utilisés. Permettant ainsi à un utilisateur de la bibliothèque de sélectionner quel
-	diagramme il veut dessiner et de n'avoir la possibilité de dessinner que les éléments graphiques utilisables pour le diagramme selectionné.
-	Evitant ainsi la surcharge de possibilités et donc une utilisation plus simple de la bibliothèque.)\\
+	diagramme il veut dessiner et de n'avoir la possibilité de dessiner que les éléments graphiques utilisables pour le diagramme sélectionné.
+	Évitant ainsi la surcharge de possibilités et donc une utilisation plus simple de la bibliothèque.)\\
 	Déclencheur & Ce cas d'utilisation se produit lorsque l'utilisateur choisit un type de diagramme précis à dessiner.\\
 	Entrées & -\\
 	Sorties & -\\
@@ -186,7 +188,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=19cm]{casUtilisation.jpg}
-		\caption{Diagramme de cas d'utilisation}
+		\caption{Diagramme de cas d'utilisation de libUML}
 	\end{figure}
 	\chapter{Conception}
 	\section{Architecture générale du projet}
@@ -234,44 +236,44 @@
 		\node at (2.25,-12.8) {DiagrammeSequence} ;
 	\end{tikzpicture}
 	\end{wrapfigure}
-		L'architecture est la base d'un projet comme le notre, car il sera repris et amélioré par d'autre étudiants. 
-		En utilisant la notation UML, nous sommes parvenu à élaborer un ``méta modèle'' de cette notation mais
+		L'architecture est la base d'un projet comme le notre, car il sera repris et amélioré par d'autres étudiants. 
+		En utilisant la notation UML, nous sommes parvenus à élaborer un ``méta modèle'' de cette notation mais
 		en isolant uniquement l'aspect graphique, faisant ainsi abstraction des multiples règles de conception que la norme UML impose.
 		Après discussion avec le client, de nombreuses modifications ont été apportées à l'architecture d'origine 
 		pour aboutir à une solution stable. Cette nouvelle architecture se compose de vingt classes, réparties 
 		en quatre \glo{paquetages.}{Paquetage}{Un paquetage en Java est un regroupement de classes ayant la même thématique.}\\ 
 
-		Dans cet arbre représentant notre architecture, on peut voir certains noms écris en \policePackage{gras}. 
+		Dans cet arbre représentant notre architecture, on peut voir certains noms écrits en \policePackage{gras}. 
 		ou en \textit{italique}. 
 		Les noms en \policePackage{gras} représentent les différents paquetages que nous avons séparés.
 		
 		Ceux en \textit{italiques} sont des classes abstraites crées afin de factoriser le code dans l'optique de réaliser une programmation objet optimale 
 		et de suivre les objectifs de propreté du code imposés par le client.\vspace{2px}
 	\paragraph{}	
-		Dans un premier temps, nous avons séparer les diagrammes des éléments graphiques. En effet, un diagramme sera composé de
-		toute sorte d'éléments graphiques. Puis nous avons découper ces derniers en deux, isolant ainsi les lignes des éléments
+		Dans un premier temps, nous avons séparé les diagrammes des éléments graphiques. En effet, un diagramme sera composé de
+		toute sorte d'éléments graphiques. Puis nous avons découpé ces derniers en deux, isolant ainsi les lignes des éléments
 		de modélisation tels que les classes, les traitements ou les cas d'utilisation.\vspace{2px}
 		
 		\texttt{ElementGraphique} et \texttt{ElementModelisation} sont des classes abstraites qui regroupent les fonctions communes
 		à toutes les classes de leur paquetage respectifs sans pour autant en fournir une implémentation de chacune d'elles -- comme par exemple la méthode qui crée la
 		représentation graphique d'un élément ou celle qui permet de le supprimer d'un diagramme.\\ 
-	Prenons maintenant chaque paquetage séparément pour vois comment ils fonctionnent plus en détails.
+	Prenons maintenant chaque paquetage séparément pour voir comment ils fonctionnent plus en détails.
 	% Arbre de classe
 	\subsection{Paquetage eltGraphique}
 	Le paquetage \policePackage{eltGraphique} regroupe toutes les classes qui représentent des éléments graphiques. Il regroupe la classe 
 	\textit{ElementGraphique} et deux paquetages \policePackage{eltModelisation} et \policePackage{ligne}. Cette classe possède deux attributs 
 	\texttt{graph} et \texttt{diagramme}, correspondant respectivement au graphe dans lequel sont stockés les éléments 
-	et le diagramme afficher à l'écran. Elle comprend également (en plus d'un constructeur initialisant les attributs) 
+	et le diagramme affiché à l'écran. Elle comprend également (en plus d'un constructeur initialisant les attributs) 
 	les méthodes \texttt{supprimer} permettant de supprimer un élément du graphe et du diagramme, ainsi que \texttt{creer}, 
 	méthode abstraite réimplémentée dans les classes descendantes servant à créer la représentation graphique de l'objet 
 	et de l'afficher sur le diagramme.
 	\paragraph{Paquetage eltModelisation} Ce paquetage regroupe toutes les classes représentant les différents éléments de 
-	modélisation que l'on trouve dans les diagrammes UML de cas d'utilisation, classe et de séquence. \textit{Acteur} 
+	modélisation que l'on trouve dans les diagrammes UML de cas d'utilisation, classes et de séquence. \textit{Acteur} 
 	est une classe abstraite car les acteur actifs et passifs ont beaucoup de caractéristiques identiques mais n'ont pas 
 	la même représentation sur un diagramme. Les classes \texttt{Visibilite}, \texttt{Methode} et \texttt{Attribut} permettent au client de créer 
 	facilement une interface de saisie de ces éléments, facilitant l'usage du logiciel final. De plus, l'ajout de ces 
 	méthodes et attributs dans des classes, des acteurs, des traitements ou des interfaces pourra faciliter l'ajout futur 
-	de nouvelle fonctionnalités comme par exemple de la génération de code \glo{Java}{Java}{Langage de programmation orienté objet moderne, il compile le programme pour ensuite l'exécuter sur une machine Java, ainsi le programme une fois compilé peut être exécuté sur différentes plateformes (Windows, Linux, Mac OS X, \ldots).}.
+	de nouvelles fonctionnalités comme par exemple de la génération de code \glo{Java}{Java}{Langage de programmation orienté objet moderne, il compile le programme pour ensuite l'exécuter sur une machine Java, ainsi le programme une fois compilé peut être exécuté sur différentes plateformes (Windows, Linux, Mac OS X, \ldots).}.
 	\paragraph{Paquetage ligne} Ce paquetage regroupe peu de classe. \texttt{TypeLien} est une classe énumérée servant à recenser
 	tous les types graphiques de liens existant dans la notation UML. \texttt{Cardinalite} quant à elle, permet comme \texttt{Methode} 
 	ou \texttt{Attribut}, d'aider le client à permettre un saisie facilité des cardinalités d'un lien dans un diagramme de classe par exemple.
@@ -279,8 +281,8 @@
 	le style choisi par l'utilisateur. \texttt{MessageTraitement} spécialise Lien, permettant de créer un style de lien particulier
 	aux messages entre traitement dans les diagrammes de séquences.
 	\subsection{Paquetage diagramme}
-	La paquetage \policePackage{diagramme} comprend plusieurs type de diagramme prédéfinis qui sont cas d'utilisation, classe et séquence.
-	Ils descendent de la classe \texttt{Diagramme}. Chaque type de diagramme implémente deux méthode \texttt{eltAutorise} et \texttt{lienAutorise}
+	La paquetage \policePackage{diagramme} comprend plusieurs type de diagramme prédéfinis qui sont cas d'utilisation, classes et séquence.
+	Ils descendent de la classe \texttt{Diagramme}. Chaque type de diagramme implémente deux méthodes \texttt{eltAutorise} et \texttt{lienAutorise}
 	qui permettent respectivement d'autoriser ou interdire un type d'élément particulier et un type de lien entre deux types d'éléments
 	particuliers. La classe Diagramme est générique. Par défaut elle autorise tous les éléments et tous les liens. Il est donc possible
 	au client de réimplémenter ses propres méthodes pour créer ses propres règles.
@@ -293,7 +295,7 @@
 	$\rhd$ \url{http://documentation.joohoo.fr/libUML/private} (Documentation publique, protégées et pri\-vée)\\
 	$\rhd$ \url{http://documentation.joohoo.fr/libUML/junitTests} (Tests unitaires)\\	
 	\subsection{Relations entre les classes}	
-	Le diagramme de paquetage est disponible à l'annexe \ref{diagrammePaquetage} page \pageref{diagrammePaquetage}. Celui-ci vous permettra de repérer les 
+	Le diagramme de paquetages est disponible à l'annexe \ref{diagrammePaquetage} page \pageref{diagrammePaquetage}. Celui-ci vous permettra de repérer les 
 	relations entre les classes.
 	
 	\appendix
@@ -302,6 +304,6 @@
 	\begin{sortedlist}
 		\input{glossaire.tex}
 	\end{sortedlist}
-	\chapter{Diagramme de paquetage} \label{diagrammePaquetage}
+	\chapter{Diagramme de paquetages} \label{diagrammePaquetage}
 	\includepdf[page=1]{paquetageSansMethodes.pdf}
 \end{document}
