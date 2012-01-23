@@ -21,43 +21,15 @@ import util.Constantes;
  */
 public class Lien extends ElementGraphique {
     /**
-     * Element à l'origine du lien
+     * Elément à l'origine du lien
      * @see ElementModelisation
      */
     private ElementModelisation source;
     /**
-     * Element à l'extremite du lien
+     * Elément à l'extrémité du lien
      * @see ElementModelisation
      */
     private ElementModelisation destination;
-    /**
-     * Rôle du côté de l'origine du lien
-     */
-    private String roleSource;
-    /**
-     * Rôle du côté de l'extrémité du lien
-     */
-    private String roleDestination;
-    /**
-     * Le type de la flèche à l'extrémité
-     */
-    private String typePointeDestination;
-    /**
-     * Le type de la flèche à l'origine
-     */
-    private String typePointeSource;
-    /**
-     * La cardinalité à l'origine
-	 *
-     * @see Cardinalite
-     */
-    private Cardinalite cardinaliteSource;
-    /**
-     * La cardinalité à l'extrémité
-	 *
-     * @see Cardinalite
-     */
-    private Cardinalite cardinaliteDestionation;
     /**
      * Le type de la flèche
 	 * 
@@ -261,33 +233,6 @@ public class Lien extends ElementGraphique {
 	}
 
 	/**
-	 * Récupère le rôle du côté de l'origine de la flèche
-	 *
-	 * @return Le rôle de l'origine de la pièce
-	 */
-	public String getRoleSource() {
-		return (this.roleSource);
-	}
-
-	/**
-	 * Récupère le type de pointe de flèche à l'extrémité
-	 *
-	 * @return Le type de pointe de flèche à l'extrémité
-	 */
-	public String getTypePointeDestination() {
-		return (this.typePointeDestination);
-	}
-
-	/**
-	 * Récupère le type de pointe de flèche à l'origine
-	 *
-	 * @return Le type de pointe de flèche à l'origine
-	 */
-	public String getTypePointeSource() {
-		return (this.typePointeSource);
-	}
-
-	/**
 	 * Récupère le type de lien de la flèche
 	 *
 	 * @return Le type de lien
@@ -315,24 +260,6 @@ public class Lien extends ElementGraphique {
 	}
 
 	/**
-	 * Modifie le rôle du côté de l'extrémité de la flèche
-	 * 
-	 * @param p_roleDestionation Le nouveau rôle de l'extrémité de la flèche
-	 */
-	public void setTexteExtremite(String p_roleDestionation) {
-		this.roleDestination = p_roleDestionation;
-	}
-
-	/**
-	 * Modifie le rôle du côté de l'origine de la flèche
-	 *
-	 * @param p_roleSource Le nouveau rôle de l'origine de la flèche
-	 */
-	public void setTexteOrigine(String p_roleSource) {
-		this.roleSource = p_roleSource;
-	}
-
-	/**
 	 * Modifie le type de la flèche en fonction du type passé en paramètre
 	 *
 	 * @param p_typeLien Le nouveau type de la flèche
@@ -343,16 +270,7 @@ public class Lien extends ElementGraphique {
 	}
 
 	/**
-	 * Modifie le type de pointe de flmèche du côté de l'origie de la flèche
-	 *
-	 * @param p_typePointeSource Le nouveau type de pointe de flèche
-	 */
-	public void setTypeFlecheOrigine(String p_typePointeSource) {
-            this.typePointeSource = p_typePointeSource;
-	}
-
-	/**
-	 * Créer le style et la représentation de la flèche en fonction
+	 * Crée le style et la représentation de la flèche en fonction
 	 * des attributs de la classe.
 	 */
 	@Override

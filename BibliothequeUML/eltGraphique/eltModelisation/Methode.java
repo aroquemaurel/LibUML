@@ -33,17 +33,17 @@ public class Methode {
 	private Liste<Variable> parametres;
         
 	/**
-	 * Méthode constante
+	 * Méthode constante ?
 	 */
 	private boolean constant;
         
 	/**
-	 * Méthode acstraite
+	 * Méthode acstraite ?
 	 */
 	private boolean abstraite;
         
 	/**
-	 * Méthode de classe
+	 * Méthode de classe ?
 	 */
 	private boolean deClasse;
         
@@ -76,7 +76,7 @@ public class Methode {
 	/**
 	 * Ajoute un paramètre à la liste de paramètres de la méthode
 	 *
-	 * @param p_nouveau Le paramètre qui sera ajouté
+	 * @param p_nouveau Le nouveau paramètre qui sera ajouté
 	 * @return Le paramètre ajouté
 	 * @see Variable
 	 */
@@ -89,7 +89,7 @@ public class Methode {
 	 * Ajoute un paramètre à la liste de paramètre de la méthode
 	 * à la position souhaitée
 	 *
-	 * @param p_nouveauParametre Le paramèter qui sera ajouté
+	 * @param p_nouveauParametre Le paramètre qui sera ajouté
 	 * @param p_index La position du nouvel élément dans la liste (Indice de départ : 1)
 	 * @return La paramètre ajouté
 	 * @see Variable
@@ -129,10 +129,10 @@ public class Methode {
 	/**
 	 * Change le nom de la méthode.
 	 *
-	 * @param nom Le nouveau nom de la méthode
+	 * @param p_nom Le nouveau nom de la méthode
 	 */
-	public void setNom(String nom) {
-			this.nom = nom;
+	public void setNom(String p_nom) {
+			this.nom = p_nom;
 	}
 
 	/**

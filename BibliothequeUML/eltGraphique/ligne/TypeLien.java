@@ -1,24 +1,21 @@
 package eltGraphique.ligne;
 
 /**
- * Enumération des différents types de liens
+ * Classe énumérée des différents types de liens
  * 
  * @author Mathieu
  * @author Marie-ly
  */
 public enum TypeLien {
-	/* Diagramme de classe */
-	ASSOCIATION,
-	SPECIALISATION,
-	COMPOSITION,
 	AGREGATION,
+	ASSOCIATION,
 	CLASSE_ASSOCIATION,
-	GENERALISATION,
+	COMPOSITION,
 	DEPENDANCE,
-	MESSAGE_SYNCHRONE,
-
-	/* Diagramme de séquence */
 	FLECHE,
+	FLECHE_EVENEMENT_DECLENCHEUR,
 	FLECHE_POINTILLEE,
-	FLECHE_EVENEMENT_DECLENCHEUR
+	GENERALISATION,
+	MESSAGE_SYNCHRONE,
+	SPECIALISATION
 }
