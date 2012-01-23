@@ -51,9 +51,6 @@ public class ChargeTest extends JFrame {
         return panneauGraph;
     }
     
-    
-    
-    
     public static void main(String[] args){
         int valeurMinX = 0, valeurMaxX = 1300;
         int valeurMinY = 0, valeurMaxY = 700;
