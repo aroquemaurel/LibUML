@@ -5,6 +5,8 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
@@ -272,5 +274,19 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
 
         super.getDiagramme().getElementsGraphiques().add(this);
     }
+
+	public void genererInterface() {
+		Interface inte = new Interface(super.getGraph(), super.getTexte(), 
+			super.getDiagramme(), 
+			new Position(this.getPosition().getAbscisse()+250, 
+						 this.getPosition().getOrdonnee()+75));
+		inte.creer();
+		
+		/* Lien avec la classe */
+		Lien spe = new Lien(this, inte, super.getGraph(), super.getDiagramme(), TypeLien.SPECIALISATION);
+		spe.creer();
+		
+        super.getDiagramme().getElementsGraphiques().add(spe);
+	}
 }
 

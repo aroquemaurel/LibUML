@@ -6,8 +6,6 @@ import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
-import eltGraphique.ligne.Lien;
-import eltGraphique.ligne.TypeLien;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +19,6 @@ public class Interface extends ElementModelisation {
 	private final double OFFSET_TEXTE_INTERFACE_X=30.;
 	private final double OFFSET_TEXTE_INTERFACE_Y=-35.;
 	
-	private Classe classeInterfacee;
     /**
 	 * Crée le style graphique d'une interface
 	 */
@@ -41,9 +38,8 @@ public class Interface extends ElementModelisation {
      * @param p_graph Le graphe auquel sera ajouter l'interface
      * @param p_texte Le texte qui sera associé à l'interface
      */
-    public Interface(mxGraph p_graph, String p_texte, Diagramme p_diagramme, Position p_position, Classe p_classeInterfacee){
-        super(p_graph, p_diagramme, "Int_"+p_classeInterfacee.getTexte(), new Dimension(42, 42), p_position);
-		this.classeInterfacee = p_classeInterfacee;
+    public Interface(mxGraph p_graph, String p_nomClasse, Diagramme p_diagramme, Position p_position){
+        super(p_graph, p_diagramme, "Int_"+p_nomClasse, new Dimension(42, 42), p_position);
     }
 
     /**
@@ -61,13 +57,8 @@ public class Interface extends ElementModelisation {
 				super.getDimension().getWidth(),
 				super.getDimension().getHeight(), "INTERFACE"));
 		
-		/* Lien avec la classe */
-		Lien spe = new Lien(this.classeInterfacee, this, super.getGraph(), super.getDiagramme(), TypeLien.SPECIALISATION);
-		spe.creer();
-		
         //TODO création des interfaces
         super.getDiagramme().getElementsGraphiques().add(this);
-        super.getDiagramme().getElementsGraphiques().add(spe);
 		
 		super.getCellule().getGeometry().setOffset(new mxPoint(OFFSET_TEXTE_INTERFACE_X, OFFSET_TEXTE_INTERFACE_Y));
 		super.getGraph().getModel().endUpdate();
