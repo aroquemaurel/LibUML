@@ -40,5 +40,7 @@ public class PanneauGraph extends mxGraphComponent {
     public void initialiserDiagramme(Diagramme p_diagramme){
         this.diagramme = p_diagramme;
     }
+    
+
 
 }

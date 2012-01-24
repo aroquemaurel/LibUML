@@ -91,4 +91,9 @@ public class Diagramme {
 
         return (retour);
     }
+    
+    @Override
+    public String toString(){
+        return("Aucune contrainte");     
+    }
 }

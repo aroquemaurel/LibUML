@@ -114,4 +114,10 @@ public class DiagrammeCasUtilisation extends Diagramme {
     public boolean eltAutorise (ElementGraphique p_element){
         return((p_element instanceof CasUtilisation) || (p_element instanceof Lien) || (p_element instanceof ActeurActif));  
     }
+    
+    @Override
+    public String toString(){
+        return ("Diagramme de cas d'utilisation");
+    }
+        
 }

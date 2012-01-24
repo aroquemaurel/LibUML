@@ -162,4 +162,9 @@ public class DiagrammeClasse extends Diagramme {
     public boolean eltAutorise (ElementGraphique p_element){
         return ((p_element instanceof Classe) || (p_element instanceof Lien));       
     }
+    
+    @Override
+    public String toString(){
+        return ("Diagramme de classes");
+    }
 }

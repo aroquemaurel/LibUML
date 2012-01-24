@@ -100,4 +100,9 @@ public class DiagrammeSequence extends Diagramme {
     public boolean eltAutorise (ElementGraphique p_element){
         return ((p_element instanceof Traitement) || (p_element instanceof Lien) || (p_element instanceof ActeurPassif) || (p_element instanceof ActeurActif));       
     }
+    
+    @Override
+    public String toString(){
+        return ("Diagramme de séquence");
+    }
 }

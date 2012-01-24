@@ -3,6 +3,7 @@ package ihm.menu;
 import eltGraphique.eltModelisation.Classe;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -12,12 +13,16 @@ import javax.swing.JTable;
 public class MenuDroite extends Menu {   
     private JScrollPane panneauTableau;
     private JTable tableauAttributs;
+    private JLabel typeDiagrammeLabel;
+    private JLabel attributsLabel;
+    private JLabel methodesLabel;
     
     private void parametrerMenuDroite(){
     }
     
     public MenuDroite (Dimension p_dimension, FenetreDemo p_fenetre){
         super(p_dimension, p_fenetre);
+        this.typeDiagrammeLabel = new JLabel(p_fenetre.getPanneauGraph().getDiagramme().toString());
 /*        this.listeDeroulanteDiagrammes = new JComboBox();
         this.labelListeDeroulante = new JLabel("Type de contrainte: ");
         this.evenementListeDiagramme = new EvenementListeDiagramme(this.listeDeroulanteDiagrammes);

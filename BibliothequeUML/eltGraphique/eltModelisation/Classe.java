@@ -147,7 +147,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     public final Methode ajouterMethode(Methode p_nouvelleMethode) {
         this.methodes.ajouterElement(p_nouvelleMethode);
         this.celluleMethodes.setValue(this.genererChaineAttributs());
-        super.mettreAJour();
+      //  super.mettreAJour();
         
         return(p_nouvelleMethode);
     }
@@ -162,7 +162,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     public final Attribut ajouterAttribut(Attribut p_nouvelAttribut) {
         this.attributs.ajouterElement(p_nouvelAttribut);
         this.celluleAttributs.setValue(this.genererChaineAttributs());
-        super.mettreAJour();
+      //  super.mettreAJour();
         // TODO problème de mise à jour pour les classes! à régler (redéfinition ?)
         return(p_nouvelAttribut);
     }
