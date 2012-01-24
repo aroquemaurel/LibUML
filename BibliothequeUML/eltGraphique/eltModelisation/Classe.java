@@ -58,9 +58,9 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     private mxCell celluleMethodes;
     
     /**
-     * Un offset permettant d'avoir la taille exact de la classe 
+     * Offset permettant de mettre à jour la classe avec une bonne hauteur
      */
-    private final int OFFSET_TAILLE_CLASSE = 10;
+    private double OFFSET_HAUTEUR_CLASSE = 10.0;
     
     /**
     * Creer le style d'une classe
@@ -105,7 +105,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
        String retour = new String();
 
        for(int i=0; i < this.methodes.taille(); i++){
-		   retour += this.methodes.get(i);
+            retour += this.methodes.get(i).toString();
        }
 
        return retour;
@@ -120,7 +120,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
        String retour = "";
 
        for(int i=0; i < this.attributs.taille(); i++) {
-		   retour += this.attributs.get(i).toString();
+            retour += this.attributs.get(i).toString();
        }
 
        return retour;
@@ -133,9 +133,8 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     * @param p_texte Le texte associé à la classe (son nom)
     */
     public Classe(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Position p_position){
-        /* on ajoute les \n pour centrer le titre de la classe */
         super(p_graph, p_diagramme, "\n"+p_texte+"\n ", new Dimension(125,150), p_position);
-        
+
         this.attributs = new Liste<Attribut>();
         this.methodes = new Liste<Methode>();
         this.abstraite = false;
@@ -153,24 +152,12 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     */
     public final Methode ajouterMethode(Methode p_nouvelleMethode) {
         this.methodes.ajouterElement(p_nouvelleMethode);
-        this.celluleMethodes.setValue(this.genererChaineAttributs());
+        this.celluleMethodes.setValue(this.genererChaineMethodes());
         this.mettreAJour();
         
         return(p_nouvelleMethode);
     }
-    
-    /**
-    * Met à jour l'élément grahique courant
-    */
-    @Override
-    public void mettreAJour(){
-        super.getGraph().updateCellSize(super.getCellule());
-        super.getGraph().resizeCell(super.getCellule(),
-                    new mxGeometry(super.getCellule().getGeometry().getX(),
-                    super.getCellule().getGeometry().getY(),
-                    this.getDimension().getWidth(),this.getDimension().getHeight()+OFFSET_TAILLE_CLASSE));
-    }
-    
+
     /**
     * Ajoute un attribut à la liste d'attributs de la classe
 	*
@@ -181,11 +168,20 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     public final Attribut ajouterAttribut(Attribut p_nouvelAttribut) {
         this.attributs.ajouterElement(p_nouvelAttribut);
         this.celluleAttributs.setValue(this.genererChaineAttributs());
-        super.mettreAJour();
-        // TODO problème de mise à jour pour les classes! à régler (redéfinition ?)
+        this.mettreAJour();
+        
         return(p_nouvelAttribut);
     }
-
+    
+    /**
+    * Met à jour la liste des éléments de la liste
+    * @param p_elements La liste d'éléments graphiques à mettre à jour
+    */    
+    @Override
+    public void mettreAJour(){
+        super.mettreAJour();
+        super.getCellule().getGeometry().setHeight(this.getDimension().getHeight()+OFFSET_HAUTEUR_CLASSE);
+    }
     /**
      * Retourne vrai si la classe est constante, faux sinon.
 	 *

@@ -126,10 +126,10 @@ public class FenetreDemo extends JFrame {
 
        c.creer();
        c1.creer();
-       c.ajouterAttribut(new Attribut(Visibilite.PACKAGE, true, true, "test", "coucou"));
-       c.ajouterMethode(new Methode(Visibilite.PACKAGE, "test", "truc", null, true, true, true));
+       c.ajouterAttribut(new Attribut(Visibilite.PRIVATE, true, true, "test", "coucou"));
+       c.ajouterMethode(new Methode(Visibilite.PUBLIC, "test", "truc", null, true, true, true));
        
-       c1.ajouterAttribut(new Attribut(Visibilite.PACKAGE, true, true, "test2", "coucou12"));
+       c1.ajouterAttribut(new Attribut(Visibilite.PROTECTED, true, true, "test2", "coucou12"));
        c1.ajouterMethode(new Methode(Visibilite.PACKAGE, "test4", "truc3", null, true, true, true));
        
     }

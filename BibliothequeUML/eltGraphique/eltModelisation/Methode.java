@@ -234,26 +234,26 @@ public class Methode {
 	 */
 	@Override
 	public String toString(){
-		String retour = "";
+            String retour = "";
 
-		switch(this.visibilite){
-			case PRIVATE:
-                retour += "- ";
-				break;
-			case PUBLIC:
-               retour += "+ ";
-			   break;
-			case PROTECTED:
-               retour += "~ ";
-			   break;
-			case PACKAGE:
-               retour += "# ";
-				break;
+            switch(this.visibilite){
+                case PRIVATE:
+                    retour += "- ";
+                    break;
+                case PUBLIC:
+                    retour += "+ ";
+                    break;
+                case PROTECTED:
+                    retour += "~ ";
+                    break;
+                case PACKAGE:
+                    retour += "# ";
+                    break;
 		}
-           retour += this.getNom();
-           retour += "():";
-           retour += this.typeRetour;
-           retour += "\n";
+                retour += this.getNom();
+                retour += "():";
+                retour += this.typeRetour;
+                retour += "\n";
 		return (retour);
 	}
 }
