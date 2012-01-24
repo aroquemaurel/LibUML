@@ -118,8 +118,7 @@ public class FenetreDemo extends JFrame {
      
        fenetre.afficherFenetre();
        
-   //    fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
-   //    fenetre.getPanneauGraph().initialiserDiagramme(new Diagramme());
+       fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
        Position p = new Position(45, 42);
        Classe c = new Classe(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "yataa", p);
        Classe c1 = new Classe(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "yataa", p);

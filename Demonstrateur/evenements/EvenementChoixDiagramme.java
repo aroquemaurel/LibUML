@@ -40,6 +40,7 @@ public class EvenementChoixDiagramme implements MouseListener {
         }
         
         this.fenetre.getPanneauGraph().initialiserDiagramme(diagramme);
+        this.fenetre.getPanneauDroite().ajouterLabelDiagramme();
         this.fenetre.getFenetreChoixDiagramme().setVisible(false);
     }
 

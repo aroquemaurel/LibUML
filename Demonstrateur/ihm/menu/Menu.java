@@ -26,4 +26,8 @@ public abstract class Menu extends JPanel {
     }
 
     abstract public void ajouterObjetsGraphiques();
+    
+    public FenetreDemo getFenetre(){
+        return (this.fenetre);
+    }
 }

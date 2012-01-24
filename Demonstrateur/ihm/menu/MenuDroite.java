@@ -22,32 +22,18 @@ public class MenuDroite extends Menu {
     
     public MenuDroite (Dimension p_dimension, FenetreDemo p_fenetre){
         super(p_dimension, p_fenetre);
-        this.typeDiagrammeLabel = new JLabel(p_fenetre.getPanneauGraph().getDiagramme().toString());
-/*        this.listeDeroulanteDiagrammes = new JComboBox();
-        this.labelListeDeroulante = new JLabel("Type de contrainte: ");
-        this.evenementListeDiagramme = new EvenementListeDiagramme(this.listeDeroulanteDiagrammes);
-        this.parametrerMenuDroite();
-  */  }
+    }
 
-    /*  */
-    @Override
-    public void ajouterObjetsGraphiques() {
-      /*  super.add(labelListeDeroulante);
-        super.add(listeDeroulanteDiagrammes);
-        
-        this.listeDeroulanteDiagrammes.addItem("Aucune contrainte");
-        this.listeDeroulanteDiagrammes.addItem("Diagramme de cas d'utilisation");
-        this.listeDeroulanteDiagrammes.addItem("Diagramme de classe");
-        this.listeDeroulanteDiagrammes.addItem("Diagramme de séquence");
-        
-        this.listeDeroulanteDiagrammes.addActionListener(this.evenementListeDiagramme);
-    */
+    public void ajouterLabelDiagramme() {
+        this.typeDiagrammeLabel = new JLabel(super.getFenetre().getPanneauGraph().getDiagramme().toString());
+        super.add(this.typeDiagrammeLabel);
+        super.updateUI();
     }
 
     public void afficherTableauClasse(Classe classe){
         /* Si un tableau est déjà affiché, on le supprime pour en mettre un neuf */
         if(this.tableauAttributs != null){
-            super.remove(0);
+            super.remove(1);
         }
         
         /* On remplit le taleau des attributs ! */
@@ -69,6 +55,10 @@ public class MenuDroite extends Menu {
         
         super.add(new JScrollPane(tableauAttributs));
         super.updateUI(); // On met à jour le panneau
+    }
+
+    @Override
+    public void ajouterObjetsGraphiques() {
     }
 }
 
