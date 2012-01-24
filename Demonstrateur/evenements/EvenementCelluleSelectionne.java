@@ -146,9 +146,6 @@ public class EvenementCelluleSelectionne implements MouseListener {
         if(element != null) {
             if(element instanceof Classe) {
                 this.fenetre.getPanneauDroite().afficherTableauClasse((Classe) element);
-                        // TODO -- Le tableau ne s'affiche qu'avec un clic droit 
-                        // TODO -- Le tableau ne se recharge pas à chaque classe
-                        // TODO -- Le tableau s'affiche deux fois
             }        
         }
     }
