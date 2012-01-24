@@ -8,9 +8,9 @@ import java.awt.Dimension;
 import javax.swing.*;
 
 /**
- *
+ * Créer une fenetre permettant d'ajouter des attributs
  */
-public class FenetreAjoutAttribut extends JDialog {
+public class FenetreAjoutAttribut extends FenetreDialog {
     private Classe classe;
     
     private JPanel panneauPrincipal;
@@ -40,7 +40,11 @@ public class FenetreAjoutAttribut extends JDialog {
     private BtnValiderAjoutAttribut boutonValider;
     private BtnAnnulerAjoutAttribut boutonAnnuler;
     
-   private void parametrerBoiteDialogue(){
+    /**
+     * Paramètre la boite de dialogue
+     */
+    @Override
+   protected void parametrerBoiteDialogue(){
         this.setSize(500, 250);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -55,7 +59,10 @@ public class FenetreAjoutAttribut extends JDialog {
         this.add(this.panneauPrincipal);       
     }
    
-    private void ajouterElements(){      
+   /**
+    * Ajoute les éléments à la boite de dialogue
+    */
+    protected void ajouterElements(){      
         this.panneauPrincipal.add(this.panneauNomAttribut);
         this.panneauPrincipal.add(this.panneauType);
         this.panneauPrincipal.add(this.panneauVisibilite);
@@ -83,6 +90,12 @@ public class FenetreAjoutAttribut extends JDialog {
         this.panneauConstant.add(this.espaceConstantLabel);
     }
     
+    /**
+     * Construit la fenetre d'ajout d'attribut
+     * @param p_fenetre La fenetre principale
+     * @param p_texte Le titre de la fenetre
+     * @param p_classe La classe à laquelle on veut ajouter des attributs
+     */
    public FenetreAjoutAttribut(FenetreDemo p_fenetre, String p_texte, Classe p_classe){
         super(p_fenetre, p_texte);
         this.panneauPrincipal = new JPanel();
@@ -122,31 +135,43 @@ public class FenetreAjoutAttribut extends JDialog {
         this.classe = p_classe;
     }
    
-    public void afficherFenetre(){
-        this.setVisible(true);
-    }
-
+   /**
+    * Retourne si l'attribut est constant
+    * @return Vrai si l'attribut est constant, faux sinon
+    */
     public JCheckBox getConstantCheckBox() {
         return constantCheckBox;
     }
-
+    
+    /**
+     * Retourne si l'attribut est static ou non
+     * @return Vrai si l'attribut est de Classe, faux sinon
+     */
     public JCheckBox getDeClasseCheckBox() {
         return deClasseCheckBox;
     }
 
+    /**
+     * Retourne le nom de l'attribut
+     * @return Le nom de l'attribut
+     */
     public JTextField getNomAttributChampTexte() {
         return nomAttributChampTexte;
     }
 
+    /**
+     * Retourne le type de l'attribut
+     * @return Le type de l'attribut
+     */
     public JTextField getTypeChampTexte() {
         return typeChampTexte;
     }
 
+    /**
+     * Retourne la visibilité de l'attribut
+     * @return La liste de la visibilité de l'attribut
+     */
     public JComboBox getVisibiliteListe() {
         return visibiliteListe;
     }
-
-    
-    
-    
 }

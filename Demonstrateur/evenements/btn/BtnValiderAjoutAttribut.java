@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import util.Liste;
 
 /**
- *
+ * Le bouton permettant de valider l'ajout d'une méthode
  */
 public class BtnValiderAjoutAttribut extends JButton implements MouseListener {
     private Classe classe;
@@ -20,7 +20,12 @@ public class BtnValiderAjoutAttribut extends JButton implements MouseListener {
     private final int PROTECTED = 1;
     private final int PUBLIC = 2;
     private final int PRIVATE = 3;
-    
+
+    /**
+     * Construit le bouton permettant d'ajouter un attribut
+     * @param p_fenetre La fenetre principale
+     * @param p_classe La classe danslaquelle on veut ajouter l'attribut
+     */
     public BtnValiderAjoutAttribut(FenetreAjoutAttribut p_fenetre, Classe p_classe) {
         super("J'ai fini!");
         this.fenetre = p_fenetre;

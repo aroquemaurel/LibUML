@@ -94,7 +94,7 @@ public class EvenementsLienElementGraphique implements MouseListener {
     
     /**
     * Retourne le numéro du clique.
-    * @return numéro du clique
+    * @return Le numéro du clique
     */
     public int getNumeroClique(){
         return (this.numeroClique);

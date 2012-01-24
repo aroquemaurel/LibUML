@@ -10,24 +10,44 @@ import javax.swing.JTable;
 /**
 * Menu contenant le tableau avec les données
 */
-public class MenuDroite extends Menu {   
+public class PanneauDroite extends Menu {   
+    /**
+     * Le tableau contenant les attributs
+     */
     private JTable tableauAttributs;
+    
+    /**
+     * Le label affichant le type de diagramme
+     */
     private JLabel typeDiagrammeLabel;
+    
+    /** 
+     * Le tableau contenant les méthodes
+     */
     private JTable tableauMethodes;
-    
-    private void parametrerMenuDroite(){
-    }
-    
-    public MenuDroite (Dimension p_dimension, FenetreDemo p_fenetre){
+
+    /**
+     * Construit le panneau de droite 
+     * @param p_dimension La dimension du panneau
+     * @param p_fenetre La fenetre dans laquelle apparait le panneau
+     */
+    public PanneauDroite (Dimension p_dimension, FenetreDemo p_fenetre){
         super(p_dimension, p_fenetre);
     }
 
+    /**
+     * Ajoute le nom du diagramme dans le panneau
+     */
     public void ajouterLabelDiagramme() {
         this.typeDiagrammeLabel = new JLabel(super.getFenetre().getPanneauGraph().getDiagramme().toString());
         super.add(this.typeDiagrammeLabel);
         super.updateUI();
     }
 
+    /**
+     * Affiche le table de la classe donnée avec les attributs et les méthodes
+     * @param classe La classe pour laquelle il faut afficher les données
+     */
     public void afficherTableauClasse(Classe classe){
           
         /* Si un tableau est déjà affiché, on le supprime pour en mettre un neuf */
