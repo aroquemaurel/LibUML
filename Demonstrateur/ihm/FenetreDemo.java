@@ -123,14 +123,15 @@ public class FenetreDemo extends JFrame {
        Classe c = new Classe(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "yataa", p);
        Classe c1 = new Classe(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "yataa", p);
        
+
+       c.creer();
+       c1.creer();
        c.ajouterAttribut(new Attribut(Visibilite.PACKAGE, true, true, "test", "coucou"));
        c.ajouterMethode(new Methode(Visibilite.PACKAGE, "test", "truc", null, true, true, true));
        
        c1.ajouterAttribut(new Attribut(Visibilite.PACKAGE, true, true, "test2", "coucou12"));
        c1.ajouterMethode(new Methode(Visibilite.PACKAGE, "test4", "truc3", null, true, true, true));
        
-       c.creer();
-       c1.creer();
     }
 
 }

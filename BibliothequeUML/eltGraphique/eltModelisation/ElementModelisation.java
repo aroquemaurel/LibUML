@@ -71,10 +71,9 @@ abstract public class ElementModelisation extends ElementGraphique implements In
                     new mxGeometry(super.getCellule().getGeometry().getX(),
                     super.getCellule().getGeometry().getY(),
                     this.getDimension().getWidth(),this.getDimension().getHeight()));
-
     }
 
-	/**
+    /**
     * Met à jour la liste des éléments de la liste
     * @param p_elements La liste d'éléments graphiques à mettre à jour
     */
