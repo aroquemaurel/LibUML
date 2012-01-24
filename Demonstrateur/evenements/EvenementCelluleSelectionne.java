@@ -114,8 +114,6 @@ public class EvenementCelluleSelectionne implements MouseListener {
 	
         JMenuItem itemSupprimer = new JMenuItem("Supprimer");
         EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
-        
-        JMenuItem itemLigneDeVie;
 
         menuContextuel.add(itemSupprimer);
         this.fenetre.getPanneauPrincipal().add(menuContextuel);
