@@ -87,15 +87,20 @@ public class EvenementCelluleSelectionne implements MouseListener {
 
         JMenuItem itemAjouterAttribut = new JMenuItem("Ajouter un attribut");
         EvenementAjouterAttribut evenementAjouterAttribut = new EvenementAjouterAttribut(this.fenetre, element);
+		
+        JMenuItem itemGenererInterface = new JMenuItem("Générer une interface");
+        EvenementGenererInterface evenementGenererInterface = new EvenementGenererInterface(element);
               
         menuContextuel.add(itemSupprimer);
         menuContextuel.add(itemAjouterAttribut);
         menuContextuel.add(itemAjouterMethode);
+        menuContextuel.add(itemGenererInterface);
         this.fenetre.getPanneauPrincipal().add(menuContextuel);
         
         itemSupprimer.addActionListener(evenementSupprimer);
         itemAjouterAttribut.addActionListener(evenementAjouterAttribut);
         itemAjouterMethode.addActionListener(evenementAjouterMethode);
+        itemGenererInterface.addActionListener(evenementGenererInterface);
         
         return menuContextuel;
     }       
