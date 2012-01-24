@@ -134,8 +134,19 @@ public class EvenementCelluleSelectionne implements MouseListener {
     public void mouseClicked(MouseEvent event) { }   
 
     @Override
-    public void mousePressed(MouseEvent arg0) { }
-
+    public void mousePressed(MouseEvent arg0) { 
+        ElementGraphique element = this.fenetre.getPanneauGraph().getDiagramme().getElementGraphiqueViaCellule(
+                            (mxCell) this.fenetre.getPanneauGraph().getGraph().getSelectionCell());
+        
+        if(element != null) {
+            if(element instanceof Classe) {
+                this.fenetre.getPanneauDroite().afficherTableauClasse((Classe) element);
+                        // TODO -- Le tableau ne s'affiche qu'avec un clic droit 
+                        // TODO -- Le tableau ne se recharge pas à chaque classe
+                        // TODO -- Le tableau s'affiche deux fois
+            }        
+        }
+    }
 	/*
 	 * Méthode s'executant à la selection d'un élément graphique 
 	 */
@@ -146,12 +157,6 @@ public class EvenementCelluleSelectionne implements MouseListener {
         JPopupMenu menuContextuel;
 
 		if(element != null){ /* Si on un a séléctionné un élément graphique */
-            if(element instanceof Classe) {
-                this.fenetre.getPanneauDroite().afficherTableauClasse((Classe) element);
-				// TODO -- Le tableau ne s'affiche qu'avec un clic droit 
-				// TODO -- Le tableau ne se recharge pas à chaque classe
-				// TODO -- Le tableau s'affiche deux fois
-            }
             if(event.getButton() == MouseEvent.BUTTON3){
                 /* Au clique droit on construit le menu contextuel, qui est différent en fonction de l'élément graphique*/
                 if(element instanceof Acteur){

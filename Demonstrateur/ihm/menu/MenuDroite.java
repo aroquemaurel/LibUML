@@ -5,12 +5,14 @@ import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.TableColumn;
 
 /**
 * Menu contenant le tableau avec les données
 */
 public class MenuDroite extends Menu {   
+    private JScrollPane panneauTableau;
+    private JTable tableauAttributs;
+    
     private void parametrerMenuDroite(){
     }
     
@@ -38,6 +40,12 @@ public class MenuDroite extends Menu {
     }
 
     public void afficherTableauClasse(Classe classe){
+        /* Si un tableau est déjà affiché, on le supprime pour en mettre un neuf */
+        if(this.tableauAttributs != null){
+            super.remove(0);
+        }
+        
+        /* On remplit le taleau des attributs ! */
         Object[][] donnees = new Object[classe.getAttributs().size()][5];
         for(int i = 0 ; i < classe.getAttributs().size() ; i++){
             donnees[i][0] = classe.getAttributs().get(i).getVisibilite();
@@ -46,13 +54,16 @@ public class MenuDroite extends Menu {
             donnees[i][3] = classe.getAttributs().get(i).estDeClasse();
             donnees[i][4] = classe.getAttributs().get(i).estConstante();
         }
- 
+        
         //Les titres des colonnes
         String  title[] = {"Visibilité", "Type", "Nom", "Static", "Final"};
-        JTable tableau = new JTable(donnees, title);
 
-        tableau.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        TableColumn col = tableau.getColumnModel().getColumn(2);
-        super.add(new JScrollPane(tableau));
+        this.tableauAttributs = new JTable(donnees, title);
+        this.tableauAttributs.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        this.panneauTableau = new JScrollPane(tableauAttributs);
+        
+        super.add(new JScrollPane(tableauAttributs));
+        super.updateUI(); // On met à jour le panneau
     }
 }
+

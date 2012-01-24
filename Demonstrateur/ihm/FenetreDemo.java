@@ -1,7 +1,10 @@
 package ihm;
 
 import diagramme.Diagramme;
-import eltGraphique.eltModelisation.Traitement;
+import eltGraphique.eltModelisation.Attribut;
+import eltGraphique.eltModelisation.Classe;
+import eltGraphique.eltModelisation.Methode;
+import eltGraphique.eltModelisation.Visibilite;
 import evenements.EvenementCelluleSelectionne;
 import ihm.menu.BarreMenus;
 import ihm.menu.BarreOutilsDessin;
@@ -115,13 +118,19 @@ public class FenetreDemo extends JFrame {
      
        fenetre.afficherFenetre();
        
-       fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
+   //    fenetre.getFenetreChoixDiagramme().afficherBoiteDialogue();
        Position p = new Position(45, 42);
-       Traitement t = 
-        new Traitement(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "", null,  
-               p, false);
-       t.creer();
-
+       Classe c = new Classe(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "yataa", p);
+       Classe c1 = new Classe(fenetre.getPanneauGraph().getGraph(), fenetre.getPanneauGraph().getDiagramme(), "yataa", p);
+       
+       c.ajouterAttribut(new Attribut(Visibilite.PACKAGE, true, true, "test", "coucou"));
+       c.ajouterMethode(new Methode(Visibilite.PACKAGE, "test", "truc", null, true, true, true));
+       
+       c1.ajouterAttribut(new Attribut(Visibilite.PACKAGE, true, true, "test2", "coucou12"));
+       c1.ajouterMethode(new Methode(Visibilite.PACKAGE, "test4", "truc3", null, true, true, true));
+       
+       c.creer();
+       c1.creer();
     }
 
 }
