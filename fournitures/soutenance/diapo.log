@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.29)  18 JAN 2012 17:48
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.29)  27 JAN 2012 01:13
 entering extended mode
  %&-line parsing enabled.
 **diapo.tex
@@ -611,10 +611,43 @@ Package: beamerinnerthemedefault 2007/01/28  (rcs-revision 1.20)
 (/usr/share/texmf/tex/latex/beamer/themes/outer/beamerouterthemedefault.sty
 Package: beamerouterthemedefault 2007/01/28  (rcs-revision 1.14)
 )))
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2009/02/07 v0.4g Insert pages of external PDF documents (AM)
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count150
+\calc@Bcount=\count151
+\calc@Adimen=\dimen178
+\calc@Bdimen=\dimen179
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count152
+\calc@Cskip=\skip57
+)
+(/usr/share/texmf-texlive/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2006/07/14 v1.1d eso-pic (RN)
+
+(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box52
+\AM@toc@title=\toks38
+\c@AM@survey=\count153
+\AM@templatesizebox=\box53
+)
 (./beamerthemeUNLTheme.sty
 Package: beamerthemeUNLTheme 2004/10/07  (rcs-revision 1.10)
-\beamer@sidebarwidth=\dimen178
-\beamer@headheight=\dimen179
+\beamer@sidebarwidth=\dimen180
+\beamer@headheight=\dimen181
 
 (/usr/share/texmf/tex/latex/beamer/themes/inner/beamerinnerthemerounded.sty
 Package: beamerinnerthemerounded 2007/01/28  (rcs-revision 1.5)
@@ -640,8 +673,8 @@ Language: frenchb 2009/03/16 v2.3d French support from the babel system
 (/usr/share/texmf-texlive/tex/generic/babel/babel.def
 File: babel.def 2008/07/06 v3.8l Babel common definitions
 LaTeX Info: Redefining \textlatin on input line 82.
-\babel@savecnt=\count150
-\U@D=\dimen180
+\babel@savecnt=\count154
+\U@D=\dimen182
 )
 
 Package babel Warning: No hyphenation patterns were loaded for
@@ -653,10 +686,10 @@ Package babel Info: Making : an active character on input line 120.
 Package babel Info: Making ; an active character on input line 121.
 Package babel Info: Making ! an active character on input line 122.
 Package babel Info: Making ? an active character on input line 123.
-\FB@Mht=\dimen181
-\std@mcc=\count151
-\dec@mcc=\count152
-\parindentFFN=\dimen182
+\FB@Mht=\dimen183
+\std@mcc=\count155
+\dec@mcc=\count156
+\parindentFFN=\dimen184
 *************************************
 * Local config file frenchb.cfg used
 *
@@ -664,17 +697,25 @@ Package babel Info: Making ? an active character on input line 123.
 (/usr/share/texmf-texlive/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks38
-\inpenc@posthook=\toks39
+\inpenc@prehook=\toks39
+\inpenc@posthook=\toks40
 
 (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
-)) (./wrapfig.sty
-\wrapoverhang=\dimen183
-\WF@size=\dimen184
-\c@WF@wrappedlines=\count153
-\WF@box=\box52
-\WF@everypar=\toks40
+))
+(/usr/share/texmf-texlive/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count157
+\float@exts=\toks41
+\float@box=\box54
+\@float@everytoks=\toks42
+\@floatcapt=\box55
+) (./wrapfig.sty
+\wrapoverhang=\dimen185
+\WF@size=\dimen186
+\c@WF@wrappedlines=\count158
+\WF@box=\box56
+\WF@everypar=\toks43
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
@@ -689,81 +730,81 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 54.
+(hyperref)                removing `\begingroup' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 54.
+(hyperref)                removing `\endgroup' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\newline' on input line 54.
+(hyperref)                removing `\newline' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 54.
+(hyperref)                removing `\begingroup' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 54.
+(hyperref)                removing `\endgroup' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\newline' on input line 54.
+(hyperref)                removing `\newline' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 54.
+(hyperref)                removing `\begingroup' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 54.
+(hyperref)                removing `\endgroup' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\newline' on input line 54.
+(hyperref)                removing `\newline' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 54.
+(hyperref)                removing `\begingroup' on input line 55.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 54.
+(hyperref)                removing `\endgroup' on input line 55.
 
 (./diapo.aux)
 \openout1 = `diapo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 120.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 121.
  (/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count154
-\scratchdimen=\dimen185
-\scratchbox=\box53
-\nofMPsegments=\count155
-\nofMParguments=\count156
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count157
-\MPscratchDim=\dimen186
-\MPnumerator=\count158
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count159
+\scratchdimen=\dimen187
+\scratchbox=\box57
+\nofMPsegments=\count160
+\nofMParguments=\count161
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count162
+\MPscratchDim=\dimen188
+\MPnumerator=\count163
+\everyMPtoPDFconversion=\toks45
 )
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -806,76 +847,77 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-Package hyperref Info: Link coloring OFF on input line 120.
+Package hyperref Info: Link coloring OFF on input line 121.
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count159
+\c@section@level=\count164
 )
-LaTeX Info: Redefining \ref on input line 120.
-LaTeX Info: Redefining \pageref on input line 120.
+LaTeX Info: Redefining \ref on input line 121.
+LaTeX Info: Redefining \pageref on input line 121.
  (./diapo.out)
 (./diapo.out)
 \@outlinefile=\write4
 \openout4 = `diapo.out'.
 
-\AtBeginShipoutBox=\box54
+\AtBeginShipoutBox=\box58
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> T1/ptm/m/n on input line 120.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 120.
+(Font)                  OT1/cmr/m/n --> T1/ptm/m/n on input line 121.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/ptm/bx/n on input line 120.
+(Font)                  OT1/cmr/bx/n --> T1/ptm/bx/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/ptm/bx/n on input line 120.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 120.
+(Font)                  OT1/cmr/bx/n --> T1/ptm/bx/n on input line 121.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 120.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 120.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 120.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 121.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/ptm/m/it on input line 120.
+(Font)                  OT1/cmr/m/it --> T1/ptm/m/it on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/ptm/m/it on input line 120.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 120.
+(Font)                  OT1/cmr/bx/it --> T1/ptm/m/it on input line 121.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 120.
+(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 120.
+(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 121.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/ptm/m/n --> T1/ptm/bx/n on input line 120.
+(Font)                  T1/ptm/m/n --> T1/ptm/bx/n on input line 121.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 120.
+(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/ptm/bx/n on input line 120.
+(Font)                  OT1/cmr/bx/n --> T1/ptm/bx/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/ptm/bx/n --> T1/ptm/bx/n on input line 120.
+(Font)                  T1/ptm/bx/n --> T1/ptm/bx/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 120.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 120.
+(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/pcr/m/n --> T1/pcr/bx/n on input line 120.
-LaTeX Info: Redefining \degres on input line 120.
-LaTeX Info: Redefining \dots on input line 120.
-LaTeX Info: Redefining \up on input line 120.
+(Font)                  T1/pcr/m/n --> T1/pcr/bx/n on input line 121.
+ ABD: EveryShipout initializing macros
+LaTeX Info: Redefining \degres on input line 121.
+LaTeX Info: Redefining \dots on input line 121.
+LaTeX Info: Redefining \up on input line 121.
  (./diapo.nav)
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <6> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 120.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 121.
 
-Overfull \hbox (2.80698pt too wide) in paragraph at lines 120--120
+Overfull \hbox (2.80698pt too wide) in paragraph at lines 121--121
 [][]  
  []
 
-<logo.jpg, id=44, 97.3236pt x 60.4659pt>
+<logo.jpg, id=60, 97.3236pt x 60.4659pt>
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
-Overfull \hbox (6.0pt too wide) in paragraph at lines 120--120
+Overfull \hbox (6.0pt too wide) in paragraph at lines 121--121
 [][]  
  []
 
@@ -893,7 +935,23 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./logo.jpg>]
-(./diapo.toc)
+LaTeX Font Info:    Try loading font information for U+msa on input line 147.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 147.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 147.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 147.
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
 Overfull \hbox (72.59995pt too wide) has occurred while \output is active
@@ -907,7 +965,7 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 
 [2
 
-] (./diapo.toc)
+]
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
 Overfull \hbox (72.59995pt too wide) has occurred while \output is active
@@ -921,7 +979,7 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 
 [3
 
-] (./diapo.toc)
+]
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
 Overfull \hbox (72.59995pt too wide) has occurred while \output is active
@@ -936,6 +994,917 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 [4
 
 ]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[5
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[6
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[7
+
+]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 155.
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[8
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[9
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[10
+
+] (./diapo.toc)
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[11
+
+] (./diapo.toc)
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[12
+
+]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 174.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+<diagrammeUsecase.jpeg, id=551, 234.8775pt x 221.82875pt>
+File: diagrammeUsecase.jpeg Graphic file (type jpg)
+
+<use diagrammeUsecase.jpeg>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[13
+
+ <./diagrammeUsecase.jpeg>]
+<diagrammeSequence.jpeg, id=593, 220.825pt x 171.64125pt>
+File: diagrammeSequence.jpeg Graphic file (type jpg)
+
+<use diagrammeSequence.jpeg>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[14
+
+ <./diagrammeSequence.jpeg>]
+<diagrammeClasse.jpeg, id=630, 88.33pt x 136.51pt>
+File: diagrammeClasse.jpeg Graphic file (type jpg)
+ <use diagrammeClasse.jpeg>
+File: logo.jpg Graphic file (type jpg)
+
+<use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[15
+
+ <./diagrammeClasse.jpeg>]
+File: diagrammeUsecase.jpeg Graphic file (type jpg)
+ <use diagrammeUsecase.jpeg>
+File: diagrammeSequence.jpeg Graphic file (type jpg)
+
+<use diagrammeSequence.jpeg>
+File: diagrammeClasse.jpeg Graphic file (type jpg)
+ <use diagrammeClasse.jpeg>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[16
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[17
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[18
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[19
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[20
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[21
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[22
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[23
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[24
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[25
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[26
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[27
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[28
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[29
+
+] (./diapo.toc)
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[30
+
+] <001.png, id=1214, 642.4pt x 173.64874pt>
+File: 001.png Graphic file (type png)
+ <use 001.png>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[31
+
+ <./001.png>]
+File: 001.png Graphic file (type png)
+ <use 001.png>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[32
+
+] <git.png, id=1294, 412.54124pt x 293.59688pt>
+File: git.png Graphic file (type png)
+ <use git.png>
+File: logo.jpg Graphic file (type jpg)
+
+<use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[33
+
+ <./git.png>]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[34
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[35
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[36
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[37
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[38
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[39
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[40
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[41
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[42
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[43
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[44
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[45
+
+] (./diapo.toc)
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[46
+
+] <choixDiagramme.jpg, id=1810, 269.005pt x 86.3225pt>
+File: choixDiagramme.jpg Graphic file (type jpg)
+
+<use choixDiagramme.jpg>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[47
+
+ <./choixDiagramme.jpg>]
+<demonstrateur.jpg, id=1847, 1441.385pt x 827.09pt>
+File: demonstrateur.jpg Graphic file (type jpg)
+ <use demonstrateur.jpg>
+Overfull \hbox (157.64865pt too wide) in paragraph at lines 315--315
+ [] 
+ []
+
+
+Overfull \vbox (44.35017pt too high) detected at line 315
+ []
+
+File: logo.jpg Graphic file (type jpg)
+<use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[48
+
+ <./demonstrateur.jpg>]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[49
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[50
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[51
+
+] <restriction.jpg, id=1992, 401.5pt x 129.48375pt>
+File: restriction.jpg Graphic file (type jpg)
+ <use restriction.jpg>
+File: logo.jpg Graphic file (type jpg)
+
+<use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[52
+
+ <./restriction.jpg>]
+File: restriction.jpg Graphic file (type jpg)
+ <use restriction.jpg>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[53
+
+]
+File: restriction.jpg Graphic file (type jpg)
+ <use restriction.jpg>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[54
+
+] <gantt_passe.png, id=2101, 774.895pt x 501.875pt>
+File: gantt_passe.png Graphic file (type png)
+ <use gantt_passe.png>
+File: logo.jpg Graphic file (type jpg)
+
+<use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[55
+
+ <./gantt_passe.png>]
+File: gantt_passe.png Graphic file (type png)
+ <use gantt_passe.png>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[56
+
+] <gantt_present.png, id=2176, 1446.40375pt x 1050.92625pt>
+File: gantt_present.png Graphic file (type png)
+
+<use gantt_present.png>
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[57
+
+ <./gantt_present.png>]
+File: gantt_present.png Graphic file (type png)
+ <use gantt_present.png>
+Overfull \vbox (11.58315pt too high) detected at line 374
+ []
+
+File: logo.jpg Graphic file (type jpg)
+<use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[58
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[59
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[60
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[61
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[62
+
+]
+File: logo.jpg Graphic file (type jpg)
+ <use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[63
+
+] <questions.jpg, id=2430, 348.30125pt x 347.2975pt>
+File: questions.jpg Graphic file (type jpg)
+ <use questions.jpg>
+Overfull \vbox (0.81693pt too high) detected at line 392
+ []
+
+File: logo.jpg Graphic file (type jpg)
+<use logo.jpg>
+Overfull \hbox (72.59995pt too wide) has occurred while \output is active
+[] [][] 
+ []
+
+
+Overfull \hbox (2.80698pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[64
+
+ <./questions.jpg>]
 \tf@nav=\write5
 \openout5 = `diapo.nav'.
 
@@ -947,19 +1916,22 @@ Overfull \hbox (2.80698pt too wide) has occurred while \output is active
 
  (./diapo.aux) ) 
 Here is how much of TeX's memory you used:
- 13623 strings out of 495061
- 238541 string characters out of 1182620
- 334408 words of memory out of 3000000
- 16422 multiletter control sequences out of 15000+50000
- 34573 words of font info for 35 fonts, out of 3000000 for 9000
+ 14860 strings out of 495061
+ 258936 string characters out of 1182620
+ 355254 words of memory out of 3000000
+ 17459 multiletter control sequences out of 15000+50000
+ 72093 words of font info for 74 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 45i,20n,65p,313b,718s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,20n,65p,313b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sha
-re/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/
-fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on diapo.pdf (4 pages, 103765 bytes).
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/
+type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic
+/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr
+/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on diapo.pdf (64 pages, 1315896 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
- 172 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2520 PDF objects out of 2984 (max. 8388607)
+ 140 named destinations out of 1000 (max. 500000)
+ 289 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,9 +1,12 @@
 \beamer@endinputifotherversion {3.07pt}
 \select@language {french}
-\beamer@sectionintoc {1}{Objectifs}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Probl\`eme}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Architecture}{3}{0}{1}
-\beamer@sectionintoc {2}{Methode}{3}{0}{2}
-\beamer@subsectionintoc {2}{1}{Outils}{4}{0}{2}
-\beamer@subsectionintoc {2}{2}{D\'eveloppement}{4}{0}{2}
-\beamer@sectionintoc {3}{R\'esultat}{4}{0}{3}
+\beamer@sectionintoc {1}{Objectifs}{12}{0}{1}
+\beamer@subsectionintoc {1}{1}{Pr\'esentation du sujet}{13}{0}{1}
+\beamer@subsectionintoc {1}{2}{L'architecture}{20}{0}{1}
+\beamer@subsectionintoc {1}{3}{Le d\'emonstrateur}{26}{0}{1}
+\beamer@sectionintoc {2}{Methode}{30}{0}{2}
+\beamer@subsectionintoc {2}{1}{D\'eveloppement}{31}{0}{2}
+\beamer@subsectionintoc {2}{2}{Outils}{33}{0}{2}
+\beamer@sectionintoc {3}{R\'esultat}{46}{0}{3}
+\beamer@subsectionintoc {3}{1}{D\'emonstration}{47}{0}{3}
+\beamer@subsectionintoc {3}{2}{Et apr\`es\ldots }{49}{0}{3}

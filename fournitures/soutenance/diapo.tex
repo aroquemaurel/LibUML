@@ -1,5 +1,4 @@
 % /solutions/conference-talks/conference-ornate-20min.fr.tex, 22/02/2006 De Sousa
-
 \documentclass{beamer}
 
 % Ce fichier est un exemple d'exposé
@@ -21,6 +20,7 @@
 % "exemple-type" et non spécifiquement pour le distribuer en tant que partie d'un
 % package ou programme, je vous donne la permission exceptionnelle de copier librement et
 % de modifier ce fichier et même d'effacer ce message de copyright.
+\usepackage{pdfpages}
 
 
 \mode<presentation> {
@@ -38,6 +38,7 @@
 \usepackage[latin1]{inputenc}
 % or autre
 
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{times}
@@ -121,18 +122,275 @@
 \begin{frame}
   \titlepage
 \end{frame}
+\begin{frame}{Pr\'esentation des acteurs} % ANTOINE
+	\begin{minipage}{4.6cm}
+		\begin{block}{\'Etudiants}
+				Antoine de \bsc{Roquemaurel}\\
+			\pause
+				Mathieu \bsc{Soum}\\
+			\pause
+				Geoffroy \bsc{Subias}\\
+			\pause
+				Marie-Ly \bsc{Tang}
+		\end{block}
+	\end{minipage}
+	\pause
+	~~  
+	\begin{minipage}[r]{4.4cm}
+		\begin{block}{Enseignants}
+				Thierry \bsc{Millan} (\textit{Client})\\
+			\pause
+				Caroline \bsc{Kross} (\textit{Tutrice})
+				\newline \newline
+		\end{block}
+	\end{minipage}
+\end{frame}
+\begin{frame}{Le glossaire}
+
+  \setbeamercovered{transparent}
+\begin{itemize}
+		\item<1,2>  Bibliothèque 
+		\item<1,3>  Objets graphiques UML \\\hspace{30px}(\textbf{U}nified \textbf{M}odeling \textbf{L}anguage)
+\end{itemize}
+\end{frame}
+\begin{frame}{Plan}
+	\tableofcontents
+\end{frame}
 % Introduction 2'
 %   - Glossaire
 \section{Objectifs} % 4'
-\subsection{Problème} % Poser problème/sujet
-\subsection{Architecture} % Architecture (package) -> pour la suite
+\subsection{Présentation du sujet} % Poser problème/sujet
+\begin{frame}{Présentation du sujet}
+	\begin{itemize}
+		\item Choix des éléments graphiques  
+		\item Bibliothèque \texttt{JGraphX}
+	\end{itemize}
+			\begin{figure}
+			\centering
+				\includegraphics<1,4>[width=2.8cm]{diagrammeUsecase.jpeg} ~ ~
+				\includegraphics<2,4>[width=2.8cm]{diagrammeSequence.jpeg} ~ ~
+				\includegraphics<3,4>[width=1.3cm]{diagrammeClasse.jpeg} 
+		\end{figure}
+\end{frame}
+\begin{frame}{Attentes du projet}
+	\begin{itemize}
+		\item Projet inhabituel
+			\begin{itemize}
+				\item Étude de faisabilité
+				\item Composant 
+			\end{itemize}
+			\pause
+		\item Temps de développement
+			\pause
+		\item Utilité d'un outil fragmenté
+	\end{itemize}
+\end{frame}
+
+\subsection{L'architecture} % Architecture (package) -> pour la suite
+\begin{frame}{Architecture de la bibliothèque}
+	\begin{itemize}
+		\item Découpée en différents paquetages 
+			\begin{itemize}
+				\item \texttt{diagramme}
+					\pause
+				\item \texttt{eltGraphique}
+					\pause
+				\item \texttt{ligne}
+					\pause
+			\end{itemize}
+			\vspace{20px}
+		\item Pensée pour une reprise future 
+			\begin{itemize}
+				\item Stabilité
+					\pause
+				\item Factorisation du code
+					\pause
+				\item Facilité de programmation
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\subsection{Le démonstrateur}
+\begin{frame}{Le démonstrateur}
+\begin{itemize}
+	\item Est un mal nécessaire 
+		\pause
+		\begin{itemize}
+			\item Possibilités de notre bibliothèque
+				\pause
+			\item Test d'intégration
+				\pause
+			\item Exemple d'utilisation
+		\end{itemize}
+\end{itemize}
+\end{frame}
 \section{Methode} % 4'
-\subsection{Outils} % Redmine/git && Javadoc && PMD
 \subsection{Développement} % Méthode incrémentale
+\begin{frame}{Méthode incrémentale}
+	\begin{center}
+	Incrément $=$ Nouvelle fonctionnalité
+\end{center}
+	\begin{figure}
+	\centering
+	\includegraphics[width=9cm]{001.png} 
+	\caption{Fonctionnement de la méthode incrémentale}
+	\end{figure}
+	\vspace{-15px}
+\pause
+	\begin{exampleblock}{Avantages}
+		\begin{itemize}
+			\item Produit utilisable à chaque incrément
+			\item Facilité de correction   
+			\item Bonne maîtrise du développement
+			\item Respect des besoins du client
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+\subsection{Outils} % Redmine/git && Javadoc && PMD
+\begin{frame}{Git}
+	\begin{itemize}
+		\item Gestionnaire de versionnement
+	\end{itemize}
+	\vspace{-15px}
+	\begin{figure}
+		\centering
+		\includegraphics[width=7cm]{git.png}
+		\caption{Fonctionnement de Git}
+	\end{figure}
+\end{frame}
+\begin{frame}{Redmine}
+	\begin{itemize}
+		\item Plateforme de travail collaboratif   
+			\begin{itemize}
+				\item Calendrier
+			\pause
+				\item Distribution des tâches
+			\pause
+				\item Forums
+			\pause
+				\item Wiki
+			\pause
+			\end{itemize}
+	\end{itemize}
+	\vspace{15px}
+	\hspace{45px}	$\Rightarrow$ Distribution du travail
+\end{frame}
+\begin{frame}{Qualité de la recette}
+	\begin{itemize}
+		\item Code source
+		\pause	
+	\begin{itemize}
+		\item Conventions d'écritures
+		\pause	
+		\item Envoi du code régulier
+		\pause	
+		\item PMD 
+		\pause	
+			\begin{itemize}
+				\item Analyse du code 
+		\pause	
+				\item Respect de contraintes
+			\end{itemize}
+	\end{itemize}
+	\vspace{15px}
+	\pause
+	\item Documentation
+	\begin{itemize}
+		\item Javadoc
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+
 \section{Résultat} % 3'
 \subsection{Démonstration} % Show time!
+\begin{frame}{Choix du diagramme}
+	\begin{figure}
+		\includegraphics[width=5cm]{choixDiagramme.jpg}
+	\end{figure}
+\end{frame}
+\begin{frame}{Démonstrateur}
+	\begin{figure}
+		\hspace{-80px}
+		\includegraphics[width=15cm]{demonstrateur.jpg}
+	\end{figure}
+\end{frame}
+
 \subsection{Et après\ldots} % Génération code / Respect norme UML 2.0 / Ajout diagrammes
+\begin{frame}{Et après\ldots}
+	\begin{itemize}
+		\item Génération de code
+			\pause
+	\end{itemize}
+	\begin{center}
+	Gestion d'éléments non graphiques \\
+		\vspace{5px}
+		\pause
+	$\rightarrow$ Éléments de programmation
+	\end{center}
+\end{frame}
+\begin{frame}{Et après\ldots}
+	\begin{itemize}
+		\item Norme UML 2.0 
+			\pause
+			\begin{itemize}
+				\item Possibilité d'ajouter des restrictions
+					\begin{figure}
+						\hspace{-60px}\includegraphics[width=6.42cm]{restriction.jpg}
+					\end{figure}
+					\pause
+			\end{itemize}
+				\item Possibilité d'ajouter des diagrammes  
+					\begin{itemize}
+						\item Diagramme de collaboration
+						\item Diagramme d'activités
+						\item Diagramme de timing
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\section*{}
+\begin{frame}{\bsc{Gantt} prévu}
+	\only<1>{
+		\begin{figure}
+			\includegraphics[width=8.5cm]{gantt_passe.png}
+			\caption{\bsc{Gantt} prévisionnel -- Octobre 2011}
+		\end{figure}
+	}
+	\only<2>{
+		\hspace{-68px}
+		\includegraphics[width=11.5cm]{gantt_passe.png}
+	}
+\end{frame}
+\begin{frame}{\bsc{Gantt} effectif}
+	\only<1>{
+	\begin{figure}
+		\centering
+		\includegraphics[width=8.5cm]{gantt_present.png}
+		\caption{\bsc{Gantt} effectif -- Janvier 2012}
+	\end{figure}
+	}
+	\only<2>{
+	\hspace{-68px}
+		\includegraphics<2>[width=11.5cm]{gantt_present.png}
+	}
+\end{frame}
+\begin{frame}{Difficultés}
+	\begin{itemize}
+		\item Stabilisation de l'architecture
+			\pause
+		\item Connaissance des outils à utiliser
+			\pause
+		\item Gestion du groupe 
+			\pause
+			\begin{itemize}
+				\item Régularité des réunions
+			\pause
+				\item Divergences d'opinions
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Avez-vous des questions ?}
+	\includegraphics[width=8cm]{questions.jpg}
+\end{frame}
 % Conclusion 2'
-%    GANTT passé & présent
+
 \end{document}
 

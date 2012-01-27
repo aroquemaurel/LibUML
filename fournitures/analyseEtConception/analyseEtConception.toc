@@ -1,27 +1,46 @@
 \select@language {french}
-\contentsline {chapter}{\numberline {1}Sp\IeC {\'e}cification des besoins}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Objectifs, champ d'application, limites du syst\IeC {\`e}me}{3}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Fonctionnalit\IeC {\'e}s du syst\IeC {\`e}me}{3}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Etats de sortie du syst\IeC {\`e}me}{4}{subsection.1.1.2}
-\contentsline {section}{\numberline {1.2}Besoins non-fonctionnels}{4}{section.1.2}
-\contentsline {paragraph}{En efficacit\IeC {\'e}~ :}{4}{section*.2}
-\contentsline {paragraph}{En impl\IeC {\'e}mentation :}{4}{section*.3}
-\contentsline {paragraph}{En interop\IeC {\'e}rabilit\IeC {\'e} :}{4}{section*.4}
-\contentsline {paragraph}{En compatibilit\IeC {\'e} :}{4}{section*.5}
-\contentsline {paragraph}{En ergonomie :}{4}{section*.6}
-\contentsline {paragraph}{En documentation :}{4}{section*.7}
-\contentsline {section}{\numberline {1.3}Cas d'utilisations}{5}{section.1.3}
-\contentsline {chapter}{\numberline {2}Conception}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Architecture g\IeC {\'e}n\IeC {\'e}rale du projet}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Package eltGraphique}{8}{subsection.2.1.1}
-\contentsline {paragraph}{Package eltModelisation}{8}{section*.8}
-\contentsline {paragraph}{Package ligne}{8}{section*.9}
-\contentsline {subsection}{\numberline {2.1.2}Package diagramme}{8}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Conception d\IeC {\'e}taill\IeC {\'e}e}{8}{section.2.2}
-\contentsline {chapter}{\numberline {A}Glossaire}{9}{appendix.A}
-\contentsline {paragraph}{Diagramme de cas d'utilisation}{9}{section*.10}
-\contentsline {paragraph}{Diagramme de classe}{9}{section*.11}
-\contentsline {paragraph}{Diagramme de s\IeC {\'e}quence}{9}{section*.12}
-\contentsline {paragraph}{Incr\IeC {\'e}ment}{9}{section*.13}
-\contentsline {paragraph}{Mod\IeC {\`e}le de d\IeC {\'e}veloppement incr\IeC {\'e}mental}{9}{section*.14}
-\contentsline {paragraph}{UML}{9}{section*.15}
+\contentsline {paragraph}{}{2}{section*.3}
+\contentsline {chapter}{\numberline {1}Sp\IeC {\'e}cification des besoins}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Objectifs, champ d'application, limites du syst\IeC {\`e}me}{5}{section.1.1}
+\contentsline {paragraph}{}{5}{section*.11}
+\contentsline {paragraph}{}{5}{section*.12}
+\contentsline {paragraph}{}{5}{section*.13}
+\contentsline {subsection}{\numberline {1.1.1}Fonctionnalit\IeC {\'e}s du syst\IeC {\`e}me}{6}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}\IeC {\'E}tats de sortie du syst\IeC {\`e}me}{6}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Besoins non fonctionnels}{6}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}En efficacit\IeC {\'e}}{6}{subsection.1.2.1}
+\contentsline {paragraph}{Temps de r\IeC {\'e}ponse}{6}{section*.14}
+\contentsline {paragraph}{Consommation de m\IeC {\'e}moire}{6}{section*.15}
+\contentsline {subsection}{\numberline {1.2.2}En impl\IeC {\'e}mentation}{6}{subsection.1.2.2}
+\contentsline {paragraph}{Propret\IeC {\'e} du code}{6}{section*.16}
+\contentsline {subsection}{\numberline {1.2.3}En compatibilit\IeC {\'e}}{6}{subsection.1.2.3}
+\contentsline {paragraph}{La compatibilit\IeC {\'e} avec des applications utilisant le syst\IeC {\`e}me en tant que composant}{6}{section*.17}
+\contentsline {paragraph}{La compatibilit\IeC {\'e} sur des syst\IeC {\`e}mes d'exploitation diff\IeC {\'e}rents}{6}{section*.18}
+\contentsline {subsection}{\numberline {1.2.4}En ergonomie}{6}{subsection.1.2.4}
+\contentsline {paragraph}{Les standards d'ergonomie}{6}{section*.19}
+\contentsline {paragraph}{Internationalisation / besoins de localisation}{6}{section*.20}
+\contentsline {subsection}{\numberline {1.2.5}En documentation :}{7}{subsection.1.2.5}
+\contentsline {paragraph}{\IeC {\'E}l\IeC {\'e}ments de documentation requis}{7}{section*.21}
+\contentsline {section}{\numberline {1.3}Cas d'utilisations}{7}{section.1.3}
+\contentsline {chapter}{\numberline {2}Conception}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}Architecture g\IeC {\'e}n\IeC {\'e}rale du projet}{10}{section.2.1}
+\contentsline {paragraph}{}{10}{section*.22}
+\contentsline {subsection}{\numberline {2.1.1}Paquetage eltGraphique}{11}{subsection.2.1.1}
+\contentsline {paragraph}{Paquetage eltModelisation}{11}{section*.23}
+\contentsline {paragraph}{Paquetage ligne}{11}{section*.24}
+\contentsline {subsection}{\numberline {2.1.2}Paquetage diagramme}{11}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Conception d\IeC {\'e}taill\IeC {\'e}e}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Documentation}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Relations entre les classes}{11}{subsection.2.2.2}
+\contentsline {chapter}{\numberline {A}Glossaire}{12}{appendix.A}
+\contentsline {paragraph}{Biblioth\IeC {\`e}que}{12}{section*.25}
+\contentsline {paragraph}{D\IeC {\'e}monstrateur}{12}{section*.26}
+\contentsline {paragraph}{Diagramme de cas d'utilisation}{12}{section*.27}
+\contentsline {paragraph}{Diagramme de classes}{12}{section*.28}
+\contentsline {paragraph}{Diagramme de s\IeC {\'e}quence}{12}{section*.29}
+\contentsline {paragraph}{Incr\IeC {\'e}ment}{12}{section*.30}
+\contentsline {paragraph}{Java}{12}{section*.31}
+\contentsline {paragraph}{Mod\IeC {\`e}le de d\IeC {\'e}veloppement incr\IeC {\'e}mental}{12}{section*.32}
+\contentsline {paragraph}{Paquetage}{12}{section*.33}
+\contentsline {paragraph}{UML}{12}{section*.34}
+\contentsline {chapter}{\numberline {B}Diagramme de paquetages}{13}{appendix.B}
