@@ -87,15 +87,20 @@ public class EvenementCelluleSelectionne implements MouseListener {
 
         JMenuItem itemAjouterAttribut = new JMenuItem("Ajouter un attribut");
         EvenementAjouterAttribut evenementAjouterAttribut = new EvenementAjouterAttribut(this.fenetre, element);
+		
+        JMenuItem itemGenererInterface = new JMenuItem("Générer une interface");
+        EvenementGenererInterface evenementGenererInterface = new EvenementGenererInterface(element);
               
         menuContextuel.add(itemSupprimer);
         menuContextuel.add(itemAjouterAttribut);
         menuContextuel.add(itemAjouterMethode);
+        menuContextuel.add(itemGenererInterface);
         this.fenetre.getPanneauPrincipal().add(menuContextuel);
         
         itemSupprimer.addActionListener(evenementSupprimer);
         itemAjouterAttribut.addActionListener(evenementAjouterAttribut);
         itemAjouterMethode.addActionListener(evenementAjouterMethode);
+        itemGenererInterface.addActionListener(evenementGenererInterface);
         
         return menuContextuel;
     }       
@@ -109,8 +114,6 @@ public class EvenementCelluleSelectionne implements MouseListener {
 	
         JMenuItem itemSupprimer = new JMenuItem("Supprimer");
         EvenementSupprimer evenementSupprimer = new EvenementSupprimer(element);
-        
-        JMenuItem itemLigneDeVie;
 
         menuContextuel.add(itemSupprimer);
         this.fenetre.getPanneauPrincipal().add(menuContextuel);
@@ -141,9 +144,6 @@ public class EvenementCelluleSelectionne implements MouseListener {
         if(element != null) {
             if(element instanceof Classe) {
                 this.fenetre.getPanneauDroite().afficherTableauClasse((Classe) element);
-                        // TODO -- Le tableau ne s'affiche qu'avec un clic droit 
-                        // TODO -- Le tableau ne se recharge pas à chaque classe
-                        // TODO -- Le tableau s'affiche deux fois
             }        
         }
     }

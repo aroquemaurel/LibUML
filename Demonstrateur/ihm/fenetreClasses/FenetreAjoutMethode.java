@@ -8,11 +8,9 @@ import java.awt.Dimension;
 import javax.swing.*;
 
 /**
- *
+ * Affiche une fenetre pour pouvoir entrer une nouvelle méthode
  */
-public class FenetreAjoutMethode extends FenetreDialog {
-    private Classe classe;
-    
+public class FenetreAjoutMethode extends FenetreDialog {  
     private JPanel panneauPrincipal;
     
     private JLabel nomMethodeLabel;
@@ -27,7 +25,9 @@ public class FenetreAjoutMethode extends FenetreDialog {
     private JComboBox visibiliteListe;
     private JPanel panneauVisibilite;
     
-    /* Les paramètres */
+    /* 
+     * Les paramètres 
+     */
     /*paramètre 1 */
     private JLabel nomParametre1Label;
     private JTextField nomParametre1ChampTexte;
@@ -40,6 +40,7 @@ public class FenetreAjoutMethode extends FenetreDialog {
     private JLabel espaceParametre1Label;
     private JCheckBox constantParametre1CheckBox;
     
+    /* paramètre 2 */
     private JLabel nomParametre2Label;
     private JTextField nomParametre2ChampTexte;
     private JPanel panneauNomParametre2;
@@ -51,6 +52,7 @@ public class FenetreAjoutMethode extends FenetreDialog {
     private JLabel espaceParametre2Label;
     private JCheckBox constantParametre2CheckBox;
     
+    /* paramètre 3 */
     private JLabel nomParametre3Label;
     private JTextField nomParametre3ChampTexte;
     private JPanel panneauNomParametre3;
@@ -62,10 +64,17 @@ public class FenetreAjoutMethode extends FenetreDialog {
     private JLabel espaceParametre3Label;
     private JCheckBox constantParametre3CheckBox;
     
+    /* 
+     * boutons 
+     */
     private BtnValiderAjoutMethode boutonValider;
     private BtnAnnulerAjoutMethode boutonAnnuler;
     
-   private void parametrerBoiteDialogue(){
+    /**
+     * Paramètre la fenetre
+     */
+    @Override
+   protected final void parametrerBoiteDialogue(){
         this.setSize(500, 600);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -85,7 +94,11 @@ public class FenetreAjoutMethode extends FenetreDialog {
         this.add(this.panneauPrincipal);       
     }
    
-    private void ajouterElements(){      
+    /**
+     * Ajoute les différents éléments dans la fenêtre
+     */
+    @Override
+    protected final void ajouterElements(){      
         this.panneauPrincipal.add(this.panneauNomMethode);
         this.panneauPrincipal.add(this.panneauTypeRetour);
         this.panneauPrincipal.add(this.panneauVisibilite);
@@ -137,6 +150,12 @@ public class FenetreAjoutMethode extends FenetreDialog {
 
     }
     
+    /**
+     * Construit la fenêtre permettant d'ajouter la méthode. Instancie tous les attributs
+     * @param p_fenetre La fenêtre principale, fenetre où s'affiche la fenetre d'ajout de méthode
+     * @param p_texte Le titre de la fenetre
+     * @param p_classe La classe à qui on veut ajouter une méthode
+     */
    public FenetreAjoutMethode(FenetreDemo p_fenetre, String p_texte, Classe p_classe){
         super(p_fenetre, p_texte);
         this.panneauPrincipal = new JPanel();
@@ -191,62 +210,103 @@ public class FenetreAjoutMethode extends FenetreDialog {
         
         this.boutonValider = new BtnValiderAjoutMethode(this, p_classe);
         this.boutonAnnuler = new BtnAnnulerAjoutMethode(this);
-        
-        
+               
         this.parametrerBoiteDialogue();
         this.ajouterElements();
-        
-        this.classe = p_classe;
-    }
-   
-    public void afficherFenetre(){
-        this.setVisible(true);
     }
 
+   /**
+     * Retourne si le paramètre 1 est constant ou non
+     * @return Vrai si le paramètre est constant, faux sinon
+    */
     public JCheckBox getConstantParametre1CheckBox() {
         return constantParametre1CheckBox;
     }
 
+    /**
+     * Retourne si le paramètre 2 est constant ou non
+     * @return Vrai si le paramètre est constant, faux sinon
+     */
     public JCheckBox getConstantParametre2CheckBox() {
         return constantParametre2CheckBox;
     }
 
+    /**
+     * Retourne si le paramètre 3 est constant ou non
+     * @return Vrai si le paramètre est constant, faux sinon
+     */
     public JCheckBox getConstantParametre3CheckBox() {
         return constantParametre3CheckBox;
     }
 
+    /**
+     * Retourne le nom de la méthode
+     * @return Le nom de la méthode
+     */
     public JTextField getNomMethodeChampTexte() {
         return nomMethodeChampTexte;
     }
 
+    /**
+     * Retourne le nom du paramètre 1
+     * @return Le nom du paramètre 1
+     */
     public JTextField getNomParametre1ChampTexte() {
         return nomParametre1ChampTexte;
     }
 
+    /**
+     * Retourne le nom du paramètre 2
+     * @return Le nom du paramètre 2
+     */
     public JTextField getNomParametre2ChampTexte() {
         return nomParametre2ChampTexte;
     }
 
+    /**
+     * Retourne le nom du paramètre 3
+     * @return Le nom du paramètre 3
+     */
     public JTextField getNomParametre3ChampTexte() {
         return nomParametre3ChampTexte;
     }
 
+    /**
+     * Retourne le type de paramètre 1
+     * @return Le type de paramètre 1
+     */
     public JTextField getTypeParametre1ChampTexte() {
         return typeParametre1ChampTexte;
     }
 
+    /**
+     * Retourne le type de paramètre 2
+     * @return Le type de de paramètre 2
+     */
     public JTextField getTypeParametre2ChampTexte() {
         return typeParametre2ChampTexte;
     }
 
+    /**
+     * Retourne le type de paramètre 3
+     * @return Le type de paramètre 3
+     */
     public JTextField getTypeParametre3ChampTexte() {
         return typeParametre3ChampTexte;
     }
 
+    /**
+     * Retour le type de retour de la méthode
+     * @return Le type de retour
+     */
     public JTextField getTypeRetourChampTexte() {
         return typeRetourChampTexte;
     }
-
+    
+    /**
+     * Retour la visibilité de la méthode
+     * @return La liste de visibilité
+     */
     public JComboBox getVisibiliteListe() {
         return visibiliteListe;
     }

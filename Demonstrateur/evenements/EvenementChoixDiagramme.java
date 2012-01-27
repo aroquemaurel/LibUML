@@ -9,10 +9,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
  
 /**
- *
+ * Evenement lorsque l'on choisit un diagramme
  */
 public class EvenementChoixDiagramme implements MouseListener {
     private FenetreDemo fenetre;
+    
+    /* Index dans la liste des diagrammes */
     private final int CONTRAINTE_DIAGRAMME_CAS_UTILISATION = 1;
     private final int CONTRAINTE_DIAGRAMME_CLASSE = 2;
     private final int CONTRAINTE_DIAGRAMME_SEQUENCE = 3;
@@ -24,6 +26,7 @@ public class EvenementChoixDiagramme implements MouseListener {
     
     @Override
     public void mouseClicked(MouseEvent me) {
+        /* En fonction du choix du diagramme, on instancie un diagramme différent */
         Diagramme diagramme;
         switch(this.fenetre.getFenetreChoixDiagramme().getListe().getSelectedIndex()){
             case CONTRAINTE_DIAGRAMME_CAS_UTILISATION :

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/satenske/projet_IUT/Demonstrateur/ihm/FenetreDemo.java</file>
+        <file>file:/home/satenske/projet_IUT/Demonstrateur/ihm/PanneauGraph.java</file>
+        <file>file:/home/satenske/projet_IUT/Demonstrateur/evenements/EvenementCelluleSelectionne.java</file>
+        <file>file:/home/satenske/projet_IUT/BibliothequeUML/diagramme/Diagramme.java</file>
+        <file>file:/home/satenske/projet_IUT/BibliothequeUML/eltGraphique/eltModelisation/ActeurActif.java</file>
+        <file>file:/home/satenske/projet_IUT/Demonstrateur/evenements/btn/toolbar/BtnAgregation.java</file>
+        <file>file:/home/satenske/projet_IUT/Demonstrateur/evenements/EvenementsLienElementGraphique.java</file>
+        <file>file:/home/satenske/projet_IUT/Demonstrateur/evenements/menu/contextuel/EvenementAjouterAttribut.java</file>
+        <file>file:/home/satenske/projet_IUT/Demonstrateur/evenements/btn/BtnValiderAjoutAttribut.java</file>
+    </open-files>
 </project-private>

@@ -1,18 +1,7 @@
 package ihm.menu;
 
-import evenements.btn.toolbar.BtnUseCase;
-import evenements.btn.toolbar.BtnTraitement;
-import evenements.btn.toolbar.BtnAgregation;
-import evenements.btn.toolbar.BtnComposition;
-import evenements.btn.toolbar.BtnActeurActif;
-import evenements.btn.toolbar.BtnAssociation;
-import evenements.btn.toolbar.BtnSpecialisation;
-import evenements.btn.toolbar.BtnClasse;
-import evenements.btn.toolbar.BtnDependanceFonctionnelle;
-import evenements.btn.toolbar.BtnActeurPassif;
-import evenements.btn.toolbar.BtnMessageSynchrone;
 import evenements.Btn;
-import evenements.btn.*;
+import evenements.btn.toolbar.*;
 import ihm.FenetreDemo;
 import java.awt.Dimension;
 import javax.swing.JToolBar;
@@ -24,20 +13,26 @@ public class BarreOutilsDessin extends JToolBar {
     private final FenetreDemo fenetre; // La fenêtre dans laquelle s'affiche la toolbar
     private final Dimension taille;
 
-    /* Paramètres de la barre d'outils */
+    /** 
+     * Paramètres de la barre d'outils 
+     */
     private void parametrerBarreOutils(){
 		this.setPreferredSize(this.taille);
         this.setFloatable(false);
     }
 
-    /* Construit la barre d'outils */
+    /** 
+     * Construit la barre d'outils 
+     */
     public BarreOutilsDessin(Dimension p_taille, FenetreDemo p_fenetre) {
             this.fenetre = p_fenetre;
             this.taille = p_taille;
             this.parametrerBarreOutils();
     }
 
-    /* Ajoute les différents objets graphiques qui doivent s'afficher dans la barre d'outils */
+    /** 
+     * Ajoute les différents objets graphiques qui doivent s'afficher dans la barre d'outils 
+     */
     public void ajouterObjetsGraphiques() {
         /* Instanciations et déclarations des différents boutons */
         Btn useCase = new BtnUseCase("usecase", this.fenetre);

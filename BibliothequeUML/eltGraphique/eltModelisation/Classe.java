@@ -1,10 +1,13 @@
 package eltGraphique.eltModelisation;
 
 import com.mxgraph.model.mxCell;
+import com.mxgraph.model.mxGeometry;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxStylesheet;
 import diagramme.Diagramme;
+import eltGraphique.ligne.Lien;
+import eltGraphique.ligne.TypeLien;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
@@ -57,6 +60,11 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     private mxCell celluleMethodes;
     
     /**
+     * Offset permettant de mettre à jour la classe avec une bonne hauteur
+     */
+    private double OFFSET_HAUTEUR_CLASSE = 10.0;
+    
+    /**
     * Creer le style d'une classe
     */
     private void creerStyleClasse(){
@@ -99,7 +107,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
        String retour = new String();
 
        for(int i=0; i < this.methodes.taille(); i++){
-		   retour += this.methodes.get(i);
+            retour += this.methodes.get(i).toString();
        }
 
        return retour;
@@ -114,7 +122,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
        String retour = "";
 
        for(int i=0; i < this.attributs.taille(); i++) {
-		   retour += this.attributs.get(i).toString();
+            retour += this.attributs.get(i).toString();
        }
 
        return retour;
@@ -127,7 +135,7 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     * @param p_texte Le texte associé à la classe (son nom)
     */
     public Classe(mxGraph p_graph, Diagramme p_diagramme, String p_texte, Position p_position){
-        super(p_graph, p_diagramme, p_texte, new Dimension(125,150), p_position);
+        super(p_graph, p_diagramme, "\n"+p_texte+"\n ", new Dimension(125,150), p_position);
 
         this.attributs = new Liste<Attribut>();
         this.methodes = new Liste<Methode>();
@@ -146,8 +154,8 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     */
     public final Methode ajouterMethode(Methode p_nouvelleMethode) {
         this.methodes.ajouterElement(p_nouvelleMethode);
-        this.celluleMethodes.setValue(this.genererChaineAttributs());
-      //  super.mettreAJour();
+        this.celluleMethodes.setValue(this.genererChaineMethodes());
+        this.mettreAJour();
         
         return(p_nouvelleMethode);
     }
@@ -162,11 +170,20 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
     public final Attribut ajouterAttribut(Attribut p_nouvelAttribut) {
         this.attributs.ajouterElement(p_nouvelAttribut);
         this.celluleAttributs.setValue(this.genererChaineAttributs());
-      //  super.mettreAJour();
-        // TODO problème de mise à jour pour les classes! à régler (redéfinition ?)
+        this.mettreAJour();
+        
         return(p_nouvelAttribut);
     }
-
+    
+    /**
+    * Met à jour la liste des éléments de la liste
+    * @param p_elements La liste d'éléments graphiques à mettre à jour
+    */    
+    @Override
+    public void mettreAJour(){
+        super.mettreAJour();
+        super.getCellule().getGeometry().setHeight(this.getDimension().getHeight()+OFFSET_HAUTEUR_CLASSE);
+    }
     /**
      * Retourne vrai si la classe est constante, faux sinon.
 	 *
@@ -272,5 +289,19 @@ public class Classe extends eltGraphique.eltModelisation.ElementModelisation {
 
         super.getDiagramme().getElementsGraphiques().add(this);
     }
+
+	public void genererInterface() {
+		Interface inte = new Interface(super.getGraph(), super.getTexte(), 
+			super.getDiagramme(), 
+			new Position(this.getPosition().getAbscisse()+250, 
+						 this.getPosition().getOrdonnee()+75));
+		inte.creer();
+		
+		/* Lien avec la classe */
+		Lien spe = new Lien(this, inte, super.getGraph(), super.getDiagramme(), TypeLien.SPECIALISATION);
+		spe.creer();
+		
+        super.getDiagramme().getElementsGraphiques().add(spe);
+	}
 }
 

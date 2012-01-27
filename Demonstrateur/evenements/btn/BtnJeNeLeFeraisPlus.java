@@ -6,11 +6,15 @@ import java.awt.event.MouseListener;
 import javax.swing.JButton;
 
 /**
- *
+ * Bouton de validation après une interdiction
  */
 public class BtnJeNeLeFeraisPlus extends JButton implements MouseListener {
     private FenetreInterdiction fenetreInterdiction;
-    
+ 
+    /** 
+     * Construit le bouton d'interdictoin
+     * @param p_fenetreInterdiction Fenetre dans laquelle apparaitra le bouton
+     */
     public BtnJeNeLeFeraisPlus(FenetreInterdiction p_fenetreInterdiction){
         super("Je ne le ferais plus, c'est promis");
         this.fenetreInterdiction = p_fenetreInterdiction;

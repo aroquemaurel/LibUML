@@ -13,10 +13,10 @@ import util.Constantes;
 import util.Position;
 
 /**
- * Classe propre aux acteurs passif (représentation graphique)
+ * Classe propre aux acteurs actifs (représentation graphique)
  *
  * @see Acteur
- * @see ActeurPassif
+ * @see ActeurActif
  *
  * @author Antoine
  * @author Mathieu

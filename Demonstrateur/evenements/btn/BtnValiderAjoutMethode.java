@@ -9,7 +9,7 @@ import java.awt.event.MouseEvent;
 import util.Liste;
 
 /**
- *
+ * Le bouton permettant de valider l'ajout d'une méthode
  */
 public class BtnValiderAjoutMethode extends BoutonFenetres {   
     private Classe classe;
@@ -18,6 +18,11 @@ public class BtnValiderAjoutMethode extends BoutonFenetres {
     private final int PUBLIC = 2;
     private final int PRIVATE = 3;
     
+    /**
+     * Construit le bouton permettant d'ajouter une méthode
+     * @param p_fenetre La fenetre principale
+     * @param p_classe La classe danslaquelle on veut ajouter la méthode
+     */
     public BtnValiderAjoutMethode(FenetreAjoutMethode p_fenetre, Classe p_classe){
         super(p_fenetre, "J'ai fini!");
         this.classe = p_classe;
